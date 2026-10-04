@@ -62,21 +62,6 @@ function renderOverview(catalog, views, suites) {
 
   const cards = views.comparisons.map((comparison) => {
     const selected = selectedVariants(comparison, suites);
-    const selectedIdentities = new Set(
-      selected.map(
-        ({ suite, variant }) => `${suite.id}\u0000${variant.id}`,
-      ),
-    );
-    const selectedCases = new Set(comparison.cases.map((item) => item.id));
-    const selectedMetrics = new Set(comparison.metrics.map((item) => item.id));
-    const selectedObservationCount = latest.observations.filter(
-      (observation) =>
-        selectedIdentities.has(
-          `${observation.suite}\u0000${observation.variant}`,
-        ) &&
-        selectedCases.has(observation.case) &&
-        selectedMetrics.has(observation.metric),
-    ).length;
     const sourceRows = comparison.sources.map((source) => {
       const suite = suites.get(source.suite);
       const count = source.include_variants
@@ -265,6 +250,21 @@ function renderComparisonPage(catalog, latest, views, suites, comparisons) {
     throw new Error(`Unknown comparison ${comparisonId}`);
   }
   const selected = selectedVariants(comparison, suites);
+  const selectedIdentities = new Set(
+    selected.map(
+      ({ suite, variant }) => `${suite.id}\u0000${variant.id}`,
+    ),
+  );
+  const selectedCases = new Set(comparison.cases.map((item) => item.id));
+  const selectedMetrics = new Set(comparison.metrics.map((item) => item.id));
+  const selectedObservationCount = latest.observations.filter(
+    (observation) =>
+      selectedIdentities.has(
+        `${observation.suite}\u0000${observation.variant}`,
+      ) &&
+      selectedCases.has(observation.case) &&
+      selectedMetrics.has(observation.metric),
+  ).length;
   document.title = `${comparison.name} - OTel Arrow Benchmarks`;
   document.getElementById("page-title").textContent = comparison.name;
   document.getElementById("summary").textContent =
