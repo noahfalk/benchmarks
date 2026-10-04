@@ -1,0 +1,224 @@
+{
+  "comparisons": [
+    {
+      "cases": [
+        {
+          "id": "100k",
+          "label": "100k"
+        },
+        {
+          "id": "200k",
+          "label": "200k"
+        }
+      ],
+      "description": "Compare attribute-insert implementations with matching no-processing baselines.",
+      "id": "log-attribute-insert-multi-rate",
+      "metrics": [
+        {
+          "id": "cpu_percentage_normalized_avg",
+          "label": "CPU Average"
+        },
+        {
+          "id": "logs_received_rate",
+          "label": "Logs Received Rate"
+        }
+      ],
+      "name": "Log Attribute Insert - Multi Rate",
+      "schema_version": 1,
+      "sources": [
+        {
+          "include_variants": [
+            "dfe-otap-none",
+            "dfe-otlp-none",
+            "otc-otlp-none",
+            "fbit-otlp-none"
+          ],
+          "role": "baseline",
+          "suite": "log-baseline"
+        },
+        {
+          "role": "candidate",
+          "suite": "log-attribute-insert"
+        }
+      ]
+    },
+    {
+      "cases": [
+        {
+          "id": "100k",
+          "label": "100k"
+        },
+        {
+          "id": "200k",
+          "label": "200k"
+        }
+      ],
+      "description": "Compare baseline log pipeline variants across engines, protocols, and compression.",
+      "id": "log-baselines",
+      "metrics": [
+        {
+          "id": "cpu_percentage_normalized_avg",
+          "label": "CPU Average"
+        },
+        {
+          "id": "logs_received_rate",
+          "label": "Logs Received Rate"
+        }
+      ],
+      "name": "Log Baselines",
+      "schema_version": 1,
+      "sources": [
+        {
+          "role": "baseline",
+          "suite": "log-baseline"
+        }
+      ]
+    }
+  ],
+  "schema_version": 1,
+  "suites": [
+    {
+      "description": "Log pipelines that insert a static processing.engine attribute.",
+      "id": "log-attribute-insert",
+      "name": "Log Attribute Insert",
+      "schema_version": 1,
+      "variants": [
+        {
+          "dimensions": {
+            "binary": "dfe",
+            "compression": "none",
+            "operation": "insert",
+            "processor": "attributes",
+            "protocol": "otap"
+          },
+          "id": "dfe-otap-attributes",
+          "name": "DFE OTAP/Attributes"
+        },
+        {
+          "dimensions": {
+            "binary": "dfe",
+            "compression": "none",
+            "operation": "insert",
+            "processor": "transform",
+            "protocol": "otap"
+          },
+          "id": "dfe-otap-transform",
+          "name": "DFE OTAP/Transform"
+        },
+        {
+          "dimensions": {
+            "binary": "dfe",
+            "compression": "none",
+            "operation": "insert",
+            "processor": "attributes",
+            "protocol": "otlp"
+          },
+          "id": "dfe-otlp-attributes",
+          "name": "DFE OTLP/Attributes"
+        },
+        {
+          "dimensions": {
+            "binary": "dfe",
+            "compression": "none",
+            "operation": "insert",
+            "processor": "transform",
+            "protocol": "otlp"
+          },
+          "id": "dfe-otlp-transform",
+          "name": "DFE OTLP/Transform"
+        },
+        {
+          "dimensions": {
+            "binary": "otc",
+            "compression": "none",
+            "operation": "insert",
+            "processor": "attributes",
+            "protocol": "otlp"
+          },
+          "id": "otc-otlp-attributes",
+          "name": "OTC OTLP/Attributes"
+        },
+        {
+          "dimensions": {
+            "binary": "otc",
+            "compression": "none",
+            "operation": "insert",
+            "processor": "transform",
+            "protocol": "otlp"
+          },
+          "id": "otc-otlp-transform",
+          "name": "OTC OTLP/Transform"
+        },
+        {
+          "dimensions": {
+            "binary": "fbit",
+            "compression": "none",
+            "operation": "insert",
+            "processor": "modify",
+            "protocol": "otlp"
+          },
+          "id": "fbit-otlp-modify",
+          "name": "Fluent Bit OTLP/Modify"
+        }
+      ]
+    },
+    {
+      "description": "Baseline log pipelines without attribute mutation.",
+      "id": "log-baseline",
+      "name": "Log Baseline",
+      "schema_version": 1,
+      "variants": [
+        {
+          "dimensions": {
+            "binary": "dfe",
+            "compression": "none",
+            "operation": "baseline",
+            "protocol": "otap"
+          },
+          "id": "dfe-otap-none",
+          "name": "DFE OTAP/None"
+        },
+        {
+          "dimensions": {
+            "binary": "dfe",
+            "compression": "none",
+            "operation": "baseline",
+            "protocol": "otlp"
+          },
+          "id": "dfe-otlp-none",
+          "name": "DFE OTLP/None"
+        },
+        {
+          "dimensions": {
+            "binary": "dfe",
+            "compression": "gzip",
+            "operation": "baseline",
+            "protocol": "otlp"
+          },
+          "id": "dfe-otlp-gzip",
+          "name": "DFE OTLP/Gzip"
+        },
+        {
+          "dimensions": {
+            "binary": "otc",
+            "compression": "none",
+            "operation": "baseline",
+            "protocol": "otlp"
+          },
+          "id": "otc-otlp-none",
+          "name": "OTC OTLP/None"
+        },
+        {
+          "dimensions": {
+            "binary": "fbit",
+            "compression": "none",
+            "operation": "baseline",
+            "protocol": "otlp"
+          },
+          "id": "fbit-otlp-none",
+          "name": "Fluent Bit OTLP/None"
+        }
+      ]
+    }
+  ]
+}

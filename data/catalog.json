@@ -1,8 +1,8 @@
 {
-  "collection_count": 5,
-  "latest_collection_id": "mock-0005",
-  "measurement_count": 80,
-  "run_count": 10,
+  "collection_count": 6,
+  "latest_collection_id": "comparison-view-0001",
+  "measurement_count": 176,
+  "run_count": 12,
   "runs": [
     {
       "architecture": "amd64",
@@ -103,6 +103,26 @@
       "os": "windows",
       "path": "runs/2026/02/mock-0005-windows.json",
       "started_at": "2026-02-02T12:00:00Z"
+    },
+    {
+      "architecture": "amd64",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "digest": "859be4ff88fd220bcf11291025026d6811bcb4ca10620120386533f2da17a313",
+      "id": "comparison-view-0001-linux",
+      "os": "linux",
+      "path": "runs/2026/03/comparison-view-0001-linux.json",
+      "started_at": "2026-03-02T12:00:00Z"
+    },
+    {
+      "architecture": "amd64",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "digest": "c9e3d655c48e0c9fc11c02f5ddcb23b27be9266fdd7956972e55f8968e772393",
+      "id": "comparison-view-0001-windows",
+      "os": "windows",
+      "path": "runs/2026/03/comparison-view-0001-windows.json",
+      "started_at": "2026-03-02T12:00:00Z"
     }
   ],
   "schema_version": 1

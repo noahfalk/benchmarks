@@ -6,24 +6,17 @@
   <title>OTel Arrow Benchmark Prototype</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body data-page="overview" data-root=".">
   <header>
     <div>
-      <div class="eyebrow">Experimental immutable run store</div>
+      <div class="eyebrow">Declarative comparison prototype</div>
       <h1>OTel Arrow Benchmarks</h1>
       <p id="summary">Loading benchmark data...</p>
     </div>
-    <nav>
-      <button class="active" data-view="comparison">Latest comparison</button>
-      <button data-view="history">History</button>
-    </nav>
   </header>
-  <main>
-    <section id="comparison-view"></section>
-    <section id="history-view" hidden></section>
-  </main>
+  <main id="app"></main>
   <footer>
-    Generated entirely from immutable run bundles. Derived indexes are replaceable.
+    Suite families define executable variants; comparisons select reusable views.
   </footer>
   <script src="app.js"></script>
 </body>

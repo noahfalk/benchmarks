@@ -15,167 +15,319 @@ function formatValue(value) {
   }).format(value);
 }
 
-function dimensionLabel(observation) {
-  const dimensions = Object.entries(observation.dimensions)
-    .map(([key, value]) => `${key}=${value}`);
-  const environment = [
-    observation.environment.os,
-    observation.environment.architecture,
-  ].filter(Boolean);
-  return [...environment, ...dimensions].join(" / ");
-}
-
-function groupBy(items, keyFunction) {
-  const groups = new Map();
-  for (const item of items) {
-    const key = keyFunction(item);
-    if (!groups.has(key)) groups.set(key, []);
-    groups.get(key).push(item);
+async function fetchJson(path) {
+  const response = await fetch(path);
+  if (!response.ok) {
+    throw new Error(`${path} returned HTTP ${response.status}`);
   }
-  return groups;
+  return response.json();
 }
 
-function renderComparison(latest) {
-  const target = document.getElementById("comparison-view");
-  const groups = groupBy(
-    latest.observations,
-    (item) => `${item.metric}\u0000${item.unit}`,
-  );
-  if (!groups.size) {
-    target.innerHTML = '<div class="empty">No comparison observations.</div>';
-    return;
-  }
-
-  const cards = [];
-  for (const [key, observations] of groups) {
-    const [metric, unit] = key.split("\u0000");
-    const maximum = Math.max(...observations.map((item) => item.value), 1);
-    const rows = observations.map((item) => `
-      <div class="bar-row">
-        <div>
-          <strong>${escapeHtml(item.suite)} / ${escapeHtml(item.case)}</strong>
-          <div class="meta">${escapeHtml(dimensionLabel(item))}</div>
-        </div>
-        <div class="bar-track"><div class="bar" style="width:${(item.value / maximum) * 100}%"></div></div>
-        <div>${formatValue(item.value)} ${escapeHtml(unit)}</div>
-      </div>
-    `).join("");
-    cards.push(`
-      <article class="card">
-        <div class="card-heading">
-          <h2>${escapeHtml(metric)}</h2>
-          <span class="unit">${escapeHtml(unit)}</span>
-        </div>
-        ${rows}
-      </article>
-    `);
-  }
-  target.innerHTML = `
-    <p>Latest collection: <strong>${escapeHtml(latest.collection_id)}</strong></p>
-    <div class="grid">${cards.join("")}</div>
-  `;
+function mapsFor(views) {
+  return {
+    suites: new Map(views.suites.map((suite) => [suite.id, suite])),
+    comparisons: new Map(
+      views.comparisons.map((comparison) => [comparison.id, comparison]),
+    ),
+  };
 }
 
-function seriesLabel(series) {
-  const dimensions = Object.entries(series.dimensions)
-    .map(([key, value]) => `${key}=${value}`);
-  const environment = [
-    series.environment.os,
-    series.environment.architecture,
-  ].filter(Boolean);
-  return [...environment, ...dimensions].join(" / ");
-}
-
-function renderSparkline(points) {
-  const width = 500;
-  const height = 140;
-  const padding = 12;
-  const values = points.map((point) => point.value);
-  const minimum = Math.min(...values);
-  const maximum = Math.max(...values);
-  const span = maximum - minimum || 1;
-  const coordinates = points.map((point, index) => {
-    const x = points.length === 1
-      ? width / 2
-      : padding + index * ((width - padding * 2) / (points.length - 1));
-    const y = height - padding - ((point.value - minimum) / span) * (height - padding * 2);
-    return { x, y, point };
-  });
-  const polyline = coordinates.map(({ x, y }) => `${x},${y}`).join(" ");
-  const circles = coordinates.map(({ x, y, point }) => `
-    <circle cx="${x}" cy="${y}" r="4">
-      <title>${escapeHtml(point.commit.slice(-8))}: ${formatValue(point.value)}</title>
-    </circle>
-  `).join("");
-  return `
-    <svg viewBox="0 0 ${width} ${height}" role="img">
-      <line class="axis" x1="${padding}" y1="${height - padding}" x2="${width - padding}" y2="${height - padding}"></line>
-      <polyline points="${polyline}"></polyline>
-      ${circles}
-    </svg>
-    <div class="range">
-      <span>${escapeHtml(points[0].commit.slice(-8))}</span>
-      <span>${formatValue(minimum)} - ${formatValue(maximum)}</span>
-      <span>${escapeHtml(points.at(-1).commit.slice(-8))}</span>
-    </div>
-  `;
-}
-
-function renderHistory(history) {
-  const target = document.getElementById("history-view");
-  if (!history.series.length) {
-    target.innerHTML = '<div class="empty">No historical series.</div>';
-    return;
-  }
-  target.innerHTML = `
-    <p>Every point below comes from the same immutable observations used by the latest comparison.</p>
-    <div class="grid">
-      ${history.series.map((series) => `
-        <article class="card history-card">
-          <div class="card-heading">
-            <div>
-              <h2>${escapeHtml(series.metric)}</h2>
-              <div class="meta">${escapeHtml(series.suite)} / ${escapeHtml(series.case)}</div>
-            </div>
-            <span class="unit">${escapeHtml(series.unit)}</span>
-          </div>
-          <div class="meta">${escapeHtml(seriesLabel(series))}</div>
-          ${renderSparkline(series.points)}
-        </article>
-      `).join("")}
-    </div>
-  `;
-}
-
-function wireNavigation() {
-  for (const button of document.querySelectorAll("nav button")) {
-    button.addEventListener("click", () => {
-      for (const candidate of document.querySelectorAll("nav button")) {
-        candidate.classList.toggle("active", candidate === button);
+function selectedVariants(comparison, suites) {
+  const selected = [];
+  for (const source of comparison.sources) {
+    const suite = suites.get(source.suite);
+    if (!suite) {
+      throw new Error(`Comparison references unknown suite ${source.suite}`);
+    }
+    const included = source.include_variants
+      ? new Set(source.include_variants)
+      : null;
+    for (const variant of suite.variants) {
+      if (!included || included.has(variant.id)) {
+        selected.push({
+          suite,
+          variant,
+          role: source.role || "comparison",
+        });
       }
-      const comparison = button.dataset.view === "comparison";
-      document.getElementById("comparison-view").hidden = !comparison;
-      document.getElementById("history-view").hidden = comparison;
-    });
+    }
   }
+  return selected;
+}
+
+function renderOverview(catalog, views, suites) {
+  document.getElementById("summary").textContent =
+    `${views.comparisons.length} comparisons from ${views.suites.length} ` +
+    `suite families; ${catalog.run_count} immutable runs`;
+
+  const cards = views.comparisons.map((comparison) => {
+    const selected = selectedVariants(comparison, suites);
+    const sourceRows = comparison.sources.map((source) => {
+      const suite = suites.get(source.suite);
+      const count = source.include_variants
+        ? source.include_variants.length
+        : suite.variants.length;
+      return `
+        <li>
+          <span>${escapeHtml(suite.name)}</span>
+          <span class="source-summary">
+            ${count} ${count === 1 ? "variant" : "variants"}
+            <span class="role">${escapeHtml(source.role || "comparison")}</span>
+          </span>
+        </li>
+      `;
+    }).join("");
+    return `
+      <article class="card comparison-card" data-comparison-id="${escapeHtml(comparison.id)}">
+        <div class="card-heading">
+          <div>
+            <h2>${escapeHtml(comparison.name)}</h2>
+            <p>${escapeHtml(comparison.description)}</p>
+          </div>
+          <span class="count">${selected.length} variants</span>
+        </div>
+        <ul class="source-list">${sourceRows}</ul>
+        <div class="comparison-facts">
+          <span>${comparison.cases.length} cases</span>
+          <span>${comparison.metrics.length} metrics</span>
+        </div>
+        <a class="button-link primary" href="comparisons/${encodeURIComponent(comparison.id)}/">
+          View comparison
+        </a>
+      </article>
+    `;
+  }).join("");
+
+  document.getElementById("app").innerHTML = `
+    <section class="intro">
+      <h2>Configured comparisons</h2>
+      <p>
+        Each page selects reusable variants from one or more suite families.
+        Results come from the latest immutable run collection.
+      </p>
+    </section>
+    <section class="grid">${cards}</section>
+  `;
+}
+
+function environmentKey(environment) {
+  return JSON.stringify(environment, Object.keys(environment).sort());
+}
+
+function environmentLabel(environment) {
+  return [
+    environment.os,
+    environment.architecture,
+    environment.testbed,
+  ].filter(Boolean).join(" / ");
+}
+
+function dimensionChips(dimensions) {
+  return Object.entries(dimensions)
+    .map(([key, value]) => `
+      <span class="dimension">${escapeHtml(key)}=${escapeHtml(value)}</span>
+    `)
+    .join("");
+}
+
+function renderMetricTable(comparison, metric, selected, observations) {
+  const selectedKeys = new Set(
+    selected.map(
+      ({ suite, variant }) => `${suite.id}\u0000${variant.id}`,
+    ),
+  );
+  const metricObservations = observations.filter(
+    (observation) =>
+      observation.metric === metric.id &&
+      selectedKeys.has(`${observation.suite}\u0000${observation.variant}`),
+  );
+  const units = new Set(metricObservations.map((item) => item.unit));
+  if (units.size !== 1) {
+    throw new Error(
+      `Metric ${metric.id} has ${units.size} units in the latest collection`,
+    );
+  }
+  const unit = [...units][0];
+  const cases = comparison.cases;
+  const byValue = new Map();
+  const environments = new Map();
+  for (const observation of metricObservations) {
+    const envKey = environmentKey(observation.environment);
+    environments.set(envKey, observation.environment);
+    const key = [
+      observation.suite,
+      observation.variant,
+      envKey,
+      observation.case,
+    ].join("\u0000");
+    if (byValue.has(key)) {
+      throw new Error(
+        `Duplicate latest observation for ${observation.suite}/` +
+        `${observation.variant}, ${observation.case}, ${metric.id}`,
+      );
+    }
+    byValue.set(key, observation.value);
+  }
+  const environmentEntries = [...environments.entries()].sort(
+    ([left], [right]) => left.localeCompare(right),
+  );
+  const values = [...byValue.values()];
+  const maximum = Math.max(...values, 1);
+  const rows = [];
+  for (const item of selected) {
+    for (const [envKey, environment] of environmentEntries) {
+      const caseValues = cases.map((testCase) => {
+        const key = [
+          item.suite.id,
+          item.variant.id,
+          envKey,
+          testCase.id,
+        ].join("\u0000");
+        return byValue.get(key);
+      });
+      if (caseValues.every((value) => value === undefined)) {
+        continue;
+      }
+      const cells = caseValues.map((value) => {
+        if (value === undefined) {
+          return '<td class="missing">Missing</td>';
+        }
+        return `
+          <td class="value-cell">
+            <div class="cell-bar" style="width:${(value / maximum) * 100}%"></div>
+            <span>${formatValue(value)}</span>
+          </td>
+        `;
+      }).join("");
+      rows.push(`
+        <tr class="variant-row"
+            data-suite="${escapeHtml(item.suite.id)}"
+            data-variant="${escapeHtml(item.variant.id)}">
+          <th scope="row">
+            <div class="variant-title">
+              ${escapeHtml(item.variant.name)}
+              <span class="role">${escapeHtml(item.role)}</span>
+            </div>
+            <div class="meta">${escapeHtml(environmentLabel(environment))}</div>
+            <div class="dimensions">${dimensionChips(item.variant.dimensions)}</div>
+          </th>
+          ${cells}
+        </tr>
+      `);
+    }
+  }
+  const caseHeaders = cases
+    .map((testCase) => `<th scope="col">${escapeHtml(testCase.label)}</th>`)
+    .join("");
+  return `
+    <article class="card metric-card" data-metric="${escapeHtml(metric.id)}">
+      <div class="card-heading">
+        <div>
+          <h2>${escapeHtml(metric.label)}</h2>
+          <div class="meta">${escapeHtml(metric.id)}</div>
+        </div>
+        <span class="unit">${escapeHtml(unit)}</span>
+      </div>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Variant and environment</th>
+              ${caseHeaders}
+            </tr>
+          </thead>
+          <tbody>${rows.join("")}</tbody>
+        </table>
+      </div>
+    </article>
+  `;
+}
+
+function renderComparisonPage(catalog, latest, views, suites, comparisons) {
+  const comparisonId = document.body.dataset.comparisonId;
+  const comparison = comparisons.get(comparisonId);
+  if (!comparison) {
+    throw new Error(`Unknown comparison ${comparisonId}`);
+  }
+  const selected = selectedVariants(comparison, suites);
+  document.title = `${comparison.name} - OTel Arrow Benchmarks`;
+  document.getElementById("page-title").textContent = comparison.name;
+  document.getElementById("summary").textContent =
+    `${selected.length} variants from ${comparison.sources.length} ` +
+    `suite ${comparison.sources.length === 1 ? "family" : "families"}; ` +
+    `latest collection ${latest.collection_id}`;
+
+  const sourceSections = comparison.sources.map((source) => {
+    const suite = suites.get(source.suite);
+    const allowed = source.include_variants
+      ? new Set(source.include_variants)
+      : null;
+    const variants = suite.variants.filter(
+      (variant) => !allowed || allowed.has(variant.id),
+    );
+    return `
+      <div class="source-card">
+        <div>
+          <strong>${escapeHtml(suite.name)}</strong>
+          <span class="role">${escapeHtml(source.role || "comparison")}</span>
+        </div>
+        <div class="meta">${escapeHtml(suite.description)}</div>
+        <div class="variant-list">
+          ${variants.map(
+            (variant) => `<span>${escapeHtml(variant.name)}</span>`,
+          ).join("")}
+        </div>
+      </div>
+    `;
+  }).join("");
+  const metricCards = comparison.metrics
+    .map((metric) =>
+      renderMetricTable(
+        comparison,
+        metric,
+        selected,
+        latest.observations,
+      ),
+    )
+    .join("");
+
+  document.getElementById("app").innerHTML = `
+    <section class="comparison-intro">
+      <p>${escapeHtml(comparison.description)}</p>
+      <div class="source-grid">${sourceSections}</div>
+    </section>
+    <section class="metric-grid">${metricCards}</section>
+    <p class="provenance">
+      Showing ${latest.observations.length} observations from
+      ${escapeHtml(latest.collection_id)}. The comparison displays only
+      observations selected by its suite and variant references.
+    </p>
+  `;
 }
 
 async function load() {
-  wireNavigation();
+  const root = document.body.dataset.root || ".";
   try {
-    const [catalog, latest, history] = await Promise.all([
-      fetch("data/catalog.json").then((response) => response.json()),
-      fetch("data/latest.json").then((response) => response.json()),
-      fetch("data/history.json").then((response) => response.json()),
+    const [catalog, latest, views] = await Promise.all([
+      fetchJson(`${root}/data/catalog.json`),
+      fetchJson(`${root}/data/latest.json`),
+      fetchJson(`${root}/data/views.json`),
     ]);
-    document.getElementById("summary").textContent =
-      `${catalog.run_count} runs, ${catalog.collection_count} collections, ` +
-      `${catalog.measurement_count} measurements`;
-    renderComparison(latest);
-    renderHistory(history);
+    const { suites, comparisons } = mapsFor(views);
+    if (document.body.dataset.page === "comparison") {
+      renderComparisonPage(
+        catalog,
+        latest,
+        views,
+        suites,
+        comparisons,
+      );
+    } else {
+      renderOverview(catalog, views, suites);
+    }
   } catch (error) {
-    document.querySelector("main").innerHTML =
-      `<div class="error">Could not load dashboard data: ${escapeHtml(error.message)}</div>`;
+    document.getElementById("app").innerHTML =
+      `<div class="error">Could not load dashboard: ${escapeHtml(error.message)}</div>`;
   }
 }
 

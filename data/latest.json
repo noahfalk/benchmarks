@@ -1,14 +1,18 @@
 {
-  "collection_id": "mock-0005",
+  "collection_id": "comparison-view-0001",
   "observations": [
     {
       "branch": "main",
       "case": "100k",
-      "collection_id": "mock-0005",
-      "commit": "0000000000000000000000000000000000000005",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
       "dimensions": {
-        "engine": "dfe",
+        "binary": "dfe",
+        "compression": "none",
         "load_rate": "100000",
+        "operation": "insert",
+        "processor": "attributes",
+        "protocol": "otap",
         "signal": "logs"
       },
       "environment": {
@@ -18,21 +22,26 @@
       },
       "metric": "cpu_percentage_normalized_avg",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-0005-linux",
-      "source_timestamp": "2026-02-02T12:00:00Z",
-      "started_at": "2026-02-02T12:00:00Z",
-      "suite": "logs-baseline",
+      "run_id": "comparison-view-0001-linux",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-attribute-insert",
       "unit": "%",
-      "value": 26.2
+      "value": 27.0,
+      "variant": "dfe-otap-attributes"
     },
     {
       "branch": "main",
       "case": "100k",
-      "collection_id": "mock-0005",
-      "commit": "0000000000000000000000000000000000000005",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
       "dimensions": {
-        "engine": "dfe",
+        "binary": "dfe",
+        "compression": "none",
         "load_rate": "100000",
+        "operation": "insert",
+        "processor": "attributes",
+        "protocol": "otap",
         "signal": "logs"
       },
       "environment": {
@@ -42,21 +51,84 @@
       },
       "metric": "cpu_percentage_normalized_avg",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-0005-windows",
-      "source_timestamp": "2026-02-02T12:00:00Z",
-      "started_at": "2026-02-02T12:00:00Z",
-      "suite": "logs-baseline",
+      "run_id": "comparison-view-0001-windows",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-attribute-insert",
       "unit": "%",
-      "value": 28.2
+      "value": 29.0,
+      "variant": "dfe-otap-attributes"
+    },
+    {
+      "branch": "main",
+      "case": "200k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "insert",
+        "processor": "attributes",
+        "protocol": "otap",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-linux",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-attribute-insert",
+      "unit": "%",
+      "value": 37.0,
+      "variant": "dfe-otap-attributes"
+    },
+    {
+      "branch": "main",
+      "case": "200k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "insert",
+        "processor": "attributes",
+        "protocol": "otap",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-windows",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-attribute-insert",
+      "unit": "%",
+      "value": 39.0,
+      "variant": "dfe-otap-attributes"
     },
     {
       "branch": "main",
       "case": "100k",
-      "collection_id": "mock-0005",
-      "commit": "0000000000000000000000000000000000000005",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
       "dimensions": {
-        "engine": "otelcol",
+        "binary": "dfe",
+        "compression": "none",
         "load_rate": "100000",
+        "operation": "insert",
+        "processor": "transform",
+        "protocol": "otap",
         "signal": "logs"
       },
       "environment": {
@@ -66,21 +138,26 @@
       },
       "metric": "cpu_percentage_normalized_avg",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-0005-linux",
-      "source_timestamp": "2026-02-02T12:00:00Z",
-      "started_at": "2026-02-02T12:00:00Z",
-      "suite": "logs-baseline",
+      "run_id": "comparison-view-0001-linux",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-attribute-insert",
       "unit": "%",
-      "value": 32.2
+      "value": 28.5,
+      "variant": "dfe-otap-transform"
     },
     {
       "branch": "main",
       "case": "100k",
-      "collection_id": "mock-0005",
-      "commit": "0000000000000000000000000000000000000005",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
       "dimensions": {
-        "engine": "otelcol",
+        "binary": "dfe",
+        "compression": "none",
         "load_rate": "100000",
+        "operation": "insert",
+        "processor": "transform",
+        "protocol": "otap",
         "signal": "logs"
       },
       "environment": {
@@ -90,21 +167,26 @@
       },
       "metric": "cpu_percentage_normalized_avg",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-0005-windows",
-      "source_timestamp": "2026-02-02T12:00:00Z",
-      "started_at": "2026-02-02T12:00:00Z",
-      "suite": "logs-baseline",
+      "run_id": "comparison-view-0001-windows",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-attribute-insert",
       "unit": "%",
-      "value": 34.2
+      "value": 30.5,
+      "variant": "dfe-otap-transform"
     },
     {
       "branch": "main",
       "case": "200k",
-      "collection_id": "mock-0005",
-      "commit": "0000000000000000000000000000000000000005",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
       "dimensions": {
-        "engine": "dfe",
+        "binary": "dfe",
+        "compression": "none",
         "load_rate": "200000",
+        "operation": "insert",
+        "processor": "transform",
+        "protocol": "otap",
         "signal": "logs"
       },
       "environment": {
@@ -114,21 +196,26 @@
       },
       "metric": "cpu_percentage_normalized_avg",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-0005-linux",
-      "source_timestamp": "2026-02-02T12:00:00Z",
-      "started_at": "2026-02-02T12:00:00Z",
-      "suite": "logs-baseline",
+      "run_id": "comparison-view-0001-linux",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-attribute-insert",
       "unit": "%",
-      "value": 37.2
+      "value": 38.5,
+      "variant": "dfe-otap-transform"
     },
     {
       "branch": "main",
       "case": "200k",
-      "collection_id": "mock-0005",
-      "commit": "0000000000000000000000000000000000000005",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
       "dimensions": {
-        "engine": "dfe",
+        "binary": "dfe",
+        "compression": "none",
         "load_rate": "200000",
+        "operation": "insert",
+        "processor": "transform",
+        "protocol": "otap",
         "signal": "logs"
       },
       "environment": {
@@ -138,69 +225,26 @@
       },
       "metric": "cpu_percentage_normalized_avg",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-0005-windows",
-      "source_timestamp": "2026-02-02T12:00:00Z",
-      "started_at": "2026-02-02T12:00:00Z",
-      "suite": "logs-baseline",
+      "run_id": "comparison-view-0001-windows",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-attribute-insert",
       "unit": "%",
-      "value": 39.2
-    },
-    {
-      "branch": "main",
-      "case": "200k",
-      "collection_id": "mock-0005",
-      "commit": "0000000000000000000000000000000000000005",
-      "dimensions": {
-        "engine": "otelcol",
-        "load_rate": "200000",
-        "signal": "logs"
-      },
-      "environment": {
-        "architecture": "amd64",
-        "os": "linux",
-        "testbed": "mock-linux-amd64"
-      },
-      "metric": "cpu_percentage_normalized_avg",
-      "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-0005-linux",
-      "source_timestamp": "2026-02-02T12:00:00Z",
-      "started_at": "2026-02-02T12:00:00Z",
-      "suite": "logs-baseline",
-      "unit": "%",
-      "value": 43.2
-    },
-    {
-      "branch": "main",
-      "case": "200k",
-      "collection_id": "mock-0005",
-      "commit": "0000000000000000000000000000000000000005",
-      "dimensions": {
-        "engine": "otelcol",
-        "load_rate": "200000",
-        "signal": "logs"
-      },
-      "environment": {
-        "architecture": "amd64",
-        "os": "windows",
-        "testbed": "mock-windows-amd64"
-      },
-      "metric": "cpu_percentage_normalized_avg",
-      "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-0005-windows",
-      "source_timestamp": "2026-02-02T12:00:00Z",
-      "started_at": "2026-02-02T12:00:00Z",
-      "suite": "logs-baseline",
-      "unit": "%",
-      "value": 45.2
+      "value": 40.5,
+      "variant": "dfe-otap-transform"
     },
     {
       "branch": "main",
       "case": "100k",
-      "collection_id": "mock-0005",
-      "commit": "0000000000000000000000000000000000000005",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
       "dimensions": {
-        "engine": "dfe",
+        "binary": "dfe",
+        "compression": "none",
         "load_rate": "100000",
+        "operation": "insert",
+        "processor": "attributes",
+        "protocol": "otlp",
         "signal": "logs"
       },
       "environment": {
@@ -208,23 +252,28 @@
         "os": "linux",
         "testbed": "mock-linux-amd64"
       },
-      "metric": "logs_received_rate",
+      "metric": "cpu_percentage_normalized_avg",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-0005-linux",
-      "source_timestamp": "2026-02-02T12:00:00Z",
-      "started_at": "2026-02-02T12:00:00Z",
-      "suite": "logs-baseline",
-      "unit": "logs/sec",
-      "value": 99288.0
+      "run_id": "comparison-view-0001-linux",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-attribute-insert",
+      "unit": "%",
+      "value": 29.0,
+      "variant": "dfe-otlp-attributes"
     },
     {
       "branch": "main",
       "case": "100k",
-      "collection_id": "mock-0005",
-      "commit": "0000000000000000000000000000000000000005",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
       "dimensions": {
-        "engine": "dfe",
+        "binary": "dfe",
+        "compression": "none",
         "load_rate": "100000",
+        "operation": "insert",
+        "processor": "attributes",
+        "protocol": "otlp",
         "signal": "logs"
       },
       "environment": {
@@ -232,23 +281,86 @@
         "os": "windows",
         "testbed": "mock-windows-amd64"
       },
-      "metric": "logs_received_rate",
+      "metric": "cpu_percentage_normalized_avg",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-0005-windows",
-      "source_timestamp": "2026-02-02T12:00:00Z",
-      "started_at": "2026-02-02T12:00:00Z",
-      "suite": "logs-baseline",
-      "unit": "logs/sec",
-      "value": 98683.2
+      "run_id": "comparison-view-0001-windows",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-attribute-insert",
+      "unit": "%",
+      "value": 31.0,
+      "variant": "dfe-otlp-attributes"
+    },
+    {
+      "branch": "main",
+      "case": "200k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "insert",
+        "processor": "attributes",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-linux",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-attribute-insert",
+      "unit": "%",
+      "value": 39.0,
+      "variant": "dfe-otlp-attributes"
+    },
+    {
+      "branch": "main",
+      "case": "200k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "insert",
+        "processor": "attributes",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-windows",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-attribute-insert",
+      "unit": "%",
+      "value": 41.0,
+      "variant": "dfe-otlp-attributes"
     },
     {
       "branch": "main",
       "case": "100k",
-      "collection_id": "mock-0005",
-      "commit": "0000000000000000000000000000000000000005",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
       "dimensions": {
-        "engine": "otelcol",
+        "binary": "dfe",
+        "compression": "none",
         "load_rate": "100000",
+        "operation": "insert",
+        "processor": "transform",
+        "protocol": "otlp",
         "signal": "logs"
       },
       "environment": {
@@ -256,23 +368,28 @@
         "os": "linux",
         "testbed": "mock-linux-amd64"
       },
-      "metric": "logs_received_rate",
+      "metric": "cpu_percentage_normalized_avg",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-0005-linux",
-      "source_timestamp": "2026-02-02T12:00:00Z",
-      "started_at": "2026-02-02T12:00:00Z",
-      "suite": "logs-baseline",
-      "unit": "logs/sec",
-      "value": 97473.6
+      "run_id": "comparison-view-0001-linux",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-attribute-insert",
+      "unit": "%",
+      "value": 30.5,
+      "variant": "dfe-otlp-transform"
     },
     {
       "branch": "main",
       "case": "100k",
-      "collection_id": "mock-0005",
-      "commit": "0000000000000000000000000000000000000005",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
       "dimensions": {
-        "engine": "otelcol",
+        "binary": "dfe",
+        "compression": "none",
         "load_rate": "100000",
+        "operation": "insert",
+        "processor": "transform",
+        "protocol": "otlp",
         "signal": "logs"
       },
       "environment": {
@@ -280,23 +397,994 @@
         "os": "windows",
         "testbed": "mock-windows-amd64"
       },
-      "metric": "logs_received_rate",
+      "metric": "cpu_percentage_normalized_avg",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-0005-windows",
-      "source_timestamp": "2026-02-02T12:00:00Z",
-      "started_at": "2026-02-02T12:00:00Z",
-      "suite": "logs-baseline",
-      "unit": "logs/sec",
-      "value": 96868.8
+      "run_id": "comparison-view-0001-windows",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-attribute-insert",
+      "unit": "%",
+      "value": 32.5,
+      "variant": "dfe-otlp-transform"
     },
     {
       "branch": "main",
       "case": "200k",
-      "collection_id": "mock-0005",
-      "commit": "0000000000000000000000000000000000000005",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
       "dimensions": {
-        "engine": "dfe",
+        "binary": "dfe",
+        "compression": "none",
         "load_rate": "200000",
+        "operation": "insert",
+        "processor": "transform",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-linux",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-attribute-insert",
+      "unit": "%",
+      "value": 40.5,
+      "variant": "dfe-otlp-transform"
+    },
+    {
+      "branch": "main",
+      "case": "200k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "insert",
+        "processor": "transform",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-windows",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-attribute-insert",
+      "unit": "%",
+      "value": 42.5,
+      "variant": "dfe-otlp-transform"
+    },
+    {
+      "branch": "main",
+      "case": "100k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "fbit",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "insert",
+        "processor": "modify",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-linux",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-attribute-insert",
+      "unit": "%",
+      "value": 31.0,
+      "variant": "fbit-otlp-modify"
+    },
+    {
+      "branch": "main",
+      "case": "100k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "fbit",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "insert",
+        "processor": "modify",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-windows",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-attribute-insert",
+      "unit": "%",
+      "value": 33.0,
+      "variant": "fbit-otlp-modify"
+    },
+    {
+      "branch": "main",
+      "case": "200k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "fbit",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "insert",
+        "processor": "modify",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-linux",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-attribute-insert",
+      "unit": "%",
+      "value": 41.0,
+      "variant": "fbit-otlp-modify"
+    },
+    {
+      "branch": "main",
+      "case": "200k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "fbit",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "insert",
+        "processor": "modify",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-windows",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-attribute-insert",
+      "unit": "%",
+      "value": 43.0,
+      "variant": "fbit-otlp-modify"
+    },
+    {
+      "branch": "main",
+      "case": "100k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "otc",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "insert",
+        "processor": "attributes",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-linux",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-attribute-insert",
+      "unit": "%",
+      "value": 35.0,
+      "variant": "otc-otlp-attributes"
+    },
+    {
+      "branch": "main",
+      "case": "100k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "otc",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "insert",
+        "processor": "attributes",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-windows",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-attribute-insert",
+      "unit": "%",
+      "value": 37.0,
+      "variant": "otc-otlp-attributes"
+    },
+    {
+      "branch": "main",
+      "case": "200k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "otc",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "insert",
+        "processor": "attributes",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-linux",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-attribute-insert",
+      "unit": "%",
+      "value": 45.0,
+      "variant": "otc-otlp-attributes"
+    },
+    {
+      "branch": "main",
+      "case": "200k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "otc",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "insert",
+        "processor": "attributes",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-windows",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-attribute-insert",
+      "unit": "%",
+      "value": 47.0,
+      "variant": "otc-otlp-attributes"
+    },
+    {
+      "branch": "main",
+      "case": "100k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "otc",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "insert",
+        "processor": "transform",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-linux",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-attribute-insert",
+      "unit": "%",
+      "value": 37.0,
+      "variant": "otc-otlp-transform"
+    },
+    {
+      "branch": "main",
+      "case": "100k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "otc",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "insert",
+        "processor": "transform",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-windows",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-attribute-insert",
+      "unit": "%",
+      "value": 39.0,
+      "variant": "otc-otlp-transform"
+    },
+    {
+      "branch": "main",
+      "case": "200k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "otc",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "insert",
+        "processor": "transform",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-linux",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-attribute-insert",
+      "unit": "%",
+      "value": 47.0,
+      "variant": "otc-otlp-transform"
+    },
+    {
+      "branch": "main",
+      "case": "200k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "otc",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "insert",
+        "processor": "transform",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-windows",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-attribute-insert",
+      "unit": "%",
+      "value": 49.0,
+      "variant": "otc-otlp-transform"
+    },
+    {
+      "branch": "main",
+      "case": "100k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "baseline",
+        "protocol": "otap",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-linux",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-baseline",
+      "unit": "%",
+      "value": 24.0,
+      "variant": "dfe-otap-none"
+    },
+    {
+      "branch": "main",
+      "case": "100k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "baseline",
+        "protocol": "otap",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-windows",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-baseline",
+      "unit": "%",
+      "value": 26.0,
+      "variant": "dfe-otap-none"
+    },
+    {
+      "branch": "main",
+      "case": "200k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "baseline",
+        "protocol": "otap",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-linux",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-baseline",
+      "unit": "%",
+      "value": 34.0,
+      "variant": "dfe-otap-none"
+    },
+    {
+      "branch": "main",
+      "case": "200k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "baseline",
+        "protocol": "otap",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-windows",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-baseline",
+      "unit": "%",
+      "value": 36.0,
+      "variant": "dfe-otap-none"
+    },
+    {
+      "branch": "main",
+      "case": "100k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "gzip",
+        "load_rate": "100000",
+        "operation": "baseline",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-linux",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-baseline",
+      "unit": "%",
+      "value": 29.0,
+      "variant": "dfe-otlp-gzip"
+    },
+    {
+      "branch": "main",
+      "case": "100k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "gzip",
+        "load_rate": "100000",
+        "operation": "baseline",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-windows",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-baseline",
+      "unit": "%",
+      "value": 31.0,
+      "variant": "dfe-otlp-gzip"
+    },
+    {
+      "branch": "main",
+      "case": "200k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "gzip",
+        "load_rate": "200000",
+        "operation": "baseline",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-linux",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-baseline",
+      "unit": "%",
+      "value": 39.0,
+      "variant": "dfe-otlp-gzip"
+    },
+    {
+      "branch": "main",
+      "case": "200k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "gzip",
+        "load_rate": "200000",
+        "operation": "baseline",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-windows",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-baseline",
+      "unit": "%",
+      "value": 41.0,
+      "variant": "dfe-otlp-gzip"
+    },
+    {
+      "branch": "main",
+      "case": "100k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "baseline",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-linux",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-baseline",
+      "unit": "%",
+      "value": 26.0,
+      "variant": "dfe-otlp-none"
+    },
+    {
+      "branch": "main",
+      "case": "100k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "baseline",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-windows",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-baseline",
+      "unit": "%",
+      "value": 28.0,
+      "variant": "dfe-otlp-none"
+    },
+    {
+      "branch": "main",
+      "case": "200k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "baseline",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-linux",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-baseline",
+      "unit": "%",
+      "value": 36.0,
+      "variant": "dfe-otlp-none"
+    },
+    {
+      "branch": "main",
+      "case": "200k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "baseline",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-windows",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-baseline",
+      "unit": "%",
+      "value": 38.0,
+      "variant": "dfe-otlp-none"
+    },
+    {
+      "branch": "main",
+      "case": "100k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "fbit",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "baseline",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-linux",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-baseline",
+      "unit": "%",
+      "value": 28.0,
+      "variant": "fbit-otlp-none"
+    },
+    {
+      "branch": "main",
+      "case": "100k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "fbit",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "baseline",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-windows",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-baseline",
+      "unit": "%",
+      "value": 30.0,
+      "variant": "fbit-otlp-none"
+    },
+    {
+      "branch": "main",
+      "case": "200k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "fbit",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "baseline",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-linux",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-baseline",
+      "unit": "%",
+      "value": 38.0,
+      "variant": "fbit-otlp-none"
+    },
+    {
+      "branch": "main",
+      "case": "200k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "fbit",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "baseline",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-windows",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-baseline",
+      "unit": "%",
+      "value": 40.0,
+      "variant": "fbit-otlp-none"
+    },
+    {
+      "branch": "main",
+      "case": "100k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "otc",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "baseline",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-linux",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-baseline",
+      "unit": "%",
+      "value": 32.0,
+      "variant": "otc-otlp-none"
+    },
+    {
+      "branch": "main",
+      "case": "100k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "otc",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "baseline",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-windows",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-baseline",
+      "unit": "%",
+      "value": 34.0,
+      "variant": "otc-otlp-none"
+    },
+    {
+      "branch": "main",
+      "case": "200k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "otc",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "baseline",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-linux",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-baseline",
+      "unit": "%",
+      "value": 42.0,
+      "variant": "otc-otlp-none"
+    },
+    {
+      "branch": "main",
+      "case": "200k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "otc",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "baseline",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-windows",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-baseline",
+      "unit": "%",
+      "value": 44.0,
+      "variant": "otc-otlp-none"
+    },
+    {
+      "branch": "main",
+      "case": "100k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "insert",
+        "processor": "attributes",
+        "protocol": "otap",
         "signal": "logs"
       },
       "environment": {
@@ -306,21 +1394,26 @@
       },
       "metric": "logs_received_rate",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-0005-linux",
-      "source_timestamp": "2026-02-02T12:00:00Z",
-      "started_at": "2026-02-02T12:00:00Z",
-      "suite": "logs-baseline",
+      "run_id": "comparison-view-0001-linux",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-attribute-insert",
       "unit": "logs/sec",
-      "value": 198576.0
+      "value": 98700.0,
+      "variant": "dfe-otap-attributes"
     },
     {
       "branch": "main",
-      "case": "200k",
-      "collection_id": "mock-0005",
-      "commit": "0000000000000000000000000000000000000005",
+      "case": "100k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
       "dimensions": {
-        "engine": "dfe",
-        "load_rate": "200000",
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "insert",
+        "processor": "attributes",
+        "protocol": "otap",
         "signal": "logs"
       },
       "environment": {
@@ -330,21 +1423,26 @@
       },
       "metric": "logs_received_rate",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-0005-windows",
-      "source_timestamp": "2026-02-02T12:00:00Z",
-      "started_at": "2026-02-02T12:00:00Z",
-      "suite": "logs-baseline",
+      "run_id": "comparison-view-0001-windows",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-attribute-insert",
       "unit": "logs/sec",
-      "value": 197366.4
+      "value": 98305.2,
+      "variant": "dfe-otap-attributes"
     },
     {
       "branch": "main",
       "case": "200k",
-      "collection_id": "mock-0005",
-      "commit": "0000000000000000000000000000000000000005",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
       "dimensions": {
-        "engine": "otelcol",
+        "binary": "dfe",
+        "compression": "none",
         "load_rate": "200000",
+        "operation": "insert",
+        "processor": "attributes",
+        "protocol": "otap",
         "signal": "logs"
       },
       "environment": {
@@ -354,21 +1452,26 @@
       },
       "metric": "logs_received_rate",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-0005-linux",
-      "source_timestamp": "2026-02-02T12:00:00Z",
-      "started_at": "2026-02-02T12:00:00Z",
-      "suite": "logs-baseline",
+      "run_id": "comparison-view-0001-linux",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-attribute-insert",
       "unit": "logs/sec",
-      "value": 194947.2
+      "value": 197400.0,
+      "variant": "dfe-otap-attributes"
     },
     {
       "branch": "main",
       "case": "200k",
-      "collection_id": "mock-0005",
-      "commit": "0000000000000000000000000000000000000005",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
       "dimensions": {
-        "engine": "otelcol",
+        "binary": "dfe",
+        "compression": "none",
         "load_rate": "200000",
+        "operation": "insert",
+        "processor": "attributes",
+        "protocol": "otap",
         "signal": "logs"
       },
       "environment": {
@@ -378,14 +1481,1271 @@
       },
       "metric": "logs_received_rate",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-0005-windows",
-      "source_timestamp": "2026-02-02T12:00:00Z",
-      "started_at": "2026-02-02T12:00:00Z",
-      "suite": "logs-baseline",
+      "run_id": "comparison-view-0001-windows",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-attribute-insert",
       "unit": "logs/sec",
-      "value": 193737.6
+      "value": 196610.4,
+      "variant": "dfe-otap-attributes"
+    },
+    {
+      "branch": "main",
+      "case": "100k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "insert",
+        "processor": "transform",
+        "protocol": "otap",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "metric": "logs_received_rate",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-linux",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-attribute-insert",
+      "unit": "logs/sec",
+      "value": 98400.0,
+      "variant": "dfe-otap-transform"
+    },
+    {
+      "branch": "main",
+      "case": "100k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "insert",
+        "processor": "transform",
+        "protocol": "otap",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "metric": "logs_received_rate",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-windows",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-attribute-insert",
+      "unit": "logs/sec",
+      "value": 98006.4,
+      "variant": "dfe-otap-transform"
+    },
+    {
+      "branch": "main",
+      "case": "200k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "insert",
+        "processor": "transform",
+        "protocol": "otap",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "metric": "logs_received_rate",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-linux",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-attribute-insert",
+      "unit": "logs/sec",
+      "value": 196800.0,
+      "variant": "dfe-otap-transform"
+    },
+    {
+      "branch": "main",
+      "case": "200k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "insert",
+        "processor": "transform",
+        "protocol": "otap",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "metric": "logs_received_rate",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-windows",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-attribute-insert",
+      "unit": "logs/sec",
+      "value": 196012.8,
+      "variant": "dfe-otap-transform"
+    },
+    {
+      "branch": "main",
+      "case": "100k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "insert",
+        "processor": "attributes",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "metric": "logs_received_rate",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-linux",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-attribute-insert",
+      "unit": "logs/sec",
+      "value": 98000.0,
+      "variant": "dfe-otlp-attributes"
+    },
+    {
+      "branch": "main",
+      "case": "100k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "insert",
+        "processor": "attributes",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "metric": "logs_received_rate",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-windows",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-attribute-insert",
+      "unit": "logs/sec",
+      "value": 97608.0,
+      "variant": "dfe-otlp-attributes"
+    },
+    {
+      "branch": "main",
+      "case": "200k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "insert",
+        "processor": "attributes",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "metric": "logs_received_rate",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-linux",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-attribute-insert",
+      "unit": "logs/sec",
+      "value": 196000.0,
+      "variant": "dfe-otlp-attributes"
+    },
+    {
+      "branch": "main",
+      "case": "200k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "insert",
+        "processor": "attributes",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "metric": "logs_received_rate",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-windows",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-attribute-insert",
+      "unit": "logs/sec",
+      "value": 195216.0,
+      "variant": "dfe-otlp-attributes"
+    },
+    {
+      "branch": "main",
+      "case": "100k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "insert",
+        "processor": "transform",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "metric": "logs_received_rate",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-linux",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-attribute-insert",
+      "unit": "logs/sec",
+      "value": 97700.0,
+      "variant": "dfe-otlp-transform"
+    },
+    {
+      "branch": "main",
+      "case": "100k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "insert",
+        "processor": "transform",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "metric": "logs_received_rate",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-windows",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-attribute-insert",
+      "unit": "logs/sec",
+      "value": 97309.2,
+      "variant": "dfe-otlp-transform"
+    },
+    {
+      "branch": "main",
+      "case": "200k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "insert",
+        "processor": "transform",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "metric": "logs_received_rate",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-linux",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-attribute-insert",
+      "unit": "logs/sec",
+      "value": 195400.0,
+      "variant": "dfe-otlp-transform"
+    },
+    {
+      "branch": "main",
+      "case": "200k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "insert",
+        "processor": "transform",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "metric": "logs_received_rate",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-windows",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-attribute-insert",
+      "unit": "logs/sec",
+      "value": 194618.4,
+      "variant": "dfe-otlp-transform"
+    },
+    {
+      "branch": "main",
+      "case": "100k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "fbit",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "insert",
+        "processor": "modify",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "metric": "logs_received_rate",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-linux",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-attribute-insert",
+      "unit": "logs/sec",
+      "value": 97200.0,
+      "variant": "fbit-otlp-modify"
+    },
+    {
+      "branch": "main",
+      "case": "100k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "fbit",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "insert",
+        "processor": "modify",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "metric": "logs_received_rate",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-windows",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-attribute-insert",
+      "unit": "logs/sec",
+      "value": 96811.2,
+      "variant": "fbit-otlp-modify"
+    },
+    {
+      "branch": "main",
+      "case": "200k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "fbit",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "insert",
+        "processor": "modify",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "metric": "logs_received_rate",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-linux",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-attribute-insert",
+      "unit": "logs/sec",
+      "value": 194400.0,
+      "variant": "fbit-otlp-modify"
+    },
+    {
+      "branch": "main",
+      "case": "200k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "fbit",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "insert",
+        "processor": "modify",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "metric": "logs_received_rate",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-windows",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-attribute-insert",
+      "unit": "logs/sec",
+      "value": 193622.4,
+      "variant": "fbit-otlp-modify"
+    },
+    {
+      "branch": "main",
+      "case": "100k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "otc",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "insert",
+        "processor": "attributes",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "metric": "logs_received_rate",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-linux",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-attribute-insert",
+      "unit": "logs/sec",
+      "value": 96000.0,
+      "variant": "otc-otlp-attributes"
+    },
+    {
+      "branch": "main",
+      "case": "100k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "otc",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "insert",
+        "processor": "attributes",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "metric": "logs_received_rate",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-windows",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-attribute-insert",
+      "unit": "logs/sec",
+      "value": 95616.0,
+      "variant": "otc-otlp-attributes"
+    },
+    {
+      "branch": "main",
+      "case": "200k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "otc",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "insert",
+        "processor": "attributes",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "metric": "logs_received_rate",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-linux",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-attribute-insert",
+      "unit": "logs/sec",
+      "value": 192000.0,
+      "variant": "otc-otlp-attributes"
+    },
+    {
+      "branch": "main",
+      "case": "200k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "otc",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "insert",
+        "processor": "attributes",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "metric": "logs_received_rate",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-windows",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-attribute-insert",
+      "unit": "logs/sec",
+      "value": 191232.0,
+      "variant": "otc-otlp-attributes"
+    },
+    {
+      "branch": "main",
+      "case": "100k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "otc",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "insert",
+        "processor": "transform",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "metric": "logs_received_rate",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-linux",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-attribute-insert",
+      "unit": "logs/sec",
+      "value": 95500.0,
+      "variant": "otc-otlp-transform"
+    },
+    {
+      "branch": "main",
+      "case": "100k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "otc",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "insert",
+        "processor": "transform",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "metric": "logs_received_rate",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-windows",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-attribute-insert",
+      "unit": "logs/sec",
+      "value": 95118.0,
+      "variant": "otc-otlp-transform"
+    },
+    {
+      "branch": "main",
+      "case": "200k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "otc",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "insert",
+        "processor": "transform",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "metric": "logs_received_rate",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-linux",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-attribute-insert",
+      "unit": "logs/sec",
+      "value": 191000.0,
+      "variant": "otc-otlp-transform"
+    },
+    {
+      "branch": "main",
+      "case": "200k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "otc",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "insert",
+        "processor": "transform",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "metric": "logs_received_rate",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-windows",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-attribute-insert",
+      "unit": "logs/sec",
+      "value": 190236.0,
+      "variant": "otc-otlp-transform"
+    },
+    {
+      "branch": "main",
+      "case": "100k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "baseline",
+        "protocol": "otap",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "metric": "logs_received_rate",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-linux",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-baseline",
+      "unit": "logs/sec",
+      "value": 99200.0,
+      "variant": "dfe-otap-none"
+    },
+    {
+      "branch": "main",
+      "case": "100k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "baseline",
+        "protocol": "otap",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "metric": "logs_received_rate",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-windows",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-baseline",
+      "unit": "logs/sec",
+      "value": 98803.2,
+      "variant": "dfe-otap-none"
+    },
+    {
+      "branch": "main",
+      "case": "200k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "baseline",
+        "protocol": "otap",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "metric": "logs_received_rate",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-linux",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-baseline",
+      "unit": "logs/sec",
+      "value": 198400.0,
+      "variant": "dfe-otap-none"
+    },
+    {
+      "branch": "main",
+      "case": "200k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "baseline",
+        "protocol": "otap",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "metric": "logs_received_rate",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-windows",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-baseline",
+      "unit": "logs/sec",
+      "value": 197606.4,
+      "variant": "dfe-otap-none"
+    },
+    {
+      "branch": "main",
+      "case": "100k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "gzip",
+        "load_rate": "100000",
+        "operation": "baseline",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "metric": "logs_received_rate",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-linux",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-baseline",
+      "unit": "logs/sec",
+      "value": 97500.0,
+      "variant": "dfe-otlp-gzip"
+    },
+    {
+      "branch": "main",
+      "case": "100k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "gzip",
+        "load_rate": "100000",
+        "operation": "baseline",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "metric": "logs_received_rate",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-windows",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-baseline",
+      "unit": "logs/sec",
+      "value": 97110.0,
+      "variant": "dfe-otlp-gzip"
+    },
+    {
+      "branch": "main",
+      "case": "200k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "gzip",
+        "load_rate": "200000",
+        "operation": "baseline",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "metric": "logs_received_rate",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-linux",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-baseline",
+      "unit": "logs/sec",
+      "value": 195000.0,
+      "variant": "dfe-otlp-gzip"
+    },
+    {
+      "branch": "main",
+      "case": "200k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "gzip",
+        "load_rate": "200000",
+        "operation": "baseline",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "metric": "logs_received_rate",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-windows",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-baseline",
+      "unit": "logs/sec",
+      "value": 194220.0,
+      "variant": "dfe-otlp-gzip"
+    },
+    {
+      "branch": "main",
+      "case": "100k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "baseline",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "metric": "logs_received_rate",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-linux",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-baseline",
+      "unit": "logs/sec",
+      "value": 98500.0,
+      "variant": "dfe-otlp-none"
+    },
+    {
+      "branch": "main",
+      "case": "100k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "baseline",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "metric": "logs_received_rate",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-windows",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-baseline",
+      "unit": "logs/sec",
+      "value": 98106.0,
+      "variant": "dfe-otlp-none"
+    },
+    {
+      "branch": "main",
+      "case": "200k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "baseline",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "metric": "logs_received_rate",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-linux",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-baseline",
+      "unit": "logs/sec",
+      "value": 197000.0,
+      "variant": "dfe-otlp-none"
+    },
+    {
+      "branch": "main",
+      "case": "200k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "baseline",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "metric": "logs_received_rate",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-windows",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-baseline",
+      "unit": "logs/sec",
+      "value": 196212.0,
+      "variant": "dfe-otlp-none"
+    },
+    {
+      "branch": "main",
+      "case": "100k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "fbit",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "baseline",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "metric": "logs_received_rate",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-linux",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-baseline",
+      "unit": "logs/sec",
+      "value": 98000.0,
+      "variant": "fbit-otlp-none"
+    },
+    {
+      "branch": "main",
+      "case": "100k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "fbit",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "baseline",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "metric": "logs_received_rate",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-windows",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-baseline",
+      "unit": "logs/sec",
+      "value": 97608.0,
+      "variant": "fbit-otlp-none"
+    },
+    {
+      "branch": "main",
+      "case": "200k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "fbit",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "baseline",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "metric": "logs_received_rate",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-linux",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-baseline",
+      "unit": "logs/sec",
+      "value": 196000.0,
+      "variant": "fbit-otlp-none"
+    },
+    {
+      "branch": "main",
+      "case": "200k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "fbit",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "baseline",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "metric": "logs_received_rate",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-windows",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-baseline",
+      "unit": "logs/sec",
+      "value": 195216.0,
+      "variant": "fbit-otlp-none"
+    },
+    {
+      "branch": "main",
+      "case": "100k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "otc",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "baseline",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "metric": "logs_received_rate",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-linux",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-baseline",
+      "unit": "logs/sec",
+      "value": 96500.0,
+      "variant": "otc-otlp-none"
+    },
+    {
+      "branch": "main",
+      "case": "100k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "otc",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "baseline",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "metric": "logs_received_rate",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-windows",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-baseline",
+      "unit": "logs/sec",
+      "value": 96114.0,
+      "variant": "otc-otlp-none"
+    },
+    {
+      "branch": "main",
+      "case": "200k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "otc",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "baseline",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "metric": "logs_received_rate",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-linux",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-baseline",
+      "unit": "logs/sec",
+      "value": 193000.0,
+      "variant": "otc-otlp-none"
+    },
+    {
+      "branch": "main",
+      "case": "200k",
+      "collection_id": "comparison-view-0001",
+      "commit": "dc0a8cc81ab60b7a9879b543e6106bb4ec1dc638",
+      "dimensions": {
+        "binary": "otc",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "baseline",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "metric": "logs_received_rate",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "comparison-view-0001-windows",
+      "source_timestamp": "2026-03-02T12:00:00Z",
+      "started_at": "2026-03-02T12:00:00Z",
+      "suite": "log-baseline",
+      "unit": "logs/sec",
+      "value": 192228.0,
+      "variant": "otc-otlp-none"
     }
   ],
   "schema_version": 1,
-  "started_at": "2026-02-02T12:00:00Z"
+  "started_at": "2026-03-02T12:00:00Z"
 }
