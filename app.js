@@ -104,7 +104,7 @@ function renderSparkline(points) {
   const polyline = coordinates.map(({ x, y }) => `${x},${y}`).join(" ");
   const circles = coordinates.map(({ x, y, point }) => `
     <circle cx="${x}" cy="${y}" r="4">
-      <title>${escapeHtml(point.commit.slice(0, 8))}: ${formatValue(point.value)}</title>
+      <title>${escapeHtml(point.commit.slice(-8))}: ${formatValue(point.value)}</title>
     </circle>
   `).join("");
   return `
@@ -114,9 +114,9 @@ function renderSparkline(points) {
       ${circles}
     </svg>
     <div class="range">
-      <span>${escapeHtml(points[0].commit.slice(0, 8))}</span>
+      <span>${escapeHtml(points[0].commit.slice(-8))}</span>
       <span>${formatValue(minimum)} - ${formatValue(maximum)}</span>
-      <span>${escapeHtml(points.at(-1).commit.slice(0, 8))}</span>
+      <span>${escapeHtml(points.at(-1).commit.slice(-8))}</span>
     </div>
   `;
 }
