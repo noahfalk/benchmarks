@@ -122,24 +122,171 @@ function environmentLabel(environment) {
   ].filter(Boolean).join(" / ");
 }
 
-function dimensionChips(dimensions) {
-  return Object.entries(dimensions)
-    .map(([key, value]) => `
-      <span class="dimension">${escapeHtml(key)}=${escapeHtml(value)}</span>
-    `)
-    .join("");
+const FILTER_MISSING = "__benchmark_dimension_not_set__";
+const CHART_COLORS = [
+  "#2563eb",
+  "#0f766e",
+  "#d97706",
+  "#7c3aed",
+  "#dc2626",
+  "#0891b2",
+  "#65a30d",
+  "#db2777",
+  "#475569",
+  "#9333ea",
+  "#ea580c",
+  "#059669",
+];
+
+let activeCharts = [];
+
+function titleCase(value) {
+  return value
+    .replaceAll("_", " ")
+    .replace(/\b\w/g, (letter) => letter.toUpperCase());
 }
 
-function renderMetricTable(comparison, metric, selected, observations) {
-  const selectedKeys = new Set(
+function selectedObservationKeys(selected) {
+  return new Set(
     selected.map(
       ({ suite, variant }) => `${suite.id}\u0000${variant.id}`,
     ),
   );
-  const metricObservations = observations.filter(
+}
+
+function comparisonObservations(comparison, selected, observations) {
+  const identities = selectedObservationKeys(selected);
+  const cases = new Set(comparison.cases.map((item) => item.id));
+  const metrics = new Set(comparison.metrics.map((item) => item.id));
+  return observations.filter(
     (observation) =>
-      observation.metric === metric.id &&
-      selectedKeys.has(`${observation.suite}\u0000${observation.variant}`),
+      identities.has(`${observation.suite}\u0000${observation.variant}`) &&
+      cases.has(observation.case) &&
+      metrics.has(observation.metric),
+  );
+}
+
+function collectDimensionCategories(observations) {
+  const keys = new Set();
+  for (const observation of observations) {
+    for (const key of Object.keys(observation.dimensions)) {
+      keys.add(key);
+    }
+  }
+  const categories = new Map();
+  for (const key of [...keys].sort()) {
+    const values = new Set();
+    for (const observation of observations) {
+      values.add(observation.dimensions[key] ?? FILTER_MISSING);
+    }
+    categories.set(
+      key,
+      [...values].sort((left, right) => {
+        if (left === FILTER_MISSING) return 1;
+        if (right === FILTER_MISSING) return -1;
+        return left.localeCompare(right, undefined, { numeric: true });
+      }),
+    );
+  }
+  return categories;
+}
+
+function initialFilterState(categories) {
+  return new Map(
+    [...categories].map(([key, values]) => [key, new Set(values)]),
+  );
+}
+
+function displayFilterValue(value) {
+  return value === FILTER_MISSING ? "Not set" : value;
+}
+
+function observationMatchesFilters(observation, filterState) {
+  for (const [key, selectedValues] of filterState) {
+    const value = observation.dimensions[key] ?? FILTER_MISSING;
+    if (!selectedValues.has(value)) {
+      return false;
+    }
+  }
+  return true;
+}
+
+function renderFilters(categories, filterState) {
+  const groups = [...categories].map(([key, values]) => {
+    const options = values.map((value, index) => {
+      const id = `filter-${key}-${index}`;
+      return `
+        <label class="filter-option" for="${escapeHtml(id)}">
+          <input id="${escapeHtml(id)}"
+                 type="checkbox"
+                 data-dimension="${escapeHtml(key)}"
+                 value="${escapeHtml(value)}"
+                 ${filterState.get(key).has(value) ? "checked" : ""}>
+          <span>${escapeHtml(displayFilterValue(value))}</span>
+        </label>
+      `;
+    }).join("");
+    return `
+      <fieldset class="filter-group">
+        <legend>${escapeHtml(titleCase(key))}</legend>
+        ${options}
+      </fieldset>
+    `;
+  }).join("");
+  return `
+    <div class="filter-heading">
+      <h2>Filters</h2>
+      <button class="filter-reset" type="button">Reset</button>
+    </div>
+    ${groups}
+    <div id="filter-summary" class="filter-summary"></div>
+  `;
+}
+
+function chartValueLabelsPlugin() {
+  return {
+    id: "benchmarkValueLabels",
+    afterDatasetsDraw(chart) {
+      if (chart.data.datasets.length > 8) {
+        return;
+      }
+      const { ctx } = chart;
+      const styles = getComputedStyle(document.documentElement);
+      ctx.save();
+      ctx.fillStyle = styles.getPropertyValue("--muted").trim();
+      ctx.font = '10px "Segoe UI", sans-serif';
+      ctx.textAlign = "center";
+      ctx.textBaseline = "bottom";
+      for (let datasetIndex = 0;
+        datasetIndex < chart.data.datasets.length;
+        datasetIndex += 1) {
+        const dataset = chart.data.datasets[datasetIndex];
+        const metadata = chart.getDatasetMeta(datasetIndex);
+        if (metadata.hidden) {
+          continue;
+        }
+        for (let index = 0; index < metadata.data.length; index += 1) {
+          const value = dataset.data[index];
+          if (value === null || value === undefined) {
+            continue;
+          }
+          const bar = metadata.data[index];
+          ctx.fillText(formatValue(value), bar.x, bar.y - 4);
+        }
+      }
+      ctx.restore();
+    },
+  };
+}
+
+function buildMetricChart(
+  comparison,
+  metric,
+  selected,
+  observations,
+) {
+  const metricObservations = observations.filter(
+    (observation) => observation.metric === metric.id,
   );
   const units = new Set(metricObservations.map((item) => item.unit));
   if (units.size !== 1) {
@@ -148,16 +295,39 @@ function renderMetricTable(comparison, metric, selected, observations) {
     );
   }
   const unit = [...units][0];
-  const cases = comparison.cases;
-  const byValue = new Map();
   const environments = new Map();
   for (const observation of metricObservations) {
-    const envKey = environmentKey(observation.environment);
-    environments.set(envKey, observation.environment);
+    environments.set(
+      environmentKey(observation.environment),
+      observation.environment,
+    );
+  }
+  const environmentEntries = [...environments.entries()].sort(
+    ([left], [right]) => left.localeCompare(right),
+  );
+  const groups = [];
+  for (const testCase of comparison.cases) {
+    for (const [key, environment] of environmentEntries) {
+      if (metricObservations.some(
+        (observation) =>
+          observation.case === testCase.id &&
+          environmentKey(observation.environment) === key,
+      )) {
+        groups.push({
+          caseId: testCase.id,
+          label: [testCase.label, environmentLabel(environment)],
+          environmentKey: key,
+        });
+      }
+    }
+  }
+
+  const byValue = new Map();
+  for (const observation of metricObservations) {
     const key = [
       observation.suite,
       observation.variant,
-      envKey,
+      environmentKey(observation.environment),
       observation.case,
     ].join("\u0000");
     if (byValue.has(key)) {
@@ -168,79 +338,147 @@ function renderMetricTable(comparison, metric, selected, observations) {
     }
     byValue.set(key, observation.value);
   }
-  const environmentEntries = [...environments.entries()].sort(
-    ([left], [right]) => left.localeCompare(right),
-  );
-  const values = [...byValue.values()];
-  const maximum = Math.max(...values, 1);
-  const rows = [];
-  for (const item of selected) {
-    for (const [envKey, environment] of environmentEntries) {
-      const caseValues = cases.map((testCase) => {
-        const key = [
-          item.suite.id,
-          item.variant.id,
-          envKey,
-          testCase.id,
-        ].join("\u0000");
-        return byValue.get(key);
-      });
-      if (caseValues.every((value) => value === undefined)) {
-        continue;
-      }
-      const cells = caseValues.map((value) => {
-        if (value === undefined) {
-          return '<td class="missing">Missing</td>';
-        }
-        return `
-          <td class="value-cell">
-            <div class="cell-bar" style="width:${(value / maximum) * 100}%"></div>
-            <span>${formatValue(value)}</span>
-          </td>
-        `;
-      }).join("");
-      rows.push(`
-        <tr class="variant-row"
-            data-suite="${escapeHtml(item.suite.id)}"
-            data-variant="${escapeHtml(item.variant.id)}">
-          <th scope="row">
-            <div class="variant-title">
-              ${escapeHtml(item.variant.name)}
-              <span class="role">${escapeHtml(item.role)}</span>
-            </div>
-            <div class="meta">${escapeHtml(environmentLabel(environment))}</div>
-            <div class="dimensions">${dimensionChips(item.variant.dimensions)}</div>
-          </th>
-          ${cells}
-        </tr>
-      `);
+
+  const datasets = [];
+  for (const [index, item] of selected.entries()) {
+    const data = groups.map((group) => byValue.get([
+      item.suite.id,
+      item.variant.id,
+      group.environmentKey,
+      group.caseId,
+    ].join("\u0000")) ?? null);
+    if (data.every((value) => value === null)) {
+      continue;
     }
+    const color = CHART_COLORS[index % CHART_COLORS.length];
+    datasets.push({
+      label: item.variant.name,
+      data,
+      backgroundColor: color,
+      borderColor: color,
+      borderWidth: 1,
+      borderRadius: 4,
+      borderSkipped: "bottom",
+    });
   }
-  const caseHeaders = cases
-    .map((testCase) => `<th scope="col">${escapeHtml(testCase.label)}</th>`)
-    .join("");
-  return `
-    <article class="card metric-card" data-metric="${escapeHtml(metric.id)}">
-      <div class="card-heading">
+  return { unit, labels: groups.map((group) => group.label), datasets };
+}
+
+function chartOptions(unit) {
+  const styles = getComputedStyle(document.documentElement);
+  const text = styles.getPropertyValue("--text").trim();
+  const muted = styles.getPropertyValue("--muted").trim();
+  const line = styles.getPropertyValue("--line").trim();
+  return {
+    responsive: true,
+    maintainAspectRatio: false,
+    animation: false,
+    layout: { padding: { top: 24 } },
+    datasets: {
+      bar: { categoryPercentage: 0.84, barPercentage: 0.9 },
+    },
+    scales: {
+      x: {
+        grid: { display: false },
+        border: { display: false },
+        ticks: { color: muted, font: { size: 11, weight: "600" } },
+      },
+      y: {
+        beginAtZero: true,
+        border: { color: line },
+        grid: { color: line },
+        ticks: {
+          color: muted,
+          maxTicksLimit: 6,
+          callback: (value) => formatValue(value),
+        },
+        title: {
+          display: true,
+          text: unit,
+          color: muted,
+          font: { size: 12, weight: "600" },
+        },
+      },
+    },
+    plugins: {
+      legend: {
+        position: "bottom",
+        labels: {
+          boxWidth: 11,
+          boxHeight: 11,
+          padding: 16,
+          color: text,
+          font: { size: 12 },
+        },
+      },
+      tooltip: {
+        callbacks: {
+          label: (context) =>
+            `${context.dataset.label}: ${formatValue(context.parsed.y)} ${unit}`,
+        },
+      },
+    },
+  };
+}
+
+function renderMetricCharts(
+  comparison,
+  selected,
+  observations,
+  target,
+) {
+  for (const chart of activeCharts) {
+    chart.destroy();
+  }
+  activeCharts = [];
+  if (!observations.length) {
+    target.innerHTML = `
+      <div class="empty-state">No measurements match the selected filters.</div>
+    `;
+    return;
+  }
+  target.innerHTML = comparison.metrics.map((metric) => `
+    <article class="card chart-card" data-metric="${escapeHtml(metric.id)}">
+      <div class="chart-heading">
         <div>
           <h2>${escapeHtml(metric.label)}</h2>
           <div class="meta">${escapeHtml(metric.id)}</div>
         </div>
-        <span class="unit">${escapeHtml(unit)}</span>
       </div>
-      <div class="table-scroll">
-        <table>
-          <thead>
-            <tr>
-              <th scope="col">Variant and environment</th>
-              ${caseHeaders}
-            </tr>
-          </thead>
-          <tbody>${rows.join("")}</tbody>
-        </table>
+      <div class="chart-wrapper">
+        <canvas aria-label="${escapeHtml(metric.label)} grouped column chart"
+                role="img"></canvas>
       </div>
     </article>
-  `;
+  `).join("");
+
+  if (typeof Chart === "undefined") {
+    throw new Error("Chart.js did not load");
+  }
+  for (const metric of comparison.metrics) {
+    const card = target.querySelector(
+      `[data-metric="${CSS.escape(metric.id)}"]`,
+    );
+    const chartData = buildMetricChart(
+      comparison,
+      metric,
+      selected,
+      observations,
+    );
+    card.querySelector(".chart-heading").insertAdjacentHTML(
+      "beforeend",
+      `<span class="unit">${escapeHtml(chartData.unit)}</span>`,
+    );
+    activeCharts.push(new Chart(card.querySelector("canvas"), {
+      type: "bar",
+      data: {
+        labels: chartData.labels,
+        datasets: chartData.datasets,
+      },
+      options: chartOptions(chartData.unit),
+      plugins: [chartValueLabelsPlugin()],
+    }));
+  }
 }
 
 function renderComparisonPage(catalog, latest, views, suites, comparisons) {
@@ -250,21 +488,13 @@ function renderComparisonPage(catalog, latest, views, suites, comparisons) {
     throw new Error(`Unknown comparison ${comparisonId}`);
   }
   const selected = selectedVariants(comparison, suites);
-  const selectedIdentities = new Set(
-    selected.map(
-      ({ suite, variant }) => `${suite.id}\u0000${variant.id}`,
-    ),
+  const observations = comparisonObservations(
+    comparison,
+    selected,
+    latest.observations,
   );
-  const selectedCases = new Set(comparison.cases.map((item) => item.id));
-  const selectedMetrics = new Set(comparison.metrics.map((item) => item.id));
-  const selectedObservationCount = latest.observations.filter(
-    (observation) =>
-      selectedIdentities.has(
-        `${observation.suite}\u0000${observation.variant}`,
-      ) &&
-      selectedCases.has(observation.case) &&
-      selectedMetrics.has(observation.metric),
-  ).length;
+  const categories = collectDimensionCategories(observations);
+  const filterState = initialFilterState(categories);
   document.title = `${comparison.name} - OTel Arrow Benchmarks`;
   document.getElementById("page-title").textContent = comparison.name;
   document.getElementById("summary").textContent =
@@ -295,29 +525,64 @@ function renderComparisonPage(catalog, latest, views, suites, comparisons) {
       </div>
     `;
   }).join("");
-  const metricCards = comparison.metrics
-    .map((metric) =>
-      renderMetricTable(
-        comparison,
-        metric,
-        selected,
-        latest.observations,
-      ),
-    )
-    .join("");
 
   document.getElementById("app").innerHTML = `
     <section class="comparison-intro">
       <p>${escapeHtml(comparison.description)}</p>
       <div class="source-grid">${sourceSections}</div>
     </section>
-    <section class="metric-grid">${metricCards}</section>
-    <p class="provenance">
-      Showing ${selectedObservationCount} selected observations from
-      ${escapeHtml(latest.collection_id)}
-      (${latest.observations.length} observations available).
-    </p>
+    <div class="comparison-workspace">
+      <aside id="filters" class="filter-panel" aria-label="Measurement filters">
+        ${renderFilters(categories, filterState)}
+      </aside>
+      <section>
+        <div id="charts" class="chart-grid"></div>
+        <p id="provenance" class="provenance"></p>
+      </section>
+    </div>
   `;
+
+  const charts = document.getElementById("charts");
+  const filterSummary = document.getElementById("filter-summary");
+  const provenance = document.getElementById("provenance");
+  const render = () => {
+    const filtered = observations.filter(
+      (observation) => observationMatchesFilters(observation, filterState),
+    );
+    renderMetricCharts(comparison, selected, filtered, charts);
+    filterSummary.textContent =
+      `${filtered.length.toLocaleString()} of ` +
+      `${observations.length.toLocaleString()} measurements`;
+    provenance.textContent =
+      `Showing ${filtered.length} selected observations from ` +
+      `${latest.collection_id} ` +
+      `(${latest.observations.length} observations available).`;
+  };
+  for (const checkbox of document.querySelectorAll(
+    "#filters input[data-dimension]",
+  )) {
+    checkbox.addEventListener("change", () => {
+      const values = filterState.get(checkbox.dataset.dimension);
+      if (checkbox.checked) {
+        values.add(checkbox.value);
+      } else {
+        values.delete(checkbox.value);
+      }
+      render();
+    });
+  }
+  document.querySelector(".filter-reset").addEventListener("click", () => {
+    for (const [key, values] of categories) {
+      filterState.set(key, new Set(values));
+    }
+    for (const checkbox of document.querySelectorAll(
+      "#filters input[data-dimension]",
+    )) {
+      checkbox.checked = true;
+    }
+    render();
+  });
+  render();
 }
 
 async function load() {
