@@ -1,8 +1,8 @@
 {
-  "collection_count": 4,
-  "latest_collection_id": "mock-0004",
-  "measurement_count": 64,
-  "run_count": 8,
+  "collection_count": 5,
+  "latest_collection_id": "mock-0005",
+  "measurement_count": 80,
+  "run_count": 10,
   "runs": [
     {
       "architecture": "amd64",
@@ -83,6 +83,26 @@
       "os": "windows",
       "path": "runs/2026/01/mock-0004-windows.json",
       "started_at": "2026-01-26T12:00:00Z"
+    },
+    {
+      "architecture": "amd64",
+      "collection_id": "mock-0005",
+      "commit": "0000000000000000000000000000000000000005",
+      "digest": "a5643acc6573958165fcfb64e46978ff805e8630502e899573cb178768cb4c96",
+      "id": "mock-0005-linux",
+      "os": "linux",
+      "path": "runs/2026/02/mock-0005-linux.json",
+      "started_at": "2026-02-02T12:00:00Z"
+    },
+    {
+      "architecture": "amd64",
+      "collection_id": "mock-0005",
+      "commit": "0000000000000000000000000000000000000005",
+      "digest": "f01a9debac64d72b68d684d0be437db4022af04f0b1fc5c0cb5e5cc3c707f6ef",
+      "id": "mock-0005-windows",
+      "os": "windows",
+      "path": "runs/2026/02/mock-0005-windows.json",
+      "started_at": "2026-02-02T12:00:00Z"
     }
   ],
   "schema_version": 1

@@ -71,7 +71,7 @@ function renderComparison(latest) {
     `);
   }
   target.innerHTML = `
-    <p>Latest compatible collection: <strong>${escapeHtml(latest.collection_id)}</strong></p>
+    <p>Latest collection: <strong>${escapeHtml(latest.collection_id)}</strong></p>
     <div class="grid">${cards.join("")}</div>
   `;
 }
