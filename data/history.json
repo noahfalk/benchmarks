@@ -1,0 +1,741 @@
+{
+  "schema_version": 1,
+  "series": [
+    {
+      "case": "100k",
+      "dimensions": {
+        "engine": "dfe",
+        "load_rate": "100000",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "points": [
+        {
+          "collection_id": "mock-0001",
+          "commit": "0000000000000000000000000000000000000001",
+          "run_id": "mock-0001-linux",
+          "timestamp": "2026-01-05T12:00:00Z",
+          "value": 29.0
+        },
+        {
+          "collection_id": "mock-0002",
+          "commit": "0000000000000000000000000000000000000002",
+          "run_id": "mock-0002-linux",
+          "timestamp": "2026-01-12T12:00:00Z",
+          "value": 28.3
+        },
+        {
+          "collection_id": "mock-0003",
+          "commit": "0000000000000000000000000000000000000003",
+          "run_id": "mock-0003-linux",
+          "timestamp": "2026-01-19T12:00:00Z",
+          "value": 27.6
+        },
+        {
+          "collection_id": "mock-0004",
+          "commit": "0000000000000000000000000000000000000004",
+          "run_id": "mock-0004-linux",
+          "timestamp": "2026-01-26T12:00:00Z",
+          "value": 26.9
+        }
+      ],
+      "suite": "logs-baseline",
+      "unit": "%"
+    },
+    {
+      "case": "100k",
+      "dimensions": {
+        "engine": "dfe",
+        "load_rate": "100000",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "points": [
+        {
+          "collection_id": "mock-0001",
+          "commit": "0000000000000000000000000000000000000001",
+          "run_id": "mock-0001-windows",
+          "timestamp": "2026-01-05T12:00:00Z",
+          "value": 31.0
+        },
+        {
+          "collection_id": "mock-0002",
+          "commit": "0000000000000000000000000000000000000002",
+          "run_id": "mock-0002-windows",
+          "timestamp": "2026-01-12T12:00:00Z",
+          "value": 30.3
+        },
+        {
+          "collection_id": "mock-0003",
+          "commit": "0000000000000000000000000000000000000003",
+          "run_id": "mock-0003-windows",
+          "timestamp": "2026-01-19T12:00:00Z",
+          "value": 29.6
+        },
+        {
+          "collection_id": "mock-0004",
+          "commit": "0000000000000000000000000000000000000004",
+          "run_id": "mock-0004-windows",
+          "timestamp": "2026-01-26T12:00:00Z",
+          "value": 28.9
+        }
+      ],
+      "suite": "logs-baseline",
+      "unit": "%"
+    },
+    {
+      "case": "100k",
+      "dimensions": {
+        "engine": "otelcol",
+        "load_rate": "100000",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "points": [
+        {
+          "collection_id": "mock-0001",
+          "commit": "0000000000000000000000000000000000000001",
+          "run_id": "mock-0001-linux",
+          "timestamp": "2026-01-05T12:00:00Z",
+          "value": 35.0
+        },
+        {
+          "collection_id": "mock-0002",
+          "commit": "0000000000000000000000000000000000000002",
+          "run_id": "mock-0002-linux",
+          "timestamp": "2026-01-12T12:00:00Z",
+          "value": 34.3
+        },
+        {
+          "collection_id": "mock-0003",
+          "commit": "0000000000000000000000000000000000000003",
+          "run_id": "mock-0003-linux",
+          "timestamp": "2026-01-19T12:00:00Z",
+          "value": 33.6
+        },
+        {
+          "collection_id": "mock-0004",
+          "commit": "0000000000000000000000000000000000000004",
+          "run_id": "mock-0004-linux",
+          "timestamp": "2026-01-26T12:00:00Z",
+          "value": 32.9
+        }
+      ],
+      "suite": "logs-baseline",
+      "unit": "%"
+    },
+    {
+      "case": "100k",
+      "dimensions": {
+        "engine": "otelcol",
+        "load_rate": "100000",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "points": [
+        {
+          "collection_id": "mock-0001",
+          "commit": "0000000000000000000000000000000000000001",
+          "run_id": "mock-0001-windows",
+          "timestamp": "2026-01-05T12:00:00Z",
+          "value": 37.0
+        },
+        {
+          "collection_id": "mock-0002",
+          "commit": "0000000000000000000000000000000000000002",
+          "run_id": "mock-0002-windows",
+          "timestamp": "2026-01-12T12:00:00Z",
+          "value": 36.3
+        },
+        {
+          "collection_id": "mock-0003",
+          "commit": "0000000000000000000000000000000000000003",
+          "run_id": "mock-0003-windows",
+          "timestamp": "2026-01-19T12:00:00Z",
+          "value": 35.6
+        },
+        {
+          "collection_id": "mock-0004",
+          "commit": "0000000000000000000000000000000000000004",
+          "run_id": "mock-0004-windows",
+          "timestamp": "2026-01-26T12:00:00Z",
+          "value": 34.9
+        }
+      ],
+      "suite": "logs-baseline",
+      "unit": "%"
+    },
+    {
+      "case": "200k",
+      "dimensions": {
+        "engine": "dfe",
+        "load_rate": "200000",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "points": [
+        {
+          "collection_id": "mock-0001",
+          "commit": "0000000000000000000000000000000000000001",
+          "run_id": "mock-0001-linux",
+          "timestamp": "2026-01-05T12:00:00Z",
+          "value": 40.0
+        },
+        {
+          "collection_id": "mock-0002",
+          "commit": "0000000000000000000000000000000000000002",
+          "run_id": "mock-0002-linux",
+          "timestamp": "2026-01-12T12:00:00Z",
+          "value": 39.3
+        },
+        {
+          "collection_id": "mock-0003",
+          "commit": "0000000000000000000000000000000000000003",
+          "run_id": "mock-0003-linux",
+          "timestamp": "2026-01-19T12:00:00Z",
+          "value": 38.6
+        },
+        {
+          "collection_id": "mock-0004",
+          "commit": "0000000000000000000000000000000000000004",
+          "run_id": "mock-0004-linux",
+          "timestamp": "2026-01-26T12:00:00Z",
+          "value": 37.9
+        }
+      ],
+      "suite": "logs-baseline",
+      "unit": "%"
+    },
+    {
+      "case": "200k",
+      "dimensions": {
+        "engine": "dfe",
+        "load_rate": "200000",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "points": [
+        {
+          "collection_id": "mock-0001",
+          "commit": "0000000000000000000000000000000000000001",
+          "run_id": "mock-0001-windows",
+          "timestamp": "2026-01-05T12:00:00Z",
+          "value": 42.0
+        },
+        {
+          "collection_id": "mock-0002",
+          "commit": "0000000000000000000000000000000000000002",
+          "run_id": "mock-0002-windows",
+          "timestamp": "2026-01-12T12:00:00Z",
+          "value": 41.3
+        },
+        {
+          "collection_id": "mock-0003",
+          "commit": "0000000000000000000000000000000000000003",
+          "run_id": "mock-0003-windows",
+          "timestamp": "2026-01-19T12:00:00Z",
+          "value": 40.6
+        },
+        {
+          "collection_id": "mock-0004",
+          "commit": "0000000000000000000000000000000000000004",
+          "run_id": "mock-0004-windows",
+          "timestamp": "2026-01-26T12:00:00Z",
+          "value": 39.9
+        }
+      ],
+      "suite": "logs-baseline",
+      "unit": "%"
+    },
+    {
+      "case": "200k",
+      "dimensions": {
+        "engine": "otelcol",
+        "load_rate": "200000",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "points": [
+        {
+          "collection_id": "mock-0001",
+          "commit": "0000000000000000000000000000000000000001",
+          "run_id": "mock-0001-linux",
+          "timestamp": "2026-01-05T12:00:00Z",
+          "value": 46.0
+        },
+        {
+          "collection_id": "mock-0002",
+          "commit": "0000000000000000000000000000000000000002",
+          "run_id": "mock-0002-linux",
+          "timestamp": "2026-01-12T12:00:00Z",
+          "value": 45.3
+        },
+        {
+          "collection_id": "mock-0003",
+          "commit": "0000000000000000000000000000000000000003",
+          "run_id": "mock-0003-linux",
+          "timestamp": "2026-01-19T12:00:00Z",
+          "value": 44.6
+        },
+        {
+          "collection_id": "mock-0004",
+          "commit": "0000000000000000000000000000000000000004",
+          "run_id": "mock-0004-linux",
+          "timestamp": "2026-01-26T12:00:00Z",
+          "value": 43.9
+        }
+      ],
+      "suite": "logs-baseline",
+      "unit": "%"
+    },
+    {
+      "case": "200k",
+      "dimensions": {
+        "engine": "otelcol",
+        "load_rate": "200000",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "points": [
+        {
+          "collection_id": "mock-0001",
+          "commit": "0000000000000000000000000000000000000001",
+          "run_id": "mock-0001-windows",
+          "timestamp": "2026-01-05T12:00:00Z",
+          "value": 48.0
+        },
+        {
+          "collection_id": "mock-0002",
+          "commit": "0000000000000000000000000000000000000002",
+          "run_id": "mock-0002-windows",
+          "timestamp": "2026-01-12T12:00:00Z",
+          "value": 47.3
+        },
+        {
+          "collection_id": "mock-0003",
+          "commit": "0000000000000000000000000000000000000003",
+          "run_id": "mock-0003-windows",
+          "timestamp": "2026-01-19T12:00:00Z",
+          "value": 46.6
+        },
+        {
+          "collection_id": "mock-0004",
+          "commit": "0000000000000000000000000000000000000004",
+          "run_id": "mock-0004-windows",
+          "timestamp": "2026-01-26T12:00:00Z",
+          "value": 45.9
+        }
+      ],
+      "suite": "logs-baseline",
+      "unit": "%"
+    },
+    {
+      "case": "100k",
+      "dimensions": {
+        "engine": "dfe",
+        "load_rate": "100000",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "metric": "logs_received_rate",
+      "points": [
+        {
+          "collection_id": "mock-0001",
+          "commit": "0000000000000000000000000000000000000001",
+          "run_id": "mock-0001-linux",
+          "timestamp": "2026-01-05T12:00:00Z",
+          "value": 98500.0
+        },
+        {
+          "collection_id": "mock-0002",
+          "commit": "0000000000000000000000000000000000000002",
+          "run_id": "mock-0002-linux",
+          "timestamp": "2026-01-12T12:00:00Z",
+          "value": 98697.0
+        },
+        {
+          "collection_id": "mock-0003",
+          "commit": "0000000000000000000000000000000000000003",
+          "run_id": "mock-0003-linux",
+          "timestamp": "2026-01-19T12:00:00Z",
+          "value": 98894.0
+        },
+        {
+          "collection_id": "mock-0004",
+          "commit": "0000000000000000000000000000000000000004",
+          "run_id": "mock-0004-linux",
+          "timestamp": "2026-01-26T12:00:00Z",
+          "value": 99091.0
+        }
+      ],
+      "suite": "logs-baseline",
+      "unit": "logs/sec"
+    },
+    {
+      "case": "100k",
+      "dimensions": {
+        "engine": "dfe",
+        "load_rate": "100000",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "metric": "logs_received_rate",
+      "points": [
+        {
+          "collection_id": "mock-0001",
+          "commit": "0000000000000000000000000000000000000001",
+          "run_id": "mock-0001-windows",
+          "timestamp": "2026-01-05T12:00:00Z",
+          "value": 97900.0
+        },
+        {
+          "collection_id": "mock-0002",
+          "commit": "0000000000000000000000000000000000000002",
+          "run_id": "mock-0002-windows",
+          "timestamp": "2026-01-12T12:00:00Z",
+          "value": 98095.8
+        },
+        {
+          "collection_id": "mock-0003",
+          "commit": "0000000000000000000000000000000000000003",
+          "run_id": "mock-0003-windows",
+          "timestamp": "2026-01-19T12:00:00Z",
+          "value": 98291.6
+        },
+        {
+          "collection_id": "mock-0004",
+          "commit": "0000000000000000000000000000000000000004",
+          "run_id": "mock-0004-windows",
+          "timestamp": "2026-01-26T12:00:00Z",
+          "value": 98487.4
+        }
+      ],
+      "suite": "logs-baseline",
+      "unit": "logs/sec"
+    },
+    {
+      "case": "100k",
+      "dimensions": {
+        "engine": "otelcol",
+        "load_rate": "100000",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "metric": "logs_received_rate",
+      "points": [
+        {
+          "collection_id": "mock-0001",
+          "commit": "0000000000000000000000000000000000000001",
+          "run_id": "mock-0001-linux",
+          "timestamp": "2026-01-05T12:00:00Z",
+          "value": 96700.0
+        },
+        {
+          "collection_id": "mock-0002",
+          "commit": "0000000000000000000000000000000000000002",
+          "run_id": "mock-0002-linux",
+          "timestamp": "2026-01-12T12:00:00Z",
+          "value": 96893.4
+        },
+        {
+          "collection_id": "mock-0003",
+          "commit": "0000000000000000000000000000000000000003",
+          "run_id": "mock-0003-linux",
+          "timestamp": "2026-01-19T12:00:00Z",
+          "value": 97086.8
+        },
+        {
+          "collection_id": "mock-0004",
+          "commit": "0000000000000000000000000000000000000004",
+          "run_id": "mock-0004-linux",
+          "timestamp": "2026-01-26T12:00:00Z",
+          "value": 97280.2
+        }
+      ],
+      "suite": "logs-baseline",
+      "unit": "logs/sec"
+    },
+    {
+      "case": "100k",
+      "dimensions": {
+        "engine": "otelcol",
+        "load_rate": "100000",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "metric": "logs_received_rate",
+      "points": [
+        {
+          "collection_id": "mock-0001",
+          "commit": "0000000000000000000000000000000000000001",
+          "run_id": "mock-0001-windows",
+          "timestamp": "2026-01-05T12:00:00Z",
+          "value": 96100.0
+        },
+        {
+          "collection_id": "mock-0002",
+          "commit": "0000000000000000000000000000000000000002",
+          "run_id": "mock-0002-windows",
+          "timestamp": "2026-01-12T12:00:00Z",
+          "value": 96292.2
+        },
+        {
+          "collection_id": "mock-0003",
+          "commit": "0000000000000000000000000000000000000003",
+          "run_id": "mock-0003-windows",
+          "timestamp": "2026-01-19T12:00:00Z",
+          "value": 96484.4
+        },
+        {
+          "collection_id": "mock-0004",
+          "commit": "0000000000000000000000000000000000000004",
+          "run_id": "mock-0004-windows",
+          "timestamp": "2026-01-26T12:00:00Z",
+          "value": 96676.6
+        }
+      ],
+      "suite": "logs-baseline",
+      "unit": "logs/sec"
+    },
+    {
+      "case": "200k",
+      "dimensions": {
+        "engine": "dfe",
+        "load_rate": "200000",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "metric": "logs_received_rate",
+      "points": [
+        {
+          "collection_id": "mock-0001",
+          "commit": "0000000000000000000000000000000000000001",
+          "run_id": "mock-0001-linux",
+          "timestamp": "2026-01-05T12:00:00Z",
+          "value": 197000.0
+        },
+        {
+          "collection_id": "mock-0002",
+          "commit": "0000000000000000000000000000000000000002",
+          "run_id": "mock-0002-linux",
+          "timestamp": "2026-01-12T12:00:00Z",
+          "value": 197394.0
+        },
+        {
+          "collection_id": "mock-0003",
+          "commit": "0000000000000000000000000000000000000003",
+          "run_id": "mock-0003-linux",
+          "timestamp": "2026-01-19T12:00:00Z",
+          "value": 197788.0
+        },
+        {
+          "collection_id": "mock-0004",
+          "commit": "0000000000000000000000000000000000000004",
+          "run_id": "mock-0004-linux",
+          "timestamp": "2026-01-26T12:00:00Z",
+          "value": 198182.0
+        }
+      ],
+      "suite": "logs-baseline",
+      "unit": "logs/sec"
+    },
+    {
+      "case": "200k",
+      "dimensions": {
+        "engine": "dfe",
+        "load_rate": "200000",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "metric": "logs_received_rate",
+      "points": [
+        {
+          "collection_id": "mock-0001",
+          "commit": "0000000000000000000000000000000000000001",
+          "run_id": "mock-0001-windows",
+          "timestamp": "2026-01-05T12:00:00Z",
+          "value": 195800.0
+        },
+        {
+          "collection_id": "mock-0002",
+          "commit": "0000000000000000000000000000000000000002",
+          "run_id": "mock-0002-windows",
+          "timestamp": "2026-01-12T12:00:00Z",
+          "value": 196191.6
+        },
+        {
+          "collection_id": "mock-0003",
+          "commit": "0000000000000000000000000000000000000003",
+          "run_id": "mock-0003-windows",
+          "timestamp": "2026-01-19T12:00:00Z",
+          "value": 196583.2
+        },
+        {
+          "collection_id": "mock-0004",
+          "commit": "0000000000000000000000000000000000000004",
+          "run_id": "mock-0004-windows",
+          "timestamp": "2026-01-26T12:00:00Z",
+          "value": 196974.8
+        }
+      ],
+      "suite": "logs-baseline",
+      "unit": "logs/sec"
+    },
+    {
+      "case": "200k",
+      "dimensions": {
+        "engine": "otelcol",
+        "load_rate": "200000",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "metric": "logs_received_rate",
+      "points": [
+        {
+          "collection_id": "mock-0001",
+          "commit": "0000000000000000000000000000000000000001",
+          "run_id": "mock-0001-linux",
+          "timestamp": "2026-01-05T12:00:00Z",
+          "value": 193400.0
+        },
+        {
+          "collection_id": "mock-0002",
+          "commit": "0000000000000000000000000000000000000002",
+          "run_id": "mock-0002-linux",
+          "timestamp": "2026-01-12T12:00:00Z",
+          "value": 193786.8
+        },
+        {
+          "collection_id": "mock-0003",
+          "commit": "0000000000000000000000000000000000000003",
+          "run_id": "mock-0003-linux",
+          "timestamp": "2026-01-19T12:00:00Z",
+          "value": 194173.6
+        },
+        {
+          "collection_id": "mock-0004",
+          "commit": "0000000000000000000000000000000000000004",
+          "run_id": "mock-0004-linux",
+          "timestamp": "2026-01-26T12:00:00Z",
+          "value": 194560.4
+        }
+      ],
+      "suite": "logs-baseline",
+      "unit": "logs/sec"
+    },
+    {
+      "case": "200k",
+      "dimensions": {
+        "engine": "otelcol",
+        "load_rate": "200000",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "metric": "logs_received_rate",
+      "points": [
+        {
+          "collection_id": "mock-0001",
+          "commit": "0000000000000000000000000000000000000001",
+          "run_id": "mock-0001-windows",
+          "timestamp": "2026-01-05T12:00:00Z",
+          "value": 192200.0
+        },
+        {
+          "collection_id": "mock-0002",
+          "commit": "0000000000000000000000000000000000000002",
+          "run_id": "mock-0002-windows",
+          "timestamp": "2026-01-12T12:00:00Z",
+          "value": 192584.4
+        },
+        {
+          "collection_id": "mock-0003",
+          "commit": "0000000000000000000000000000000000000003",
+          "run_id": "mock-0003-windows",
+          "timestamp": "2026-01-19T12:00:00Z",
+          "value": 192968.8
+        },
+        {
+          "collection_id": "mock-0004",
+          "commit": "0000000000000000000000000000000000000004",
+          "run_id": "mock-0004-windows",
+          "timestamp": "2026-01-26T12:00:00Z",
+          "value": 193353.2
+        }
+      ],
+      "suite": "logs-baseline",
+      "unit": "logs/sec"
+    }
+  ]
+}
