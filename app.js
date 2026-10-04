@@ -62,6 +62,21 @@ function renderOverview(catalog, views, suites) {
 
   const cards = views.comparisons.map((comparison) => {
     const selected = selectedVariants(comparison, suites);
+    const selectedIdentities = new Set(
+      selected.map(
+        ({ suite, variant }) => `${suite.id}\u0000${variant.id}`,
+      ),
+    );
+    const selectedCases = new Set(comparison.cases.map((item) => item.id));
+    const selectedMetrics = new Set(comparison.metrics.map((item) => item.id));
+    const selectedObservationCount = latest.observations.filter(
+      (observation) =>
+        selectedIdentities.has(
+          `${observation.suite}\u0000${observation.variant}`,
+        ) &&
+        selectedCases.has(observation.case) &&
+        selectedMetrics.has(observation.metric),
+    ).length;
     const sourceRows = comparison.sources.map((source) => {
       const suite = suites.get(source.suite);
       const count = source.include_variants
@@ -298,9 +313,9 @@ function renderComparisonPage(catalog, latest, views, suites, comparisons) {
     </section>
     <section class="metric-grid">${metricCards}</section>
     <p class="provenance">
-      Showing ${latest.observations.length} observations from
-      ${escapeHtml(latest.collection_id)}. The comparison displays only
-      observations selected by its suite and variant references.
+      Showing ${selectedObservationCount} selected observations from
+      ${escapeHtml(latest.collection_id)}
+      (${latest.observations.length} observations available).
     </p>
   `;
 }
