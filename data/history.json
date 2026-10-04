@@ -1085,6 +1085,41 @@
       },
       "environment": {
         "architecture": "amd64",
+        "cpu_model": "Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz",
+        "execution_os": "linux",
+        "logical_cores": 20,
+        "memory_gib": 128,
+        "os": "windows",
+        "physical_cores": 10,
+        "source_dirty": true,
+        "testbed": "windows-docker-desktop-linux-vm"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "points": [
+        {
+          "collection_id": "comparison-view-0001",
+          "commit": "c8e7954ab1959e4c9f2a4a7a4ec5da17c5558d97",
+          "run_id": "real-dfe-otlp-none-docker-desktop-20261004",
+          "timestamp": "2026-10-03T15:45:59Z",
+          "value": 7.817700963737924
+        }
+      ],
+      "suite": "log-baseline",
+      "unit": "%",
+      "variant": "dfe-otlp-none"
+    },
+    {
+      "case": "100k",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "baseline",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
         "os": "linux",
         "testbed": "mock-linux-amd64"
       },
@@ -1125,6 +1160,41 @@
           "run_id": "comparison-view-0001-windows",
           "timestamp": "2026-03-02T12:00:00Z",
           "value": 28.0
+        }
+      ],
+      "suite": "log-baseline",
+      "unit": "%",
+      "variant": "dfe-otlp-none"
+    },
+    {
+      "case": "200k",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "baseline",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "cpu_model": "Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz",
+        "execution_os": "linux",
+        "logical_cores": 20,
+        "memory_gib": 128,
+        "os": "windows",
+        "physical_cores": 10,
+        "source_dirty": true,
+        "testbed": "windows-docker-desktop-linux-vm"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "points": [
+        {
+          "collection_id": "comparison-view-0001",
+          "commit": "c8e7954ab1959e4c9f2a4a7a4ec5da17c5558d97",
+          "run_id": "real-dfe-otlp-none-docker-desktop-20261004",
+          "timestamp": "2026-10-03T15:45:59Z",
+          "value": 14.532211439573217
         }
       ],
       "suite": "log-baseline",
@@ -1852,6 +1922,286 @@
       "suite": "logs-baseline",
       "unit": "%",
       "variant": null
+    },
+    {
+      "case": "100k",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "baseline",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "cpu_model": "Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz",
+        "execution_os": "linux",
+        "logical_cores": 20,
+        "memory_gib": 128,
+        "os": "windows",
+        "physical_cores": 10,
+        "source_dirty": true,
+        "testbed": "windows-docker-desktop-linux-vm"
+      },
+      "metric": "cpu_percentage_normalized_max",
+      "points": [
+        {
+          "collection_id": "comparison-view-0001",
+          "commit": "c8e7954ab1959e4c9f2a4a7a4ec5da17c5558d97",
+          "run_id": "real-dfe-otlp-none-docker-desktop-20261004",
+          "timestamp": "2026-10-03T15:45:59Z",
+          "value": 8.560198511166254
+        }
+      ],
+      "suite": "log-baseline",
+      "unit": "%",
+      "variant": "dfe-otlp-none"
+    },
+    {
+      "case": "200k",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "baseline",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "cpu_model": "Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz",
+        "execution_os": "linux",
+        "logical_cores": 20,
+        "memory_gib": 128,
+        "os": "windows",
+        "physical_cores": 10,
+        "source_dirty": true,
+        "testbed": "windows-docker-desktop-linux-vm"
+      },
+      "metric": "cpu_percentage_normalized_max",
+      "points": [
+        {
+          "collection_id": "comparison-view-0001",
+          "commit": "c8e7954ab1959e4c9f2a4a7a4ec5da17c5558d97",
+          "run_id": "real-dfe-otlp-none-docker-desktop-20261004",
+          "timestamp": "2026-10-03T15:45:59Z",
+          "value": 14.948055832502494
+        }
+      ],
+      "suite": "log-baseline",
+      "unit": "%",
+      "variant": "dfe-otlp-none"
+    },
+    {
+      "case": "100k",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "baseline",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "cpu_model": "Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz",
+        "execution_os": "linux",
+        "logical_cores": 20,
+        "memory_gib": 128,
+        "os": "windows",
+        "physical_cores": 10,
+        "source_dirty": true,
+        "testbed": "windows-docker-desktop-linux-vm"
+      },
+      "metric": "dropped_logs_percentage",
+      "points": [
+        {
+          "collection_id": "comparison-view-0001",
+          "commit": "c8e7954ab1959e4c9f2a4a7a4ec5da17c5558d97",
+          "run_id": "real-dfe-otlp-none-docker-desktop-20261004",
+          "timestamp": "2026-10-03T15:45:59Z",
+          "value": 0.0
+        }
+      ],
+      "suite": "log-baseline",
+      "unit": "%",
+      "variant": "dfe-otlp-none"
+    },
+    {
+      "case": "200k",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "baseline",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "cpu_model": "Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz",
+        "execution_os": "linux",
+        "logical_cores": 20,
+        "memory_gib": 128,
+        "os": "windows",
+        "physical_cores": 10,
+        "source_dirty": true,
+        "testbed": "windows-docker-desktop-linux-vm"
+      },
+      "metric": "dropped_logs_percentage",
+      "points": [
+        {
+          "collection_id": "comparison-view-0001",
+          "commit": "c8e7954ab1959e4c9f2a4a7a4ec5da17c5558d97",
+          "run_id": "real-dfe-otlp-none-docker-desktop-20261004",
+          "timestamp": "2026-10-03T15:45:59Z",
+          "value": 0.0
+        }
+      ],
+      "suite": "log-baseline",
+      "unit": "%",
+      "variant": "dfe-otlp-none"
+    },
+    {
+      "case": "100k",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "baseline",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "cpu_model": "Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz",
+        "execution_os": "linux",
+        "logical_cores": 20,
+        "memory_gib": 128,
+        "os": "windows",
+        "physical_cores": 10,
+        "source_dirty": true,
+        "testbed": "windows-docker-desktop-linux-vm"
+      },
+      "metric": "egress_bytes_per_log",
+      "points": [
+        {
+          "collection_id": "comparison-view-0001",
+          "commit": "c8e7954ab1959e4c9f2a4a7a4ec5da17c5558d97",
+          "run_id": "real-dfe-otlp-none-docker-desktop-20261004",
+          "timestamp": "2026-10-03T15:45:59Z",
+          "value": 388.17362683475454
+        }
+      ],
+      "suite": "log-baseline",
+      "unit": "bytes/log",
+      "variant": "dfe-otlp-none"
+    },
+    {
+      "case": "200k",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "baseline",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "cpu_model": "Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz",
+        "execution_os": "linux",
+        "logical_cores": 20,
+        "memory_gib": 128,
+        "os": "windows",
+        "physical_cores": 10,
+        "source_dirty": true,
+        "testbed": "windows-docker-desktop-linux-vm"
+      },
+      "metric": "egress_bytes_per_log",
+      "points": [
+        {
+          "collection_id": "comparison-view-0001",
+          "commit": "c8e7954ab1959e4c9f2a4a7a4ec5da17c5558d97",
+          "run_id": "real-dfe-otlp-none-docker-desktop-20261004",
+          "timestamp": "2026-10-03T15:45:59Z",
+          "value": 384.65241016228475
+        }
+      ],
+      "suite": "log-baseline",
+      "unit": "bytes/log",
+      "variant": "dfe-otlp-none"
+    },
+    {
+      "case": "100k",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "baseline",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "cpu_model": "Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz",
+        "execution_os": "linux",
+        "logical_cores": 20,
+        "memory_gib": 128,
+        "os": "windows",
+        "physical_cores": 10,
+        "source_dirty": true,
+        "testbed": "windows-docker-desktop-linux-vm"
+      },
+      "metric": "logs_produced_rate",
+      "points": [
+        {
+          "collection_id": "comparison-view-0001",
+          "commit": "c8e7954ab1959e4c9f2a4a7a4ec5da17c5558d97",
+          "run_id": "real-dfe-otlp-none-docker-desktop-20261004",
+          "timestamp": "2026-10-03T15:45:59Z",
+          "value": 97916.90544648872
+        }
+      ],
+      "suite": "log-baseline",
+      "unit": "logs/sec",
+      "variant": "dfe-otlp-none"
+    },
+    {
+      "case": "200k",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "baseline",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "cpu_model": "Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz",
+        "execution_os": "linux",
+        "logical_cores": 20,
+        "memory_gib": 128,
+        "os": "windows",
+        "physical_cores": 10,
+        "source_dirty": true,
+        "testbed": "windows-docker-desktop-linux-vm"
+      },
+      "metric": "logs_produced_rate",
+      "points": [
+        {
+          "collection_id": "comparison-view-0001",
+          "commit": "c8e7954ab1959e4c9f2a4a7a4ec5da17c5558d97",
+          "run_id": "real-dfe-otlp-none-docker-desktop-20261004",
+          "timestamp": "2026-10-03T15:45:59Z",
+          "value": 194307.0985854392
+        }
+      ],
+      "suite": "log-baseline",
+      "unit": "logs/sec",
+      "variant": "dfe-otlp-none"
     },
     {
       "case": "100k",
@@ -2937,6 +3287,41 @@
       },
       "environment": {
         "architecture": "amd64",
+        "cpu_model": "Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz",
+        "execution_os": "linux",
+        "logical_cores": 20,
+        "memory_gib": 128,
+        "os": "windows",
+        "physical_cores": 10,
+        "source_dirty": true,
+        "testbed": "windows-docker-desktop-linux-vm"
+      },
+      "metric": "logs_received_rate",
+      "points": [
+        {
+          "collection_id": "comparison-view-0001",
+          "commit": "c8e7954ab1959e4c9f2a4a7a4ec5da17c5558d97",
+          "run_id": "real-dfe-otlp-none-docker-desktop-20261004",
+          "timestamp": "2026-10-03T15:45:59Z",
+          "value": 97916.90544648872
+        }
+      ],
+      "suite": "log-baseline",
+      "unit": "logs/sec",
+      "variant": "dfe-otlp-none"
+    },
+    {
+      "case": "100k",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "baseline",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
         "os": "linux",
         "testbed": "mock-linux-amd64"
       },
@@ -2977,6 +3362,41 @@
           "run_id": "comparison-view-0001-windows",
           "timestamp": "2026-03-02T12:00:00Z",
           "value": 98106.0
+        }
+      ],
+      "suite": "log-baseline",
+      "unit": "logs/sec",
+      "variant": "dfe-otlp-none"
+    },
+    {
+      "case": "200k",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "baseline",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "cpu_model": "Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz",
+        "execution_os": "linux",
+        "logical_cores": 20,
+        "memory_gib": 128,
+        "os": "windows",
+        "physical_cores": 10,
+        "source_dirty": true,
+        "testbed": "windows-docker-desktop-linux-vm"
+      },
+      "metric": "logs_received_rate",
+      "points": [
+        {
+          "collection_id": "comparison-view-0001",
+          "commit": "c8e7954ab1959e4c9f2a4a7a4ec5da17c5558d97",
+          "run_id": "real-dfe-otlp-none-docker-desktop-20261004",
+          "timestamp": "2026-10-03T15:45:59Z",
+          "value": 196505.04402592088
         }
       ],
       "suite": "log-baseline",
@@ -3704,6 +4124,356 @@
       "suite": "logs-baseline",
       "unit": "logs/sec",
       "variant": null
+    },
+    {
+      "case": "100k",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "baseline",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "cpu_model": "Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz",
+        "execution_os": "linux",
+        "logical_cores": 20,
+        "memory_gib": 128,
+        "os": "windows",
+        "physical_cores": 10,
+        "source_dirty": true,
+        "testbed": "windows-docker-desktop-linux-vm"
+      },
+      "metric": "network_rx_bytes_rate_avg",
+      "points": [
+        {
+          "collection_id": "comparison-view-0001",
+          "commit": "c8e7954ab1959e4c9f2a4a7a4ec5da17c5558d97",
+          "run_id": "real-dfe-otlp-none-docker-desktop-20261004",
+          "timestamp": "2026-10-03T15:45:59Z",
+          "value": 37953933.04408343
+        }
+      ],
+      "suite": "log-baseline",
+      "unit": "bytes/sec",
+      "variant": "dfe-otlp-none"
+    },
+    {
+      "case": "200k",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "baseline",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "cpu_model": "Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz",
+        "execution_os": "linux",
+        "logical_cores": 20,
+        "memory_gib": 128,
+        "os": "windows",
+        "physical_cores": 10,
+        "source_dirty": true,
+        "testbed": "windows-docker-desktop-linux-vm"
+      },
+      "metric": "network_rx_bytes_rate_avg",
+      "points": [
+        {
+          "collection_id": "comparison-view-0001",
+          "commit": "c8e7954ab1959e4c9f2a4a7a4ec5da17c5558d97",
+          "run_id": "real-dfe-otlp-none-docker-desktop-20261004",
+          "timestamp": "2026-10-03T15:45:59Z",
+          "value": 75519917.22041328
+        }
+      ],
+      "suite": "log-baseline",
+      "unit": "bytes/sec",
+      "variant": "dfe-otlp-none"
+    },
+    {
+      "case": "100k",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "baseline",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "cpu_model": "Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz",
+        "execution_os": "linux",
+        "logical_cores": 20,
+        "memory_gib": 128,
+        "os": "windows",
+        "physical_cores": 10,
+        "source_dirty": true,
+        "testbed": "windows-docker-desktop-linux-vm"
+      },
+      "metric": "network_tx_bytes_rate_avg",
+      "points": [
+        {
+          "collection_id": "comparison-view-0001",
+          "commit": "c8e7954ab1959e4c9f2a4a7a4ec5da17c5558d97",
+          "run_id": "real-dfe-otlp-none-docker-desktop-20261004",
+          "timestamp": "2026-10-03T15:45:59Z",
+          "value": 38008760.315599255
+        }
+      ],
+      "suite": "log-baseline",
+      "unit": "bytes/sec",
+      "variant": "dfe-otlp-none"
+    },
+    {
+      "case": "200k",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "baseline",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "cpu_model": "Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz",
+        "execution_os": "linux",
+        "logical_cores": 20,
+        "memory_gib": 128,
+        "os": "windows",
+        "physical_cores": 10,
+        "source_dirty": true,
+        "testbed": "windows-docker-desktop-linux-vm"
+      },
+      "metric": "network_tx_bytes_rate_avg",
+      "points": [
+        {
+          "collection_id": "comparison-view-0001",
+          "commit": "c8e7954ab1959e4c9f2a4a7a4ec5da17c5558d97",
+          "run_id": "real-dfe-otlp-none-docker-desktop-20261004",
+          "timestamp": "2026-10-03T15:45:59Z",
+          "value": 75586138.79361634
+        }
+      ],
+      "suite": "log-baseline",
+      "unit": "bytes/sec",
+      "variant": "dfe-otlp-none"
+    },
+    {
+      "case": "100k",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "baseline",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "cpu_model": "Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz",
+        "execution_os": "linux",
+        "logical_cores": 20,
+        "memory_gib": 128,
+        "os": "windows",
+        "physical_cores": 10,
+        "source_dirty": true,
+        "testbed": "windows-docker-desktop-linux-vm"
+      },
+      "metric": "ram_mib_avg",
+      "points": [
+        {
+          "collection_id": "comparison-view-0001",
+          "commit": "c8e7954ab1959e4c9f2a4a7a4ec5da17c5558d97",
+          "run_id": "real-dfe-otlp-none-docker-desktop-20261004",
+          "timestamp": "2026-10-03T15:45:59Z",
+          "value": 13.0796875
+        }
+      ],
+      "suite": "log-baseline",
+      "unit": "MiB",
+      "variant": "dfe-otlp-none"
+    },
+    {
+      "case": "200k",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "baseline",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "cpu_model": "Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz",
+        "execution_os": "linux",
+        "logical_cores": 20,
+        "memory_gib": 128,
+        "os": "windows",
+        "physical_cores": 10,
+        "source_dirty": true,
+        "testbed": "windows-docker-desktop-linux-vm"
+      },
+      "metric": "ram_mib_avg",
+      "points": [
+        {
+          "collection_id": "comparison-view-0001",
+          "commit": "c8e7954ab1959e4c9f2a4a7a4ec5da17c5558d97",
+          "run_id": "real-dfe-otlp-none-docker-desktop-20261004",
+          "timestamp": "2026-10-03T15:45:59Z",
+          "value": 13.451953125
+        }
+      ],
+      "suite": "log-baseline",
+      "unit": "MiB",
+      "variant": "dfe-otlp-none"
+    },
+    {
+      "case": "100k",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "baseline",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "cpu_model": "Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz",
+        "execution_os": "linux",
+        "logical_cores": 20,
+        "memory_gib": 128,
+        "os": "windows",
+        "physical_cores": 10,
+        "source_dirty": true,
+        "testbed": "windows-docker-desktop-linux-vm"
+      },
+      "metric": "ram_mib_max",
+      "points": [
+        {
+          "collection_id": "comparison-view-0001",
+          "commit": "c8e7954ab1959e4c9f2a4a7a4ec5da17c5558d97",
+          "run_id": "real-dfe-otlp-none-docker-desktop-20261004",
+          "timestamp": "2026-10-03T15:45:59Z",
+          "value": 13.6640625
+        }
+      ],
+      "suite": "log-baseline",
+      "unit": "MiB",
+      "variant": "dfe-otlp-none"
+    },
+    {
+      "case": "200k",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "baseline",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "cpu_model": "Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz",
+        "execution_os": "linux",
+        "logical_cores": 20,
+        "memory_gib": 128,
+        "os": "windows",
+        "physical_cores": 10,
+        "source_dirty": true,
+        "testbed": "windows-docker-desktop-linux-vm"
+      },
+      "metric": "ram_mib_max",
+      "points": [
+        {
+          "collection_id": "comparison-view-0001",
+          "commit": "c8e7954ab1959e4c9f2a4a7a4ec5da17c5558d97",
+          "run_id": "real-dfe-otlp-none-docker-desktop-20261004",
+          "timestamp": "2026-10-03T15:45:59Z",
+          "value": 13.78515625
+        }
+      ],
+      "suite": "log-baseline",
+      "unit": "MiB",
+      "variant": "dfe-otlp-none"
+    },
+    {
+      "case": "100k",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "baseline",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "cpu_model": "Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz",
+        "execution_os": "linux",
+        "logical_cores": 20,
+        "memory_gib": 128,
+        "os": "windows",
+        "physical_cores": 10,
+        "source_dirty": true,
+        "testbed": "windows-docker-desktop-linux-vm"
+      },
+      "metric": "test_duration",
+      "points": [
+        {
+          "collection_id": "comparison-view-0001",
+          "commit": "c8e7954ab1959e4c9f2a4a7a4ec5da17c5558d97",
+          "run_id": "real-dfe-otlp-none-docker-desktop-20261004",
+          "timestamp": "2026-10-03T15:45:59Z",
+          "value": 20.001046
+        }
+      ],
+      "suite": "log-baseline",
+      "unit": "seconds",
+      "variant": "dfe-otlp-none"
+    },
+    {
+      "case": "200k",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "baseline",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "cpu_model": "Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz",
+        "execution_os": "linux",
+        "logical_cores": 20,
+        "memory_gib": 128,
+        "os": "windows",
+        "physical_cores": 10,
+        "source_dirty": true,
+        "testbed": "windows-docker-desktop-linux-vm"
+      },
+      "metric": "test_duration",
+      "points": [
+        {
+          "collection_id": "comparison-view-0001",
+          "commit": "c8e7954ab1959e4c9f2a4a7a4ec5da17c5558d97",
+          "run_id": "real-dfe-otlp-none-docker-desktop-20261004",
+          "timestamp": "2026-10-03T15:45:59Z",
+          "value": 20.001018
+        }
+      ],
+      "suite": "log-baseline",
+      "unit": "seconds",
+      "variant": "dfe-otlp-none"
     }
   ]
 }
