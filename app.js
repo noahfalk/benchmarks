@@ -1,5 +1,36 @@
 "use strict";
 
+const AUTO_CHART_COLORS = [
+  "#2563eb",
+  "#0f766e",
+  "#d97706",
+  "#7c3aed",
+  "#dc2626",
+  "#0891b2",
+  "#65a30d",
+  "#db2777",
+  "#475569",
+  "#9333ea",
+  "#ea580c",
+  "#059669",
+];
+const COLORBLIND_CHART_COLORS = [
+  "#0072b2",
+  "#e69f00",
+  "#009e73",
+  "#cc79a7",
+  "#56b4e9",
+  "#d55e00",
+  "#f0e442",
+  "#332288",
+  "#882e72",
+  "#117733",
+  "#88ccaa",
+  "#999999",
+];
+const GLOSSARY_STORAGE_KEY = "legend-banner-expanded";
+const COLORBLIND_STORAGE_KEY = "colorblindMode";
+
 function escapeHtml(value) {
   return String(value)
     .replaceAll("&", "&amp;")
@@ -21,6 +52,81 @@ async function fetchJson(path) {
     throw new Error(`${path} returned HTTP ${response.status}`);
   }
   return response.json();
+}
+
+function readBoolPreference(key, defaultValue) {
+  try {
+    const value = localStorage.getItem(key);
+    if (value === null) return defaultValue;
+    return value === "1" || value === "true";
+  } catch {
+    return defaultValue;
+  }
+}
+
+function writeBoolPreference(key, value) {
+  try {
+    localStorage.setItem(key, String(value));
+  } catch {
+    // Storage can be unavailable in private browsing modes.
+  }
+}
+
+let colorblindMode = readBoolPreference(COLORBLIND_STORAGE_KEY, false);
+
+function activeChartColors() {
+  return colorblindMode ? COLORBLIND_CHART_COLORS : AUTO_CHART_COLORS;
+}
+
+function renderSwitch(id, label, checked) {
+  return `
+    <label class="switch-control" for="${id}">
+      <span class="switch-label">${escapeHtml(label)}</span>
+      <button id="${id}" class="switch${checked ? " on" : ""}" type="button"
+              role="switch" aria-checked="${checked ? "true" : "false"}">
+        <span class="switch-track"><span class="switch-thumb"></span></span>
+      </button>
+    </label>
+  `;
+}
+
+function renderOverviewControls(configuration, rerender) {
+  const glossary = configuration.glossary || [];
+  const glossaryVisible = readBoolPreference(GLOSSARY_STORAGE_KEY, true);
+  const controls = document.getElementById("controls-bar");
+  const banner = document.getElementById("legend-banner");
+  controls.innerHTML = [
+    glossary.length
+      ? renderSwitch("switch-glossary", "Glossary", glossaryVisible)
+      : "",
+    renderSwitch("switch-colorblind", "Colorblind mode", colorblindMode),
+  ].join("");
+  banner.innerHTML = glossary.length
+    ? `<dl class="legend-banner-body">${glossary.map((entry) => `
+        <div class="legend-item">
+          <dt class="legend-term">${escapeHtml(entry.term)}</dt>
+          <dd class="legend-definition">${escapeHtml(entry.definition)}</dd>
+        </div>
+      `).join("")}</dl>`
+    : "";
+  banner.hidden = !glossary.length;
+  banner.classList.toggle("collapsed", !glossaryVisible);
+
+  const glossarySwitch = document.getElementById("switch-glossary");
+  if (glossarySwitch) {
+    glossarySwitch.addEventListener("click", () => {
+      const visible = !glossarySwitch.classList.contains("on");
+      glossarySwitch.classList.toggle("on", visible);
+      glossarySwitch.setAttribute("aria-checked", String(visible));
+      banner.classList.toggle("collapsed", !visible);
+      writeBoolPreference(GLOSSARY_STORAGE_KEY, visible);
+    });
+  }
+  document.getElementById("switch-colorblind").addEventListener("click", () => {
+    colorblindMode = !colorblindMode;
+    writeBoolPreference(COLORBLIND_STORAGE_KEY, colorblindMode);
+    rerender();
+  });
 }
 
 function mapsFor(views) {
@@ -75,9 +181,19 @@ function renderComparisonLinks(views) {
 }
 
 function renderOverview(overview, views) {
+  const target = document.getElementById("app");
+  if (typeof Chart !== "undefined") {
+    for (const canvas of target.querySelectorAll("canvas")) {
+      const chart = Chart.getChart(canvas);
+      if (chart) chart.destroy();
+    }
+  }
+  renderOverviewControls(
+    views.overview,
+    () => renderOverview(overview, views),
+  );
   const suites = [...views.suites].sort((left, right) =>
     left.name.localeCompare(right.name));
-  const target = document.getElementById("app");
   target.innerHTML = '<div id="suite-previews" class="suite-previews"></div>';
   const previews = document.getElementById("suite-previews");
   for (const suite of suites) {
@@ -157,6 +273,10 @@ function historySeriesColor(series) {
   let hash = 0;
   for (let index = 0; index < key.length; index += 1) {
     hash = ((hash << 5) - hash + key.charCodeAt(index)) | 0;
+  }
+  if (colorblindMode) {
+    const colors = activeChartColors();
+    return colors[Math.abs(hash) % colors.length];
   }
   return `hsl(${Math.abs(hash) % 360}, 65%, 48%)`;
 }
@@ -580,20 +700,6 @@ function environmentLabel(environment) {
 }
 
 const FILTER_MISSING = "__benchmark_dimension_not_set__";
-const CHART_COLORS = [
-  "#2563eb",
-  "#0f766e",
-  "#d97706",
-  "#7c3aed",
-  "#dc2626",
-  "#0891b2",
-  "#65a30d",
-  "#db2777",
-  "#475569",
-  "#9333ea",
-  "#ea580c",
-  "#059669",
-];
 
 let activeCharts = [];
 
@@ -805,6 +911,7 @@ function buildMetricChart(
   }
 
   const datasets = [];
+  const colors = activeChartColors();
   for (const [index, item] of selected.entries()) {
     const data = groups.map((group) => byValue.get([
       item.suite.id,
@@ -815,7 +922,7 @@ function buildMetricChart(
     if (data.every((value) => value === null)) {
       continue;
     }
-    const color = CHART_COLORS[index % CHART_COLORS.length];
+    const color = colors[index % colors.length];
     datasets.push({
       label: item.variant.name,
       data,

@@ -630,6 +630,63 @@
       ]
     }
   ],
+  "overview": {
+    "browser_title": "Telemetry Engine Benchmarks",
+    "glossary": [
+      {
+        "definition": "Dataflow Engine - the OTAP-native Rust pipeline being benchmarked in this repo.",
+        "term": "DFE"
+      },
+      {
+        "definition": "OpenTelemetry Collector (contrib distribution) - the reference Go implementation.",
+        "term": "OTC"
+      },
+      {
+        "definition": "Fluent Bit - An observability pipeline engine in the fluentd family.",
+        "term": "FBIT"
+      },
+      {
+        "definition": "rotel-dev/rotel - Rust-based telemetry collector.",
+        "term": "Rotel"
+      },
+      {
+        "definition": "OpenTelemetry Arrow Protocol - columnar gRPC transport using Apache Arrow record batches.",
+        "term": "OTAP"
+      },
+      {
+        "definition": "OpenTelemetry Protocol - the standard row-oriented gRPC/HTTP protobuf protocol.",
+        "term": "OTLP"
+      },
+      {
+        "definition": "OpenTelemetry Protocol over pure HTTP.",
+        "term": "OTLP HTTP"
+      },
+      {
+        "definition": "Kafka-based transport using OTLP protobuf message encoding (producer -> broker -> consumer pipeline).",
+        "term": "Kafka OTLP"
+      },
+      {
+        "definition": "Kafka-based transport using OTAP Arrow protobuf message encoding (producer -> broker -> consumer pipeline).",
+        "term": "Kafka OTAP"
+      },
+      {
+        "definition": "Benchmark that measures only a variant's Kafka receiver. A fixed DFE Kafka exporter produces to the broker; the benchmarked receiver consumes and forwards to a DFE backend.",
+        "term": "Kafka Receiver Isolation"
+      },
+      {
+        "definition": "Benchmark that measures only a variant's Kafka exporter. A DFE loadgen feeds the benchmarked exporter, which produces to the broker; a fixed DFE Kafka receiver consumes on the backend.",
+        "term": "Kafka Exporter Isolation"
+      }
+    ],
+    "page_subtitle": "Compare telemetry engines across a variety of use-cases and protocols.",
+    "page_title": "Telemetry Engine Benchmark Dashboard",
+    "schema_version": 1,
+    "top_banner": {
+      "link_text": "Tell us here!",
+      "link_url": "https://github.com/open-telemetry/otel-arrow/issues",
+      "text": "The Dataflow Engine and these benchmarks are a work in progress. Do you have feedback?"
+    }
+  },
   "schema_version": 1,
   "suites": [
     {
