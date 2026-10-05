@@ -121,6 +121,7 @@ main {
 }
 
 .suite-link {
+  color: var(--accent);
   text-decoration: none;
 }
 
@@ -179,6 +180,14 @@ main {
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 6px;
+}
+
+.explorer-controls label.explorer-axis-control {
+  width: 160px;
+}
+
+.explorer-controls label.explorer-environment-control {
+  width: 190px;
 }
 
 .explorer-filters {
@@ -483,7 +492,9 @@ footer {
     margin-top: 16px;
   }
 
-  .explorer-controls label {
+  .explorer-controls label,
+  .explorer-controls label.explorer-axis-control,
+  .explorer-controls label.explorer-environment-control {
     width: 100%;
     max-width: 100%;
   }

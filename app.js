@@ -102,6 +102,24 @@ function environmentKey(environment) {
   return JSON.stringify(environment, Object.keys(environment).sort());
 }
 
+function environmentCapacityLabel(environment) {
+  const cores = environment.logical_cores ?? environment.physical_cores;
+  const memory = environment.memory_gb ?? environment.memory_gib;
+  if (cores == null && memory == null) {
+    return environment.os ? `Unknown capacity (${environment.os})` : "Unknown environment";
+  }
+  const coreLabel = cores == null ? "Cores unknown" : `${cores} cores`;
+  const memoryLabel = memory == null
+    ? "RAM unknown"
+    : `${memory}${environment.memory_gb == null ? "GiB" : "GB"}`;
+  return `${coreLabel}, ${memoryLabel}`;
+}
+
+function environmentDescription(environment) {
+  return Object.entries(environment).map(([key, value]) => `${key}=${value}`).join(" / ")
+    || "Unknown environment";
+}
+
 function historyFacets(series) {
   const facets = {};
   for (const [namespace, values] of [
@@ -117,7 +135,11 @@ function historyFacets(series) {
   return facets;
 }
 
-function historySeriesLabel(series, variants) {
+function historySeriesLabel(series) {
+  return series.identity_keys.map((key) => series.identity[key]).join(", ");
+}
+
+function comparisonSeriesLabel(series, variants) {
   const identity = Object.entries(series.identity).map(([key, value]) =>
     key === "variant" ? (variants.get(value) || value) : `${key}=${value}`);
   const context = [
@@ -209,7 +231,8 @@ function explorerChart(records, axis, variants) {
     }
     labels.set(x, record);
     const series = {
-      identity, dimensions, environment: record.environment,
+      identity, identity_keys: record.identity_keys,
+      dimensions, environment: record.environment,
       repository: record.repository, branch: record.branch,
     };
     const key = JSON.stringify(series);
@@ -230,7 +253,10 @@ function explorerChart(records, axis, variants) {
     return left.localeCompare(right, undefined, { numeric: true });
   });
   const displayLabel = (x) => {
-    if (history) return labels.get(x).commit.slice(0, 8);
+    if (history) {
+      return new Date(labels.get(x).ordering_timestamp)
+        .toISOString().slice(0, 19).replace("T", " ");
+    }
     if (x === FILTER_MISSING) return "Not set";
     if (axis === "identity.variant") return variants.get(x) || x;
     return x;
@@ -238,9 +264,9 @@ function explorerChart(records, axis, variants) {
   return {
     labels: ordered.map(displayLabel),
     datasets: [...groups.values()].map(({ series, records }) => ({
-      label: variantBars
+      label: history ? historySeriesLabel(series) : variantBars
         ? variants.get(series.identity.variant) || series.identity.variant
-        : historySeriesLabel(series, variants) || "Results",
+        : comparisonSeriesLabel(series, variants) || "Results",
       grouped: !variantBars,
       borderColor: historySeriesColor(series),
       backgroundColor: historySeriesColor(series),
@@ -350,21 +376,18 @@ function renderSuiteExplorer(target, suite, data, catalog, root, overview = fals
     <div class="explorer-header">
       ${heading}
       <div class="explorer-controls">
+      <label class="explorer-axis-control">X-axis <select class="explorer-axis">
+        ${axes.map((axis) => `<option value="${escapeHtml(axis.id)}">${escapeHtml(axis.label)}</option>`).join("")}
+      </select></label>
       <label>Metric <select class="explorer-metric">
         ${metrics.map((key) => {
           const [metric, unit] = JSON.parse(key);
           return `<option value="${escapeHtml(key)}">${escapeHtml(titleCase(metric))} (${escapeHtml(unit)})</option>`;
         }).join("")}
       </select></label>
-      <label>X-axis <select class="explorer-axis">
-        ${axes.map((axis) => `<option value="${escapeHtml(axis.id)}">${escapeHtml(axis.label)}</option>`).join("")}
-      </select></label>
-      <label>Environment <select class="explorer-environment">
+      <label class="explorer-environment-control">Environment <select class="explorer-environment">
         ${environments.map(([key, environment]) =>
-          `<option value="${escapeHtml(key)}">${escapeHtml(
-            Object.entries(environment).map(([name, value]) => `${name}=${value}`).join(" / ")
-            || "Unknown environment",
-          )}</option>`).join("")}
+          `<option value="${escapeHtml(key)}" title="${escapeHtml(environmentDescription(environment))}">${escapeHtml(environmentCapacityLabel(environment))}</option>`).join("")}
       </select></label>
       </div>
     </div>
@@ -372,7 +395,7 @@ function renderSuiteExplorer(target, suite, data, catalog, root, overview = fals
       ${renderFilterGroups(categories, filterState, prefix)}
       <button type="button" class="filter-reset">Reset</button>
     </div>
-    <p class="explorer-context meta"></p>
+    <p class="explorer-context meta" hidden></p>
     <div class="explorer-chart chart-wrapper"><canvas role="img" aria-label="${escapeHtml(suite.name)} results"></canvas></div>
     <p class="explorer-empty" hidden>No measurements match these selections.</p>
     ${overview ? "" : '<section class="card result-details"></section>'}
@@ -420,6 +443,7 @@ function renderSuiteExplorer(target, suite, data, catalog, root, overview = fals
     if (history && !historyLoaded) {
       target.querySelector(".explorer-chart").hidden = true;
       target.querySelector(".explorer-empty").hidden = true;
+      target.querySelector(".explorer-context").hidden = false;
       target.querySelector(".explorer-context").textContent = "Loading history...";
       if (!historyRequest) {
         const version = document.body.dataset.siteVersion;
@@ -453,12 +477,16 @@ function renderSuiteExplorer(target, suite, data, catalog, root, overview = fals
     target.querySelector(".explorer-empty").hidden = Boolean(visible.length);
     const context = target.querySelector(".explorer-context");
     context.classList.remove("error");
+    environmentSelect.title = environmentDescription(
+      JSON.parse(environmentSelect.value),
+    );
     const commits = new Set(visible.map((item) => item.commit));
     const unknown = environmentSelect.value === "{}"
       ? " Environment unknown; comparability cannot be verified." : "";
     context.textContent = history
       ? `${visible.length} historical measurements across ${commits.size} commits.${unknown}`
-      : `Latest available result per variant/case; ${commits.size} source commits.${unknown}`;
+      : unknown.trim();
+    context.hidden = !context.textContent;
     if (overview) {
       const params = new URLSearchParams({
         metric: metricSelect.value, axis, environment: environmentSelect.value,
@@ -481,7 +509,8 @@ function renderSuiteExplorer(target, suite, data, catalog, root, overview = fals
     const chartData = explorerChart(visible, axis, variants);
     const options = chartOptions(unit);
     options.scales.x.title = {
-      display: true, text: axes.find((item) => item.id === axis).label,
+      display: true,
+      text: history ? "Source timestamp (UTC)" : axes.find((item) => item.id === axis).label,
     };
     options.plugins.tooltip.callbacks.title = (items) => {
       const record = items[0].raw.record;
@@ -512,6 +541,7 @@ function renderSuiteExplorer(target, suite, data, catalog, root, overview = fals
       target.querySelector(".explorer-empty").hidden = true;
       if (!overview) target.querySelector(".result-details").innerHTML = "";
       const context = target.querySelector(".explorer-context");
+      context.hidden = false;
       context.classList.add("error");
       context.textContent = `Could not render results: ${error.message}`;
     }
