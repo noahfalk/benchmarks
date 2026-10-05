@@ -633,7 +633,7 @@
   "schema_version": 1,
   "suites": [
     {
-      "description": "DFE log pipelines applying an attribute rename while exercising OTLP and OTAP input/output combinations.",
+      "description": "Measures resource efficiency while a single-core DFE applies an attribute rename to a fixed offered load of 100K logs/sec across OTLP and OTAP input/output combinations. The load generator and sink each run on a separate core.",
       "id": "attribute-processor-protocol-routing",
       "metric_profiles": [
         "logs"
@@ -732,7 +732,7 @@
       ]
     },
     {
-      "description": "Flow-control and load-management workloads.",
+      "description": "Measures the resource-efficiency impact of receiver acknowledgment-based flow control at a fixed offered load of 100K logs/sec. A single-core DFE applies an attribute rename with wait-for-result enabled, then exports to a separate one-core backend DFE ending in an in-memory performance sink. The backend receiver acknowledges accepted data quickly without waiting for the sink, so it is not deliberately throttled.",
       "id": "backpressure",
       "metric_profiles": [
         "logs"
