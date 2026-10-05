@@ -255,7 +255,7 @@ function explorerChart(records, axis, variants) {
   const displayLabel = (x) => {
     if (history) {
       return new Date(labels.get(x).ordering_timestamp)
-        .toISOString().slice(0, 19).replace("T", " ");
+        .toISOString().slice(0, 10);
     }
     if (x === FILTER_MISSING) return "Not set";
     if (axis === "identity.variant") return variants.get(x) || x;
@@ -385,7 +385,7 @@ function renderSuiteExplorer(target, suite, data, catalog, root, overview = fals
           return `<option value="${escapeHtml(key)}">${escapeHtml(titleCase(metric))} (${escapeHtml(unit)})</option>`;
         }).join("")}
       </select></label>
-      <label class="explorer-environment-control">Environment <select class="explorer-environment">
+      <label class="explorer-environment-control">Hardware <select class="explorer-environment">
         ${environments.map(([key, environment]) =>
           `<option value="${escapeHtml(key)}" title="${escapeHtml(environmentDescription(environment))}">${escapeHtml(environmentCapacityLabel(environment))}</option>`).join("")}
       </select></label>
@@ -480,12 +480,9 @@ function renderSuiteExplorer(target, suite, data, catalog, root, overview = fals
     environmentSelect.title = environmentDescription(
       JSON.parse(environmentSelect.value),
     );
-    const commits = new Set(visible.map((item) => item.commit));
     const unknown = environmentSelect.value === "{}"
-      ? " Environment unknown; comparability cannot be verified." : "";
-    context.textContent = history
-      ? `${visible.length} historical measurements across ${commits.size} commits.${unknown}`
-      : unknown.trim();
+      ? "Hardware unknown; comparability cannot be verified." : "";
+    context.textContent = unknown;
     context.hidden = !context.textContent;
     if (overview) {
       const params = new URLSearchParams({
@@ -508,9 +505,16 @@ function renderSuiteExplorer(target, suite, data, catalog, root, overview = fals
     if (typeof Chart === "undefined") throw new Error("Chart.js did not load");
     const chartData = explorerChart(visible, axis, variants);
     const options = chartOptions(unit);
+    if (history) {
+      Object.assign(options.scales.x.ticks, {
+        autoSkip: true,
+        maxTicksLimit: 8,
+        maxRotation: 0,
+      });
+    }
     options.scales.x.title = {
       display: true,
-      text: history ? "Source timestamp (UTC)" : axes.find((item) => item.id === axis).label,
+      text: history ? "Source date (UTC)" : axes.find((item) => item.id === axis).label,
     };
     options.plugins.tooltip.callbacks.title = (items) => {
       const record = items[0].raw.record;
