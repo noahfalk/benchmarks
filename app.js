@@ -168,53 +168,118 @@ function environmentKey(environment) {
   return JSON.stringify(environment, Object.keys(environment).sort());
 }
 
-function renderSparkline(points, unit) {
-  const width = 500;
-  const height = 140;
-  const padding = 12;
-  let minimum = Infinity;
-  let maximum = -Infinity;
-  for (const point of points) {
-    minimum = Math.min(minimum, point.value);
-    maximum = Math.max(maximum, point.value);
+function historyFacets(series) {
+  const facets = {};
+  for (const [namespace, values] of [
+    ["identity", series.identity],
+    ["dimension", series.dimensions],
+    ["environment", series.environment],
+  ]) {
+    for (const [key, value] of Object.entries(values)) {
+      facets[`${namespace}.${key}`] = String(value);
+    }
   }
-  const span = maximum - minimum || 1;
-  const firstTime = Date.parse(points[0].timestamp);
-  const lastTime = Date.parse(points.at(-1).timestamp);
-  const coordinates = points.map((point) => {
-    const x = firstTime === lastTime
-      ? width / 2
-      : padding + ((Date.parse(point.timestamp) - firstTime)
-        / (lastTime - firstTime)) * (width - padding * 2);
-    const y = height - padding - ((point.value - minimum) / span)
-      * (height - padding * 2);
-    return { x, y, point };
-  });
-  const polyline = coordinates.map(({ x, y }) => `${x},${y}`).join(" ");
-  const circles = coordinates.map(({ x, y, point }) => `
-    <circle cx="${x}" cy="${y}" r="4" tabindex="0">
-      <title>${escapeHtml(formatDate(point.timestamp))} / ${escapeHtml(
-        point.commit.slice(0, 8),
-      )}: ${escapeHtml(formatValue(point.value))} ${escapeHtml(unit)}
-Run: ${escapeHtml(point.run_id)}</title>
-    </circle>
-  `).join("");
-  return `
-    <svg viewBox="0 0 ${width} ${height}" role="img"
-         aria-label="${escapeHtml(
-           `${points.length} historical measurements; ${formatValue(minimum)} to ${formatValue(maximum)} ${unit}`,
-         )}">
-      <line class="axis" x1="${padding}" y1="${height - padding}"
-            x2="${width - padding}" y2="${height - padding}"></line>
-      <polyline points="${polyline}"></polyline>
-      ${circles}
-    </svg>
-    <div class="history-range">
-      <span>${escapeHtml(formatDate(points[0].timestamp))}</span>
-      <span>${escapeHtml(formatValue(minimum))} - ${escapeHtml(formatValue(maximum))} ${escapeHtml(unit)}</span>
-      <span>${escapeHtml(formatDate(points.at(-1).timestamp))}</span>
-    </div>
-  `;
+  return facets;
+}
+
+function historySeriesLabel(series, variants) {
+  const identity = Object.entries(series.identity).map(([key, value]) =>
+    key === "variant" ? (variants.get(value) || value) : `${key}=${value}`);
+  const context = [
+    ...Object.entries(series.dimensions),
+    ...Object.entries(series.environment),
+  ].map(([key, value]) => `${key}=${value}`);
+  return [...identity, ...context].join(" / ");
+}
+
+function historySeriesColor(series) {
+  const key = JSON.stringify([
+    series.identity, series.dimensions, series.environment,
+  ]);
+  let hash = 0;
+  for (let index = 0; index < key.length; index += 1) {
+    hash = ((hash << 5) - hash + key.charCodeAt(index)) | 0;
+  }
+  return `hsl(${Math.abs(hash) % 360}, 65%, 48%)`;
+}
+
+function renderHistoryCharts(series, variants, target) {
+  for (const chart of activeCharts) {
+    chart.destroy();
+  }
+  activeCharts = [];
+  if (!series.length) {
+    target.innerHTML =
+      '<div class="empty-state">No measurements match the selected filters.</div>';
+    return;
+  }
+  if (typeof Chart === "undefined") {
+    throw new Error("Chart.js did not load");
+  }
+  const metrics = new Map();
+  for (const item of series) {
+    const key = JSON.stringify([item.metric, item.unit]);
+    if (!metrics.has(key)) {
+      metrics.set(key, []);
+    }
+    metrics.get(key).push(item);
+  }
+  target.innerHTML = "";
+  for (const [key, items] of [...metrics.entries()].sort(
+    ([left], [right]) => left.localeCompare(right),
+  )) {
+    const [metric, unit] = JSON.parse(key);
+    const card = document.createElement("article");
+    card.className = "card chart-card";
+    card.innerHTML = `
+      <div class="chart-heading">
+        <h2>${escapeHtml(titleCase(metric))}</h2>
+        <span class="unit">${escapeHtml(unit)}</span>
+      </div>
+      <div class="chart-wrapper">
+        <canvas role="img" aria-label="${escapeHtml(
+          `${metric} historical measurements (${unit})`,
+        )}"></canvas>
+      </div>
+    `;
+    target.appendChild(card);
+    const datasets = items.map((item) => {
+      const color = historySeriesColor(item);
+      return {
+        label: historySeriesLabel(item, variants),
+        borderColor: color,
+        backgroundColor: color,
+        borderWidth: 2,
+        pointRadius: 2.5,
+        pointHitRadius: 6,
+        fill: false,
+        data: item.points.map((point) => ({
+          x: Date.parse(point.timestamp),
+          y: point.value,
+          commit: point.commit,
+          run_id: point.run_id,
+        })),
+      };
+    });
+    const options = chartOptions(unit);
+    options.interaction = { mode: "nearest", intersect: false };
+    options.scales.x.type = "linear";
+    options.scales.x.ticks.maxTicksLimit = 6;
+    options.scales.x.ticks.callback = (value) =>
+      formatDate(Number(value));
+    options.scales.x.title = {
+      display: true, text: "Date", color: options.scales.y.title.color,
+    };
+    options.plugins.tooltip.callbacks.title = (items) =>
+      `${formatDate(items[0].raw.x)} / ${items[0].raw.commit.slice(0, 8)}`;
+    options.plugins.tooltip.callbacks.afterLabel = (context) =>
+      `Run: ${context.raw.run_id}`;
+    activeCharts.push(new Chart(card.querySelector("canvas"), {
+      type: "line",
+      data: { datasets },
+      options,
+    }));
+  }
 }
 
 function renderSuiteHistory(suite, history) {
@@ -228,40 +293,55 @@ function renderSuiteHistory(suite, history) {
       '<div class="empty-state">No historical measurements recorded.</div>';
     return;
   }
-  const metrics = [...new Set(series.map((item) => item.metric))].sort();
+  const filteredSeries = series.map((item) => ({
+    ...item,
+    dimensions: historyFacets(item),
+  }));
+  const categories = collectDimensionCategories(filteredSeries);
+  const filterState = initialFilterState(categories);
   target.innerHTML = `
-    <div class="history-controls">
-      <label for="history-metric">Metric</label>
-      <select id="history-metric">
-        ${metrics.map((metric) => `
-          <option value="${escapeHtml(metric)}">${escapeHtml(titleCase(metric))}</option>
-        `).join("")}
-      </select>
+    <div class="comparison-workspace">
+      <aside id="filters" class="filter-panel" aria-label="Benchmark history filters">
+        ${renderFilters(categories, filterState)}
+      </aside>
+      <section id="history-charts" class="chart-grid"></section>
     </div>
-    <div id="history-charts" class="grid"></div>
   `;
   const variants = new Map(suite.variants.map((item) => [item.id, item.name]));
   const render = () => {
-    const metric = document.getElementById("history-metric").value;
-    document.getElementById("history-charts").innerHTML = series
-      .filter((item) => item.metric === metric)
-      .map((item) => {
-        const identity = Object.entries(item.identity).map(([key, value]) =>
-          key === "variant" ? (variants.get(value) || value) : `${key}=${value}`);
-        const context = [
-          ...Object.entries(item.environment),
-          ...Object.entries(item.dimensions),
-        ].map(([key, value]) => `${key}=${value}`).join(" / ");
-        return `
-          <article class="card history-card">
-            <h2>${escapeHtml(identity.join(" / "))}</h2>
-            <p class="meta">${escapeHtml(context)}</p>
-            ${renderSparkline(item.points, item.unit)}
-          </article>
-        `;
-      }).join("");
+    const visible = series.filter((_item, index) =>
+      observationMatchesFilters(filteredSeries[index], filterState));
+    renderHistoryCharts(
+      visible, variants, document.getElementById("history-charts"),
+    );
+    const count = visible.reduce((sum, item) => sum + item.points.length, 0);
+    document.getElementById("filter-summary").textContent =
+      `${count.toLocaleString()} measurements`;
   };
-  document.getElementById("history-metric").addEventListener("change", render);
+  for (const checkbox of document.querySelectorAll(
+    "#filters input[data-dimension]",
+  )) {
+    checkbox.addEventListener("change", () => {
+      const values = filterState.get(checkbox.dataset.dimension);
+      if (checkbox.checked) {
+        values.add(checkbox.value);
+      } else {
+        values.delete(checkbox.value);
+      }
+      render();
+    });
+  }
+  document.querySelector(".filter-reset").addEventListener("click", () => {
+    for (const [key, values] of categories) {
+      filterState.set(key, new Set(values));
+    }
+    for (const checkbox of document.querySelectorAll(
+      "#filters input[data-dimension]",
+    )) {
+      checkbox.checked = true;
+    }
+    render();
+  });
   render();
 }
 
@@ -294,6 +374,7 @@ let activeCharts = [];
 function titleCase(value) {
   return value
     .replaceAll("_", " ")
+    .replaceAll(".", " ")
     .replace(/\b\w/g, (letter) => letter.toUpperCase());
 }
 
