@@ -267,19 +267,15 @@ function historyFacets(series) {
   return facets;
 }
 
-function historySeriesLabel(series) {
-  return series.identity_keys.map((key) => series.identity[key]).join(", ");
+function identitySeriesLabel(series, excludedKey = null) {
+  return series.identity_keys
+    .filter((key) => key !== excludedKey && series.identity[key] !== undefined)
+    .map((key) => series.identity[key])
+    .join(", ");
 }
 
-function comparisonSeriesLabel(series, variants) {
-  const identity = Object.entries(series.identity).map(([key, value]) =>
-    key === "variant" ? (variants.get(value) || value) : `${key}=${value}`);
-  const context = [
-    ...Object.entries(series.dimensions),
-    ...Object.entries(series.environment),
-  ].map(([key, value]) => `${key}=${value}`);
-  if (series.branch) context.push(`branch=${series.branch}`);
-  return [...identity, ...context].join(" / ");
+function historySeriesLabel(series) {
+  return identitySeriesLabel(series);
 }
 
 function historySeriesColor(series) {
@@ -404,9 +400,12 @@ function explorerChart(records, axis, variants) {
   return {
     labels: ordered.map(displayLabel),
     datasets: [...groups.values()].map(({ series, records }) => ({
-      label: history ? historySeriesLabel(series) : variantBars
-        ? variants.get(series.identity.variant) || series.identity.variant
-        : comparisonSeriesLabel(series, variants) || "Results",
+      label: history
+        ? historySeriesLabel(series)
+        : identitySeriesLabel(
+          series,
+          axis.startsWith("identity.") ? axis.slice(9) : null,
+        ) || "Results",
       grouped: !variantBars,
       borderColor: historySeriesColor(series),
       backgroundColor: historySeriesColor(series),
