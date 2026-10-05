@@ -55,46 +55,11 @@ function selectedVariants(comparison, suites) {
   return selected;
 }
 
-const DAY_MILLISECONDS = 24 * 60 * 60 * 1000;
-
 function formatDate(timestamp) {
   return new Intl.DateTimeFormat(undefined, {
     dateStyle: "medium",
     timeZone: "UTC",
   }).format(new Date(timestamp));
-}
-
-function suiteActivityMap(catalog) {
-  return new Map(
-    (catalog.suites || []).map((suite) => [suite.id, suite]),
-  );
-}
-
-function suiteIsRecent(activity, recentDays) {
-  if (!activity) {
-    return false;
-  }
-  const latest = Date.parse(activity.latest_ordering_timestamp);
-  return Number.isFinite(latest)
-    && Date.now() - latest <= recentDays * DAY_MILLISECONDS;
-}
-
-function renderSuiteRow(suite, activity) {
-  const latest = activity
-    ? `Last run: ${formatDate(
-      activity.latest_ordering_timestamp,
-    )}`
-    : "Last run: None";
-
-  return `
-    <li class="suite-row">
-      <div>
-        <h3><a href="suites/${encodeURIComponent(suite.id)}/">${escapeHtml(suite.name)}</a></h3>
-        <p>${escapeHtml(suite.description)}</p>
-      </div>
-      <span class="suite-date">${escapeHtml(latest)}</span>
-    </li>
-  `;
 }
 
 function renderComparisonLinks(views) {
@@ -109,59 +74,28 @@ function renderComparisonLinks(views) {
   }).join("");
 }
 
-function renderOverview(catalog, views) {
-  const recentDays = Number.parseInt(
-    document.body.dataset.recentDays || "28",
-    10,
-  );
-  const activity = suiteActivityMap(catalog);
-  const classified = views.suites.map((suite) => {
-    const suiteActivity = activity.get(suite.id);
-    return {
-      suite,
-      activity: suiteActivity,
-      recent: suiteIsRecent(suiteActivity, recentDays),
-    };
-  });
-  const recent = classified
-    .filter((item) => item.recent)
-    .sort((left, right) =>
-      left.suite.name.localeCompare(right.suite.name));
-  const inactive = classified
-    .filter((item) => !item.recent)
-    .sort((left, right) =>
-      left.suite.name.localeCompare(right.suite.name));
-
-  const recentRows = recent.map((item) => renderSuiteRow(
-    item.suite,
-    item.activity,
-  )).join("");
-  const inactiveRows = inactive.map((item) => renderSuiteRow(
-    item.suite,
-    item.activity,
-  )).join("");
-  const comparisonLinks = renderComparisonLinks(views);
-
-  document.getElementById("app").innerHTML = `
-    <section class="intro">
-      <h2>Recent benchmark suites</h2>
-    </section>
-    <ul class="suite-list">
-      ${recentRows || '<li class="suite-row">No suites have recent runs.</li>'}
-    </ul>
-    <details class="inactive-section">
-      <summary>
-        <span>Inactive benchmark suites</span>
-      </summary>
-      <ul class="suite-list">${inactiveRows}</ul>
-    </details>
+function renderOverview(overview, views) {
+  const suites = [...views.suites].sort((left, right) =>
+    left.name.localeCompare(right.name));
+  const target = document.getElementById("app");
+  target.innerHTML = '<div id="suite-previews" class="suite-previews"></div>';
+  const previews = document.getElementById("suite-previews");
+  for (const suite of suites) {
+    const section = document.createElement("section");
+    section.className = "card suite-preview";
+    section.dataset.suiteId = suite.id;
+    previews.appendChild(section);
+    renderSuiteExplorer(section, suite, {
+      observations: overview.observations.filter((item) => item.suite === suite.id),
+      series: [],
+    }, null, ".", true);
+  }
+  target.insertAdjacentHTML("beforeend", `
     <section class="comparison-section">
-      <div class="intro">
-        <h2>Curated comparisons</h2>
-      </div>
-      <ul class="comparison-links">${comparisonLinks}</ul>
+      <h2>Curated comparisons</h2>
+      <ul class="comparison-links">${renderComparisonLinks(views)}</ul>
     </section>
-  `;
+  `);
 }
 
 function environmentKey(environment) {
@@ -174,9 +108,10 @@ function historyFacets(series) {
     ["identity", series.identity],
     ["dimension", series.dimensions],
     ["environment", series.environment],
+    ["source", { repository: series.repository, branch: series.branch }],
   ]) {
     for (const [key, value] of Object.entries(values)) {
-      facets[`${namespace}.${key}`] = String(value);
+      if (value !== null && value !== undefined) facets[`${namespace}.${key}`] = String(value);
     }
   }
   return facets;
@@ -189,6 +124,7 @@ function historySeriesLabel(series, variants) {
     ...Object.entries(series.dimensions),
     ...Object.entries(series.environment),
   ].map(([key, value]) => `${key}=${value}`);
+  if (series.branch) context.push(`branch=${series.branch}`);
   return [...identity, ...context].join(" / ");
 }
 
@@ -203,146 +139,361 @@ function historySeriesColor(series) {
   return `hsl(${Math.abs(hash) % 360}, 65%, 48%)`;
 }
 
-function renderHistoryCharts(series, variants, target) {
-  for (const chart of activeCharts) {
-    chart.destroy();
-  }
-  activeCharts = [];
-  if (!series.length) {
-    target.innerHTML =
-      '<div class="empty-state">No measurements match the selected filters.</div>';
-    return;
-  }
-  if (typeof Chart === "undefined") {
-    throw new Error("Chart.js did not load");
-  }
-  const metrics = new Map();
-  for (const item of series) {
-    const key = JSON.stringify([item.metric, item.unit]);
-    if (!metrics.has(key)) {
-      metrics.set(key, []);
+function suiteAxes(records) {
+  const axes = [{ id: "identity.variant", label: "Variant" }];
+  const categories = collectDimensionCategories(records.map((item) => ({
+    dimensions: historyFacets(item),
+  })));
+  for (const key of ["identity.case", ...[...categories.keys()]
+    .filter((key) => key.startsWith("dimension."))]) {
+    if ((categories.get(key) || []).length > 1) {
+      axes.push({
+        id: key,
+        label: key === "identity.case" ? "Case" : titleCase(key.slice(10)),
+      });
     }
-    metrics.get(key).push(item);
   }
-  target.innerHTML = "";
-  for (const [key, items] of [...metrics.entries()].sort(
-    ([left], [right]) => left.localeCompare(right),
-  )) {
-    const [metric, unit] = JSON.parse(key);
-    const card = document.createElement("article");
-    card.className = "card chart-card";
-    card.innerHTML = `
-      <div class="chart-heading">
-        <h2>${escapeHtml(titleCase(metric))}</h2>
-        <span class="unit">${escapeHtml(unit)}</span>
-      </div>
-      <div class="chart-wrapper">
-        <canvas role="img" aria-label="${escapeHtml(
-          `${metric} historical measurements (${unit})`,
-        )}"></canvas>
-      </div>
-    `;
-    target.appendChild(card);
-    const datasets = items.map((item) => {
-      const color = historySeriesColor(item);
-      return {
-        label: historySeriesLabel(item, variants),
-        borderColor: color,
-        backgroundColor: color,
-        borderWidth: 2,
-        pointRadius: 2.5,
-        pointHitRadius: 6,
-        fill: false,
-        data: item.points.map((point) => ({
-          x: Date.parse(point.timestamp),
-          y: point.value,
-          commit: point.commit,
-          run_id: point.run_id,
-        })),
-      };
-    });
-    const options = chartOptions(unit);
-    options.interaction = { mode: "nearest", intersect: false };
-    options.scales.x.type = "linear";
-    options.scales.x.ticks.maxTicksLimit = 6;
-    options.scales.x.ticks.callback = (value) =>
-      formatDate(Number(value));
-    options.scales.x.title = {
-      display: true, text: "Date", color: options.scales.y.title.color,
+  return axes;
+}
+
+function defaultSuiteAxis(axes) {
+  for (const id of [
+    "identity.case", "dimension.load_rate", "dimension.batch_size",
+    "dimension.engine_cores", "dimension.allocated_cores",
+  ]) {
+    if (axes.some((axis) => axis.id === id)) return id;
+  }
+  return "identity.variant";
+}
+
+function explorerChart(records, axis, variants) {
+  const history = axis === "history";
+  const groups = new Map();
+  const labels = new Map();
+  const axisValue = (record) => {
+    const [namespace, key] = axis.split(".");
+    return String((namespace === "identity" ? record.identity : record.dimensions)[key]
+      ?? FILTER_MISSING);
+  };
+  const dependentDimensions = new Set();
+  if (!history) {
+    const keys = new Set(records.flatMap((item) => Object.keys(item.dimensions)));
+    for (const key of keys) {
+      const byAxis = new Map();
+      for (const record of records) {
+        const x = axisValue(record);
+        if (!byAxis.has(x)) byAxis.set(x, new Set());
+        byAxis.get(x).add(record.dimensions[key] ?? FILTER_MISSING);
+      }
+      if ([...byAxis.values()].every((values) => values.size === 1)) {
+        dependentDimensions.add(key);
+      }
+    }
+  }
+  for (const record of records) {
+    const identity = { ...record.identity };
+    const dimensions = { ...record.dimensions };
+    let x = record.run_id;
+    if (!history) {
+      const [namespace, key] = axis.split(".");
+      const fields = namespace === "identity" ? identity : dimensions;
+      x = axisValue(record);
+      delete fields[key];
+      for (const dimension of dependentDimensions) delete dimensions[dimension];
+    }
+    labels.set(x, record);
+    const series = {
+      identity, dimensions, environment: record.environment,
+      repository: record.repository, branch: record.branch,
     };
-    options.plugins.tooltip.callbacks.title = (items) =>
-      `${formatDate(items[0].raw.x)} / ${items[0].raw.commit.slice(0, 8)}`;
-    options.plugins.tooltip.callbacks.afterLabel = (context) =>
-      `Run: ${context.raw.run_id}`;
-    activeCharts.push(new Chart(card.querySelector("canvas"), {
-      type: "line",
-      data: { datasets },
-      options,
-    }));
+    const key = JSON.stringify(series);
+    if (!groups.has(key)) groups.set(key, { series, records: new Map() });
+    const group = groups.get(key);
+    if (group.records.has(x)) {
+      throw new Error("Multiple results occupy the same comparison slot");
+    }
+    group.records.set(x, record);
+  }
+  const ordered = [...labels.keys()].sort((left, right) => {
+    if (history) {
+      const a = labels.get(left);
+      const b = labels.get(right);
+      return Date.parse(a.ordering_timestamp) - Date.parse(b.ordering_timestamp)
+        || left.localeCompare(right);
+    }
+    return left.localeCompare(right, undefined, { numeric: true });
+  });
+  const displayLabel = (x) => {
+    if (history) return labels.get(x).commit.slice(0, 8);
+    if (x === FILTER_MISSING) return "Not set";
+    if (axis === "identity.variant") return variants.get(x) || x;
+    return x;
+  };
+  return {
+    labels: ordered.map(displayLabel),
+    datasets: [...groups.values()].map(({ series, records }) => ({
+      label: historySeriesLabel(series, variants) || "Results",
+      borderColor: historySeriesColor(series),
+      backgroundColor: historySeriesColor(series),
+      borderWidth: history ? 2 : 1,
+      pointRadius: 3,
+      pointHitRadius: 6,
+      fill: false,
+      spanGaps: true,
+      data: ordered.map((x, index) => {
+        const record = records.get(x);
+        return { x: index, y: record ? record.value : null, record: record || null };
+      }),
+    })),
+  };
+}
+
+async function loadResultDetails(record, suite, catalog, root, target, isCurrent) {
+  target.innerHTML = '<p>Loading selected result...</p>';
+  try {
+    const run = catalog.runs.find((item) => item.id === record.run_id);
+    if (!run) throw new Error(`Run ${record.run_id} is absent from the catalog`);
+    const bundle = await fetchJson(`${root}/${run.path}`);
+    if (!isCurrent()) return;
+    const table = bundle.results.find((item) => item.suite === suite.id);
+    const measurement = table && table.measurements.find((item) => {
+      const identity = Object.fromEntries(table.identity_keys.map(
+        (key, index) => [key, item.identity[index]],
+      ));
+      const dimensions = Object.fromEntries(table.dimension_keys.map(
+        (key, index) => [key, item.dimensions[index]],
+      ).filter(([_key, value]) => value !== null));
+      return environmentKey(identity) === environmentKey(record.identity)
+        && environmentKey(dimensions) === environmentKey(record.dimensions);
+    });
+    if (!measurement) throw new Error("Selected measurement is absent from its run");
+    const rows = table.metrics.map((metric, index) => {
+      const value = measurement.values[index];
+      return value === null ? "" : `
+        <tr><th>${escapeHtml(titleCase(metric.name))}</th>
+            <td>${escapeHtml(formatValue(value))} ${escapeHtml(metric.unit)}</td></tr>
+      `;
+    }).join("");
+    target.innerHTML = `
+      <h2>Selected result</h2>
+      <p>${escapeHtml(historySeriesLabel(record, new Map(
+        suite.variants.map((item) => [item.id, item.name]),
+      )))}</p>
+      <p class="meta">
+        Commit: ${escapeHtml(record.commit)}<br>
+        Run: <a href="${escapeHtml(`${root}/${run.path}`)}">${escapeHtml(record.run_id)}</a><br>
+        Collection: ${escapeHtml(bundle.run.collection_id)}<br>
+        Ordering date: ${escapeHtml(formatDate(record.ordering_timestamp))}
+      </p>
+      <table class="result-metrics">${rows}</table>
+    `;
+  } catch (error) {
+    if (isCurrent()) target.innerHTML =
+      `<div class="error">Could not load result: ${escapeHtml(error.message)}</div>`;
   }
 }
 
-function renderSuiteHistory(suite, history) {
-  document.getElementById("page-title").textContent = suite.name;
-  document.getElementById("summary").textContent = suite.description;
-  const target = document.getElementById("app");
-  const series = history.series.filter((item) =>
-    item.suite === suite.id && item.points.length);
-  if (!series.length) {
-    target.innerHTML =
-      '<div class="empty-state">No historical measurements recorded.</div>';
+function renderSuiteExplorer(target, suite, data, catalog, root, overview = false) {
+  const records = [...data.observations, ...data.series];
+  const heading = overview
+    ? `<h2><a class="suite-link" href="suites/${encodeURIComponent(suite.id)}/">${escapeHtml(suite.name)}</a></h2>
+       <p>${escapeHtml(suite.description)}</p>`
+    : "";
+  if (!records.length) {
+    target.innerHTML = `${heading}<p>No results recorded.</p>`;
     return;
   }
-  const filteredSeries = series.map((item) => ({
-    ...item,
-    dimensions: historyFacets(item),
-  }));
-  const categories = collectDimensionCategories(filteredSeries);
-  const filterState = initialFilterState(categories);
-  target.innerHTML = `
-    <div class="comparison-workspace">
-      <aside id="filters" class="filter-panel" aria-label="Benchmark history filters">
-        ${renderFilters(categories, filterState)}
-      </aside>
-      <section id="history-charts" class="chart-grid"></section>
-    </div>
-  `;
   const variants = new Map(suite.variants.map((item) => [item.id, item.name]));
-  const render = () => {
-    const visible = series.filter((_item, index) =>
-      observationMatchesFilters(filteredSeries[index], filterState));
-    renderHistoryCharts(
-      visible, variants, document.getElementById("history-charts"),
+  const metrics = [...new Set(records.map((item) =>
+    JSON.stringify([item.metric, item.unit])))].sort();
+  const environments = [...new Map(records.map((item) =>
+    [environmentKey(item.environment), item.environment])).entries()];
+  environments.sort(([left], [right]) => left.localeCompare(right));
+  const axes = suiteAxes(records);
+  if (!overview) axes.push({ id: "history", label: "Commit history" });
+  const categories = collectDimensionCategories(records.map((item) => ({
+    dimensions: historyFacets(item),
+  })));
+  for (const [key, values] of categories) {
+    if (key.startsWith("environment.") || values.length < 2) categories.delete(key);
+  }
+  const filterState = initialFilterState(categories);
+  if (!overview) {
+    const savedFilters = new URLSearchParams(location.search).get("filters");
+    if (savedFilters) {
+      const parsed = JSON.parse(savedFilters);
+      if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) {
+        throw new Error("Saved filters must be an object");
+      }
+      for (const [key, values] of Object.entries(parsed)) {
+        if (!categories.has(key) || !Array.isArray(values)
+            || !values.every((value) => categories.get(key).includes(value))) {
+          throw new Error(`Invalid saved filter ${key}`);
+        }
+        filterState.set(key, new Set(values));
+      }
+    }
+  }
+  const prefix = `suite-${suite.id}`;
+  target.innerHTML = `
+    ${heading}
+    <div class="explorer-controls">
+      <label>Metric <select class="explorer-metric">
+        ${metrics.map((key) => {
+          const [metric, unit] = JSON.parse(key);
+          return `<option value="${escapeHtml(key)}">${escapeHtml(titleCase(metric))} (${escapeHtml(unit)})</option>`;
+        }).join("")}
+      </select></label>
+      <label>X-axis <select class="explorer-axis">
+        ${axes.map((axis) => `<option value="${escapeHtml(axis.id)}">${escapeHtml(axis.label)}</option>`).join("")}
+      </select></label>
+      <label>Environment <select class="explorer-environment">
+        ${environments.map(([key, environment]) =>
+          `<option value="${escapeHtml(key)}">${escapeHtml(
+            Object.entries(environment).map(([name, value]) => `${name}=${value}`).join(" / ")
+            || "Unknown environment",
+          )}</option>`).join("")}
+      </select></label>
+    </div>
+    <details class="explorer-filters">
+      <summary>Filters</summary>
+      ${renderFilterGroups(categories, filterState, prefix)}
+      <button type="button" class="filter-reset">Reset</button>
+    </details>
+    <p class="explorer-context meta"></p>
+    <div class="explorer-chart chart-wrapper"><canvas role="img" aria-label="${escapeHtml(suite.name)} results"></canvas></div>
+    <p class="explorer-empty" hidden>No measurements match these selections.</p>
+    ${overview ? "" : '<section class="card result-details"></section>'}
+  `;
+  const metricSelect = target.querySelector(".explorer-metric");
+  const axisSelect = target.querySelector(".explorer-axis");
+  const environmentSelect = target.querySelector(".explorer-environment");
+  axisSelect.value = defaultSuiteAxis(axes);
+  metricSelect.value = metrics.find((key) =>
+    JSON.parse(key)[0] === "cpu_percentage_normalized_avg")
+    || metrics.find((key) => JSON.parse(key)[0] === "logs_received_rate")
+    || metrics[0];
+  const newest = [...data.observations].sort((left, right) =>
+    Date.parse(right.ordering_timestamp) - Date.parse(left.ordering_timestamp)
+    || right.run_id.localeCompare(left.run_id))[0];
+  if (newest) environmentSelect.value = environmentKey(newest.environment);
+  if (!overview) {
+    const params = new URLSearchParams(location.search);
+    if (metrics.includes(params.get("metric"))) metricSelect.value = params.get("metric");
+    if (axes.some((axis) => axis.id === params.get("axis"))) axisSelect.value = params.get("axis");
+    if (environments.some(([key]) => key === params.get("environment"))) {
+      environmentSelect.value = params.get("environment");
+    }
+  }
+  let chart = null;
+  let selection = 0;
+  const showDetails = (record) => {
+    if (overview) return;
+    const currentSelection = ++selection;
+    loadResultDetails(
+      record, suite, catalog, root, target.querySelector(".result-details"),
+      () => currentSelection === selection,
     );
-    const count = visible.reduce((sum, item) => sum + item.points.length, 0);
-    document.getElementById("filter-summary").textContent =
-      `${count.toLocaleString()} measurements`;
   };
-  for (const checkbox of document.querySelectorAll(
-    "#filters input[data-dimension]",
-  )) {
+  const render = () => {
+    if (chart) chart.destroy();
+    chart = null;
+    const axis = axisSelect.value;
+    const history = axis === "history";
+    const [metric, unit] = JSON.parse(metricSelect.value);
+    const matches = (item) => item.metric === metric && item.unit === unit
+      && environmentKey(item.environment) === environmentSelect.value
+      && observationMatchesFilters({ dimensions: historyFacets(item) }, filterState);
+    const visible = history
+      ? data.series.filter(matches).flatMap((item) =>
+        item.points.map((point) => ({
+          ...item, ...point, ordering_timestamp: point.timestamp,
+        })))
+      : data.observations.filter(matches);
+    target.querySelector(".explorer-chart").hidden = !visible.length;
+    target.querySelector(".explorer-empty").hidden = Boolean(visible.length);
+    const context = target.querySelector(".explorer-context");
+    context.classList.remove("error");
+    const commits = new Set(visible.map((item) => item.commit));
+    const unknown = environmentSelect.value === "{}"
+      ? " Environment unknown; comparability cannot be verified." : "";
+    context.textContent = history
+      ? `${visible.length} historical measurements across ${commits.size} commits.${unknown}`
+      : `Latest available result per variant/case; ${commits.size} source commits.${unknown}`;
+    if (overview) {
+      const params = new URLSearchParams({
+        metric: metricSelect.value, axis, environment: environmentSelect.value,
+      });
+      const changedFilters = Object.fromEntries([...filterState]
+        .filter(([key, values]) => values.size !== categories.get(key).length)
+        .map(([key, values]) => [key, [...values]]));
+      if (Object.keys(changedFilters).length) {
+        params.set("filters", JSON.stringify(changedFilters));
+      }
+      target.querySelector(".suite-link").href =
+        `suites/${encodeURIComponent(suite.id)}/?${params}`;
+    }
+    if (!visible.length) {
+      selection += 1;
+      if (!overview) target.querySelector(".result-details").innerHTML = "";
+      return;
+    }
+    if (typeof Chart === "undefined") throw new Error("Chart.js did not load");
+    const chartData = explorerChart(visible, axis, variants);
+    const options = chartOptions(unit);
+    options.scales.x.title = {
+      display: true, text: axes.find((item) => item.id === axis).label,
+    };
+    options.plugins.tooltip.callbacks.title = (items) => {
+      const record = items[0].raw.record;
+      return `${record.commit.slice(0, 8)} / ${formatDate(record.ordering_timestamp)}`;
+    };
+    options.plugins.tooltip.callbacks.afterLabel = (context) =>
+      `Run: ${context.raw.record.run_id}`;
+    options.onClick = (_event, elements) => {
+      if (elements.length) {
+        const { datasetIndex, index } = elements[0];
+        const record = chartData.datasets[datasetIndex].data[index].record;
+        if (record) showDetails(record);
+      }
+    };
+    chart = new Chart(target.querySelector("canvas"), {
+      type: history ? "line" : "bar", data: chartData, options,
+    });
+    showDetails(visible[0]);
+  };
+  const renderSafely = () => {
+    try {
+      render();
+    } catch (error) {
+      selection += 1;
+      target.querySelector(".explorer-chart").hidden = true;
+      target.querySelector(".explorer-empty").hidden = true;
+      if (!overview) target.querySelector(".result-details").innerHTML = "";
+      const context = target.querySelector(".explorer-context");
+      context.classList.add("error");
+      context.textContent = `Could not render results: ${error.message}`;
+    }
+  };
+  for (const control of [metricSelect, axisSelect, environmentSelect]) {
+    control.addEventListener("change", renderSafely);
+  }
+  for (const checkbox of target.querySelectorAll("input[data-dimension]")) {
     checkbox.addEventListener("change", () => {
       const values = filterState.get(checkbox.dataset.dimension);
-      if (checkbox.checked) {
-        values.add(checkbox.value);
-      } else {
-        values.delete(checkbox.value);
-      }
-      render();
+      if (checkbox.checked) values.add(checkbox.value);
+      else values.delete(checkbox.value);
+      renderSafely();
     });
   }
-  document.querySelector(".filter-reset").addEventListener("click", () => {
-    for (const [key, values] of categories) {
-      filterState.set(key, new Set(values));
-    }
-    for (const checkbox of document.querySelectorAll(
-      "#filters input[data-dimension]",
-    )) {
+  target.querySelector(".filter-reset").addEventListener("click", () => {
+    for (const [key, values] of categories) filterState.set(key, new Set(values));
+    for (const checkbox of target.querySelectorAll("input[data-dimension]")) {
       checkbox.checked = true;
     }
-    render();
+    renderSafely();
   });
-  render();
+  renderSafely();
 }
 
 function environmentLabel(environment) {
@@ -443,10 +594,10 @@ function observationMatchesFilters(observation, filterState) {
   return true;
 }
 
-function renderFilters(categories, filterState) {
-  const groups = [...categories].map(([key, values]) => {
+function renderFilterGroups(categories, filterState, prefix = "filter") {
+  return [...categories].map(([key, values], groupIndex) => {
     const options = values.map((value, index) => {
-      const id = `filter-${key}-${index}`;
+      const id = `${prefix}-${groupIndex}-${index}`;
       return `
         <label class="filter-option" for="${escapeHtml(id)}">
           <input id="${escapeHtml(id)}"
@@ -465,12 +616,15 @@ function renderFilters(categories, filterState) {
       </fieldset>
     `;
   }).join("");
+}
+
+function renderFilters(categories, filterState) {
   return `
     <div class="filter-heading">
       <h2>Filters</h2>
       <button class="filter-reset" type="button">Reset</button>
     </div>
-    ${groups}
+    ${renderFilterGroups(categories, filterState)}
     <div id="filter-summary" class="filter-summary"></div>
   `;
 }
@@ -826,15 +980,28 @@ async function load() {
   try {
     if (document.body.dataset.page === "suite") {
       const suiteId = document.body.dataset.suiteId;
-      const [views, history] = await Promise.all([
+      const [views, history, catalog] = await Promise.all([
         fetchJson(`${root}/data/views.json${versionQuery}`),
         fetchJson(`${root}/data/suites/${encodeURIComponent(suiteId)}.json${versionQuery}`),
+        fetchJson(`${root}/data/catalog.json${versionQuery}`),
       ]);
       const suite = views.suites.find((item) => item.id === suiteId);
       if (!suite) {
         throw new Error(`Unknown suite ${suiteId}`);
       }
-      renderSuiteHistory(suite, history);
+      document.getElementById("page-title").textContent = suite.name;
+      document.getElementById("summary").textContent = suite.description;
+      renderSuiteExplorer(
+        document.getElementById("app"), suite, history, catalog, root,
+      );
+      return;
+    }
+    if (document.body.dataset.page === "overview") {
+      const [overview, views] = await Promise.all([
+        fetchJson(`${root}/data/overview.json${versionQuery}`),
+        fetchJson(`${root}/data/views.json${versionQuery}`),
+      ]);
+      renderOverview(overview, views);
       return;
     }
     const [catalog, latest, views] = await Promise.all([
@@ -851,8 +1018,6 @@ async function load() {
         suites,
         comparisons,
       );
-    } else {
-      renderOverview(catalog, views);
     }
   } catch (error) {
     document.getElementById("app").innerHTML =

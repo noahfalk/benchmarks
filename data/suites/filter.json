@@ -1,7 +1,1550 @@
 {
+  "observations": [
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otap-filter-otap"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "%",
+      "value": 42.8,
+      "variant": "otap-filter-otap"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otap-filter-otap"
+      },
+      "metric": "cpu_percentage_normalized_max",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "%",
+      "value": 44.35,
+      "variant": "otap-filter-otap"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otap-filter-otap"
+      },
+      "metric": "dropped_logs_percentage",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "%",
+      "value": 96.92797,
+      "variant": "otap-filter-otap"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otap-filter-otap"
+      },
+      "metric": "egress_bytes_per_log",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "bytes/log",
+      "value": 208.97,
+      "variant": "otap-filter-otap"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otap-filter-otap"
+      },
+      "metric": "logs_produced_rate",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "logs/sec",
+      "value": 98325,
+      "variant": "otap-filter-otap"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otap-filter-otap"
+      },
+      "metric": "logs_received_rate",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "logs/sec",
+      "value": 3020,
+      "variant": "otap-filter-otap"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otap-filter-otap"
+      },
+      "metric": "network_rx_bytes_rate_avg",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "bytes/sec",
+      "value": 1157833,
+      "variant": "otap-filter-otap"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otap-filter-otap"
+      },
+      "metric": "network_tx_bytes_rate_avg",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "bytes/sec",
+      "value": 631219,
+      "variant": "otap-filter-otap"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otap-filter-otap"
+      },
+      "metric": "ram_mib_avg",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "MiB",
+      "value": 19.0,
+      "variant": "otap-filter-otap"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otap-filter-otap"
+      },
+      "metric": "ram_mib_max",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "MiB",
+      "value": 19.4,
+      "variant": "otap-filter-otap"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otap-filter-otap"
+      },
+      "metric": "test_duration",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "seconds",
+      "value": 60.0,
+      "variant": "otap-filter-otap"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otap-filter-otap-go-collector"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "%",
+      "value": 75.17,
+      "variant": "otap-filter-otap-go-collector"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otap-filter-otap-go-collector"
+      },
+      "metric": "cpu_percentage_normalized_max",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "%",
+      "value": 78.45,
+      "variant": "otap-filter-otap-go-collector"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otap-filter-otap-go-collector"
+      },
+      "metric": "dropped_logs_percentage",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "%",
+      "value": 96.885581,
+      "variant": "otap-filter-otap-go-collector"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otap-filter-otap-go-collector"
+      },
+      "metric": "egress_bytes_per_log",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "bytes/log",
+      "value": 22.54,
+      "variant": "otap-filter-otap-go-collector"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otap-filter-otap-go-collector"
+      },
+      "metric": "logs_produced_rate",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "logs/sec",
+      "value": 98324,
+      "variant": "otap-filter-otap-go-collector"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otap-filter-otap-go-collector"
+      },
+      "metric": "logs_received_rate",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "logs/sec",
+      "value": 3062,
+      "variant": "otap-filter-otap-go-collector"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otap-filter-otap-go-collector"
+      },
+      "metric": "network_rx_bytes_rate_avg",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "bytes/sec",
+      "value": 1146323,
+      "variant": "otap-filter-otap-go-collector"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otap-filter-otap-go-collector"
+      },
+      "metric": "network_tx_bytes_rate_avg",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "bytes/sec",
+      "value": 69035,
+      "variant": "otap-filter-otap-go-collector"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otap-filter-otap-go-collector"
+      },
+      "metric": "ram_mib_avg",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "MiB",
+      "value": 412.6,
+      "variant": "otap-filter-otap-go-collector"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otap-filter-otap-go-collector"
+      },
+      "metric": "ram_mib_max",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "MiB",
+      "value": 621.6,
+      "variant": "otap-filter-otap-go-collector"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otap-filter-otap-go-collector"
+      },
+      "metric": "test_duration",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "seconds",
+      "value": 60.0,
+      "variant": "otap-filter-otap-go-collector"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otap-filter-otlp"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "%",
+      "value": 39.53,
+      "variant": "otap-filter-otlp"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otap-filter-otlp"
+      },
+      "metric": "cpu_percentage_normalized_max",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "%",
+      "value": 40.13,
+      "variant": "otap-filter-otlp"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otap-filter-otlp"
+      },
+      "metric": "dropped_logs_percentage",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "%",
+      "value": 96.927963,
+      "variant": "otap-filter-otlp"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otap-filter-otlp"
+      },
+      "metric": "egress_bytes_per_log",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "bytes/log",
+      "value": 65.62,
+      "variant": "otap-filter-otlp"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otap-filter-otlp"
+      },
+      "metric": "logs_produced_rate",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "logs/sec",
+      "value": 98326,
+      "variant": "otap-filter-otlp"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otap-filter-otlp"
+      },
+      "metric": "logs_received_rate",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "logs/sec",
+      "value": 3020,
+      "variant": "otap-filter-otlp"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otap-filter-otlp"
+      },
+      "metric": "network_rx_bytes_rate_avg",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "bytes/sec",
+      "value": 1167056,
+      "variant": "otap-filter-otlp"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otap-filter-otlp"
+      },
+      "metric": "network_tx_bytes_rate_avg",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "bytes/sec",
+      "value": 198218,
+      "variant": "otap-filter-otlp"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otap-filter-otlp"
+      },
+      "metric": "ram_mib_avg",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "MiB",
+      "value": 17.3,
+      "variant": "otap-filter-otlp"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otap-filter-otlp"
+      },
+      "metric": "ram_mib_max",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "MiB",
+      "value": 17.7,
+      "variant": "otap-filter-otlp"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otap-filter-otlp"
+      },
+      "metric": "test_duration",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "seconds",
+      "value": 60.0,
+      "variant": "otap-filter-otlp"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otlp-filter-otap"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "%",
+      "value": 65.22,
+      "variant": "otlp-filter-otap"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otlp-filter-otap"
+      },
+      "metric": "cpu_percentage_normalized_max",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "%",
+      "value": 65.65,
+      "variant": "otlp-filter-otap"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otlp-filter-otap"
+      },
+      "metric": "dropped_logs_percentage",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "%",
+      "value": 96.927085,
+      "variant": "otlp-filter-otap"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otlp-filter-otap"
+      },
+      "metric": "egress_bytes_per_log",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "bytes/log",
+      "value": 208.18,
+      "variant": "otlp-filter-otap"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otlp-filter-otap"
+      },
+      "metric": "logs_produced_rate",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "logs/sec",
+      "value": 99994,
+      "variant": "otlp-filter-otap"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otlp-filter-otap"
+      },
+      "metric": "logs_received_rate",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "logs/sec",
+      "value": 3072,
+      "variant": "otlp-filter-otap"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otlp-filter-otap"
+      },
+      "metric": "network_rx_bytes_rate_avg",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "bytes/sec",
+      "value": 3024674,
+      "variant": "otlp-filter-otap"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otlp-filter-otap"
+      },
+      "metric": "network_tx_bytes_rate_avg",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "bytes/sec",
+      "value": 639690,
+      "variant": "otlp-filter-otap"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otlp-filter-otap"
+      },
+      "metric": "ram_mib_avg",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "MiB",
+      "value": 19.0,
+      "variant": "otlp-filter-otap"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otlp-filter-otap"
+      },
+      "metric": "ram_mib_max",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "MiB",
+      "value": 19.6,
+      "variant": "otlp-filter-otap"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otlp-filter-otap"
+      },
+      "metric": "test_duration",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "seconds",
+      "value": 60.0,
+      "variant": "otlp-filter-otap"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otlp-filter-otap-go-collector"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "%",
+      "value": 74.56,
+      "variant": "otlp-filter-otap-go-collector"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otlp-filter-otap-go-collector"
+      },
+      "metric": "cpu_percentage_normalized_max",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "%",
+      "value": 77.72,
+      "variant": "otlp-filter-otap-go-collector"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otlp-filter-otap-go-collector"
+      },
+      "metric": "dropped_logs_percentage",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "%",
+      "value": 96.884498,
+      "variant": "otlp-filter-otap-go-collector"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otlp-filter-otap-go-collector"
+      },
+      "metric": "egress_bytes_per_log",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "bytes/log",
+      "value": 24.66,
+      "variant": "otlp-filter-otap-go-collector"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otlp-filter-otap-go-collector"
+      },
+      "metric": "logs_produced_rate",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "logs/sec",
+      "value": 98275,
+      "variant": "otlp-filter-otap-go-collector"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otlp-filter-otap-go-collector"
+      },
+      "metric": "logs_received_rate",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "logs/sec",
+      "value": 3061,
+      "variant": "otlp-filter-otap-go-collector"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otlp-filter-otap-go-collector"
+      },
+      "metric": "network_rx_bytes_rate_avg",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "bytes/sec",
+      "value": 3002106,
+      "variant": "otlp-filter-otap-go-collector"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otlp-filter-otap-go-collector"
+      },
+      "metric": "network_tx_bytes_rate_avg",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "bytes/sec",
+      "value": 75515,
+      "variant": "otlp-filter-otap-go-collector"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otlp-filter-otap-go-collector"
+      },
+      "metric": "ram_mib_avg",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "MiB",
+      "value": 355.0,
+      "variant": "otlp-filter-otap-go-collector"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otlp-filter-otap-go-collector"
+      },
+      "metric": "ram_mib_max",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "MiB",
+      "value": 485.2,
+      "variant": "otlp-filter-otap-go-collector"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otlp-filter-otap-go-collector"
+      },
+      "metric": "test_duration",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "seconds",
+      "value": 60.0,
+      "variant": "otlp-filter-otap-go-collector"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otlp-filter-otlp"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "%",
+      "value": 64.43,
+      "variant": "otlp-filter-otlp"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otlp-filter-otlp"
+      },
+      "metric": "cpu_percentage_normalized_max",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "%",
+      "value": 64.73,
+      "variant": "otlp-filter-otlp"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otlp-filter-otlp"
+      },
+      "metric": "dropped_logs_percentage",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "%",
+      "value": 96.927085,
+      "variant": "otlp-filter-otlp"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otlp-filter-otlp"
+      },
+      "metric": "egress_bytes_per_log",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "bytes/log",
+      "value": 67.51,
+      "variant": "otlp-filter-otlp"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otlp-filter-otlp"
+      },
+      "metric": "logs_produced_rate",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "logs/sec",
+      "value": 99994,
+      "variant": "otlp-filter-otlp"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otlp-filter-otlp"
+      },
+      "metric": "logs_received_rate",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "logs/sec",
+      "value": 3072,
+      "variant": "otlp-filter-otlp"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otlp-filter-otlp"
+      },
+      "metric": "network_rx_bytes_rate_avg",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "bytes/sec",
+      "value": 3023079,
+      "variant": "otlp-filter-otlp"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otlp-filter-otlp"
+      },
+      "metric": "network_tx_bytes_rate_avg",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "bytes/sec",
+      "value": 207455,
+      "variant": "otlp-filter-otlp"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otlp-filter-otlp"
+      },
+      "metric": "ram_mib_avg",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "MiB",
+      "value": 18.5,
+      "variant": "otlp-filter-otlp"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otlp-filter-otlp"
+      },
+      "metric": "ram_mib_max",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "MiB",
+      "value": 19.0,
+      "variant": "otlp-filter-otlp"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otlp-filter-otlp"
+      },
+      "metric": "test_duration",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "seconds",
+      "value": 60.0,
+      "variant": "otlp-filter-otlp"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otlp-filter-otlp-go-collector"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "%",
+      "value": 72.57,
+      "variant": "otlp-filter-otlp-go-collector"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otlp-filter-otlp-go-collector"
+      },
+      "metric": "cpu_percentage_normalized_max",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "%",
+      "value": 75.18,
+      "variant": "otlp-filter-otlp-go-collector"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otlp-filter-otlp-go-collector"
+      },
+      "metric": "dropped_logs_percentage",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "%",
+      "value": 96.927085,
+      "variant": "otlp-filter-otlp-go-collector"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otlp-filter-otlp-go-collector"
+      },
+      "metric": "egress_bytes_per_log",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "bytes/log",
+      "value": 44.62,
+      "variant": "otlp-filter-otlp-go-collector"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otlp-filter-otlp-go-collector"
+      },
+      "metric": "logs_produced_rate",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "logs/sec",
+      "value": 99996,
+      "variant": "otlp-filter-otlp-go-collector"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otlp-filter-otlp-go-collector"
+      },
+      "metric": "logs_received_rate",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "logs/sec",
+      "value": 3072,
+      "variant": "otlp-filter-otlp-go-collector"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otlp-filter-otlp-go-collector"
+      },
+      "metric": "network_rx_bytes_rate_avg",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "bytes/sec",
+      "value": 3034435,
+      "variant": "otlp-filter-otlp-go-collector"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otlp-filter-otlp-go-collector"
+      },
+      "metric": "network_tx_bytes_rate_avg",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "bytes/sec",
+      "value": 137122,
+      "variant": "otlp-filter-otlp-go-collector"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otlp-filter-otlp-go-collector"
+      },
+      "metric": "ram_mib_avg",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "MiB",
+      "value": 64.4,
+      "variant": "otlp-filter-otlp-go-collector"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otlp-filter-otlp-go-collector"
+      },
+      "metric": "ram_mib_max",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "MiB",
+      "value": 67.2,
+      "variant": "otlp-filter-otlp-go-collector"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "variant": "otlp-filter-otlp-go-collector"
+      },
+      "metric": "test_duration",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "filter",
+      "unit": "seconds",
+      "value": 60.0,
+      "variant": "otlp-filter-otlp-go-collector"
+    }
+  ],
   "schema_version": 1,
   "series": [
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -361,11 +1904,13 @@
           "value": 42.8
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "%",
       "variant": "otap-filter-otap"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -725,11 +2270,13 @@
           "value": 75.17
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "%",
       "variant": "otap-filter-otap-go-collector"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -1089,11 +2636,13 @@
           "value": 39.53
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "%",
       "variant": "otap-filter-otlp"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -1453,11 +3002,13 @@
           "value": 65.22
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "%",
       "variant": "otlp-filter-otap"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -1817,11 +3368,13 @@
           "value": 74.56
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "%",
       "variant": "otlp-filter-otap-go-collector"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -2181,11 +3734,13 @@
           "value": 64.43
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "%",
       "variant": "otlp-filter-otlp"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -2545,11 +4100,13 @@
           "value": 72.57
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "%",
       "variant": "otlp-filter-otlp-go-collector"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -2909,11 +4466,13 @@
           "value": 44.35
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "%",
       "variant": "otap-filter-otap"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -3273,11 +4832,13 @@
           "value": 78.45
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "%",
       "variant": "otap-filter-otap-go-collector"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -3637,11 +5198,13 @@
           "value": 40.13
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "%",
       "variant": "otap-filter-otlp"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -4001,11 +5564,13 @@
           "value": 65.65
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "%",
       "variant": "otlp-filter-otap"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -4365,11 +5930,13 @@
           "value": 77.72
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "%",
       "variant": "otlp-filter-otap-go-collector"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -4729,11 +6296,13 @@
           "value": 64.73
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "%",
       "variant": "otlp-filter-otlp"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -5093,11 +6662,13 @@
           "value": 75.18
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "%",
       "variant": "otlp-filter-otlp-go-collector"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -5457,11 +7028,13 @@
           "value": 96.92797
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "%",
       "variant": "otap-filter-otap"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -5821,11 +7394,13 @@
           "value": 96.885581
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "%",
       "variant": "otap-filter-otap-go-collector"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -6185,11 +7760,13 @@
           "value": 96.927963
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "%",
       "variant": "otap-filter-otlp"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -6549,11 +8126,13 @@
           "value": 96.927085
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "%",
       "variant": "otlp-filter-otap"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -6913,11 +8492,13 @@
           "value": 96.884498
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "%",
       "variant": "otlp-filter-otap-go-collector"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -7277,11 +8858,13 @@
           "value": 96.927085
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "%",
       "variant": "otlp-filter-otlp"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -7641,11 +9224,13 @@
           "value": 96.927085
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "%",
       "variant": "otlp-filter-otlp-go-collector"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -8005,11 +9590,13 @@
           "value": 208.97
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "bytes/log",
       "variant": "otap-filter-otap"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -8369,11 +9956,13 @@
           "value": 22.54
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "bytes/log",
       "variant": "otap-filter-otap-go-collector"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -8733,11 +10322,13 @@
           "value": 65.62
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "bytes/log",
       "variant": "otap-filter-otlp"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -9097,11 +10688,13 @@
           "value": 208.18
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "bytes/log",
       "variant": "otlp-filter-otap"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -9461,11 +11054,13 @@
           "value": 24.66
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "bytes/log",
       "variant": "otlp-filter-otap-go-collector"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -9825,11 +11420,13 @@
           "value": 67.51
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "bytes/log",
       "variant": "otlp-filter-otlp"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -10189,11 +11786,13 @@
           "value": 44.62
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "bytes/log",
       "variant": "otlp-filter-otlp-go-collector"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -10553,11 +12152,13 @@
           "value": 98325
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "logs/sec",
       "variant": "otap-filter-otap"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -10917,11 +12518,13 @@
           "value": 98324
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "logs/sec",
       "variant": "otap-filter-otap-go-collector"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -11281,11 +12884,13 @@
           "value": 98326
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "logs/sec",
       "variant": "otap-filter-otlp"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -11645,11 +13250,13 @@
           "value": 99994
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "logs/sec",
       "variant": "otlp-filter-otap"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -12009,11 +13616,13 @@
           "value": 98275
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "logs/sec",
       "variant": "otlp-filter-otap-go-collector"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -12373,11 +13982,13 @@
           "value": 99994
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "logs/sec",
       "variant": "otlp-filter-otlp"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -12737,11 +14348,13 @@
           "value": 99996
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "logs/sec",
       "variant": "otlp-filter-otlp-go-collector"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -13101,11 +14714,13 @@
           "value": 3020
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "logs/sec",
       "variant": "otap-filter-otap"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -13465,11 +15080,13 @@
           "value": 3062
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "logs/sec",
       "variant": "otap-filter-otap-go-collector"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -13829,11 +15446,13 @@
           "value": 3020
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "logs/sec",
       "variant": "otap-filter-otlp"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -14193,11 +15812,13 @@
           "value": 3072
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "logs/sec",
       "variant": "otlp-filter-otap"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -14557,11 +16178,13 @@
           "value": 3061
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "logs/sec",
       "variant": "otlp-filter-otap-go-collector"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -14921,11 +16544,13 @@
           "value": 3072
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "logs/sec",
       "variant": "otlp-filter-otlp"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -15285,11 +16910,13 @@
           "value": 3072
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "logs/sec",
       "variant": "otlp-filter-otlp-go-collector"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -15649,11 +17276,13 @@
           "value": 1157833
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "bytes/sec",
       "variant": "otap-filter-otap"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -16013,11 +17642,13 @@
           "value": 1146323
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "bytes/sec",
       "variant": "otap-filter-otap-go-collector"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -16377,11 +18008,13 @@
           "value": 1167056
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "bytes/sec",
       "variant": "otap-filter-otlp"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -16741,11 +18374,13 @@
           "value": 3024674
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "bytes/sec",
       "variant": "otlp-filter-otap"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -17105,11 +18740,13 @@
           "value": 3002106
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "bytes/sec",
       "variant": "otlp-filter-otap-go-collector"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -17469,11 +19106,13 @@
           "value": 3023079
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "bytes/sec",
       "variant": "otlp-filter-otlp"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -17833,11 +19472,13 @@
           "value": 3034435
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "bytes/sec",
       "variant": "otlp-filter-otlp-go-collector"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -18197,11 +19838,13 @@
           "value": 631219
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "bytes/sec",
       "variant": "otap-filter-otap"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -18561,11 +20204,13 @@
           "value": 69035
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "bytes/sec",
       "variant": "otap-filter-otap-go-collector"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -18925,11 +20570,13 @@
           "value": 198218
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "bytes/sec",
       "variant": "otap-filter-otlp"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -19289,11 +20936,13 @@
           "value": 639690
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "bytes/sec",
       "variant": "otlp-filter-otap"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -19653,11 +21302,13 @@
           "value": 75515
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "bytes/sec",
       "variant": "otlp-filter-otap-go-collector"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -20017,11 +21668,13 @@
           "value": 207455
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "bytes/sec",
       "variant": "otlp-filter-otlp"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -20381,11 +22034,13 @@
           "value": 137122
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "bytes/sec",
       "variant": "otlp-filter-otlp-go-collector"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -20745,11 +22400,13 @@
           "value": 19.0
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "MiB",
       "variant": "otap-filter-otap"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -21109,11 +22766,13 @@
           "value": 412.6
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "MiB",
       "variant": "otap-filter-otap-go-collector"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -21473,11 +23132,13 @@
           "value": 17.3
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "MiB",
       "variant": "otap-filter-otlp"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -21837,11 +23498,13 @@
           "value": 19.0
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "MiB",
       "variant": "otlp-filter-otap"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -22201,11 +23864,13 @@
           "value": 355.0
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "MiB",
       "variant": "otlp-filter-otap-go-collector"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -22565,11 +24230,13 @@
           "value": 18.5
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "MiB",
       "variant": "otlp-filter-otlp"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -22929,11 +24596,13 @@
           "value": 64.4
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "MiB",
       "variant": "otlp-filter-otlp-go-collector"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -23293,11 +24962,13 @@
           "value": 19.4
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "MiB",
       "variant": "otap-filter-otap"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -23657,11 +25328,13 @@
           "value": 621.6
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "MiB",
       "variant": "otap-filter-otap-go-collector"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -24021,11 +25694,13 @@
           "value": 17.7
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "MiB",
       "variant": "otap-filter-otlp"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -24385,11 +26060,13 @@
           "value": 19.6
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "MiB",
       "variant": "otlp-filter-otap"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -24749,11 +26426,13 @@
           "value": 485.2
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "MiB",
       "variant": "otlp-filter-otap-go-collector"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -25113,11 +26792,13 @@
           "value": 19.0
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "MiB",
       "variant": "otlp-filter-otlp"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -25477,11 +27158,13 @@
           "value": 67.2
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "MiB",
       "variant": "otlp-filter-otlp-go-collector"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -25841,11 +27524,13 @@
           "value": 60.0
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "seconds",
       "variant": "otap-filter-otap"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -26205,11 +27890,13 @@
           "value": 60.0
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "seconds",
       "variant": "otap-filter-otap-go-collector"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -26569,11 +28256,13 @@
           "value": 60.0
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "seconds",
       "variant": "otap-filter-otlp"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -26933,11 +28622,13 @@
           "value": 60.0
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "seconds",
       "variant": "otlp-filter-otap"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -27297,11 +28988,13 @@
           "value": 60.0
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "seconds",
       "variant": "otlp-filter-otap-go-collector"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -27661,11 +29354,13 @@
           "value": 60.0
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "seconds",
       "variant": "otlp-filter-otlp"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {},
       "environment": {},
@@ -28025,6 +29720,7 @@
           "value": 60.0
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "filter",
       "unit": "seconds",
       "variant": "otlp-filter-otlp-go-collector"

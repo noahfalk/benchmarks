@@ -1,7 +1,934 @@
 {
+  "observations": [
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1780887006374",
+      "commit": "f9b6074475f5c7916343ca39bf98b2879f053775",
+      "dimensions": {
+        "allocated_cores": "1"
+      },
+      "environment": {},
+      "identity": {
+        "variant": "idle-state-docker"
+      },
+      "metric": "idle_cpu_percentage_avg",
+      "ordering_timestamp": "2026-06-06T00:22:55Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1780887006374-0",
+      "source_timestamp": "2026-06-06T00:22:55Z",
+      "suite": "idle-state",
+      "unit": "%",
+      "value": 0.09,
+      "variant": "idle-state-docker"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1780887006374",
+      "commit": "f9b6074475f5c7916343ca39bf98b2879f053775",
+      "dimensions": {
+        "allocated_cores": "1"
+      },
+      "environment": {},
+      "identity": {
+        "variant": "idle-state-docker"
+      },
+      "metric": "idle_cpu_percentage_max",
+      "ordering_timestamp": "2026-06-06T00:22:55Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1780887006374-0",
+      "source_timestamp": "2026-06-06T00:22:55Z",
+      "suite": "idle-state",
+      "unit": "%",
+      "value": 0.24,
+      "variant": "idle-state-docker"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1780887006374",
+      "commit": "f9b6074475f5c7916343ca39bf98b2879f053775",
+      "dimensions": {
+        "allocated_cores": "1"
+      },
+      "environment": {},
+      "identity": {
+        "variant": "idle-state-docker"
+      },
+      "metric": "idle_ram_mib_avg",
+      "ordering_timestamp": "2026-06-06T00:22:55Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1780887006374-0",
+      "source_timestamp": "2026-06-06T00:22:55Z",
+      "suite": "idle-state",
+      "unit": "MiB",
+      "value": 15.8,
+      "variant": "idle-state-docker"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1780887006374",
+      "commit": "f9b6074475f5c7916343ca39bf98b2879f053775",
+      "dimensions": {
+        "allocated_cores": "1"
+      },
+      "environment": {},
+      "identity": {
+        "variant": "idle-state-docker"
+      },
+      "metric": "idle_ram_mib_max",
+      "ordering_timestamp": "2026-06-06T00:22:55Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1780887006374-0",
+      "source_timestamp": "2026-06-06T00:22:55Z",
+      "suite": "idle-state",
+      "unit": "MiB",
+      "value": 16.3,
+      "variant": "idle-state-docker"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1780887006374",
+      "commit": "f9b6074475f5c7916343ca39bf98b2879f053775",
+      "dimensions": {
+        "allocated_cores": "1"
+      },
+      "environment": {},
+      "identity": {
+        "variant": "idle-state-docker"
+      },
+      "metric": "idle_rss_mib_avg",
+      "ordering_timestamp": "2026-06-06T00:22:55Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1780887006374-0",
+      "source_timestamp": "2026-06-06T00:22:55Z",
+      "suite": "idle-state",
+      "unit": "MiB",
+      "value": 37.8,
+      "variant": "idle-state-docker"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1780887006374",
+      "commit": "f9b6074475f5c7916343ca39bf98b2879f053775",
+      "dimensions": {
+        "allocated_cores": "1"
+      },
+      "environment": {},
+      "identity": {
+        "variant": "idle-state-docker"
+      },
+      "metric": "idle_rss_mib_max",
+      "ordering_timestamp": "2026-06-06T00:22:55Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1780887006374-0",
+      "source_timestamp": "2026-06-06T00:22:55Z",
+      "suite": "idle-state",
+      "unit": "MiB",
+      "value": 37.9,
+      "variant": "idle-state-docker"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1780887006374",
+      "commit": "f9b6074475f5c7916343ca39bf98b2879f053775",
+      "dimensions": {
+        "allocated_cores": "1"
+      },
+      "environment": {},
+      "identity": {
+        "variant": "idle-state-docker"
+      },
+      "metric": "idle_test_duration",
+      "ordering_timestamp": "2026-06-06T00:22:55Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1780887006374-0",
+      "source_timestamp": "2026-06-06T00:22:55Z",
+      "suite": "idle-state",
+      "unit": "seconds",
+      "value": 15.0,
+      "variant": "idle-state-docker"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1780887006374",
+      "commit": "f9b6074475f5c7916343ca39bf98b2879f053775",
+      "dimensions": {
+        "allocated_cores": "16"
+      },
+      "environment": {},
+      "identity": {
+        "variant": "idle-state-16cores-docker"
+      },
+      "metric": "idle_cpu_percentage_avg",
+      "ordering_timestamp": "2026-06-06T00:22:55Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1780887006374-0",
+      "source_timestamp": "2026-06-06T00:22:55Z",
+      "suite": "idle-state",
+      "unit": "%",
+      "value": 0.37,
+      "variant": "idle-state-16cores-docker"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1780887006374",
+      "commit": "f9b6074475f5c7916343ca39bf98b2879f053775",
+      "dimensions": {
+        "allocated_cores": "16"
+      },
+      "environment": {},
+      "identity": {
+        "variant": "idle-state-16cores-docker"
+      },
+      "metric": "idle_cpu_percentage_max",
+      "ordering_timestamp": "2026-06-06T00:22:55Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1780887006374-0",
+      "source_timestamp": "2026-06-06T00:22:55Z",
+      "suite": "idle-state",
+      "unit": "%",
+      "value": 0.84,
+      "variant": "idle-state-16cores-docker"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1780887006374",
+      "commit": "f9b6074475f5c7916343ca39bf98b2879f053775",
+      "dimensions": {
+        "allocated_cores": "16"
+      },
+      "environment": {},
+      "identity": {
+        "variant": "idle-state-16cores-docker"
+      },
+      "metric": "idle_ram_mib_avg",
+      "ordering_timestamp": "2026-06-06T00:22:55Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1780887006374-0",
+      "source_timestamp": "2026-06-06T00:22:55Z",
+      "suite": "idle-state",
+      "unit": "MiB",
+      "value": 28.7,
+      "variant": "idle-state-16cores-docker"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1780887006374",
+      "commit": "f9b6074475f5c7916343ca39bf98b2879f053775",
+      "dimensions": {
+        "allocated_cores": "16"
+      },
+      "environment": {},
+      "identity": {
+        "variant": "idle-state-16cores-docker"
+      },
+      "metric": "idle_ram_mib_max",
+      "ordering_timestamp": "2026-06-06T00:22:55Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1780887006374-0",
+      "source_timestamp": "2026-06-06T00:22:55Z",
+      "suite": "idle-state",
+      "unit": "MiB",
+      "value": 28.9,
+      "variant": "idle-state-16cores-docker"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1780887006374",
+      "commit": "f9b6074475f5c7916343ca39bf98b2879f053775",
+      "dimensions": {
+        "allocated_cores": "16"
+      },
+      "environment": {},
+      "identity": {
+        "variant": "idle-state-16cores-docker"
+      },
+      "metric": "idle_rss_mib_avg",
+      "ordering_timestamp": "2026-06-06T00:22:55Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1780887006374-0",
+      "source_timestamp": "2026-06-06T00:22:55Z",
+      "suite": "idle-state",
+      "unit": "MiB",
+      "value": 46.5,
+      "variant": "idle-state-16cores-docker"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1780887006374",
+      "commit": "f9b6074475f5c7916343ca39bf98b2879f053775",
+      "dimensions": {
+        "allocated_cores": "16"
+      },
+      "environment": {},
+      "identity": {
+        "variant": "idle-state-16cores-docker"
+      },
+      "metric": "idle_rss_mib_max",
+      "ordering_timestamp": "2026-06-06T00:22:55Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1780887006374-0",
+      "source_timestamp": "2026-06-06T00:22:55Z",
+      "suite": "idle-state",
+      "unit": "MiB",
+      "value": 47.3,
+      "variant": "idle-state-16cores-docker"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1780887006374",
+      "commit": "f9b6074475f5c7916343ca39bf98b2879f053775",
+      "dimensions": {
+        "allocated_cores": "16"
+      },
+      "environment": {},
+      "identity": {
+        "variant": "idle-state-16cores-docker"
+      },
+      "metric": "idle_test_duration",
+      "ordering_timestamp": "2026-06-06T00:22:55Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1780887006374-0",
+      "source_timestamp": "2026-06-06T00:22:55Z",
+      "suite": "idle-state",
+      "unit": "seconds",
+      "value": 15.0,
+      "variant": "idle-state-16cores-docker"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1780887006374",
+      "commit": "f9b6074475f5c7916343ca39bf98b2879f053775",
+      "dimensions": {
+        "allocated_cores": "2"
+      },
+      "environment": {},
+      "identity": {
+        "variant": "idle-state-2cores-docker"
+      },
+      "metric": "idle_cpu_percentage_avg",
+      "ordering_timestamp": "2026-06-06T00:22:55Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1780887006374-0",
+      "source_timestamp": "2026-06-06T00:22:55Z",
+      "suite": "idle-state",
+      "unit": "%",
+      "value": 0.11,
+      "variant": "idle-state-2cores-docker"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1780887006374",
+      "commit": "f9b6074475f5c7916343ca39bf98b2879f053775",
+      "dimensions": {
+        "allocated_cores": "2"
+      },
+      "environment": {},
+      "identity": {
+        "variant": "idle-state-2cores-docker"
+      },
+      "metric": "idle_cpu_percentage_max",
+      "ordering_timestamp": "2026-06-06T00:22:55Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1780887006374-0",
+      "source_timestamp": "2026-06-06T00:22:55Z",
+      "suite": "idle-state",
+      "unit": "%",
+      "value": 0.28,
+      "variant": "idle-state-2cores-docker"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1780887006374",
+      "commit": "f9b6074475f5c7916343ca39bf98b2879f053775",
+      "dimensions": {
+        "allocated_cores": "2"
+      },
+      "environment": {},
+      "identity": {
+        "variant": "idle-state-2cores-docker"
+      },
+      "metric": "idle_ram_mib_avg",
+      "ordering_timestamp": "2026-06-06T00:22:55Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1780887006374-0",
+      "source_timestamp": "2026-06-06T00:22:55Z",
+      "suite": "idle-state",
+      "unit": "MiB",
+      "value": 16.7,
+      "variant": "idle-state-2cores-docker"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1780887006374",
+      "commit": "f9b6074475f5c7916343ca39bf98b2879f053775",
+      "dimensions": {
+        "allocated_cores": "2"
+      },
+      "environment": {},
+      "identity": {
+        "variant": "idle-state-2cores-docker"
+      },
+      "metric": "idle_ram_mib_max",
+      "ordering_timestamp": "2026-06-06T00:22:55Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1780887006374-0",
+      "source_timestamp": "2026-06-06T00:22:55Z",
+      "suite": "idle-state",
+      "unit": "MiB",
+      "value": 16.8,
+      "variant": "idle-state-2cores-docker"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1780887006374",
+      "commit": "f9b6074475f5c7916343ca39bf98b2879f053775",
+      "dimensions": {
+        "allocated_cores": "2"
+      },
+      "environment": {},
+      "identity": {
+        "variant": "idle-state-2cores-docker"
+      },
+      "metric": "idle_rss_mib_avg",
+      "ordering_timestamp": "2026-06-06T00:22:55Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1780887006374-0",
+      "source_timestamp": "2026-06-06T00:22:55Z",
+      "suite": "idle-state",
+      "unit": "MiB",
+      "value": 38.5,
+      "variant": "idle-state-2cores-docker"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1780887006374",
+      "commit": "f9b6074475f5c7916343ca39bf98b2879f053775",
+      "dimensions": {
+        "allocated_cores": "2"
+      },
+      "environment": {},
+      "identity": {
+        "variant": "idle-state-2cores-docker"
+      },
+      "metric": "idle_rss_mib_max",
+      "ordering_timestamp": "2026-06-06T00:22:55Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1780887006374-0",
+      "source_timestamp": "2026-06-06T00:22:55Z",
+      "suite": "idle-state",
+      "unit": "MiB",
+      "value": 38.7,
+      "variant": "idle-state-2cores-docker"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1780887006374",
+      "commit": "f9b6074475f5c7916343ca39bf98b2879f053775",
+      "dimensions": {
+        "allocated_cores": "2"
+      },
+      "environment": {},
+      "identity": {
+        "variant": "idle-state-2cores-docker"
+      },
+      "metric": "idle_test_duration",
+      "ordering_timestamp": "2026-06-06T00:22:55Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1780887006374-0",
+      "source_timestamp": "2026-06-06T00:22:55Z",
+      "suite": "idle-state",
+      "unit": "seconds",
+      "value": 15.0,
+      "variant": "idle-state-2cores-docker"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1780887006374",
+      "commit": "f9b6074475f5c7916343ca39bf98b2879f053775",
+      "dimensions": {
+        "allocated_cores": "32"
+      },
+      "environment": {},
+      "identity": {
+        "variant": "idle-state-32cores-docker"
+      },
+      "metric": "idle_cpu_percentage_avg",
+      "ordering_timestamp": "2026-06-06T00:22:55Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1780887006374-0",
+      "source_timestamp": "2026-06-06T00:22:55Z",
+      "suite": "idle-state",
+      "unit": "%",
+      "value": 0.59,
+      "variant": "idle-state-32cores-docker"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1780887006374",
+      "commit": "f9b6074475f5c7916343ca39bf98b2879f053775",
+      "dimensions": {
+        "allocated_cores": "32"
+      },
+      "environment": {},
+      "identity": {
+        "variant": "idle-state-32cores-docker"
+      },
+      "metric": "idle_cpu_percentage_max",
+      "ordering_timestamp": "2026-06-06T00:22:55Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1780887006374-0",
+      "source_timestamp": "2026-06-06T00:22:55Z",
+      "suite": "idle-state",
+      "unit": "%",
+      "value": 1.45,
+      "variant": "idle-state-32cores-docker"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1780887006374",
+      "commit": "f9b6074475f5c7916343ca39bf98b2879f053775",
+      "dimensions": {
+        "allocated_cores": "32"
+      },
+      "environment": {},
+      "identity": {
+        "variant": "idle-state-32cores-docker"
+      },
+      "metric": "idle_ram_mib_avg",
+      "ordering_timestamp": "2026-06-06T00:22:55Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1780887006374-0",
+      "source_timestamp": "2026-06-06T00:22:55Z",
+      "suite": "idle-state",
+      "unit": "MiB",
+      "value": 40.1,
+      "variant": "idle-state-32cores-docker"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1780887006374",
+      "commit": "f9b6074475f5c7916343ca39bf98b2879f053775",
+      "dimensions": {
+        "allocated_cores": "32"
+      },
+      "environment": {},
+      "identity": {
+        "variant": "idle-state-32cores-docker"
+      },
+      "metric": "idle_ram_mib_max",
+      "ordering_timestamp": "2026-06-06T00:22:55Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1780887006374-0",
+      "source_timestamp": "2026-06-06T00:22:55Z",
+      "suite": "idle-state",
+      "unit": "MiB",
+      "value": 40.6,
+      "variant": "idle-state-32cores-docker"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1780887006374",
+      "commit": "f9b6074475f5c7916343ca39bf98b2879f053775",
+      "dimensions": {
+        "allocated_cores": "32"
+      },
+      "environment": {},
+      "identity": {
+        "variant": "idle-state-32cores-docker"
+      },
+      "metric": "idle_rss_mib_avg",
+      "ordering_timestamp": "2026-06-06T00:22:55Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1780887006374-0",
+      "source_timestamp": "2026-06-06T00:22:55Z",
+      "suite": "idle-state",
+      "unit": "MiB",
+      "value": 55.5,
+      "variant": "idle-state-32cores-docker"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1780887006374",
+      "commit": "f9b6074475f5c7916343ca39bf98b2879f053775",
+      "dimensions": {
+        "allocated_cores": "32"
+      },
+      "environment": {},
+      "identity": {
+        "variant": "idle-state-32cores-docker"
+      },
+      "metric": "idle_rss_mib_max",
+      "ordering_timestamp": "2026-06-06T00:22:55Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1780887006374-0",
+      "source_timestamp": "2026-06-06T00:22:55Z",
+      "suite": "idle-state",
+      "unit": "MiB",
+      "value": 57.1,
+      "variant": "idle-state-32cores-docker"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1780887006374",
+      "commit": "f9b6074475f5c7916343ca39bf98b2879f053775",
+      "dimensions": {
+        "allocated_cores": "32"
+      },
+      "environment": {},
+      "identity": {
+        "variant": "idle-state-32cores-docker"
+      },
+      "metric": "idle_test_duration",
+      "ordering_timestamp": "2026-06-06T00:22:55Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1780887006374-0",
+      "source_timestamp": "2026-06-06T00:22:55Z",
+      "suite": "idle-state",
+      "unit": "seconds",
+      "value": 15.0,
+      "variant": "idle-state-32cores-docker"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1780887006374",
+      "commit": "f9b6074475f5c7916343ca39bf98b2879f053775",
+      "dimensions": {
+        "allocated_cores": "4"
+      },
+      "environment": {},
+      "identity": {
+        "variant": "idle-state-4cores-docker"
+      },
+      "metric": "idle_cpu_percentage_avg",
+      "ordering_timestamp": "2026-06-06T00:22:55Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1780887006374-0",
+      "source_timestamp": "2026-06-06T00:22:55Z",
+      "suite": "idle-state",
+      "unit": "%",
+      "value": 0.15,
+      "variant": "idle-state-4cores-docker"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1780887006374",
+      "commit": "f9b6074475f5c7916343ca39bf98b2879f053775",
+      "dimensions": {
+        "allocated_cores": "4"
+      },
+      "environment": {},
+      "identity": {
+        "variant": "idle-state-4cores-docker"
+      },
+      "metric": "idle_cpu_percentage_max",
+      "ordering_timestamp": "2026-06-06T00:22:55Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1780887006374-0",
+      "source_timestamp": "2026-06-06T00:22:55Z",
+      "suite": "idle-state",
+      "unit": "%",
+      "value": 0.37,
+      "variant": "idle-state-4cores-docker"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1780887006374",
+      "commit": "f9b6074475f5c7916343ca39bf98b2879f053775",
+      "dimensions": {
+        "allocated_cores": "4"
+      },
+      "environment": {},
+      "identity": {
+        "variant": "idle-state-4cores-docker"
+      },
+      "metric": "idle_ram_mib_avg",
+      "ordering_timestamp": "2026-06-06T00:22:55Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1780887006374-0",
+      "source_timestamp": "2026-06-06T00:22:55Z",
+      "suite": "idle-state",
+      "unit": "MiB",
+      "value": 18.0,
+      "variant": "idle-state-4cores-docker"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1780887006374",
+      "commit": "f9b6074475f5c7916343ca39bf98b2879f053775",
+      "dimensions": {
+        "allocated_cores": "4"
+      },
+      "environment": {},
+      "identity": {
+        "variant": "idle-state-4cores-docker"
+      },
+      "metric": "idle_ram_mib_max",
+      "ordering_timestamp": "2026-06-06T00:22:55Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1780887006374-0",
+      "source_timestamp": "2026-06-06T00:22:55Z",
+      "suite": "idle-state",
+      "unit": "MiB",
+      "value": 18.1,
+      "variant": "idle-state-4cores-docker"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1780887006374",
+      "commit": "f9b6074475f5c7916343ca39bf98b2879f053775",
+      "dimensions": {
+        "allocated_cores": "4"
+      },
+      "environment": {},
+      "identity": {
+        "variant": "idle-state-4cores-docker"
+      },
+      "metric": "idle_rss_mib_avg",
+      "ordering_timestamp": "2026-06-06T00:22:55Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1780887006374-0",
+      "source_timestamp": "2026-06-06T00:22:55Z",
+      "suite": "idle-state",
+      "unit": "MiB",
+      "value": 39.5,
+      "variant": "idle-state-4cores-docker"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1780887006374",
+      "commit": "f9b6074475f5c7916343ca39bf98b2879f053775",
+      "dimensions": {
+        "allocated_cores": "4"
+      },
+      "environment": {},
+      "identity": {
+        "variant": "idle-state-4cores-docker"
+      },
+      "metric": "idle_rss_mib_max",
+      "ordering_timestamp": "2026-06-06T00:22:55Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1780887006374-0",
+      "source_timestamp": "2026-06-06T00:22:55Z",
+      "suite": "idle-state",
+      "unit": "MiB",
+      "value": 39.8,
+      "variant": "idle-state-4cores-docker"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1780887006374",
+      "commit": "f9b6074475f5c7916343ca39bf98b2879f053775",
+      "dimensions": {
+        "allocated_cores": "4"
+      },
+      "environment": {},
+      "identity": {
+        "variant": "idle-state-4cores-docker"
+      },
+      "metric": "idle_test_duration",
+      "ordering_timestamp": "2026-06-06T00:22:55Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1780887006374-0",
+      "source_timestamp": "2026-06-06T00:22:55Z",
+      "suite": "idle-state",
+      "unit": "seconds",
+      "value": 15.0,
+      "variant": "idle-state-4cores-docker"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1780887006374",
+      "commit": "f9b6074475f5c7916343ca39bf98b2879f053775",
+      "dimensions": {
+        "allocated_cores": "8"
+      },
+      "environment": {},
+      "identity": {
+        "variant": "idle-state-8cores-docker"
+      },
+      "metric": "idle_cpu_percentage_avg",
+      "ordering_timestamp": "2026-06-06T00:22:55Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1780887006374-0",
+      "source_timestamp": "2026-06-06T00:22:55Z",
+      "suite": "idle-state",
+      "unit": "%",
+      "value": 0.27,
+      "variant": "idle-state-8cores-docker"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1780887006374",
+      "commit": "f9b6074475f5c7916343ca39bf98b2879f053775",
+      "dimensions": {
+        "allocated_cores": "8"
+      },
+      "environment": {},
+      "identity": {
+        "variant": "idle-state-8cores-docker"
+      },
+      "metric": "idle_cpu_percentage_max",
+      "ordering_timestamp": "2026-06-06T00:22:55Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1780887006374-0",
+      "source_timestamp": "2026-06-06T00:22:55Z",
+      "suite": "idle-state",
+      "unit": "%",
+      "value": 0.5,
+      "variant": "idle-state-8cores-docker"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1780887006374",
+      "commit": "f9b6074475f5c7916343ca39bf98b2879f053775",
+      "dimensions": {
+        "allocated_cores": "8"
+      },
+      "environment": {},
+      "identity": {
+        "variant": "idle-state-8cores-docker"
+      },
+      "metric": "idle_ram_mib_avg",
+      "ordering_timestamp": "2026-06-06T00:22:55Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1780887006374-0",
+      "source_timestamp": "2026-06-06T00:22:55Z",
+      "suite": "idle-state",
+      "unit": "MiB",
+      "value": 21.4,
+      "variant": "idle-state-8cores-docker"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1780887006374",
+      "commit": "f9b6074475f5c7916343ca39bf98b2879f053775",
+      "dimensions": {
+        "allocated_cores": "8"
+      },
+      "environment": {},
+      "identity": {
+        "variant": "idle-state-8cores-docker"
+      },
+      "metric": "idle_ram_mib_max",
+      "ordering_timestamp": "2026-06-06T00:22:55Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1780887006374-0",
+      "source_timestamp": "2026-06-06T00:22:55Z",
+      "suite": "idle-state",
+      "unit": "MiB",
+      "value": 21.8,
+      "variant": "idle-state-8cores-docker"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1780887006374",
+      "commit": "f9b6074475f5c7916343ca39bf98b2879f053775",
+      "dimensions": {
+        "allocated_cores": "8"
+      },
+      "environment": {},
+      "identity": {
+        "variant": "idle-state-8cores-docker"
+      },
+      "metric": "idle_rss_mib_avg",
+      "ordering_timestamp": "2026-06-06T00:22:55Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1780887006374-0",
+      "source_timestamp": "2026-06-06T00:22:55Z",
+      "suite": "idle-state",
+      "unit": "MiB",
+      "value": 42.2,
+      "variant": "idle-state-8cores-docker"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1780887006374",
+      "commit": "f9b6074475f5c7916343ca39bf98b2879f053775",
+      "dimensions": {
+        "allocated_cores": "8"
+      },
+      "environment": {},
+      "identity": {
+        "variant": "idle-state-8cores-docker"
+      },
+      "metric": "idle_rss_mib_max",
+      "ordering_timestamp": "2026-06-06T00:22:55Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1780887006374-0",
+      "source_timestamp": "2026-06-06T00:22:55Z",
+      "suite": "idle-state",
+      "unit": "MiB",
+      "value": 42.7,
+      "variant": "idle-state-8cores-docker"
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-nightly-1780887006374",
+      "commit": "f9b6074475f5c7916343ca39bf98b2879f053775",
+      "dimensions": {
+        "allocated_cores": "8"
+      },
+      "environment": {},
+      "identity": {
+        "variant": "idle-state-8cores-docker"
+      },
+      "metric": "idle_test_duration",
+      "ordering_timestamp": "2026-06-06T00:22:55Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1780887006374-0",
+      "source_timestamp": "2026-06-06T00:22:55Z",
+      "suite": "idle-state",
+      "unit": "seconds",
+      "value": 15.0,
+      "variant": "idle-state-8cores-docker"
+    }
+  ],
   "schema_version": 1,
   "series": [
     {
+      "branch": null,
       "case": null,
       "dimensions": {
         "allocated_cores": "16"
@@ -286,11 +1213,13 @@
           "value": 0.37
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "idle-state",
       "unit": "%",
       "variant": "idle-state-16cores-docker"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {
         "allocated_cores": "2"
@@ -575,11 +1504,13 @@
           "value": 0.11
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "idle-state",
       "unit": "%",
       "variant": "idle-state-2cores-docker"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {
         "allocated_cores": "32"
@@ -864,11 +1795,13 @@
           "value": 0.59
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "idle-state",
       "unit": "%",
       "variant": "idle-state-32cores-docker"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {
         "allocated_cores": "4"
@@ -1153,11 +2086,13 @@
           "value": 0.15
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "idle-state",
       "unit": "%",
       "variant": "idle-state-4cores-docker"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {
         "allocated_cores": "8"
@@ -1442,11 +2377,13 @@
           "value": 0.27
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "idle-state",
       "unit": "%",
       "variant": "idle-state-8cores-docker"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {
         "allocated_cores": "1"
@@ -1731,11 +2668,13 @@
           "value": 0.09
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "idle-state",
       "unit": "%",
       "variant": "idle-state-docker"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {
         "allocated_cores": "16"
@@ -2020,11 +2959,13 @@
           "value": 0.84
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "idle-state",
       "unit": "%",
       "variant": "idle-state-16cores-docker"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {
         "allocated_cores": "2"
@@ -2309,11 +3250,13 @@
           "value": 0.28
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "idle-state",
       "unit": "%",
       "variant": "idle-state-2cores-docker"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {
         "allocated_cores": "32"
@@ -2598,11 +3541,13 @@
           "value": 1.45
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "idle-state",
       "unit": "%",
       "variant": "idle-state-32cores-docker"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {
         "allocated_cores": "4"
@@ -2887,11 +3832,13 @@
           "value": 0.37
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "idle-state",
       "unit": "%",
       "variant": "idle-state-4cores-docker"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {
         "allocated_cores": "8"
@@ -3176,11 +4123,13 @@
           "value": 0.5
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "idle-state",
       "unit": "%",
       "variant": "idle-state-8cores-docker"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {
         "allocated_cores": "1"
@@ -3465,11 +4414,13 @@
           "value": 0.24
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "idle-state",
       "unit": "%",
       "variant": "idle-state-docker"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {
         "allocated_cores": "16"
@@ -3754,11 +4705,13 @@
           "value": 28.7
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "idle-state",
       "unit": "MiB",
       "variant": "idle-state-16cores-docker"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {
         "allocated_cores": "2"
@@ -4043,11 +4996,13 @@
           "value": 16.7
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "idle-state",
       "unit": "MiB",
       "variant": "idle-state-2cores-docker"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {
         "allocated_cores": "32"
@@ -4332,11 +5287,13 @@
           "value": 40.1
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "idle-state",
       "unit": "MiB",
       "variant": "idle-state-32cores-docker"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {
         "allocated_cores": "4"
@@ -4621,11 +5578,13 @@
           "value": 18.0
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "idle-state",
       "unit": "MiB",
       "variant": "idle-state-4cores-docker"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {
         "allocated_cores": "8"
@@ -4910,11 +5869,13 @@
           "value": 21.4
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "idle-state",
       "unit": "MiB",
       "variant": "idle-state-8cores-docker"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {
         "allocated_cores": "1"
@@ -5199,11 +6160,13 @@
           "value": 15.8
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "idle-state",
       "unit": "MiB",
       "variant": "idle-state-docker"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {
         "allocated_cores": "16"
@@ -5488,11 +6451,13 @@
           "value": 28.9
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "idle-state",
       "unit": "MiB",
       "variant": "idle-state-16cores-docker"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {
         "allocated_cores": "2"
@@ -5777,11 +6742,13 @@
           "value": 16.8
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "idle-state",
       "unit": "MiB",
       "variant": "idle-state-2cores-docker"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {
         "allocated_cores": "32"
@@ -6066,11 +7033,13 @@
           "value": 40.6
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "idle-state",
       "unit": "MiB",
       "variant": "idle-state-32cores-docker"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {
         "allocated_cores": "4"
@@ -6355,11 +7324,13 @@
           "value": 18.1
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "idle-state",
       "unit": "MiB",
       "variant": "idle-state-4cores-docker"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {
         "allocated_cores": "8"
@@ -6644,11 +7615,13 @@
           "value": 21.8
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "idle-state",
       "unit": "MiB",
       "variant": "idle-state-8cores-docker"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {
         "allocated_cores": "1"
@@ -6933,11 +7906,13 @@
           "value": 16.3
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "idle-state",
       "unit": "MiB",
       "variant": "idle-state-docker"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {
         "allocated_cores": "16"
@@ -7215,11 +8190,13 @@
           "value": 46.5
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "idle-state",
       "unit": "MiB",
       "variant": "idle-state-16cores-docker"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {
         "allocated_cores": "2"
@@ -7497,11 +8474,13 @@
           "value": 38.5
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "idle-state",
       "unit": "MiB",
       "variant": "idle-state-2cores-docker"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {
         "allocated_cores": "32"
@@ -7779,11 +8758,13 @@
           "value": 55.5
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "idle-state",
       "unit": "MiB",
       "variant": "idle-state-32cores-docker"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {
         "allocated_cores": "4"
@@ -8061,11 +9042,13 @@
           "value": 39.5
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "idle-state",
       "unit": "MiB",
       "variant": "idle-state-4cores-docker"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {
         "allocated_cores": "8"
@@ -8343,11 +9326,13 @@
           "value": 42.2
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "idle-state",
       "unit": "MiB",
       "variant": "idle-state-8cores-docker"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {
         "allocated_cores": "1"
@@ -8625,11 +9610,13 @@
           "value": 37.8
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "idle-state",
       "unit": "MiB",
       "variant": "idle-state-docker"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {
         "allocated_cores": "16"
@@ -8907,11 +9894,13 @@
           "value": 47.3
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "idle-state",
       "unit": "MiB",
       "variant": "idle-state-16cores-docker"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {
         "allocated_cores": "2"
@@ -9189,11 +10178,13 @@
           "value": 38.7
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "idle-state",
       "unit": "MiB",
       "variant": "idle-state-2cores-docker"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {
         "allocated_cores": "32"
@@ -9471,11 +10462,13 @@
           "value": 57.1
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "idle-state",
       "unit": "MiB",
       "variant": "idle-state-32cores-docker"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {
         "allocated_cores": "4"
@@ -9753,11 +10746,13 @@
           "value": 39.8
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "idle-state",
       "unit": "MiB",
       "variant": "idle-state-4cores-docker"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {
         "allocated_cores": "8"
@@ -10035,11 +11030,13 @@
           "value": 42.7
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "idle-state",
       "unit": "MiB",
       "variant": "idle-state-8cores-docker"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {
         "allocated_cores": "1"
@@ -10317,11 +11314,13 @@
           "value": 37.9
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "idle-state",
       "unit": "MiB",
       "variant": "idle-state-docker"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {
         "allocated_cores": "16"
@@ -10606,11 +11605,13 @@
           "value": 15.0
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "idle-state",
       "unit": "seconds",
       "variant": "idle-state-16cores-docker"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {
         "allocated_cores": "2"
@@ -10895,11 +11896,13 @@
           "value": 15.0
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "idle-state",
       "unit": "seconds",
       "variant": "idle-state-2cores-docker"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {
         "allocated_cores": "32"
@@ -11184,11 +12187,13 @@
           "value": 15.0
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "idle-state",
       "unit": "seconds",
       "variant": "idle-state-32cores-docker"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {
         "allocated_cores": "4"
@@ -11473,11 +12478,13 @@
           "value": 15.0
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "idle-state",
       "unit": "seconds",
       "variant": "idle-state-4cores-docker"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {
         "allocated_cores": "8"
@@ -11762,11 +12769,13 @@
           "value": 15.0
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "idle-state",
       "unit": "seconds",
       "variant": "idle-state-8cores-docker"
     },
     {
+      "branch": null,
       "case": null,
       "dimensions": {
         "allocated_cores": "1"
@@ -12051,6 +13060,7 @@
           "value": 15.0
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "idle-state",
       "unit": "seconds",
       "variant": "idle-state-docker"

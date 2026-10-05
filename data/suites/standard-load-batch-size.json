@@ -1,7 +1,1396 @@
 {
+  "observations": [
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH10",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH10",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "%",
+      "value": 65.89,
+      "variant": "100klrps-batch-sizes-docker"
+    },
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH10",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH10",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "cpu_percentage_normalized_max",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "%",
+      "value": 82.97,
+      "variant": "100klrps-batch-sizes-docker"
+    },
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH10",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH10",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "dropped_logs_percentage",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "%",
+      "value": 1.337038,
+      "variant": "100klrps-batch-sizes-docker"
+    },
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH10",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH10",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "egress_bytes_per_log",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "bytes/log",
+      "value": 161.46,
+      "variant": "100klrps-batch-sizes-docker"
+    },
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH10",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH10",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "logs_produced_rate",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "logs/sec",
+      "value": 33280,
+      "variant": "100klrps-batch-sizes-docker"
+    },
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH10",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH10",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "logs_received_rate",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "logs/sec",
+      "value": 32835,
+      "variant": "100klrps-batch-sizes-docker"
+    },
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH10",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH10",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "network_rx_bytes_rate_avg",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "bytes/sec",
+      "value": 5011704,
+      "variant": "100klrps-batch-sizes-docker"
+    },
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH10",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH10",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "network_tx_bytes_rate_avg",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "bytes/sec",
+      "value": 5301806,
+      "variant": "100klrps-batch-sizes-docker"
+    },
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH10",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH10",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "ram_mib_avg",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "MiB",
+      "value": 19.7,
+      "variant": "100klrps-batch-sizes-docker"
+    },
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH10",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH10",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "ram_mib_max",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "MiB",
+      "value": 21.7,
+      "variant": "100klrps-batch-sizes-docker"
+    },
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH10",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH10",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "test_duration",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "seconds",
+      "value": 60.0,
+      "variant": "100klrps-batch-sizes-docker"
+    },
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH100",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH100",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "%",
+      "value": 65.18,
+      "variant": "100klrps-batch-sizes-docker"
+    },
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH100",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH100",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "cpu_percentage_normalized_max",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "%",
+      "value": 65.43,
+      "variant": "100klrps-batch-sizes-docker"
+    },
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH100",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH100",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "dropped_logs_percentage",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "%",
+      "value": 1.670055,
+      "variant": "100klrps-batch-sizes-docker"
+    },
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH100",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH100",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "egress_bytes_per_log",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "bytes/log",
+      "value": 54.61,
+      "variant": "100klrps-batch-sizes-docker"
+    },
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH100",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH100",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "logs_produced_rate",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "logs/sec",
+      "value": 99990,
+      "variant": "100klrps-batch-sizes-docker"
+    },
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH100",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH100",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "logs_received_rate",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "logs/sec",
+      "value": 98320,
+      "variant": "100klrps-batch-sizes-docker"
+    },
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH100",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH100",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "network_rx_bytes_rate_avg",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "bytes/sec",
+      "value": 5152455,
+      "variant": "100klrps-batch-sizes-docker"
+    },
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH100",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH100",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "network_tx_bytes_rate_avg",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "bytes/sec",
+      "value": 5369893,
+      "variant": "100klrps-batch-sizes-docker"
+    },
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH100",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH100",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "ram_mib_avg",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "MiB",
+      "value": 18.9,
+      "variant": "100klrps-batch-sizes-docker"
+    },
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH100",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH100",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "ram_mib_max",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "MiB",
+      "value": 19.5,
+      "variant": "100klrps-batch-sizes-docker"
+    },
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH100",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH100",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "test_duration",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "seconds",
+      "value": 60.0,
+      "variant": "100klrps-batch-sizes-docker"
+    },
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH1024",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH1024",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "%",
+      "value": 65.37,
+      "variant": "100klrps-batch-sizes-docker"
+    },
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH1024",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH1024",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "cpu_percentage_normalized_max",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "%",
+      "value": 65.72,
+      "variant": "100klrps-batch-sizes-docker"
+    },
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH1024",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH1024",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "dropped_logs_percentage",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "%",
+      "value": 1.666666,
+      "variant": "100klrps-batch-sizes-docker"
+    },
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH1024",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH1024",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "egress_bytes_per_log",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "bytes/log",
+      "value": 29.81,
+      "variant": "100klrps-batch-sizes-docker"
+    },
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH1024",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH1024",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "logs_produced_rate",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "logs/sec",
+      "value": 99996,
+      "variant": "100klrps-batch-sizes-docker"
+    },
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH1024",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH1024",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "logs_received_rate",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "logs/sec",
+      "value": 98330,
+      "variant": "100klrps-batch-sizes-docker"
+    },
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH1024",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH1024",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "network_rx_bytes_rate_avg",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "bytes/sec",
+      "value": 2783738,
+      "variant": "100klrps-batch-sizes-docker"
+    },
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH1024",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH1024",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "network_tx_bytes_rate_avg",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "bytes/sec",
+      "value": 2931538,
+      "variant": "100klrps-batch-sizes-docker"
+    },
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH1024",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH1024",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "ram_mib_avg",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "MiB",
+      "value": 19.0,
+      "variant": "100klrps-batch-sizes-docker"
+    },
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH1024",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH1024",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "ram_mib_max",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "MiB",
+      "value": 19.8,
+      "variant": "100klrps-batch-sizes-docker"
+    },
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH1024",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH1024",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "test_duration",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "seconds",
+      "value": 60.0,
+      "variant": "100klrps-batch-sizes-docker"
+    },
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH4096",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH4096",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "%",
+      "value": 56.44,
+      "variant": "100klrps-batch-sizes-docker"
+    },
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH4096",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH4096",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "cpu_percentage_normalized_max",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "%",
+      "value": 57.67,
+      "variant": "100klrps-batch-sizes-docker"
+    },
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH4096",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH4096",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "dropped_logs_percentage",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "%",
+      "value": 1.666666,
+      "variant": "100klrps-batch-sizes-docker"
+    },
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH4096",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH4096",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "egress_bytes_per_log",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "bytes/log",
+      "value": 27.74,
+      "variant": "100klrps-batch-sizes-docker"
+    },
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH4096",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH4096",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "logs_produced_rate",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "logs/sec",
+      "value": 99996,
+      "variant": "100klrps-batch-sizes-docker"
+    },
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH4096",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH4096",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "logs_received_rate",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "logs/sec",
+      "value": 98329,
+      "variant": "100klrps-batch-sizes-docker"
+    },
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH4096",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH4096",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "network_rx_bytes_rate_avg",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "bytes/sec",
+      "value": 2599263,
+      "variant": "100klrps-batch-sizes-docker"
+    },
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH4096",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH4096",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "network_tx_bytes_rate_avg",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "bytes/sec",
+      "value": 2727892,
+      "variant": "100klrps-batch-sizes-docker"
+    },
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH4096",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH4096",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "ram_mib_avg",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "MiB",
+      "value": 24.9,
+      "variant": "100klrps-batch-sizes-docker"
+    },
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH4096",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH4096",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "ram_mib_max",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "MiB",
+      "value": 26.1,
+      "variant": "100klrps-batch-sizes-docker"
+    },
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH4096",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH4096",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "test_duration",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "seconds",
+      "value": 60.0,
+      "variant": "100klrps-batch-sizes-docker"
+    },
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH512",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH512",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "%",
+      "value": 64.81,
+      "variant": "100klrps-batch-sizes-docker"
+    },
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH512",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH512",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "cpu_percentage_normalized_max",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "%",
+      "value": 65.18,
+      "variant": "100klrps-batch-sizes-docker"
+    },
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH512",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH512",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "dropped_logs_percentage",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "%",
+      "value": 0,
+      "variant": "100klrps-batch-sizes-docker"
+    },
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH512",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH512",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "egress_bytes_per_log",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "bytes/log",
+      "value": 32.43,
+      "variant": "100klrps-batch-sizes-docker"
+    },
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH512",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH512",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "logs_produced_rate",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "logs/sec",
+      "value": 98330,
+      "variant": "100klrps-batch-sizes-docker"
+    },
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH512",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH512",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "logs_received_rate",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "logs/sec",
+      "value": 98330,
+      "variant": "100klrps-batch-sizes-docker"
+    },
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH512",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH512",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "network_rx_bytes_rate_avg",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "bytes/sec",
+      "value": 3024855,
+      "variant": "100klrps-batch-sizes-docker"
+    },
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH512",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH512",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "network_tx_bytes_rate_avg",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "bytes/sec",
+      "value": 3189405,
+      "variant": "100klrps-batch-sizes-docker"
+    },
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH512",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH512",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "ram_mib_avg",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "MiB",
+      "value": 19.0,
+      "variant": "100klrps-batch-sizes-docker"
+    },
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH512",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH512",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "ram_mib_max",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "MiB",
+      "value": 20.0,
+      "variant": "100klrps-batch-sizes-docker"
+    },
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH512",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH512",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "test_duration",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "seconds",
+      "value": 60.0,
+      "variant": "100klrps-batch-sizes-docker"
+    },
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH8192",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH8192",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "%",
+      "value": 51.06,
+      "variant": "100klrps-batch-sizes-docker"
+    },
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH8192",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH8192",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "cpu_percentage_normalized_max",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "%",
+      "value": 52.49,
+      "variant": "100klrps-batch-sizes-docker"
+    },
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH8192",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH8192",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "dropped_logs_percentage",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "%",
+      "value": 1.666666,
+      "variant": "100klrps-batch-sizes-docker"
+    },
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH8192",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH8192",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "egress_bytes_per_log",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "bytes/log",
+      "value": 27.43,
+      "variant": "100klrps-batch-sizes-docker"
+    },
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH8192",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH8192",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "logs_produced_rate",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "logs/sec",
+      "value": 99996,
+      "variant": "100klrps-batch-sizes-docker"
+    },
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH8192",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH8192",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "logs_received_rate",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "logs/sec",
+      "value": 98330,
+      "variant": "100klrps-batch-sizes-docker"
+    },
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH8192",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH8192",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "network_rx_bytes_rate_avg",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "bytes/sec",
+      "value": 2557526,
+      "variant": "100klrps-batch-sizes-docker"
+    },
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH8192",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH8192",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "network_tx_bytes_rate_avg",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "bytes/sec",
+      "value": 2698105,
+      "variant": "100klrps-batch-sizes-docker"
+    },
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH8192",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH8192",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "ram_mib_avg",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "MiB",
+      "value": 32.0,
+      "variant": "100klrps-batch-sizes-docker"
+    },
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH8192",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH8192",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "ram_mib_max",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "MiB",
+      "value": 34.0,
+      "variant": "100klrps-batch-sizes-docker"
+    },
+    {
+      "branch": null,
+      "case": "OTLP-ATTR-OTLP-BATCH8192",
+      "collection_id": "gha-nightly-1789752460199",
+      "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
+      "dimensions": {},
+      "environment": {},
+      "identity": {
+        "case": "OTLP-ATTR-OTLP-BATCH8192",
+        "variant": "100klrps-batch-sizes-docker"
+      },
+      "metric": "test_duration",
+      "ordering_timestamp": "2026-09-17T22:20:01Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "gha-nightly-1789752460199-0",
+      "source_timestamp": "2026-09-17T22:20:01Z",
+      "suite": "standard-load-batch-size",
+      "unit": "seconds",
+      "value": 60.0,
+      "variant": "100klrps-batch-sizes-docker"
+    }
+  ],
   "schema_version": 1,
   "series": [
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH10",
       "dimensions": {},
       "environment": {},
@@ -712,11 +2101,13 @@
           "value": 65.89
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "%",
       "variant": "100klrps-batch-sizes-docker"
     },
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH100",
       "dimensions": {},
       "environment": {},
@@ -1427,11 +2818,13 @@
           "value": 65.18
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "%",
       "variant": "100klrps-batch-sizes-docker"
     },
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH1024",
       "dimensions": {},
       "environment": {},
@@ -2142,11 +3535,13 @@
           "value": 65.37
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "%",
       "variant": "100klrps-batch-sizes-docker"
     },
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH4096",
       "dimensions": {},
       "environment": {},
@@ -2857,11 +4252,13 @@
           "value": 56.44
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "%",
       "variant": "100klrps-batch-sizes-docker"
     },
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH512",
       "dimensions": {},
       "environment": {},
@@ -3572,11 +4969,13 @@
           "value": 64.81
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "%",
       "variant": "100klrps-batch-sizes-docker"
     },
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH8192",
       "dimensions": {},
       "environment": {},
@@ -4287,11 +5686,13 @@
           "value": 51.06
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "%",
       "variant": "100klrps-batch-sizes-docker"
     },
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH10",
       "dimensions": {},
       "environment": {},
@@ -5002,11 +6403,13 @@
           "value": 82.97
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "%",
       "variant": "100klrps-batch-sizes-docker"
     },
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH100",
       "dimensions": {},
       "environment": {},
@@ -5717,11 +7120,13 @@
           "value": 65.43
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "%",
       "variant": "100klrps-batch-sizes-docker"
     },
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH1024",
       "dimensions": {},
       "environment": {},
@@ -6432,11 +7837,13 @@
           "value": 65.72
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "%",
       "variant": "100klrps-batch-sizes-docker"
     },
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH4096",
       "dimensions": {},
       "environment": {},
@@ -7147,11 +8554,13 @@
           "value": 57.67
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "%",
       "variant": "100klrps-batch-sizes-docker"
     },
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH512",
       "dimensions": {},
       "environment": {},
@@ -7862,11 +9271,13 @@
           "value": 65.18
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "%",
       "variant": "100klrps-batch-sizes-docker"
     },
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH8192",
       "dimensions": {},
       "environment": {},
@@ -8577,11 +9988,13 @@
           "value": 52.49
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "%",
       "variant": "100klrps-batch-sizes-docker"
     },
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH10",
       "dimensions": {},
       "environment": {},
@@ -9292,11 +10705,13 @@
           "value": 1.337038
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "%",
       "variant": "100klrps-batch-sizes-docker"
     },
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH100",
       "dimensions": {},
       "environment": {},
@@ -10007,11 +11422,13 @@
           "value": 1.670055
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "%",
       "variant": "100klrps-batch-sizes-docker"
     },
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH1024",
       "dimensions": {},
       "environment": {},
@@ -10722,11 +12139,13 @@
           "value": 1.666666
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "%",
       "variant": "100klrps-batch-sizes-docker"
     },
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH4096",
       "dimensions": {},
       "environment": {},
@@ -11437,11 +12856,13 @@
           "value": 1.666666
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "%",
       "variant": "100klrps-batch-sizes-docker"
     },
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH512",
       "dimensions": {},
       "environment": {},
@@ -12152,11 +13573,13 @@
           "value": 0
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "%",
       "variant": "100klrps-batch-sizes-docker"
     },
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH8192",
       "dimensions": {},
       "environment": {},
@@ -12867,11 +14290,13 @@
           "value": 1.666666
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "%",
       "variant": "100klrps-batch-sizes-docker"
     },
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH10",
       "dimensions": {},
       "environment": {},
@@ -13582,11 +15007,13 @@
           "value": 161.46
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "bytes/log",
       "variant": "100klrps-batch-sizes-docker"
     },
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH100",
       "dimensions": {},
       "environment": {},
@@ -14297,11 +15724,13 @@
           "value": 54.61
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "bytes/log",
       "variant": "100klrps-batch-sizes-docker"
     },
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH1024",
       "dimensions": {},
       "environment": {},
@@ -15012,11 +16441,13 @@
           "value": 29.81
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "bytes/log",
       "variant": "100klrps-batch-sizes-docker"
     },
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH4096",
       "dimensions": {},
       "environment": {},
@@ -15727,11 +17158,13 @@
           "value": 27.74
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "bytes/log",
       "variant": "100klrps-batch-sizes-docker"
     },
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH512",
       "dimensions": {},
       "environment": {},
@@ -16442,11 +17875,13 @@
           "value": 32.43
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "bytes/log",
       "variant": "100klrps-batch-sizes-docker"
     },
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH8192",
       "dimensions": {},
       "environment": {},
@@ -17157,11 +18592,13 @@
           "value": 27.43
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "bytes/log",
       "variant": "100klrps-batch-sizes-docker"
     },
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH10",
       "dimensions": {},
       "environment": {},
@@ -17872,11 +19309,13 @@
           "value": 33280
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "logs/sec",
       "variant": "100klrps-batch-sizes-docker"
     },
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH100",
       "dimensions": {},
       "environment": {},
@@ -18587,11 +20026,13 @@
           "value": 99990
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "logs/sec",
       "variant": "100klrps-batch-sizes-docker"
     },
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH1024",
       "dimensions": {},
       "environment": {},
@@ -19302,11 +20743,13 @@
           "value": 99996
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "logs/sec",
       "variant": "100klrps-batch-sizes-docker"
     },
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH4096",
       "dimensions": {},
       "environment": {},
@@ -20017,11 +21460,13 @@
           "value": 99996
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "logs/sec",
       "variant": "100klrps-batch-sizes-docker"
     },
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH512",
       "dimensions": {},
       "environment": {},
@@ -20732,11 +22177,13 @@
           "value": 98330
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "logs/sec",
       "variant": "100klrps-batch-sizes-docker"
     },
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH8192",
       "dimensions": {},
       "environment": {},
@@ -21447,11 +22894,13 @@
           "value": 99996
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "logs/sec",
       "variant": "100klrps-batch-sizes-docker"
     },
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH10",
       "dimensions": {},
       "environment": {},
@@ -22162,11 +23611,13 @@
           "value": 32835
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "logs/sec",
       "variant": "100klrps-batch-sizes-docker"
     },
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH100",
       "dimensions": {},
       "environment": {},
@@ -22877,11 +24328,13 @@
           "value": 98320
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "logs/sec",
       "variant": "100klrps-batch-sizes-docker"
     },
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH1024",
       "dimensions": {},
       "environment": {},
@@ -23592,11 +25045,13 @@
           "value": 98330
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "logs/sec",
       "variant": "100klrps-batch-sizes-docker"
     },
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH4096",
       "dimensions": {},
       "environment": {},
@@ -24307,11 +25762,13 @@
           "value": 98329
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "logs/sec",
       "variant": "100klrps-batch-sizes-docker"
     },
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH512",
       "dimensions": {},
       "environment": {},
@@ -25022,11 +26479,13 @@
           "value": 98330
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "logs/sec",
       "variant": "100klrps-batch-sizes-docker"
     },
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH8192",
       "dimensions": {},
       "environment": {},
@@ -25737,11 +27196,13 @@
           "value": 98330
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "logs/sec",
       "variant": "100klrps-batch-sizes-docker"
     },
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH10",
       "dimensions": {},
       "environment": {},
@@ -26452,11 +27913,13 @@
           "value": 5011704
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "bytes/sec",
       "variant": "100klrps-batch-sizes-docker"
     },
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH100",
       "dimensions": {},
       "environment": {},
@@ -27167,11 +28630,13 @@
           "value": 5152455
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "bytes/sec",
       "variant": "100klrps-batch-sizes-docker"
     },
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH1024",
       "dimensions": {},
       "environment": {},
@@ -27882,11 +29347,13 @@
           "value": 2783738
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "bytes/sec",
       "variant": "100klrps-batch-sizes-docker"
     },
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH4096",
       "dimensions": {},
       "environment": {},
@@ -28597,11 +30064,13 @@
           "value": 2599263
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "bytes/sec",
       "variant": "100klrps-batch-sizes-docker"
     },
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH512",
       "dimensions": {},
       "environment": {},
@@ -29312,11 +30781,13 @@
           "value": 3024855
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "bytes/sec",
       "variant": "100klrps-batch-sizes-docker"
     },
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH8192",
       "dimensions": {},
       "environment": {},
@@ -30027,11 +31498,13 @@
           "value": 2557526
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "bytes/sec",
       "variant": "100klrps-batch-sizes-docker"
     },
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH10",
       "dimensions": {},
       "environment": {},
@@ -30742,11 +32215,13 @@
           "value": 5301806
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "bytes/sec",
       "variant": "100klrps-batch-sizes-docker"
     },
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH100",
       "dimensions": {},
       "environment": {},
@@ -31457,11 +32932,13 @@
           "value": 5369893
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "bytes/sec",
       "variant": "100klrps-batch-sizes-docker"
     },
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH1024",
       "dimensions": {},
       "environment": {},
@@ -32172,11 +33649,13 @@
           "value": 2931538
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "bytes/sec",
       "variant": "100klrps-batch-sizes-docker"
     },
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH4096",
       "dimensions": {},
       "environment": {},
@@ -32887,11 +34366,13 @@
           "value": 2727892
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "bytes/sec",
       "variant": "100klrps-batch-sizes-docker"
     },
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH512",
       "dimensions": {},
       "environment": {},
@@ -33602,11 +35083,13 @@
           "value": 3189405
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "bytes/sec",
       "variant": "100klrps-batch-sizes-docker"
     },
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH8192",
       "dimensions": {},
       "environment": {},
@@ -34317,11 +35800,13 @@
           "value": 2698105
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "bytes/sec",
       "variant": "100klrps-batch-sizes-docker"
     },
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH10",
       "dimensions": {},
       "environment": {},
@@ -35032,11 +36517,13 @@
           "value": 19.7
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "MiB",
       "variant": "100klrps-batch-sizes-docker"
     },
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH100",
       "dimensions": {},
       "environment": {},
@@ -35747,11 +37234,13 @@
           "value": 18.9
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "MiB",
       "variant": "100klrps-batch-sizes-docker"
     },
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH1024",
       "dimensions": {},
       "environment": {},
@@ -36462,11 +37951,13 @@
           "value": 19.0
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "MiB",
       "variant": "100klrps-batch-sizes-docker"
     },
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH4096",
       "dimensions": {},
       "environment": {},
@@ -37177,11 +38668,13 @@
           "value": 24.9
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "MiB",
       "variant": "100klrps-batch-sizes-docker"
     },
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH512",
       "dimensions": {},
       "environment": {},
@@ -37892,11 +39385,13 @@
           "value": 19.0
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "MiB",
       "variant": "100klrps-batch-sizes-docker"
     },
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH8192",
       "dimensions": {},
       "environment": {},
@@ -38607,11 +40102,13 @@
           "value": 32.0
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "MiB",
       "variant": "100klrps-batch-sizes-docker"
     },
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH10",
       "dimensions": {},
       "environment": {},
@@ -39322,11 +40819,13 @@
           "value": 21.7
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "MiB",
       "variant": "100klrps-batch-sizes-docker"
     },
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH100",
       "dimensions": {},
       "environment": {},
@@ -40037,11 +41536,13 @@
           "value": 19.5
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "MiB",
       "variant": "100klrps-batch-sizes-docker"
     },
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH1024",
       "dimensions": {},
       "environment": {},
@@ -40752,11 +42253,13 @@
           "value": 19.8
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "MiB",
       "variant": "100klrps-batch-sizes-docker"
     },
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH4096",
       "dimensions": {},
       "environment": {},
@@ -41467,11 +42970,13 @@
           "value": 26.1
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "MiB",
       "variant": "100klrps-batch-sizes-docker"
     },
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH512",
       "dimensions": {},
       "environment": {},
@@ -42182,11 +43687,13 @@
           "value": 20.0
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "MiB",
       "variant": "100klrps-batch-sizes-docker"
     },
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH8192",
       "dimensions": {},
       "environment": {},
@@ -42897,11 +44404,13 @@
           "value": 34.0
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "MiB",
       "variant": "100klrps-batch-sizes-docker"
     },
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH10",
       "dimensions": {},
       "environment": {},
@@ -43612,11 +45121,13 @@
           "value": 60.0
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "seconds",
       "variant": "100klrps-batch-sizes-docker"
     },
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH100",
       "dimensions": {},
       "environment": {},
@@ -44327,11 +45838,13 @@
           "value": 60.0
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "seconds",
       "variant": "100klrps-batch-sizes-docker"
     },
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH1024",
       "dimensions": {},
       "environment": {},
@@ -45042,11 +46555,13 @@
           "value": 60.0
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "seconds",
       "variant": "100klrps-batch-sizes-docker"
     },
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH4096",
       "dimensions": {},
       "environment": {},
@@ -45757,11 +47272,13 @@
           "value": 60.0
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "seconds",
       "variant": "100klrps-batch-sizes-docker"
     },
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH512",
       "dimensions": {},
       "environment": {},
@@ -46472,11 +47989,13 @@
           "value": 60.0
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "seconds",
       "variant": "100klrps-batch-sizes-docker"
     },
     {
+      "branch": null,
       "case": "OTLP-ATTR-OTLP-BATCH8192",
       "dimensions": {},
       "environment": {},
@@ -47187,6 +48706,7 @@
           "value": 60.0
         }
       ],
+      "repository": "https://github.com/open-telemetry/otel-arrow",
       "suite": "standard-load-batch-size",
       "unit": "seconds",
       "variant": "100klrps-batch-sizes-docker"

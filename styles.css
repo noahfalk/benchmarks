@@ -120,38 +120,89 @@ main {
   margin-bottom: 0;
 }
 
-.suite-list {
-  padding: 0;
-  margin: 0;
-  list-style: none;
+.suite-link {
+  text-decoration: none;
 }
 
-.suite-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
+.suite-link:hover {
+  text-decoration: underline;
+}
+
+.suite-previews {
+  display: grid;
   gap: 24px;
-  padding: 16px 0;
-  border-bottom: 1px solid var(--line);
 }
 
-.suite-row p {
-  margin: 6px 0 0;
-  font-size: 14px;
+.explorer-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  margin: 20px 0 12px;
 }
 
-.suite-date {
-  flex: none;
+.explorer-controls label {
+  display: grid;
+  gap: 5px;
+  min-width: 0;
+  max-width: 100%;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.explorer-controls select {
+  max-width: 100%;
+  padding: 8px;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+
+.explorer-filters > summary {
+  cursor: pointer;
   color: var(--muted);
   font-size: 13px;
 }
 
-.suite-row h3 a {
-  text-decoration: none;
+.explorer-filters[open] {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 12px 0;
 }
 
-.suite-row h3 a:hover {
-  text-decoration: underline;
+.explorer-filters .filter-group {
+  display: inline-grid;
+  vertical-align: top;
+  margin: 12px 20px 0 0;
+  max-height: 200px;
+  max-width: 100%;
+  overflow-y: auto;
+}
+
+.explorer-chart {
+  margin: 20px 0;
+}
+
+.result-details {
+  margin-top: 24px;
+  overflow-wrap: anywhere;
+}
+
+.result-metrics {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.result-metrics th, .result-metrics td {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+}
+
+.result-metrics td {
+  text-align: right;
 }
 
 .comparison-links {
@@ -162,19 +213,8 @@ main {
   margin: 12px 0;
 }
 
-.inactive-section, .comparison-section {
+.comparison-section {
   margin-top: 40px;
-}
-
-.inactive-section > summary {
-  color: var(--text);
-  cursor: pointer;
-  font-size: 20px;
-  font-weight: 700;
-}
-
-.inactive-section[open] > summary {
-  margin-bottom: 12px;
 }
 
 .count, .unit {
@@ -416,9 +456,8 @@ footer {
 }
 
 @media (max-width: 720px) {
-  .suite-row {
+  .explorer-controls {
     flex-direction: column;
-    gap: 8px;
   }
 
   header {
