@@ -92,7 +92,7 @@ function renderSwitch(id, label, checked) {
 
 function renderOverviewControls(configuration, rerender) {
   const glossary = configuration.glossary || [];
-  const glossaryVisible = readBoolPreference(GLOSSARY_STORAGE_KEY, true);
+  const glossaryVisible = readBoolPreference(GLOSSARY_STORAGE_KEY, false);
   const controls = document.getElementById("controls-bar");
   const banner = document.getElementById("legend-banner");
   controls.innerHTML = [
