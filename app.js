@@ -358,7 +358,7 @@ function explorerChart(records, axis, variants) {
     const identity = { ...record.identity };
     const dimensions = { ...record.dimensions };
     let x = history
-      ? record.history_slot || record.run_id
+      ? new Date(record.ordering_timestamp).toISOString()
       : record.run_id;
     if (!history) {
       const [namespace, key] = axis.split(".");
@@ -379,10 +379,14 @@ function explorerChart(records, axis, variants) {
     const key = JSON.stringify(series);
     if (!groups.has(key)) groups.set(key, { series, records: new Map() });
     const group = groups.get(key);
-    if (group.records.has(x)) {
+    if (history) {
+      if (!group.records.has(x)) group.records.set(x, []);
+      group.records.get(x).push(record);
+    } else if (group.records.has(x)) {
       throw new Error("Multiple results occupy the same comparison slot");
+    } else {
+      group.records.set(x, record);
     }
-    group.records.set(x, record);
   }
   const ordered = [...labels.keys()].sort((left, right) => {
     if (history) {
@@ -419,10 +423,23 @@ function explorerChart(records, axis, variants) {
       pointHitRadius: 6,
       fill: false,
       spanGaps: true,
-      data: ordered.map((x, index) => {
-        const record = records.get(x);
-        return { x: index, y: record ? record.value : null, record: record || null };
-      }),
+      data: history
+        ? ordered.flatMap((x, index) => {
+          const matches = records.get(x) || [];
+          return matches.length
+            ? matches.map((record) => ({
+              x: index, y: record.value, record,
+            }))
+            : [{ x: index, y: null, record: null }];
+        })
+        : ordered.map((x, index) => {
+          const record = records.get(x);
+          return {
+            x: index,
+            y: record ? record.value : null,
+            record: record || null,
+          };
+        }),
     })),
   };
 }
