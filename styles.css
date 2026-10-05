@@ -120,63 +120,38 @@ main {
   margin-bottom: 0;
 }
 
-.suite-title {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 9px;
+.suite-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
-.suite-card {
-  display: flex;
-  flex-direction: column;
-}
-
-.status {
-  display: inline-block;
-  padding: 3px 8px;
-  border-radius: 999px;
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-
-.status-recent {
-  color: #166534;
-  background: #dcfce7;
-}
-
-.status-inactive {
-  color: var(--muted);
-  background: var(--background);
-  border: 1px solid var(--line);
-}
-
-.suite-card-recent {
-  border-top: 3px solid #22c55e;
-}
-
-.suite-card-inactive {
-  box-shadow: none;
-}
-
-.suite-meta {
+.suite-row {
   display: flex;
   justify-content: space-between;
-  gap: 12px;
-  padding-top: 14px;
-  margin-top: auto;
-  color: var(--muted);
-  border-top: 1px solid var(--line);
-  font-size: 12px;
+  align-items: baseline;
+  gap: 24px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
 }
 
-.card-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 16px;
+.suite-row p {
+  margin: 6px 0 0;
+  font-size: 14px;
+}
+
+.suite-date {
+  flex: none;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.comparison-links {
+  padding-left: 20px;
+}
+
+.comparison-links li {
+  margin: 12px 0;
 }
 
 .inactive-section, .comparison-section {
@@ -184,25 +159,14 @@ main {
 }
 
 .inactive-section > summary {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 16px 18px;
   color: var(--text);
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 10px;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
 }
 
 .inactive-section[open] > summary {
   margin-bottom: 12px;
-}
-
-.inactive-section > p {
-  margin: 0 0 18px;
 }
 
 .count, .unit {
@@ -444,6 +408,11 @@ footer {
 }
 
 @media (max-width: 720px) {
+  .suite-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+
   header {
     align-items: stretch;
     flex-direction: column;

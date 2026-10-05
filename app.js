@@ -79,91 +79,37 @@ function suiteIsRecent(activity, recentDays) {
     && Date.now() - latest <= recentDays * DAY_MILLISECONDS;
 }
 
-function comparisonsForSuite(comparisons, suiteId) {
-  return comparisons.filter((comparison) =>
-    comparison.sources.some((source) => source.suite === suiteId));
-}
-
-function renderSuiteCard(suite, activity, status, comparisons) {
+function renderSuiteRow(suite, activity) {
   const latest = activity
-    ? `Latest ordering date: ${formatDate(
+    ? `Last run: ${formatDate(
       activity.latest_ordering_timestamp,
     )}`
-    : "No canonical runs recorded";
-  const counts = activity
-    ? `${activity.run_count} ${activity.run_count === 1 ? "run" : "runs"}`
-    : "0 runs";
-  const comparisonLinks = comparisons.map((comparison) => `
-    <a class="button-link" href="comparisons/${encodeURIComponent(comparison.id)}/">
-      ${escapeHtml(comparison.name)}
-    </a>
-  `).join("");
-  const actions = comparisonLinks
-    ? `<div class="card-actions">${comparisonLinks}</div>`
-    : "";
+    : "Last run: None";
 
   return `
-    <article class="card suite-card suite-card-${status.toLowerCase()}">
-      <div class="card-heading">
-        <div>
-          <div class="suite-title">
-            <h3>${escapeHtml(suite.name)}</h3>
-            <span class="status status-${status.toLowerCase()}">${status}</span>
-          </div>
-          <p>${escapeHtml(suite.description)}</p>
-        </div>
-        <span class="count">${suite.variants.length} variants</span>
+    <li class="suite-row">
+      <div>
+        <h3>${escapeHtml(suite.name)}</h3>
+        <p>${escapeHtml(suite.description)}</p>
       </div>
-      <div class="suite-meta">
-        <span>${escapeHtml(latest)}</span>
-        <span>${escapeHtml(counts)}</span>
-      </div>
-      ${actions}
-    </article>
+      <span class="suite-date">${escapeHtml(latest)}</span>
+    </li>
   `;
 }
 
-function renderComparisonCards(views, suites) {
+function renderComparisonLinks(views) {
   return views.comparisons.map((comparison) => {
-    const selected = selectedVariants(comparison, suites);
-    const sourceRows = comparison.sources.map((source) => {
-      const suite = suites.get(source.suite);
-      const count = source.include_variants
-        ? source.include_variants.length
-        : suite.variants.length;
-      return `
-        <li>
-          <span>${escapeHtml(suite.name)}</span>
-          <span class="source-summary">
-            ${count} ${count === 1 ? "variant" : "variants"}
-            <span class="role">${escapeHtml(source.role || "comparison")}</span>
-          </span>
-        </li>
-      `;
-    }).join("");
     return `
-      <article class="card comparison-card" data-comparison-id="${escapeHtml(comparison.id)}">
-        <div class="card-heading">
-          <div>
-            <h3>${escapeHtml(comparison.name)}</h3>
-            <p>${escapeHtml(comparison.description)}</p>
-          </div>
-          <span class="count">${selected.length} variants</span>
-        </div>
-        <ul class="source-list">${sourceRows}</ul>
-        <div class="comparison-facts">
-          <span>${comparison.cases.length} cases</span>
-          <span>${comparison.metrics.length} metrics</span>
-        </div>
-        <a class="button-link primary" href="comparisons/${encodeURIComponent(comparison.id)}/">
-          View comparison
+      <li>
+        <a href="comparisons/${encodeURIComponent(comparison.id)}/">
+          ${escapeHtml(comparison.name)}
         </a>
-      </article>
+      </li>
     `;
   }).join("");
 }
 
-function renderOverview(catalog, views, suites) {
+function renderOverview(catalog, views) {
   const recentDays = Number.parseInt(
     document.body.dataset.recentDays || "28",
     10,
@@ -175,7 +121,6 @@ function renderOverview(catalog, views, suites) {
       suite,
       activity: suiteActivity,
       recent: suiteIsRecent(suiteActivity, recentDays),
-      comparisons: comparisonsForSuite(views.comparisons, suite.id),
     };
   });
   const recent = classified
@@ -197,54 +142,34 @@ function renderOverview(catalog, views, suites) {
       return left.suite.name.localeCompare(right.suite.name);
     });
 
-  document.getElementById("summary").textContent =
-    `${recent.length} recent and ${inactive.length} inactive suites; ` +
-    `${catalog.run_count} immutable runs`;
-
-  const recentCards = recent.map((item) => renderSuiteCard(
+  const recentRows = recent.map((item) => renderSuiteRow(
     item.suite,
     item.activity,
-    "Recent",
-    item.comparisons,
   )).join("");
-  const inactiveCards = inactive.map((item) => renderSuiteCard(
+  const inactiveRows = inactive.map((item) => renderSuiteRow(
     item.suite,
     item.activity,
-    "Inactive",
-    item.comparisons,
   )).join("");
-  const comparisonCards = renderComparisonCards(views, suites);
+  const comparisonLinks = renderComparisonLinks(views);
 
   document.getElementById("app").innerHTML = `
     <section class="intro">
       <h2>Recent benchmark suites</h2>
-      <p>
-        Suites are recent when their latest canonical ordering timestamp is
-        within ${recentDays} days.
-      </p>
     </section>
-    <section class="grid suite-grid">
-      ${recentCards || '<div class="empty-state">No suites have recent runs.</div>'}
-    </section>
+    <ul class="suite-list">
+      ${recentRows || '<li class="suite-row">No suites have recent runs.</li>'}
+    </ul>
     <details class="inactive-section">
       <summary>
         <span>Inactive benchmark suites</span>
-        <span class="count">${inactive.length}</span>
       </summary>
-      <p>
-        These suites have no canonical runs within the last ${recentDays} days.
-      </p>
-      <section class="grid suite-grid">${inactiveCards}</section>
+      <ul class="suite-list">${inactiveRows}</ul>
     </details>
     <section class="comparison-section">
       <div class="intro">
         <h2>Curated comparisons</h2>
-        <p>
-          Comparisons select reusable variants and metrics from one or more
-          suite families.
-        </p>
       </div>
-      <section class="grid">${comparisonCards}</section>
+      <ul class="comparison-links">${comparisonLinks}</ul>
     </section>
   `;
 }
@@ -746,7 +671,7 @@ async function load() {
         comparisons,
       );
     } else {
-      renderOverview(catalog, views, suites);
+      renderOverview(catalog, views);
     }
   } catch (error) {
     document.getElementById("app").innerHTML =
