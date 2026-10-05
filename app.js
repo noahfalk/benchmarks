@@ -357,7 +357,9 @@ function explorerChart(records, axis, variants) {
   for (const record of records) {
     const identity = { ...record.identity };
     const dimensions = { ...record.dimensions };
-    let x = record.run_id;
+    let x = history
+      ? record.history_slot || record.run_id
+      : record.run_id;
     if (!history) {
       const [namespace, key] = axis.split(".");
       const fields = namespace === "identity" ? identity : dimensions;
