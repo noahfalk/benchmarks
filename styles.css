@@ -146,6 +146,68 @@ main {
   font-size: 13px;
 }
 
+.suite-row h3 a {
+  text-decoration: none;
+}
+
+.suite-row h3 a:hover {
+  text-decoration: underline;
+}
+
+.history-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.history-controls select {
+  max-width: 100%;
+  padding: 8px;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+
+.history-card {
+  min-width: 0;
+}
+
+.history-card svg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.history-card polyline {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 2;
+}
+
+.history-card circle {
+  fill: var(--accent);
+}
+
+.history-card .axis {
+  stroke: var(--line);
+}
+
+.history-card circle:hover, .history-card circle:focus {
+  fill: var(--candidate);
+  stroke: var(--text);
+}
+
+.history-range {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
 .comparison-links {
   padding-left: 20px;
 }

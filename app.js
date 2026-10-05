@@ -89,7 +89,7 @@ function renderSuiteRow(suite, activity) {
   return `
     <li class="suite-row">
       <div>
-        <h3>${escapeHtml(suite.name)}</h3>
+        <h3><a href="suites/${encodeURIComponent(suite.id)}/">${escapeHtml(suite.name)}</a></h3>
         <p>${escapeHtml(suite.description)}</p>
       </div>
       <span class="suite-date">${escapeHtml(latest)}</span>
@@ -126,21 +126,11 @@ function renderOverview(catalog, views) {
   const recent = classified
     .filter((item) => item.recent)
     .sort((left, right) =>
-      right.activity.latest_ordering_timestamp.localeCompare(
-        left.activity.latest_ordering_timestamp,
-      ) || left.suite.name.localeCompare(right.suite.name));
+      left.suite.name.localeCompare(right.suite.name));
   const inactive = classified
     .filter((item) => !item.recent)
-    .sort((left, right) => {
-      if (left.activity && right.activity) {
-        return right.activity.latest_ordering_timestamp.localeCompare(
-          left.activity.latest_ordering_timestamp,
-        ) || left.suite.name.localeCompare(right.suite.name);
-      }
-      if (left.activity) return -1;
-      if (right.activity) return 1;
-      return left.suite.name.localeCompare(right.suite.name);
-    });
+    .sort((left, right) =>
+      left.suite.name.localeCompare(right.suite.name));
 
   const recentRows = recent.map((item) => renderSuiteRow(
     item.suite,
@@ -176,6 +166,103 @@ function renderOverview(catalog, views) {
 
 function environmentKey(environment) {
   return JSON.stringify(environment, Object.keys(environment).sort());
+}
+
+function renderSparkline(points, unit) {
+  const width = 500;
+  const height = 140;
+  const padding = 12;
+  let minimum = Infinity;
+  let maximum = -Infinity;
+  for (const point of points) {
+    minimum = Math.min(minimum, point.value);
+    maximum = Math.max(maximum, point.value);
+  }
+  const span = maximum - minimum || 1;
+  const firstTime = Date.parse(points[0].timestamp);
+  const lastTime = Date.parse(points.at(-1).timestamp);
+  const coordinates = points.map((point) => {
+    const x = firstTime === lastTime
+      ? width / 2
+      : padding + ((Date.parse(point.timestamp) - firstTime)
+        / (lastTime - firstTime)) * (width - padding * 2);
+    const y = height - padding - ((point.value - minimum) / span)
+      * (height - padding * 2);
+    return { x, y, point };
+  });
+  const polyline = coordinates.map(({ x, y }) => `${x},${y}`).join(" ");
+  const circles = coordinates.map(({ x, y, point }) => `
+    <circle cx="${x}" cy="${y}" r="4" tabindex="0">
+      <title>${escapeHtml(formatDate(point.timestamp))} / ${escapeHtml(
+        point.commit.slice(0, 8),
+      )}: ${escapeHtml(formatValue(point.value))} ${escapeHtml(unit)}
+Run: ${escapeHtml(point.run_id)}</title>
+    </circle>
+  `).join("");
+  return `
+    <svg viewBox="0 0 ${width} ${height}" role="img"
+         aria-label="${escapeHtml(
+           `${points.length} historical measurements; ${formatValue(minimum)} to ${formatValue(maximum)} ${unit}`,
+         )}">
+      <line class="axis" x1="${padding}" y1="${height - padding}"
+            x2="${width - padding}" y2="${height - padding}"></line>
+      <polyline points="${polyline}"></polyline>
+      ${circles}
+    </svg>
+    <div class="history-range">
+      <span>${escapeHtml(formatDate(points[0].timestamp))}</span>
+      <span>${escapeHtml(formatValue(minimum))} - ${escapeHtml(formatValue(maximum))} ${escapeHtml(unit)}</span>
+      <span>${escapeHtml(formatDate(points.at(-1).timestamp))}</span>
+    </div>
+  `;
+}
+
+function renderSuiteHistory(suite, history) {
+  document.getElementById("page-title").textContent = suite.name;
+  document.getElementById("summary").textContent = suite.description;
+  const target = document.getElementById("app");
+  const series = history.series.filter((item) =>
+    item.suite === suite.id && item.points.length);
+  if (!series.length) {
+    target.innerHTML =
+      '<div class="empty-state">No historical measurements recorded.</div>';
+    return;
+  }
+  const metrics = [...new Set(series.map((item) => item.metric))].sort();
+  target.innerHTML = `
+    <div class="history-controls">
+      <label for="history-metric">Metric</label>
+      <select id="history-metric">
+        ${metrics.map((metric) => `
+          <option value="${escapeHtml(metric)}">${escapeHtml(titleCase(metric))}</option>
+        `).join("")}
+      </select>
+    </div>
+    <div id="history-charts" class="grid"></div>
+  `;
+  const variants = new Map(suite.variants.map((item) => [item.id, item.name]));
+  const render = () => {
+    const metric = document.getElementById("history-metric").value;
+    document.getElementById("history-charts").innerHTML = series
+      .filter((item) => item.metric === metric)
+      .map((item) => {
+        const identity = Object.entries(item.identity).map(([key, value]) =>
+          key === "variant" ? (variants.get(value) || value) : `${key}=${value}`);
+        const context = [
+          ...Object.entries(item.environment),
+          ...Object.entries(item.dimensions),
+        ].map(([key, value]) => `${key}=${value}`).join(" / ");
+        return `
+          <article class="card history-card">
+            <h2>${escapeHtml(identity.join(" / "))}</h2>
+            <p class="meta">${escapeHtml(context)}</p>
+            ${renderSparkline(item.points, item.unit)}
+          </article>
+        `;
+      }).join("");
+  };
+  document.getElementById("history-metric").addEventListener("change", render);
+  render();
 }
 
 function environmentLabel(environment) {
@@ -656,6 +743,19 @@ async function load() {
     ? `?v=${encodeURIComponent(siteVersion)}`
     : "";
   try {
+    if (document.body.dataset.page === "suite") {
+      const suiteId = document.body.dataset.suiteId;
+      const [views, history] = await Promise.all([
+        fetchJson(`${root}/data/views.json${versionQuery}`),
+        fetchJson(`${root}/data/suites/${encodeURIComponent(suiteId)}.json${versionQuery}`),
+      ]);
+      const suite = views.suites.find((item) => item.id === suiteId);
+      if (!suite) {
+        throw new Error(`Unknown suite ${suiteId}`);
+      }
+      renderSuiteHistory(suite, history);
+      return;
+    }
     const [catalog, latest, views] = await Promise.all([
       fetchJson(`${root}/data/catalog.json${versionQuery}`),
       fetchJson(`${root}/data/latest.json${versionQuery}`),

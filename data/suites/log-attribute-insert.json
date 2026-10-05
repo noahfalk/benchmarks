@@ -1,0 +1,1909 @@
+{
+  "schema_version": 1,
+  "series": [
+    {
+      "case": "100k",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "insert",
+        "processor": "attributes",
+        "protocol": "otap",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "identity": {
+        "case": "100k",
+        "variant": "dfe-otap-attributes"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "points": [
+        {
+          "collection_id": "migration-preview-0001",
+          "commit": "e92a96ff5d63f71a9eddf10f166500d5c4f120ba",
+          "run_id": "migration-preview-0001-linux",
+          "timestamp": "2026-10-01T12:00:00Z",
+          "value": 27.0
+        }
+      ],
+      "suite": "log-attribute-insert",
+      "unit": "%",
+      "variant": "dfe-otap-attributes"
+    },
+    {
+      "case": "100k",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "insert",
+        "processor": "attributes",
+        "protocol": "otap",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "identity": {
+        "case": "100k",
+        "variant": "dfe-otap-attributes"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "points": [
+        {
+          "collection_id": "migration-preview-0001",
+          "commit": "e92a96ff5d63f71a9eddf10f166500d5c4f120ba",
+          "run_id": "migration-preview-0001-windows",
+          "timestamp": "2026-10-01T12:00:00Z",
+          "value": 29.0
+        }
+      ],
+      "suite": "log-attribute-insert",
+      "unit": "%",
+      "variant": "dfe-otap-attributes"
+    },
+    {
+      "case": "200k",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "insert",
+        "processor": "attributes",
+        "protocol": "otap",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "identity": {
+        "case": "200k",
+        "variant": "dfe-otap-attributes"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "points": [
+        {
+          "collection_id": "migration-preview-0001",
+          "commit": "e92a96ff5d63f71a9eddf10f166500d5c4f120ba",
+          "run_id": "migration-preview-0001-linux",
+          "timestamp": "2026-10-01T12:00:00Z",
+          "value": 37.0
+        }
+      ],
+      "suite": "log-attribute-insert",
+      "unit": "%",
+      "variant": "dfe-otap-attributes"
+    },
+    {
+      "case": "200k",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "insert",
+        "processor": "attributes",
+        "protocol": "otap",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "identity": {
+        "case": "200k",
+        "variant": "dfe-otap-attributes"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "points": [
+        {
+          "collection_id": "migration-preview-0001",
+          "commit": "e92a96ff5d63f71a9eddf10f166500d5c4f120ba",
+          "run_id": "migration-preview-0001-windows",
+          "timestamp": "2026-10-01T12:00:00Z",
+          "value": 39.0
+        }
+      ],
+      "suite": "log-attribute-insert",
+      "unit": "%",
+      "variant": "dfe-otap-attributes"
+    },
+    {
+      "case": "100k",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "insert",
+        "processor": "transform",
+        "protocol": "otap",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "identity": {
+        "case": "100k",
+        "variant": "dfe-otap-transform"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "points": [
+        {
+          "collection_id": "migration-preview-0001",
+          "commit": "e92a96ff5d63f71a9eddf10f166500d5c4f120ba",
+          "run_id": "migration-preview-0001-linux",
+          "timestamp": "2026-10-01T12:00:00Z",
+          "value": 28.5
+        }
+      ],
+      "suite": "log-attribute-insert",
+      "unit": "%",
+      "variant": "dfe-otap-transform"
+    },
+    {
+      "case": "100k",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "insert",
+        "processor": "transform",
+        "protocol": "otap",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "identity": {
+        "case": "100k",
+        "variant": "dfe-otap-transform"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "points": [
+        {
+          "collection_id": "migration-preview-0001",
+          "commit": "e92a96ff5d63f71a9eddf10f166500d5c4f120ba",
+          "run_id": "migration-preview-0001-windows",
+          "timestamp": "2026-10-01T12:00:00Z",
+          "value": 30.5
+        }
+      ],
+      "suite": "log-attribute-insert",
+      "unit": "%",
+      "variant": "dfe-otap-transform"
+    },
+    {
+      "case": "200k",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "insert",
+        "processor": "transform",
+        "protocol": "otap",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "identity": {
+        "case": "200k",
+        "variant": "dfe-otap-transform"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "points": [
+        {
+          "collection_id": "migration-preview-0001",
+          "commit": "e92a96ff5d63f71a9eddf10f166500d5c4f120ba",
+          "run_id": "migration-preview-0001-linux",
+          "timestamp": "2026-10-01T12:00:00Z",
+          "value": 38.5
+        }
+      ],
+      "suite": "log-attribute-insert",
+      "unit": "%",
+      "variant": "dfe-otap-transform"
+    },
+    {
+      "case": "200k",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "insert",
+        "processor": "transform",
+        "protocol": "otap",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "identity": {
+        "case": "200k",
+        "variant": "dfe-otap-transform"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "points": [
+        {
+          "collection_id": "migration-preview-0001",
+          "commit": "e92a96ff5d63f71a9eddf10f166500d5c4f120ba",
+          "run_id": "migration-preview-0001-windows",
+          "timestamp": "2026-10-01T12:00:00Z",
+          "value": 40.5
+        }
+      ],
+      "suite": "log-attribute-insert",
+      "unit": "%",
+      "variant": "dfe-otap-transform"
+    },
+    {
+      "case": "100k",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "insert",
+        "processor": "attributes",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "identity": {
+        "case": "100k",
+        "variant": "dfe-otlp-attributes"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "points": [
+        {
+          "collection_id": "migration-preview-0001",
+          "commit": "e92a96ff5d63f71a9eddf10f166500d5c4f120ba",
+          "run_id": "migration-preview-0001-linux",
+          "timestamp": "2026-10-01T12:00:00Z",
+          "value": 29.0
+        }
+      ],
+      "suite": "log-attribute-insert",
+      "unit": "%",
+      "variant": "dfe-otlp-attributes"
+    },
+    {
+      "case": "100k",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "insert",
+        "processor": "attributes",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "identity": {
+        "case": "100k",
+        "variant": "dfe-otlp-attributes"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "points": [
+        {
+          "collection_id": "migration-preview-0001",
+          "commit": "e92a96ff5d63f71a9eddf10f166500d5c4f120ba",
+          "run_id": "migration-preview-0001-windows",
+          "timestamp": "2026-10-01T12:00:00Z",
+          "value": 31.0
+        }
+      ],
+      "suite": "log-attribute-insert",
+      "unit": "%",
+      "variant": "dfe-otlp-attributes"
+    },
+    {
+      "case": "200k",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "insert",
+        "processor": "attributes",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "identity": {
+        "case": "200k",
+        "variant": "dfe-otlp-attributes"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "points": [
+        {
+          "collection_id": "migration-preview-0001",
+          "commit": "e92a96ff5d63f71a9eddf10f166500d5c4f120ba",
+          "run_id": "migration-preview-0001-linux",
+          "timestamp": "2026-10-01T12:00:00Z",
+          "value": 39.0
+        }
+      ],
+      "suite": "log-attribute-insert",
+      "unit": "%",
+      "variant": "dfe-otlp-attributes"
+    },
+    {
+      "case": "200k",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "insert",
+        "processor": "attributes",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "identity": {
+        "case": "200k",
+        "variant": "dfe-otlp-attributes"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "points": [
+        {
+          "collection_id": "migration-preview-0001",
+          "commit": "e92a96ff5d63f71a9eddf10f166500d5c4f120ba",
+          "run_id": "migration-preview-0001-windows",
+          "timestamp": "2026-10-01T12:00:00Z",
+          "value": 41.0
+        }
+      ],
+      "suite": "log-attribute-insert",
+      "unit": "%",
+      "variant": "dfe-otlp-attributes"
+    },
+    {
+      "case": "100k",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "insert",
+        "processor": "transform",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "identity": {
+        "case": "100k",
+        "variant": "dfe-otlp-transform"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "points": [
+        {
+          "collection_id": "migration-preview-0001",
+          "commit": "e92a96ff5d63f71a9eddf10f166500d5c4f120ba",
+          "run_id": "migration-preview-0001-linux",
+          "timestamp": "2026-10-01T12:00:00Z",
+          "value": 30.5
+        }
+      ],
+      "suite": "log-attribute-insert",
+      "unit": "%",
+      "variant": "dfe-otlp-transform"
+    },
+    {
+      "case": "100k",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "insert",
+        "processor": "transform",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "identity": {
+        "case": "100k",
+        "variant": "dfe-otlp-transform"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "points": [
+        {
+          "collection_id": "migration-preview-0001",
+          "commit": "e92a96ff5d63f71a9eddf10f166500d5c4f120ba",
+          "run_id": "migration-preview-0001-windows",
+          "timestamp": "2026-10-01T12:00:00Z",
+          "value": 32.5
+        }
+      ],
+      "suite": "log-attribute-insert",
+      "unit": "%",
+      "variant": "dfe-otlp-transform"
+    },
+    {
+      "case": "200k",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "insert",
+        "processor": "transform",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "identity": {
+        "case": "200k",
+        "variant": "dfe-otlp-transform"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "points": [
+        {
+          "collection_id": "migration-preview-0001",
+          "commit": "e92a96ff5d63f71a9eddf10f166500d5c4f120ba",
+          "run_id": "migration-preview-0001-linux",
+          "timestamp": "2026-10-01T12:00:00Z",
+          "value": 40.5
+        }
+      ],
+      "suite": "log-attribute-insert",
+      "unit": "%",
+      "variant": "dfe-otlp-transform"
+    },
+    {
+      "case": "200k",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "insert",
+        "processor": "transform",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "identity": {
+        "case": "200k",
+        "variant": "dfe-otlp-transform"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "points": [
+        {
+          "collection_id": "migration-preview-0001",
+          "commit": "e92a96ff5d63f71a9eddf10f166500d5c4f120ba",
+          "run_id": "migration-preview-0001-windows",
+          "timestamp": "2026-10-01T12:00:00Z",
+          "value": 42.5
+        }
+      ],
+      "suite": "log-attribute-insert",
+      "unit": "%",
+      "variant": "dfe-otlp-transform"
+    },
+    {
+      "case": "100k",
+      "dimensions": {
+        "binary": "fbit",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "insert",
+        "processor": "modify",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "identity": {
+        "case": "100k",
+        "variant": "fbit-otlp-modify"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "points": [
+        {
+          "collection_id": "migration-preview-0001",
+          "commit": "e92a96ff5d63f71a9eddf10f166500d5c4f120ba",
+          "run_id": "migration-preview-0001-linux",
+          "timestamp": "2026-10-01T12:00:00Z",
+          "value": 31.0
+        }
+      ],
+      "suite": "log-attribute-insert",
+      "unit": "%",
+      "variant": "fbit-otlp-modify"
+    },
+    {
+      "case": "100k",
+      "dimensions": {
+        "binary": "fbit",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "insert",
+        "processor": "modify",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "identity": {
+        "case": "100k",
+        "variant": "fbit-otlp-modify"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "points": [
+        {
+          "collection_id": "migration-preview-0001",
+          "commit": "e92a96ff5d63f71a9eddf10f166500d5c4f120ba",
+          "run_id": "migration-preview-0001-windows",
+          "timestamp": "2026-10-01T12:00:00Z",
+          "value": 33.0
+        }
+      ],
+      "suite": "log-attribute-insert",
+      "unit": "%",
+      "variant": "fbit-otlp-modify"
+    },
+    {
+      "case": "200k",
+      "dimensions": {
+        "binary": "fbit",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "insert",
+        "processor": "modify",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "identity": {
+        "case": "200k",
+        "variant": "fbit-otlp-modify"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "points": [
+        {
+          "collection_id": "migration-preview-0001",
+          "commit": "e92a96ff5d63f71a9eddf10f166500d5c4f120ba",
+          "run_id": "migration-preview-0001-linux",
+          "timestamp": "2026-10-01T12:00:00Z",
+          "value": 41.0
+        }
+      ],
+      "suite": "log-attribute-insert",
+      "unit": "%",
+      "variant": "fbit-otlp-modify"
+    },
+    {
+      "case": "200k",
+      "dimensions": {
+        "binary": "fbit",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "insert",
+        "processor": "modify",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "identity": {
+        "case": "200k",
+        "variant": "fbit-otlp-modify"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "points": [
+        {
+          "collection_id": "migration-preview-0001",
+          "commit": "e92a96ff5d63f71a9eddf10f166500d5c4f120ba",
+          "run_id": "migration-preview-0001-windows",
+          "timestamp": "2026-10-01T12:00:00Z",
+          "value": 43.0
+        }
+      ],
+      "suite": "log-attribute-insert",
+      "unit": "%",
+      "variant": "fbit-otlp-modify"
+    },
+    {
+      "case": "100k",
+      "dimensions": {
+        "binary": "otc",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "insert",
+        "processor": "attributes",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "identity": {
+        "case": "100k",
+        "variant": "otc-otlp-attributes"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "points": [
+        {
+          "collection_id": "migration-preview-0001",
+          "commit": "e92a96ff5d63f71a9eddf10f166500d5c4f120ba",
+          "run_id": "migration-preview-0001-linux",
+          "timestamp": "2026-10-01T12:00:00Z",
+          "value": 35.0
+        }
+      ],
+      "suite": "log-attribute-insert",
+      "unit": "%",
+      "variant": "otc-otlp-attributes"
+    },
+    {
+      "case": "100k",
+      "dimensions": {
+        "binary": "otc",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "insert",
+        "processor": "attributes",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "identity": {
+        "case": "100k",
+        "variant": "otc-otlp-attributes"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "points": [
+        {
+          "collection_id": "migration-preview-0001",
+          "commit": "e92a96ff5d63f71a9eddf10f166500d5c4f120ba",
+          "run_id": "migration-preview-0001-windows",
+          "timestamp": "2026-10-01T12:00:00Z",
+          "value": 37.0
+        }
+      ],
+      "suite": "log-attribute-insert",
+      "unit": "%",
+      "variant": "otc-otlp-attributes"
+    },
+    {
+      "case": "200k",
+      "dimensions": {
+        "binary": "otc",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "insert",
+        "processor": "attributes",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "identity": {
+        "case": "200k",
+        "variant": "otc-otlp-attributes"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "points": [
+        {
+          "collection_id": "migration-preview-0001",
+          "commit": "e92a96ff5d63f71a9eddf10f166500d5c4f120ba",
+          "run_id": "migration-preview-0001-linux",
+          "timestamp": "2026-10-01T12:00:00Z",
+          "value": 45.0
+        }
+      ],
+      "suite": "log-attribute-insert",
+      "unit": "%",
+      "variant": "otc-otlp-attributes"
+    },
+    {
+      "case": "200k",
+      "dimensions": {
+        "binary": "otc",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "insert",
+        "processor": "attributes",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "identity": {
+        "case": "200k",
+        "variant": "otc-otlp-attributes"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "points": [
+        {
+          "collection_id": "migration-preview-0001",
+          "commit": "e92a96ff5d63f71a9eddf10f166500d5c4f120ba",
+          "run_id": "migration-preview-0001-windows",
+          "timestamp": "2026-10-01T12:00:00Z",
+          "value": 47.0
+        }
+      ],
+      "suite": "log-attribute-insert",
+      "unit": "%",
+      "variant": "otc-otlp-attributes"
+    },
+    {
+      "case": "100k",
+      "dimensions": {
+        "binary": "otc",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "insert",
+        "processor": "transform",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "identity": {
+        "case": "100k",
+        "variant": "otc-otlp-transform"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "points": [
+        {
+          "collection_id": "migration-preview-0001",
+          "commit": "e92a96ff5d63f71a9eddf10f166500d5c4f120ba",
+          "run_id": "migration-preview-0001-linux",
+          "timestamp": "2026-10-01T12:00:00Z",
+          "value": 37.0
+        }
+      ],
+      "suite": "log-attribute-insert",
+      "unit": "%",
+      "variant": "otc-otlp-transform"
+    },
+    {
+      "case": "100k",
+      "dimensions": {
+        "binary": "otc",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "insert",
+        "processor": "transform",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "identity": {
+        "case": "100k",
+        "variant": "otc-otlp-transform"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "points": [
+        {
+          "collection_id": "migration-preview-0001",
+          "commit": "e92a96ff5d63f71a9eddf10f166500d5c4f120ba",
+          "run_id": "migration-preview-0001-windows",
+          "timestamp": "2026-10-01T12:00:00Z",
+          "value": 39.0
+        }
+      ],
+      "suite": "log-attribute-insert",
+      "unit": "%",
+      "variant": "otc-otlp-transform"
+    },
+    {
+      "case": "200k",
+      "dimensions": {
+        "binary": "otc",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "insert",
+        "processor": "transform",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "identity": {
+        "case": "200k",
+        "variant": "otc-otlp-transform"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "points": [
+        {
+          "collection_id": "migration-preview-0001",
+          "commit": "e92a96ff5d63f71a9eddf10f166500d5c4f120ba",
+          "run_id": "migration-preview-0001-linux",
+          "timestamp": "2026-10-01T12:00:00Z",
+          "value": 47.0
+        }
+      ],
+      "suite": "log-attribute-insert",
+      "unit": "%",
+      "variant": "otc-otlp-transform"
+    },
+    {
+      "case": "200k",
+      "dimensions": {
+        "binary": "otc",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "insert",
+        "processor": "transform",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "identity": {
+        "case": "200k",
+        "variant": "otc-otlp-transform"
+      },
+      "metric": "cpu_percentage_normalized_avg",
+      "points": [
+        {
+          "collection_id": "migration-preview-0001",
+          "commit": "e92a96ff5d63f71a9eddf10f166500d5c4f120ba",
+          "run_id": "migration-preview-0001-windows",
+          "timestamp": "2026-10-01T12:00:00Z",
+          "value": 49.0
+        }
+      ],
+      "suite": "log-attribute-insert",
+      "unit": "%",
+      "variant": "otc-otlp-transform"
+    },
+    {
+      "case": "100k",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "insert",
+        "processor": "attributes",
+        "protocol": "otap",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "identity": {
+        "case": "100k",
+        "variant": "dfe-otap-attributes"
+      },
+      "metric": "logs_received_rate",
+      "points": [
+        {
+          "collection_id": "migration-preview-0001",
+          "commit": "e92a96ff5d63f71a9eddf10f166500d5c4f120ba",
+          "run_id": "migration-preview-0001-linux",
+          "timestamp": "2026-10-01T12:00:00Z",
+          "value": 98700.0
+        }
+      ],
+      "suite": "log-attribute-insert",
+      "unit": "logs/sec",
+      "variant": "dfe-otap-attributes"
+    },
+    {
+      "case": "100k",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "insert",
+        "processor": "attributes",
+        "protocol": "otap",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "identity": {
+        "case": "100k",
+        "variant": "dfe-otap-attributes"
+      },
+      "metric": "logs_received_rate",
+      "points": [
+        {
+          "collection_id": "migration-preview-0001",
+          "commit": "e92a96ff5d63f71a9eddf10f166500d5c4f120ba",
+          "run_id": "migration-preview-0001-windows",
+          "timestamp": "2026-10-01T12:00:00Z",
+          "value": 98305.2
+        }
+      ],
+      "suite": "log-attribute-insert",
+      "unit": "logs/sec",
+      "variant": "dfe-otap-attributes"
+    },
+    {
+      "case": "200k",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "insert",
+        "processor": "attributes",
+        "protocol": "otap",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "identity": {
+        "case": "200k",
+        "variant": "dfe-otap-attributes"
+      },
+      "metric": "logs_received_rate",
+      "points": [
+        {
+          "collection_id": "migration-preview-0001",
+          "commit": "e92a96ff5d63f71a9eddf10f166500d5c4f120ba",
+          "run_id": "migration-preview-0001-linux",
+          "timestamp": "2026-10-01T12:00:00Z",
+          "value": 197400.0
+        }
+      ],
+      "suite": "log-attribute-insert",
+      "unit": "logs/sec",
+      "variant": "dfe-otap-attributes"
+    },
+    {
+      "case": "200k",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "insert",
+        "processor": "attributes",
+        "protocol": "otap",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "identity": {
+        "case": "200k",
+        "variant": "dfe-otap-attributes"
+      },
+      "metric": "logs_received_rate",
+      "points": [
+        {
+          "collection_id": "migration-preview-0001",
+          "commit": "e92a96ff5d63f71a9eddf10f166500d5c4f120ba",
+          "run_id": "migration-preview-0001-windows",
+          "timestamp": "2026-10-01T12:00:00Z",
+          "value": 196610.4
+        }
+      ],
+      "suite": "log-attribute-insert",
+      "unit": "logs/sec",
+      "variant": "dfe-otap-attributes"
+    },
+    {
+      "case": "100k",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "insert",
+        "processor": "transform",
+        "protocol": "otap",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "identity": {
+        "case": "100k",
+        "variant": "dfe-otap-transform"
+      },
+      "metric": "logs_received_rate",
+      "points": [
+        {
+          "collection_id": "migration-preview-0001",
+          "commit": "e92a96ff5d63f71a9eddf10f166500d5c4f120ba",
+          "run_id": "migration-preview-0001-linux",
+          "timestamp": "2026-10-01T12:00:00Z",
+          "value": 98400.0
+        }
+      ],
+      "suite": "log-attribute-insert",
+      "unit": "logs/sec",
+      "variant": "dfe-otap-transform"
+    },
+    {
+      "case": "100k",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "insert",
+        "processor": "transform",
+        "protocol": "otap",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "identity": {
+        "case": "100k",
+        "variant": "dfe-otap-transform"
+      },
+      "metric": "logs_received_rate",
+      "points": [
+        {
+          "collection_id": "migration-preview-0001",
+          "commit": "e92a96ff5d63f71a9eddf10f166500d5c4f120ba",
+          "run_id": "migration-preview-0001-windows",
+          "timestamp": "2026-10-01T12:00:00Z",
+          "value": 98006.4
+        }
+      ],
+      "suite": "log-attribute-insert",
+      "unit": "logs/sec",
+      "variant": "dfe-otap-transform"
+    },
+    {
+      "case": "200k",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "insert",
+        "processor": "transform",
+        "protocol": "otap",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "identity": {
+        "case": "200k",
+        "variant": "dfe-otap-transform"
+      },
+      "metric": "logs_received_rate",
+      "points": [
+        {
+          "collection_id": "migration-preview-0001",
+          "commit": "e92a96ff5d63f71a9eddf10f166500d5c4f120ba",
+          "run_id": "migration-preview-0001-linux",
+          "timestamp": "2026-10-01T12:00:00Z",
+          "value": 196800.0
+        }
+      ],
+      "suite": "log-attribute-insert",
+      "unit": "logs/sec",
+      "variant": "dfe-otap-transform"
+    },
+    {
+      "case": "200k",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "insert",
+        "processor": "transform",
+        "protocol": "otap",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "identity": {
+        "case": "200k",
+        "variant": "dfe-otap-transform"
+      },
+      "metric": "logs_received_rate",
+      "points": [
+        {
+          "collection_id": "migration-preview-0001",
+          "commit": "e92a96ff5d63f71a9eddf10f166500d5c4f120ba",
+          "run_id": "migration-preview-0001-windows",
+          "timestamp": "2026-10-01T12:00:00Z",
+          "value": 196012.8
+        }
+      ],
+      "suite": "log-attribute-insert",
+      "unit": "logs/sec",
+      "variant": "dfe-otap-transform"
+    },
+    {
+      "case": "100k",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "insert",
+        "processor": "attributes",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "identity": {
+        "case": "100k",
+        "variant": "dfe-otlp-attributes"
+      },
+      "metric": "logs_received_rate",
+      "points": [
+        {
+          "collection_id": "migration-preview-0001",
+          "commit": "e92a96ff5d63f71a9eddf10f166500d5c4f120ba",
+          "run_id": "migration-preview-0001-linux",
+          "timestamp": "2026-10-01T12:00:00Z",
+          "value": 98000.0
+        }
+      ],
+      "suite": "log-attribute-insert",
+      "unit": "logs/sec",
+      "variant": "dfe-otlp-attributes"
+    },
+    {
+      "case": "100k",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "insert",
+        "processor": "attributes",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "identity": {
+        "case": "100k",
+        "variant": "dfe-otlp-attributes"
+      },
+      "metric": "logs_received_rate",
+      "points": [
+        {
+          "collection_id": "migration-preview-0001",
+          "commit": "e92a96ff5d63f71a9eddf10f166500d5c4f120ba",
+          "run_id": "migration-preview-0001-windows",
+          "timestamp": "2026-10-01T12:00:00Z",
+          "value": 97608.0
+        }
+      ],
+      "suite": "log-attribute-insert",
+      "unit": "logs/sec",
+      "variant": "dfe-otlp-attributes"
+    },
+    {
+      "case": "200k",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "insert",
+        "processor": "attributes",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "identity": {
+        "case": "200k",
+        "variant": "dfe-otlp-attributes"
+      },
+      "metric": "logs_received_rate",
+      "points": [
+        {
+          "collection_id": "migration-preview-0001",
+          "commit": "e92a96ff5d63f71a9eddf10f166500d5c4f120ba",
+          "run_id": "migration-preview-0001-linux",
+          "timestamp": "2026-10-01T12:00:00Z",
+          "value": 196000.0
+        }
+      ],
+      "suite": "log-attribute-insert",
+      "unit": "logs/sec",
+      "variant": "dfe-otlp-attributes"
+    },
+    {
+      "case": "200k",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "insert",
+        "processor": "attributes",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "identity": {
+        "case": "200k",
+        "variant": "dfe-otlp-attributes"
+      },
+      "metric": "logs_received_rate",
+      "points": [
+        {
+          "collection_id": "migration-preview-0001",
+          "commit": "e92a96ff5d63f71a9eddf10f166500d5c4f120ba",
+          "run_id": "migration-preview-0001-windows",
+          "timestamp": "2026-10-01T12:00:00Z",
+          "value": 195216.0
+        }
+      ],
+      "suite": "log-attribute-insert",
+      "unit": "logs/sec",
+      "variant": "dfe-otlp-attributes"
+    },
+    {
+      "case": "100k",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "insert",
+        "processor": "transform",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "identity": {
+        "case": "100k",
+        "variant": "dfe-otlp-transform"
+      },
+      "metric": "logs_received_rate",
+      "points": [
+        {
+          "collection_id": "migration-preview-0001",
+          "commit": "e92a96ff5d63f71a9eddf10f166500d5c4f120ba",
+          "run_id": "migration-preview-0001-linux",
+          "timestamp": "2026-10-01T12:00:00Z",
+          "value": 97700.0
+        }
+      ],
+      "suite": "log-attribute-insert",
+      "unit": "logs/sec",
+      "variant": "dfe-otlp-transform"
+    },
+    {
+      "case": "100k",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "insert",
+        "processor": "transform",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "identity": {
+        "case": "100k",
+        "variant": "dfe-otlp-transform"
+      },
+      "metric": "logs_received_rate",
+      "points": [
+        {
+          "collection_id": "migration-preview-0001",
+          "commit": "e92a96ff5d63f71a9eddf10f166500d5c4f120ba",
+          "run_id": "migration-preview-0001-windows",
+          "timestamp": "2026-10-01T12:00:00Z",
+          "value": 97309.2
+        }
+      ],
+      "suite": "log-attribute-insert",
+      "unit": "logs/sec",
+      "variant": "dfe-otlp-transform"
+    },
+    {
+      "case": "200k",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "insert",
+        "processor": "transform",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "identity": {
+        "case": "200k",
+        "variant": "dfe-otlp-transform"
+      },
+      "metric": "logs_received_rate",
+      "points": [
+        {
+          "collection_id": "migration-preview-0001",
+          "commit": "e92a96ff5d63f71a9eddf10f166500d5c4f120ba",
+          "run_id": "migration-preview-0001-linux",
+          "timestamp": "2026-10-01T12:00:00Z",
+          "value": 195400.0
+        }
+      ],
+      "suite": "log-attribute-insert",
+      "unit": "logs/sec",
+      "variant": "dfe-otlp-transform"
+    },
+    {
+      "case": "200k",
+      "dimensions": {
+        "binary": "dfe",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "insert",
+        "processor": "transform",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "identity": {
+        "case": "200k",
+        "variant": "dfe-otlp-transform"
+      },
+      "metric": "logs_received_rate",
+      "points": [
+        {
+          "collection_id": "migration-preview-0001",
+          "commit": "e92a96ff5d63f71a9eddf10f166500d5c4f120ba",
+          "run_id": "migration-preview-0001-windows",
+          "timestamp": "2026-10-01T12:00:00Z",
+          "value": 194618.4
+        }
+      ],
+      "suite": "log-attribute-insert",
+      "unit": "logs/sec",
+      "variant": "dfe-otlp-transform"
+    },
+    {
+      "case": "100k",
+      "dimensions": {
+        "binary": "fbit",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "insert",
+        "processor": "modify",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "identity": {
+        "case": "100k",
+        "variant": "fbit-otlp-modify"
+      },
+      "metric": "logs_received_rate",
+      "points": [
+        {
+          "collection_id": "migration-preview-0001",
+          "commit": "e92a96ff5d63f71a9eddf10f166500d5c4f120ba",
+          "run_id": "migration-preview-0001-linux",
+          "timestamp": "2026-10-01T12:00:00Z",
+          "value": 97200.0
+        }
+      ],
+      "suite": "log-attribute-insert",
+      "unit": "logs/sec",
+      "variant": "fbit-otlp-modify"
+    },
+    {
+      "case": "100k",
+      "dimensions": {
+        "binary": "fbit",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "insert",
+        "processor": "modify",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "identity": {
+        "case": "100k",
+        "variant": "fbit-otlp-modify"
+      },
+      "metric": "logs_received_rate",
+      "points": [
+        {
+          "collection_id": "migration-preview-0001",
+          "commit": "e92a96ff5d63f71a9eddf10f166500d5c4f120ba",
+          "run_id": "migration-preview-0001-windows",
+          "timestamp": "2026-10-01T12:00:00Z",
+          "value": 96811.2
+        }
+      ],
+      "suite": "log-attribute-insert",
+      "unit": "logs/sec",
+      "variant": "fbit-otlp-modify"
+    },
+    {
+      "case": "200k",
+      "dimensions": {
+        "binary": "fbit",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "insert",
+        "processor": "modify",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "identity": {
+        "case": "200k",
+        "variant": "fbit-otlp-modify"
+      },
+      "metric": "logs_received_rate",
+      "points": [
+        {
+          "collection_id": "migration-preview-0001",
+          "commit": "e92a96ff5d63f71a9eddf10f166500d5c4f120ba",
+          "run_id": "migration-preview-0001-linux",
+          "timestamp": "2026-10-01T12:00:00Z",
+          "value": 194400.0
+        }
+      ],
+      "suite": "log-attribute-insert",
+      "unit": "logs/sec",
+      "variant": "fbit-otlp-modify"
+    },
+    {
+      "case": "200k",
+      "dimensions": {
+        "binary": "fbit",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "insert",
+        "processor": "modify",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "identity": {
+        "case": "200k",
+        "variant": "fbit-otlp-modify"
+      },
+      "metric": "logs_received_rate",
+      "points": [
+        {
+          "collection_id": "migration-preview-0001",
+          "commit": "e92a96ff5d63f71a9eddf10f166500d5c4f120ba",
+          "run_id": "migration-preview-0001-windows",
+          "timestamp": "2026-10-01T12:00:00Z",
+          "value": 193622.4
+        }
+      ],
+      "suite": "log-attribute-insert",
+      "unit": "logs/sec",
+      "variant": "fbit-otlp-modify"
+    },
+    {
+      "case": "100k",
+      "dimensions": {
+        "binary": "otc",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "insert",
+        "processor": "attributes",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "identity": {
+        "case": "100k",
+        "variant": "otc-otlp-attributes"
+      },
+      "metric": "logs_received_rate",
+      "points": [
+        {
+          "collection_id": "migration-preview-0001",
+          "commit": "e92a96ff5d63f71a9eddf10f166500d5c4f120ba",
+          "run_id": "migration-preview-0001-linux",
+          "timestamp": "2026-10-01T12:00:00Z",
+          "value": 96000.0
+        }
+      ],
+      "suite": "log-attribute-insert",
+      "unit": "logs/sec",
+      "variant": "otc-otlp-attributes"
+    },
+    {
+      "case": "100k",
+      "dimensions": {
+        "binary": "otc",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "insert",
+        "processor": "attributes",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "identity": {
+        "case": "100k",
+        "variant": "otc-otlp-attributes"
+      },
+      "metric": "logs_received_rate",
+      "points": [
+        {
+          "collection_id": "migration-preview-0001",
+          "commit": "e92a96ff5d63f71a9eddf10f166500d5c4f120ba",
+          "run_id": "migration-preview-0001-windows",
+          "timestamp": "2026-10-01T12:00:00Z",
+          "value": 95616.0
+        }
+      ],
+      "suite": "log-attribute-insert",
+      "unit": "logs/sec",
+      "variant": "otc-otlp-attributes"
+    },
+    {
+      "case": "200k",
+      "dimensions": {
+        "binary": "otc",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "insert",
+        "processor": "attributes",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "identity": {
+        "case": "200k",
+        "variant": "otc-otlp-attributes"
+      },
+      "metric": "logs_received_rate",
+      "points": [
+        {
+          "collection_id": "migration-preview-0001",
+          "commit": "e92a96ff5d63f71a9eddf10f166500d5c4f120ba",
+          "run_id": "migration-preview-0001-linux",
+          "timestamp": "2026-10-01T12:00:00Z",
+          "value": 192000.0
+        }
+      ],
+      "suite": "log-attribute-insert",
+      "unit": "logs/sec",
+      "variant": "otc-otlp-attributes"
+    },
+    {
+      "case": "200k",
+      "dimensions": {
+        "binary": "otc",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "insert",
+        "processor": "attributes",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "identity": {
+        "case": "200k",
+        "variant": "otc-otlp-attributes"
+      },
+      "metric": "logs_received_rate",
+      "points": [
+        {
+          "collection_id": "migration-preview-0001",
+          "commit": "e92a96ff5d63f71a9eddf10f166500d5c4f120ba",
+          "run_id": "migration-preview-0001-windows",
+          "timestamp": "2026-10-01T12:00:00Z",
+          "value": 191232.0
+        }
+      ],
+      "suite": "log-attribute-insert",
+      "unit": "logs/sec",
+      "variant": "otc-otlp-attributes"
+    },
+    {
+      "case": "100k",
+      "dimensions": {
+        "binary": "otc",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "insert",
+        "processor": "transform",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "identity": {
+        "case": "100k",
+        "variant": "otc-otlp-transform"
+      },
+      "metric": "logs_received_rate",
+      "points": [
+        {
+          "collection_id": "migration-preview-0001",
+          "commit": "e92a96ff5d63f71a9eddf10f166500d5c4f120ba",
+          "run_id": "migration-preview-0001-linux",
+          "timestamp": "2026-10-01T12:00:00Z",
+          "value": 95500.0
+        }
+      ],
+      "suite": "log-attribute-insert",
+      "unit": "logs/sec",
+      "variant": "otc-otlp-transform"
+    },
+    {
+      "case": "100k",
+      "dimensions": {
+        "binary": "otc",
+        "compression": "none",
+        "load_rate": "100000",
+        "operation": "insert",
+        "processor": "transform",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "identity": {
+        "case": "100k",
+        "variant": "otc-otlp-transform"
+      },
+      "metric": "logs_received_rate",
+      "points": [
+        {
+          "collection_id": "migration-preview-0001",
+          "commit": "e92a96ff5d63f71a9eddf10f166500d5c4f120ba",
+          "run_id": "migration-preview-0001-windows",
+          "timestamp": "2026-10-01T12:00:00Z",
+          "value": 95118.0
+        }
+      ],
+      "suite": "log-attribute-insert",
+      "unit": "logs/sec",
+      "variant": "otc-otlp-transform"
+    },
+    {
+      "case": "200k",
+      "dimensions": {
+        "binary": "otc",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "insert",
+        "processor": "transform",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "linux",
+        "testbed": "mock-linux-amd64"
+      },
+      "identity": {
+        "case": "200k",
+        "variant": "otc-otlp-transform"
+      },
+      "metric": "logs_received_rate",
+      "points": [
+        {
+          "collection_id": "migration-preview-0001",
+          "commit": "e92a96ff5d63f71a9eddf10f166500d5c4f120ba",
+          "run_id": "migration-preview-0001-linux",
+          "timestamp": "2026-10-01T12:00:00Z",
+          "value": 191000.0
+        }
+      ],
+      "suite": "log-attribute-insert",
+      "unit": "logs/sec",
+      "variant": "otc-otlp-transform"
+    },
+    {
+      "case": "200k",
+      "dimensions": {
+        "binary": "otc",
+        "compression": "none",
+        "load_rate": "200000",
+        "operation": "insert",
+        "processor": "transform",
+        "protocol": "otlp",
+        "signal": "logs"
+      },
+      "environment": {
+        "architecture": "amd64",
+        "os": "windows",
+        "testbed": "mock-windows-amd64"
+      },
+      "identity": {
+        "case": "200k",
+        "variant": "otc-otlp-transform"
+      },
+      "metric": "logs_received_rate",
+      "points": [
+        {
+          "collection_id": "migration-preview-0001",
+          "commit": "e92a96ff5d63f71a9eddf10f166500d5c4f120ba",
+          "run_id": "migration-preview-0001-windows",
+          "timestamp": "2026-10-01T12:00:00Z",
+          "value": 190236.0
+        }
+      ],
+      "suite": "log-attribute-insert",
+      "unit": "logs/sec",
+      "variant": "otc-otlp-transform"
+    }
+  ]
+}
