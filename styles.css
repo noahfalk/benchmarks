@@ -202,18 +202,19 @@ header {
   align-items: end;
   justify-content: space-between;
   gap: 24px;
-  padding: 48px 0 24px;
-  border-bottom: 1px solid var(--line);
+  padding: 20px 0 0;
 }
 
 h1 {
-  margin: 4px 0 8px;
-  font-size: clamp(30px, 5vw, 48px);
+  margin: 0;
+  font-size: 34px;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
 }
 
 .page-subtitle {
-  margin: 0;
-  font-size: 16px;
+  margin: 8px 0 0;
+  font-size: 15px;
 }
 
 h2 {
@@ -243,7 +244,7 @@ a {
 }
 
 main {
-  padding: 28px 0 56px;
+  padding: 14px 0 56px;
 }
 
 .intro, .comparison-intro {
@@ -391,18 +392,6 @@ main {
 
 .result-metrics td {
   text-align: right;
-}
-
-.comparison-links {
-  padding-left: 20px;
-}
-
-.comparison-links li {
-  margin: 12px 0;
-}
-
-.comparison-section {
-  margin-top: 40px;
 }
 
 .count, .unit {

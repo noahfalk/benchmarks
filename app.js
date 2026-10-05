@@ -168,18 +168,6 @@ function formatDate(timestamp) {
   }).format(new Date(timestamp));
 }
 
-function renderComparisonLinks(views) {
-  return views.comparisons.map((comparison) => {
-    return `
-      <li>
-        <a href="comparisons/${encodeURIComponent(comparison.id)}/">
-          ${escapeHtml(comparison.name)}
-        </a>
-      </li>
-    `;
-  }).join("");
-}
-
 function renderOverview(overview, views) {
   const target = document.getElementById("app");
   if (typeof Chart !== "undefined") {
@@ -206,12 +194,6 @@ function renderOverview(overview, views) {
       series: overview.series.filter((item) => item.suite === suite.id),
     }, null, ".", true);
   }
-  target.insertAdjacentHTML("beforeend", `
-    <section class="comparison-section">
-      <h2>Curated comparisons</h2>
-      <ul class="comparison-links">${renderComparisonLinks(views)}</ul>
-    </section>
-  `);
 }
 
 function environmentKey(environment) {
