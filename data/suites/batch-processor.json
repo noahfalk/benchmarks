@@ -5,9 +5,7 @@
       "case": null,
       "collection_id": "gha-nightly-1789752460199",
       "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -23,10 +21,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "logs-otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "ordering_timestamp": "2026-09-17T22:20:01Z",
@@ -43,9 +43,7 @@
       "case": null,
       "collection_id": "gha-nightly-1789752460199",
       "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -61,10 +59,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "logs-otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_max",
       "ordering_timestamp": "2026-09-17T22:20:01Z",
@@ -81,9 +81,7 @@
       "case": null,
       "collection_id": "gha-nightly-1789752460199",
       "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -99,10 +97,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "logs-otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "dropped_logs_percentage",
       "ordering_timestamp": "2026-09-17T22:20:01Z",
@@ -119,9 +119,7 @@
       "case": null,
       "collection_id": "gha-nightly-1789752460199",
       "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -137,10 +135,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "logs-otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "egress_bytes_per_log",
       "ordering_timestamp": "2026-09-17T22:20:01Z",
@@ -157,9 +157,7 @@
       "case": null,
       "collection_id": "gha-nightly-1789752460199",
       "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -175,10 +173,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "logs-otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "logs_produced_rate",
       "ordering_timestamp": "2026-09-17T22:20:01Z",
@@ -195,9 +195,7 @@
       "case": null,
       "collection_id": "gha-nightly-1789752460199",
       "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -213,10 +211,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "logs-otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "logs_received_rate",
       "ordering_timestamp": "2026-09-17T22:20:01Z",
@@ -233,9 +233,7 @@
       "case": null,
       "collection_id": "gha-nightly-1789752460199",
       "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -251,10 +249,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "logs-otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "network_rx_bytes_rate_avg",
       "ordering_timestamp": "2026-09-17T22:20:01Z",
@@ -271,9 +271,7 @@
       "case": null,
       "collection_id": "gha-nightly-1789752460199",
       "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -289,10 +287,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "logs-otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "network_tx_bytes_rate_avg",
       "ordering_timestamp": "2026-09-17T22:20:01Z",
@@ -309,9 +309,7 @@
       "case": null,
       "collection_id": "gha-nightly-1789752460199",
       "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -327,10 +325,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "logs-otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "ram_mib_avg",
       "ordering_timestamp": "2026-09-17T22:20:01Z",
@@ -347,9 +347,7 @@
       "case": null,
       "collection_id": "gha-nightly-1789752460199",
       "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -365,10 +363,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "logs-otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "ram_mib_max",
       "ordering_timestamp": "2026-09-17T22:20:01Z",
@@ -385,9 +385,7 @@
       "case": null,
       "collection_id": "gha-nightly-1789752460199",
       "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -403,10 +401,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "logs-otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "test_duration",
       "ordering_timestamp": "2026-09-17T22:20:01Z",
@@ -423,9 +423,7 @@
       "case": null,
       "collection_id": "gha-nightly-1789752460199",
       "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -441,10 +439,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "logs-otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "ordering_timestamp": "2026-09-17T22:20:01Z",
@@ -461,9 +461,7 @@
       "case": null,
       "collection_id": "gha-nightly-1789752460199",
       "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -479,10 +477,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "logs-otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_max",
       "ordering_timestamp": "2026-09-17T22:20:01Z",
@@ -499,9 +499,7 @@
       "case": null,
       "collection_id": "gha-nightly-1789752460199",
       "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -517,10 +515,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "logs-otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "dropped_logs_percentage",
       "ordering_timestamp": "2026-09-17T22:20:01Z",
@@ -537,9 +537,7 @@
       "case": null,
       "collection_id": "gha-nightly-1789752460199",
       "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -555,10 +553,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "logs-otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "egress_bytes_per_log",
       "ordering_timestamp": "2026-09-17T22:20:01Z",
@@ -575,9 +575,7 @@
       "case": null,
       "collection_id": "gha-nightly-1789752460199",
       "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -593,10 +591,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "logs-otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "logs_produced_rate",
       "ordering_timestamp": "2026-09-17T22:20:01Z",
@@ -613,9 +613,7 @@
       "case": null,
       "collection_id": "gha-nightly-1789752460199",
       "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -631,10 +629,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "logs-otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "logs_received_rate",
       "ordering_timestamp": "2026-09-17T22:20:01Z",
@@ -651,9 +651,7 @@
       "case": null,
       "collection_id": "gha-nightly-1789752460199",
       "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -669,10 +667,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "logs-otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "network_rx_bytes_rate_avg",
       "ordering_timestamp": "2026-09-17T22:20:01Z",
@@ -689,9 +689,7 @@
       "case": null,
       "collection_id": "gha-nightly-1789752460199",
       "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -707,10 +705,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "logs-otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "network_tx_bytes_rate_avg",
       "ordering_timestamp": "2026-09-17T22:20:01Z",
@@ -727,9 +727,7 @@
       "case": null,
       "collection_id": "gha-nightly-1789752460199",
       "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -745,10 +743,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "logs-otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "ram_mib_avg",
       "ordering_timestamp": "2026-09-17T22:20:01Z",
@@ -765,9 +765,7 @@
       "case": null,
       "collection_id": "gha-nightly-1789752460199",
       "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -783,10 +781,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "logs-otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "ram_mib_max",
       "ordering_timestamp": "2026-09-17T22:20:01Z",
@@ -803,9 +803,7 @@
       "case": null,
       "collection_id": "gha-nightly-1789752460199",
       "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -821,10 +819,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "logs-otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "test_duration",
       "ordering_timestamp": "2026-09-17T22:20:01Z",
@@ -841,9 +841,7 @@
       "case": null,
       "collection_id": "gha-nightly-1789752460199",
       "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -859,10 +857,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "metrics-otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "ordering_timestamp": "2026-09-17T22:20:01Z",
@@ -879,9 +879,7 @@
       "case": null,
       "collection_id": "gha-nightly-1789752460199",
       "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -897,10 +895,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "metrics-otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_max",
       "ordering_timestamp": "2026-09-17T22:20:01Z",
@@ -917,9 +917,7 @@
       "case": null,
       "collection_id": "gha-nightly-1789752460199",
       "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -935,10 +933,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "metrics-otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "network_rx_bytes_rate_avg",
       "ordering_timestamp": "2026-09-17T22:20:01Z",
@@ -955,9 +955,7 @@
       "case": null,
       "collection_id": "gha-nightly-1789752460199",
       "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -973,10 +971,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "metrics-otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "network_tx_bytes_rate_avg",
       "ordering_timestamp": "2026-09-17T22:20:01Z",
@@ -993,9 +993,7 @@
       "case": null,
       "collection_id": "gha-nightly-1789752460199",
       "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -1011,10 +1009,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "metrics-otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "ram_mib_avg",
       "ordering_timestamp": "2026-09-17T22:20:01Z",
@@ -1031,9 +1031,7 @@
       "case": null,
       "collection_id": "gha-nightly-1789752460199",
       "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -1049,10 +1047,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "metrics-otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "ram_mib_max",
       "ordering_timestamp": "2026-09-17T22:20:01Z",
@@ -1069,9 +1069,7 @@
       "case": null,
       "collection_id": "gha-nightly-1789752460199",
       "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -1087,10 +1085,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "metrics-otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "test_duration",
       "ordering_timestamp": "2026-09-17T22:20:01Z",
@@ -1107,9 +1107,7 @@
       "case": null,
       "collection_id": "gha-nightly-1789752460199",
       "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -1125,10 +1123,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "metrics-otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "dropped_signals_percentage",
       "ordering_timestamp": "2026-09-17T22:20:01Z",
@@ -1145,9 +1145,7 @@
       "case": null,
       "collection_id": "gha-nightly-1789752460199",
       "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -1163,10 +1161,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "metrics-otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "metrics_produced_rate",
       "ordering_timestamp": "2026-09-17T22:20:01Z",
@@ -1183,9 +1183,7 @@
       "case": null,
       "collection_id": "gha-nightly-1789752460199",
       "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -1201,10 +1199,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "metrics-otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "metrics_received_rate",
       "ordering_timestamp": "2026-09-17T22:20:01Z",
@@ -1221,9 +1221,7 @@
       "case": null,
       "collection_id": "gha-nightly-1789752460199",
       "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -1239,10 +1237,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "metrics-otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "ordering_timestamp": "2026-09-17T22:20:01Z",
@@ -1259,9 +1259,7 @@
       "case": null,
       "collection_id": "gha-nightly-1789752460199",
       "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -1277,10 +1275,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "metrics-otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_max",
       "ordering_timestamp": "2026-09-17T22:20:01Z",
@@ -1297,9 +1297,7 @@
       "case": null,
       "collection_id": "gha-nightly-1789752460199",
       "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -1315,10 +1313,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "metrics-otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "network_rx_bytes_rate_avg",
       "ordering_timestamp": "2026-09-17T22:20:01Z",
@@ -1335,9 +1335,7 @@
       "case": null,
       "collection_id": "gha-nightly-1789752460199",
       "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -1353,10 +1351,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "metrics-otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "network_tx_bytes_rate_avg",
       "ordering_timestamp": "2026-09-17T22:20:01Z",
@@ -1373,9 +1373,7 @@
       "case": null,
       "collection_id": "gha-nightly-1789752460199",
       "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -1391,10 +1389,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "metrics-otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "ram_mib_avg",
       "ordering_timestamp": "2026-09-17T22:20:01Z",
@@ -1411,9 +1411,7 @@
       "case": null,
       "collection_id": "gha-nightly-1789752460199",
       "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -1429,10 +1427,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "metrics-otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "ram_mib_max",
       "ordering_timestamp": "2026-09-17T22:20:01Z",
@@ -1449,9 +1449,7 @@
       "case": null,
       "collection_id": "gha-nightly-1789752460199",
       "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -1467,10 +1465,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "metrics-otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "test_duration",
       "ordering_timestamp": "2026-09-17T22:20:01Z",
@@ -1487,9 +1487,7 @@
       "case": null,
       "collection_id": "gha-nightly-1789752460199",
       "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -1505,10 +1503,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "metrics-otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "dropped_signals_percentage",
       "ordering_timestamp": "2026-09-17T22:20:01Z",
@@ -1525,9 +1525,7 @@
       "case": null,
       "collection_id": "gha-nightly-1789752460199",
       "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -1543,10 +1541,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "metrics-otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "metrics_produced_rate",
       "ordering_timestamp": "2026-09-17T22:20:01Z",
@@ -1563,9 +1563,7 @@
       "case": null,
       "collection_id": "gha-nightly-1789752460199",
       "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -1581,10 +1579,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "metrics-otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "metrics_received_rate",
       "ordering_timestamp": "2026-09-17T22:20:01Z",
@@ -1601,9 +1601,7 @@
       "case": null,
       "collection_id": "gha-continuous-1791131019671",
       "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -1619,10 +1617,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
@@ -1639,9 +1639,7 @@
       "case": null,
       "collection_id": "gha-continuous-1791131019671",
       "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -1657,10 +1655,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_max",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
@@ -1677,9 +1677,7 @@
       "case": null,
       "collection_id": "gha-continuous-1791131019671",
       "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -1695,10 +1693,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "dropped_logs_percentage",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
@@ -1715,9 +1715,7 @@
       "case": null,
       "collection_id": "gha-continuous-1791131019671",
       "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -1733,10 +1731,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "egress_bytes_per_log",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
@@ -1753,9 +1753,7 @@
       "case": null,
       "collection_id": "gha-continuous-1791131019671",
       "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -1771,10 +1769,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "logs_produced_rate",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
@@ -1791,9 +1791,7 @@
       "case": null,
       "collection_id": "gha-continuous-1791131019671",
       "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -1809,10 +1807,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "logs_received_rate",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
@@ -1829,9 +1829,7 @@
       "case": null,
       "collection_id": "gha-continuous-1791131019671",
       "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -1847,10 +1845,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "network_rx_bytes_rate_avg",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
@@ -1867,9 +1867,7 @@
       "case": null,
       "collection_id": "gha-continuous-1791131019671",
       "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -1885,10 +1883,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "network_tx_bytes_rate_avg",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
@@ -1905,9 +1905,7 @@
       "case": null,
       "collection_id": "gha-continuous-1791131019671",
       "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -1923,10 +1921,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "ram_mib_avg",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
@@ -1943,9 +1943,7 @@
       "case": null,
       "collection_id": "gha-continuous-1791131019671",
       "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -1961,10 +1959,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "ram_mib_max",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
@@ -1981,9 +1981,7 @@
       "case": null,
       "collection_id": "gha-continuous-1791131019671",
       "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -1999,10 +1997,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "test_duration",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
@@ -2019,9 +2019,7 @@
       "case": null,
       "collection_id": "gha-continuous-1791131019671",
       "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -2037,10 +2035,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
@@ -2057,9 +2057,7 @@
       "case": null,
       "collection_id": "gha-continuous-1791131019671",
       "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -2075,10 +2073,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_max",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
@@ -2095,9 +2095,7 @@
       "case": null,
       "collection_id": "gha-continuous-1791131019671",
       "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -2113,10 +2111,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "dropped_logs_percentage",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
@@ -2133,9 +2133,7 @@
       "case": null,
       "collection_id": "gha-continuous-1791131019671",
       "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -2151,10 +2149,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "egress_bytes_per_log",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
@@ -2171,9 +2171,7 @@
       "case": null,
       "collection_id": "gha-continuous-1791131019671",
       "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -2189,10 +2187,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "logs_produced_rate",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
@@ -2209,9 +2209,7 @@
       "case": null,
       "collection_id": "gha-continuous-1791131019671",
       "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -2227,10 +2225,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "logs_received_rate",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
@@ -2247,9 +2247,7 @@
       "case": null,
       "collection_id": "gha-continuous-1791131019671",
       "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -2265,10 +2263,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "network_rx_bytes_rate_avg",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
@@ -2285,9 +2285,7 @@
       "case": null,
       "collection_id": "gha-continuous-1791131019671",
       "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -2303,10 +2301,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "network_tx_bytes_rate_avg",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
@@ -2323,9 +2323,7 @@
       "case": null,
       "collection_id": "gha-continuous-1791131019671",
       "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -2341,10 +2339,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "ram_mib_avg",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
@@ -2361,9 +2361,7 @@
       "case": null,
       "collection_id": "gha-continuous-1791131019671",
       "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -2379,10 +2377,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "ram_mib_max",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
@@ -2399,9 +2399,7 @@
       "case": null,
       "collection_id": "gha-continuous-1791131019671",
       "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -2417,10 +2415,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "test_duration",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
@@ -2437,9 +2437,7 @@
       "case": null,
       "collection_id": "gha-nightly-1789752460199",
       "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -2455,10 +2453,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "traces-otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "ordering_timestamp": "2026-09-17T22:20:01Z",
@@ -2475,9 +2475,7 @@
       "case": null,
       "collection_id": "gha-nightly-1789752460199",
       "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -2493,10 +2491,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "traces-otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_max",
       "ordering_timestamp": "2026-09-17T22:20:01Z",
@@ -2513,9 +2513,7 @@
       "case": null,
       "collection_id": "gha-nightly-1789752460199",
       "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -2531,10 +2529,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "traces-otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "network_rx_bytes_rate_avg",
       "ordering_timestamp": "2026-09-17T22:20:01Z",
@@ -2551,9 +2551,7 @@
       "case": null,
       "collection_id": "gha-nightly-1789752460199",
       "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -2569,10 +2567,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "traces-otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "network_tx_bytes_rate_avg",
       "ordering_timestamp": "2026-09-17T22:20:01Z",
@@ -2589,9 +2589,7 @@
       "case": null,
       "collection_id": "gha-nightly-1789752460199",
       "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -2607,10 +2605,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "traces-otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "ram_mib_avg",
       "ordering_timestamp": "2026-09-17T22:20:01Z",
@@ -2627,9 +2627,7 @@
       "case": null,
       "collection_id": "gha-nightly-1789752460199",
       "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -2645,10 +2643,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "traces-otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "ram_mib_max",
       "ordering_timestamp": "2026-09-17T22:20:01Z",
@@ -2665,9 +2665,7 @@
       "case": null,
       "collection_id": "gha-nightly-1789752460199",
       "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -2683,10 +2681,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "traces-otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "test_duration",
       "ordering_timestamp": "2026-09-17T22:20:01Z",
@@ -2703,9 +2703,7 @@
       "case": null,
       "collection_id": "gha-nightly-1789752460199",
       "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -2721,10 +2719,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "traces-otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "dropped_signals_percentage",
       "ordering_timestamp": "2026-09-17T22:20:01Z",
@@ -2741,9 +2741,7 @@
       "case": null,
       "collection_id": "gha-nightly-1789752460199",
       "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -2759,10 +2757,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "traces-otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "spans_produced_rate",
       "ordering_timestamp": "2026-09-17T22:20:01Z",
@@ -2779,9 +2779,7 @@
       "case": null,
       "collection_id": "gha-nightly-1789752460199",
       "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -2797,10 +2795,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "traces-otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "spans_received_rate",
       "ordering_timestamp": "2026-09-17T22:20:01Z",
@@ -2817,9 +2817,7 @@
       "case": null,
       "collection_id": "gha-nightly-1789752460199",
       "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -2835,10 +2833,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "traces-otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "ordering_timestamp": "2026-09-17T22:20:01Z",
@@ -2855,9 +2855,7 @@
       "case": null,
       "collection_id": "gha-nightly-1789752460199",
       "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -2873,10 +2871,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "traces-otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_max",
       "ordering_timestamp": "2026-09-17T22:20:01Z",
@@ -2893,9 +2893,7 @@
       "case": null,
       "collection_id": "gha-nightly-1789752460199",
       "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -2911,10 +2909,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "traces-otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "network_rx_bytes_rate_avg",
       "ordering_timestamp": "2026-09-17T22:20:01Z",
@@ -2931,9 +2931,7 @@
       "case": null,
       "collection_id": "gha-nightly-1789752460199",
       "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -2949,10 +2947,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "traces-otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "network_tx_bytes_rate_avg",
       "ordering_timestamp": "2026-09-17T22:20:01Z",
@@ -2969,9 +2969,7 @@
       "case": null,
       "collection_id": "gha-nightly-1789752460199",
       "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -2987,10 +2985,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "traces-otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "ram_mib_avg",
       "ordering_timestamp": "2026-09-17T22:20:01Z",
@@ -3007,9 +3007,7 @@
       "case": null,
       "collection_id": "gha-nightly-1789752460199",
       "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -3025,10 +3023,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "traces-otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "ram_mib_max",
       "ordering_timestamp": "2026-09-17T22:20:01Z",
@@ -3045,9 +3045,7 @@
       "case": null,
       "collection_id": "gha-nightly-1789752460199",
       "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -3063,10 +3061,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "traces-otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "test_duration",
       "ordering_timestamp": "2026-09-17T22:20:01Z",
@@ -3083,9 +3083,7 @@
       "case": null,
       "collection_id": "gha-nightly-1789752460199",
       "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -3101,10 +3099,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "traces-otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "dropped_signals_percentage",
       "ordering_timestamp": "2026-09-17T22:20:01Z",
@@ -3121,9 +3121,7 @@
       "case": null,
       "collection_id": "gha-nightly-1789752460199",
       "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -3139,10 +3137,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "traces-otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "spans_produced_rate",
       "ordering_timestamp": "2026-09-17T22:20:01Z",
@@ -3159,9 +3159,7 @@
       "case": null,
       "collection_id": "gha-nightly-1789752460199",
       "commit": "7ff859021a9eef6f4bb3d4cd8e037fbb95fac4ac",
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -3177,10 +3175,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "traces-otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "spans_received_rate",
       "ordering_timestamp": "2026-09-17T22:20:01Z",
@@ -3197,9 +3197,7 @@
       "case": null,
       "collection_id": "gha-continuous-1791131019671",
       "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
-      "dimensions": {
-        "os": "Windows"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -3213,10 +3211,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
       },
       "identity": {
+        "os": "Windows",
         "variant": "otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
@@ -3233,9 +3233,7 @@
       "case": null,
       "collection_id": "gha-continuous-1791131019671",
       "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
-      "dimensions": {
-        "os": "Windows"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -3249,10 +3247,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
       },
       "identity": {
+        "os": "Windows",
         "variant": "otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_max",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
@@ -3269,9 +3269,7 @@
       "case": null,
       "collection_id": "gha-continuous-1791131019671",
       "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
-      "dimensions": {
-        "os": "Windows"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -3285,10 +3283,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
       },
       "identity": {
+        "os": "Windows",
         "variant": "otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "dropped_logs_percentage",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
@@ -3305,9 +3305,7 @@
       "case": null,
       "collection_id": "gha-continuous-1791131019671",
       "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
-      "dimensions": {
-        "os": "Windows"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -3321,10 +3319,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
       },
       "identity": {
+        "os": "Windows",
         "variant": "otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "egress_bytes_per_log",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
@@ -3341,9 +3341,7 @@
       "case": null,
       "collection_id": "gha-continuous-1791131019671",
       "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
-      "dimensions": {
-        "os": "Windows"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -3357,10 +3355,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
       },
       "identity": {
+        "os": "Windows",
         "variant": "otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "logs_produced_rate",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
@@ -3377,9 +3377,7 @@
       "case": null,
       "collection_id": "gha-continuous-1791131019671",
       "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
-      "dimensions": {
-        "os": "Windows"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -3393,10 +3391,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
       },
       "identity": {
+        "os": "Windows",
         "variant": "otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "logs_received_rate",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
@@ -3413,9 +3413,7 @@
       "case": null,
       "collection_id": "gha-continuous-1791131019671",
       "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
-      "dimensions": {
-        "os": "Windows"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -3429,10 +3427,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
       },
       "identity": {
+        "os": "Windows",
         "variant": "otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "network_rx_bytes_rate_avg",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
@@ -3449,9 +3449,7 @@
       "case": null,
       "collection_id": "gha-continuous-1791131019671",
       "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
-      "dimensions": {
-        "os": "Windows"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -3465,10 +3463,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
       },
       "identity": {
+        "os": "Windows",
         "variant": "otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "network_tx_bytes_rate_avg",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
@@ -3485,9 +3485,7 @@
       "case": null,
       "collection_id": "gha-continuous-1791131019671",
       "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
-      "dimensions": {
-        "os": "Windows"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -3501,10 +3499,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
       },
       "identity": {
+        "os": "Windows",
         "variant": "otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "ram_mib_avg",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
@@ -3521,9 +3521,7 @@
       "case": null,
       "collection_id": "gha-continuous-1791131019671",
       "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
-      "dimensions": {
-        "os": "Windows"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -3537,10 +3535,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
       },
       "identity": {
+        "os": "Windows",
         "variant": "otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "ram_mib_max",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
@@ -3557,9 +3557,7 @@
       "case": null,
       "collection_id": "gha-continuous-1791131019671",
       "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
-      "dimensions": {
-        "os": "Windows"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -3573,10 +3571,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
       },
       "identity": {
+        "os": "Windows",
         "variant": "otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "test_duration",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
@@ -3593,9 +3593,7 @@
       "case": null,
       "collection_id": "gha-continuous-1791131019671",
       "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
-      "dimensions": {
-        "os": "Windows"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -3609,10 +3607,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
       },
       "identity": {
+        "os": "Windows",
         "variant": "otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
@@ -3629,9 +3629,7 @@
       "case": null,
       "collection_id": "gha-continuous-1791131019671",
       "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
-      "dimensions": {
-        "os": "Windows"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -3645,10 +3643,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
       },
       "identity": {
+        "os": "Windows",
         "variant": "otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_max",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
@@ -3665,9 +3665,7 @@
       "case": null,
       "collection_id": "gha-continuous-1791131019671",
       "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
-      "dimensions": {
-        "os": "Windows"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -3681,10 +3679,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
       },
       "identity": {
+        "os": "Windows",
         "variant": "otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "dropped_logs_percentage",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
@@ -3701,9 +3701,7 @@
       "case": null,
       "collection_id": "gha-continuous-1791131019671",
       "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
-      "dimensions": {
-        "os": "Windows"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -3717,10 +3715,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
       },
       "identity": {
+        "os": "Windows",
         "variant": "otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "egress_bytes_per_log",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
@@ -3737,9 +3737,7 @@
       "case": null,
       "collection_id": "gha-continuous-1791131019671",
       "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
-      "dimensions": {
-        "os": "Windows"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -3753,10 +3751,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
       },
       "identity": {
+        "os": "Windows",
         "variant": "otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "logs_produced_rate",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
@@ -3773,9 +3773,7 @@
       "case": null,
       "collection_id": "gha-continuous-1791131019671",
       "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
-      "dimensions": {
-        "os": "Windows"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -3789,10 +3787,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
       },
       "identity": {
+        "os": "Windows",
         "variant": "otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "logs_received_rate",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
@@ -3809,9 +3809,7 @@
       "case": null,
       "collection_id": "gha-continuous-1791131019671",
       "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
-      "dimensions": {
-        "os": "Windows"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -3825,10 +3823,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
       },
       "identity": {
+        "os": "Windows",
         "variant": "otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "network_rx_bytes_rate_avg",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
@@ -3845,9 +3845,7 @@
       "case": null,
       "collection_id": "gha-continuous-1791131019671",
       "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
-      "dimensions": {
-        "os": "Windows"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -3861,10 +3859,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
       },
       "identity": {
+        "os": "Windows",
         "variant": "otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "network_tx_bytes_rate_avg",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
@@ -3881,9 +3881,7 @@
       "case": null,
       "collection_id": "gha-continuous-1791131019671",
       "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
-      "dimensions": {
-        "os": "Windows"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -3897,10 +3895,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
       },
       "identity": {
+        "os": "Windows",
         "variant": "otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "ram_mib_avg",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
@@ -3917,9 +3917,7 @@
       "case": null,
       "collection_id": "gha-continuous-1791131019671",
       "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
-      "dimensions": {
-        "os": "Windows"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -3933,10 +3931,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
       },
       "identity": {
+        "os": "Windows",
         "variant": "otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "ram_mib_max",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
@@ -3953,9 +3953,7 @@
       "case": null,
       "collection_id": "gha-continuous-1791131019671",
       "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
-      "dimensions": {
-        "os": "Windows"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -3969,10 +3967,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
       },
       "identity": {
+        "os": "Windows",
         "variant": "otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "test_duration",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
@@ -3990,9 +3990,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -4008,10 +4006,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "logs-otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "points": [
@@ -4724,9 +4724,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -4742,10 +4740,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "logs-otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "points": [
@@ -5458,9 +5458,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -5476,10 +5474,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "metrics-otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "points": [
@@ -6192,9 +6192,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -6210,10 +6208,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "metrics-otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "points": [
@@ -6926,9 +6926,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -6944,10 +6942,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "points": [
@@ -7989,9 +7989,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Windows"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -8005,10 +8003,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
       },
       "identity": {
+        "os": "Windows",
         "variant": "otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "points": [
@@ -8497,9 +8497,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -8515,10 +8513,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "points": [
@@ -9560,9 +9560,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Windows"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -9576,10 +9574,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
       },
       "identity": {
+        "os": "Windows",
         "variant": "otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "points": [
@@ -10068,9 +10068,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -10086,10 +10084,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "traces-otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "points": [
@@ -10802,9 +10802,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -10820,10 +10818,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "traces-otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "points": [
@@ -11536,9 +11536,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -11554,10 +11552,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "logs-otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_max",
       "points": [
@@ -12270,9 +12270,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -12288,10 +12286,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "logs-otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_max",
       "points": [
@@ -13004,9 +13004,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -13022,10 +13020,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "metrics-otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_max",
       "points": [
@@ -13738,9 +13738,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -13756,10 +13754,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "metrics-otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_max",
       "points": [
@@ -14472,9 +14472,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -14490,10 +14488,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_max",
       "points": [
@@ -15535,9 +15535,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Windows"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -15551,10 +15549,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
       },
       "identity": {
+        "os": "Windows",
         "variant": "otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_max",
       "points": [
@@ -16043,9 +16043,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -16061,10 +16059,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_max",
       "points": [
@@ -17106,9 +17106,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Windows"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -17122,10 +17120,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
       },
       "identity": {
+        "os": "Windows",
         "variant": "otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_max",
       "points": [
@@ -17614,9 +17614,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -17632,10 +17630,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "traces-otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_max",
       "points": [
@@ -18348,9 +18348,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -18366,10 +18364,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "traces-otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_max",
       "points": [
@@ -19082,9 +19082,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -19100,10 +19098,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "logs-otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "dropped_logs_percentage",
       "points": [
@@ -19816,9 +19816,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -19834,10 +19832,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "logs-otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "dropped_logs_percentage",
       "points": [
@@ -20550,9 +20550,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -20568,10 +20566,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "dropped_logs_percentage",
       "points": [
@@ -21613,9 +21613,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Windows"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -21629,10 +21627,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
       },
       "identity": {
+        "os": "Windows",
         "variant": "otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "dropped_logs_percentage",
       "points": [
@@ -22121,9 +22121,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -22139,10 +22137,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "dropped_logs_percentage",
       "points": [
@@ -23184,9 +23184,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Windows"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -23200,10 +23198,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
       },
       "identity": {
+        "os": "Windows",
         "variant": "otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "dropped_logs_percentage",
       "points": [
@@ -23692,9 +23692,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -23710,10 +23708,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "metrics-otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "dropped_signals_percentage",
       "points": [
@@ -24426,9 +24426,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -24444,10 +24442,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "metrics-otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "dropped_signals_percentage",
       "points": [
@@ -25160,9 +25160,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -25178,10 +25176,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "traces-otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "dropped_signals_percentage",
       "points": [
@@ -25894,9 +25894,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -25912,10 +25910,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "traces-otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "dropped_signals_percentage",
       "points": [
@@ -26628,9 +26628,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -26646,10 +26644,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "logs-otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "egress_bytes_per_log",
       "points": [
@@ -27362,9 +27362,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -27380,10 +27378,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "logs-otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "egress_bytes_per_log",
       "points": [
@@ -28096,9 +28096,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -28114,10 +28112,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "egress_bytes_per_log",
       "points": [
@@ -29159,9 +29159,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Windows"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -29175,10 +29173,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
       },
       "identity": {
+        "os": "Windows",
         "variant": "otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "egress_bytes_per_log",
       "points": [
@@ -29667,9 +29667,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -29685,10 +29683,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "egress_bytes_per_log",
       "points": [
@@ -30730,9 +30730,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Windows"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -30746,10 +30744,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
       },
       "identity": {
+        "os": "Windows",
         "variant": "otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "egress_bytes_per_log",
       "points": [
@@ -31238,9 +31238,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -31256,10 +31254,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "logs-otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "logs_produced_rate",
       "points": [
@@ -31972,9 +31972,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -31990,10 +31988,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "logs-otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "logs_produced_rate",
       "points": [
@@ -32706,9 +32706,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -32724,10 +32722,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "logs_produced_rate",
       "points": [
@@ -33769,9 +33769,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Windows"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -33785,10 +33783,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
       },
       "identity": {
+        "os": "Windows",
         "variant": "otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "logs_produced_rate",
       "points": [
@@ -34277,9 +34277,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -34295,10 +34293,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "logs_produced_rate",
       "points": [
@@ -35340,9 +35340,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Windows"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -35356,10 +35354,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
       },
       "identity": {
+        "os": "Windows",
         "variant": "otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "logs_produced_rate",
       "points": [
@@ -35848,9 +35848,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -35866,10 +35864,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "logs-otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "logs_received_rate",
       "points": [
@@ -36582,9 +36582,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -36600,10 +36598,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "logs-otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "logs_received_rate",
       "points": [
@@ -37316,9 +37316,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -37334,10 +37332,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "logs_received_rate",
       "points": [
@@ -38379,9 +38379,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Windows"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -38395,10 +38393,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
       },
       "identity": {
+        "os": "Windows",
         "variant": "otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "logs_received_rate",
       "points": [
@@ -38887,9 +38887,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -38905,10 +38903,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "logs_received_rate",
       "points": [
@@ -39950,9 +39950,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Windows"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -39966,10 +39964,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
       },
       "identity": {
+        "os": "Windows",
         "variant": "otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "logs_received_rate",
       "points": [
@@ -40458,9 +40458,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -40476,10 +40474,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "metrics-otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "metrics_produced_rate",
       "points": [
@@ -41192,9 +41192,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -41210,10 +41208,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "metrics-otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "metrics_produced_rate",
       "points": [
@@ -41926,9 +41926,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -41944,10 +41942,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "metrics-otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "metrics_received_rate",
       "points": [
@@ -42660,9 +42660,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -42678,10 +42676,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "metrics-otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "metrics_received_rate",
       "points": [
@@ -43394,9 +43394,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -43412,10 +43410,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "logs-otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "network_rx_bytes_rate_avg",
       "points": [
@@ -44128,9 +44128,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -44146,10 +44144,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "logs-otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "network_rx_bytes_rate_avg",
       "points": [
@@ -44862,9 +44862,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -44880,10 +44878,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "metrics-otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "network_rx_bytes_rate_avg",
       "points": [
@@ -45596,9 +45596,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -45614,10 +45612,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "metrics-otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "network_rx_bytes_rate_avg",
       "points": [
@@ -46330,9 +46330,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -46348,10 +46346,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "network_rx_bytes_rate_avg",
       "points": [
@@ -47393,9 +47393,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Windows"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -47409,10 +47407,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
       },
       "identity": {
+        "os": "Windows",
         "variant": "otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "network_rx_bytes_rate_avg",
       "points": [
@@ -47901,9 +47901,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -47919,10 +47917,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "network_rx_bytes_rate_avg",
       "points": [
@@ -48964,9 +48964,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Windows"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -48980,10 +48978,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
       },
       "identity": {
+        "os": "Windows",
         "variant": "otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "network_rx_bytes_rate_avg",
       "points": [
@@ -49472,9 +49472,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -49490,10 +49488,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "traces-otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "network_rx_bytes_rate_avg",
       "points": [
@@ -50206,9 +50206,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -50224,10 +50222,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "traces-otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "network_rx_bytes_rate_avg",
       "points": [
@@ -50940,9 +50940,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -50958,10 +50956,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "logs-otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "network_tx_bytes_rate_avg",
       "points": [
@@ -51674,9 +51674,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -51692,10 +51690,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "logs-otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "network_tx_bytes_rate_avg",
       "points": [
@@ -52408,9 +52408,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -52426,10 +52424,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "metrics-otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "network_tx_bytes_rate_avg",
       "points": [
@@ -53142,9 +53142,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -53160,10 +53158,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "metrics-otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "network_tx_bytes_rate_avg",
       "points": [
@@ -53876,9 +53876,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -53894,10 +53892,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "network_tx_bytes_rate_avg",
       "points": [
@@ -54939,9 +54939,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Windows"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -54955,10 +54953,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
       },
       "identity": {
+        "os": "Windows",
         "variant": "otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "network_tx_bytes_rate_avg",
       "points": [
@@ -55447,9 +55447,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -55465,10 +55463,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "network_tx_bytes_rate_avg",
       "points": [
@@ -56510,9 +56510,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Windows"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -56526,10 +56524,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
       },
       "identity": {
+        "os": "Windows",
         "variant": "otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "network_tx_bytes_rate_avg",
       "points": [
@@ -57018,9 +57018,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -57036,10 +57034,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "traces-otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "network_tx_bytes_rate_avg",
       "points": [
@@ -57752,9 +57752,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -57770,10 +57768,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "traces-otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "network_tx_bytes_rate_avg",
       "points": [
@@ -58486,9 +58486,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -58504,10 +58502,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "logs-otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "ram_mib_avg",
       "points": [
@@ -59220,9 +59220,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -59238,10 +59236,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "logs-otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "ram_mib_avg",
       "points": [
@@ -59954,9 +59954,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -59972,10 +59970,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "metrics-otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "ram_mib_avg",
       "points": [
@@ -60688,9 +60688,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -60706,10 +60704,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "metrics-otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "ram_mib_avg",
       "points": [
@@ -61422,9 +61422,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -61440,10 +61438,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "ram_mib_avg",
       "points": [
@@ -62485,9 +62485,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Windows"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -62501,10 +62499,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
       },
       "identity": {
+        "os": "Windows",
         "variant": "otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "ram_mib_avg",
       "points": [
@@ -62993,9 +62993,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -63011,10 +63009,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "ram_mib_avg",
       "points": [
@@ -64056,9 +64056,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Windows"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -64072,10 +64070,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
       },
       "identity": {
+        "os": "Windows",
         "variant": "otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "ram_mib_avg",
       "points": [
@@ -64564,9 +64564,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -64582,10 +64580,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "traces-otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "ram_mib_avg",
       "points": [
@@ -65298,9 +65298,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -65316,10 +65314,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "traces-otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "ram_mib_avg",
       "points": [
@@ -66032,9 +66032,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -66050,10 +66048,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "logs-otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "ram_mib_max",
       "points": [
@@ -66766,9 +66766,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -66784,10 +66782,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "logs-otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "ram_mib_max",
       "points": [
@@ -67500,9 +67500,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -67518,10 +67516,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "metrics-otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "ram_mib_max",
       "points": [
@@ -68234,9 +68234,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -68252,10 +68250,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "metrics-otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "ram_mib_max",
       "points": [
@@ -68968,9 +68968,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -68986,10 +68984,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "ram_mib_max",
       "points": [
@@ -70031,9 +70031,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Windows"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -70047,10 +70045,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
       },
       "identity": {
+        "os": "Windows",
         "variant": "otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "ram_mib_max",
       "points": [
@@ -70539,9 +70539,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -70557,10 +70555,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "ram_mib_max",
       "points": [
@@ -71602,9 +71602,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Windows"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -71618,10 +71616,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
       },
       "identity": {
+        "os": "Windows",
         "variant": "otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "ram_mib_max",
       "points": [
@@ -72110,9 +72110,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -72128,10 +72126,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "traces-otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "ram_mib_max",
       "points": [
@@ -72844,9 +72844,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -72862,10 +72860,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "traces-otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "ram_mib_max",
       "points": [
@@ -73578,9 +73578,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -73596,10 +73594,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "traces-otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "spans_produced_rate",
       "points": [
@@ -74312,9 +74312,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -74330,10 +74328,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "traces-otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "spans_produced_rate",
       "points": [
@@ -75046,9 +75046,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -75064,10 +75062,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "traces-otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "spans_received_rate",
       "points": [
@@ -75780,9 +75780,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -75798,10 +75796,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "traces-otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "spans_received_rate",
       "points": [
@@ -76514,9 +76514,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -76532,10 +76530,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "logs-otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "test_duration",
       "points": [
@@ -77248,9 +77248,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -77266,10 +77264,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "logs-otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "test_duration",
       "points": [
@@ -77982,9 +77982,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -78000,10 +77998,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "metrics-otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "test_duration",
       "points": [
@@ -78716,9 +78716,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -78734,10 +78732,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "metrics-otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "test_duration",
       "points": [
@@ -79450,9 +79450,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -79468,10 +79466,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "test_duration",
       "points": [
@@ -80513,9 +80513,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Windows"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -80529,10 +80527,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
       },
       "identity": {
+        "os": "Windows",
         "variant": "otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "test_duration",
       "points": [
@@ -81021,9 +81021,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -81039,10 +81037,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "test_duration",
       "points": [
@@ -82084,9 +82084,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Windows"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -82100,10 +82098,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
       },
       "identity": {
+        "os": "Windows",
         "variant": "otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "test_duration",
       "points": [
@@ -82592,9 +82592,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -82610,10 +82608,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "traces-otap-batch-otap"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "test_duration",
       "points": [
@@ -83326,9 +83326,7 @@
     {
       "branch": null,
       "case": null,
-      "dimensions": {
-        "os": "Linux"
-      },
+      "dimensions": {},
       "environment": {
         "architecture": "x86_64",
         "cloud_shape": "BM.Standard3.64",
@@ -83344,10 +83342,12 @@
         "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
       },
       "identity": {
+        "os": "Linux",
         "variant": "traces-otlp-batch-otlp"
       },
       "identity_keys": [
-        "variant"
+        "variant",
+        "os"
       ],
       "metric": "test_duration",
       "points": [

@@ -302,12 +302,16 @@ function suiteAxes(records) {
   const categories = collectDimensionCategories(records.map((item) => ({
     dimensions: historyFacets(item),
   })));
-  for (const key of ["identity.case", ...[...categories.keys()]
-    .filter((key) => key.startsWith("dimension."))]) {
+  const identityKeys = [...new Set(records.flatMap((item) => item.identity_keys))]
+    .filter((key) => key !== "variant")
+    .map((key) => `identity.${key}`);
+  const dimensionKeys = [...categories.keys()]
+    .filter((key) => key.startsWith("dimension."));
+  for (const key of [...identityKeys, ...dimensionKeys]) {
     if ((categories.get(key) || []).length > 1) {
       axes.push({
         id: key,
-        label: key === "identity.case" ? "Case" : titleCase(key.slice(10)),
+        label: titleCase(key.slice(key.indexOf(".") + 1)),
       });
     }
   }
@@ -435,7 +439,10 @@ async function loadResultDetails(record, suite, catalog, root, target, isCurrent
         (key, index) => [key, item.dimensions[index]],
       ).filter(([_key, value]) => value !== null));
       const runOs = osDimension(bundle.environment);
-      if (runOs !== null) dimensions.os = runOs;
+      if (runOs !== null) {
+        delete dimensions.os;
+        identity.os = runOs;
+      }
       return environmentKey(identity) === environmentKey(record.identity)
         && environmentKey(dimensions) === environmentKey(record.dimensions);
     });

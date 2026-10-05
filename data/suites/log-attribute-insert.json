@@ -10,7 +10,6 @@
         "compression": "none",
         "load_rate": "100000",
         "operation": "insert",
-        "os": "Linux",
         "processor": "attributes",
         "protocol": "otap",
         "signal": "logs"
@@ -22,11 +21,13 @@
       },
       "identity": {
         "case": "100k",
+        "os": "Linux",
         "variant": "dfe-otap-attributes"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "ordering_timestamp": "2026-10-01T12:00:00Z",
@@ -49,7 +50,6 @@
         "compression": "none",
         "load_rate": "100000",
         "operation": "insert",
-        "os": "Linux",
         "processor": "attributes",
         "protocol": "otap",
         "signal": "logs"
@@ -61,11 +61,13 @@
       },
       "identity": {
         "case": "100k",
+        "os": "Linux",
         "variant": "dfe-otap-attributes"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "logs_received_rate",
       "ordering_timestamp": "2026-10-01T12:00:00Z",
@@ -88,7 +90,6 @@
         "compression": "none",
         "load_rate": "100000",
         "operation": "insert",
-        "os": "Windows",
         "processor": "attributes",
         "protocol": "otap",
         "signal": "logs"
@@ -100,11 +101,13 @@
       },
       "identity": {
         "case": "100k",
+        "os": "Windows",
         "variant": "dfe-otap-attributes"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "ordering_timestamp": "2026-10-01T12:00:00Z",
@@ -127,7 +130,6 @@
         "compression": "none",
         "load_rate": "100000",
         "operation": "insert",
-        "os": "Windows",
         "processor": "attributes",
         "protocol": "otap",
         "signal": "logs"
@@ -139,11 +141,13 @@
       },
       "identity": {
         "case": "100k",
+        "os": "Windows",
         "variant": "dfe-otap-attributes"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "logs_received_rate",
       "ordering_timestamp": "2026-10-01T12:00:00Z",
@@ -166,7 +170,6 @@
         "compression": "none",
         "load_rate": "100000",
         "operation": "insert",
-        "os": "Linux",
         "processor": "attributes",
         "protocol": "otlp",
         "signal": "logs"
@@ -178,11 +181,13 @@
       },
       "identity": {
         "case": "100k",
+        "os": "Linux",
         "variant": "dfe-otlp-attributes"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "ordering_timestamp": "2026-10-01T12:00:00Z",
@@ -205,7 +210,6 @@
         "compression": "none",
         "load_rate": "100000",
         "operation": "insert",
-        "os": "Linux",
         "processor": "attributes",
         "protocol": "otlp",
         "signal": "logs"
@@ -217,11 +221,13 @@
       },
       "identity": {
         "case": "100k",
+        "os": "Linux",
         "variant": "dfe-otlp-attributes"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "logs_received_rate",
       "ordering_timestamp": "2026-10-01T12:00:00Z",
@@ -244,7 +250,6 @@
         "compression": "none",
         "load_rate": "100000",
         "operation": "insert",
-        "os": "Windows",
         "processor": "attributes",
         "protocol": "otlp",
         "signal": "logs"
@@ -256,11 +261,13 @@
       },
       "identity": {
         "case": "100k",
+        "os": "Windows",
         "variant": "dfe-otlp-attributes"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "ordering_timestamp": "2026-10-01T12:00:00Z",
@@ -283,7 +290,6 @@
         "compression": "none",
         "load_rate": "100000",
         "operation": "insert",
-        "os": "Windows",
         "processor": "attributes",
         "protocol": "otlp",
         "signal": "logs"
@@ -295,11 +301,13 @@
       },
       "identity": {
         "case": "100k",
+        "os": "Windows",
         "variant": "dfe-otlp-attributes"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "logs_received_rate",
       "ordering_timestamp": "2026-10-01T12:00:00Z",
@@ -322,7 +330,6 @@
         "compression": "none",
         "load_rate": "100000",
         "operation": "insert",
-        "os": "Linux",
         "processor": "transform",
         "protocol": "otap",
         "signal": "logs"
@@ -334,11 +341,13 @@
       },
       "identity": {
         "case": "100k",
+        "os": "Linux",
         "variant": "dfe-otap-transform"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "ordering_timestamp": "2026-10-01T12:00:00Z",
@@ -361,7 +370,6 @@
         "compression": "none",
         "load_rate": "100000",
         "operation": "insert",
-        "os": "Linux",
         "processor": "transform",
         "protocol": "otap",
         "signal": "logs"
@@ -373,11 +381,13 @@
       },
       "identity": {
         "case": "100k",
+        "os": "Linux",
         "variant": "dfe-otap-transform"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "logs_received_rate",
       "ordering_timestamp": "2026-10-01T12:00:00Z",
@@ -400,7 +410,6 @@
         "compression": "none",
         "load_rate": "100000",
         "operation": "insert",
-        "os": "Windows",
         "processor": "transform",
         "protocol": "otap",
         "signal": "logs"
@@ -412,11 +421,13 @@
       },
       "identity": {
         "case": "100k",
+        "os": "Windows",
         "variant": "dfe-otap-transform"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "ordering_timestamp": "2026-10-01T12:00:00Z",
@@ -439,7 +450,6 @@
         "compression": "none",
         "load_rate": "100000",
         "operation": "insert",
-        "os": "Windows",
         "processor": "transform",
         "protocol": "otap",
         "signal": "logs"
@@ -451,11 +461,13 @@
       },
       "identity": {
         "case": "100k",
+        "os": "Windows",
         "variant": "dfe-otap-transform"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "logs_received_rate",
       "ordering_timestamp": "2026-10-01T12:00:00Z",
@@ -478,7 +490,6 @@
         "compression": "none",
         "load_rate": "100000",
         "operation": "insert",
-        "os": "Linux",
         "processor": "transform",
         "protocol": "otlp",
         "signal": "logs"
@@ -490,11 +501,13 @@
       },
       "identity": {
         "case": "100k",
+        "os": "Linux",
         "variant": "dfe-otlp-transform"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "ordering_timestamp": "2026-10-01T12:00:00Z",
@@ -517,7 +530,6 @@
         "compression": "none",
         "load_rate": "100000",
         "operation": "insert",
-        "os": "Linux",
         "processor": "transform",
         "protocol": "otlp",
         "signal": "logs"
@@ -529,11 +541,13 @@
       },
       "identity": {
         "case": "100k",
+        "os": "Linux",
         "variant": "dfe-otlp-transform"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "logs_received_rate",
       "ordering_timestamp": "2026-10-01T12:00:00Z",
@@ -556,7 +570,6 @@
         "compression": "none",
         "load_rate": "100000",
         "operation": "insert",
-        "os": "Windows",
         "processor": "transform",
         "protocol": "otlp",
         "signal": "logs"
@@ -568,11 +581,13 @@
       },
       "identity": {
         "case": "100k",
+        "os": "Windows",
         "variant": "dfe-otlp-transform"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "ordering_timestamp": "2026-10-01T12:00:00Z",
@@ -595,7 +610,6 @@
         "compression": "none",
         "load_rate": "100000",
         "operation": "insert",
-        "os": "Windows",
         "processor": "transform",
         "protocol": "otlp",
         "signal": "logs"
@@ -607,11 +621,13 @@
       },
       "identity": {
         "case": "100k",
+        "os": "Windows",
         "variant": "dfe-otlp-transform"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "logs_received_rate",
       "ordering_timestamp": "2026-10-01T12:00:00Z",
@@ -634,7 +650,6 @@
         "compression": "none",
         "load_rate": "200000",
         "operation": "insert",
-        "os": "Linux",
         "processor": "attributes",
         "protocol": "otap",
         "signal": "logs"
@@ -646,11 +661,13 @@
       },
       "identity": {
         "case": "200k",
+        "os": "Linux",
         "variant": "dfe-otap-attributes"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "ordering_timestamp": "2026-10-01T12:00:00Z",
@@ -673,7 +690,6 @@
         "compression": "none",
         "load_rate": "200000",
         "operation": "insert",
-        "os": "Linux",
         "processor": "attributes",
         "protocol": "otap",
         "signal": "logs"
@@ -685,11 +701,13 @@
       },
       "identity": {
         "case": "200k",
+        "os": "Linux",
         "variant": "dfe-otap-attributes"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "logs_received_rate",
       "ordering_timestamp": "2026-10-01T12:00:00Z",
@@ -712,7 +730,6 @@
         "compression": "none",
         "load_rate": "200000",
         "operation": "insert",
-        "os": "Windows",
         "processor": "attributes",
         "protocol": "otap",
         "signal": "logs"
@@ -724,11 +741,13 @@
       },
       "identity": {
         "case": "200k",
+        "os": "Windows",
         "variant": "dfe-otap-attributes"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "ordering_timestamp": "2026-10-01T12:00:00Z",
@@ -751,7 +770,6 @@
         "compression": "none",
         "load_rate": "200000",
         "operation": "insert",
-        "os": "Windows",
         "processor": "attributes",
         "protocol": "otap",
         "signal": "logs"
@@ -763,11 +781,13 @@
       },
       "identity": {
         "case": "200k",
+        "os": "Windows",
         "variant": "dfe-otap-attributes"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "logs_received_rate",
       "ordering_timestamp": "2026-10-01T12:00:00Z",
@@ -790,7 +810,6 @@
         "compression": "none",
         "load_rate": "200000",
         "operation": "insert",
-        "os": "Linux",
         "processor": "attributes",
         "protocol": "otlp",
         "signal": "logs"
@@ -802,11 +821,13 @@
       },
       "identity": {
         "case": "200k",
+        "os": "Linux",
         "variant": "dfe-otlp-attributes"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "ordering_timestamp": "2026-10-01T12:00:00Z",
@@ -829,7 +850,6 @@
         "compression": "none",
         "load_rate": "200000",
         "operation": "insert",
-        "os": "Linux",
         "processor": "attributes",
         "protocol": "otlp",
         "signal": "logs"
@@ -841,11 +861,13 @@
       },
       "identity": {
         "case": "200k",
+        "os": "Linux",
         "variant": "dfe-otlp-attributes"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "logs_received_rate",
       "ordering_timestamp": "2026-10-01T12:00:00Z",
@@ -868,7 +890,6 @@
         "compression": "none",
         "load_rate": "200000",
         "operation": "insert",
-        "os": "Windows",
         "processor": "attributes",
         "protocol": "otlp",
         "signal": "logs"
@@ -880,11 +901,13 @@
       },
       "identity": {
         "case": "200k",
+        "os": "Windows",
         "variant": "dfe-otlp-attributes"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "ordering_timestamp": "2026-10-01T12:00:00Z",
@@ -907,7 +930,6 @@
         "compression": "none",
         "load_rate": "200000",
         "operation": "insert",
-        "os": "Windows",
         "processor": "attributes",
         "protocol": "otlp",
         "signal": "logs"
@@ -919,11 +941,13 @@
       },
       "identity": {
         "case": "200k",
+        "os": "Windows",
         "variant": "dfe-otlp-attributes"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "logs_received_rate",
       "ordering_timestamp": "2026-10-01T12:00:00Z",
@@ -946,7 +970,6 @@
         "compression": "none",
         "load_rate": "200000",
         "operation": "insert",
-        "os": "Linux",
         "processor": "transform",
         "protocol": "otap",
         "signal": "logs"
@@ -958,11 +981,13 @@
       },
       "identity": {
         "case": "200k",
+        "os": "Linux",
         "variant": "dfe-otap-transform"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "ordering_timestamp": "2026-10-01T12:00:00Z",
@@ -985,7 +1010,6 @@
         "compression": "none",
         "load_rate": "200000",
         "operation": "insert",
-        "os": "Linux",
         "processor": "transform",
         "protocol": "otap",
         "signal": "logs"
@@ -997,11 +1021,13 @@
       },
       "identity": {
         "case": "200k",
+        "os": "Linux",
         "variant": "dfe-otap-transform"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "logs_received_rate",
       "ordering_timestamp": "2026-10-01T12:00:00Z",
@@ -1024,7 +1050,6 @@
         "compression": "none",
         "load_rate": "200000",
         "operation": "insert",
-        "os": "Windows",
         "processor": "transform",
         "protocol": "otap",
         "signal": "logs"
@@ -1036,11 +1061,13 @@
       },
       "identity": {
         "case": "200k",
+        "os": "Windows",
         "variant": "dfe-otap-transform"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "ordering_timestamp": "2026-10-01T12:00:00Z",
@@ -1063,7 +1090,6 @@
         "compression": "none",
         "load_rate": "200000",
         "operation": "insert",
-        "os": "Windows",
         "processor": "transform",
         "protocol": "otap",
         "signal": "logs"
@@ -1075,11 +1101,13 @@
       },
       "identity": {
         "case": "200k",
+        "os": "Windows",
         "variant": "dfe-otap-transform"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "logs_received_rate",
       "ordering_timestamp": "2026-10-01T12:00:00Z",
@@ -1102,7 +1130,6 @@
         "compression": "none",
         "load_rate": "200000",
         "operation": "insert",
-        "os": "Linux",
         "processor": "transform",
         "protocol": "otlp",
         "signal": "logs"
@@ -1114,11 +1141,13 @@
       },
       "identity": {
         "case": "200k",
+        "os": "Linux",
         "variant": "dfe-otlp-transform"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "ordering_timestamp": "2026-10-01T12:00:00Z",
@@ -1141,7 +1170,6 @@
         "compression": "none",
         "load_rate": "200000",
         "operation": "insert",
-        "os": "Linux",
         "processor": "transform",
         "protocol": "otlp",
         "signal": "logs"
@@ -1153,11 +1181,13 @@
       },
       "identity": {
         "case": "200k",
+        "os": "Linux",
         "variant": "dfe-otlp-transform"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "logs_received_rate",
       "ordering_timestamp": "2026-10-01T12:00:00Z",
@@ -1180,7 +1210,6 @@
         "compression": "none",
         "load_rate": "200000",
         "operation": "insert",
-        "os": "Windows",
         "processor": "transform",
         "protocol": "otlp",
         "signal": "logs"
@@ -1192,11 +1221,13 @@
       },
       "identity": {
         "case": "200k",
+        "os": "Windows",
         "variant": "dfe-otlp-transform"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "ordering_timestamp": "2026-10-01T12:00:00Z",
@@ -1219,7 +1250,6 @@
         "compression": "none",
         "load_rate": "200000",
         "operation": "insert",
-        "os": "Windows",
         "processor": "transform",
         "protocol": "otlp",
         "signal": "logs"
@@ -1231,11 +1261,13 @@
       },
       "identity": {
         "case": "200k",
+        "os": "Windows",
         "variant": "dfe-otlp-transform"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "logs_received_rate",
       "ordering_timestamp": "2026-10-01T12:00:00Z",
@@ -1258,7 +1290,6 @@
         "compression": "none",
         "load_rate": "100000",
         "operation": "insert",
-        "os": "Linux",
         "processor": "modify",
         "protocol": "otlp",
         "signal": "logs"
@@ -1270,11 +1301,13 @@
       },
       "identity": {
         "case": "100k",
+        "os": "Linux",
         "variant": "fbit-otlp-modify"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "ordering_timestamp": "2026-10-01T12:00:00Z",
@@ -1297,7 +1330,6 @@
         "compression": "none",
         "load_rate": "100000",
         "operation": "insert",
-        "os": "Linux",
         "processor": "modify",
         "protocol": "otlp",
         "signal": "logs"
@@ -1309,11 +1341,13 @@
       },
       "identity": {
         "case": "100k",
+        "os": "Linux",
         "variant": "fbit-otlp-modify"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "logs_received_rate",
       "ordering_timestamp": "2026-10-01T12:00:00Z",
@@ -1336,7 +1370,6 @@
         "compression": "none",
         "load_rate": "100000",
         "operation": "insert",
-        "os": "Windows",
         "processor": "modify",
         "protocol": "otlp",
         "signal": "logs"
@@ -1348,11 +1381,13 @@
       },
       "identity": {
         "case": "100k",
+        "os": "Windows",
         "variant": "fbit-otlp-modify"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "ordering_timestamp": "2026-10-01T12:00:00Z",
@@ -1375,7 +1410,6 @@
         "compression": "none",
         "load_rate": "100000",
         "operation": "insert",
-        "os": "Windows",
         "processor": "modify",
         "protocol": "otlp",
         "signal": "logs"
@@ -1387,11 +1421,13 @@
       },
       "identity": {
         "case": "100k",
+        "os": "Windows",
         "variant": "fbit-otlp-modify"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "logs_received_rate",
       "ordering_timestamp": "2026-10-01T12:00:00Z",
@@ -1414,7 +1450,6 @@
         "compression": "none",
         "load_rate": "200000",
         "operation": "insert",
-        "os": "Linux",
         "processor": "modify",
         "protocol": "otlp",
         "signal": "logs"
@@ -1426,11 +1461,13 @@
       },
       "identity": {
         "case": "200k",
+        "os": "Linux",
         "variant": "fbit-otlp-modify"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "ordering_timestamp": "2026-10-01T12:00:00Z",
@@ -1453,7 +1490,6 @@
         "compression": "none",
         "load_rate": "200000",
         "operation": "insert",
-        "os": "Linux",
         "processor": "modify",
         "protocol": "otlp",
         "signal": "logs"
@@ -1465,11 +1501,13 @@
       },
       "identity": {
         "case": "200k",
+        "os": "Linux",
         "variant": "fbit-otlp-modify"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "logs_received_rate",
       "ordering_timestamp": "2026-10-01T12:00:00Z",
@@ -1492,7 +1530,6 @@
         "compression": "none",
         "load_rate": "200000",
         "operation": "insert",
-        "os": "Windows",
         "processor": "modify",
         "protocol": "otlp",
         "signal": "logs"
@@ -1504,11 +1541,13 @@
       },
       "identity": {
         "case": "200k",
+        "os": "Windows",
         "variant": "fbit-otlp-modify"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "ordering_timestamp": "2026-10-01T12:00:00Z",
@@ -1531,7 +1570,6 @@
         "compression": "none",
         "load_rate": "200000",
         "operation": "insert",
-        "os": "Windows",
         "processor": "modify",
         "protocol": "otlp",
         "signal": "logs"
@@ -1543,11 +1581,13 @@
       },
       "identity": {
         "case": "200k",
+        "os": "Windows",
         "variant": "fbit-otlp-modify"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "logs_received_rate",
       "ordering_timestamp": "2026-10-01T12:00:00Z",
@@ -1570,7 +1610,6 @@
         "compression": "none",
         "load_rate": "100000",
         "operation": "insert",
-        "os": "Linux",
         "processor": "attributes",
         "protocol": "otlp",
         "signal": "logs"
@@ -1582,11 +1621,13 @@
       },
       "identity": {
         "case": "100k",
+        "os": "Linux",
         "variant": "otc-otlp-attributes"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "ordering_timestamp": "2026-10-01T12:00:00Z",
@@ -1609,7 +1650,6 @@
         "compression": "none",
         "load_rate": "100000",
         "operation": "insert",
-        "os": "Linux",
         "processor": "attributes",
         "protocol": "otlp",
         "signal": "logs"
@@ -1621,11 +1661,13 @@
       },
       "identity": {
         "case": "100k",
+        "os": "Linux",
         "variant": "otc-otlp-attributes"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "logs_received_rate",
       "ordering_timestamp": "2026-10-01T12:00:00Z",
@@ -1648,7 +1690,6 @@
         "compression": "none",
         "load_rate": "100000",
         "operation": "insert",
-        "os": "Windows",
         "processor": "attributes",
         "protocol": "otlp",
         "signal": "logs"
@@ -1660,11 +1701,13 @@
       },
       "identity": {
         "case": "100k",
+        "os": "Windows",
         "variant": "otc-otlp-attributes"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "ordering_timestamp": "2026-10-01T12:00:00Z",
@@ -1687,7 +1730,6 @@
         "compression": "none",
         "load_rate": "100000",
         "operation": "insert",
-        "os": "Windows",
         "processor": "attributes",
         "protocol": "otlp",
         "signal": "logs"
@@ -1699,11 +1741,13 @@
       },
       "identity": {
         "case": "100k",
+        "os": "Windows",
         "variant": "otc-otlp-attributes"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "logs_received_rate",
       "ordering_timestamp": "2026-10-01T12:00:00Z",
@@ -1726,7 +1770,6 @@
         "compression": "none",
         "load_rate": "100000",
         "operation": "insert",
-        "os": "Linux",
         "processor": "transform",
         "protocol": "otlp",
         "signal": "logs"
@@ -1738,11 +1781,13 @@
       },
       "identity": {
         "case": "100k",
+        "os": "Linux",
         "variant": "otc-otlp-transform"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "ordering_timestamp": "2026-10-01T12:00:00Z",
@@ -1765,7 +1810,6 @@
         "compression": "none",
         "load_rate": "100000",
         "operation": "insert",
-        "os": "Linux",
         "processor": "transform",
         "protocol": "otlp",
         "signal": "logs"
@@ -1777,11 +1821,13 @@
       },
       "identity": {
         "case": "100k",
+        "os": "Linux",
         "variant": "otc-otlp-transform"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "logs_received_rate",
       "ordering_timestamp": "2026-10-01T12:00:00Z",
@@ -1804,7 +1850,6 @@
         "compression": "none",
         "load_rate": "100000",
         "operation": "insert",
-        "os": "Windows",
         "processor": "transform",
         "protocol": "otlp",
         "signal": "logs"
@@ -1816,11 +1861,13 @@
       },
       "identity": {
         "case": "100k",
+        "os": "Windows",
         "variant": "otc-otlp-transform"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "ordering_timestamp": "2026-10-01T12:00:00Z",
@@ -1843,7 +1890,6 @@
         "compression": "none",
         "load_rate": "100000",
         "operation": "insert",
-        "os": "Windows",
         "processor": "transform",
         "protocol": "otlp",
         "signal": "logs"
@@ -1855,11 +1901,13 @@
       },
       "identity": {
         "case": "100k",
+        "os": "Windows",
         "variant": "otc-otlp-transform"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "logs_received_rate",
       "ordering_timestamp": "2026-10-01T12:00:00Z",
@@ -1882,7 +1930,6 @@
         "compression": "none",
         "load_rate": "200000",
         "operation": "insert",
-        "os": "Linux",
         "processor": "attributes",
         "protocol": "otlp",
         "signal": "logs"
@@ -1894,11 +1941,13 @@
       },
       "identity": {
         "case": "200k",
+        "os": "Linux",
         "variant": "otc-otlp-attributes"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "ordering_timestamp": "2026-10-01T12:00:00Z",
@@ -1921,7 +1970,6 @@
         "compression": "none",
         "load_rate": "200000",
         "operation": "insert",
-        "os": "Linux",
         "processor": "attributes",
         "protocol": "otlp",
         "signal": "logs"
@@ -1933,11 +1981,13 @@
       },
       "identity": {
         "case": "200k",
+        "os": "Linux",
         "variant": "otc-otlp-attributes"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "logs_received_rate",
       "ordering_timestamp": "2026-10-01T12:00:00Z",
@@ -1960,7 +2010,6 @@
         "compression": "none",
         "load_rate": "200000",
         "operation": "insert",
-        "os": "Windows",
         "processor": "attributes",
         "protocol": "otlp",
         "signal": "logs"
@@ -1972,11 +2021,13 @@
       },
       "identity": {
         "case": "200k",
+        "os": "Windows",
         "variant": "otc-otlp-attributes"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "ordering_timestamp": "2026-10-01T12:00:00Z",
@@ -1999,7 +2050,6 @@
         "compression": "none",
         "load_rate": "200000",
         "operation": "insert",
-        "os": "Windows",
         "processor": "attributes",
         "protocol": "otlp",
         "signal": "logs"
@@ -2011,11 +2061,13 @@
       },
       "identity": {
         "case": "200k",
+        "os": "Windows",
         "variant": "otc-otlp-attributes"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "logs_received_rate",
       "ordering_timestamp": "2026-10-01T12:00:00Z",
@@ -2038,7 +2090,6 @@
         "compression": "none",
         "load_rate": "200000",
         "operation": "insert",
-        "os": "Linux",
         "processor": "transform",
         "protocol": "otlp",
         "signal": "logs"
@@ -2050,11 +2101,13 @@
       },
       "identity": {
         "case": "200k",
+        "os": "Linux",
         "variant": "otc-otlp-transform"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "ordering_timestamp": "2026-10-01T12:00:00Z",
@@ -2077,7 +2130,6 @@
         "compression": "none",
         "load_rate": "200000",
         "operation": "insert",
-        "os": "Linux",
         "processor": "transform",
         "protocol": "otlp",
         "signal": "logs"
@@ -2089,11 +2141,13 @@
       },
       "identity": {
         "case": "200k",
+        "os": "Linux",
         "variant": "otc-otlp-transform"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "logs_received_rate",
       "ordering_timestamp": "2026-10-01T12:00:00Z",
@@ -2116,7 +2170,6 @@
         "compression": "none",
         "load_rate": "200000",
         "operation": "insert",
-        "os": "Windows",
         "processor": "transform",
         "protocol": "otlp",
         "signal": "logs"
@@ -2128,11 +2181,13 @@
       },
       "identity": {
         "case": "200k",
+        "os": "Windows",
         "variant": "otc-otlp-transform"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "ordering_timestamp": "2026-10-01T12:00:00Z",
@@ -2155,7 +2210,6 @@
         "compression": "none",
         "load_rate": "200000",
         "operation": "insert",
-        "os": "Windows",
         "processor": "transform",
         "protocol": "otlp",
         "signal": "logs"
@@ -2167,11 +2221,13 @@
       },
       "identity": {
         "case": "200k",
+        "os": "Windows",
         "variant": "otc-otlp-transform"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "logs_received_rate",
       "ordering_timestamp": "2026-10-01T12:00:00Z",
@@ -2195,7 +2251,6 @@
         "compression": "none",
         "load_rate": "100000",
         "operation": "insert",
-        "os": "Linux",
         "processor": "attributes",
         "protocol": "otap",
         "signal": "logs"
@@ -2207,11 +2262,13 @@
       },
       "identity": {
         "case": "100k",
+        "os": "Linux",
         "variant": "dfe-otap-attributes"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "points": [
@@ -2236,7 +2293,6 @@
         "compression": "none",
         "load_rate": "100000",
         "operation": "insert",
-        "os": "Windows",
         "processor": "attributes",
         "protocol": "otap",
         "signal": "logs"
@@ -2248,11 +2304,13 @@
       },
       "identity": {
         "case": "100k",
+        "os": "Windows",
         "variant": "dfe-otap-attributes"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "points": [
@@ -2277,7 +2335,6 @@
         "compression": "none",
         "load_rate": "200000",
         "operation": "insert",
-        "os": "Linux",
         "processor": "attributes",
         "protocol": "otap",
         "signal": "logs"
@@ -2289,11 +2346,13 @@
       },
       "identity": {
         "case": "200k",
+        "os": "Linux",
         "variant": "dfe-otap-attributes"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "points": [
@@ -2318,7 +2377,6 @@
         "compression": "none",
         "load_rate": "200000",
         "operation": "insert",
-        "os": "Windows",
         "processor": "attributes",
         "protocol": "otap",
         "signal": "logs"
@@ -2330,11 +2388,13 @@
       },
       "identity": {
         "case": "200k",
+        "os": "Windows",
         "variant": "dfe-otap-attributes"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "points": [
@@ -2359,7 +2419,6 @@
         "compression": "none",
         "load_rate": "100000",
         "operation": "insert",
-        "os": "Linux",
         "processor": "transform",
         "protocol": "otap",
         "signal": "logs"
@@ -2371,11 +2430,13 @@
       },
       "identity": {
         "case": "100k",
+        "os": "Linux",
         "variant": "dfe-otap-transform"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "points": [
@@ -2400,7 +2461,6 @@
         "compression": "none",
         "load_rate": "100000",
         "operation": "insert",
-        "os": "Windows",
         "processor": "transform",
         "protocol": "otap",
         "signal": "logs"
@@ -2412,11 +2472,13 @@
       },
       "identity": {
         "case": "100k",
+        "os": "Windows",
         "variant": "dfe-otap-transform"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "points": [
@@ -2441,7 +2503,6 @@
         "compression": "none",
         "load_rate": "200000",
         "operation": "insert",
-        "os": "Linux",
         "processor": "transform",
         "protocol": "otap",
         "signal": "logs"
@@ -2453,11 +2514,13 @@
       },
       "identity": {
         "case": "200k",
+        "os": "Linux",
         "variant": "dfe-otap-transform"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "points": [
@@ -2482,7 +2545,6 @@
         "compression": "none",
         "load_rate": "200000",
         "operation": "insert",
-        "os": "Windows",
         "processor": "transform",
         "protocol": "otap",
         "signal": "logs"
@@ -2494,11 +2556,13 @@
       },
       "identity": {
         "case": "200k",
+        "os": "Windows",
         "variant": "dfe-otap-transform"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "points": [
@@ -2523,7 +2587,6 @@
         "compression": "none",
         "load_rate": "100000",
         "operation": "insert",
-        "os": "Linux",
         "processor": "attributes",
         "protocol": "otlp",
         "signal": "logs"
@@ -2535,11 +2598,13 @@
       },
       "identity": {
         "case": "100k",
+        "os": "Linux",
         "variant": "dfe-otlp-attributes"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "points": [
@@ -2564,7 +2629,6 @@
         "compression": "none",
         "load_rate": "100000",
         "operation": "insert",
-        "os": "Windows",
         "processor": "attributes",
         "protocol": "otlp",
         "signal": "logs"
@@ -2576,11 +2640,13 @@
       },
       "identity": {
         "case": "100k",
+        "os": "Windows",
         "variant": "dfe-otlp-attributes"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "points": [
@@ -2605,7 +2671,6 @@
         "compression": "none",
         "load_rate": "200000",
         "operation": "insert",
-        "os": "Linux",
         "processor": "attributes",
         "protocol": "otlp",
         "signal": "logs"
@@ -2617,11 +2682,13 @@
       },
       "identity": {
         "case": "200k",
+        "os": "Linux",
         "variant": "dfe-otlp-attributes"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "points": [
@@ -2646,7 +2713,6 @@
         "compression": "none",
         "load_rate": "200000",
         "operation": "insert",
-        "os": "Windows",
         "processor": "attributes",
         "protocol": "otlp",
         "signal": "logs"
@@ -2658,11 +2724,13 @@
       },
       "identity": {
         "case": "200k",
+        "os": "Windows",
         "variant": "dfe-otlp-attributes"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "points": [
@@ -2687,7 +2755,6 @@
         "compression": "none",
         "load_rate": "100000",
         "operation": "insert",
-        "os": "Linux",
         "processor": "transform",
         "protocol": "otlp",
         "signal": "logs"
@@ -2699,11 +2766,13 @@
       },
       "identity": {
         "case": "100k",
+        "os": "Linux",
         "variant": "dfe-otlp-transform"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "points": [
@@ -2728,7 +2797,6 @@
         "compression": "none",
         "load_rate": "100000",
         "operation": "insert",
-        "os": "Windows",
         "processor": "transform",
         "protocol": "otlp",
         "signal": "logs"
@@ -2740,11 +2808,13 @@
       },
       "identity": {
         "case": "100k",
+        "os": "Windows",
         "variant": "dfe-otlp-transform"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "points": [
@@ -2769,7 +2839,6 @@
         "compression": "none",
         "load_rate": "200000",
         "operation": "insert",
-        "os": "Linux",
         "processor": "transform",
         "protocol": "otlp",
         "signal": "logs"
@@ -2781,11 +2850,13 @@
       },
       "identity": {
         "case": "200k",
+        "os": "Linux",
         "variant": "dfe-otlp-transform"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "points": [
@@ -2810,7 +2881,6 @@
         "compression": "none",
         "load_rate": "200000",
         "operation": "insert",
-        "os": "Windows",
         "processor": "transform",
         "protocol": "otlp",
         "signal": "logs"
@@ -2822,11 +2892,13 @@
       },
       "identity": {
         "case": "200k",
+        "os": "Windows",
         "variant": "dfe-otlp-transform"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "points": [
@@ -2851,7 +2923,6 @@
         "compression": "none",
         "load_rate": "100000",
         "operation": "insert",
-        "os": "Linux",
         "processor": "modify",
         "protocol": "otlp",
         "signal": "logs"
@@ -2863,11 +2934,13 @@
       },
       "identity": {
         "case": "100k",
+        "os": "Linux",
         "variant": "fbit-otlp-modify"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "points": [
@@ -2892,7 +2965,6 @@
         "compression": "none",
         "load_rate": "100000",
         "operation": "insert",
-        "os": "Windows",
         "processor": "modify",
         "protocol": "otlp",
         "signal": "logs"
@@ -2904,11 +2976,13 @@
       },
       "identity": {
         "case": "100k",
+        "os": "Windows",
         "variant": "fbit-otlp-modify"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "points": [
@@ -2933,7 +3007,6 @@
         "compression": "none",
         "load_rate": "200000",
         "operation": "insert",
-        "os": "Linux",
         "processor": "modify",
         "protocol": "otlp",
         "signal": "logs"
@@ -2945,11 +3018,13 @@
       },
       "identity": {
         "case": "200k",
+        "os": "Linux",
         "variant": "fbit-otlp-modify"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "points": [
@@ -2974,7 +3049,6 @@
         "compression": "none",
         "load_rate": "200000",
         "operation": "insert",
-        "os": "Windows",
         "processor": "modify",
         "protocol": "otlp",
         "signal": "logs"
@@ -2986,11 +3060,13 @@
       },
       "identity": {
         "case": "200k",
+        "os": "Windows",
         "variant": "fbit-otlp-modify"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "points": [
@@ -3015,7 +3091,6 @@
         "compression": "none",
         "load_rate": "100000",
         "operation": "insert",
-        "os": "Linux",
         "processor": "attributes",
         "protocol": "otlp",
         "signal": "logs"
@@ -3027,11 +3102,13 @@
       },
       "identity": {
         "case": "100k",
+        "os": "Linux",
         "variant": "otc-otlp-attributes"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "points": [
@@ -3056,7 +3133,6 @@
         "compression": "none",
         "load_rate": "100000",
         "operation": "insert",
-        "os": "Windows",
         "processor": "attributes",
         "protocol": "otlp",
         "signal": "logs"
@@ -3068,11 +3144,13 @@
       },
       "identity": {
         "case": "100k",
+        "os": "Windows",
         "variant": "otc-otlp-attributes"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "points": [
@@ -3097,7 +3175,6 @@
         "compression": "none",
         "load_rate": "200000",
         "operation": "insert",
-        "os": "Linux",
         "processor": "attributes",
         "protocol": "otlp",
         "signal": "logs"
@@ -3109,11 +3186,13 @@
       },
       "identity": {
         "case": "200k",
+        "os": "Linux",
         "variant": "otc-otlp-attributes"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "points": [
@@ -3138,7 +3217,6 @@
         "compression": "none",
         "load_rate": "200000",
         "operation": "insert",
-        "os": "Windows",
         "processor": "attributes",
         "protocol": "otlp",
         "signal": "logs"
@@ -3150,11 +3228,13 @@
       },
       "identity": {
         "case": "200k",
+        "os": "Windows",
         "variant": "otc-otlp-attributes"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "points": [
@@ -3179,7 +3259,6 @@
         "compression": "none",
         "load_rate": "100000",
         "operation": "insert",
-        "os": "Linux",
         "processor": "transform",
         "protocol": "otlp",
         "signal": "logs"
@@ -3191,11 +3270,13 @@
       },
       "identity": {
         "case": "100k",
+        "os": "Linux",
         "variant": "otc-otlp-transform"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "points": [
@@ -3220,7 +3301,6 @@
         "compression": "none",
         "load_rate": "100000",
         "operation": "insert",
-        "os": "Windows",
         "processor": "transform",
         "protocol": "otlp",
         "signal": "logs"
@@ -3232,11 +3312,13 @@
       },
       "identity": {
         "case": "100k",
+        "os": "Windows",
         "variant": "otc-otlp-transform"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "points": [
@@ -3261,7 +3343,6 @@
         "compression": "none",
         "load_rate": "200000",
         "operation": "insert",
-        "os": "Linux",
         "processor": "transform",
         "protocol": "otlp",
         "signal": "logs"
@@ -3273,11 +3354,13 @@
       },
       "identity": {
         "case": "200k",
+        "os": "Linux",
         "variant": "otc-otlp-transform"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "points": [
@@ -3302,7 +3385,6 @@
         "compression": "none",
         "load_rate": "200000",
         "operation": "insert",
-        "os": "Windows",
         "processor": "transform",
         "protocol": "otlp",
         "signal": "logs"
@@ -3314,11 +3396,13 @@
       },
       "identity": {
         "case": "200k",
+        "os": "Windows",
         "variant": "otc-otlp-transform"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "points": [
@@ -3343,7 +3427,6 @@
         "compression": "none",
         "load_rate": "100000",
         "operation": "insert",
-        "os": "Linux",
         "processor": "attributes",
         "protocol": "otap",
         "signal": "logs"
@@ -3355,11 +3438,13 @@
       },
       "identity": {
         "case": "100k",
+        "os": "Linux",
         "variant": "dfe-otap-attributes"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "logs_received_rate",
       "points": [
@@ -3384,7 +3469,6 @@
         "compression": "none",
         "load_rate": "100000",
         "operation": "insert",
-        "os": "Windows",
         "processor": "attributes",
         "protocol": "otap",
         "signal": "logs"
@@ -3396,11 +3480,13 @@
       },
       "identity": {
         "case": "100k",
+        "os": "Windows",
         "variant": "dfe-otap-attributes"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "logs_received_rate",
       "points": [
@@ -3425,7 +3511,6 @@
         "compression": "none",
         "load_rate": "200000",
         "operation": "insert",
-        "os": "Linux",
         "processor": "attributes",
         "protocol": "otap",
         "signal": "logs"
@@ -3437,11 +3522,13 @@
       },
       "identity": {
         "case": "200k",
+        "os": "Linux",
         "variant": "dfe-otap-attributes"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "logs_received_rate",
       "points": [
@@ -3466,7 +3553,6 @@
         "compression": "none",
         "load_rate": "200000",
         "operation": "insert",
-        "os": "Windows",
         "processor": "attributes",
         "protocol": "otap",
         "signal": "logs"
@@ -3478,11 +3564,13 @@
       },
       "identity": {
         "case": "200k",
+        "os": "Windows",
         "variant": "dfe-otap-attributes"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "logs_received_rate",
       "points": [
@@ -3507,7 +3595,6 @@
         "compression": "none",
         "load_rate": "100000",
         "operation": "insert",
-        "os": "Linux",
         "processor": "transform",
         "protocol": "otap",
         "signal": "logs"
@@ -3519,11 +3606,13 @@
       },
       "identity": {
         "case": "100k",
+        "os": "Linux",
         "variant": "dfe-otap-transform"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "logs_received_rate",
       "points": [
@@ -3548,7 +3637,6 @@
         "compression": "none",
         "load_rate": "100000",
         "operation": "insert",
-        "os": "Windows",
         "processor": "transform",
         "protocol": "otap",
         "signal": "logs"
@@ -3560,11 +3648,13 @@
       },
       "identity": {
         "case": "100k",
+        "os": "Windows",
         "variant": "dfe-otap-transform"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "logs_received_rate",
       "points": [
@@ -3589,7 +3679,6 @@
         "compression": "none",
         "load_rate": "200000",
         "operation": "insert",
-        "os": "Linux",
         "processor": "transform",
         "protocol": "otap",
         "signal": "logs"
@@ -3601,11 +3690,13 @@
       },
       "identity": {
         "case": "200k",
+        "os": "Linux",
         "variant": "dfe-otap-transform"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "logs_received_rate",
       "points": [
@@ -3630,7 +3721,6 @@
         "compression": "none",
         "load_rate": "200000",
         "operation": "insert",
-        "os": "Windows",
         "processor": "transform",
         "protocol": "otap",
         "signal": "logs"
@@ -3642,11 +3732,13 @@
       },
       "identity": {
         "case": "200k",
+        "os": "Windows",
         "variant": "dfe-otap-transform"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "logs_received_rate",
       "points": [
@@ -3671,7 +3763,6 @@
         "compression": "none",
         "load_rate": "100000",
         "operation": "insert",
-        "os": "Linux",
         "processor": "attributes",
         "protocol": "otlp",
         "signal": "logs"
@@ -3683,11 +3774,13 @@
       },
       "identity": {
         "case": "100k",
+        "os": "Linux",
         "variant": "dfe-otlp-attributes"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "logs_received_rate",
       "points": [
@@ -3712,7 +3805,6 @@
         "compression": "none",
         "load_rate": "100000",
         "operation": "insert",
-        "os": "Windows",
         "processor": "attributes",
         "protocol": "otlp",
         "signal": "logs"
@@ -3724,11 +3816,13 @@
       },
       "identity": {
         "case": "100k",
+        "os": "Windows",
         "variant": "dfe-otlp-attributes"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "logs_received_rate",
       "points": [
@@ -3753,7 +3847,6 @@
         "compression": "none",
         "load_rate": "200000",
         "operation": "insert",
-        "os": "Linux",
         "processor": "attributes",
         "protocol": "otlp",
         "signal": "logs"
@@ -3765,11 +3858,13 @@
       },
       "identity": {
         "case": "200k",
+        "os": "Linux",
         "variant": "dfe-otlp-attributes"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "logs_received_rate",
       "points": [
@@ -3794,7 +3889,6 @@
         "compression": "none",
         "load_rate": "200000",
         "operation": "insert",
-        "os": "Windows",
         "processor": "attributes",
         "protocol": "otlp",
         "signal": "logs"
@@ -3806,11 +3900,13 @@
       },
       "identity": {
         "case": "200k",
+        "os": "Windows",
         "variant": "dfe-otlp-attributes"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "logs_received_rate",
       "points": [
@@ -3835,7 +3931,6 @@
         "compression": "none",
         "load_rate": "100000",
         "operation": "insert",
-        "os": "Linux",
         "processor": "transform",
         "protocol": "otlp",
         "signal": "logs"
@@ -3847,11 +3942,13 @@
       },
       "identity": {
         "case": "100k",
+        "os": "Linux",
         "variant": "dfe-otlp-transform"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "logs_received_rate",
       "points": [
@@ -3876,7 +3973,6 @@
         "compression": "none",
         "load_rate": "100000",
         "operation": "insert",
-        "os": "Windows",
         "processor": "transform",
         "protocol": "otlp",
         "signal": "logs"
@@ -3888,11 +3984,13 @@
       },
       "identity": {
         "case": "100k",
+        "os": "Windows",
         "variant": "dfe-otlp-transform"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "logs_received_rate",
       "points": [
@@ -3917,7 +4015,6 @@
         "compression": "none",
         "load_rate": "200000",
         "operation": "insert",
-        "os": "Linux",
         "processor": "transform",
         "protocol": "otlp",
         "signal": "logs"
@@ -3929,11 +4026,13 @@
       },
       "identity": {
         "case": "200k",
+        "os": "Linux",
         "variant": "dfe-otlp-transform"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "logs_received_rate",
       "points": [
@@ -3958,7 +4057,6 @@
         "compression": "none",
         "load_rate": "200000",
         "operation": "insert",
-        "os": "Windows",
         "processor": "transform",
         "protocol": "otlp",
         "signal": "logs"
@@ -3970,11 +4068,13 @@
       },
       "identity": {
         "case": "200k",
+        "os": "Windows",
         "variant": "dfe-otlp-transform"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "logs_received_rate",
       "points": [
@@ -3999,7 +4099,6 @@
         "compression": "none",
         "load_rate": "100000",
         "operation": "insert",
-        "os": "Linux",
         "processor": "modify",
         "protocol": "otlp",
         "signal": "logs"
@@ -4011,11 +4110,13 @@
       },
       "identity": {
         "case": "100k",
+        "os": "Linux",
         "variant": "fbit-otlp-modify"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "logs_received_rate",
       "points": [
@@ -4040,7 +4141,6 @@
         "compression": "none",
         "load_rate": "100000",
         "operation": "insert",
-        "os": "Windows",
         "processor": "modify",
         "protocol": "otlp",
         "signal": "logs"
@@ -4052,11 +4152,13 @@
       },
       "identity": {
         "case": "100k",
+        "os": "Windows",
         "variant": "fbit-otlp-modify"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "logs_received_rate",
       "points": [
@@ -4081,7 +4183,6 @@
         "compression": "none",
         "load_rate": "200000",
         "operation": "insert",
-        "os": "Linux",
         "processor": "modify",
         "protocol": "otlp",
         "signal": "logs"
@@ -4093,11 +4194,13 @@
       },
       "identity": {
         "case": "200k",
+        "os": "Linux",
         "variant": "fbit-otlp-modify"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "logs_received_rate",
       "points": [
@@ -4122,7 +4225,6 @@
         "compression": "none",
         "load_rate": "200000",
         "operation": "insert",
-        "os": "Windows",
         "processor": "modify",
         "protocol": "otlp",
         "signal": "logs"
@@ -4134,11 +4236,13 @@
       },
       "identity": {
         "case": "200k",
+        "os": "Windows",
         "variant": "fbit-otlp-modify"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "logs_received_rate",
       "points": [
@@ -4163,7 +4267,6 @@
         "compression": "none",
         "load_rate": "100000",
         "operation": "insert",
-        "os": "Linux",
         "processor": "attributes",
         "protocol": "otlp",
         "signal": "logs"
@@ -4175,11 +4278,13 @@
       },
       "identity": {
         "case": "100k",
+        "os": "Linux",
         "variant": "otc-otlp-attributes"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "logs_received_rate",
       "points": [
@@ -4204,7 +4309,6 @@
         "compression": "none",
         "load_rate": "100000",
         "operation": "insert",
-        "os": "Windows",
         "processor": "attributes",
         "protocol": "otlp",
         "signal": "logs"
@@ -4216,11 +4320,13 @@
       },
       "identity": {
         "case": "100k",
+        "os": "Windows",
         "variant": "otc-otlp-attributes"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "logs_received_rate",
       "points": [
@@ -4245,7 +4351,6 @@
         "compression": "none",
         "load_rate": "200000",
         "operation": "insert",
-        "os": "Linux",
         "processor": "attributes",
         "protocol": "otlp",
         "signal": "logs"
@@ -4257,11 +4362,13 @@
       },
       "identity": {
         "case": "200k",
+        "os": "Linux",
         "variant": "otc-otlp-attributes"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "logs_received_rate",
       "points": [
@@ -4286,7 +4393,6 @@
         "compression": "none",
         "load_rate": "200000",
         "operation": "insert",
-        "os": "Windows",
         "processor": "attributes",
         "protocol": "otlp",
         "signal": "logs"
@@ -4298,11 +4404,13 @@
       },
       "identity": {
         "case": "200k",
+        "os": "Windows",
         "variant": "otc-otlp-attributes"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "logs_received_rate",
       "points": [
@@ -4327,7 +4435,6 @@
         "compression": "none",
         "load_rate": "100000",
         "operation": "insert",
-        "os": "Linux",
         "processor": "transform",
         "protocol": "otlp",
         "signal": "logs"
@@ -4339,11 +4446,13 @@
       },
       "identity": {
         "case": "100k",
+        "os": "Linux",
         "variant": "otc-otlp-transform"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "logs_received_rate",
       "points": [
@@ -4368,7 +4477,6 @@
         "compression": "none",
         "load_rate": "100000",
         "operation": "insert",
-        "os": "Windows",
         "processor": "transform",
         "protocol": "otlp",
         "signal": "logs"
@@ -4380,11 +4488,13 @@
       },
       "identity": {
         "case": "100k",
+        "os": "Windows",
         "variant": "otc-otlp-transform"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "logs_received_rate",
       "points": [
@@ -4409,7 +4519,6 @@
         "compression": "none",
         "load_rate": "200000",
         "operation": "insert",
-        "os": "Linux",
         "processor": "transform",
         "protocol": "otlp",
         "signal": "logs"
@@ -4421,11 +4530,13 @@
       },
       "identity": {
         "case": "200k",
+        "os": "Linux",
         "variant": "otc-otlp-transform"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "logs_received_rate",
       "points": [
@@ -4450,7 +4561,6 @@
         "compression": "none",
         "load_rate": "200000",
         "operation": "insert",
-        "os": "Windows",
         "processor": "transform",
         "protocol": "otlp",
         "signal": "logs"
@@ -4462,11 +4572,13 @@
       },
       "identity": {
         "case": "200k",
+        "os": "Windows",
         "variant": "otc-otlp-transform"
       },
       "identity_keys": [
         "variant",
-        "case"
+        "case",
+        "os"
       ],
       "metric": "logs_received_rate",
       "points": [
