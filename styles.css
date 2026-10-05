@@ -37,7 +37,7 @@ body {
 }
 
 header, main, footer {
-  width: min(1240px, calc(100% - 32px));
+  width: min(1508px, calc(100% - 32px));
   margin: 0 auto;
 }
 
@@ -130,26 +130,47 @@ main {
 
 .suite-previews {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 24px;
+}
+
+.explorer-header {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.explorer-heading {
+  flex: 1;
+  min-width: min(280px, 100%);
+}
+
+.explorer-heading p {
+  margin: 8px 0 0;
 }
 
 .explorer-controls {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px 24px;
-  margin: 20px 0 12px;
+  justify-content: flex-end;
+  gap: 12px;
+  max-width: 100%;
+  margin-left: auto;
 }
 
 .explorer-controls label {
   display: grid;
   gap: 5px;
   min-width: 0;
-  max-width: 100%;
+  max-width: min(280px, 100%);
   color: var(--muted);
   font-size: 12px;
 }
 
 .explorer-controls select {
+  min-width: 0;
   max-width: 100%;
   padding: 8px;
   color: var(--text);
@@ -158,23 +179,18 @@ main {
   border-radius: 6px;
 }
 
-.explorer-filters > summary {
-  cursor: pointer;
-  color: var(--muted);
-  font-size: 13px;
-}
-
-.explorer-filters[open] {
+.explorer-filters {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
-  padding: 12px 0;
+  align-items: start;
+  gap: 12px 24px;
+  margin-top: 20px;
 }
 
 .explorer-filters .filter-group {
   display: inline-grid;
   vertical-align: top;
-  margin: 12px 20px 0 0;
+  margin: 0;
   max-height: 200px;
   max-width: 100%;
   overflow-y: auto;
@@ -456,8 +472,17 @@ footer {
 }
 
 @media (max-width: 720px) {
+  .explorer-header {
+    display: block;
+  }
+
   .explorer-controls {
     flex-direction: column;
+    margin-top: 16px;
+  }
+
+  .explorer-controls label {
+    max-width: 100%;
   }
 
   header {

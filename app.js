@@ -87,7 +87,7 @@ function renderOverview(overview, views) {
     previews.appendChild(section);
     renderSuiteExplorer(section, suite, {
       observations: overview.observations.filter((item) => item.suite === suite.id),
-      series: [],
+      series: overview.series.filter((item) => item.suite === suite.id),
     }, null, ".", true);
   }
   target.insertAdjacentHTML("beforeend", `
@@ -175,6 +175,12 @@ function explorerChart(records, axis, variants) {
     return String((namespace === "identity" ? record.identity : record.dimensions)[key]
       ?? FILTER_MISSING);
   };
+  const identityKeys = new Set(records.flatMap((item) => Object.keys(item.identity)));
+  const variantBars = !history && axis === "identity.variant"
+    && [...identityKeys].every((key) => key === "variant"
+      || records.every((item) => (item.identity[key] ?? FILTER_MISSING)
+        === (records[0].identity[key] ?? FILTER_MISSING)))
+    && new Set(records.map(axisValue)).size === records.length;
   const dependentDimensions = new Set();
   if (!history) {
     const keys = new Set(records.flatMap((item) => Object.keys(item.dimensions)));
@@ -198,7 +204,7 @@ function explorerChart(records, axis, variants) {
       const [namespace, key] = axis.split(".");
       const fields = namespace === "identity" ? identity : dimensions;
       x = axisValue(record);
-      delete fields[key];
+      if (!variantBars) delete fields[key];
       for (const dimension of dependentDimensions) delete dimensions[dimension];
     }
     labels.set(x, record);
@@ -232,7 +238,10 @@ function explorerChart(records, axis, variants) {
   return {
     labels: ordered.map(displayLabel),
     datasets: [...groups.values()].map(({ series, records }) => ({
-      label: historySeriesLabel(series, variants) || "Results",
+      label: variantBars
+        ? variants.get(series.identity.variant) || series.identity.variant
+        : historySeriesLabel(series, variants) || "Results",
+      grouped: !variantBars,
       borderColor: historySeriesColor(series),
       backgroundColor: historySeriesColor(series),
       borderWidth: history ? 2 : 1,
@@ -296,8 +305,10 @@ async function loadResultDetails(record, suite, catalog, root, target, isCurrent
 function renderSuiteExplorer(target, suite, data, catalog, root, overview = false) {
   const records = [...data.observations, ...data.series];
   const heading = overview
-    ? `<h2><a class="suite-link" href="suites/${encodeURIComponent(suite.id)}/">${escapeHtml(suite.name)}</a></h2>
-       <p>${escapeHtml(suite.description)}</p>`
+    ? `<div class="explorer-heading">
+         <h2><a class="suite-link" href="suites/${encodeURIComponent(suite.id)}/">${escapeHtml(suite.name)}</a></h2>
+         <p>${escapeHtml(suite.description)}</p>
+       </div>`
     : "";
   if (!records.length) {
     target.innerHTML = `${heading}<p>No results recorded.</p>`;
@@ -310,7 +321,7 @@ function renderSuiteExplorer(target, suite, data, catalog, root, overview = fals
     [environmentKey(item.environment), item.environment])).entries()];
   environments.sort(([left], [right]) => left.localeCompare(right));
   const axes = suiteAxes(records);
-  if (!overview) axes.push({ id: "history", label: "Commit history" });
+  axes.push({ id: "history", label: "Commit history" });
   const categories = collectDimensionCategories(records.map((item) => ({
     dimensions: historyFacets(item),
   })));
@@ -336,8 +347,9 @@ function renderSuiteExplorer(target, suite, data, catalog, root, overview = fals
   }
   const prefix = `suite-${suite.id}`;
   target.innerHTML = `
-    ${heading}
-    <div class="explorer-controls">
+    <div class="explorer-header">
+      ${heading}
+      <div class="explorer-controls">
       <label>Metric <select class="explorer-metric">
         ${metrics.map((key) => {
           const [metric, unit] = JSON.parse(key);
@@ -354,12 +366,12 @@ function renderSuiteExplorer(target, suite, data, catalog, root, overview = fals
             || "Unknown environment",
           )}</option>`).join("")}
       </select></label>
+      </div>
     </div>
-    <details class="explorer-filters">
-      <summary>Filters</summary>
+    <div class="explorer-filters" role="group" aria-label="Filters">
       ${renderFilterGroups(categories, filterState, prefix)}
       <button type="button" class="filter-reset">Reset</button>
-    </details>
+    </div>
     <p class="explorer-context meta"></p>
     <div class="explorer-chart chart-wrapper"><canvas role="img" aria-label="${escapeHtml(suite.name)} results"></canvas></div>
     <p class="explorer-empty" hidden>No measurements match these selections.</p>
@@ -368,7 +380,7 @@ function renderSuiteExplorer(target, suite, data, catalog, root, overview = fals
   const metricSelect = target.querySelector(".explorer-metric");
   const axisSelect = target.querySelector(".explorer-axis");
   const environmentSelect = target.querySelector(".explorer-environment");
-  axisSelect.value = defaultSuiteAxis(axes);
+  axisSelect.value = data.observations.length ? defaultSuiteAxis(axes) : "history";
   metricSelect.value = metrics.find((key) =>
     JSON.parse(key)[0] === "cpu_percentage_normalized_avg")
     || metrics.find((key) => JSON.parse(key)[0] === "logs_received_rate")
@@ -387,6 +399,9 @@ function renderSuiteExplorer(target, suite, data, catalog, root, overview = fals
   }
   let chart = null;
   let selection = 0;
+  let renderSequence = 0;
+  let historyLoaded = !overview;
+  let historyRequest = null;
   const showDetails = (record) => {
     if (overview) return;
     const currentSelection = ++selection;
@@ -395,11 +410,35 @@ function renderSuiteExplorer(target, suite, data, catalog, root, overview = fals
       () => currentSelection === selection,
     );
   };
-  const render = () => {
+  const render = async () => {
+    const currentRender = ++renderSequence;
+    selection += 1;
     if (chart) chart.destroy();
     chart = null;
     const axis = axisSelect.value;
     const history = axis === "history";
+    if (history && !historyLoaded) {
+      target.querySelector(".explorer-chart").hidden = true;
+      target.querySelector(".explorer-empty").hidden = true;
+      target.querySelector(".explorer-context").textContent = "Loading history...";
+      if (!historyRequest) {
+        const version = document.body.dataset.siteVersion;
+        historyRequest = fetchJson(
+          `${root}/data/suites/${encodeURIComponent(suite.id)}.json?v=${encodeURIComponent(version)}`,
+        );
+      }
+      let loaded;
+      try {
+        loaded = await historyRequest;
+      } catch (error) {
+        historyRequest = null;
+        throw error;
+      }
+      if (!Array.isArray(loaded.series)) throw new Error("Invalid suite history");
+      data.series = loaded.series;
+      historyLoaded = true;
+      if (currentRender !== renderSequence) return;
+    }
     const [metric, unit] = JSON.parse(metricSelect.value);
     const matches = (item) => item.metric === metric && item.unit === unit
       && environmentKey(item.environment) === environmentSelect.value
@@ -462,10 +501,12 @@ function renderSuiteExplorer(target, suite, data, catalog, root, overview = fals
     });
     showDetails(visible[0]);
   };
-  const renderSafely = () => {
+  const renderSafely = async () => {
+    const expectedRender = renderSequence + 1;
     try {
-      render();
+      await render();
     } catch (error) {
+      if (expectedRender !== renderSequence) return;
       selection += 1;
       target.querySelector(".explorer-chart").hidden = true;
       target.querySelector(".explorer-empty").hidden = true;
@@ -527,6 +568,10 @@ function titleCase(value) {
     .replaceAll("_", " ")
     .replaceAll(".", " ")
     .replace(/\b\w/g, (letter) => letter.toUpperCase());
+}
+
+function filterLabel(key) {
+  return titleCase(key.slice(key.indexOf(".") + 1));
 }
 
 function selectedObservationKeys(selected) {
@@ -611,7 +656,7 @@ function renderFilterGroups(categories, filterState, prefix = "filter") {
     }).join("");
     return `
       <fieldset class="filter-group">
-        <legend>${escapeHtml(titleCase(key))}</legend>
+        <legend title="${escapeHtml(key)}">${escapeHtml(filterLabel(key))}</legend>
         ${options}
       </fieldset>
     `;
