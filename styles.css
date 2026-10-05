@@ -297,6 +297,10 @@ main {
   gap: 24px;
 }
 
+.suite-preview {
+  padding-bottom: 14px;
+}
+
 .explorer-header {
   display: flex;
   align-items: start;
@@ -371,6 +375,16 @@ main {
 
 .explorer-chart {
   margin: 20px 0;
+}
+
+.suite-preview .explorer-filters .filter-group {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border-bottom: 0;
+}
+
+.suite-preview .explorer-chart {
+  margin: 12px 0 0;
 }
 
 .result-details {
