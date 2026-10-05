@@ -55,12 +55,76 @@ function selectedVariants(comparison, suites) {
   return selected;
 }
 
-function renderOverview(catalog, views, suites) {
-  document.getElementById("summary").textContent =
-    `${views.comparisons.length} comparisons from ${views.suites.length} ` +
-    `suite families; ${catalog.run_count} immutable runs`;
+const DAY_MILLISECONDS = 24 * 60 * 60 * 1000;
 
-  const cards = views.comparisons.map((comparison) => {
+function formatDate(timestamp) {
+  return new Intl.DateTimeFormat(undefined, {
+    dateStyle: "medium",
+    timeZone: "UTC",
+  }).format(new Date(timestamp));
+}
+
+function suiteActivityMap(catalog) {
+  return new Map(
+    (catalog.suites || []).map((suite) => [suite.id, suite]),
+  );
+}
+
+function suiteIsRecent(activity, recentDays) {
+  if (!activity) {
+    return false;
+  }
+  const latest = Date.parse(activity.latest_ordering_timestamp);
+  return Number.isFinite(latest)
+    && Date.now() - latest <= recentDays * DAY_MILLISECONDS;
+}
+
+function comparisonsForSuite(comparisons, suiteId) {
+  return comparisons.filter((comparison) =>
+    comparison.sources.some((source) => source.suite === suiteId));
+}
+
+function renderSuiteCard(suite, activity, status, comparisons) {
+  const latest = activity
+    ? `Latest ordering date: ${formatDate(
+      activity.latest_ordering_timestamp,
+    )}`
+    : "No canonical runs recorded";
+  const counts = activity
+    ? `${activity.run_count} ${activity.run_count === 1 ? "run" : "runs"}`
+    : "0 runs";
+  const comparisonLinks = comparisons.map((comparison) => `
+    <a class="button-link" href="comparisons/${encodeURIComponent(comparison.id)}/">
+      ${escapeHtml(comparison.name)}
+    </a>
+  `).join("");
+  const actions = comparisonLinks
+    ? `<div class="card-actions">${comparisonLinks}</div>`
+    : "";
+
+  return `
+    <article class="card suite-card suite-card-${status.toLowerCase()}">
+      <div class="card-heading">
+        <div>
+          <div class="suite-title">
+            <h3>${escapeHtml(suite.name)}</h3>
+            <span class="status status-${status.toLowerCase()}">${status}</span>
+          </div>
+          <p>${escapeHtml(suite.description)}</p>
+        </div>
+        <span class="count">${suite.variants.length} variants</span>
+      </div>
+      <div class="suite-meta">
+        <span>${escapeHtml(latest)}</span>
+        <span>${escapeHtml(counts)}</span>
+      </div>
+      ${actions}
+    </article>
+  `;
+}
+
+function renderComparisonCards(views, suites) {
+  return views.comparisons.map((comparison) => {
     const selected = selectedVariants(comparison, suites);
     const sourceRows = comparison.sources.map((source) => {
       const suite = suites.get(source.suite);
@@ -81,7 +145,7 @@ function renderOverview(catalog, views, suites) {
       <article class="card comparison-card" data-comparison-id="${escapeHtml(comparison.id)}">
         <div class="card-heading">
           <div>
-            <h2>${escapeHtml(comparison.name)}</h2>
+            <h3>${escapeHtml(comparison.name)}</h3>
             <p>${escapeHtml(comparison.description)}</p>
           </div>
           <span class="count">${selected.length} variants</span>
@@ -97,16 +161,91 @@ function renderOverview(catalog, views, suites) {
       </article>
     `;
   }).join("");
+}
+
+function renderOverview(catalog, views, suites) {
+  const recentDays = Number.parseInt(
+    document.body.dataset.recentDays || "28",
+    10,
+  );
+  const activity = suiteActivityMap(catalog);
+  const classified = views.suites.map((suite) => {
+    const suiteActivity = activity.get(suite.id);
+    return {
+      suite,
+      activity: suiteActivity,
+      recent: suiteIsRecent(suiteActivity, recentDays),
+      comparisons: comparisonsForSuite(views.comparisons, suite.id),
+    };
+  });
+  const recent = classified
+    .filter((item) => item.recent)
+    .sort((left, right) =>
+      right.activity.latest_ordering_timestamp.localeCompare(
+        left.activity.latest_ordering_timestamp,
+      ) || left.suite.name.localeCompare(right.suite.name));
+  const inactive = classified
+    .filter((item) => !item.recent)
+    .sort((left, right) => {
+      if (left.activity && right.activity) {
+        return right.activity.latest_ordering_timestamp.localeCompare(
+          left.activity.latest_ordering_timestamp,
+        ) || left.suite.name.localeCompare(right.suite.name);
+      }
+      if (left.activity) return -1;
+      if (right.activity) return 1;
+      return left.suite.name.localeCompare(right.suite.name);
+    });
+
+  document.getElementById("summary").textContent =
+    `${recent.length} recent and ${inactive.length} inactive suites; ` +
+    `${catalog.run_count} immutable runs`;
+
+  const recentCards = recent.map((item) => renderSuiteCard(
+    item.suite,
+    item.activity,
+    "Recent",
+    item.comparisons,
+  )).join("");
+  const inactiveCards = inactive.map((item) => renderSuiteCard(
+    item.suite,
+    item.activity,
+    "Inactive",
+    item.comparisons,
+  )).join("");
+  const comparisonCards = renderComparisonCards(views, suites);
 
   document.getElementById("app").innerHTML = `
     <section class="intro">
-      <h2>Configured comparisons</h2>
+      <h2>Recent benchmark suites</h2>
       <p>
-        Each page selects reusable variants from one or more suite families.
-        Results come from the latest immutable run collection.
+        Suites are recent when their latest canonical ordering timestamp is
+        within ${recentDays} days.
       </p>
     </section>
-    <section class="grid">${cards}</section>
+    <section class="grid suite-grid">
+      ${recentCards || '<div class="empty-state">No suites have recent runs.</div>'}
+    </section>
+    <details class="inactive-section">
+      <summary>
+        <span>Inactive benchmark suites</span>
+        <span class="count">${inactive.length}</span>
+      </summary>
+      <p>
+        These suites have no canonical runs within the last ${recentDays} days.
+      </p>
+      <section class="grid suite-grid">${inactiveCards}</section>
+    </details>
+    <section class="comparison-section">
+      <div class="intro">
+        <h2>Curated comparisons</h2>
+        <p>
+          Comparisons select reusable variants and metrics from one or more
+          suite families.
+        </p>
+      </div>
+      <section class="grid">${comparisonCards}</section>
+    </section>
   `;
 }
 

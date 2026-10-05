@@ -1939,5 +1939,98 @@
       "started_at": "2026-10-01T12:00:00Z"
     }
   ],
-  "schema_version": 1
+  "schema_version": 1,
+  "suites": [
+    {
+      "collection_count": 100,
+      "id": "backpressure",
+      "latest_ordering_timestamp": "2026-09-17T22:20:01Z",
+      "latest_run_id": "gha-nightly-1789752460199-0",
+      "run_count": 100
+    },
+    {
+      "collection_count": 100,
+      "id": "batch-processor",
+      "latest_ordering_timestamp": "2026-09-17T22:20:01Z",
+      "latest_run_id": "gha-nightly-1789752460199-0",
+      "run_count": 100
+    },
+    {
+      "collection_count": 71,
+      "id": "clickhouse",
+      "latest_ordering_timestamp": "2026-09-17T22:20:01Z",
+      "latest_run_id": "gha-nightly-1789752460199-0",
+      "run_count": 71
+    },
+    {
+      "collection_count": 50,
+      "id": "filter",
+      "latest_ordering_timestamp": "2026-09-17T22:20:01Z",
+      "latest_run_id": "gha-nightly-1789752460199-0",
+      "run_count": 50
+    },
+    {
+      "collection_count": 39,
+      "id": "idle-state",
+      "latest_ordering_timestamp": "2026-06-06T00:22:55Z",
+      "latest_run_id": "gha-nightly-1780887006374-0",
+      "run_count": 39
+    },
+    {
+      "collection_count": 1,
+      "id": "log-attribute-insert",
+      "latest_ordering_timestamp": "2026-10-01T12:00:00Z",
+      "latest_run_id": "migration-preview-0001-windows",
+      "run_count": 2
+    },
+    {
+      "collection_count": 1,
+      "id": "log-baseline",
+      "latest_ordering_timestamp": "2026-10-01T12:00:00Z",
+      "latest_run_id": "migration-preview-0001-windows",
+      "run_count": 2
+    },
+    {
+      "collection_count": 100,
+      "id": "passthrough",
+      "latest_ordering_timestamp": "2026-09-17T22:20:01Z",
+      "latest_run_id": "gha-nightly-1789752460199-0",
+      "run_count": 100
+    },
+    {
+      "collection_count": 100,
+      "id": "saturation",
+      "latest_ordering_timestamp": "2026-09-17T22:20:01Z",
+      "latest_run_id": "gha-nightly-1789752460199-1",
+      "run_count": 200
+    },
+    {
+      "collection_count": 100,
+      "id": "standard-load-batch-size",
+      "latest_ordering_timestamp": "2026-09-17T22:20:01Z",
+      "latest_run_id": "gha-nightly-1789752460199-0",
+      "run_count": 100
+    },
+    {
+      "collection_count": 100,
+      "id": "syslog",
+      "latest_ordering_timestamp": "2026-09-17T22:20:01Z",
+      "latest_run_id": "gha-nightly-1789752460199-0",
+      "run_count": 100
+    },
+    {
+      "collection_count": 100,
+      "id": "syslog-tcp",
+      "latest_ordering_timestamp": "2026-09-17T22:20:01Z",
+      "latest_run_id": "gha-nightly-1789752460199-0",
+      "run_count": 100
+    },
+    {
+      "collection_count": 100,
+      "id": "syslog-tcp-otelcol",
+      "latest_ordering_timestamp": "2026-09-17T22:20:01Z",
+      "latest_run_id": "gha-nightly-1789752460199-0",
+      "run_count": 100
+    }
+  ]
 }
