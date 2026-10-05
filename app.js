@@ -368,7 +368,10 @@ function explorerChart(records, axis, variants) {
     labels.set(x, record);
     const series = {
       identity, identity_keys: record.identity_keys,
-      dimensions, environment: record.environment,
+      dimensions,
+      environment: history
+        ? record.environment
+        : hardwareIdentity(record.environment),
       repository: record.repository, branch: record.branch,
     };
     const key = JSON.stringify(series);
