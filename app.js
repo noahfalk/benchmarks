@@ -726,11 +726,15 @@ function renderComparisonPage(catalog, latest, views, suites, comparisons) {
 
 async function load() {
   const root = document.body.dataset.root || ".";
+  const siteVersion = document.body.dataset.siteVersion;
+  const versionQuery = siteVersion
+    ? `?v=${encodeURIComponent(siteVersion)}`
+    : "";
   try {
     const [catalog, latest, views] = await Promise.all([
-      fetchJson(`${root}/data/catalog.json`),
-      fetchJson(`${root}/data/latest.json`),
-      fetchJson(`${root}/data/views.json`),
+      fetchJson(`${root}/data/catalog.json${versionQuery}`),
+      fetchJson(`${root}/data/latest.json${versionQuery}`),
+      fetchJson(`${root}/data/views.json${versionQuery}`),
     ]);
     const { suites, comparisons } = mapsFor(views);
     if (document.body.dataset.page === "comparison") {
