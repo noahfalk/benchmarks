@@ -200,6 +200,40 @@ function environmentKey(environment) {
   return JSON.stringify(environment, Object.keys(environment).sort());
 }
 
+function normalizedArchitecture(architecture) {
+  return ["amd64", "x86_64"].includes(String(architecture).toLowerCase())
+    ? "x86_64"
+    : architecture;
+}
+
+function hardwareIdentity(environment) {
+  const hardware = {};
+  for (const key of [
+    "architecture", "cpu_model", "physical_cores", "logical_cores",
+    "memory_gb", "memory_gib", "cloud_shape",
+  ]) {
+    if (environment[key] !== null && environment[key] !== undefined) {
+      hardware[key] = key === "architecture"
+        ? normalizedArchitecture(environment[key])
+        : environment[key];
+    }
+  }
+  return hardware;
+}
+
+function hardwareKey(environment) {
+  return environmentKey(hardwareIdentity(environment));
+}
+
+function osDimension(environment) {
+  const value = environment.os;
+  if (value === null || value === undefined) return null;
+  const normalized = String(value).toLowerCase();
+  if (normalized === "linux") return "Linux";
+  if (normalized === "windows") return "Windows";
+  return String(value);
+}
+
 function environmentCapacityLabel(environment) {
   const cores = environment.logical_cores ?? environment.physical_cores;
   const memory = environment.memory_gb ?? environment.memory_gib;
@@ -400,6 +434,8 @@ async function loadResultDetails(record, suite, catalog, root, target, isCurrent
       const dimensions = Object.fromEntries(table.dimension_keys.map(
         (key, index) => [key, item.dimensions[index]],
       ).filter(([_key, value]) => value !== null));
+      const runOs = osDimension(bundle.environment);
+      if (runOs !== null) dimensions.os = runOs;
       return environmentKey(identity) === environmentKey(record.identity)
         && environmentKey(dimensions) === environmentKey(record.dimensions);
     });
@@ -445,8 +481,21 @@ function renderSuiteExplorer(target, suite, data, catalog, root, overview = fals
   const variants = new Map(suite.variants.map((item) => [item.id, item.name]));
   const metrics = [...new Set(records.map((item) =>
     JSON.stringify([item.metric, item.unit])))].sort();
-  const environments = [...new Map(records.map((item) =>
-    [environmentKey(item.environment), item.environment])).entries()];
+  const environmentGroups = new Map();
+  for (const record of records) {
+    const key = hardwareKey(record.environment);
+    if (!environmentGroups.has(key)) {
+      environmentGroups.set(key, {
+        representative: record.environment,
+        environments: new Map(),
+      });
+    }
+    environmentGroups.get(key).environments.set(
+      environmentKey(record.environment),
+      record.environment,
+    );
+  }
+  const environments = [...environmentGroups.entries()];
   environments.sort(([left], [right]) => left.localeCompare(right));
   const axes = suiteAxes(records);
   axes.push({ id: "history", label: "Commit history" });
@@ -488,8 +537,10 @@ function renderSuiteExplorer(target, suite, data, catalog, root, overview = fals
         }).join("")}
       </select></label>
       <label class="explorer-environment-control">Hardware <select class="explorer-environment">
-        ${environments.map(([key, environment]) =>
-          `<option value="${escapeHtml(key)}" title="${escapeHtml(environmentDescription(environment))}">${escapeHtml(environmentCapacityLabel(environment))}</option>`).join("")}
+        ${environments.map(([key, group]) =>
+          `<option value="${escapeHtml(key)}" title="${escapeHtml(
+            [...group.environments.values()].map(environmentDescription).join("\n"),
+          )}">${escapeHtml(environmentCapacityLabel(group.representative))}</option>`).join("")}
       </select></label>
       </div>
     </div>
@@ -513,7 +564,7 @@ function renderSuiteExplorer(target, suite, data, catalog, root, overview = fals
   const newest = [...data.observations].sort((left, right) =>
     Date.parse(right.ordering_timestamp) - Date.parse(left.ordering_timestamp)
     || right.run_id.localeCompare(left.run_id))[0];
-  if (newest) environmentSelect.value = environmentKey(newest.environment);
+  if (newest) environmentSelect.value = hardwareKey(newest.environment);
   if (!overview) {
     const params = new URLSearchParams(location.search);
     if (metrics.includes(params.get("metric"))) metricSelect.value = params.get("metric");
@@ -567,7 +618,7 @@ function renderSuiteExplorer(target, suite, data, catalog, root, overview = fals
     }
     const [metric, unit] = JSON.parse(metricSelect.value);
     const matches = (item) => item.metric === metric && item.unit === unit
-      && environmentKey(item.environment) === environmentSelect.value
+      && hardwareKey(item.environment) === environmentSelect.value
       && observationMatchesFilters({ dimensions: historyFacets(item) }, filterState);
     const visible = history
       ? data.series.filter(matches).flatMap((item) =>
@@ -579,9 +630,9 @@ function renderSuiteExplorer(target, suite, data, catalog, root, overview = fals
     target.querySelector(".explorer-empty").hidden = Boolean(visible.length);
     const context = target.querySelector(".explorer-context");
     context.classList.remove("error");
-    environmentSelect.title = environmentDescription(
-      JSON.parse(environmentSelect.value),
-    );
+    const selectedHardware = environmentGroups.get(environmentSelect.value);
+    environmentSelect.title = [...selectedHardware.environments.values()]
+      .map(environmentDescription).join("\n");
     const unknown = environmentSelect.value === "{}"
       ? "Hardware unknown; comparability cannot be verified." : "";
     context.textContent = unknown;
