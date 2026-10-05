@@ -1,0 +1,190 @@
+{
+  "attachments": [],
+  "environment": {},
+  "results": [
+    {
+      "dimension_keys": [
+        "allocated_cores"
+      ],
+      "identity_keys": [
+        "variant"
+      ],
+      "measurements": [
+        {
+          "dimensions": [
+            "16"
+          ],
+          "identity": [
+            "idle-state-16cores-docker"
+          ],
+          "values": [
+            0.38,
+            0.76,
+            28.7,
+            28.9,
+            46.8,
+            47.5,
+            15.0
+          ]
+        },
+        {
+          "dimensions": [
+            "2"
+          ],
+          "identity": [
+            "idle-state-2cores-docker"
+          ],
+          "values": [
+            0.11,
+            0.26,
+            16.3,
+            16.4,
+            38.6,
+            38.8,
+            15.0
+          ]
+        },
+        {
+          "dimensions": [
+            "32"
+          ],
+          "identity": [
+            "idle-state-32cores-docker"
+          ],
+          "values": [
+            0.65,
+            1.35,
+            40.3,
+            40.7,
+            55.3,
+            56.9,
+            15.0
+          ]
+        },
+        {
+          "dimensions": [
+            "4"
+          ],
+          "identity": [
+            "idle-state-4cores-docker"
+          ],
+          "values": [
+            0.15,
+            0.35,
+            18.1,
+            18.4,
+            39.3,
+            39.6,
+            15.0
+          ]
+        },
+        {
+          "dimensions": [
+            "8"
+          ],
+          "identity": [
+            "idle-state-8cores-docker"
+          ],
+          "values": [
+            0.21,
+            0.51,
+            21.4,
+            21.7,
+            42.2,
+            42.7,
+            15.0
+          ]
+        },
+        {
+          "dimensions": [
+            "1"
+          ],
+          "identity": [
+            "idle-state-docker"
+          ],
+          "values": [
+            0.1,
+            0.27,
+            15.9,
+            16.2,
+            37.6,
+            37.7,
+            15.0
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "idle_cpu_percentage_avg",
+          "unit": "%"
+        },
+        {
+          "name": "idle_cpu_percentage_max",
+          "unit": "%"
+        },
+        {
+          "name": "idle_ram_mib_avg",
+          "unit": "MiB"
+        },
+        {
+          "name": "idle_ram_mib_max",
+          "unit": "MiB"
+        },
+        {
+          "name": "idle_rss_mib_avg",
+          "unit": "MiB"
+        },
+        {
+          "name": "idle_rss_mib_max",
+          "unit": "MiB"
+        },
+        {
+          "name": "idle_test_duration",
+          "unit": "seconds"
+        }
+      ],
+      "suite": "idle-state"
+    }
+  ],
+  "run": {
+    "collection_id": "gha-nightly-1780021400613",
+    "id": "gha-nightly-1780021400613-0",
+    "metadata": {
+      "github-action-benchmark-migration": {
+        "cluster": {
+          "first_entry_timestamp": "2026-05-29T02:23:20.613000Z",
+          "last_entry_timestamp": "2026-05-29T02:23:20.613000Z"
+        },
+        "entries": [
+          {
+            "data_js": {
+              "commit": "3feb7d8320a6d18b9f1d9cddf745c6a0f29c2867",
+              "path": "docs/benchmarks/nightly/idle-state/data.js"
+            },
+            "entry_timestamp": "2026-05-29T02:23:20.613000Z",
+            "execution_occurrence": 0,
+            "suite": "idle-state"
+          }
+        ],
+        "missing_suites": [
+          "backpressure",
+          "batch-processor",
+          "clickhouse",
+          "filter",
+          "passthrough",
+          "saturation",
+          "standard-load-batch-size",
+          "syslog",
+          "syslog-tcp",
+          "syslog-tcp-otelcol"
+        ]
+      }
+    }
+  },
+  "schema_version": 1,
+  "source": {
+    "commit": "7d0af33f05ddaf772194302fa68db3f5b9100c64",
+    "repository": "https://github.com/open-telemetry/otel-arrow",
+    "timestamp": "2026-05-28T23:19:33Z"
+  }
+}

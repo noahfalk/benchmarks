@@ -1,0 +1,1454 @@
+{
+  "attachments": [],
+  "environment": {},
+  "results": [
+    {
+      "dimension_keys": [],
+      "identity_keys": [
+        "variant"
+      ],
+      "measurements": [
+        {
+          "dimensions": [],
+          "identity": [
+            "otap-attr-otlp"
+          ],
+          "values": [
+            64.9,
+            65.27,
+            0,
+            31.68,
+            98325,
+            98325,
+            1169688,
+            3115549,
+            19.3,
+            20.7,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [],
+          "identity": [
+            "otlp-attr-otlp"
+          ],
+          "values": [
+            64.84,
+            65.39,
+            1.666666,
+            32.46,
+            99994,
+            98328,
+            3029641,
+            3192523,
+            19.0,
+            19.5,
+            60.0
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "cpu_percentage_normalized_avg",
+          "unit": "%"
+        },
+        {
+          "name": "cpu_percentage_normalized_max",
+          "unit": "%"
+        },
+        {
+          "name": "dropped_logs_percentage",
+          "unit": "%"
+        },
+        {
+          "name": "egress_bytes_per_log",
+          "unit": "bytes/log"
+        },
+        {
+          "name": "logs_produced_rate",
+          "unit": "logs/sec"
+        },
+        {
+          "name": "logs_received_rate",
+          "unit": "logs/sec"
+        },
+        {
+          "name": "network_rx_bytes_rate_avg",
+          "unit": "bytes/sec"
+        },
+        {
+          "name": "network_tx_bytes_rate_avg",
+          "unit": "bytes/sec"
+        },
+        {
+          "name": "ram_mib_avg",
+          "unit": "MiB"
+        },
+        {
+          "name": "ram_mib_max",
+          "unit": "MiB"
+        },
+        {
+          "name": "test_duration",
+          "unit": "seconds"
+        }
+      ],
+      "suite": "backpressure"
+    },
+    {
+      "dimension_keys": [],
+      "identity_keys": [
+        "variant"
+      ],
+      "measurements": [
+        {
+          "dimensions": [],
+          "identity": [
+            "logs-otap-batch-otap"
+          ],
+          "values": [
+            32.05,
+            33.39,
+            1.816406,
+            7.96,
+            98317,
+            96531,
+            1153421,
+            769233,
+            28.3,
+            29.5,
+            60.0,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "dimensions": [],
+          "identity": [
+            "logs-otlp-batch-otlp"
+          ],
+          "values": [
+            64.88,
+            65.24,
+            1.6752,
+            28.11,
+            99995,
+            98320,
+            2900465,
+            2764457,
+            17.7,
+            18.2,
+            60.0,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "dimensions": [],
+          "identity": [
+            "metrics-otap-batch-otap"
+          ],
+          "values": [
+            37.07,
+            38.66,
+            null,
+            null,
+            null,
+            null,
+            1659740,
+            1155339,
+            29.2,
+            31.4,
+            60.0,
+            0.008677,
+            98328,
+            98320,
+            null,
+            null
+          ]
+        },
+        {
+          "dimensions": [],
+          "identity": [
+            "metrics-otlp-batch-otlp"
+          ],
+          "values": [
+            65.03,
+            66.07,
+            null,
+            null,
+            null,
+            null,
+            4477238,
+            4443731,
+            17.8,
+            18.5,
+            60.0,
+            0,
+            98330,
+            98330,
+            null,
+            null
+          ]
+        },
+        {
+          "dimensions": [],
+          "identity": [
+            "traces-otap-batch-otap"
+          ],
+          "values": [
+            46.3,
+            49.16,
+            null,
+            null,
+            null,
+            null,
+            5103175,
+            4381775,
+            45.0,
+            48.5,
+            60.0,
+            1.677559,
+            null,
+            null,
+            98329,
+            96680
+          ]
+        },
+        {
+          "dimensions": [],
+          "identity": [
+            "traces-otlp-batch-otlp"
+          ],
+          "values": [
+            67.48,
+            67.97,
+            null,
+            null,
+            null,
+            null,
+            14534563,
+            14623827,
+            18.3,
+            19.1,
+            60.0,
+            1.669941,
+            null,
+            null,
+            98259,
+            96618
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "cpu_percentage_normalized_avg",
+          "unit": "%"
+        },
+        {
+          "name": "cpu_percentage_normalized_max",
+          "unit": "%"
+        },
+        {
+          "name": "dropped_logs_percentage",
+          "unit": "%"
+        },
+        {
+          "name": "egress_bytes_per_log",
+          "unit": "bytes/log"
+        },
+        {
+          "name": "logs_produced_rate",
+          "unit": "logs/sec"
+        },
+        {
+          "name": "logs_received_rate",
+          "unit": "logs/sec"
+        },
+        {
+          "name": "network_rx_bytes_rate_avg",
+          "unit": "bytes/sec"
+        },
+        {
+          "name": "network_tx_bytes_rate_avg",
+          "unit": "bytes/sec"
+        },
+        {
+          "name": "ram_mib_avg",
+          "unit": "MiB"
+        },
+        {
+          "name": "ram_mib_max",
+          "unit": "MiB"
+        },
+        {
+          "name": "test_duration",
+          "unit": "seconds"
+        },
+        {
+          "name": "dropped_signals_percentage",
+          "unit": "%"
+        },
+        {
+          "name": "metrics_produced_rate",
+          "unit": "metrics/sec"
+        },
+        {
+          "name": "metrics_received_rate",
+          "unit": "metrics/sec"
+        },
+        {
+          "name": "spans_produced_rate",
+          "unit": "spans/sec"
+        },
+        {
+          "name": "spans_received_rate",
+          "unit": "spans/sec"
+        }
+      ],
+      "suite": "batch-processor"
+    },
+    {
+      "dimension_keys": [],
+      "identity_keys": [
+        "variant"
+      ],
+      "measurements": [
+        {
+          "dimensions": [],
+          "identity": [
+            "otap-in-batched-100k"
+          ],
+          "values": [
+            50.53,
+            1185.2,
+            25.04,
+            54.0,
+            100066,
+            100302,
+            60.0,
+            null,
+            null
+          ]
+        },
+        {
+          "dimensions": [],
+          "identity": [
+            "otelcol-otlp-transformed-100k"
+          ],
+          "values": [
+            49.04,
+            1236.2,
+            null,
+            null,
+            99128,
+            100792,
+            null,
+            87.53,
+            209.0
+          ]
+        },
+        {
+          "dimensions": [],
+          "identity": [
+            "otlp-in-batched-100k"
+          ],
+          "values": [
+            50.22,
+            1156.5,
+            45.12,
+            55.8,
+            99935,
+            99122,
+            60.0,
+            null,
+            null
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "clickhouse_cpu_percentage_normalized_avg",
+          "unit": "%"
+        },
+        {
+          "name": "clickhouse_ram_mib_max",
+          "unit": "MiB"
+        },
+        {
+          "name": "df-engine_cpu_percentage_normalized_avg",
+          "unit": "%"
+        },
+        {
+          "name": "df-engine_ram_mib_max",
+          "unit": "MiB"
+        },
+        {
+          "name": "log_rows_written_rate",
+          "unit": "rows/sec"
+        },
+        {
+          "name": "logs_produced_rate",
+          "unit": "rows/sec"
+        },
+        {
+          "name": "test_duration",
+          "unit": "seconds"
+        },
+        {
+          "name": "go-collector_cpu_percentage_normalized_avg",
+          "unit": "%"
+        },
+        {
+          "name": "go-collector_ram_mib_max",
+          "unit": "MiB"
+        }
+      ],
+      "suite": "clickhouse"
+    },
+    {
+      "dimension_keys": [],
+      "identity_keys": [
+        "variant"
+      ],
+      "measurements": [
+        {
+          "dimensions": [],
+          "identity": [
+            "passthrough"
+          ],
+          "values": [
+            100.2,
+            100.49,
+            1.41643,
+            31.11,
+            527120,
+            519654,
+            16131375,
+            16171500,
+            22.9,
+            23.6,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [],
+          "identity": [
+            "passthrough-otap"
+          ],
+          "values": [
+            100.2,
+            100.53,
+            1.627602,
+            11.75,
+            1941778,
+            1910173,
+            22370155,
+            22447250,
+            44.3,
+            47.2,
+            60.0
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "cpu_percentage_normalized_avg",
+          "unit": "%"
+        },
+        {
+          "name": "cpu_percentage_normalized_max",
+          "unit": "%"
+        },
+        {
+          "name": "dropped_logs_percentage",
+          "unit": "%"
+        },
+        {
+          "name": "egress_bytes_per_log",
+          "unit": "bytes/log"
+        },
+        {
+          "name": "logs_produced_rate",
+          "unit": "logs/sec"
+        },
+        {
+          "name": "logs_received_rate",
+          "unit": "logs/sec"
+        },
+        {
+          "name": "network_rx_bytes_rate_avg",
+          "unit": "bytes/sec"
+        },
+        {
+          "name": "network_tx_bytes_rate_avg",
+          "unit": "bytes/sec"
+        },
+        {
+          "name": "ram_mib_avg",
+          "unit": "MiB"
+        },
+        {
+          "name": "ram_mib_max",
+          "unit": "MiB"
+        },
+        {
+          "name": "test_duration",
+          "unit": "seconds"
+        }
+      ],
+      "suite": "passthrough"
+    },
+    {
+      "dimension_keys": [
+        "engine_cores",
+        "protocol"
+      ],
+      "identity_keys": [
+        "variant"
+      ],
+      "measurements": [
+        {
+          "dimensions": [
+            "16",
+            "otlp"
+          ],
+          "identity": [
+            "saturation-16cores"
+          ],
+          "values": [
+            92.47,
+            95.72,
+            0.085532,
+            111.32,
+            1831991,
+            1830424,
+            203506313,
+            203775966,
+            509.7,
+            538.3,
+            60.1
+          ]
+        },
+        {
+          "dimensions": [
+            "1",
+            "otlp"
+          ],
+          "identity": [
+            "saturation-1core"
+          ],
+          "values": [
+            100.18,
+            100.54,
+            -0.011676,
+            109.9,
+            146148,
+            146165,
+            15952140,
+            16064464,
+            30.9,
+            32.3,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "2",
+            "otlp"
+          ],
+          "identity": [
+            "saturation-2cores"
+          ],
+          "values": [
+            84.5,
+            89.61,
+            0.021313,
+            111.37,
+            240210,
+            240158,
+            26623867,
+            26746771,
+            51.9,
+            54.6,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "4",
+            "otlp"
+          ],
+          "identity": [
+            "saturation-4cores"
+          ],
+          "values": [
+            88.46,
+            91.63,
+            -1.659261,
+            109.76,
+            499325,
+            507611,
+            55451590,
+            55718958,
+            96.3,
+            100.1,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "8",
+            "otlp"
+          ],
+          "identity": [
+            "saturation-8cores"
+          ],
+          "values": [
+            85.95,
+            88.54,
+            -1.654993,
+            108.21,
+            919818,
+            935041,
+            100666054,
+            101182945,
+            209.4,
+            220.5,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            null,
+            null
+          ],
+          "identity": [
+            "saturation-max-throughput"
+          ],
+          "values": [
+            92.47,
+            92.99,
+            1.488131,
+            32.24,
+            277524,
+            273394,
+            8467647,
+            8815308,
+            26.0,
+            26.5,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            null,
+            null
+          ],
+          "identity": [
+            "saturation-max-throughput-otap"
+          ],
+          "values": [
+            100.25,
+            100.63,
+            -1.731112,
+            11.54,
+            1856077,
+            1888208,
+            21714606,
+            21798665,
+            44.3,
+            46.4,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "1",
+            "otap"
+          ],
+          "identity": [
+            "saturation-otap-1core"
+          ],
+          "values": [
+            100.21,
+            100.61,
+            -0.055726,
+            5.42,
+            2541796,
+            2543213,
+            13682522,
+            13792728,
+            54.9,
+            55.8,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "2",
+            "otap"
+          ],
+          "identity": [
+            "saturation-otap-2cores"
+          ],
+          "values": [
+            100.18,
+            100.43,
+            -0.519186,
+            5.42,
+            4967700,
+            4993492,
+            26898283,
+            27077050,
+            98.5,
+            99.9,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "4",
+            "otap"
+          ],
+          "identity": [
+            "saturation-otap-4cores"
+          ],
+          "values": [
+            95.84,
+            100.03,
+            -3.014755,
+            5.45,
+            8641869,
+            8902400,
+            48336092,
+            48552185,
+            229.8,
+            233.5,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "8",
+            "otap"
+          ],
+          "identity": [
+            "saturation-otap-8cores"
+          ],
+          "values": [
+            92.51,
+            95.67,
+            -7.553333,
+            5.55,
+            13724745,
+            14761421,
+            81799194,
+            81947221,
+            216.8,
+            225.9,
+            60.0
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "cpu_percentage_normalized_avg",
+          "unit": "%"
+        },
+        {
+          "name": "cpu_percentage_normalized_max",
+          "unit": "%"
+        },
+        {
+          "name": "dropped_logs_percentage",
+          "unit": "%"
+        },
+        {
+          "name": "egress_bytes_per_log",
+          "unit": "bytes/log"
+        },
+        {
+          "name": "logs_produced_rate",
+          "unit": "logs/sec"
+        },
+        {
+          "name": "logs_received_rate",
+          "unit": "logs/sec"
+        },
+        {
+          "name": "network_rx_bytes_rate_avg",
+          "unit": "bytes/sec"
+        },
+        {
+          "name": "network_tx_bytes_rate_avg",
+          "unit": "bytes/sec"
+        },
+        {
+          "name": "ram_mib_avg",
+          "unit": "MiB"
+        },
+        {
+          "name": "ram_mib_max",
+          "unit": "MiB"
+        },
+        {
+          "name": "test_duration",
+          "unit": "seconds"
+        }
+      ],
+      "suite": "saturation"
+    },
+    {
+      "dimension_keys": [],
+      "identity_keys": [
+        "variant",
+        "case"
+      ],
+      "measurements": [
+        {
+          "dimensions": [],
+          "identity": [
+            "100klrps-batch-sizes-docker",
+            "OTLP-ATTR-OTLP-BATCH10"
+          ],
+          "values": [
+            65.72,
+            82.53,
+            -0.020497,
+            162.72,
+            32523,
+            32530,
+            5000350,
+            5293648,
+            21.0,
+            24.9,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [],
+          "identity": [
+            "100klrps-batch-sizes-docker",
+            "OTLP-ATTR-OTLP-BATCH100"
+          ],
+          "values": [
+            65.79,
+            66.17,
+            3.336722,
+            55.54,
+            99976,
+            96640,
+            5146223,
+            5367957,
+            18.1,
+            18.6,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [],
+          "identity": [
+            "100klrps-batch-sizes-docker",
+            "OTLP-ATTR-OTLP-BATCH1024"
+          ],
+          "values": [
+            65.44,
+            66.17,
+            1.666666,
+            29.89,
+            99995,
+            98328,
+            2783565,
+            2939468,
+            18.7,
+            19.1,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [],
+          "identity": [
+            "100klrps-batch-sizes-docker",
+            "OTLP-ATTR-OTLP-BATCH4096"
+          ],
+          "values": [
+            56.62,
+            57.7,
+            1.666666,
+            27.82,
+            99996,
+            98330,
+            2594365,
+            2736174,
+            24.8,
+            26.9,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [],
+          "identity": [
+            "100klrps-batch-sizes-docker",
+            "OTLP-ATTR-OTLP-BATCH512"
+          ],
+          "values": [
+            64.87,
+            65.15,
+            0,
+            32.45,
+            98330,
+            98330,
+            3031312,
+            3191760,
+            17.7,
+            18.8,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [],
+          "identity": [
+            "100klrps-batch-sizes-docker",
+            "OTLP-ATTR-OTLP-BATCH8192"
+          ],
+          "values": [
+            50.53,
+            52.12,
+            1.666666,
+            27.51,
+            99996,
+            98330,
+            2554264,
+            2706019,
+            32.1,
+            35.4,
+            60.0
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "cpu_percentage_normalized_avg",
+          "unit": "%"
+        },
+        {
+          "name": "cpu_percentage_normalized_max",
+          "unit": "%"
+        },
+        {
+          "name": "dropped_logs_percentage",
+          "unit": "%"
+        },
+        {
+          "name": "egress_bytes_per_log",
+          "unit": "bytes/log"
+        },
+        {
+          "name": "logs_produced_rate",
+          "unit": "logs/sec"
+        },
+        {
+          "name": "logs_received_rate",
+          "unit": "logs/sec"
+        },
+        {
+          "name": "network_rx_bytes_rate_avg",
+          "unit": "bytes/sec"
+        },
+        {
+          "name": "network_tx_bytes_rate_avg",
+          "unit": "bytes/sec"
+        },
+        {
+          "name": "ram_mib_avg",
+          "unit": "MiB"
+        },
+        {
+          "name": "ram_mib_max",
+          "unit": "MiB"
+        },
+        {
+          "name": "test_duration",
+          "unit": "seconds"
+        }
+      ],
+      "suite": "standard-load-batch-size"
+    },
+    {
+      "dimension_keys": [],
+      "identity_keys": [
+        "variant"
+      ],
+      "measurements": [
+        {
+          "dimensions": [],
+          "identity": [
+            "syslog-3164-attr-otap"
+          ],
+          "values": [
+            57.22,
+            58.1,
+            -0.811078,
+            138.44,
+            25274,
+            25479,
+            7551074,
+            3527434,
+            30.7,
+            32.3,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [],
+          "identity": [
+            "syslog-3164-attr-otlp"
+          ],
+          "values": [
+            57.86,
+            59.25,
+            1.283436,
+            98.95,
+            26229,
+            25892,
+            7688803,
+            2562261,
+            30.1,
+            31.8,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [],
+          "identity": [
+            "syslog-3164-cef-attr-otap"
+          ],
+          "values": [
+            56.76,
+            57.85,
+            1.163534,
+            136.99,
+            26069,
+            25765,
+            7647466,
+            3529866,
+            31.1,
+            32.4,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [],
+          "identity": [
+            "syslog-3164-cef-attr-otlp"
+          ],
+          "values": [
+            58.02,
+            59.15,
+            -0.832412,
+            99.46,
+            25627,
+            25840,
+            7671130,
+            2570185,
+            30.3,
+            32.4,
+            60.0
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "cpu_percentage_normalized_avg",
+          "unit": "%"
+        },
+        {
+          "name": "cpu_percentage_normalized_max",
+          "unit": "%"
+        },
+        {
+          "name": "dropped_logs_percentage",
+          "unit": "%"
+        },
+        {
+          "name": "egress_bytes_per_log",
+          "unit": "bytes/log"
+        },
+        {
+          "name": "logs_produced_rate",
+          "unit": "logs/sec"
+        },
+        {
+          "name": "logs_received_rate",
+          "unit": "logs/sec"
+        },
+        {
+          "name": "network_rx_bytes_rate_avg",
+          "unit": "bytes/sec"
+        },
+        {
+          "name": "network_tx_bytes_rate_avg",
+          "unit": "bytes/sec"
+        },
+        {
+          "name": "ram_mib_avg",
+          "unit": "MiB"
+        },
+        {
+          "name": "ram_mib_max",
+          "unit": "MiB"
+        },
+        {
+          "name": "test_duration",
+          "unit": "seconds"
+        }
+      ],
+      "suite": "syslog"
+    },
+    {
+      "dimension_keys": [],
+      "identity_keys": [
+        "variant"
+      ],
+      "measurements": [
+        {
+          "dimensions": [],
+          "identity": [
+            "syslog-tcp-3164-attr-otap"
+          ],
+          "values": [
+            98.96,
+            100.48,
+            0.681562,
+            126.63,
+            176549,
+            175346,
+            44585958,
+            22204100,
+            42.6,
+            53.5,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [],
+          "identity": [
+            "syslog-tcp-3164-attr-otlp"
+          ],
+          "values": [
+            68.68,
+            69.24,
+            -0.778393,
+            89.94,
+            84783,
+            85443,
+            21773072,
+            7685100,
+            43.0,
+            44.8,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [],
+          "identity": [
+            "syslog-tcp-3164-cef-attr-otap"
+          ],
+          "values": [
+            100.33,
+            100.6,
+            -0.706905,
+            124.29,
+            172106,
+            173322,
+            43879291,
+            21543994,
+            19.9,
+            20.3,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [],
+          "identity": [
+            "syslog-tcp-3164-cef-attr-otlp"
+          ],
+          "values": [
+            66.06,
+            68.62,
+            0.914834,
+            92.57,
+            75967,
+            75272,
+            19172285,
+            6968387,
+            42.1,
+            44.2,
+            60.0
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "cpu_percentage_normalized_avg",
+          "unit": "%"
+        },
+        {
+          "name": "cpu_percentage_normalized_max",
+          "unit": "%"
+        },
+        {
+          "name": "dropped_logs_percentage",
+          "unit": "%"
+        },
+        {
+          "name": "egress_bytes_per_log",
+          "unit": "bytes/log"
+        },
+        {
+          "name": "logs_produced_rate",
+          "unit": "logs/sec"
+        },
+        {
+          "name": "logs_received_rate",
+          "unit": "logs/sec"
+        },
+        {
+          "name": "network_rx_bytes_rate_avg",
+          "unit": "bytes/sec"
+        },
+        {
+          "name": "network_tx_bytes_rate_avg",
+          "unit": "bytes/sec"
+        },
+        {
+          "name": "ram_mib_avg",
+          "unit": "MiB"
+        },
+        {
+          "name": "ram_mib_max",
+          "unit": "MiB"
+        },
+        {
+          "name": "test_duration",
+          "unit": "seconds"
+        }
+      ],
+      "suite": "syslog-tcp"
+    },
+    {
+      "dimension_keys": [],
+      "identity_keys": [
+        "variant"
+      ],
+      "measurements": [
+        {
+          "dimensions": [],
+          "identity": [
+            "syslog-tcp-otap-go-collector"
+          ],
+          "values": [
+            100.53,
+            100.73,
+            1.138768,
+            11.39,
+            52411,
+            51814,
+            13151782,
+            590192,
+            800.1,
+            877.3,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [],
+          "identity": [
+            "syslog-tcp-otlp-go-collector"
+          ],
+          "values": [
+            83.39,
+            85.12,
+            0.968307,
+            94.07,
+            28502,
+            28226,
+            7237583,
+            2655464,
+            61.1,
+            61.8,
+            60.0
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "cpu_percentage_normalized_avg",
+          "unit": "%"
+        },
+        {
+          "name": "cpu_percentage_normalized_max",
+          "unit": "%"
+        },
+        {
+          "name": "dropped_logs_percentage",
+          "unit": "%"
+        },
+        {
+          "name": "egress_bytes_per_log",
+          "unit": "bytes/log"
+        },
+        {
+          "name": "logs_produced_rate",
+          "unit": "logs/sec"
+        },
+        {
+          "name": "logs_received_rate",
+          "unit": "logs/sec"
+        },
+        {
+          "name": "network_rx_bytes_rate_avg",
+          "unit": "bytes/sec"
+        },
+        {
+          "name": "network_tx_bytes_rate_avg",
+          "unit": "bytes/sec"
+        },
+        {
+          "name": "ram_mib_avg",
+          "unit": "MiB"
+        },
+        {
+          "name": "ram_mib_max",
+          "unit": "MiB"
+        },
+        {
+          "name": "test_duration",
+          "unit": "seconds"
+        }
+      ],
+      "suite": "syslog-tcp-otelcol"
+    }
+  ],
+  "run": {
+    "collection_id": "gha-nightly-1787257928794",
+    "id": "gha-nightly-1787257928794-0",
+    "metadata": {
+      "github-action-benchmark-migration": {
+        "cluster": {
+          "first_entry_timestamp": "2026-08-20T20:32:08.794000Z",
+          "last_entry_timestamp": "2026-08-20T20:33:10.690000Z"
+        },
+        "entries": [
+          {
+            "data_js": {
+              "commit": "3feb7d8320a6d18b9f1d9cddf745c6a0f29c2867",
+              "path": "docs/benchmarks/nightly/syslog/data.js"
+            },
+            "entry_timestamp": "2026-08-20T20:32:08.794000Z",
+            "execution_occurrence": 0,
+            "suite": "syslog"
+          },
+          {
+            "data_js": {
+              "commit": "3feb7d8320a6d18b9f1d9cddf745c6a0f29c2867",
+              "path": "docs/benchmarks/nightly/syslog-tcp/data.js"
+            },
+            "entry_timestamp": "2026-08-20T20:32:26.197000Z",
+            "execution_occurrence": 0,
+            "suite": "syslog-tcp"
+          },
+          {
+            "data_js": {
+              "commit": "3feb7d8320a6d18b9f1d9cddf745c6a0f29c2867",
+              "path": "docs/benchmarks/nightly/standardload-batch-size/data.js"
+            },
+            "entry_timestamp": "2026-08-20T20:32:29.630000Z",
+            "execution_occurrence": 0,
+            "suite": "standard-load-batch-size"
+          },
+          {
+            "data_js": {
+              "commit": "3feb7d8320a6d18b9f1d9cddf745c6a0f29c2867",
+              "path": "docs/benchmarks/nightly/backpressure/data.js"
+            },
+            "entry_timestamp": "2026-08-20T20:32:33.555000Z",
+            "execution_occurrence": 0,
+            "suite": "backpressure"
+          },
+          {
+            "data_js": {
+              "commit": "3feb7d8320a6d18b9f1d9cddf745c6a0f29c2867",
+              "path": "docs/benchmarks/nightly/batch-processor/data.js"
+            },
+            "entry_timestamp": "2026-08-20T20:32:40.896000Z",
+            "execution_occurrence": 0,
+            "suite": "batch-processor"
+          },
+          {
+            "data_js": {
+              "commit": "3feb7d8320a6d18b9f1d9cddf745c6a0f29c2867",
+              "path": "docs/benchmarks/nightly/syslog-tcp-otelcol/data.js"
+            },
+            "entry_timestamp": "2026-08-20T20:32:49.072000Z",
+            "execution_occurrence": 0,
+            "suite": "syslog-tcp-otelcol"
+          },
+          {
+            "data_js": {
+              "commit": "3feb7d8320a6d18b9f1d9cddf745c6a0f29c2867",
+              "path": "docs/benchmarks/nightly/saturation/data.js"
+            },
+            "entry_timestamp": "2026-08-20T20:32:53.105000Z",
+            "execution_occurrence": 0,
+            "suite": "saturation"
+          },
+          {
+            "data_js": {
+              "commit": "3feb7d8320a6d18b9f1d9cddf745c6a0f29c2867",
+              "path": "docs/benchmarks/continuous-passthrough/data.js"
+            },
+            "entry_timestamp": "2026-08-20T20:33:01.101000Z",
+            "execution_occurrence": 0,
+            "suite": "passthrough"
+          },
+          {
+            "data_js": {
+              "commit": "3feb7d8320a6d18b9f1d9cddf745c6a0f29c2867",
+              "path": "docs/benchmarks/nightly/clickhouse-throughput/data.js"
+            },
+            "entry_timestamp": "2026-08-20T20:33:06.157000Z",
+            "execution_occurrence": 0,
+            "suite": "clickhouse"
+          },
+          {
+            "data_js": {
+              "commit": "3feb7d8320a6d18b9f1d9cddf745c6a0f29c2867",
+              "path": "docs/benchmarks/nightly/clickhouse-resources/data.js"
+            },
+            "entry_timestamp": "2026-08-20T20:33:10.690000Z",
+            "execution_occurrence": 0,
+            "suite": "clickhouse"
+          }
+        ],
+        "missing_suites": [
+          "filter",
+          "idle-state"
+        ]
+      }
+    }
+  },
+  "schema_version": 1,
+  "source": {
+    "commit": "6c815bd0bdf6c5e023daf7987e17ca5b4dda565c",
+    "repository": "https://github.com/open-telemetry/otel-arrow",
+    "timestamp": "2026-08-20T19:42:52Z"
+  }
+}

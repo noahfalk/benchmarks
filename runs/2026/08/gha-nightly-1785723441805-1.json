@@ -1,0 +1,149 @@
+{
+  "attachments": [],
+  "environment": {},
+  "results": [
+    {
+      "dimension_keys": [
+        "engine_cores",
+        "protocol"
+      ],
+      "identity_keys": [
+        "variant"
+      ],
+      "measurements": [
+        {
+          "dimensions": [
+            null,
+            null
+          ],
+          "identity": [
+            "saturation-max-throughput"
+          ],
+          "values": [
+            89.29,
+            91.43,
+            0.276787,
+            31.8,
+            268205,
+            267463,
+            8157424,
+            8507406,
+            27.4,
+            28.0,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            null,
+            null
+          ],
+          "identity": [
+            "saturation-max-throughput-otap"
+          ],
+          "values": [
+            100.21,
+            100.56,
+            0.44708,
+            11.54,
+            1963883,
+            1955103,
+            22466976,
+            22571865,
+            44.0,
+            44.9,
+            60.0
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "cpu_percentage_normalized_avg",
+          "unit": "%"
+        },
+        {
+          "name": "cpu_percentage_normalized_max",
+          "unit": "%"
+        },
+        {
+          "name": "dropped_logs_percentage",
+          "unit": "%"
+        },
+        {
+          "name": "egress_bytes_per_log",
+          "unit": "bytes/log"
+        },
+        {
+          "name": "logs_produced_rate",
+          "unit": "logs/sec"
+        },
+        {
+          "name": "logs_received_rate",
+          "unit": "logs/sec"
+        },
+        {
+          "name": "network_rx_bytes_rate_avg",
+          "unit": "bytes/sec"
+        },
+        {
+          "name": "network_tx_bytes_rate_avg",
+          "unit": "bytes/sec"
+        },
+        {
+          "name": "ram_mib_avg",
+          "unit": "MiB"
+        },
+        {
+          "name": "ram_mib_max",
+          "unit": "MiB"
+        },
+        {
+          "name": "test_duration",
+          "unit": "seconds"
+        }
+      ],
+      "suite": "saturation"
+    }
+  ],
+  "run": {
+    "collection_id": "gha-nightly-1785723441805",
+    "id": "gha-nightly-1785723441805-1",
+    "metadata": {
+      "github-action-benchmark-migration": {
+        "cluster": {
+          "first_entry_timestamp": "2026-08-03T02:17:21.805000Z",
+          "last_entry_timestamp": "2026-08-03T02:18:06.128000Z"
+        },
+        "entries": [
+          {
+            "data_js": {
+              "commit": "3feb7d8320a6d18b9f1d9cddf745c6a0f29c2867",
+              "path": "docs/benchmarks/nightly/saturation/data.js"
+            },
+            "entry_timestamp": "2026-08-03T02:17:59.586000Z",
+            "execution_occurrence": 1,
+            "suite": "saturation"
+          }
+        ],
+        "missing_suites": [
+          "backpressure",
+          "batch-processor",
+          "clickhouse",
+          "filter",
+          "idle-state",
+          "passthrough",
+          "standard-load-batch-size",
+          "syslog",
+          "syslog-tcp",
+          "syslog-tcp-otelcol"
+        ]
+      }
+    }
+  },
+  "schema_version": 1,
+  "source": {
+    "commit": "a956ea9c21e62d7e83b77ccf3604394ac440ca5c",
+    "repository": "https://github.com/open-telemetry/otel-arrow",
+    "timestamp": "2026-08-01T07:53:01Z"
+  }
+}

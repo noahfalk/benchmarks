@@ -37,6 +37,15 @@
           "suite": "log-baseline"
         },
         {
+          "include_variants": [
+            "dfe-otap-attributes",
+            "dfe-otap-transform",
+            "dfe-otlp-attributes",
+            "dfe-otlp-transform",
+            "otc-otlp-attributes",
+            "otc-otlp-transform",
+            "fbit-otlp-modify"
+          ],
           "role": "candidate",
           "suite": "log-attribute-insert"
         }
@@ -69,8 +78,554 @@
       "schema_version": 1,
       "sources": [
         {
+          "include_variants": [
+            "dfe-otap-none",
+            "dfe-otlp-none",
+            "dfe-otlp-gzip",
+            "otc-otlp-none",
+            "fbit-otlp-none"
+          ],
           "role": "baseline",
           "suite": "log-baseline"
+        }
+      ]
+    }
+  ],
+  "metric_profiles": [
+    {
+      "id": "logs",
+      "metrics": [
+        {
+          "max": 100,
+          "max_decimal_places": 2,
+          "min": 0,
+          "name": "cpu_percentage_normalized_avg",
+          "unit": "%"
+        },
+        {
+          "max": 100,
+          "max_decimal_places": 2,
+          "min": 0,
+          "name": "cpu_percentage_normalized_max",
+          "unit": "%"
+        },
+        {
+          "max": 100,
+          "max_decimal_places": 6,
+          "min": 0,
+          "name": "dropped_logs_percentage",
+          "unit": "%"
+        },
+        {
+          "max": null,
+          "max_decimal_places": 2,
+          "min": 0,
+          "name": "egress_bytes_per_log",
+          "unit": "bytes/log"
+        },
+        {
+          "max": null,
+          "max_decimal_places": 0,
+          "min": 0,
+          "name": "logs_produced_rate",
+          "unit": "logs/sec"
+        },
+        {
+          "max": null,
+          "max_decimal_places": 0,
+          "min": 0,
+          "name": "logs_received_rate",
+          "unit": "logs/sec"
+        },
+        {
+          "max": null,
+          "max_decimal_places": 0,
+          "min": 0,
+          "name": "network_rx_bytes_rate_avg",
+          "unit": "bytes/sec"
+        },
+        {
+          "max": null,
+          "max_decimal_places": 0,
+          "min": 0,
+          "name": "network_tx_bytes_rate_avg",
+          "unit": "bytes/sec"
+        },
+        {
+          "max": null,
+          "max_decimal_places": 1,
+          "min": 0,
+          "name": "ram_mib_avg",
+          "unit": "MiB"
+        },
+        {
+          "max": null,
+          "max_decimal_places": 1,
+          "min": 0,
+          "name": "ram_mib_max",
+          "unit": "MiB"
+        },
+        {
+          "max": null,
+          "max_decimal_places": 1,
+          "min": 0,
+          "name": "test_duration",
+          "unit": "seconds"
+        }
+      ]
+    },
+    {
+      "id": "comparison-metrics",
+      "metrics": [
+        {
+          "max": 100,
+          "max_decimal_places": 2,
+          "min": 0,
+          "name": "cpu_percentage_normalized_avg",
+          "unit": "%"
+        },
+        {
+          "max": 100,
+          "max_decimal_places": 2,
+          "min": 0,
+          "name": "cpu_percentage_normalized_max",
+          "unit": "%"
+        },
+        {
+          "max": 100,
+          "max_decimal_places": 6,
+          "min": 0,
+          "name": "dropped_metrics_percentage",
+          "unit": "%"
+        },
+        {
+          "max": null,
+          "max_decimal_places": 0,
+          "min": 0,
+          "name": "metrics_produced_rate",
+          "unit": "metrics/sec"
+        },
+        {
+          "max": null,
+          "max_decimal_places": 0,
+          "min": 0,
+          "name": "metrics_received_rate",
+          "unit": "metrics/sec"
+        },
+        {
+          "max": null,
+          "max_decimal_places": 0,
+          "min": 0,
+          "name": "network_rx_bytes_rate_avg",
+          "unit": "bytes/sec"
+        },
+        {
+          "max": null,
+          "max_decimal_places": 0,
+          "min": 0,
+          "name": "network_tx_bytes_rate_avg",
+          "unit": "bytes/sec"
+        },
+        {
+          "max": null,
+          "max_decimal_places": 1,
+          "min": 0,
+          "name": "ram_mib_avg",
+          "unit": "MiB"
+        },
+        {
+          "max": null,
+          "max_decimal_places": 1,
+          "min": 0,
+          "name": "ram_mib_max",
+          "unit": "MiB"
+        },
+        {
+          "max": null,
+          "max_decimal_places": 1,
+          "min": 0,
+          "name": "test_duration",
+          "unit": "seconds"
+        }
+      ]
+    },
+    {
+      "id": "comparison-traces",
+      "metrics": [
+        {
+          "max": 100,
+          "max_decimal_places": 2,
+          "min": 0,
+          "name": "cpu_percentage_normalized_avg",
+          "unit": "%"
+        },
+        {
+          "max": 100,
+          "max_decimal_places": 2,
+          "min": 0,
+          "name": "cpu_percentage_normalized_max",
+          "unit": "%"
+        },
+        {
+          "max": 100,
+          "max_decimal_places": 6,
+          "min": 0,
+          "name": "dropped_spans_percentage",
+          "unit": "%"
+        },
+        {
+          "max": null,
+          "max_decimal_places": 0,
+          "min": 0,
+          "name": "network_rx_bytes_rate_avg",
+          "unit": "bytes/sec"
+        },
+        {
+          "max": null,
+          "max_decimal_places": 0,
+          "min": 0,
+          "name": "network_tx_bytes_rate_avg",
+          "unit": "bytes/sec"
+        },
+        {
+          "max": null,
+          "max_decimal_places": 1,
+          "min": 0,
+          "name": "ram_mib_avg",
+          "unit": "MiB"
+        },
+        {
+          "max": null,
+          "max_decimal_places": 1,
+          "min": 0,
+          "name": "ram_mib_max",
+          "unit": "MiB"
+        },
+        {
+          "max": null,
+          "max_decimal_places": 0,
+          "min": 0,
+          "name": "spans_produced_rate",
+          "unit": "spans/sec"
+        },
+        {
+          "max": null,
+          "max_decimal_places": 0,
+          "min": 0,
+          "name": "spans_received_rate",
+          "unit": "spans/sec"
+        },
+        {
+          "max": null,
+          "max_decimal_places": 1,
+          "min": 0,
+          "name": "test_duration",
+          "unit": "seconds"
+        }
+      ]
+    },
+    {
+      "id": "integration-metrics",
+      "metrics": [
+        {
+          "max": 100,
+          "max_decimal_places": 2,
+          "min": 0,
+          "name": "cpu_percentage_normalized_avg",
+          "unit": "%"
+        },
+        {
+          "max": 100,
+          "max_decimal_places": 2,
+          "min": 0,
+          "name": "cpu_percentage_normalized_max",
+          "unit": "%"
+        },
+        {
+          "max": 100,
+          "max_decimal_places": 6,
+          "min": 0,
+          "name": "dropped_signals_percentage",
+          "unit": "%"
+        },
+        {
+          "max": null,
+          "max_decimal_places": 0,
+          "min": 0,
+          "name": "metrics_produced_rate",
+          "unit": "metrics/sec"
+        },
+        {
+          "max": null,
+          "max_decimal_places": 0,
+          "min": 0,
+          "name": "metrics_received_rate",
+          "unit": "metrics/sec"
+        },
+        {
+          "max": null,
+          "max_decimal_places": 0,
+          "min": 0,
+          "name": "network_rx_bytes_rate_avg",
+          "unit": "bytes/sec"
+        },
+        {
+          "max": null,
+          "max_decimal_places": 0,
+          "min": 0,
+          "name": "network_tx_bytes_rate_avg",
+          "unit": "bytes/sec"
+        },
+        {
+          "max": null,
+          "max_decimal_places": 1,
+          "min": 0,
+          "name": "ram_mib_avg",
+          "unit": "MiB"
+        },
+        {
+          "max": null,
+          "max_decimal_places": 1,
+          "min": 0,
+          "name": "ram_mib_max",
+          "unit": "MiB"
+        },
+        {
+          "max": null,
+          "max_decimal_places": 1,
+          "min": 0,
+          "name": "test_duration",
+          "unit": "seconds"
+        }
+      ]
+    },
+    {
+      "id": "integration-traces",
+      "metrics": [
+        {
+          "max": 100,
+          "max_decimal_places": 2,
+          "min": 0,
+          "name": "cpu_percentage_normalized_avg",
+          "unit": "%"
+        },
+        {
+          "max": 100,
+          "max_decimal_places": 2,
+          "min": 0,
+          "name": "cpu_percentage_normalized_max",
+          "unit": "%"
+        },
+        {
+          "max": 100,
+          "max_decimal_places": 6,
+          "min": 0,
+          "name": "dropped_signals_percentage",
+          "unit": "%"
+        },
+        {
+          "max": null,
+          "max_decimal_places": 0,
+          "min": 0,
+          "name": "network_rx_bytes_rate_avg",
+          "unit": "bytes/sec"
+        },
+        {
+          "max": null,
+          "max_decimal_places": 0,
+          "min": 0,
+          "name": "network_tx_bytes_rate_avg",
+          "unit": "bytes/sec"
+        },
+        {
+          "max": null,
+          "max_decimal_places": 1,
+          "min": 0,
+          "name": "ram_mib_avg",
+          "unit": "MiB"
+        },
+        {
+          "max": null,
+          "max_decimal_places": 1,
+          "min": 0,
+          "name": "ram_mib_max",
+          "unit": "MiB"
+        },
+        {
+          "max": null,
+          "max_decimal_places": 0,
+          "min": 0,
+          "name": "spans_produced_rate",
+          "unit": "spans/sec"
+        },
+        {
+          "max": null,
+          "max_decimal_places": 0,
+          "min": 0,
+          "name": "spans_received_rate",
+          "unit": "spans/sec"
+        },
+        {
+          "max": null,
+          "max_decimal_places": 1,
+          "min": 0,
+          "name": "test_duration",
+          "unit": "seconds"
+        }
+      ]
+    },
+    {
+      "id": "idle",
+      "metrics": [
+        {
+          "max": 100,
+          "max_decimal_places": 2,
+          "min": 0,
+          "name": "idle_cpu_percentage_avg",
+          "unit": "%"
+        },
+        {
+          "max": 100,
+          "max_decimal_places": 2,
+          "min": 0,
+          "name": "idle_cpu_percentage_max",
+          "unit": "%"
+        },
+        {
+          "max": null,
+          "max_decimal_places": 1,
+          "min": 0,
+          "name": "idle_ram_mib_avg",
+          "unit": "MiB"
+        },
+        {
+          "max": null,
+          "max_decimal_places": 1,
+          "min": 0,
+          "name": "idle_ram_mib_max",
+          "unit": "MiB"
+        },
+        {
+          "max": null,
+          "max_decimal_places": 1,
+          "min": 0,
+          "name": "idle_rss_mib_avg",
+          "unit": "MiB"
+        },
+        {
+          "max": null,
+          "max_decimal_places": 1,
+          "min": 0,
+          "name": "idle_rss_mib_max",
+          "unit": "MiB"
+        },
+        {
+          "max": null,
+          "max_decimal_places": 1,
+          "min": 0,
+          "name": "idle_test_duration",
+          "unit": "seconds"
+        }
+      ]
+    },
+    {
+      "id": "clickhouse-dfe",
+      "metrics": [
+        {
+          "max": 100,
+          "max_decimal_places": 2,
+          "min": 0,
+          "name": "clickhouse_cpu_percentage_normalized_avg",
+          "unit": "%"
+        },
+        {
+          "max": null,
+          "max_decimal_places": 1,
+          "min": 0,
+          "name": "clickhouse_ram_mib_max",
+          "unit": "MiB"
+        },
+        {
+          "max": 100,
+          "max_decimal_places": 2,
+          "min": 0,
+          "name": "df-engine_cpu_percentage_normalized_avg",
+          "unit": "%"
+        },
+        {
+          "max": null,
+          "max_decimal_places": 1,
+          "min": 0,
+          "name": "df-engine_ram_mib_max",
+          "unit": "MiB"
+        },
+        {
+          "max": null,
+          "max_decimal_places": 0,
+          "min": 0,
+          "name": "log_rows_written_rate",
+          "unit": "rows/sec"
+        },
+        {
+          "max": null,
+          "max_decimal_places": 0,
+          "min": 0,
+          "name": "logs_produced_rate",
+          "unit": "rows/sec"
+        },
+        {
+          "max": null,
+          "max_decimal_places": 1,
+          "min": 0,
+          "name": "test_duration",
+          "unit": "seconds"
+        }
+      ]
+    },
+    {
+      "id": "clickhouse-otelcol",
+      "metrics": [
+        {
+          "max": 100,
+          "max_decimal_places": 2,
+          "min": 0,
+          "name": "clickhouse_cpu_percentage_normalized_avg",
+          "unit": "%"
+        },
+        {
+          "max": null,
+          "max_decimal_places": 1,
+          "min": 0,
+          "name": "clickhouse_ram_mib_max",
+          "unit": "MiB"
+        },
+        {
+          "max": 100,
+          "max_decimal_places": 2,
+          "min": 0,
+          "name": "go-collector_cpu_percentage_normalized_avg",
+          "unit": "%"
+        },
+        {
+          "max": null,
+          "max_decimal_places": 1,
+          "min": 0,
+          "name": "go-collector_ram_mib_max",
+          "unit": "MiB"
+        },
+        {
+          "max": null,
+          "max_decimal_places": 0,
+          "min": 0,
+          "name": "log_rows_written_rate",
+          "unit": "rows/sec"
+        },
+        {
+          "max": null,
+          "max_decimal_places": 0,
+          "min": 0,
+          "name": "logs_produced_rate",
+          "unit": "rows/sec"
         }
       ]
     }
@@ -78,145 +633,3193 @@
   "schema_version": 1,
   "suites": [
     {
-      "description": "Log pipelines that insert a static processing.engine attribute.",
+      "description": "DFE log pipelines applying an attribute rename while exercising OTLP and OTAP input/output combinations.",
+      "id": "attribute-processor-protocol-routing",
+      "metric_profiles": [
+        "logs"
+      ],
+      "name": "Attribute Processor Protocol Routing",
+      "schema_version": 1,
+      "variants": [
+        {
+          "dimensions": {},
+          "execution": {
+            "campaigns": [
+              "continuous"
+            ],
+            "path": "tools/pipeline_perf_test/test_suites/integration/continuous/100klrps-docker.yaml",
+            "runner": "orchestrator",
+            "test": "OTLP-ATTR-OTLP"
+          },
+          "id": "otlp-attr-otlp",
+          "name": "OTLP to OTLP"
+        },
+        {
+          "dimensions": {},
+          "execution": {
+            "campaigns": [
+              "continuous"
+            ],
+            "path": "tools/pipeline_perf_test/test_suites/integration/continuous/100klrps-docker.yaml",
+            "runner": "orchestrator",
+            "test": "OTLP-ATTR-OTAP"
+          },
+          "id": "otlp-attr-otap",
+          "name": "OTLP to OTAP"
+        },
+        {
+          "dimensions": {},
+          "execution": {
+            "campaigns": [
+              "continuous"
+            ],
+            "path": "tools/pipeline_perf_test/test_suites/integration/continuous/100klrps-docker.yaml",
+            "runner": "orchestrator",
+            "test": "OTAP-ATTR-OTAP"
+          },
+          "id": "otap-attr-otap",
+          "name": "OTAP to OTAP"
+        },
+        {
+          "dimensions": {},
+          "execution": {
+            "campaigns": [
+              "continuous"
+            ],
+            "path": "tools/pipeline_perf_test/test_suites/integration/continuous/100klrps-docker.yaml",
+            "runner": "orchestrator",
+            "test": "OTAP-ATTR-OTLP"
+          },
+          "id": "otap-attr-otlp",
+          "name": "OTAP to OTLP"
+        }
+      ]
+    },
+    {
+      "description": "Flow-control and load-management workloads.",
+      "id": "backpressure",
+      "metric_profiles": [
+        "logs"
+      ],
+      "name": "Backpressure",
+      "schema_version": 1,
+      "variants": [
+        {
+          "dimensions": {},
+          "execution": {
+            "campaigns": [
+              "nightly"
+            ],
+            "path": "tools/pipeline_perf_test/test_suites/integration/nightly/backpressure-docker.yaml",
+            "runner": "orchestrator",
+            "test": "OTLP-ATTR-OTLP"
+          },
+          "id": "otlp-attr-otlp",
+          "name": "OTLP-ATTR-OTLP",
+          "source_identities": [
+            {
+              "format": "github-action-benchmark",
+              "key": {
+                "suite": "Nightly - Backpressure",
+                "test": "OTLP-ATTR-OTLP"
+              }
+            }
+          ]
+        },
+        {
+          "dimensions": {},
+          "execution": {
+            "campaigns": [
+              "nightly"
+            ],
+            "path": "tools/pipeline_perf_test/test_suites/integration/nightly/backpressure-docker.yaml",
+            "runner": "orchestrator",
+            "test": "OTAP-ATTR-OTLP"
+          },
+          "id": "otap-attr-otlp",
+          "name": "OTAP-ATTR-OTLP",
+          "source_identities": [
+            {
+              "format": "github-action-benchmark",
+              "key": {
+                "suite": "Nightly - Backpressure",
+                "test": "OTAP-ATTR-OTLP"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Batch processor workloads across logs, metrics, traces, OTAP, and OTLP.",
+      "id": "batch-processor",
+      "metric_profiles": [
+        "logs",
+        "integration-metrics",
+        "integration-traces"
+      ],
+      "name": "Batch Processor",
+      "schema_version": 1,
+      "variants": [
+        {
+          "dimensions": {},
+          "execution": {
+            "campaigns": [
+              "nightly"
+            ],
+            "path": "tools/pipeline_perf_test/test_suites/integration/nightly/batch-processor-docker.yaml",
+            "runner": "orchestrator",
+            "test": "Logs-OTAP-BATCH-OTAP"
+          },
+          "id": "logs-otap-batch-otap",
+          "name": "Logs-OTAP-BATCH-OTAP",
+          "source_identities": [
+            {
+              "format": "github-action-benchmark",
+              "key": {
+                "suite": "Nightly - Batch Processor",
+                "test": "Logs-OTAP-BATCH-OTAP"
+              }
+            }
+          ]
+        },
+        {
+          "dimensions": {},
+          "execution": {
+            "campaigns": [
+              "nightly"
+            ],
+            "path": "tools/pipeline_perf_test/test_suites/integration/nightly/batch-processor-docker.yaml",
+            "runner": "orchestrator",
+            "test": "Logs-OTLP-BATCH-OTLP"
+          },
+          "id": "logs-otlp-batch-otlp",
+          "name": "Logs-OTLP-BATCH-OTLP",
+          "source_identities": [
+            {
+              "format": "github-action-benchmark",
+              "key": {
+                "suite": "Nightly - Batch Processor",
+                "test": "Logs-OTLP-BATCH-OTLP"
+              }
+            }
+          ]
+        },
+        {
+          "dimensions": {},
+          "execution": {
+            "campaigns": [
+              "nightly"
+            ],
+            "path": "tools/pipeline_perf_test/test_suites/integration/nightly/batch-processor-docker.yaml",
+            "runner": "orchestrator",
+            "test": "Metrics-OTAP-BATCH-OTAP"
+          },
+          "id": "metrics-otap-batch-otap",
+          "name": "Metrics-OTAP-BATCH-OTAP",
+          "source_identities": [
+            {
+              "format": "github-action-benchmark",
+              "key": {
+                "suite": "Nightly - Batch Processor",
+                "test": "Metrics-OTAP-BATCH-OTAP"
+              }
+            }
+          ]
+        },
+        {
+          "dimensions": {},
+          "execution": {
+            "campaigns": [
+              "nightly"
+            ],
+            "path": "tools/pipeline_perf_test/test_suites/integration/nightly/batch-processor-docker.yaml",
+            "runner": "orchestrator",
+            "test": "Metrics-OTLP-BATCH-OTLP"
+          },
+          "id": "metrics-otlp-batch-otlp",
+          "name": "Metrics-OTLP-BATCH-OTLP",
+          "source_identities": [
+            {
+              "format": "github-action-benchmark",
+              "key": {
+                "suite": "Nightly - Batch Processor",
+                "test": "Metrics-OTLP-BATCH-OTLP"
+              }
+            }
+          ]
+        },
+        {
+          "dimensions": {},
+          "execution": {
+            "campaigns": [
+              "nightly"
+            ],
+            "path": "tools/pipeline_perf_test/test_suites/integration/nightly/batch-processor-docker.yaml",
+            "runner": "orchestrator",
+            "test": "Traces-OTAP-BATCH-OTAP"
+          },
+          "id": "traces-otap-batch-otap",
+          "name": "Traces-OTAP-BATCH-OTAP",
+          "source_identities": [
+            {
+              "format": "github-action-benchmark",
+              "key": {
+                "suite": "Nightly - Batch Processor",
+                "test": "Traces-OTAP-BATCH-OTAP"
+              }
+            }
+          ]
+        },
+        {
+          "dimensions": {},
+          "execution": {
+            "campaigns": [
+              "nightly"
+            ],
+            "path": "tools/pipeline_perf_test/test_suites/integration/nightly/batch-processor-docker.yaml",
+            "runner": "orchestrator",
+            "test": "Traces-OTLP-BATCH-OTLP"
+          },
+          "id": "traces-otlp-batch-otlp",
+          "name": "Traces-OTLP-BATCH-OTLP",
+          "source_identities": [
+            {
+              "format": "github-action-benchmark",
+              "key": {
+                "suite": "Nightly - Batch Processor",
+                "test": "Traces-OTLP-BATCH-OTLP"
+              }
+            }
+          ]
+        },
+        {
+          "dimensions": {},
+          "execution": {
+            "campaigns": [
+              "continuous"
+            ],
+            "path": "tools/pipeline_perf_test/test_suites/integration/continuous/100klrps-docker.yaml",
+            "runner": "orchestrator",
+            "test": "OTLP-BATCH-OTLP"
+          },
+          "id": "otlp-batch-otlp",
+          "name": "OTLP to OTLP"
+        },
+        {
+          "dimensions": {},
+          "execution": {
+            "campaigns": [
+              "continuous"
+            ],
+            "path": "tools/pipeline_perf_test/test_suites/integration/continuous/100klrps-docker.yaml",
+            "runner": "orchestrator",
+            "test": "OTAP-BATCH-OTAP"
+          },
+          "id": "otap-batch-otap",
+          "name": "OTAP to OTAP"
+        }
+      ]
+    },
+    {
+      "description": "DFE and OpenTelemetry Collector ClickHouse throughput and resource workloads.",
+      "id": "clickhouse",
+      "metric_profiles": [
+        "clickhouse-dfe",
+        "clickhouse-otelcol"
+      ],
+      "name": "ClickHouse",
+      "schema_version": 1,
+      "variants": [
+        {
+          "dimensions": {},
+          "execution": {
+            "campaigns": [
+              "nightly"
+            ],
+            "local_note": "Requires a df_engine image built with the clickhouse-exporter feature and a ClickHouse image.",
+            "path": "tools/pipeline_perf_test/test_suites/integration/clickhouse/otap-clickhouse-logs.yaml",
+            "runner": "orchestrator",
+            "test": "OTAP-IN-BATCHED-100K"
+          },
+          "id": "otap-in-batched-100k",
+          "name": "OTAP-IN-BATCHED-100K",
+          "source_identities": [
+            {
+              "format": "github-action-benchmark",
+              "key": {
+                "suite": "ClickHouse OTAP Logs",
+                "test": "OTAP-IN-BATCHED-100K"
+              }
+            }
+          ]
+        },
+        {
+          "dimensions": {},
+          "execution": {
+            "campaigns": [
+              "nightly"
+            ],
+            "local_note": "Requires a df_engine image built with the clickhouse-exporter feature and a ClickHouse image.",
+            "path": "tools/pipeline_perf_test/test_suites/integration/clickhouse/otap-clickhouse-logs.yaml",
+            "runner": "orchestrator",
+            "test": "OTLP-IN-BATCHED-100K"
+          },
+          "id": "otlp-in-batched-100k",
+          "name": "OTLP-IN-BATCHED-100K",
+          "source_identities": [
+            {
+              "format": "github-action-benchmark",
+              "key": {
+                "suite": "ClickHouse OTAP Logs",
+                "test": "OTLP-IN-BATCHED-100K"
+              }
+            }
+          ]
+        },
+        {
+          "dimensions": {},
+          "execution": {
+            "campaigns": [
+              "nightly"
+            ],
+            "local_note": "Requires a df_engine image built with the clickhouse-exporter feature and a ClickHouse image.",
+            "path": "tools/pipeline_perf_test/test_suites/integration/clickhouse/otelcol-clickhouse-logs.yaml",
+            "runner": "orchestrator",
+            "test": "OTELCOL-OTLP-TRANSFORMED-100K"
+          },
+          "id": "otelcol-otlp-transformed-100k",
+          "name": "OTELCOL-OTLP-TRANSFORMED-100K",
+          "source_identities": [
+            {
+              "format": "github-action-benchmark",
+              "key": {
+                "suite": "OTel Collector ClickHouse Logs",
+                "test": "OTELCOL-OTLP-TRANSFORMED-100K"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "DFE and OpenTelemetry Collector filter processor workloads.",
+      "id": "filter",
+      "metric_profiles": [
+        "logs"
+      ],
+      "name": "Filter",
+      "schema_version": 1,
+      "variants": [
+        {
+          "dimensions": {},
+          "execution": {
+            "campaigns": [
+              "nightly"
+            ],
+            "path": "tools/pipeline_perf_test/test_suites/integration/nightly/filter-docker.yaml",
+            "runner": "orchestrator",
+            "test": "OTLP-FILTER-OTLP"
+          },
+          "id": "otlp-filter-otlp",
+          "name": "OTLP-FILTER-OTLP",
+          "source_identities": [
+            {
+              "format": "github-action-benchmark",
+              "key": {
+                "suite": "Nightly - Filter",
+                "test": "OTLP-FILTER-OTLP"
+              }
+            }
+          ]
+        },
+        {
+          "dimensions": {},
+          "execution": {
+            "campaigns": [
+              "nightly"
+            ],
+            "path": "tools/pipeline_perf_test/test_suites/integration/nightly/filter-docker.yaml",
+            "runner": "orchestrator",
+            "test": "OTLP-FILTER-OTAP"
+          },
+          "id": "otlp-filter-otap",
+          "name": "OTLP-FILTER-OTAP",
+          "source_identities": [
+            {
+              "format": "github-action-benchmark",
+              "key": {
+                "suite": "Nightly - Filter",
+                "test": "OTLP-FILTER-OTAP"
+              }
+            }
+          ]
+        },
+        {
+          "dimensions": {},
+          "execution": {
+            "campaigns": [
+              "nightly"
+            ],
+            "path": "tools/pipeline_perf_test/test_suites/integration/nightly/filter-docker.yaml",
+            "runner": "orchestrator",
+            "test": "OTAP-FILTER-OTAP"
+          },
+          "id": "otap-filter-otap",
+          "name": "OTAP-FILTER-OTAP",
+          "source_identities": [
+            {
+              "format": "github-action-benchmark",
+              "key": {
+                "suite": "Nightly - Filter",
+                "test": "OTAP-FILTER-OTAP"
+              }
+            }
+          ]
+        },
+        {
+          "dimensions": {},
+          "execution": {
+            "campaigns": [
+              "nightly"
+            ],
+            "path": "tools/pipeline_perf_test/test_suites/integration/nightly/filter-docker.yaml",
+            "runner": "orchestrator",
+            "test": "OTAP-FILTER-OTLP"
+          },
+          "id": "otap-filter-otlp",
+          "name": "OTAP-FILTER-OTLP",
+          "source_identities": [
+            {
+              "format": "github-action-benchmark",
+              "key": {
+                "suite": "Nightly - Filter",
+                "test": "OTAP-FILTER-OTLP"
+              }
+            }
+          ]
+        },
+        {
+          "dimensions": {},
+          "execution": {
+            "campaigns": [
+              "nightly"
+            ],
+            "path": "tools/pipeline_perf_test/test_suites/integration/nightly/otelcol-docker.yaml",
+            "runner": "orchestrator",
+            "test": "OTLP-FILTER-OTLP (Go Collector)"
+          },
+          "id": "otlp-filter-otlp-go-collector",
+          "name": "OTLP-FILTER-OTLP (Go Collector)",
+          "source_identities": [
+            {
+              "format": "github-action-benchmark",
+              "key": {
+                "suite": "Nightly - OTel Collector",
+                "test": "OTLP-FILTER-OTLP (Go Collector)"
+              }
+            }
+          ]
+        },
+        {
+          "dimensions": {},
+          "execution": {
+            "campaigns": [
+              "nightly"
+            ],
+            "path": "tools/pipeline_perf_test/test_suites/integration/nightly/otelcol-docker.yaml",
+            "runner": "orchestrator",
+            "test": "OTLP-FILTER-OTAP (Go Collector)"
+          },
+          "id": "otlp-filter-otap-go-collector",
+          "name": "OTLP-FILTER-OTAP (Go Collector)",
+          "source_identities": [
+            {
+              "format": "github-action-benchmark",
+              "key": {
+                "suite": "Nightly - OTel Collector",
+                "test": "OTLP-FILTER-OTAP (Go Collector)"
+              }
+            }
+          ]
+        },
+        {
+          "dimensions": {},
+          "execution": {
+            "campaigns": [
+              "nightly"
+            ],
+            "path": "tools/pipeline_perf_test/test_suites/integration/nightly/otelcol-docker.yaml",
+            "runner": "orchestrator",
+            "test": "OTAP-FILTER-OTAP (Go Collector)"
+          },
+          "id": "otap-filter-otap-go-collector",
+          "name": "OTAP-FILTER-OTAP (Go Collector)",
+          "source_identities": [
+            {
+              "format": "github-action-benchmark",
+              "key": {
+                "suite": "Nightly - OTel Collector",
+                "test": "OTAP-FILTER-OTAP (Go Collector)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Idle-state resource usage across allocated core counts.",
+      "id": "idle-state",
+      "metric_profiles": [
+        "idle"
+      ],
+      "name": "Idle State",
+      "schema_version": 1,
+      "variants": [
+        {
+          "dimensions": {
+            "allocated_cores": "16"
+          },
+          "execution": {
+            "campaigns": [
+              "nightly"
+            ],
+            "min_logical_cores": 16,
+            "path": "tools/pipeline_perf_test/test_suites/integration/continuous/idle-state-16cores-docker.yaml",
+            "runner": "orchestrator",
+            "test": "Idle State Baseline - 16 Cores"
+          },
+          "id": "idle-state-16cores-docker",
+          "name": "Idle State 16Cores Docker",
+          "source_identities": [
+            {
+              "format": "github-action-benchmark",
+              "key": {
+                "suite": "Continuous - Idle State Performance - 16 Cores",
+                "test": "Idle State Baseline - 16 Cores"
+              }
+            }
+          ]
+        },
+        {
+          "dimensions": {
+            "allocated_cores": "2"
+          },
+          "execution": {
+            "campaigns": [
+              "nightly"
+            ],
+            "min_logical_cores": 2,
+            "path": "tools/pipeline_perf_test/test_suites/integration/continuous/idle-state-2cores-docker.yaml",
+            "runner": "orchestrator",
+            "test": "Idle State Baseline - 2 Cores"
+          },
+          "id": "idle-state-2cores-docker",
+          "name": "Idle State 2Cores Docker",
+          "source_identities": [
+            {
+              "format": "github-action-benchmark",
+              "key": {
+                "suite": "Continuous - Idle State Performance - 2 Cores",
+                "test": "Idle State Baseline - 2 Cores"
+              }
+            }
+          ]
+        },
+        {
+          "dimensions": {
+            "allocated_cores": "32"
+          },
+          "execution": {
+            "campaigns": [
+              "nightly"
+            ],
+            "local_note": "CPU set 0-31 does not fit the 20-logical-core Docker Desktop VM.",
+            "local_supported": false,
+            "min_logical_cores": 32,
+            "path": "tools/pipeline_perf_test/test_suites/integration/continuous/idle-state-32cores-docker.yaml",
+            "runner": "orchestrator",
+            "test": "Idle State Baseline - 32 Cores"
+          },
+          "id": "idle-state-32cores-docker",
+          "name": "Idle State 32Cores Docker",
+          "source_identities": [
+            {
+              "format": "github-action-benchmark",
+              "key": {
+                "suite": "Continuous - Idle State Performance - 32 Cores",
+                "test": "Idle State Baseline - 32 Cores"
+              }
+            }
+          ]
+        },
+        {
+          "dimensions": {
+            "allocated_cores": "4"
+          },
+          "execution": {
+            "campaigns": [
+              "nightly"
+            ],
+            "min_logical_cores": 4,
+            "path": "tools/pipeline_perf_test/test_suites/integration/continuous/idle-state-4cores-docker.yaml",
+            "runner": "orchestrator",
+            "test": "Idle State Baseline - 4 Cores"
+          },
+          "id": "idle-state-4cores-docker",
+          "name": "Idle State 4Cores Docker",
+          "source_identities": [
+            {
+              "format": "github-action-benchmark",
+              "key": {
+                "suite": "Continuous - Idle State Performance - 4 Cores",
+                "test": "Idle State Baseline - 4 Cores"
+              }
+            }
+          ]
+        },
+        {
+          "dimensions": {
+            "allocated_cores": "8"
+          },
+          "execution": {
+            "campaigns": [
+              "nightly"
+            ],
+            "min_logical_cores": 8,
+            "path": "tools/pipeline_perf_test/test_suites/integration/continuous/idle-state-8cores-docker.yaml",
+            "runner": "orchestrator",
+            "test": "Idle State Baseline - 8 Cores"
+          },
+          "id": "idle-state-8cores-docker",
+          "name": "Idle State 8Cores Docker",
+          "source_identities": [
+            {
+              "format": "github-action-benchmark",
+              "key": {
+                "suite": "Continuous - Idle State Performance - 8 Cores",
+                "test": "Idle State Baseline - 8 Cores"
+              }
+            }
+          ]
+        },
+        {
+          "dimensions": {
+            "allocated_cores": "1"
+          },
+          "execution": {
+            "campaigns": [
+              "nightly"
+            ],
+            "min_logical_cores": 1,
+            "path": "tools/pipeline_perf_test/test_suites/integration/continuous/idle-state-docker.yaml",
+            "runner": "orchestrator",
+            "test": "Idle State Baseline - Single Core"
+          },
+          "id": "idle-state-docker",
+          "name": "Idle State Docker",
+          "source_identities": [
+            {
+              "format": "github-action-benchmark",
+              "key": {
+                "suite": "Continuous - Idle State Performance - Single Core",
+                "test": "Idle State Baseline - Single Core"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Log attribute insertion implementations and parameter sweeps.",
       "id": "log-attribute-insert",
+      "metric_profiles": [
+        "logs"
+      ],
       "name": "Log Attribute Insert",
+      "parameterizations": [
+        {
+          "cases": [
+            {
+              "id": "100k",
+              "label": "100k"
+            },
+            {
+              "id": "200k",
+              "label": "200k"
+            },
+            {
+              "id": "300k",
+              "label": "300k"
+            },
+            {
+              "id": "400k",
+              "label": "400k"
+            },
+            {
+              "id": "600k",
+              "label": "600k"
+            },
+            {
+              "id": "800k",
+              "label": "800k"
+            },
+            {
+              "id": "1000k",
+              "label": "1M"
+            }
+          ],
+          "description": "Generated load-rate sweep.",
+          "id": "multi-rate"
+        },
+        {
+          "cases": [
+            {
+              "id": "batch-256",
+              "label": "256"
+            },
+            {
+              "id": "batch-512",
+              "label": "512"
+            },
+            {
+              "id": "batch-1024",
+              "label": "1024"
+            },
+            {
+              "id": "batch-2048",
+              "label": "2048"
+            },
+            {
+              "id": "batch-4096",
+              "label": "4096"
+            }
+          ],
+          "description": "Processor batch-size sweep.",
+          "id": "multi-batch"
+        },
+        {
+          "cases": [
+            {
+              "id": "transform-1",
+              "label": "1"
+            },
+            {
+              "id": "transform-2",
+              "label": "2"
+            },
+            {
+              "id": "transform-3",
+              "label": "3"
+            },
+            {
+              "id": "transform-4",
+              "label": "4"
+            }
+          ],
+          "description": "Transform-count sweep.",
+          "id": "multi-transform"
+        }
+      ],
       "schema_version": 1,
       "variants": [
         {
           "dimensions": {
             "binary": "dfe",
             "compression": "none",
-            "operation": "insert",
             "processor": "attributes",
-            "protocol": "otap"
+            "protocol": "otap",
+            "signal": "logs"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/dfe/dfe-logs-otap-none-attr-insert.yaml",
+            "runner": "comparison-dashboard"
           },
           "id": "dfe-otap-attributes",
-          "name": "DFE OTAP/Attributes"
+          "name": "DFE OTAP Attr Insert (Logs)"
         },
         {
           "dimensions": {
             "binary": "dfe",
             "compression": "none",
-            "operation": "insert",
+            "processor": "attributes",
+            "protocol": "otap",
+            "signal": "logs"
+          },
+          "execution": {
+            "parameterization": "multi-batch",
+            "path": "tools/comparison_dashboard/suites/dfe/dfe-logs-otap-none-attr-insert-multi-batch.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "dfe-logs-otap-none-attr-insert-multi-batch",
+          "name": "DFE OTAP Attr Insert Multi Batch (Logs)"
+        },
+        {
+          "dimensions": {
+            "binary": "dfe",
+            "compression": "none",
             "processor": "transform",
-            "protocol": "otap"
+            "protocol": "otap",
+            "signal": "logs"
+          },
+          "execution": {
+            "parameterization": "multi-transform",
+            "path": "tools/comparison_dashboard/suites/dfe/dfe-logs-otap-none-attr-insert-multi-transform.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "dfe-logs-otap-none-attr-insert-multi-transform",
+          "name": "DFE OTAP Attr Insert Multi Transform (Logs)"
+        },
+        {
+          "dimensions": {
+            "binary": "dfe",
+            "compression": "none",
+            "processor": "transform",
+            "protocol": "otap",
+            "signal": "logs"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/dfe/dfe-logs-otap-none-transform-insert.yaml",
+            "runner": "comparison-dashboard"
           },
           "id": "dfe-otap-transform",
-          "name": "DFE OTAP/Transform"
+          "name": "DFE OTAP Transform Insert (Logs)"
         },
         {
           "dimensions": {
             "binary": "dfe",
             "compression": "none",
-            "operation": "insert",
+            "processor": "transform",
+            "protocol": "otap",
+            "signal": "logs"
+          },
+          "execution": {
+            "parameterization": "multi-transform",
+            "path": "tools/comparison_dashboard/suites/dfe/dfe-logs-otap-none-transform-insert-multi-transform.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "dfe-logs-otap-none-transform-insert-multi-transform",
+          "name": "DFE OTAP Transform Insert Multi Transform (Logs)"
+        },
+        {
+          "dimensions": {
+            "binary": "dfe",
+            "compression": "none",
             "processor": "attributes",
-            "protocol": "otlp"
+            "protocol": "otlp",
+            "signal": "logs"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/dfe/dfe-logs-otlp-none-attr-insert.yaml",
+            "runner": "comparison-dashboard"
           },
           "id": "dfe-otlp-attributes",
-          "name": "DFE OTLP/Attributes"
+          "name": "DFE OTLP Attr Insert (Logs)"
         },
         {
           "dimensions": {
             "binary": "dfe",
             "compression": "none",
-            "operation": "insert",
+            "processor": "attributes",
+            "protocol": "otlp",
+            "signal": "logs"
+          },
+          "execution": {
+            "parameterization": "multi-batch",
+            "path": "tools/comparison_dashboard/suites/dfe/dfe-logs-otlp-none-attr-insert-multi-batch.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "dfe-logs-otlp-none-attr-insert-multi-batch",
+          "name": "DFE OTLP Attr Insert Multi Batch (Logs)"
+        },
+        {
+          "dimensions": {
+            "binary": "dfe",
+            "compression": "none",
             "processor": "transform",
-            "protocol": "otlp"
+            "protocol": "otlp",
+            "signal": "logs"
+          },
+          "execution": {
+            "parameterization": "multi-transform",
+            "path": "tools/comparison_dashboard/suites/dfe/dfe-logs-otlp-none-attr-insert-multi-transform.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "dfe-logs-otlp-none-attr-insert-multi-transform",
+          "name": "DFE OTLP Attr Insert Multi Transform (Logs)"
+        },
+        {
+          "dimensions": {
+            "binary": "dfe",
+            "compression": "none",
+            "processor": "transform",
+            "protocol": "otlp",
+            "signal": "logs"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/dfe/dfe-logs-otlp-none-transform-insert.yaml",
+            "runner": "comparison-dashboard"
           },
           "id": "dfe-otlp-transform",
-          "name": "DFE OTLP/Transform"
+          "name": "DFE OTLP Transform Insert (Logs)"
         },
         {
           "dimensions": {
-            "binary": "otc",
+            "binary": "dfe",
             "compression": "none",
-            "operation": "insert",
-            "processor": "attributes",
-            "protocol": "otlp"
-          },
-          "id": "otc-otlp-attributes",
-          "name": "OTC OTLP/Attributes"
-        },
-        {
-          "dimensions": {
-            "binary": "otc",
-            "compression": "none",
-            "operation": "insert",
             "processor": "transform",
-            "protocol": "otlp"
+            "protocol": "otlp",
+            "signal": "logs"
           },
-          "id": "otc-otlp-transform",
-          "name": "OTC OTLP/Transform"
+          "execution": {
+            "parameterization": "multi-transform",
+            "path": "tools/comparison_dashboard/suites/dfe/dfe-logs-otlp-none-transform-insert-multi-transform.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "dfe-logs-otlp-none-transform-insert-multi-transform",
+          "name": "DFE OTLP Transform Insert Multi Transform (Logs)"
         },
         {
           "dimensions": {
             "binary": "fbit",
             "compression": "none",
-            "operation": "insert",
             "processor": "modify",
-            "protocol": "otlp"
+            "protocol": "otlp",
+            "signal": "logs"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/fbit/fbit-logs-otlp-none-attr-insert.yaml",
+            "runner": "comparison-dashboard"
           },
           "id": "fbit-otlp-modify",
-          "name": "Fluent Bit OTLP/Modify"
+          "name": "FB OTLP Attr Insert (Logs)"
+        },
+        {
+          "dimensions": {
+            "binary": "fbit",
+            "compression": "none",
+            "processor": "modify",
+            "protocol": "otlp",
+            "signal": "logs"
+          },
+          "execution": {
+            "parameterization": "multi-batch",
+            "path": "tools/comparison_dashboard/suites/fbit/fbit-logs-otlp-none-attr-insert-multi-batch.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "fbit-logs-otlp-none-attr-insert-multi-batch",
+          "name": "FB OTLP Attr Insert Multi Batch (Logs)"
+        },
+        {
+          "dimensions": {
+            "binary": "fbit",
+            "compression": "none",
+            "processor": "modify",
+            "protocol": "otlp",
+            "signal": "logs"
+          },
+          "execution": {
+            "parameterization": "multi-transform",
+            "path": "tools/comparison_dashboard/suites/fbit/fbit-logs-otlp-none-attr-insert-multi-transform.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "fbit-logs-otlp-none-attr-insert-multi-transform",
+          "name": "FB OTLP Attr Insert Multi Transform (Logs)"
+        },
+        {
+          "dimensions": {
+            "binary": "otc",
+            "compression": "none",
+            "processor": "transform",
+            "protocol": "otap",
+            "signal": "logs"
+          },
+          "execution": {
+            "parameterization": "multi-transform",
+            "path": "tools/comparison_dashboard/suites/otc/otc-logs-otap-none-attr-insert-multi-transform.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "otc-logs-otap-none-attr-insert-multi-transform",
+          "name": "OTC OTAP Attr Insert Multi Transform (Logs)"
+        },
+        {
+          "dimensions": {
+            "binary": "otc",
+            "compression": "none",
+            "processor": "attributes",
+            "protocol": "otlp",
+            "signal": "logs"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/otc/otc-logs-otlp-none-attr-insert.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "otc-otlp-attributes",
+          "name": "OTC OTLP Attr Insert (Logs)"
+        },
+        {
+          "dimensions": {
+            "binary": "otc",
+            "compression": "none",
+            "processor": "attributes",
+            "protocol": "otlp",
+            "signal": "logs"
+          },
+          "execution": {
+            "parameterization": "multi-batch",
+            "path": "tools/comparison_dashboard/suites/otc/otc-logs-otlp-none-attr-insert-multi-batch.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "otc-logs-otlp-none-attr-insert-multi-batch",
+          "name": "OTC OTLP Attr Insert Multi Batch (Logs)"
+        },
+        {
+          "dimensions": {
+            "binary": "otc",
+            "compression": "none",
+            "processor": "transform",
+            "protocol": "otlp",
+            "signal": "logs"
+          },
+          "execution": {
+            "parameterization": "multi-transform",
+            "path": "tools/comparison_dashboard/suites/otc/otc-logs-otlp-none-attr-insert-multi-transform.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "otc-logs-otlp-none-attr-insert-multi-transform",
+          "name": "OTC OTLP Attr Insert Multi Transform (Logs)"
+        },
+        {
+          "dimensions": {
+            "binary": "otc",
+            "compression": "none",
+            "processor": "transform",
+            "protocol": "otlp",
+            "signal": "logs"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/otc/otc-logs-otlp-none-transform-insert.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "otc-otlp-transform",
+          "name": "OTC OTLP Transform Insert (Logs)"
+        },
+        {
+          "dimensions": {
+            "binary": "otc",
+            "compression": "none",
+            "processor": "transform",
+            "protocol": "otlp",
+            "signal": "logs"
+          },
+          "execution": {
+            "parameterization": "multi-transform",
+            "path": "tools/comparison_dashboard/suites/otc/otc-logs-otlp-none-transform-insert-multi-transform.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "otc-logs-otlp-none-transform-insert-multi-transform",
+          "name": "OTC OTLP Transform Insert Multi Transform (Logs)"
         }
       ]
     },
     {
-      "description": "Baseline log pipelines without attribute mutation.",
-      "id": "log-baseline",
-      "name": "Log Baseline",
+      "description": "Log attribute rename implementations and parameter sweeps.",
+      "id": "log-attribute-rename",
+      "metric_profiles": [
+        "logs"
+      ],
+      "name": "Log Attribute Rename",
+      "parameterizations": [
+        {
+          "cases": [
+            {
+              "id": "100k",
+              "label": "100k"
+            },
+            {
+              "id": "200k",
+              "label": "200k"
+            },
+            {
+              "id": "300k",
+              "label": "300k"
+            },
+            {
+              "id": "400k",
+              "label": "400k"
+            },
+            {
+              "id": "600k",
+              "label": "600k"
+            },
+            {
+              "id": "800k",
+              "label": "800k"
+            },
+            {
+              "id": "1000k",
+              "label": "1M"
+            }
+          ],
+          "description": "Generated load-rate sweep.",
+          "id": "multi-rate"
+        },
+        {
+          "cases": [
+            {
+              "id": "batch-256",
+              "label": "256"
+            },
+            {
+              "id": "batch-512",
+              "label": "512"
+            },
+            {
+              "id": "batch-1024",
+              "label": "1024"
+            },
+            {
+              "id": "batch-2048",
+              "label": "2048"
+            },
+            {
+              "id": "batch-4096",
+              "label": "4096"
+            }
+          ],
+          "description": "Processor batch-size sweep.",
+          "id": "multi-batch"
+        },
+        {
+          "cases": [
+            {
+              "id": "transform-1",
+              "label": "1"
+            },
+            {
+              "id": "transform-2",
+              "label": "2"
+            },
+            {
+              "id": "transform-3",
+              "label": "3"
+            },
+            {
+              "id": "transform-4",
+              "label": "4"
+            }
+          ],
+          "description": "Transform-count sweep.",
+          "id": "multi-transform"
+        }
+      ],
       "schema_version": 1,
       "variants": [
         {
           "dimensions": {
             "binary": "dfe",
             "compression": "none",
-            "operation": "baseline",
-            "protocol": "otap"
+            "processor": "attributes",
+            "protocol": "otap",
+            "signal": "logs"
           },
-          "id": "dfe-otap-none",
-          "name": "DFE OTAP/None"
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/dfe/dfe-logs-otap-none-attr-rename.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "dfe-logs-otap-none-attr-rename",
+          "name": "DFE OTAP Attr Rename (Logs)"
         },
         {
           "dimensions": {
             "binary": "dfe",
             "compression": "none",
-            "operation": "baseline",
-            "protocol": "otlp"
+            "processor": "attributes",
+            "protocol": "otap",
+            "signal": "logs"
           },
-          "id": "dfe-otlp-none",
-          "name": "DFE OTLP/None"
+          "execution": {
+            "parameterization": "multi-batch",
+            "path": "tools/comparison_dashboard/suites/dfe/dfe-logs-otap-none-attr-rename-multi-batch.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "dfe-logs-otap-none-attr-rename-multi-batch",
+          "name": "DFE OTAP Attr Rename Multi Batch (Logs)"
+        },
+        {
+          "dimensions": {
+            "binary": "dfe",
+            "compression": "none",
+            "processor": "transform",
+            "protocol": "otap",
+            "signal": "logs"
+          },
+          "execution": {
+            "parameterization": "multi-transform",
+            "path": "tools/comparison_dashboard/suites/dfe/dfe-logs-otap-none-attr-rename-multi-transform.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "dfe-logs-otap-none-attr-rename-multi-transform",
+          "name": "DFE OTAP Attr Rename Multi Transform (Logs)"
+        },
+        {
+          "dimensions": {
+            "binary": "dfe",
+            "compression": "none",
+            "processor": "transform",
+            "protocol": "otap",
+            "signal": "logs"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/dfe/dfe-logs-otap-none-transform-rename.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "dfe-logs-otap-none-transform-rename",
+          "name": "DFE OTAP Transform Rename (Logs)"
+        },
+        {
+          "dimensions": {
+            "binary": "dfe",
+            "compression": "none",
+            "processor": "transform",
+            "protocol": "otap",
+            "signal": "logs"
+          },
+          "execution": {
+            "parameterization": "multi-transform",
+            "path": "tools/comparison_dashboard/suites/dfe/dfe-logs-otap-none-transform-rename-multi-transform.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "dfe-logs-otap-none-transform-rename-multi-transform",
+          "name": "DFE OTAP Transform Rename Multi Transform (Logs)"
+        },
+        {
+          "dimensions": {
+            "binary": "dfe",
+            "compression": "none",
+            "processor": "attributes",
+            "protocol": "otlp",
+            "signal": "logs"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/dfe/dfe-logs-otlp-none-attr-rename.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "dfe-logs-otlp-none-attr-rename",
+          "name": "DFE OTLP Attr Rename (Logs)"
+        },
+        {
+          "dimensions": {
+            "binary": "dfe",
+            "compression": "none",
+            "processor": "attributes",
+            "protocol": "otlp",
+            "signal": "logs"
+          },
+          "execution": {
+            "parameterization": "multi-batch",
+            "path": "tools/comparison_dashboard/suites/dfe/dfe-logs-otlp-none-attr-rename-multi-batch.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "dfe-logs-otlp-none-attr-rename-multi-batch",
+          "name": "DFE OTLP Attr Rename Multi Batch (Logs)"
+        },
+        {
+          "dimensions": {
+            "binary": "dfe",
+            "compression": "none",
+            "processor": "transform",
+            "protocol": "otlp",
+            "signal": "logs"
+          },
+          "execution": {
+            "parameterization": "multi-transform",
+            "path": "tools/comparison_dashboard/suites/dfe/dfe-logs-otlp-none-attr-rename-multi-transform.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "dfe-logs-otlp-none-attr-rename-multi-transform",
+          "name": "DFE OTLP Attr Rename Multi Transform (Logs)"
+        },
+        {
+          "dimensions": {
+            "binary": "dfe",
+            "compression": "none",
+            "processor": "transform",
+            "protocol": "otlp",
+            "signal": "logs"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/dfe/dfe-logs-otlp-none-transform-rename.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "dfe-logs-otlp-none-transform-rename",
+          "name": "DFE OTLP Transform Rename (Logs)"
+        },
+        {
+          "dimensions": {
+            "binary": "dfe",
+            "compression": "none",
+            "processor": "transform",
+            "protocol": "otlp",
+            "signal": "logs"
+          },
+          "execution": {
+            "parameterization": "multi-transform",
+            "path": "tools/comparison_dashboard/suites/dfe/dfe-logs-otlp-none-transform-rename-multi-transform.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "dfe-logs-otlp-none-transform-rename-multi-transform",
+          "name": "DFE OTLP Transform Rename Multi Transform (Logs)"
+        },
+        {
+          "dimensions": {
+            "binary": "fbit",
+            "compression": "none",
+            "processor": "modify",
+            "protocol": "otlp",
+            "signal": "logs"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/fbit/fbit-logs-otlp-none-attr-rename.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "fbit-logs-otlp-none-attr-rename",
+          "name": "FB OTLP Attr Rename (Logs)"
+        },
+        {
+          "dimensions": {
+            "binary": "fbit",
+            "compression": "none",
+            "processor": "modify",
+            "protocol": "otlp",
+            "signal": "logs"
+          },
+          "execution": {
+            "parameterization": "multi-batch",
+            "path": "tools/comparison_dashboard/suites/fbit/fbit-logs-otlp-none-attr-rename-multi-batch.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "fbit-logs-otlp-none-attr-rename-multi-batch",
+          "name": "FB OTLP Attr Rename Multi Batch (Logs)"
+        },
+        {
+          "dimensions": {
+            "binary": "fbit",
+            "compression": "none",
+            "processor": "modify",
+            "protocol": "otlp",
+            "signal": "logs"
+          },
+          "execution": {
+            "parameterization": "multi-transform",
+            "path": "tools/comparison_dashboard/suites/fbit/fbit-logs-otlp-none-attr-rename-multi-transform.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "fbit-logs-otlp-none-attr-rename-multi-transform",
+          "name": "FB OTLP Attr Rename Multi Transform (Logs)"
+        },
+        {
+          "dimensions": {
+            "binary": "otc",
+            "compression": "none",
+            "processor": "transform",
+            "protocol": "otap",
+            "signal": "logs"
+          },
+          "execution": {
+            "parameterization": "multi-transform",
+            "path": "tools/comparison_dashboard/suites/otc/otc-logs-otap-none-attr-rename-multi-transform.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "otc-logs-otap-none-attr-rename-multi-transform",
+          "name": "OTC OTAP Attr Rename Multi Transform (Logs)"
+        },
+        {
+          "dimensions": {
+            "binary": "otc",
+            "compression": "none",
+            "processor": "attributes",
+            "protocol": "otlp",
+            "signal": "logs"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/otc/otc-logs-otlp-none-attr-rename.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "otc-logs-otlp-none-attr-rename",
+          "name": "OTC OTLP Attr Rename (Logs)"
+        },
+        {
+          "dimensions": {
+            "binary": "otc",
+            "compression": "none",
+            "processor": "attributes",
+            "protocol": "otlp",
+            "signal": "logs"
+          },
+          "execution": {
+            "parameterization": "multi-batch",
+            "path": "tools/comparison_dashboard/suites/otc/otc-logs-otlp-none-attr-rename-multi-batch.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "otc-logs-otlp-none-attr-rename-multi-batch",
+          "name": "OTC OTLP Attr Rename Multi Batch (Logs)"
+        },
+        {
+          "dimensions": {
+            "binary": "otc",
+            "compression": "none",
+            "processor": "transform",
+            "protocol": "otlp",
+            "signal": "logs"
+          },
+          "execution": {
+            "parameterization": "multi-transform",
+            "path": "tools/comparison_dashboard/suites/otc/otc-logs-otlp-none-attr-rename-multi-transform.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "otc-logs-otlp-none-attr-rename-multi-transform",
+          "name": "OTC OTLP Attr Rename Multi Transform (Logs)"
+        },
+        {
+          "dimensions": {
+            "binary": "otc",
+            "compression": "none",
+            "processor": "transform",
+            "protocol": "otlp",
+            "signal": "logs"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/otc/otc-logs-otlp-none-transform-rename.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "otc-logs-otlp-none-transform-rename",
+          "name": "OTC OTLP Transform Rename (Logs)"
+        },
+        {
+          "dimensions": {
+            "binary": "otc",
+            "compression": "none",
+            "processor": "transform",
+            "protocol": "otlp",
+            "signal": "logs"
+          },
+          "execution": {
+            "parameterization": "multi-transform",
+            "path": "tools/comparison_dashboard/suites/otc/otc-logs-otlp-none-transform-rename-multi-transform.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "otc-logs-otlp-none-transform-rename-multi-transform",
+          "name": "OTC OTLP Transform Rename Multi Transform (Logs)"
+        }
+      ]
+    },
+    {
+      "description": "Baseline log pipelines across engines, protocols, and compression.",
+      "id": "log-baseline",
+      "metric_profiles": [
+        "logs"
+      ],
+      "name": "Log Baseline",
+      "parameterizations": [
+        {
+          "cases": [
+            {
+              "id": "100k",
+              "label": "100k"
+            },
+            {
+              "id": "200k",
+              "label": "200k"
+            },
+            {
+              "id": "300k",
+              "label": "300k"
+            },
+            {
+              "id": "400k",
+              "label": "400k"
+            },
+            {
+              "id": "600k",
+              "label": "600k"
+            },
+            {
+              "id": "800k",
+              "label": "800k"
+            },
+            {
+              "id": "1000k",
+              "label": "1M"
+            }
+          ],
+          "description": "Generated load-rate sweep.",
+          "id": "multi-rate"
+        }
+      ],
+      "schema_version": 1,
+      "variants": [
+        {
+          "dimensions": {
+            "binary": "dfe",
+            "compression": "gzip",
+            "protocol": "otap",
+            "signal": "logs"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/dfe/dfe-logs-otap-gzip-baseline.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "dfe-logs-otap-gzip-baseline",
+          "name": "DFE OTAP Baseline w/ Gzip (Logs)"
+        },
+        {
+          "dimensions": {
+            "binary": "dfe",
+            "compression": "none",
+            "protocol": "otap",
+            "signal": "logs"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/dfe/dfe-logs-otap-none-baseline.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "dfe-otap-none",
+          "name": "DFE OTAP Baseline (Logs)"
+        },
+        {
+          "dimensions": {
+            "binary": "dfe",
+            "compression": "zstd",
+            "protocol": "otap",
+            "signal": "logs"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/dfe/dfe-logs-otap-zstd-baseline.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "dfe-logs-otap-zstd-baseline",
+          "name": "DFE OTAP Baseline w/ Zstd (Logs)"
         },
         {
           "dimensions": {
             "binary": "dfe",
             "compression": "gzip",
-            "operation": "baseline",
-            "protocol": "otlp"
+            "protocol": "otlp",
+            "signal": "logs"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/dfe/dfe-logs-otlp-gzip-baseline.yaml",
+            "runner": "comparison-dashboard"
           },
           "id": "dfe-otlp-gzip",
-          "name": "DFE OTLP/Gzip"
+          "name": "DFE OTLP Baseline w/ Gzip (Logs)"
         },
         {
           "dimensions": {
-            "binary": "otc",
+            "binary": "dfe",
             "compression": "none",
-            "operation": "baseline",
-            "protocol": "otlp"
+            "protocol": "otlp",
+            "signal": "logs"
           },
-          "id": "otc-otlp-none",
-          "name": "OTC OTLP/None"
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/dfe/dfe-logs-otlp-none-baseline.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "dfe-otlp-none",
+          "name": "DFE OTLP Baseline (Logs)"
+        },
+        {
+          "dimensions": {
+            "binary": "dfe",
+            "compression": "zstd",
+            "protocol": "otlp",
+            "signal": "logs"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/dfe/dfe-logs-otlp-zstd-baseline.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "dfe-logs-otlp-zstd-baseline",
+          "name": "DFE OTLP Baseline w/ Zstd (Logs)"
+        },
+        {
+          "dimensions": {
+            "binary": "dfe",
+            "compression": "gzip",
+            "protocol": "otlphttp",
+            "signal": "logs"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/dfe/dfe-logs-otlphttp-gzip-baseline.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "dfe-logs-otlphttp-gzip-baseline",
+          "name": "DFE OTLP/HTTP Baseline w/ Gzip (Logs)"
+        },
+        {
+          "dimensions": {
+            "binary": "dfe",
+            "compression": "none",
+            "protocol": "otlphttp",
+            "signal": "logs"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/dfe/dfe-logs-otlphttp-none-baseline.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "dfe-logs-otlphttp-none-baseline",
+          "name": "DFE OTLP/HTTP Baseline (Logs)"
+        },
+        {
+          "dimensions": {
+            "binary": "dfe",
+            "compression": "zstd",
+            "protocol": "otlphttp",
+            "signal": "logs"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/dfe/dfe-logs-otlphttp-zstd-baseline.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "dfe-logs-otlphttp-zstd-baseline",
+          "name": "DFE OTLP/HTTP Baseline w/ Zstd (Logs)"
         },
         {
           "dimensions": {
             "binary": "fbit",
             "compression": "none",
-            "operation": "baseline",
-            "protocol": "otlp"
+            "protocol": "otlp",
+            "signal": "logs"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/fbit/fbit-logs-otlp-none-baseline.yaml",
+            "runner": "comparison-dashboard"
           },
           "id": "fbit-otlp-none",
-          "name": "Fluent Bit OTLP/None"
+          "name": "FB OTLP Baseline (Logs, None)"
+        },
+        {
+          "dimensions": {
+            "binary": "fbit",
+            "compression": "gzip",
+            "protocol": "otlphttp",
+            "signal": "logs"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/fbit/fbit-logs-otlphttp-gzip-baseline.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "fbit-logs-otlphttp-gzip-baseline",
+          "name": "FB OTLP/HTTP Baseline (Logs, Gzip)"
+        },
+        {
+          "dimensions": {
+            "binary": "fbit",
+            "compression": "none",
+            "protocol": "otlphttp",
+            "signal": "logs"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/fbit/fbit-logs-otlphttp-none-baseline.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "fbit-logs-otlphttp-none-baseline",
+          "name": "FB OTLP/HTTP Baseline (Logs, None)"
+        },
+        {
+          "dimensions": {
+            "binary": "fbit",
+            "compression": "zstd",
+            "protocol": "otlphttp",
+            "signal": "logs"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/fbit/fbit-logs-otlphttp-zstd-baseline.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "fbit-logs-otlphttp-zstd-baseline",
+          "name": "FB OTLP/HTTP Baseline (Logs, Zstd)"
+        },
+        {
+          "dimensions": {
+            "binary": "otc",
+            "compression": "gzip",
+            "protocol": "otap",
+            "signal": "logs"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/otc/otc-logs-otap-gzip-baseline.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "otc-logs-otap-gzip-baseline",
+          "name": "OTC OTAP Baseline w/ Gzip (Logs)"
+        },
+        {
+          "dimensions": {
+            "binary": "otc",
+            "compression": "none",
+            "protocol": "otap",
+            "signal": "logs"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/otc/otc-logs-otap-none-baseline.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "otc-logs-otap-none-baseline",
+          "name": "OTC OTAP Baseline (Logs)"
+        },
+        {
+          "dimensions": {
+            "binary": "otc",
+            "compression": "zstd",
+            "protocol": "otap",
+            "signal": "logs"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/otc/otc-logs-otap-zstd-baseline.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "otc-logs-otap-zstd-baseline",
+          "name": "OTC OTAP Baseline w/ Zstd (Logs)"
+        },
+        {
+          "dimensions": {
+            "binary": "otc",
+            "compression": "gzip",
+            "protocol": "otlp",
+            "signal": "logs"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/otc/otc-logs-otlp-gzip-baseline.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "otc-logs-otlp-gzip-baseline",
+          "name": "OTC OTLP Baseline w/ Gzip (Logs)"
+        },
+        {
+          "dimensions": {
+            "binary": "otc",
+            "compression": "none",
+            "protocol": "otlp",
+            "signal": "logs"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/otc/otc-logs-otlp-none-baseline.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "otc-otlp-none",
+          "name": "OTC OTLP Baseline (Logs)"
+        },
+        {
+          "dimensions": {
+            "binary": "otc",
+            "compression": "zstd",
+            "protocol": "otlp",
+            "signal": "logs"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/otc/otc-logs-otlp-zstd-baseline.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "otc-logs-otlp-zstd-baseline",
+          "name": "OTC OTLP Baseline w/ Zstd (Logs)"
+        },
+        {
+          "dimensions": {
+            "binary": "otc",
+            "compression": "none",
+            "protocol": "otlphttp",
+            "signal": "logs"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/otc/otc-logs-otlphttp-none-baseline.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "otc-logs-otlphttp-none-baseline",
+          "name": "OTC OTLP/HTTP Baseline (Logs)"
+        },
+        {
+          "dimensions": {
+            "binary": "rotel",
+            "compression": "gzip",
+            "protocol": "otlp",
+            "signal": "logs"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/rotel/rotel-logs-otlp-gzip-baseline.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "rotel-logs-otlp-gzip-baseline",
+          "name": "Rotel OTLP Baseline w/ Gzip (Logs)"
+        },
+        {
+          "dimensions": {
+            "binary": "rotel",
+            "compression": "gzip",
+            "protocol": "otlphttp",
+            "signal": "logs"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/rotel/rotel-logs-otlphttp-gzip-baseline.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "rotel-logs-otlphttp-gzip-baseline",
+          "name": "Rotel OTLP/HTTP Baseline w/ Gzip (Logs)"
+        }
+      ]
+    },
+    {
+      "description": "Baseline metric pipelines across engines, protocols, and compression.",
+      "id": "metric-baseline",
+      "metric_profiles": [
+        "comparison-metrics"
+      ],
+      "name": "Metric Baseline",
+      "parameterizations": [
+        {
+          "cases": [
+            {
+              "id": "100k",
+              "label": "100k"
+            },
+            {
+              "id": "200k",
+              "label": "200k"
+            },
+            {
+              "id": "300k",
+              "label": "300k"
+            },
+            {
+              "id": "400k",
+              "label": "400k"
+            },
+            {
+              "id": "600k",
+              "label": "600k"
+            },
+            {
+              "id": "800k",
+              "label": "800k"
+            },
+            {
+              "id": "1000k",
+              "label": "1M"
+            }
+          ],
+          "description": "Generated load-rate sweep.",
+          "id": "multi-rate"
+        }
+      ],
+      "schema_version": 1,
+      "variants": [
+        {
+          "dimensions": {
+            "binary": "dfe",
+            "compression": "gzip",
+            "protocol": "otap",
+            "signal": "metrics"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/dfe/dfe-metrics-otap-gzip-baseline.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "dfe-metrics-otap-gzip-baseline",
+          "name": "DFE OTAP Baseline w/ Gzip (Metrics)"
+        },
+        {
+          "dimensions": {
+            "binary": "dfe",
+            "compression": "none",
+            "protocol": "otap",
+            "signal": "metrics"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/dfe/dfe-metrics-otap-none-baseline.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "dfe-metrics-otap-none-baseline",
+          "name": "DFE OTAP Baseline (Metrics)"
+        },
+        {
+          "dimensions": {
+            "binary": "dfe",
+            "compression": "zstd",
+            "protocol": "otap",
+            "signal": "metrics"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/dfe/dfe-metrics-otap-zstd-baseline.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "dfe-metrics-otap-zstd-baseline",
+          "name": "DFE OTAP Baseline w/ Zstd (Metrics)"
+        },
+        {
+          "dimensions": {
+            "binary": "dfe",
+            "compression": "gzip",
+            "protocol": "otlp",
+            "signal": "metrics"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/dfe/dfe-metrics-otlp-gzip-baseline.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "dfe-metrics-otlp-gzip-baseline",
+          "name": "DFE OTLP Baseline w/ Gzip (Metrics)"
+        },
+        {
+          "dimensions": {
+            "binary": "dfe",
+            "compression": "none",
+            "protocol": "otlp",
+            "signal": "metrics"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/dfe/dfe-metrics-otlp-none-baseline.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "dfe-metrics-otlp-none-baseline",
+          "name": "DFE OTLP Baseline (Metrics)"
+        },
+        {
+          "dimensions": {
+            "binary": "dfe",
+            "compression": "zstd",
+            "protocol": "otlp",
+            "signal": "metrics"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/dfe/dfe-metrics-otlp-zstd-baseline.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "dfe-metrics-otlp-zstd-baseline",
+          "name": "DFE OTLP Baseline w/ Zstd (Metrics)"
+        },
+        {
+          "dimensions": {
+            "binary": "dfe",
+            "compression": "gzip",
+            "protocol": "otlphttp",
+            "signal": "metrics"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/dfe/dfe-metrics-otlphttp-gzip-baseline.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "dfe-metrics-otlphttp-gzip-baseline",
+          "name": "DFE OTLP/HTTP Baseline w/ Gzip (Metrics)"
+        },
+        {
+          "dimensions": {
+            "binary": "dfe",
+            "compression": "none",
+            "protocol": "otlphttp",
+            "signal": "metrics"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/dfe/dfe-metrics-otlphttp-none-baseline.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "dfe-metrics-otlphttp-none-baseline",
+          "name": "DFE OTLP/HTTP Baseline (Metrics)"
+        },
+        {
+          "dimensions": {
+            "binary": "dfe",
+            "compression": "zstd",
+            "protocol": "otlphttp",
+            "signal": "metrics"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/dfe/dfe-metrics-otlphttp-zstd-baseline.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "dfe-metrics-otlphttp-zstd-baseline",
+          "name": "DFE OTLP/HTTP Baseline w/ Zstd (Metrics)"
+        },
+        {
+          "dimensions": {
+            "binary": "otc",
+            "compression": "gzip",
+            "protocol": "otap",
+            "signal": "metrics"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/otc/otc-metrics-otap-gzip-baseline.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "otc-metrics-otap-gzip-baseline",
+          "name": "OTC OTAP Baseline w/ Gzip (Metrics)"
+        },
+        {
+          "dimensions": {
+            "binary": "otc",
+            "compression": "none",
+            "protocol": "otap",
+            "signal": "metrics"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/otc/otc-metrics-otap-none-baseline.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "otc-metrics-otap-none-baseline",
+          "name": "OTC OTAP Baseline (Metrics)"
+        },
+        {
+          "dimensions": {
+            "binary": "otc",
+            "compression": "zstd",
+            "protocol": "otap",
+            "signal": "metrics"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/otc/otc-metrics-otap-zstd-baseline.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "otc-metrics-otap-zstd-baseline",
+          "name": "OTC OTAP Baseline w/ Zstd (Metrics)"
+        },
+        {
+          "dimensions": {
+            "binary": "otc",
+            "compression": "gzip",
+            "protocol": "otlp",
+            "signal": "metrics"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/otc/otc-metrics-otlp-gzip-baseline.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "otc-metrics-otlp-gzip-baseline",
+          "name": "OTC OTLP Baseline w/ Gzip (Metrics)"
+        },
+        {
+          "dimensions": {
+            "binary": "otc",
+            "compression": "none",
+            "protocol": "otlp",
+            "signal": "metrics"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/otc/otc-metrics-otlp-none-baseline.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "otc-metrics-otlp-none-baseline",
+          "name": "OTC OTLP Baseline (Metrics)"
+        },
+        {
+          "dimensions": {
+            "binary": "otc",
+            "compression": "zstd",
+            "protocol": "otlp",
+            "signal": "metrics"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/otc/otc-metrics-otlp-zstd-baseline.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "otc-metrics-otlp-zstd-baseline",
+          "name": "OTC OTLP Baseline w/ Zstd (Metrics)"
+        },
+        {
+          "dimensions": {
+            "binary": "otc",
+            "compression": "none",
+            "protocol": "otlphttp",
+            "signal": "metrics"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/otc/otc-metrics-otlphttp-none-baseline.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "otc-metrics-otlphttp-none-baseline",
+          "name": "OTC OTLP/HTTP Baseline (Metrics)"
+        },
+        {
+          "dimensions": {
+            "binary": "rotel",
+            "compression": "gzip",
+            "protocol": "otlp",
+            "signal": "metrics"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/rotel/rotel-metrics-otlp-gzip-baseline.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "rotel-metrics-otlp-gzip-baseline",
+          "name": "Rotel OTLP Baseline w/ Gzip (Metrics)"
+        },
+        {
+          "dimensions": {
+            "binary": "rotel",
+            "compression": "gzip",
+            "protocol": "otlphttp",
+            "signal": "metrics"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/rotel/rotel-metrics-otlphttp-gzip-baseline.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "rotel-metrics-otlphttp-gzip-baseline",
+          "name": "Rotel OTLP/HTTP Baseline w/ Gzip (Metrics)"
+        }
+      ]
+    },
+    {
+      "description": "Unbounded OTLP and OTAP passthrough throughput workloads.",
+      "id": "passthrough",
+      "metric_profiles": [
+        "logs"
+      ],
+      "name": "Passthrough",
+      "schema_version": 1,
+      "variants": [
+        {
+          "dimensions": {},
+          "execution": {
+            "campaigns": [
+              "nightly"
+            ],
+            "path": "tools/pipeline_perf_test/test_suites/integration/continuous/passthrough-otap.yaml",
+            "runner": "orchestrator",
+            "test": "OTAP-OTAP"
+          },
+          "id": "passthrough-otap",
+          "name": "Passthrough Otap",
+          "source_identities": [
+            {
+              "format": "github-action-benchmark",
+              "key": {
+                "suite": "Continuous - Passthrough OTAP",
+                "test": "OTAP-OTAP"
+              }
+            }
+          ]
+        },
+        {
+          "dimensions": {},
+          "execution": {
+            "campaigns": [
+              "nightly"
+            ],
+            "path": "tools/pipeline_perf_test/test_suites/integration/continuous/passthrough.yaml",
+            "runner": "orchestrator",
+            "test": "OTLP-OTLP"
+          },
+          "id": "passthrough",
+          "name": "Passthrough",
+          "source_identities": [
+            {
+              "format": "github-action-benchmark",
+              "key": {
+                "suite": "Continuous - Passthrough",
+                "test": "OTLP-OTLP"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Maximum-throughput and multi-core scaling workloads; scaling efficiency is derived from these results.",
+      "id": "saturation",
+      "metric_profiles": [
+        "logs"
+      ],
+      "name": "Saturation",
+      "schema_version": 1,
+      "variants": [
+        {
+          "dimensions": {
+            "engine_cores": "16",
+            "protocol": "otlp"
+          },
+          "execution": {
+            "campaigns": [
+              "nightly"
+            ],
+            "local_note": "NUMA-specific CPU sets start at CPU 32 and cannot run unchanged in the 20-logical-core Docker Desktop VM.",
+            "local_supported": false,
+            "path": "tools/pipeline_perf_test/test_suites/integration/continuous/saturation-16cores.yaml",
+            "runner": "orchestrator",
+            "test": "OTLP-ATTR-OTLP"
+          },
+          "id": "saturation-16cores",
+          "name": "Saturation 16Cores",
+          "source_identities": [
+            {
+              "format": "github-action-benchmark",
+              "key": {
+                "suite": "Continuous - Saturation - 16 Core(s)",
+                "test": "OTLP-ATTR-OTLP"
+              }
+            }
+          ]
+        },
+        {
+          "dimensions": {
+            "engine_cores": "1",
+            "protocol": "otlp"
+          },
+          "execution": {
+            "campaigns": [
+              "nightly"
+            ],
+            "local_note": "NUMA-specific CPU sets start at CPU 32 and cannot run unchanged in the 20-logical-core Docker Desktop VM.",
+            "local_supported": false,
+            "path": "tools/pipeline_perf_test/test_suites/integration/continuous/saturation-1core.yaml",
+            "runner": "orchestrator",
+            "test": "OTLP-ATTR-OTLP"
+          },
+          "id": "saturation-1core",
+          "name": "Saturation 1Core",
+          "source_identities": [
+            {
+              "format": "github-action-benchmark",
+              "key": {
+                "suite": "Continuous - Saturation - 1 Core(s)",
+                "test": "OTLP-ATTR-OTLP"
+              }
+            }
+          ]
+        },
+        {
+          "dimensions": {
+            "engine_cores": "2",
+            "protocol": "otlp"
+          },
+          "execution": {
+            "campaigns": [
+              "nightly"
+            ],
+            "local_note": "NUMA-specific CPU sets start at CPU 32 and cannot run unchanged in the 20-logical-core Docker Desktop VM.",
+            "local_supported": false,
+            "path": "tools/pipeline_perf_test/test_suites/integration/continuous/saturation-2cores.yaml",
+            "runner": "orchestrator",
+            "test": "OTLP-ATTR-OTLP"
+          },
+          "id": "saturation-2cores",
+          "name": "Saturation 2Cores",
+          "source_identities": [
+            {
+              "format": "github-action-benchmark",
+              "key": {
+                "suite": "Continuous - Saturation - 2 Core(s)",
+                "test": "OTLP-ATTR-OTLP"
+              }
+            }
+          ]
+        },
+        {
+          "dimensions": {
+            "engine_cores": "4",
+            "protocol": "otlp"
+          },
+          "execution": {
+            "campaigns": [
+              "nightly"
+            ],
+            "local_note": "NUMA-specific CPU sets start at CPU 32 and cannot run unchanged in the 20-logical-core Docker Desktop VM.",
+            "local_supported": false,
+            "path": "tools/pipeline_perf_test/test_suites/integration/continuous/saturation-4cores.yaml",
+            "runner": "orchestrator",
+            "test": "OTLP-ATTR-OTLP"
+          },
+          "id": "saturation-4cores",
+          "name": "Saturation 4Cores",
+          "source_identities": [
+            {
+              "format": "github-action-benchmark",
+              "key": {
+                "suite": "Continuous - Saturation - 4 Core(s)",
+                "test": "OTLP-ATTR-OTLP"
+              }
+            }
+          ]
+        },
+        {
+          "dimensions": {
+            "engine_cores": "8",
+            "protocol": "otlp"
+          },
+          "execution": {
+            "campaigns": [
+              "nightly"
+            ],
+            "local_note": "NUMA-specific CPU sets start at CPU 32 and cannot run unchanged in the 20-logical-core Docker Desktop VM.",
+            "local_supported": false,
+            "path": "tools/pipeline_perf_test/test_suites/integration/continuous/saturation-8cores.yaml",
+            "runner": "orchestrator",
+            "test": "OTLP-ATTR-OTLP"
+          },
+          "id": "saturation-8cores",
+          "name": "Saturation 8Cores",
+          "source_identities": [
+            {
+              "format": "github-action-benchmark",
+              "key": {
+                "suite": "Continuous - Saturation - 8 Core(s)",
+                "test": "OTLP-ATTR-OTLP"
+              }
+            }
+          ]
+        },
+        {
+          "dimensions": {},
+          "execution": {
+            "campaigns": [
+              "nightly"
+            ],
+            "path": "tools/pipeline_perf_test/test_suites/integration/continuous/saturation-max-throughput-otap.yaml",
+            "runner": "orchestrator",
+            "test": "OTAP-ATTR-OTAP"
+          },
+          "id": "saturation-max-throughput-otap",
+          "name": "Saturation Max Throughput Otap",
+          "source_identities": [
+            {
+              "format": "github-action-benchmark",
+              "key": {
+                "suite": "Continuous - Saturation - Max Throughput OTAP",
+                "test": "OTAP-ATTR-OTAP"
+              }
+            }
+          ]
+        },
+        {
+          "dimensions": {},
+          "execution": {
+            "campaigns": [
+              "nightly"
+            ],
+            "path": "tools/pipeline_perf_test/test_suites/integration/continuous/saturation-max-throughput.yaml",
+            "runner": "orchestrator",
+            "test": "OTLP-ATTR-OTLP"
+          },
+          "id": "saturation-max-throughput",
+          "name": "Saturation Max Throughput",
+          "source_identities": [
+            {
+              "format": "github-action-benchmark",
+              "key": {
+                "suite": "Continuous - Saturation - Max Throughput",
+                "test": "OTLP-ATTR-OTLP"
+              }
+            }
+          ]
+        },
+        {
+          "dimensions": {
+            "engine_cores": "1",
+            "protocol": "otap"
+          },
+          "execution": {
+            "campaigns": [
+              "nightly"
+            ],
+            "local_note": "NUMA-specific CPU sets start at CPU 32 and cannot run unchanged in the 20-logical-core Docker Desktop VM.",
+            "local_supported": false,
+            "path": "tools/pipeline_perf_test/test_suites/integration/continuous/saturation-otap-1core.yaml",
+            "runner": "orchestrator",
+            "test": "OTAP-ATTR-OTAP"
+          },
+          "id": "saturation-otap-1core",
+          "name": "Saturation Otap 1Core",
+          "source_identities": [
+            {
+              "format": "github-action-benchmark",
+              "key": {
+                "suite": "Continuous - Saturation OTAP - 1 Core(s)",
+                "test": "OTAP-ATTR-OTAP"
+              }
+            }
+          ]
+        },
+        {
+          "dimensions": {
+            "engine_cores": "2",
+            "protocol": "otap"
+          },
+          "execution": {
+            "campaigns": [
+              "nightly"
+            ],
+            "local_note": "NUMA-specific CPU sets start at CPU 32 and cannot run unchanged in the 20-logical-core Docker Desktop VM.",
+            "local_supported": false,
+            "path": "tools/pipeline_perf_test/test_suites/integration/continuous/saturation-otap-2cores.yaml",
+            "runner": "orchestrator",
+            "test": "OTAP-ATTR-OTAP"
+          },
+          "id": "saturation-otap-2cores",
+          "name": "Saturation Otap 2Cores",
+          "source_identities": [
+            {
+              "format": "github-action-benchmark",
+              "key": {
+                "suite": "Continuous - Saturation OTAP - 2 Core(s)",
+                "test": "OTAP-ATTR-OTAP"
+              }
+            }
+          ]
+        },
+        {
+          "dimensions": {
+            "engine_cores": "4",
+            "protocol": "otap"
+          },
+          "execution": {
+            "campaigns": [
+              "nightly"
+            ],
+            "local_note": "NUMA-specific CPU sets start at CPU 32 and cannot run unchanged in the 20-logical-core Docker Desktop VM.",
+            "local_supported": false,
+            "path": "tools/pipeline_perf_test/test_suites/integration/continuous/saturation-otap-4cores.yaml",
+            "runner": "orchestrator",
+            "test": "OTAP-ATTR-OTAP"
+          },
+          "id": "saturation-otap-4cores",
+          "name": "Saturation Otap 4Cores",
+          "source_identities": [
+            {
+              "format": "github-action-benchmark",
+              "key": {
+                "suite": "Continuous - Saturation OTAP - 4 Core(s)",
+                "test": "OTAP-ATTR-OTAP"
+              }
+            }
+          ]
+        },
+        {
+          "dimensions": {
+            "engine_cores": "8",
+            "protocol": "otap"
+          },
+          "execution": {
+            "campaigns": [
+              "nightly"
+            ],
+            "local_note": "NUMA-specific CPU sets start at CPU 32 and cannot run unchanged in the 20-logical-core Docker Desktop VM.",
+            "local_supported": false,
+            "path": "tools/pipeline_perf_test/test_suites/integration/continuous/saturation-otap-8cores.yaml",
+            "runner": "orchestrator",
+            "test": "OTAP-ATTR-OTAP"
+          },
+          "id": "saturation-otap-8cores",
+          "name": "Saturation Otap 8Cores",
+          "source_identities": [
+            {
+              "format": "github-action-benchmark",
+              "key": {
+                "suite": "Continuous - Saturation OTAP - 8 Core(s)",
+                "test": "OTAP-ATTR-OTAP"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Standard-load input batch-size sweep.",
+      "id": "standard-load-batch-size",
+      "metric_profiles": [
+        "logs"
+      ],
+      "name": "Standard Load Batch Size",
+      "schema_version": 1,
+      "variants": [
+        {
+          "dimensions": {},
+          "execution": {
+            "campaigns": [
+              "nightly"
+            ],
+            "cases": [
+              {
+                "id": "OTLP-ATTR-OTLP-BATCH10",
+                "label": "OTLP-ATTR-OTLP-BATCH10"
+              },
+              {
+                "id": "OTLP-ATTR-OTLP-BATCH100",
+                "label": "OTLP-ATTR-OTLP-BATCH100"
+              },
+              {
+                "id": "OTLP-ATTR-OTLP-BATCH512",
+                "label": "OTLP-ATTR-OTLP-BATCH512"
+              },
+              {
+                "id": "OTLP-ATTR-OTLP-BATCH1024",
+                "label": "OTLP-ATTR-OTLP-BATCH1024"
+              },
+              {
+                "id": "OTLP-ATTR-OTLP-BATCH4096",
+                "label": "OTLP-ATTR-OTLP-BATCH4096"
+              },
+              {
+                "id": "OTLP-ATTR-OTLP-BATCH8192",
+                "label": "OTLP-ATTR-OTLP-BATCH8192"
+              }
+            ],
+            "path": "tools/pipeline_perf_test/test_suites/integration/nightly/100klrps-batch-sizes-docker.yaml",
+            "runner": "orchestrator"
+          },
+          "id": "100klrps-batch-sizes-docker",
+          "name": "100Klrps Batch Sizes Docker",
+          "source_identities": [
+            {
+              "format": "github-action-benchmark",
+              "key": {
+                "suite": "Nightly - 100kLRPS Batch Size Variations",
+                "test": "OTLP-ATTR-OTLP-BATCH10"
+              }
+            },
+            {
+              "format": "github-action-benchmark",
+              "key": {
+                "suite": "Nightly - 100kLRPS Batch Size Variations",
+                "test": "OTLP-ATTR-OTLP-BATCH100"
+              }
+            },
+            {
+              "format": "github-action-benchmark",
+              "key": {
+                "suite": "Nightly - 100kLRPS Batch Size Variations",
+                "test": "OTLP-ATTR-OTLP-BATCH512"
+              }
+            },
+            {
+              "format": "github-action-benchmark",
+              "key": {
+                "suite": "Nightly - 100kLRPS Batch Size Variations",
+                "test": "OTLP-ATTR-OTLP-BATCH1024"
+              }
+            },
+            {
+              "format": "github-action-benchmark",
+              "key": {
+                "suite": "Nightly - 100kLRPS Batch Size Variations",
+                "test": "OTLP-ATTR-OTLP-BATCH4096"
+              }
+            },
+            {
+              "format": "github-action-benchmark",
+              "key": {
+                "suite": "Nightly - 100kLRPS Batch Size Variations",
+                "test": "OTLP-ATTR-OTLP-BATCH8192"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "OpenTelemetry Collector syslog ingestion over TCP.",
+      "id": "syslog-tcp-otelcol",
+      "metric_profiles": [
+        "logs"
+      ],
+      "name": "Syslog TCP - OTel Collector",
+      "schema_version": 1,
+      "variants": [
+        {
+          "dimensions": {},
+          "execution": {
+            "campaigns": [
+              "nightly"
+            ],
+            "path": "tools/pipeline_perf_test/test_suites/integration/nightly/syslog-tcp-otelcol-docker.yaml",
+            "runner": "orchestrator",
+            "test": "SYSLOG-TCP-OTLP (Go Collector)"
+          },
+          "id": "syslog-tcp-otlp-go-collector",
+          "name": "SYSLOG-TCP-OTLP (Go Collector)",
+          "source_identities": [
+            {
+              "format": "github-action-benchmark",
+              "key": {
+                "suite": "Nightly - Syslog TCP (OTel Collector)",
+                "test": "SYSLOG-TCP-OTLP (Go Collector)"
+              }
+            }
+          ]
+        },
+        {
+          "dimensions": {},
+          "execution": {
+            "campaigns": [
+              "nightly"
+            ],
+            "path": "tools/pipeline_perf_test/test_suites/integration/nightly/syslog-tcp-otelcol-docker.yaml",
+            "runner": "orchestrator",
+            "test": "SYSLOG-TCP-OTAP (Go Collector)"
+          },
+          "id": "syslog-tcp-otap-go-collector",
+          "name": "SYSLOG-TCP-OTAP (Go Collector)",
+          "source_identities": [
+            {
+              "format": "github-action-benchmark",
+              "key": {
+                "suite": "Nightly - Syslog TCP (OTel Collector)",
+                "test": "SYSLOG-TCP-OTAP (Go Collector)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "DFE syslog ingestion over TCP.",
+      "id": "syslog-tcp",
+      "metric_profiles": [
+        "logs"
+      ],
+      "name": "Syslog TCP",
+      "schema_version": 1,
+      "variants": [
+        {
+          "dimensions": {},
+          "execution": {
+            "campaigns": [
+              "nightly"
+            ],
+            "path": "tools/pipeline_perf_test/test_suites/integration/nightly/syslog-tcp-docker.yaml",
+            "runner": "orchestrator",
+            "test": "SYSLOG-TCP-3164-ATTR-OTAP"
+          },
+          "id": "syslog-tcp-3164-attr-otap",
+          "name": "SYSLOG-TCP-3164-ATTR-OTAP",
+          "source_identities": [
+            {
+              "format": "github-action-benchmark",
+              "key": {
+                "suite": "Nightly - Syslog TCP",
+                "test": "SYSLOG-TCP-3164-ATTR-OTAP"
+              }
+            }
+          ]
+        },
+        {
+          "dimensions": {},
+          "execution": {
+            "campaigns": [
+              "nightly"
+            ],
+            "path": "tools/pipeline_perf_test/test_suites/integration/nightly/syslog-tcp-docker.yaml",
+            "runner": "orchestrator",
+            "test": "SYSLOG-TCP-3164-ATTR-OTLP"
+          },
+          "id": "syslog-tcp-3164-attr-otlp",
+          "name": "SYSLOG-TCP-3164-ATTR-OTLP",
+          "source_identities": [
+            {
+              "format": "github-action-benchmark",
+              "key": {
+                "suite": "Nightly - Syslog TCP",
+                "test": "SYSLOG-TCP-3164-ATTR-OTLP"
+              }
+            }
+          ]
+        },
+        {
+          "dimensions": {},
+          "execution": {
+            "campaigns": [
+              "nightly"
+            ],
+            "path": "tools/pipeline_perf_test/test_suites/integration/nightly/syslog-tcp-docker.yaml",
+            "runner": "orchestrator",
+            "test": "SYSLOG-TCP-3164-CEF-ATTR-OTLP"
+          },
+          "id": "syslog-tcp-3164-cef-attr-otlp",
+          "name": "SYSLOG-TCP-3164-CEF-ATTR-OTLP",
+          "source_identities": [
+            {
+              "format": "github-action-benchmark",
+              "key": {
+                "suite": "Nightly - Syslog TCP",
+                "test": "SYSLOG-TCP-3164-CEF-ATTR-OTLP"
+              }
+            }
+          ]
+        },
+        {
+          "dimensions": {},
+          "execution": {
+            "campaigns": [
+              "nightly"
+            ],
+            "path": "tools/pipeline_perf_test/test_suites/integration/nightly/syslog-tcp-docker.yaml",
+            "runner": "orchestrator",
+            "test": "SYSLOG-TCP-3164-CEF-ATTR-OTAP"
+          },
+          "id": "syslog-tcp-3164-cef-attr-otap",
+          "name": "SYSLOG-TCP-3164-CEF-ATTR-OTAP",
+          "source_identities": [
+            {
+              "format": "github-action-benchmark",
+              "key": {
+                "suite": "Nightly - Syslog TCP",
+                "test": "SYSLOG-TCP-3164-CEF-ATTR-OTAP"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Syslog ingestion and processing workloads.",
+      "id": "syslog",
+      "metric_profiles": [
+        "logs"
+      ],
+      "name": "Syslog",
+      "schema_version": 1,
+      "variants": [
+        {
+          "dimensions": {},
+          "execution": {
+            "campaigns": [
+              "nightly"
+            ],
+            "path": "tools/pipeline_perf_test/test_suites/integration/nightly/syslog-docker.yaml",
+            "runner": "orchestrator",
+            "test": "SYSLOG-3164-ATTR-OTAP"
+          },
+          "id": "syslog-3164-attr-otap",
+          "name": "SYSLOG-3164-ATTR-OTAP",
+          "source_identities": [
+            {
+              "format": "github-action-benchmark",
+              "key": {
+                "suite": "Nightly - Syslog",
+                "test": "SYSLOG-3164-ATTR-OTAP"
+              }
+            }
+          ]
+        },
+        {
+          "dimensions": {},
+          "execution": {
+            "campaigns": [
+              "nightly"
+            ],
+            "path": "tools/pipeline_perf_test/test_suites/integration/nightly/syslog-docker.yaml",
+            "runner": "orchestrator",
+            "test": "SYSLOG-3164-ATTR-OTLP"
+          },
+          "id": "syslog-3164-attr-otlp",
+          "name": "SYSLOG-3164-ATTR-OTLP",
+          "source_identities": [
+            {
+              "format": "github-action-benchmark",
+              "key": {
+                "suite": "Nightly - Syslog",
+                "test": "SYSLOG-3164-ATTR-OTLP"
+              }
+            }
+          ]
+        },
+        {
+          "dimensions": {},
+          "execution": {
+            "campaigns": [
+              "nightly"
+            ],
+            "path": "tools/pipeline_perf_test/test_suites/integration/nightly/syslog-docker.yaml",
+            "runner": "orchestrator",
+            "test": "SYSLOG-3164-CEF-ATTR-OTLP"
+          },
+          "id": "syslog-3164-cef-attr-otlp",
+          "name": "SYSLOG-3164-CEF-ATTR-OTLP",
+          "source_identities": [
+            {
+              "format": "github-action-benchmark",
+              "key": {
+                "suite": "Nightly - Syslog",
+                "test": "SYSLOG-3164-CEF-ATTR-OTLP"
+              }
+            }
+          ]
+        },
+        {
+          "dimensions": {},
+          "execution": {
+            "campaigns": [
+              "nightly"
+            ],
+            "path": "tools/pipeline_perf_test/test_suites/integration/nightly/syslog-docker.yaml",
+            "runner": "orchestrator",
+            "test": "SYSLOG-3164-CEF-ATTR-OTAP"
+          },
+          "id": "syslog-3164-cef-attr-otap",
+          "name": "SYSLOG-3164-CEF-ATTR-OTAP",
+          "source_identities": [
+            {
+              "format": "github-action-benchmark",
+              "key": {
+                "suite": "Nightly - Syslog",
+                "test": "SYSLOG-3164-CEF-ATTR-OTAP"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Baseline trace pipelines across engines, protocols, and compression.",
+      "id": "trace-baseline",
+      "metric_profiles": [
+        "comparison-traces"
+      ],
+      "name": "Trace Baseline",
+      "parameterizations": [
+        {
+          "cases": [
+            {
+              "id": "100k",
+              "label": "100k"
+            },
+            {
+              "id": "200k",
+              "label": "200k"
+            },
+            {
+              "id": "300k",
+              "label": "300k"
+            },
+            {
+              "id": "400k",
+              "label": "400k"
+            },
+            {
+              "id": "600k",
+              "label": "600k"
+            },
+            {
+              "id": "800k",
+              "label": "800k"
+            },
+            {
+              "id": "1000k",
+              "label": "1M"
+            }
+          ],
+          "description": "Generated load-rate sweep.",
+          "id": "multi-rate"
+        }
+      ],
+      "schema_version": 1,
+      "variants": [
+        {
+          "dimensions": {
+            "binary": "dfe",
+            "compression": "gzip",
+            "protocol": "otap",
+            "signal": "traces"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/dfe/dfe-traces-otap-gzip-baseline.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "dfe-traces-otap-gzip-baseline",
+          "name": "DFE OTAP Baseline w/ Gzip (Traces)"
+        },
+        {
+          "dimensions": {
+            "binary": "dfe",
+            "compression": "none",
+            "protocol": "otap",
+            "signal": "traces"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/dfe/dfe-traces-otap-none-baseline.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "dfe-traces-otap-none-baseline",
+          "name": "DFE OTAP Baseline (Traces)"
+        },
+        {
+          "dimensions": {
+            "binary": "dfe",
+            "compression": "zstd",
+            "protocol": "otap",
+            "signal": "traces"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/dfe/dfe-traces-otap-zstd-baseline.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "dfe-traces-otap-zstd-baseline",
+          "name": "DFE OTAP Baseline w/ Zstd (Traces)"
+        },
+        {
+          "dimensions": {
+            "binary": "dfe",
+            "compression": "gzip",
+            "protocol": "otlp",
+            "signal": "traces"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/dfe/dfe-traces-otlp-gzip-baseline.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "dfe-traces-otlp-gzip-baseline",
+          "name": "DFE OTLP Baseline w/ Gzip (Traces)"
+        },
+        {
+          "dimensions": {
+            "binary": "dfe",
+            "compression": "none",
+            "protocol": "otlp",
+            "signal": "traces"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/dfe/dfe-traces-otlp-none-baseline.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "dfe-traces-otlp-none-baseline",
+          "name": "DFE OTLP Baseline (Traces)"
+        },
+        {
+          "dimensions": {
+            "binary": "dfe",
+            "compression": "zstd",
+            "protocol": "otlp",
+            "signal": "traces"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/dfe/dfe-traces-otlp-zstd-baseline.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "dfe-traces-otlp-zstd-baseline",
+          "name": "DFE OTLP Baseline w/ Zstd (Traces)"
+        },
+        {
+          "dimensions": {
+            "binary": "dfe",
+            "compression": "gzip",
+            "protocol": "otlphttp",
+            "signal": "traces"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/dfe/dfe-traces-otlphttp-gzip-baseline.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "dfe-traces-otlphttp-gzip-baseline",
+          "name": "DFE OTLP/HTTP Baseline w/ Gzip (Traces)"
+        },
+        {
+          "dimensions": {
+            "binary": "dfe",
+            "compression": "none",
+            "protocol": "otlphttp",
+            "signal": "traces"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/dfe/dfe-traces-otlphttp-none-baseline.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "dfe-traces-otlphttp-none-baseline",
+          "name": "DFE OTLP/HTTP Baseline (Traces)"
+        },
+        {
+          "dimensions": {
+            "binary": "dfe",
+            "compression": "zstd",
+            "protocol": "otlphttp",
+            "signal": "traces"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/dfe/dfe-traces-otlphttp-zstd-baseline.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "dfe-traces-otlphttp-zstd-baseline",
+          "name": "DFE OTLP/HTTP Baseline w/ Zstd (Traces)"
+        },
+        {
+          "dimensions": {
+            "binary": "otc",
+            "compression": "gzip",
+            "protocol": "otap",
+            "signal": "traces"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/otc/otc-traces-otap-gzip-baseline.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "otc-traces-otap-gzip-baseline",
+          "name": "OTC OTAP Baseline w/ Gzip (Traces)"
+        },
+        {
+          "dimensions": {
+            "binary": "otc",
+            "compression": "none",
+            "protocol": "otap",
+            "signal": "traces"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/otc/otc-traces-otap-none-baseline.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "otc-traces-otap-none-baseline",
+          "name": "OTC OTAP Baseline (Traces)"
+        },
+        {
+          "dimensions": {
+            "binary": "otc",
+            "compression": "zstd",
+            "protocol": "otap",
+            "signal": "traces"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/otc/otc-traces-otap-zstd-baseline.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "otc-traces-otap-zstd-baseline",
+          "name": "OTC OTAP Baseline w/ Zstd (Traces)"
+        },
+        {
+          "dimensions": {
+            "binary": "otc",
+            "compression": "gzip",
+            "protocol": "otlp",
+            "signal": "traces"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/otc/otc-traces-otlp-gzip-baseline.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "otc-traces-otlp-gzip-baseline",
+          "name": "OTC OTLP Baseline w/ Gzip (Traces)"
+        },
+        {
+          "dimensions": {
+            "binary": "otc",
+            "compression": "none",
+            "protocol": "otlp",
+            "signal": "traces"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/otc/otc-traces-otlp-none-baseline.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "otc-traces-otlp-none-baseline",
+          "name": "OTC OTLP Baseline (Traces)"
+        },
+        {
+          "dimensions": {
+            "binary": "otc",
+            "compression": "zstd",
+            "protocol": "otlp",
+            "signal": "traces"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/otc/otc-traces-otlp-zstd-baseline.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "otc-traces-otlp-zstd-baseline",
+          "name": "OTC OTLP Baseline w/ Zstd (Traces)"
+        },
+        {
+          "dimensions": {
+            "binary": "otc",
+            "compression": "none",
+            "protocol": "otlphttp",
+            "signal": "traces"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/otc/otc-traces-otlphttp-none-baseline.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "otc-traces-otlphttp-none-baseline",
+          "name": "OTC OTLP/HTTP Baseline (Traces)"
+        },
+        {
+          "dimensions": {
+            "binary": "rotel",
+            "compression": "gzip",
+            "protocol": "otlp",
+            "signal": "traces"
+          },
+          "execution": {
+            "parameterization": "multi-rate",
+            "path": "tools/comparison_dashboard/suites/rotel/rotel-traces-otlp-gzip-baseline.yaml",
+            "runner": "comparison-dashboard"
+          },
+          "id": "rotel-traces-otlp-gzip-baseline",
+          "name": "Rotel OTLP Baseline w/ Gzip (Traces)"
         }
       ]
     }
