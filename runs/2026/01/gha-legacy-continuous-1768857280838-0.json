@@ -1,0 +1,256 @@
+{
+  "attachments": [],
+  "environment": {
+    "architecture": "x86_64",
+    "cloud_shape": "BM.Standard.E2.64",
+    "cpu_model": "AMD EPYC 7551",
+    "environment_basis": "documented-runner-specification",
+    "execution_os": "linux",
+    "logical_cores": 128,
+    "memory_gb": 512,
+    "os": "linux",
+    "os_distribution": "oracle-linux",
+    "os_version": "8",
+    "physical_cores": 64,
+    "testbed": "oracle-bare-metal-64cpu-512gb-x86-64"
+  },
+  "results": [
+    {
+      "dimension_keys": [
+        "engine_cores",
+        "protocol"
+      ],
+      "identity_keys": [
+        "variant"
+      ],
+      "measurements": [
+        {
+          "dimensions": [
+            "16",
+            "otlp"
+          ],
+          "identity": [
+            "saturation-16cores"
+          ],
+          "values": [
+            64.4,
+            65.68,
+            -2.553705,
+            null,
+            2098101,
+            2151680,
+            39358312,
+            41439539,
+            276.0,
+            287.8,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "1",
+            "otlp"
+          ],
+          "identity": [
+            "saturation-1core"
+          ],
+          "values": [
+            98.84,
+            99.02,
+            -0.330661,
+            null,
+            237418,
+            238203,
+            4665221,
+            4893909,
+            37.5,
+            38.1,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "24",
+            "otlp"
+          ],
+          "identity": [
+            "saturation-24cores"
+          ],
+          "values": [
+            72.87,
+            75.8,
+            -2.808744,
+            null,
+            3438720,
+            3535305,
+            66102783,
+            69340091,
+            410.5,
+            433.6,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "2",
+            "otlp"
+          ],
+          "identity": [
+            "saturation-2cores"
+          ],
+          "values": [
+            90.46,
+            90.72,
+            -1.073603,
+            null,
+            402176,
+            406494,
+            7771227,
+            8170850,
+            56.6,
+            59.7,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "4",
+            "otlp"
+          ],
+          "identity": [
+            "saturation-4cores"
+          ],
+          "values": [
+            93.71,
+            95.28,
+            -0.290161,
+            null,
+            832041,
+            834455,
+            16152313,
+            16959369,
+            90.8,
+            94.4,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "8",
+            "otlp"
+          ],
+          "identity": [
+            "saturation-8cores"
+          ],
+          "values": [
+            85.98,
+            86.87,
+            -2.226878,
+            null,
+            1490584,
+            1523778,
+            29519248,
+            30970656,
+            151.2,
+            155.2,
+            60.0
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "cpu_percentage_normalized_avg",
+          "unit": "%"
+        },
+        {
+          "name": "cpu_percentage_normalized_max",
+          "unit": "%"
+        },
+        {
+          "name": "dropped_logs_percentage",
+          "unit": "%"
+        },
+        {
+          "name": "egress_bytes_per_log",
+          "unit": "bytes/log"
+        },
+        {
+          "name": "logs_produced_rate",
+          "unit": "logs/sec"
+        },
+        {
+          "name": "logs_received_rate",
+          "unit": "logs/sec"
+        },
+        {
+          "name": "network_rx_bytes_rate_avg",
+          "unit": "bytes/sec"
+        },
+        {
+          "name": "network_tx_bytes_rate_avg",
+          "unit": "bytes/sec"
+        },
+        {
+          "name": "ram_mib_avg",
+          "unit": "MiB"
+        },
+        {
+          "name": "ram_mib_max",
+          "unit": "MiB"
+        },
+        {
+          "name": "test_duration",
+          "unit": "seconds"
+        }
+      ],
+      "suite": "saturation"
+    }
+  ],
+  "run": {
+    "collection_id": "gha-legacy-continuous-1768857280838",
+    "id": "gha-legacy-continuous-1768857280838-0",
+    "metadata": {
+      "github-action-benchmark-migration": {
+        "cluster": {
+          "first_entry_timestamp": "2026-01-19T21:14:40.838000Z",
+          "last_entry_timestamp": "2026-01-19T21:14:40.838000Z"
+        },
+        "entries": [
+          {
+            "data_js": {
+              "commit": "3feb7d8320a6d18b9f1d9cddf745c6a0f29c2867",
+              "path": "docs/benchmarks/continuous-saturation/data.js"
+            },
+            "entry_timestamp": "2026-01-19T21:14:40.838000Z",
+            "execution_occurrence": 0,
+            "suite": "saturation"
+          }
+        ],
+        "environment_provenance": [
+          {
+            "evidence": [
+              "https://github.com/open-telemetry/community/pull/3341",
+              "https://github.com/open-telemetry/otel-arrow/commit/59ef72fdbe2003a1425bb5c700d3de0579ffb050"
+            ],
+            "limitations": "Nominal runner specification, not per-run hardware capture.",
+            "method": "workflow-runner-label-and-documented-specification",
+            "runner_label": "oracle-bare-metal-64cpu-512gb-x86-64",
+            "workflow": {
+              "commit": "1b503f3f269f3a1316cd414b1ee72443bc57cc02",
+              "path": ".github/workflows/pipeline-perf-test-continuous.yml"
+            }
+          }
+        ],
+        "missing_suites": [
+          "idle-state"
+        ]
+      }
+    }
+  },
+  "schema_version": 1,
+  "source": {
+    "commit": "1b503f3f269f3a1316cd414b1ee72443bc57cc02",
+    "repository": "https://github.com/open-telemetry/otel-arrow",
+    "timestamp": "2026-01-19T20:34:34Z"
+  }
+}

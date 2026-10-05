@@ -157,6 +157,7 @@ main {
   justify-content: flex-end;
   gap: 12px;
   max-width: 100%;
+  min-width: 0;
   margin-left: auto;
 }
 
@@ -164,7 +165,8 @@ main {
   display: grid;
   gap: 5px;
   min-width: 0;
-  max-width: min(280px, 100%);
+  width: 280px;
+  max-width: 100%;
   color: var(--muted);
   font-size: 12px;
 }
@@ -482,6 +484,7 @@ footer {
   }
 
   .explorer-controls label {
+    width: 100%;
     max-width: 100%;
   }
 

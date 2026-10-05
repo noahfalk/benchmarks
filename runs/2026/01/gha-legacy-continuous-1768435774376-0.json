@@ -1,0 +1,234 @@
+{
+  "attachments": [],
+  "environment": {
+    "architecture": "x86_64",
+    "cloud_shape": "BM.Standard.E2.64",
+    "cpu_model": "AMD EPYC 7551",
+    "environment_basis": "documented-runner-specification",
+    "execution_os": "linux",
+    "logical_cores": 128,
+    "memory_gb": 512,
+    "os": "linux",
+    "os_distribution": "oracle-linux",
+    "os_version": "8",
+    "physical_cores": 64,
+    "testbed": "oracle-bare-metal-64cpu-512gb-x86-64"
+  },
+  "results": [
+    {
+      "dimension_keys": [
+        "engine_cores",
+        "protocol"
+      ],
+      "identity_keys": [
+        "variant"
+      ],
+      "measurements": [
+        {
+          "dimensions": [
+            "16",
+            "otlp"
+          ],
+          "identity": [
+            "saturation-16cores"
+          ],
+          "values": [
+            68.59,
+            68.84,
+            4.613827,
+            null,
+            1560858,
+            1488842,
+            41156318,
+            43270087,
+            274.3,
+            287.8,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "1",
+            "otlp"
+          ],
+          "identity": [
+            "saturation-1core"
+          ],
+          "values": [
+            94.34,
+            94.61,
+            0,
+            null,
+            175674,
+            175674,
+            4791327,
+            5008897,
+            38.2,
+            39.1,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "2",
+            "otlp"
+          ],
+          "identity": [
+            "saturation-2cores"
+          ],
+          "values": [
+            96.1,
+            96.53,
+            2.575243,
+            null,
+            336015,
+            327362,
+            9192771,
+            9603566,
+            55.1,
+            56.1,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "4",
+            "otlp"
+          ],
+          "identity": [
+            "saturation-4cores"
+          ],
+          "values": [
+            83.7,
+            84.03,
+            2.504797,
+            null,
+            578314,
+            563828,
+            15575929,
+            16297489,
+            83.0,
+            87.8,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "8",
+            "otlp"
+          ],
+          "identity": [
+            "saturation-8cores"
+          ],
+          "values": [
+            88.0,
+            88.32,
+            3.352356,
+            null,
+            1197938,
+            1157778,
+            32867321,
+            34381101,
+            140.3,
+            152.3,
+            60.0
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "cpu_percentage_normalized_avg",
+          "unit": "%"
+        },
+        {
+          "name": "cpu_percentage_normalized_max",
+          "unit": "%"
+        },
+        {
+          "name": "dropped_logs_percentage",
+          "unit": "%"
+        },
+        {
+          "name": "egress_bytes_per_log",
+          "unit": "bytes/log"
+        },
+        {
+          "name": "logs_produced_rate",
+          "unit": "logs/sec"
+        },
+        {
+          "name": "logs_received_rate",
+          "unit": "logs/sec"
+        },
+        {
+          "name": "network_rx_bytes_rate_avg",
+          "unit": "bytes/sec"
+        },
+        {
+          "name": "network_tx_bytes_rate_avg",
+          "unit": "bytes/sec"
+        },
+        {
+          "name": "ram_mib_avg",
+          "unit": "MiB"
+        },
+        {
+          "name": "ram_mib_max",
+          "unit": "MiB"
+        },
+        {
+          "name": "test_duration",
+          "unit": "seconds"
+        }
+      ],
+      "suite": "saturation"
+    }
+  ],
+  "run": {
+    "collection_id": "gha-legacy-continuous-1768435774376",
+    "id": "gha-legacy-continuous-1768435774376-0",
+    "metadata": {
+      "github-action-benchmark-migration": {
+        "cluster": {
+          "first_entry_timestamp": "2026-01-15T00:09:34.376000Z",
+          "last_entry_timestamp": "2026-01-15T00:09:34.376000Z"
+        },
+        "entries": [
+          {
+            "data_js": {
+              "commit": "3feb7d8320a6d18b9f1d9cddf745c6a0f29c2867",
+              "path": "docs/benchmarks/continuous-saturation/data.js"
+            },
+            "entry_timestamp": "2026-01-15T00:09:34.376000Z",
+            "execution_occurrence": 0,
+            "suite": "saturation"
+          }
+        ],
+        "environment_provenance": [
+          {
+            "evidence": [
+              "https://github.com/open-telemetry/community/pull/3341",
+              "https://github.com/open-telemetry/otel-arrow/commit/59ef72fdbe2003a1425bb5c700d3de0579ffb050"
+            ],
+            "limitations": "Nominal runner specification, not per-run hardware capture.",
+            "method": "workflow-runner-label-and-documented-specification",
+            "runner_label": "oracle-bare-metal-64cpu-512gb-x86-64",
+            "workflow": {
+              "commit": "8db8851a1a386d4e4104378eb71179fbbf215641",
+              "path": ".github/workflows/pipeline-perf-test-continuous.yml"
+            }
+          }
+        ],
+        "missing_suites": [
+          "idle-state"
+        ]
+      }
+    }
+  },
+  "schema_version": 1,
+  "source": {
+    "commit": "8db8851a1a386d4e4104378eb71179fbbf215641",
+    "repository": "https://github.com/open-telemetry/otel-arrow",
+    "timestamp": "2026-01-14T23:36:23Z"
+  }
+}

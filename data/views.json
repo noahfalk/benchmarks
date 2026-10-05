@@ -652,7 +652,16 @@
             "test": "OTLP-ATTR-OTLP"
           },
           "id": "otlp-attr-otlp",
-          "name": "OTLP to OTLP"
+          "name": "OTLP to OTLP",
+          "source_identities": [
+            {
+              "format": "github-action-benchmark",
+              "key": {
+                "suite": "CI 100kLRPS",
+                "test": "OTLP-ATTR-OTLP"
+              }
+            }
+          ]
         },
         {
           "dimensions": {},
@@ -665,7 +674,16 @@
             "test": "OTLP-ATTR-OTAP"
           },
           "id": "otlp-attr-otap",
-          "name": "OTLP to OTAP"
+          "name": "OTLP to OTAP",
+          "source_identities": [
+            {
+              "format": "github-action-benchmark",
+              "key": {
+                "suite": "CI 100kLRPS",
+                "test": "OTLP-ATTR-OTAP"
+              }
+            }
+          ]
         },
         {
           "dimensions": {},
@@ -678,7 +696,16 @@
             "test": "OTAP-ATTR-OTAP"
           },
           "id": "otap-attr-otap",
-          "name": "OTAP to OTAP"
+          "name": "OTAP to OTAP",
+          "source_identities": [
+            {
+              "format": "github-action-benchmark",
+              "key": {
+                "suite": "CI 100kLRPS",
+                "test": "OTAP-ATTR-OTAP"
+              }
+            }
+          ]
         },
         {
           "dimensions": {},
@@ -691,7 +718,16 @@
             "test": "OTAP-ATTR-OTLP"
           },
           "id": "otap-attr-otlp",
-          "name": "OTAP to OTLP"
+          "name": "OTAP to OTLP",
+          "source_identities": [
+            {
+              "format": "github-action-benchmark",
+              "key": {
+                "suite": "CI 100kLRPS",
+                "test": "OTAP-ATTR-OTLP"
+              }
+            }
+          ]
         }
       ]
     },
@@ -904,7 +940,16 @@
             "test": "OTLP-BATCH-OTLP"
           },
           "id": "otlp-batch-otlp",
-          "name": "OTLP to OTLP"
+          "name": "OTLP to OTLP",
+          "source_identities": [
+            {
+              "format": "github-action-benchmark",
+              "key": {
+                "suite": "CI 100kLRPS",
+                "test": "OTLP-BATCH-OTLP"
+              }
+            }
+          ]
         },
         {
           "dimensions": {},
@@ -917,7 +962,16 @@
             "test": "OTAP-BATCH-OTAP"
           },
           "id": "otap-batch-otap",
-          "name": "OTAP to OTAP"
+          "name": "OTAP to OTAP",
+          "source_identities": [
+            {
+              "format": "github-action-benchmark",
+              "key": {
+                "suite": "CI 100kLRPS",
+                "test": "OTAP-BATCH-OTAP"
+              }
+            }
+          ]
         }
       ]
     },
@@ -2886,6 +2940,23 @@
       "name": "Saturation",
       "schema_version": 1,
       "variants": [
+        {
+          "dimensions": {
+            "engine_cores": "24",
+            "protocol": "otlp"
+          },
+          "id": "saturation-24cores",
+          "name": "Saturation 24Cores (Legacy)",
+          "source_identities": [
+            {
+              "format": "github-action-benchmark",
+              "key": {
+                "suite": "Continuous - Saturation - 24 Core(s)",
+                "test": "OTLP-ATTR-OTLP"
+              }
+            }
+          ]
+        },
         {
           "dimensions": {
             "engine_cores": "16",

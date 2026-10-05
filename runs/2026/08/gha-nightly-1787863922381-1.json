@@ -1,6 +1,19 @@
 {
   "attachments": [],
-  "environment": {},
+  "environment": {
+    "architecture": "x86_64",
+    "cloud_shape": "BM.Standard3.64",
+    "cpu_model": "Intel Xeon Platinum 8358",
+    "environment_basis": "documented-runner-specification",
+    "execution_os": "linux",
+    "logical_cores": 128,
+    "memory_gb": 1024,
+    "os": "linux",
+    "os_distribution": "ubuntu",
+    "os_version": "24",
+    "physical_cores": 64,
+    "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24"
+  },
   "results": [
     {
       "dimension_keys": [
@@ -123,6 +136,21 @@
             "entry_timestamp": "2026-08-27T20:52:47.574000Z",
             "execution_occurrence": 1,
             "suite": "saturation"
+          }
+        ],
+        "environment_provenance": [
+          {
+            "evidence": [
+              "https://github.com/open-telemetry/community/pull/3341",
+              "https://github.com/open-telemetry/community/blob/main/assets.md#bare-metal-runners"
+            ],
+            "limitations": "Nominal runner specification, not per-run hardware capture.",
+            "method": "workflow-runner-label-and-documented-specification",
+            "runner_label": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24",
+            "workflow": {
+              "commit": "51d89ded5ad4a169eaa4ba422368e0913f74a738",
+              "path": ".github/workflows/pipeline-perf-test-nightly.yml"
+            }
           }
         ],
         "missing_suites": [
