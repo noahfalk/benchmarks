@@ -1,0 +1,306 @@
+{
+  "attachments": [],
+  "environment": {
+    "architecture": "x86_64",
+    "cloud_shape": "BM.Standard3.64",
+    "cpu_model": "Intel Xeon Platinum 8358",
+    "execution_os": "windows",
+    "logical_cores": 128,
+    "memory_gb": 1024,
+    "os": "windows",
+    "os_distribution": "windows",
+    "physical_cores": 64,
+    "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
+  },
+  "results": [
+    {
+      "dimension_keys": [],
+      "identity_keys": [
+        "variant"
+      ],
+      "measurements": [
+        {
+          "dimensions": [],
+          "identity": [
+            "otap-attr-otap"
+          ],
+          "values": [
+            39.564,
+            40.278,
+            5.263157,
+            14.364,
+            94966,
+            89968,
+            1209748.05,
+            1292708.55,
+            19.74,
+            20.16,
+            20.0
+          ]
+        },
+        {
+          "dimensions": [],
+          "identity": [
+            "otap-attr-otlp"
+          ],
+          "values": [
+            68.019,
+            68.313,
+            5.263157,
+            36.141,
+            94983,
+            89984,
+            1219270.5,
+            3252161.85,
+            20.37,
+            21.105,
+            20.0
+          ]
+        },
+        {
+          "dimensions": [],
+          "identity": [
+            "otlp-attr-otap"
+          ],
+          "values": [
+            68.586,
+            69.027,
+            0,
+            13.7445,
+            94966,
+            94966,
+            3156083.7,
+            1305726.45,
+            20.37,
+            20.79,
+            20.0
+          ]
+        },
+        {
+          "dimensions": [],
+          "identity": [
+            "otlp-attr-otlp"
+          ],
+          "values": [
+            68.0925,
+            68.523,
+            10.0008,
+            37.149,
+            99973,
+            89975,
+            3173287.95,
+            3342608.85,
+            19.635,
+            20.37,
+            20.0
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "cpu_percentage_normalized_avg",
+          "unit": "%"
+        },
+        {
+          "name": "cpu_percentage_normalized_max",
+          "unit": "%"
+        },
+        {
+          "name": "dropped_logs_percentage",
+          "unit": "%"
+        },
+        {
+          "name": "egress_bytes_per_log",
+          "unit": "bytes/log"
+        },
+        {
+          "name": "logs_produced_rate",
+          "unit": "logs/sec"
+        },
+        {
+          "name": "logs_received_rate",
+          "unit": "logs/sec"
+        },
+        {
+          "name": "network_rx_bytes_rate_avg",
+          "unit": "bytes/sec"
+        },
+        {
+          "name": "network_tx_bytes_rate_avg",
+          "unit": "bytes/sec"
+        },
+        {
+          "name": "ram_mib_avg",
+          "unit": "MiB"
+        },
+        {
+          "name": "ram_mib_max",
+          "unit": "MiB"
+        },
+        {
+          "name": "test_duration",
+          "unit": "seconds"
+        }
+      ],
+      "suite": "attribute-processor-protocol-routing"
+    },
+    {
+      "dimension_keys": [],
+      "identity_keys": [
+        "variant"
+      ],
+      "measurements": [
+        {
+          "dimensions": [],
+          "identity": [
+            "otap-batch-otap"
+          ],
+          "values": [
+            33.81,
+            34.8915,
+            0.242526,
+            8.4735,
+            94990,
+            94760,
+            1204577.85,
+            802974.9,
+            30.975,
+            31.92,
+            20.0
+          ]
+        },
+        {
+          "dimensions": [],
+          "identity": [
+            "otlp-batch-otlp"
+          ],
+          "values": [
+            68.1975,
+            68.5545,
+            0,
+            33.6525,
+            89956,
+            89956,
+            3172433.25,
+            3027532.2,
+            18.795,
+            19.32,
+            20.0
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "cpu_percentage_normalized_avg",
+          "unit": "%"
+        },
+        {
+          "name": "cpu_percentage_normalized_max",
+          "unit": "%"
+        },
+        {
+          "name": "dropped_logs_percentage",
+          "unit": "%"
+        },
+        {
+          "name": "egress_bytes_per_log",
+          "unit": "bytes/log"
+        },
+        {
+          "name": "logs_produced_rate",
+          "unit": "logs/sec"
+        },
+        {
+          "name": "logs_received_rate",
+          "unit": "logs/sec"
+        },
+        {
+          "name": "network_rx_bytes_rate_avg",
+          "unit": "bytes/sec"
+        },
+        {
+          "name": "network_tx_bytes_rate_avg",
+          "unit": "bytes/sec"
+        },
+        {
+          "name": "ram_mib_avg",
+          "unit": "MiB"
+        },
+        {
+          "name": "ram_mib_max",
+          "unit": "MiB"
+        },
+        {
+          "name": "test_duration",
+          "unit": "seconds"
+        }
+      ],
+      "suite": "batch-processor"
+    }
+  ],
+  "run": {
+    "collection_id": "gha-continuous-1790008655353",
+    "id": "mock-windows-gha-continuous-1790008655353-0-biased",
+    "metadata": {
+      "github-action-benchmark-migration": {
+        "cluster": {
+          "first_entry_timestamp": "2026-09-21T16:37:35.353000Z",
+          "last_entry_timestamp": "2026-09-21T16:37:35.353000Z"
+        },
+        "entries": [
+          {
+            "data_js": {
+              "commit": "3feb7d8320a6d18b9f1d9cddf745c6a0f29c2867",
+              "path": "docs/benchmarks/continuous/data.js"
+            },
+            "entry_timestamp": "2026-09-21T16:37:35.353000Z",
+            "execution_occurrence": 0,
+            "suite": "attribute-processor-protocol-routing"
+          },
+          {
+            "data_js": {
+              "commit": "3feb7d8320a6d18b9f1d9cddf745c6a0f29c2867",
+              "path": "docs/benchmarks/continuous/data.js"
+            },
+            "entry_timestamp": "2026-09-21T16:37:35.353000Z",
+            "execution_occurrence": 0,
+            "suite": "batch-processor"
+          }
+        ],
+        "environment_provenance": [
+          {
+            "evidence": [
+              "https://github.com/open-telemetry/community/pull/3341",
+              "https://github.com/open-telemetry/community/blob/main/assets.md#bare-metal-runners"
+            ],
+            "limitations": "Nominal runner specification, not per-run hardware capture.",
+            "method": "workflow-runner-label-and-documented-specification",
+            "runner_label": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24",
+            "workflow": {
+              "commit": "a039072d6b0db66285f4b8ec2ff788f2766a550c",
+              "path": ".github/workflows/pipeline-perf-test-continuous.yml"
+            }
+          }
+        ],
+        "missing_suites": []
+      },
+      "synthetic": {
+        "fixed_load_resource_multiplier": 1.05,
+        "fixed_resource_throughput_multiplier": 0.95,
+        "generator": "mock-os-history",
+        "history_days": 14,
+        "source_os": "linux",
+        "source_run_id": "gha-continuous-1790008655353-0",
+        "supersedes_run_id": "mock-windows-gha-continuous-1790008655353-0",
+        "target_os": "windows",
+        "values": "biased-from-source-run"
+      }
+    }
+  },
+  "schema_version": 1,
+  "source": {
+    "commit": "a039072d6b0db66285f4b8ec2ff788f2766a550c",
+    "repository": "https://github.com/open-telemetry/otel-arrow",
+    "timestamp": "2026-09-21T14:26:10Z"
+  }
+}

@@ -1,0 +1,186 @@
+{
+  "attachments": [],
+  "environment": {
+    "architecture": "x86_64",
+    "cloud_shape": "BM.Standard3.64",
+    "cpu_model": "Intel Xeon Platinum 8358",
+    "execution_os": "windows",
+    "logical_cores": 128,
+    "memory_gb": 1024,
+    "os": "windows",
+    "os_distribution": "windows",
+    "physical_cores": 64,
+    "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
+  },
+  "results": [
+    {
+      "dimension_keys": [
+        "engine_cores",
+        "protocol"
+      ],
+      "identity_keys": [
+        "variant"
+      ],
+      "measurements": [
+        {
+          "dimensions": [
+            null,
+            null
+          ],
+          "identity": [
+            "saturation-max-throughput"
+          ],
+          "values": [
+            90.82,
+            92.06,
+            1.513741,
+            32.2,
+            261312.7,
+            257356.9,
+            7954642.6,
+            8287758.2,
+            26.6,
+            27.5,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            null,
+            null
+          ],
+          "identity": [
+            "saturation-max-throughput-otap"
+          ],
+          "values": [
+            100.18,
+            100.5,
+            -1.685454,
+            11.55,
+            1786209.0,
+            1816314.5,
+            20905340.9,
+            20984257.4,
+            42.7,
+            45.5,
+            60.0
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "cpu_percentage_normalized_avg",
+          "unit": "%"
+        },
+        {
+          "name": "cpu_percentage_normalized_max",
+          "unit": "%"
+        },
+        {
+          "name": "dropped_logs_percentage",
+          "unit": "%"
+        },
+        {
+          "name": "egress_bytes_per_log",
+          "unit": "bytes/log"
+        },
+        {
+          "name": "logs_produced_rate",
+          "unit": "logs/sec"
+        },
+        {
+          "name": "logs_received_rate",
+          "unit": "logs/sec"
+        },
+        {
+          "name": "network_rx_bytes_rate_avg",
+          "unit": "bytes/sec"
+        },
+        {
+          "name": "network_tx_bytes_rate_avg",
+          "unit": "bytes/sec"
+        },
+        {
+          "name": "ram_mib_avg",
+          "unit": "MiB"
+        },
+        {
+          "name": "ram_mib_max",
+          "unit": "MiB"
+        },
+        {
+          "name": "test_duration",
+          "unit": "seconds"
+        }
+      ],
+      "suite": "saturation"
+    }
+  ],
+  "run": {
+    "collection_id": "gha-nightly-1789066531505",
+    "id": "mock-windows-gha-nightly-1789066531505-1-biased",
+    "metadata": {
+      "github-action-benchmark-migration": {
+        "cluster": {
+          "first_entry_timestamp": "2026-09-10T18:55:31.505000Z",
+          "last_entry_timestamp": "2026-09-10T18:56:36.761000Z"
+        },
+        "entries": [
+          {
+            "data_js": {
+              "commit": "3feb7d8320a6d18b9f1d9cddf745c6a0f29c2867",
+              "path": "docs/benchmarks/nightly/saturation/data.js"
+            },
+            "entry_timestamp": "2026-09-10T18:56:20.651000Z",
+            "execution_occurrence": 1,
+            "suite": "saturation"
+          }
+        ],
+        "environment_provenance": [
+          {
+            "evidence": [
+              "https://github.com/open-telemetry/community/pull/3341",
+              "https://github.com/open-telemetry/community/blob/main/assets.md#bare-metal-runners"
+            ],
+            "limitations": "Nominal runner specification, not per-run hardware capture.",
+            "method": "workflow-runner-label-and-documented-specification",
+            "runner_label": "oracle-bare-metal-64cpu-1024gb-x86-64-ubuntu-24",
+            "workflow": {
+              "commit": "4b5d5fec907c2c40edae458c43c96d5f29492dbe",
+              "path": ".github/workflows/pipeline-perf-test-nightly.yml"
+            }
+          }
+        ],
+        "missing_suites": [
+          "backpressure",
+          "batch-processor",
+          "clickhouse",
+          "filter",
+          "idle-state",
+          "passthrough",
+          "standard-load-batch-size",
+          "syslog",
+          "syslog-tcp",
+          "syslog-tcp-otelcol"
+        ]
+      },
+      "synthetic": {
+        "fixed_load_resource_multiplier": 1.05,
+        "fixed_resource_throughput_multiplier": 0.95,
+        "generator": "mock-os-history",
+        "history_days": 14,
+        "source_os": "linux",
+        "source_run_id": "gha-nightly-1789066531505-1",
+        "supersedes_run_id": "mock-windows-gha-nightly-1789066531505-1",
+        "target_os": "windows",
+        "values": "biased-from-source-run"
+      }
+    }
+  },
+  "schema_version": 1,
+  "source": {
+    "commit": "4b5d5fec907c2c40edae458c43c96d5f29492dbe",
+    "repository": "https://github.com/open-telemetry/otel-arrow",
+    "timestamp": "2026-09-10T18:07:20Z"
+  }
+}
