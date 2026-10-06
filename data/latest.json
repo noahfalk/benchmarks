@@ -32,7 +32,7 @@
       "metric": "cpu_percentage_normalized_avg",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "%",
@@ -68,7 +68,7 @@
       "metric": "cpu_percentage_normalized_avg",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "%",
@@ -106,7 +106,7 @@
       "metric": "cpu_percentage_normalized_avg",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "%",
@@ -142,7 +142,7 @@
       "metric": "cpu_percentage_normalized_avg",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "%",
@@ -180,7 +180,7 @@
       "metric": "cpu_percentage_normalized_avg",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "%",
@@ -216,7 +216,7 @@
       "metric": "cpu_percentage_normalized_avg",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "%",
@@ -254,7 +254,7 @@
       "metric": "cpu_percentage_normalized_avg",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "%",
@@ -290,7 +290,7 @@
       "metric": "cpu_percentage_normalized_avg",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "%",
@@ -319,57 +319,21 @@
       },
       "identity": {
         "os": "Linux",
-        "variant": "otap-batch-otap"
+        "protocol": "otap"
       },
       "identity_keys": [
-        "variant",
+        "protocol",
         "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
-      "suite": "batch-processor",
+      "suite": "batch-processor-continuous-logs",
       "unit": "%",
       "value": 31.88,
-      "variant": "otap-batch-otap"
-    },
-    {
-      "branch": null,
-      "case": null,
-      "collection_id": "gha-continuous-1791131019671",
-      "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
-      "dimensions": {},
-      "environment": {
-        "architecture": "x86_64",
-        "cloud_shape": "BM.Standard3.64",
-        "cpu_model": "Intel Xeon Platinum 8358",
-        "execution_os": "windows",
-        "logical_cores": 128,
-        "memory_gb": 1024,
-        "os": "windows",
-        "os_distribution": "windows",
-        "physical_cores": 64,
-        "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
-      },
-      "identity": {
-        "os": "Windows",
-        "variant": "otap-batch-otap"
-      },
-      "identity_keys": [
-        "variant",
-        "os"
-      ],
-      "metric": "cpu_percentage_normalized_avg",
-      "ordering_timestamp": "2026-10-04T15:06:13Z",
-      "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
-      "source_timestamp": "2026-10-04T15:06:13Z",
-      "suite": "batch-processor",
-      "unit": "%",
-      "value": 33.474,
-      "variant": "otap-batch-otap"
+      "variant": null
     },
     {
       "branch": null,
@@ -393,21 +357,21 @@
       },
       "identity": {
         "os": "Linux",
-        "variant": "otlp-batch-otlp"
+        "protocol": "otlp"
       },
       "identity_keys": [
-        "variant",
+        "protocol",
         "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
-      "suite": "batch-processor",
+      "suite": "batch-processor-continuous-logs",
       "unit": "%",
       "value": 65.0,
-      "variant": "otlp-batch-otlp"
+      "variant": null
     },
     {
       "branch": null,
@@ -429,21 +393,57 @@
       },
       "identity": {
         "os": "Windows",
-        "variant": "otlp-batch-otlp"
+        "protocol": "otap"
       },
       "identity_keys": [
-        "variant",
+        "protocol",
         "os"
       ],
       "metric": "cpu_percentage_normalized_avg",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
-      "suite": "batch-processor",
+      "suite": "batch-processor-continuous-logs",
+      "unit": "%",
+      "value": 33.474,
+      "variant": null
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-continuous-1791131019671",
+      "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
+      "dimensions": {},
+      "environment": {
+        "architecture": "x86_64",
+        "cloud_shape": "BM.Standard3.64",
+        "cpu_model": "Intel Xeon Platinum 8358",
+        "execution_os": "windows",
+        "logical_cores": 128,
+        "memory_gb": 1024,
+        "os": "windows",
+        "os_distribution": "windows",
+        "physical_cores": 64,
+        "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
+      },
+      "identity": {
+        "os": "Windows",
+        "protocol": "otlp"
+      },
+      "identity_keys": [
+        "protocol",
+        "os"
+      ],
+      "metric": "cpu_percentage_normalized_avg",
+      "ordering_timestamp": "2026-10-04T15:06:13Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
+      "source_timestamp": "2026-10-04T15:06:13Z",
+      "suite": "batch-processor-continuous-logs",
       "unit": "%",
       "value": 68.25,
-      "variant": "otlp-batch-otlp"
+      "variant": null
     },
     {
       "branch": null,
@@ -476,7 +476,7 @@
       "metric": "cpu_percentage_normalized_max",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "%",
@@ -512,7 +512,7 @@
       "metric": "cpu_percentage_normalized_max",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "%",
@@ -550,7 +550,7 @@
       "metric": "cpu_percentage_normalized_max",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "%",
@@ -586,7 +586,7 @@
       "metric": "cpu_percentage_normalized_max",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "%",
@@ -624,7 +624,7 @@
       "metric": "cpu_percentage_normalized_max",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "%",
@@ -660,7 +660,7 @@
       "metric": "cpu_percentage_normalized_max",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "%",
@@ -698,7 +698,7 @@
       "metric": "cpu_percentage_normalized_max",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "%",
@@ -734,7 +734,7 @@
       "metric": "cpu_percentage_normalized_max",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "%",
@@ -763,57 +763,21 @@
       },
       "identity": {
         "os": "Linux",
-        "variant": "otap-batch-otap"
+        "protocol": "otap"
       },
       "identity_keys": [
-        "variant",
+        "protocol",
         "os"
       ],
       "metric": "cpu_percentage_normalized_max",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
-      "suite": "batch-processor",
+      "suite": "batch-processor-continuous-logs",
       "unit": "%",
       "value": 32.58,
-      "variant": "otap-batch-otap"
-    },
-    {
-      "branch": null,
-      "case": null,
-      "collection_id": "gha-continuous-1791131019671",
-      "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
-      "dimensions": {},
-      "environment": {
-        "architecture": "x86_64",
-        "cloud_shape": "BM.Standard3.64",
-        "cpu_model": "Intel Xeon Platinum 8358",
-        "execution_os": "windows",
-        "logical_cores": 128,
-        "memory_gb": 1024,
-        "os": "windows",
-        "os_distribution": "windows",
-        "physical_cores": 64,
-        "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
-      },
-      "identity": {
-        "os": "Windows",
-        "variant": "otap-batch-otap"
-      },
-      "identity_keys": [
-        "variant",
-        "os"
-      ],
-      "metric": "cpu_percentage_normalized_max",
-      "ordering_timestamp": "2026-10-04T15:06:13Z",
-      "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
-      "source_timestamp": "2026-10-04T15:06:13Z",
-      "suite": "batch-processor",
-      "unit": "%",
-      "value": 34.209,
-      "variant": "otap-batch-otap"
+      "variant": null
     },
     {
       "branch": null,
@@ -837,21 +801,21 @@
       },
       "identity": {
         "os": "Linux",
-        "variant": "otlp-batch-otlp"
+        "protocol": "otlp"
       },
       "identity_keys": [
-        "variant",
+        "protocol",
         "os"
       ],
       "metric": "cpu_percentage_normalized_max",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
-      "suite": "batch-processor",
+      "suite": "batch-processor-continuous-logs",
       "unit": "%",
       "value": 65.23,
-      "variant": "otlp-batch-otlp"
+      "variant": null
     },
     {
       "branch": null,
@@ -873,21 +837,57 @@
       },
       "identity": {
         "os": "Windows",
-        "variant": "otlp-batch-otlp"
+        "protocol": "otap"
       },
       "identity_keys": [
-        "variant",
+        "protocol",
         "os"
       ],
       "metric": "cpu_percentage_normalized_max",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
-      "suite": "batch-processor",
+      "suite": "batch-processor-continuous-logs",
+      "unit": "%",
+      "value": 34.209,
+      "variant": null
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-continuous-1791131019671",
+      "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
+      "dimensions": {},
+      "environment": {
+        "architecture": "x86_64",
+        "cloud_shape": "BM.Standard3.64",
+        "cpu_model": "Intel Xeon Platinum 8358",
+        "execution_os": "windows",
+        "logical_cores": 128,
+        "memory_gb": 1024,
+        "os": "windows",
+        "os_distribution": "windows",
+        "physical_cores": 64,
+        "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
+      },
+      "identity": {
+        "os": "Windows",
+        "protocol": "otlp"
+      },
+      "identity_keys": [
+        "protocol",
+        "os"
+      ],
+      "metric": "cpu_percentage_normalized_max",
+      "ordering_timestamp": "2026-10-04T15:06:13Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
+      "source_timestamp": "2026-10-04T15:06:13Z",
+      "suite": "batch-processor-continuous-logs",
       "unit": "%",
       "value": 68.4915,
-      "variant": "otlp-batch-otlp"
+      "variant": null
     },
     {
       "branch": null,
@@ -920,7 +920,7 @@
       "metric": "dropped_logs_percentage",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "%",
@@ -956,7 +956,7 @@
       "metric": "dropped_logs_percentage",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "%",
@@ -994,7 +994,7 @@
       "metric": "dropped_logs_percentage",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "%",
@@ -1030,7 +1030,7 @@
       "metric": "dropped_logs_percentage",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "%",
@@ -1068,7 +1068,7 @@
       "metric": "dropped_logs_percentage",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "%",
@@ -1104,7 +1104,7 @@
       "metric": "dropped_logs_percentage",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "%",
@@ -1142,7 +1142,7 @@
       "metric": "dropped_logs_percentage",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "%",
@@ -1178,7 +1178,7 @@
       "metric": "dropped_logs_percentage",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "%",
@@ -1207,57 +1207,21 @@
       },
       "identity": {
         "os": "Linux",
-        "variant": "otap-batch-otap"
+        "protocol": "otap"
       },
       "identity_keys": [
-        "variant",
+        "protocol",
         "os"
       ],
       "metric": "dropped_logs_percentage",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
-      "suite": "batch-processor",
+      "suite": "batch-processor-continuous-logs",
       "unit": "%",
       "value": -0.188663,
-      "variant": "otap-batch-otap"
-    },
-    {
-      "branch": null,
-      "case": null,
-      "collection_id": "gha-continuous-1791131019671",
-      "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
-      "dimensions": {},
-      "environment": {
-        "architecture": "x86_64",
-        "cloud_shape": "BM.Standard3.64",
-        "cpu_model": "Intel Xeon Platinum 8358",
-        "execution_os": "windows",
-        "logical_cores": 128,
-        "memory_gb": 1024,
-        "os": "windows",
-        "os_distribution": "windows",
-        "physical_cores": 64,
-        "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
-      },
-      "identity": {
-        "os": "Windows",
-        "variant": "otap-batch-otap"
-      },
-      "identity_keys": [
-        "variant",
-        "os"
-      ],
-      "metric": "dropped_logs_percentage",
-      "ordering_timestamp": "2026-10-04T15:06:13Z",
-      "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
-      "source_timestamp": "2026-10-04T15:06:13Z",
-      "suite": "batch-processor",
-      "unit": "%",
-      "value": -0.188663,
-      "variant": "otap-batch-otap"
+      "variant": null
     },
     {
       "branch": null,
@@ -1281,21 +1245,21 @@
       },
       "identity": {
         "os": "Linux",
-        "variant": "otlp-batch-otlp"
+        "protocol": "otlp"
       },
       "identity_keys": [
-        "variant",
+        "protocol",
         "os"
       ],
       "metric": "dropped_logs_percentage",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
-      "suite": "batch-processor",
+      "suite": "batch-processor-continuous-logs",
       "unit": "%",
       "value": 0.026947,
-      "variant": "otlp-batch-otlp"
+      "variant": null
     },
     {
       "branch": null,
@@ -1317,21 +1281,57 @@
       },
       "identity": {
         "os": "Windows",
-        "variant": "otlp-batch-otlp"
+        "protocol": "otap"
       },
       "identity_keys": [
-        "variant",
+        "protocol",
         "os"
       ],
       "metric": "dropped_logs_percentage",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
-      "suite": "batch-processor",
+      "suite": "batch-processor-continuous-logs",
+      "unit": "%",
+      "value": -0.188663,
+      "variant": null
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-continuous-1791131019671",
+      "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
+      "dimensions": {},
+      "environment": {
+        "architecture": "x86_64",
+        "cloud_shape": "BM.Standard3.64",
+        "cpu_model": "Intel Xeon Platinum 8358",
+        "execution_os": "windows",
+        "logical_cores": 128,
+        "memory_gb": 1024,
+        "os": "windows",
+        "os_distribution": "windows",
+        "physical_cores": 64,
+        "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
+      },
+      "identity": {
+        "os": "Windows",
+        "protocol": "otlp"
+      },
+      "identity_keys": [
+        "protocol",
+        "os"
+      ],
+      "metric": "dropped_logs_percentage",
+      "ordering_timestamp": "2026-10-04T15:06:13Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
+      "source_timestamp": "2026-10-04T15:06:13Z",
+      "suite": "batch-processor-continuous-logs",
       "unit": "%",
       "value": 0.026947,
-      "variant": "otlp-batch-otlp"
+      "variant": null
     },
     {
       "branch": null,
@@ -1364,7 +1364,7 @@
       "metric": "egress_bytes_per_log",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "bytes/log",
@@ -1400,7 +1400,7 @@
       "metric": "egress_bytes_per_log",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "bytes/log",
@@ -1438,7 +1438,7 @@
       "metric": "egress_bytes_per_log",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "bytes/log",
@@ -1474,7 +1474,7 @@
       "metric": "egress_bytes_per_log",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "bytes/log",
@@ -1512,7 +1512,7 @@
       "metric": "egress_bytes_per_log",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "bytes/log",
@@ -1548,7 +1548,7 @@
       "metric": "egress_bytes_per_log",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "bytes/log",
@@ -1586,7 +1586,7 @@
       "metric": "egress_bytes_per_log",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "bytes/log",
@@ -1622,7 +1622,7 @@
       "metric": "egress_bytes_per_log",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "bytes/log",
@@ -1651,57 +1651,21 @@
       },
       "identity": {
         "os": "Linux",
-        "variant": "otap-batch-otap"
+        "protocol": "otap"
       },
       "identity_keys": [
-        "variant",
+        "protocol",
         "os"
       ],
       "metric": "egress_bytes_per_log",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
-      "suite": "batch-processor",
+      "suite": "batch-processor-continuous-logs",
       "unit": "bytes/log",
       "value": 8.09,
-      "variant": "otap-batch-otap"
-    },
-    {
-      "branch": null,
-      "case": null,
-      "collection_id": "gha-continuous-1791131019671",
-      "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
-      "dimensions": {},
-      "environment": {
-        "architecture": "x86_64",
-        "cloud_shape": "BM.Standard3.64",
-        "cpu_model": "Intel Xeon Platinum 8358",
-        "execution_os": "windows",
-        "logical_cores": 128,
-        "memory_gb": 1024,
-        "os": "windows",
-        "os_distribution": "windows",
-        "physical_cores": 64,
-        "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
-      },
-      "identity": {
-        "os": "Windows",
-        "variant": "otap-batch-otap"
-      },
-      "identity_keys": [
-        "variant",
-        "os"
-      ],
-      "metric": "egress_bytes_per_log",
-      "ordering_timestamp": "2026-10-04T15:06:13Z",
-      "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
-      "source_timestamp": "2026-10-04T15:06:13Z",
-      "suite": "batch-processor",
-      "unit": "bytes/log",
-      "value": 8.4945,
-      "variant": "otap-batch-otap"
+      "variant": null
     },
     {
       "branch": null,
@@ -1725,21 +1689,21 @@
       },
       "identity": {
         "os": "Linux",
-        "variant": "otlp-batch-otlp"
+        "protocol": "otlp"
       },
       "identity_keys": [
-        "variant",
+        "protocol",
         "os"
       ],
       "metric": "egress_bytes_per_log",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
-      "suite": "batch-processor",
+      "suite": "batch-processor-continuous-logs",
       "unit": "bytes/log",
       "value": 30.23,
-      "variant": "otlp-batch-otlp"
+      "variant": null
     },
     {
       "branch": null,
@@ -1761,21 +1725,57 @@
       },
       "identity": {
         "os": "Windows",
-        "variant": "otlp-batch-otlp"
+        "protocol": "otap"
       },
       "identity_keys": [
-        "variant",
+        "protocol",
         "os"
       ],
       "metric": "egress_bytes_per_log",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
-      "suite": "batch-processor",
+      "suite": "batch-processor-continuous-logs",
+      "unit": "bytes/log",
+      "value": 8.4945,
+      "variant": null
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-continuous-1791131019671",
+      "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
+      "dimensions": {},
+      "environment": {
+        "architecture": "x86_64",
+        "cloud_shape": "BM.Standard3.64",
+        "cpu_model": "Intel Xeon Platinum 8358",
+        "execution_os": "windows",
+        "logical_cores": 128,
+        "memory_gb": 1024,
+        "os": "windows",
+        "os_distribution": "windows",
+        "physical_cores": 64,
+        "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
+      },
+      "identity": {
+        "os": "Windows",
+        "protocol": "otlp"
+      },
+      "identity_keys": [
+        "protocol",
+        "os"
+      ],
+      "metric": "egress_bytes_per_log",
+      "ordering_timestamp": "2026-10-04T15:06:13Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
+      "source_timestamp": "2026-10-04T15:06:13Z",
+      "suite": "batch-processor-continuous-logs",
       "unit": "bytes/log",
       "value": 31.7415,
-      "variant": "otlp-batch-otlp"
+      "variant": null
     },
     {
       "branch": null,
@@ -1808,7 +1808,7 @@
       "metric": "logs_produced_rate",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "logs/sec",
@@ -1844,7 +1844,7 @@
       "metric": "logs_produced_rate",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "logs/sec",
@@ -1882,7 +1882,7 @@
       "metric": "logs_produced_rate",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "logs/sec",
@@ -1918,7 +1918,7 @@
       "metric": "logs_produced_rate",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "logs/sec",
@@ -1956,7 +1956,7 @@
       "metric": "logs_produced_rate",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "logs/sec",
@@ -1992,7 +1992,7 @@
       "metric": "logs_produced_rate",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "logs/sec",
@@ -2030,7 +2030,7 @@
       "metric": "logs_produced_rate",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "logs/sec",
@@ -2066,7 +2066,7 @@
       "metric": "logs_produced_rate",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "logs/sec",
@@ -2095,57 +2095,21 @@
       },
       "identity": {
         "os": "Linux",
-        "variant": "otap-batch-otap"
+        "protocol": "otap"
       },
       "identity_keys": [
-        "variant",
+        "protocol",
         "os"
       ],
       "metric": "logs_produced_rate",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
-      "suite": "batch-processor",
+      "suite": "batch-processor-continuous-logs",
       "unit": "logs/sec",
       "value": 94975,
-      "variant": "otap-batch-otap"
-    },
-    {
-      "branch": null,
-      "case": null,
-      "collection_id": "gha-continuous-1791131019671",
-      "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
-      "dimensions": {},
-      "environment": {
-        "architecture": "x86_64",
-        "cloud_shape": "BM.Standard3.64",
-        "cpu_model": "Intel Xeon Platinum 8358",
-        "execution_os": "windows",
-        "logical_cores": 128,
-        "memory_gb": 1024,
-        "os": "windows",
-        "os_distribution": "windows",
-        "physical_cores": 64,
-        "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
-      },
-      "identity": {
-        "os": "Windows",
-        "variant": "otap-batch-otap"
-      },
-      "identity_keys": [
-        "variant",
-        "os"
-      ],
-      "metric": "logs_produced_rate",
-      "ordering_timestamp": "2026-10-04T15:06:13Z",
-      "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
-      "source_timestamp": "2026-10-04T15:06:13Z",
-      "suite": "batch-processor",
-      "unit": "logs/sec",
-      "value": 94975,
-      "variant": "otap-batch-otap"
+      "variant": null
     },
     {
       "branch": null,
@@ -2169,21 +2133,21 @@
       },
       "identity": {
         "os": "Linux",
-        "variant": "otlp-batch-otlp"
+        "protocol": "otlp"
       },
       "identity_keys": [
-        "variant",
+        "protocol",
         "os"
       ],
       "metric": "logs_produced_rate",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
-      "suite": "batch-processor",
+      "suite": "batch-processor-continuous-logs",
       "unit": "logs/sec",
       "value": 94990,
-      "variant": "otlp-batch-otlp"
+      "variant": null
     },
     {
       "branch": null,
@@ -2205,21 +2169,57 @@
       },
       "identity": {
         "os": "Windows",
-        "variant": "otlp-batch-otlp"
+        "protocol": "otap"
       },
       "identity_keys": [
-        "variant",
+        "protocol",
         "os"
       ],
       "metric": "logs_produced_rate",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
-      "suite": "batch-processor",
+      "suite": "batch-processor-continuous-logs",
+      "unit": "logs/sec",
+      "value": 94975,
+      "variant": null
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-continuous-1791131019671",
+      "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
+      "dimensions": {},
+      "environment": {
+        "architecture": "x86_64",
+        "cloud_shape": "BM.Standard3.64",
+        "cpu_model": "Intel Xeon Platinum 8358",
+        "execution_os": "windows",
+        "logical_cores": 128,
+        "memory_gb": 1024,
+        "os": "windows",
+        "os_distribution": "windows",
+        "physical_cores": 64,
+        "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
+      },
+      "identity": {
+        "os": "Windows",
+        "protocol": "otlp"
+      },
+      "identity_keys": [
+        "protocol",
+        "os"
+      ],
+      "metric": "logs_produced_rate",
+      "ordering_timestamp": "2026-10-04T15:06:13Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
+      "source_timestamp": "2026-10-04T15:06:13Z",
+      "suite": "batch-processor-continuous-logs",
       "unit": "logs/sec",
       "value": 94990,
-      "variant": "otlp-batch-otlp"
+      "variant": null
     },
     {
       "branch": null,
@@ -2252,7 +2252,7 @@
       "metric": "logs_received_rate",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "logs/sec",
@@ -2288,7 +2288,7 @@
       "metric": "logs_received_rate",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "logs/sec",
@@ -2326,7 +2326,7 @@
       "metric": "logs_received_rate",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "logs/sec",
@@ -2362,7 +2362,7 @@
       "metric": "logs_received_rate",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "logs/sec",
@@ -2400,7 +2400,7 @@
       "metric": "logs_received_rate",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "logs/sec",
@@ -2436,7 +2436,7 @@
       "metric": "logs_received_rate",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "logs/sec",
@@ -2474,7 +2474,7 @@
       "metric": "logs_received_rate",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "logs/sec",
@@ -2510,7 +2510,7 @@
       "metric": "logs_received_rate",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "logs/sec",
@@ -2539,57 +2539,21 @@
       },
       "identity": {
         "os": "Linux",
-        "variant": "otap-batch-otap"
+        "protocol": "otap"
       },
       "identity_keys": [
-        "variant",
+        "protocol",
         "os"
       ],
       "metric": "logs_received_rate",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
-      "suite": "batch-processor",
+      "suite": "batch-processor-continuous-logs",
       "unit": "logs/sec",
       "value": 95154,
-      "variant": "otap-batch-otap"
-    },
-    {
-      "branch": null,
-      "case": null,
-      "collection_id": "gha-continuous-1791131019671",
-      "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
-      "dimensions": {},
-      "environment": {
-        "architecture": "x86_64",
-        "cloud_shape": "BM.Standard3.64",
-        "cpu_model": "Intel Xeon Platinum 8358",
-        "execution_os": "windows",
-        "logical_cores": 128,
-        "memory_gb": 1024,
-        "os": "windows",
-        "os_distribution": "windows",
-        "physical_cores": 64,
-        "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
-      },
-      "identity": {
-        "os": "Windows",
-        "variant": "otap-batch-otap"
-      },
-      "identity_keys": [
-        "variant",
-        "os"
-      ],
-      "metric": "logs_received_rate",
-      "ordering_timestamp": "2026-10-04T15:06:13Z",
-      "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
-      "source_timestamp": "2026-10-04T15:06:13Z",
-      "suite": "batch-processor",
-      "unit": "logs/sec",
-      "value": 95154,
-      "variant": "otap-batch-otap"
+      "variant": null
     },
     {
       "branch": null,
@@ -2613,21 +2577,21 @@
       },
       "identity": {
         "os": "Linux",
-        "variant": "otlp-batch-otlp"
+        "protocol": "otlp"
       },
       "identity_keys": [
-        "variant",
+        "protocol",
         "os"
       ],
       "metric": "logs_received_rate",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
-      "suite": "batch-processor",
+      "suite": "batch-processor-continuous-logs",
       "unit": "logs/sec",
       "value": 94965,
-      "variant": "otlp-batch-otlp"
+      "variant": null
     },
     {
       "branch": null,
@@ -2649,21 +2613,57 @@
       },
       "identity": {
         "os": "Windows",
-        "variant": "otlp-batch-otlp"
+        "protocol": "otap"
       },
       "identity_keys": [
-        "variant",
+        "protocol",
         "os"
       ],
       "metric": "logs_received_rate",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
-      "suite": "batch-processor",
+      "suite": "batch-processor-continuous-logs",
+      "unit": "logs/sec",
+      "value": 95154,
+      "variant": null
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-continuous-1791131019671",
+      "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
+      "dimensions": {},
+      "environment": {
+        "architecture": "x86_64",
+        "cloud_shape": "BM.Standard3.64",
+        "cpu_model": "Intel Xeon Platinum 8358",
+        "execution_os": "windows",
+        "logical_cores": 128,
+        "memory_gb": 1024,
+        "os": "windows",
+        "os_distribution": "windows",
+        "physical_cores": 64,
+        "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
+      },
+      "identity": {
+        "os": "Windows",
+        "protocol": "otlp"
+      },
+      "identity_keys": [
+        "protocol",
+        "os"
+      ],
+      "metric": "logs_received_rate",
+      "ordering_timestamp": "2026-10-04T15:06:13Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
+      "source_timestamp": "2026-10-04T15:06:13Z",
+      "suite": "batch-processor-continuous-logs",
       "unit": "logs/sec",
       "value": 94965,
-      "variant": "otlp-batch-otlp"
+      "variant": null
     },
     {
       "branch": null,
@@ -2696,7 +2696,7 @@
       "metric": "network_rx_bytes_rate_avg",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "bytes/sec",
@@ -2732,7 +2732,7 @@
       "metric": "network_rx_bytes_rate_avg",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "bytes/sec",
@@ -2770,7 +2770,7 @@
       "metric": "network_rx_bytes_rate_avg",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "bytes/sec",
@@ -2806,7 +2806,7 @@
       "metric": "network_rx_bytes_rate_avg",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "bytes/sec",
@@ -2844,7 +2844,7 @@
       "metric": "network_rx_bytes_rate_avg",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "bytes/sec",
@@ -2880,7 +2880,7 @@
       "metric": "network_rx_bytes_rate_avg",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "bytes/sec",
@@ -2918,7 +2918,7 @@
       "metric": "network_rx_bytes_rate_avg",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "bytes/sec",
@@ -2954,7 +2954,7 @@
       "metric": "network_rx_bytes_rate_avg",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "bytes/sec",
@@ -2983,57 +2983,21 @@
       },
       "identity": {
         "os": "Linux",
-        "variant": "otap-batch-otap"
+        "protocol": "otap"
       },
       "identity_keys": [
-        "variant",
+        "protocol",
         "os"
       ],
       "metric": "network_rx_bytes_rate_avg",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
-      "suite": "batch-processor",
+      "suite": "batch-processor-continuous-logs",
       "unit": "bytes/sec",
       "value": 1146680,
-      "variant": "otap-batch-otap"
-    },
-    {
-      "branch": null,
-      "case": null,
-      "collection_id": "gha-continuous-1791131019671",
-      "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
-      "dimensions": {},
-      "environment": {
-        "architecture": "x86_64",
-        "cloud_shape": "BM.Standard3.64",
-        "cpu_model": "Intel Xeon Platinum 8358",
-        "execution_os": "windows",
-        "logical_cores": 128,
-        "memory_gb": 1024,
-        "os": "windows",
-        "os_distribution": "windows",
-        "physical_cores": 64,
-        "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
-      },
-      "identity": {
-        "os": "Windows",
-        "variant": "otap-batch-otap"
-      },
-      "identity_keys": [
-        "variant",
-        "os"
-      ],
-      "metric": "network_rx_bytes_rate_avg",
-      "ordering_timestamp": "2026-10-04T15:06:13Z",
-      "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
-      "source_timestamp": "2026-10-04T15:06:13Z",
-      "suite": "batch-processor",
-      "unit": "bytes/sec",
-      "value": 1204014.0,
-      "variant": "otap-batch-otap"
+      "variant": null
     },
     {
       "branch": null,
@@ -3057,21 +3021,21 @@
       },
       "identity": {
         "os": "Linux",
-        "variant": "otlp-batch-otlp"
+        "protocol": "otlp"
       },
       "identity_keys": [
-        "variant",
+        "protocol",
         "os"
       ],
       "metric": "network_rx_bytes_rate_avg",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
-      "suite": "batch-processor",
+      "suite": "batch-processor-continuous-logs",
       "unit": "bytes/sec",
       "value": 3014994,
-      "variant": "otlp-batch-otlp"
+      "variant": null
     },
     {
       "branch": null,
@@ -3093,21 +3057,57 @@
       },
       "identity": {
         "os": "Windows",
-        "variant": "otlp-batch-otlp"
+        "protocol": "otap"
       },
       "identity_keys": [
-        "variant",
+        "protocol",
         "os"
       ],
       "metric": "network_rx_bytes_rate_avg",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
-      "suite": "batch-processor",
+      "suite": "batch-processor-continuous-logs",
+      "unit": "bytes/sec",
+      "value": 1204014.0,
+      "variant": null
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-continuous-1791131019671",
+      "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
+      "dimensions": {},
+      "environment": {
+        "architecture": "x86_64",
+        "cloud_shape": "BM.Standard3.64",
+        "cpu_model": "Intel Xeon Platinum 8358",
+        "execution_os": "windows",
+        "logical_cores": 128,
+        "memory_gb": 1024,
+        "os": "windows",
+        "os_distribution": "windows",
+        "physical_cores": 64,
+        "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
+      },
+      "identity": {
+        "os": "Windows",
+        "protocol": "otlp"
+      },
+      "identity_keys": [
+        "protocol",
+        "os"
+      ],
+      "metric": "network_rx_bytes_rate_avg",
+      "ordering_timestamp": "2026-10-04T15:06:13Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
+      "source_timestamp": "2026-10-04T15:06:13Z",
+      "suite": "batch-processor-continuous-logs",
       "unit": "bytes/sec",
       "value": 3165743.7,
-      "variant": "otlp-batch-otlp"
+      "variant": null
     },
     {
       "branch": null,
@@ -3140,7 +3140,7 @@
       "metric": "network_tx_bytes_rate_avg",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "bytes/sec",
@@ -3176,7 +3176,7 @@
       "metric": "network_tx_bytes_rate_avg",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "bytes/sec",
@@ -3214,7 +3214,7 @@
       "metric": "network_tx_bytes_rate_avg",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "bytes/sec",
@@ -3250,7 +3250,7 @@
       "metric": "network_tx_bytes_rate_avg",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "bytes/sec",
@@ -3288,7 +3288,7 @@
       "metric": "network_tx_bytes_rate_avg",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "bytes/sec",
@@ -3324,7 +3324,7 @@
       "metric": "network_tx_bytes_rate_avg",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "bytes/sec",
@@ -3362,7 +3362,7 @@
       "metric": "network_tx_bytes_rate_avg",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "bytes/sec",
@@ -3398,7 +3398,7 @@
       "metric": "network_tx_bytes_rate_avg",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "bytes/sec",
@@ -3427,57 +3427,21 @@
       },
       "identity": {
         "os": "Linux",
-        "variant": "otap-batch-otap"
+        "protocol": "otap"
       },
       "identity_keys": [
-        "variant",
+        "protocol",
         "os"
       ],
       "metric": "network_tx_bytes_rate_avg",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
-      "suite": "batch-processor",
+      "suite": "batch-processor-continuous-logs",
       "unit": "bytes/sec",
       "value": 770217,
-      "variant": "otap-batch-otap"
-    },
-    {
-      "branch": null,
-      "case": null,
-      "collection_id": "gha-continuous-1791131019671",
-      "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
-      "dimensions": {},
-      "environment": {
-        "architecture": "x86_64",
-        "cloud_shape": "BM.Standard3.64",
-        "cpu_model": "Intel Xeon Platinum 8358",
-        "execution_os": "windows",
-        "logical_cores": 128,
-        "memory_gb": 1024,
-        "os": "windows",
-        "os_distribution": "windows",
-        "physical_cores": 64,
-        "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
-      },
-      "identity": {
-        "os": "Windows",
-        "variant": "otap-batch-otap"
-      },
-      "identity_keys": [
-        "variant",
-        "os"
-      ],
-      "metric": "network_tx_bytes_rate_avg",
-      "ordering_timestamp": "2026-10-04T15:06:13Z",
-      "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
-      "source_timestamp": "2026-10-04T15:06:13Z",
-      "suite": "batch-processor",
-      "unit": "bytes/sec",
-      "value": 808727.85,
-      "variant": "otap-batch-otap"
+      "variant": null
     },
     {
       "branch": null,
@@ -3501,21 +3465,21 @@
       },
       "identity": {
         "os": "Linux",
-        "variant": "otlp-batch-otlp"
+        "protocol": "otlp"
       },
       "identity_keys": [
-        "variant",
+        "protocol",
         "os"
       ],
       "metric": "network_tx_bytes_rate_avg",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
-      "suite": "batch-processor",
+      "suite": "batch-processor-continuous-logs",
       "unit": "bytes/sec",
       "value": 2871533,
-      "variant": "otlp-batch-otlp"
+      "variant": null
     },
     {
       "branch": null,
@@ -3537,21 +3501,57 @@
       },
       "identity": {
         "os": "Windows",
-        "variant": "otlp-batch-otlp"
+        "protocol": "otap"
       },
       "identity_keys": [
-        "variant",
+        "protocol",
         "os"
       ],
       "metric": "network_tx_bytes_rate_avg",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
-      "suite": "batch-processor",
+      "suite": "batch-processor-continuous-logs",
+      "unit": "bytes/sec",
+      "value": 808727.85,
+      "variant": null
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-continuous-1791131019671",
+      "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
+      "dimensions": {},
+      "environment": {
+        "architecture": "x86_64",
+        "cloud_shape": "BM.Standard3.64",
+        "cpu_model": "Intel Xeon Platinum 8358",
+        "execution_os": "windows",
+        "logical_cores": 128,
+        "memory_gb": 1024,
+        "os": "windows",
+        "os_distribution": "windows",
+        "physical_cores": 64,
+        "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
+      },
+      "identity": {
+        "os": "Windows",
+        "protocol": "otlp"
+      },
+      "identity_keys": [
+        "protocol",
+        "os"
+      ],
+      "metric": "network_tx_bytes_rate_avg",
+      "ordering_timestamp": "2026-10-04T15:06:13Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
+      "source_timestamp": "2026-10-04T15:06:13Z",
+      "suite": "batch-processor-continuous-logs",
       "unit": "bytes/sec",
       "value": 3015109.65,
-      "variant": "otlp-batch-otlp"
+      "variant": null
     },
     {
       "branch": null,
@@ -3584,7 +3584,7 @@
       "metric": "ram_mib_avg",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "MiB",
@@ -3620,7 +3620,7 @@
       "metric": "ram_mib_avg",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "MiB",
@@ -3658,7 +3658,7 @@
       "metric": "ram_mib_avg",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "MiB",
@@ -3694,7 +3694,7 @@
       "metric": "ram_mib_avg",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "MiB",
@@ -3732,7 +3732,7 @@
       "metric": "ram_mib_avg",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "MiB",
@@ -3768,7 +3768,7 @@
       "metric": "ram_mib_avg",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "MiB",
@@ -3806,7 +3806,7 @@
       "metric": "ram_mib_avg",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "MiB",
@@ -3842,7 +3842,7 @@
       "metric": "ram_mib_avg",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "MiB",
@@ -3871,57 +3871,21 @@
       },
       "identity": {
         "os": "Linux",
-        "variant": "otap-batch-otap"
+        "protocol": "otap"
       },
       "identity_keys": [
-        "variant",
+        "protocol",
         "os"
       ],
       "metric": "ram_mib_avg",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
-      "suite": "batch-processor",
+      "suite": "batch-processor-continuous-logs",
       "unit": "MiB",
       "value": 28.4,
-      "variant": "otap-batch-otap"
-    },
-    {
-      "branch": null,
-      "case": null,
-      "collection_id": "gha-continuous-1791131019671",
-      "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
-      "dimensions": {},
-      "environment": {
-        "architecture": "x86_64",
-        "cloud_shape": "BM.Standard3.64",
-        "cpu_model": "Intel Xeon Platinum 8358",
-        "execution_os": "windows",
-        "logical_cores": 128,
-        "memory_gb": 1024,
-        "os": "windows",
-        "os_distribution": "windows",
-        "physical_cores": 64,
-        "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
-      },
-      "identity": {
-        "os": "Windows",
-        "variant": "otap-batch-otap"
-      },
-      "identity_keys": [
-        "variant",
-        "os"
-      ],
-      "metric": "ram_mib_avg",
-      "ordering_timestamp": "2026-10-04T15:06:13Z",
-      "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
-      "source_timestamp": "2026-10-04T15:06:13Z",
-      "suite": "batch-processor",
-      "unit": "MiB",
-      "value": 29.82,
-      "variant": "otap-batch-otap"
+      "variant": null
     },
     {
       "branch": null,
@@ -3945,21 +3909,21 @@
       },
       "identity": {
         "os": "Linux",
-        "variant": "otlp-batch-otlp"
+        "protocol": "otlp"
       },
       "identity_keys": [
-        "variant",
+        "protocol",
         "os"
       ],
       "metric": "ram_mib_avg",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
-      "suite": "batch-processor",
+      "suite": "batch-processor-continuous-logs",
       "unit": "MiB",
       "value": 18.6,
-      "variant": "otlp-batch-otlp"
+      "variant": null
     },
     {
       "branch": null,
@@ -3981,21 +3945,57 @@
       },
       "identity": {
         "os": "Windows",
-        "variant": "otlp-batch-otlp"
+        "protocol": "otap"
       },
       "identity_keys": [
-        "variant",
+        "protocol",
         "os"
       ],
       "metric": "ram_mib_avg",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
-      "suite": "batch-processor",
+      "suite": "batch-processor-continuous-logs",
+      "unit": "MiB",
+      "value": 29.82,
+      "variant": null
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-continuous-1791131019671",
+      "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
+      "dimensions": {},
+      "environment": {
+        "architecture": "x86_64",
+        "cloud_shape": "BM.Standard3.64",
+        "cpu_model": "Intel Xeon Platinum 8358",
+        "execution_os": "windows",
+        "logical_cores": 128,
+        "memory_gb": 1024,
+        "os": "windows",
+        "os_distribution": "windows",
+        "physical_cores": 64,
+        "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
+      },
+      "identity": {
+        "os": "Windows",
+        "protocol": "otlp"
+      },
+      "identity_keys": [
+        "protocol",
+        "os"
+      ],
+      "metric": "ram_mib_avg",
+      "ordering_timestamp": "2026-10-04T15:06:13Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
+      "source_timestamp": "2026-10-04T15:06:13Z",
+      "suite": "batch-processor-continuous-logs",
       "unit": "MiB",
       "value": 19.53,
-      "variant": "otlp-batch-otlp"
+      "variant": null
     },
     {
       "branch": null,
@@ -4028,7 +4028,7 @@
       "metric": "ram_mib_max",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "MiB",
@@ -4064,7 +4064,7 @@
       "metric": "ram_mib_max",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "MiB",
@@ -4102,7 +4102,7 @@
       "metric": "ram_mib_max",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "MiB",
@@ -4138,7 +4138,7 @@
       "metric": "ram_mib_max",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "MiB",
@@ -4176,7 +4176,7 @@
       "metric": "ram_mib_max",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "MiB",
@@ -4212,7 +4212,7 @@
       "metric": "ram_mib_max",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "MiB",
@@ -4250,7 +4250,7 @@
       "metric": "ram_mib_max",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "MiB",
@@ -4286,7 +4286,7 @@
       "metric": "ram_mib_max",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "MiB",
@@ -4315,57 +4315,21 @@
       },
       "identity": {
         "os": "Linux",
-        "variant": "otap-batch-otap"
+        "protocol": "otap"
       },
       "identity_keys": [
-        "variant",
+        "protocol",
         "os"
       ],
       "metric": "ram_mib_max",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
-      "suite": "batch-processor",
+      "suite": "batch-processor-continuous-logs",
       "unit": "MiB",
       "value": 29.2,
-      "variant": "otap-batch-otap"
-    },
-    {
-      "branch": null,
-      "case": null,
-      "collection_id": "gha-continuous-1791131019671",
-      "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
-      "dimensions": {},
-      "environment": {
-        "architecture": "x86_64",
-        "cloud_shape": "BM.Standard3.64",
-        "cpu_model": "Intel Xeon Platinum 8358",
-        "execution_os": "windows",
-        "logical_cores": 128,
-        "memory_gb": 1024,
-        "os": "windows",
-        "os_distribution": "windows",
-        "physical_cores": 64,
-        "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
-      },
-      "identity": {
-        "os": "Windows",
-        "variant": "otap-batch-otap"
-      },
-      "identity_keys": [
-        "variant",
-        "os"
-      ],
-      "metric": "ram_mib_max",
-      "ordering_timestamp": "2026-10-04T15:06:13Z",
-      "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
-      "source_timestamp": "2026-10-04T15:06:13Z",
-      "suite": "batch-processor",
-      "unit": "MiB",
-      "value": 30.66,
-      "variant": "otap-batch-otap"
+      "variant": null
     },
     {
       "branch": null,
@@ -4389,21 +4353,21 @@
       },
       "identity": {
         "os": "Linux",
-        "variant": "otlp-batch-otlp"
+        "protocol": "otlp"
       },
       "identity_keys": [
-        "variant",
+        "protocol",
         "os"
       ],
       "metric": "ram_mib_max",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
-      "suite": "batch-processor",
+      "suite": "batch-processor-continuous-logs",
       "unit": "MiB",
       "value": 19.2,
-      "variant": "otlp-batch-otlp"
+      "variant": null
     },
     {
       "branch": null,
@@ -4425,21 +4389,57 @@
       },
       "identity": {
         "os": "Windows",
-        "variant": "otlp-batch-otlp"
+        "protocol": "otap"
       },
       "identity_keys": [
-        "variant",
+        "protocol",
         "os"
       ],
       "metric": "ram_mib_max",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
-      "suite": "batch-processor",
+      "suite": "batch-processor-continuous-logs",
+      "unit": "MiB",
+      "value": 30.66,
+      "variant": null
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-continuous-1791131019671",
+      "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
+      "dimensions": {},
+      "environment": {
+        "architecture": "x86_64",
+        "cloud_shape": "BM.Standard3.64",
+        "cpu_model": "Intel Xeon Platinum 8358",
+        "execution_os": "windows",
+        "logical_cores": 128,
+        "memory_gb": 1024,
+        "os": "windows",
+        "os_distribution": "windows",
+        "physical_cores": 64,
+        "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
+      },
+      "identity": {
+        "os": "Windows",
+        "protocol": "otlp"
+      },
+      "identity_keys": [
+        "protocol",
+        "os"
+      ],
+      "metric": "ram_mib_max",
+      "ordering_timestamp": "2026-10-04T15:06:13Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
+      "source_timestamp": "2026-10-04T15:06:13Z",
+      "suite": "batch-processor-continuous-logs",
       "unit": "MiB",
       "value": 20.16,
-      "variant": "otlp-batch-otlp"
+      "variant": null
     },
     {
       "branch": null,
@@ -4472,7 +4472,7 @@
       "metric": "test_duration",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "seconds",
@@ -4508,7 +4508,7 @@
       "metric": "test_duration",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "seconds",
@@ -4546,7 +4546,7 @@
       "metric": "test_duration",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "seconds",
@@ -4582,7 +4582,7 @@
       "metric": "test_duration",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "seconds",
@@ -4620,7 +4620,7 @@
       "metric": "test_duration",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "seconds",
@@ -4656,7 +4656,7 @@
       "metric": "test_duration",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "seconds",
@@ -4694,7 +4694,7 @@
       "metric": "test_duration",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "seconds",
@@ -4730,7 +4730,7 @@
       "metric": "test_duration",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
       "suite": "attribute-processor-protocol-routing",
       "unit": "seconds",
@@ -4759,57 +4759,21 @@
       },
       "identity": {
         "os": "Linux",
-        "variant": "otap-batch-otap"
+        "protocol": "otap"
       },
       "identity_keys": [
-        "variant",
+        "protocol",
         "os"
       ],
       "metric": "test_duration",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
-      "suite": "batch-processor",
+      "suite": "batch-processor-continuous-logs",
       "unit": "seconds",
       "value": 20.0,
-      "variant": "otap-batch-otap"
-    },
-    {
-      "branch": null,
-      "case": null,
-      "collection_id": "gha-continuous-1791131019671",
-      "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
-      "dimensions": {},
-      "environment": {
-        "architecture": "x86_64",
-        "cloud_shape": "BM.Standard3.64",
-        "cpu_model": "Intel Xeon Platinum 8358",
-        "execution_os": "windows",
-        "logical_cores": 128,
-        "memory_gb": 1024,
-        "os": "windows",
-        "os_distribution": "windows",
-        "physical_cores": 64,
-        "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
-      },
-      "identity": {
-        "os": "Windows",
-        "variant": "otap-batch-otap"
-      },
-      "identity_keys": [
-        "variant",
-        "os"
-      ],
-      "metric": "test_duration",
-      "ordering_timestamp": "2026-10-04T15:06:13Z",
-      "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
-      "source_timestamp": "2026-10-04T15:06:13Z",
-      "suite": "batch-processor",
-      "unit": "seconds",
-      "value": 20.0,
-      "variant": "otap-batch-otap"
+      "variant": null
     },
     {
       "branch": null,
@@ -4833,21 +4797,21 @@
       },
       "identity": {
         "os": "Linux",
-        "variant": "otlp-batch-otlp"
+        "protocol": "otlp"
       },
       "identity_keys": [
-        "variant",
+        "protocol",
         "os"
       ],
       "metric": "test_duration",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "gha-continuous-1791131019671-0",
+      "run_id": "gha-continuous-1791131019671-0-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
-      "suite": "batch-processor",
+      "suite": "batch-processor-continuous-logs",
       "unit": "seconds",
       "value": 20.0,
-      "variant": "otlp-batch-otlp"
+      "variant": null
     },
     {
       "branch": null,
@@ -4869,21 +4833,57 @@
       },
       "identity": {
         "os": "Windows",
-        "variant": "otlp-batch-otlp"
+        "protocol": "otap"
       },
       "identity_keys": [
-        "variant",
+        "protocol",
         "os"
       ],
       "metric": "test_duration",
       "ordering_timestamp": "2026-10-04T15:06:13Z",
       "repository": "https://github.com/open-telemetry/otel-arrow",
-      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
       "source_timestamp": "2026-10-04T15:06:13Z",
-      "suite": "batch-processor",
+      "suite": "batch-processor-continuous-logs",
       "unit": "seconds",
       "value": 20.0,
-      "variant": "otlp-batch-otlp"
+      "variant": null
+    },
+    {
+      "branch": null,
+      "case": null,
+      "collection_id": "gha-continuous-1791131019671",
+      "commit": "78d4f3fccec0b4d9eafde78bd6261200dd3ec736",
+      "dimensions": {},
+      "environment": {
+        "architecture": "x86_64",
+        "cloud_shape": "BM.Standard3.64",
+        "cpu_model": "Intel Xeon Platinum 8358",
+        "execution_os": "windows",
+        "logical_cores": 128,
+        "memory_gb": 1024,
+        "os": "windows",
+        "os_distribution": "windows",
+        "physical_cores": 64,
+        "testbed": "oracle-bare-metal-64cpu-1024gb-x86-64-windows-24"
+      },
+      "identity": {
+        "os": "Windows",
+        "protocol": "otlp"
+      },
+      "identity_keys": [
+        "protocol",
+        "os"
+      ],
+      "metric": "test_duration",
+      "ordering_timestamp": "2026-10-04T15:06:13Z",
+      "repository": "https://github.com/open-telemetry/otel-arrow",
+      "run_id": "mock-windows-gha-continuous-1791131019671-0-biased-parameter-schema-v2",
+      "source_timestamp": "2026-10-04T15:06:13Z",
+      "suite": "batch-processor-continuous-logs",
+      "unit": "seconds",
+      "value": 20.0,
+      "variant": null
     }
   ],
   "ordering_timestamp": "2026-10-04T15:06:13Z",

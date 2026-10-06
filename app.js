@@ -150,21 +150,31 @@ function mapsFor(views) {
   };
 }
 
-function selectedVariants(comparison, suites) {
+function suiteParameter(suite, parameterId) {
+  const parameter = suite.parameters.find((item) => item.id === parameterId);
+  if (!parameter) {
+    throw new Error(`Suite ${suite.id} has no parameter ${parameterId}`);
+  }
+  return parameter;
+}
+
+function selectedSeries(comparison, suites) {
   const selected = [];
   for (const source of comparison.sources) {
     const suite = suites.get(source.suite);
     if (!suite) {
       throw new Error(`Comparison references unknown suite ${source.suite}`);
     }
-    const included = source.include_variants
-      ? new Set(source.include_variants)
+    const parameter = suiteParameter(suite, source.series_parameter);
+    const included = source.include_values?.[source.series_parameter]
+      ? new Set(source.include_values[source.series_parameter])
       : null;
-    for (const variant of suite.variants) {
-      if (!included || included.has(variant.id)) {
+    for (const value of parameter.values) {
+      if (!included || included.has(value.id)) {
         selected.push({
           suite,
-          variant,
+          source,
+          value,
           role: source.role || "comparison",
         });
       }
@@ -279,15 +289,26 @@ function historyFacets(series) {
   return facets;
 }
 
-function identitySeriesLabel(series, excludedKey = null) {
+function identitySeriesLabel(series, excludedKey = null, parameterLabels = null) {
   return series.identity_keys
     .filter((key) => key !== excludedKey && series.identity[key] !== undefined)
-    .map((key) => series.identity[key])
+    .map((key) => parameterLabels?.get(key)?.get(series.identity[key])
+      || series.identity[key])
     .join(", ");
 }
 
-function historySeriesLabel(series) {
-  return identitySeriesLabel(series);
+function historySeriesLabel(series, parameterLabels = null) {
+  return identitySeriesLabel(series, null, parameterLabels);
+}
+
+function suiteParameterLabels(suite) {
+  return new Map(suite.parameters.map((parameter) => [
+    parameter.id,
+    new Map(parameter.values.map((value) => [
+      value.id,
+      value.label || value.id,
+    ])),
+  ]));
 }
 
 function historySeriesColor(series) {
@@ -305,21 +326,23 @@ function historySeriesColor(series) {
   return `hsl(${Math.abs(hash) % 360}, 65%, 48%)`;
 }
 
-function suiteAxes(records) {
-  const axes = [{ id: "identity.variant", label: "Variant" }];
+function suiteAxes(records, suite) {
+  const axes = [];
   const categories = collectDimensionCategories(records.map((item) => ({
     dimensions: historyFacets(item),
   })));
   const identityKeys = [...new Set(records.flatMap((item) => item.identity_keys))]
-    .filter((key) => key !== "variant")
     .map((key) => `identity.${key}`);
   const dimensionKeys = [...categories.keys()]
     .filter((key) => key.startsWith("dimension."));
   for (const key of [...identityKeys, ...dimensionKeys]) {
     if ((categories.get(key) || []).length > 1) {
+      const parameter = key.startsWith("identity.")
+        ? suite.parameters.find((item) => item.id === key.slice(9))
+        : null;
       axes.push({
         id: key,
-        label: fieldLabel(key),
+        label: parameter?.label || fieldLabel(key),
       });
     }
   }
@@ -328,15 +351,16 @@ function suiteAxes(records) {
 
 function defaultSuiteAxis(axes) {
   for (const id of [
-    "identity.case", "dimension.load_rate", "dimension.batch_size",
+    "identity.load_rate", "identity.batch_size", "identity.action_count",
+    "identity.case", "identity.protocol", "dimension.load_rate", "dimension.batch_size",
     "dimension.engine_cores", "dimension.allocated_cores",
   ]) {
     if (axes.some((axis) => axis.id === id)) return id;
   }
-  return "identity.variant";
+  return axes[0]?.id || "history";
 }
 
-function explorerChart(records, axis, variants) {
+function explorerChart(records, axis, parameterLabels) {
   const history = axis === "history";
   const groups = new Map();
   const labels = new Map();
@@ -346,8 +370,9 @@ function explorerChart(records, axis, variants) {
       ?? FILTER_MISSING);
   };
   const identityKeys = new Set(records.flatMap((item) => Object.keys(item.identity)));
-  const variantBars = !history && axis === "identity.variant"
-    && [...identityKeys].every((key) => key === "variant"
+  const axisIdentityKey = axis.startsWith("identity.") ? axis.slice(9) : null;
+  const identityBars = !history && axisIdentityKey !== null
+    && [...identityKeys].every((key) => key === axisIdentityKey
       || records.every((item) => (item.identity[key] ?? FILTER_MISSING)
         === (records[0].identity[key] ?? FILTER_MISSING)))
     && new Set(records.map(axisValue)).size === records.length;
@@ -376,7 +401,7 @@ function explorerChart(records, axis, variants) {
       const [namespace, key] = axis.split(".");
       const fields = namespace === "identity" ? identity : dimensions;
       x = axisValue(record);
-      if (!variantBars) delete fields[key];
+      if (!identityBars) delete fields[key];
       for (const dimension of dependentDimensions) delete dimensions[dimension];
     }
     labels.set(x, record);
@@ -415,19 +440,22 @@ function explorerChart(records, axis, variants) {
         .toISOString().slice(0, 10);
     }
     if (x === FILTER_MISSING) return "Not set";
-    if (axis === "identity.variant") return variants.get(x) || x;
+    if (axisIdentityKey !== null) {
+      return parameterLabels.get(axisIdentityKey)?.get(x) || x;
+    }
     return x;
   };
   return {
     labels: ordered.map(displayLabel),
     datasets: [...groups.values()].map(({ series, records }) => ({
       label: history
-        ? historySeriesLabel(series)
+        ? historySeriesLabel(series, parameterLabels)
         : identitySeriesLabel(
           series,
           axis.startsWith("identity.") ? axis.slice(9) : null,
+          parameterLabels,
         ) || "Results",
-      grouped: !variantBars,
+      grouped: !identityBars,
       borderColor: historySeriesColor(series),
       backgroundColor: historySeriesColor(series),
       borderWidth: history ? 2 : 1,
@@ -489,9 +517,7 @@ async function loadResultDetails(record, suite, catalog, root, target, isCurrent
     }).join("");
     target.innerHTML = `
       <h2>Selected result</h2>
-      <p>${escapeHtml(historySeriesLabel(record, new Map(
-        suite.variants.map((item) => [item.id, item.name]),
-      )))}</p>
+      <p>${escapeHtml(historySeriesLabel(record, suiteParameterLabels(suite)))}</p>
       <p class="meta">
         Commit: ${escapeHtml(record.commit)}<br>
         Run: <a href="${escapeHtml(`${root}/${run.path}`)}">${escapeHtml(record.run_id)}</a><br>
@@ -518,7 +544,7 @@ function renderSuiteExplorer(target, suite, data, catalog, root, overview = fals
     target.innerHTML = `${heading}<p>No results recorded.</p>`;
     return;
   }
-  const variants = new Map(suite.variants.map((item) => [item.id, item.name]));
+  const parameterLabels = suiteParameterLabels(suite);
   const metrics = [...new Set(records.map((item) =>
     JSON.stringify([item.metric, item.unit])))].sort();
   const environmentGroups = new Map();
@@ -537,7 +563,7 @@ function renderSuiteExplorer(target, suite, data, catalog, root, overview = fals
   }
   const environments = [...environmentGroups.entries()];
   environments.sort(([left], [right]) => left.localeCompare(right));
-  const axes = suiteAxes(records);
+  const axes = suiteAxes(records, suite);
   axes.push({ id: "history", label: "Commit history" });
   const categories = collectDimensionCategories(records.map((item) => ({
     dimensions: historyFacets(item),
@@ -696,7 +722,7 @@ function renderSuiteExplorer(target, suite, data, catalog, root, overview = fals
       return;
     }
     if (typeof Chart === "undefined") throw new Error("Chart.js did not load");
-    const chartData = explorerChart(visible, axis, variants);
+    const chartData = explorerChart(visible, axis, parameterLabels);
     const options = chartOptions(unit);
     if (history) {
       Object.assign(options.scales.x.ticks, {
@@ -796,23 +822,20 @@ function filterLabel(key) {
   return fieldLabel(key);
 }
 
-function selectedObservationKeys(selected) {
-  return new Set(
-    selected.map(
-      ({ suite, variant }) => `${suite.id}\u0000${variant.id}`,
-    ),
-  );
-}
-
-function comparisonObservations(comparison, selected, observations) {
-  const identities = selectedObservationKeys(selected);
+function comparisonObservations(comparison, _selected, observations) {
   const cases = new Set(comparison.cases.map((item) => item.id));
   const metrics = new Set(comparison.metrics.map((item) => item.id));
   return observations.filter(
-    (observation) =>
-      identities.has(`${observation.suite}\u0000${observation.variant}`) &&
-      cases.has(observation.case) &&
-      metrics.has(observation.metric),
+    (observation) => comparison.sources.some((source) => {
+      if (observation.suite !== source.suite) return false;
+      if (!cases.has(observation.identity[source.case_parameter])) return false;
+      for (const [parameterId, values] of Object.entries(
+        source.include_values || {},
+      )) {
+        if (!values.includes(observation.identity[parameterId])) return false;
+      }
+      return true;
+    }) && metrics.has(observation.metric),
   );
 }
 
@@ -962,9 +985,13 @@ function buildMetricChart(
   for (const testCase of comparison.cases) {
     for (const [key, environment] of environmentEntries) {
       if (metricObservations.some(
-        (observation) =>
-          observation.case === testCase.id &&
-          environmentKey(observation.environment) === key,
+        (observation) => {
+          const source = comparison.sources.find(
+            (item) => item.suite === observation.suite,
+          );
+          return observation.identity[source.case_parameter] === testCase.id
+            && environmentKey(observation.environment) === key;
+        },
       )) {
         groups.push({
           caseId: testCase.id,
@@ -977,16 +1004,21 @@ function buildMetricChart(
 
   const byValue = new Map();
   for (const observation of metricObservations) {
+    const source = comparison.sources.find(
+      (item) => item.suite === observation.suite,
+    );
+    const seriesValue = observation.identity[source.series_parameter];
+    const caseValue = observation.identity[source.case_parameter];
     const key = [
       observation.suite,
-      observation.variant,
+      seriesValue,
       environmentKey(observation.environment),
-      observation.case,
+      caseValue,
     ].join("\u0000");
     if (byValue.has(key)) {
       throw new Error(
         `Duplicate latest observation for ${observation.suite}/` +
-        `${observation.variant}, ${observation.case}, ${metric.id}`,
+        `${seriesValue}, ${caseValue}, ${metric.id}`,
       );
     }
     byValue.set(key, observation.value);
@@ -997,7 +1029,7 @@ function buildMetricChart(
   for (const [index, item] of selected.entries()) {
     const data = groups.map((group) => byValue.get([
       item.suite.id,
-      item.variant.id,
+      item.value.id,
       group.environmentKey,
       group.caseId,
     ].join("\u0000")) ?? null);
@@ -1006,7 +1038,7 @@ function buildMetricChart(
     }
     const color = colors[index % colors.length];
     datasets.push({
-      label: item.variant.name,
+      label: item.value.label || item.value.id,
       data,
       backgroundColor: color,
       borderColor: color,
@@ -1135,34 +1167,35 @@ function renderMetricCharts(
   }
 }
 
-function renderComparisonPage(catalog, latest, views, suites, comparisons) {
+function renderComparisonPage(catalog, snapshot, views, suites, comparisons) {
   const comparisonId = document.body.dataset.comparisonId;
   const comparison = comparisons.get(comparisonId);
   if (!comparison) {
     throw new Error(`Unknown comparison ${comparisonId}`);
   }
-  const selected = selectedVariants(comparison, suites);
+  const selected = selectedSeries(comparison, suites);
   const observations = comparisonObservations(
     comparison,
     selected,
-    latest.observations,
+    snapshot.observations,
   );
   const categories = collectDimensionCategories(observations);
   const filterState = initialFilterState(categories);
   document.title = `${comparison.name} - OTel Arrow Benchmarks`;
   document.getElementById("page-title").textContent = comparison.name;
   document.getElementById("summary").textContent =
-    `${selected.length} variants from ${comparison.sources.length} ` +
+    `${selected.length} series from ${comparison.sources.length} ` +
     `suite ${comparison.sources.length === 1 ? "family" : "families"}; ` +
-    `latest collection ${latest.collection_id}`;
+    "latest available result per parameter combination";
 
   const sourceSections = comparison.sources.map((source) => {
     const suite = suites.get(source.suite);
-    const allowed = source.include_variants
-      ? new Set(source.include_variants)
+    const parameter = suiteParameter(suite, source.series_parameter);
+    const allowed = source.include_values?.[source.series_parameter]
+      ? new Set(source.include_values[source.series_parameter])
       : null;
-    const variants = suite.variants.filter(
-      (variant) => !allowed || allowed.has(variant.id),
+    const values = parameter.values.filter(
+      (value) => !allowed || allowed.has(value.id),
     );
     return `
       <div class="source-card">
@@ -1172,8 +1205,8 @@ function renderComparisonPage(catalog, latest, views, suites, comparisons) {
         </div>
         <div class="meta">${escapeHtml(suite.description)}</div>
         <div class="variant-list">
-          ${variants.map(
-            (variant) => `<span>${escapeHtml(variant.name)}</span>`,
+          ${values.map(
+            (value) => `<span>${escapeHtml(value.label || value.id)}</span>`,
           ).join("")}
         </div>
       </div>
@@ -1208,9 +1241,8 @@ function renderComparisonPage(catalog, latest, views, suites, comparisons) {
       `${filtered.length.toLocaleString()} of ` +
       `${observations.length.toLocaleString()} measurements`;
     provenance.textContent =
-      `Showing ${filtered.length} selected observations from ` +
-      `${latest.collection_id} ` +
-      `(${latest.observations.length} observations available).`;
+      `Showing ${filtered.length} selected observations ` +
+      `(${snapshot.observations.length} latest available observations).`;
   };
   for (const checkbox of document.querySelectorAll(
     "#filters input[data-dimension]",
@@ -1274,9 +1306,9 @@ async function load() {
       renderOverview(overview, views);
       return;
     }
-    const [catalog, latest, views] = await Promise.all([
+    const [catalog, snapshot, views] = await Promise.all([
       fetchJson(`${root}/data/catalog.json${versionQuery}`),
-      fetchJson(`${root}/data/latest.json${versionQuery}`),
+      fetchJson(`${root}/data/overview.json${versionQuery}`),
       fetchJson(`${root}/data/views.json${versionQuery}`),
     ]);
     configureLabels(views);
@@ -1284,7 +1316,7 @@ async function load() {
     if (document.body.dataset.page === "comparison") {
       renderComparisonPage(
         catalog,
-        latest,
+        snapshot,
         views,
         suites,
         comparisons,
