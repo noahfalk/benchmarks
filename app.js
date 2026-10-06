@@ -73,6 +73,18 @@ function writeBoolPreference(key, value) {
 }
 
 let colorblindMode = readBoolPreference(COLORBLIND_STORAGE_KEY, false);
+let fieldLabels = new Map();
+let metricLabels = new Map();
+
+function configureLabels(views) {
+  fieldLabels = new Map(Object.entries(views.labels || {}));
+  metricLabels = new Map();
+  for (const profile of views.metric_profiles || []) {
+    for (const metric of profile.metrics) {
+      metricLabels.set(metric.name, metric.label);
+    }
+  }
+}
 
 function activeChartColors() {
   return colorblindMode ? COLORBLIND_CHART_COLORS : AUTO_CHART_COLORS;
@@ -307,7 +319,7 @@ function suiteAxes(records) {
     if ((categories.get(key) || []).length > 1) {
       axes.push({
         id: key,
-        label: titleCase(key.slice(key.indexOf(".") + 1)),
+        label: fieldLabel(key),
       });
     }
   }
@@ -471,7 +483,7 @@ async function loadResultDetails(record, suite, catalog, root, target, isCurrent
     const rows = table.metrics.map((metric, index) => {
       const value = measurement.values[index];
       return value === null ? "" : `
-        <tr><th>${escapeHtml(titleCase(metric.name))}</th>
+        <tr><th>${escapeHtml(metricLabel(metric.name))}</th>
             <td>${escapeHtml(formatValue(value))} ${escapeHtml(metric.unit)}</td></tr>
       `;
     }).join("");
@@ -561,7 +573,7 @@ function renderSuiteExplorer(target, suite, data, catalog, root, overview = fals
       <label>Metric <select class="explorer-metric">
         ${metrics.map((key) => {
           const [metric, unit] = JSON.parse(key);
-          return `<option value="${escapeHtml(key)}">${escapeHtml(titleCase(metric))} (${escapeHtml(unit)})</option>`;
+          return `<option value="${escapeHtml(key)}">${escapeHtml(metricLabel(metric))} (${escapeHtml(unit)})</option>`;
         }).join("")}
       </select></label>
       <label class="explorer-environment-control">Hardware <select class="explorer-environment">
@@ -771,8 +783,17 @@ function titleCase(value) {
     .replace(/\b\w/g, (letter) => letter.toUpperCase());
 }
 
+function fieldLabel(key) {
+  const name = key.slice(key.indexOf(".") + 1);
+  return fieldLabels.get(name) || titleCase(name);
+}
+
+function metricLabel(name) {
+  return metricLabels.get(name) || titleCase(name);
+}
+
 function filterLabel(key) {
-  return titleCase(key.slice(key.indexOf(".") + 1));
+  return fieldLabel(key);
 }
 
 function selectedObservationKeys(selected) {
@@ -1232,6 +1253,7 @@ async function load() {
         fetchJson(`${root}/data/suites/${encodeURIComponent(suiteId)}.json${versionQuery}`),
         fetchJson(`${root}/data/catalog.json${versionQuery}`),
       ]);
+      configureLabels(views);
       const suite = views.suites.find((item) => item.id === suiteId);
       if (!suite) {
         throw new Error(`Unknown suite ${suiteId}`);
@@ -1248,6 +1270,7 @@ async function load() {
         fetchJson(`${root}/data/overview.json${versionQuery}`),
         fetchJson(`${root}/data/views.json${versionQuery}`),
       ]);
+      configureLabels(views);
       renderOverview(overview, views);
       return;
     }
@@ -1256,6 +1279,7 @@ async function load() {
       fetchJson(`${root}/data/latest.json${versionQuery}`),
       fetchJson(`${root}/data/views.json${versionQuery}`),
     ]);
+    configureLabels(views);
     const { suites, comparisons } = mapsFor(views);
     if (document.body.dataset.page === "comparison") {
       renderComparisonPage(

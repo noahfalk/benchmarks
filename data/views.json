@@ -91,11 +91,39 @@
       ]
     }
   ],
+  "labels": {
+    "allocated_cores": "Allocated cores",
+    "architecture": "Architecture",
+    "binary": "Binary",
+    "branch": "Branch",
+    "case": "Case",
+    "cloud_shape": "Cloud shape",
+    "compression": "Compression",
+    "cpu_model": "CPU model",
+    "engine_cores": "Engine cores",
+    "environment_basis": "Environment basis",
+    "execution_os": "Execution OS",
+    "load_rate": "Load rate",
+    "logical_cores": "Logical cores",
+    "memory_gb": "Memory GB",
+    "operation": "Operation",
+    "os": "OS",
+    "os_distribution": "OS distribution",
+    "os_version": "OS version",
+    "physical_cores": "Physical cores",
+    "processor": "Processor",
+    "protocol": "Protocol",
+    "repository": "Repository",
+    "signal": "Signal",
+    "testbed": "Testbed",
+    "variant": "Variant"
+  },
   "metric_profiles": [
     {
       "id": "logs",
       "metrics": [
         {
+          "label": "Normalized CPU average",
           "max": 100,
           "max_decimal_places": 2,
           "min": 0,
@@ -103,6 +131,7 @@
           "unit": "%"
         },
         {
+          "label": "Normalized CPU maximum",
           "max": 100,
           "max_decimal_places": 2,
           "min": 0,
@@ -110,6 +139,7 @@
           "unit": "%"
         },
         {
+          "label": "Dropped logs percentage",
           "max": 100,
           "max_decimal_places": 6,
           "min": 0,
@@ -117,6 +147,7 @@
           "unit": "%"
         },
         {
+          "label": "Egress bytes per log",
           "max": null,
           "max_decimal_places": 2,
           "min": 0,
@@ -124,6 +155,7 @@
           "unit": "bytes/log"
         },
         {
+          "label": "Logs produced rate",
           "max": null,
           "max_decimal_places": 0,
           "min": 0,
@@ -131,6 +163,7 @@
           "unit": "logs/sec"
         },
         {
+          "label": "Logs received rate",
           "max": null,
           "max_decimal_places": 0,
           "min": 0,
@@ -138,6 +171,7 @@
           "unit": "logs/sec"
         },
         {
+          "label": "Network RX bytes rate average",
           "max": null,
           "max_decimal_places": 0,
           "min": 0,
@@ -145,6 +179,7 @@
           "unit": "bytes/sec"
         },
         {
+          "label": "Network TX bytes rate average",
           "max": null,
           "max_decimal_places": 0,
           "min": 0,
@@ -152,6 +187,7 @@
           "unit": "bytes/sec"
         },
         {
+          "label": "RAM average",
           "max": null,
           "max_decimal_places": 1,
           "min": 0,
@@ -159,6 +195,7 @@
           "unit": "MiB"
         },
         {
+          "label": "RAM maximum",
           "max": null,
           "max_decimal_places": 1,
           "min": 0,
@@ -166,6 +203,7 @@
           "unit": "MiB"
         },
         {
+          "label": "Test duration",
           "max": null,
           "max_decimal_places": 1,
           "min": 0,
@@ -178,6 +216,7 @@
       "id": "comparison-metrics",
       "metrics": [
         {
+          "label": "Normalized CPU average",
           "max": 100,
           "max_decimal_places": 2,
           "min": 0,
@@ -185,6 +224,7 @@
           "unit": "%"
         },
         {
+          "label": "Normalized CPU maximum",
           "max": 100,
           "max_decimal_places": 2,
           "min": 0,
@@ -192,6 +232,7 @@
           "unit": "%"
         },
         {
+          "label": "Dropped metrics percentage",
           "max": 100,
           "max_decimal_places": 6,
           "min": 0,
@@ -199,6 +240,7 @@
           "unit": "%"
         },
         {
+          "label": "Metrics produced rate",
           "max": null,
           "max_decimal_places": 0,
           "min": 0,
@@ -206,6 +248,7 @@
           "unit": "metrics/sec"
         },
         {
+          "label": "Metrics received rate",
           "max": null,
           "max_decimal_places": 0,
           "min": 0,
@@ -213,6 +256,7 @@
           "unit": "metrics/sec"
         },
         {
+          "label": "Network RX bytes rate average",
           "max": null,
           "max_decimal_places": 0,
           "min": 0,
@@ -220,6 +264,7 @@
           "unit": "bytes/sec"
         },
         {
+          "label": "Network TX bytes rate average",
           "max": null,
           "max_decimal_places": 0,
           "min": 0,
@@ -227,6 +272,7 @@
           "unit": "bytes/sec"
         },
         {
+          "label": "RAM average",
           "max": null,
           "max_decimal_places": 1,
           "min": 0,
@@ -234,6 +280,7 @@
           "unit": "MiB"
         },
         {
+          "label": "RAM maximum",
           "max": null,
           "max_decimal_places": 1,
           "min": 0,
@@ -241,6 +288,7 @@
           "unit": "MiB"
         },
         {
+          "label": "Test duration",
           "max": null,
           "max_decimal_places": 1,
           "min": 0,
@@ -253,6 +301,7 @@
       "id": "comparison-traces",
       "metrics": [
         {
+          "label": "Normalized CPU average",
           "max": 100,
           "max_decimal_places": 2,
           "min": 0,
@@ -260,6 +309,7 @@
           "unit": "%"
         },
         {
+          "label": "Normalized CPU maximum",
           "max": 100,
           "max_decimal_places": 2,
           "min": 0,
@@ -267,6 +317,7 @@
           "unit": "%"
         },
         {
+          "label": "Dropped spans percentage",
           "max": 100,
           "max_decimal_places": 6,
           "min": 0,
@@ -274,6 +325,7 @@
           "unit": "%"
         },
         {
+          "label": "Network RX bytes rate average",
           "max": null,
           "max_decimal_places": 0,
           "min": 0,
@@ -281,6 +333,7 @@
           "unit": "bytes/sec"
         },
         {
+          "label": "Network TX bytes rate average",
           "max": null,
           "max_decimal_places": 0,
           "min": 0,
@@ -288,6 +341,7 @@
           "unit": "bytes/sec"
         },
         {
+          "label": "RAM average",
           "max": null,
           "max_decimal_places": 1,
           "min": 0,
@@ -295,6 +349,7 @@
           "unit": "MiB"
         },
         {
+          "label": "RAM maximum",
           "max": null,
           "max_decimal_places": 1,
           "min": 0,
@@ -302,6 +357,7 @@
           "unit": "MiB"
         },
         {
+          "label": "Spans produced rate",
           "max": null,
           "max_decimal_places": 0,
           "min": 0,
@@ -309,6 +365,7 @@
           "unit": "spans/sec"
         },
         {
+          "label": "Spans received rate",
           "max": null,
           "max_decimal_places": 0,
           "min": 0,
@@ -316,6 +373,7 @@
           "unit": "spans/sec"
         },
         {
+          "label": "Test duration",
           "max": null,
           "max_decimal_places": 1,
           "min": 0,
@@ -328,6 +386,7 @@
       "id": "integration-metrics",
       "metrics": [
         {
+          "label": "Normalized CPU average",
           "max": 100,
           "max_decimal_places": 2,
           "min": 0,
@@ -335,6 +394,7 @@
           "unit": "%"
         },
         {
+          "label": "Normalized CPU maximum",
           "max": 100,
           "max_decimal_places": 2,
           "min": 0,
@@ -342,6 +402,7 @@
           "unit": "%"
         },
         {
+          "label": "Dropped signals percentage",
           "max": 100,
           "max_decimal_places": 6,
           "min": 0,
@@ -349,6 +410,7 @@
           "unit": "%"
         },
         {
+          "label": "Metrics produced rate",
           "max": null,
           "max_decimal_places": 0,
           "min": 0,
@@ -356,6 +418,7 @@
           "unit": "metrics/sec"
         },
         {
+          "label": "Metrics received rate",
           "max": null,
           "max_decimal_places": 0,
           "min": 0,
@@ -363,6 +426,7 @@
           "unit": "metrics/sec"
         },
         {
+          "label": "Network RX bytes rate average",
           "max": null,
           "max_decimal_places": 0,
           "min": 0,
@@ -370,6 +434,7 @@
           "unit": "bytes/sec"
         },
         {
+          "label": "Network TX bytes rate average",
           "max": null,
           "max_decimal_places": 0,
           "min": 0,
@@ -377,6 +442,7 @@
           "unit": "bytes/sec"
         },
         {
+          "label": "RAM average",
           "max": null,
           "max_decimal_places": 1,
           "min": 0,
@@ -384,6 +450,7 @@
           "unit": "MiB"
         },
         {
+          "label": "RAM maximum",
           "max": null,
           "max_decimal_places": 1,
           "min": 0,
@@ -391,6 +458,7 @@
           "unit": "MiB"
         },
         {
+          "label": "Test duration",
           "max": null,
           "max_decimal_places": 1,
           "min": 0,
@@ -403,6 +471,7 @@
       "id": "integration-traces",
       "metrics": [
         {
+          "label": "Normalized CPU average",
           "max": 100,
           "max_decimal_places": 2,
           "min": 0,
@@ -410,6 +479,7 @@
           "unit": "%"
         },
         {
+          "label": "Normalized CPU maximum",
           "max": 100,
           "max_decimal_places": 2,
           "min": 0,
@@ -417,6 +487,7 @@
           "unit": "%"
         },
         {
+          "label": "Dropped signals percentage",
           "max": 100,
           "max_decimal_places": 6,
           "min": 0,
@@ -424,6 +495,7 @@
           "unit": "%"
         },
         {
+          "label": "Network RX bytes rate average",
           "max": null,
           "max_decimal_places": 0,
           "min": 0,
@@ -431,6 +503,7 @@
           "unit": "bytes/sec"
         },
         {
+          "label": "Network TX bytes rate average",
           "max": null,
           "max_decimal_places": 0,
           "min": 0,
@@ -438,6 +511,7 @@
           "unit": "bytes/sec"
         },
         {
+          "label": "RAM average",
           "max": null,
           "max_decimal_places": 1,
           "min": 0,
@@ -445,6 +519,7 @@
           "unit": "MiB"
         },
         {
+          "label": "RAM maximum",
           "max": null,
           "max_decimal_places": 1,
           "min": 0,
@@ -452,6 +527,7 @@
           "unit": "MiB"
         },
         {
+          "label": "Spans produced rate",
           "max": null,
           "max_decimal_places": 0,
           "min": 0,
@@ -459,6 +535,7 @@
           "unit": "spans/sec"
         },
         {
+          "label": "Spans received rate",
           "max": null,
           "max_decimal_places": 0,
           "min": 0,
@@ -466,6 +543,7 @@
           "unit": "spans/sec"
         },
         {
+          "label": "Test duration",
           "max": null,
           "max_decimal_places": 1,
           "min": 0,
@@ -478,6 +556,7 @@
       "id": "idle",
       "metrics": [
         {
+          "label": "Idle CPU average",
           "max": 100,
           "max_decimal_places": 2,
           "min": 0,
@@ -485,6 +564,7 @@
           "unit": "%"
         },
         {
+          "label": "Idle CPU maximum",
           "max": 100,
           "max_decimal_places": 2,
           "min": 0,
@@ -492,6 +572,7 @@
           "unit": "%"
         },
         {
+          "label": "Idle RAM average",
           "max": null,
           "max_decimal_places": 1,
           "min": 0,
@@ -499,6 +580,7 @@
           "unit": "MiB"
         },
         {
+          "label": "Idle RAM maximum",
           "max": null,
           "max_decimal_places": 1,
           "min": 0,
@@ -506,6 +588,7 @@
           "unit": "MiB"
         },
         {
+          "label": "Idle RSS average",
           "max": null,
           "max_decimal_places": 1,
           "min": 0,
@@ -513,6 +596,7 @@
           "unit": "MiB"
         },
         {
+          "label": "Idle RSS maximum",
           "max": null,
           "max_decimal_places": 1,
           "min": 0,
@@ -520,6 +604,7 @@
           "unit": "MiB"
         },
         {
+          "label": "Idle test duration",
           "max": null,
           "max_decimal_places": 1,
           "min": 0,
@@ -532,6 +617,7 @@
       "id": "clickhouse-dfe",
       "metrics": [
         {
+          "label": "ClickHouse normalized CPU average",
           "max": 100,
           "max_decimal_places": 2,
           "min": 0,
@@ -539,6 +625,7 @@
           "unit": "%"
         },
         {
+          "label": "ClickHouse maximum RAM",
           "max": null,
           "max_decimal_places": 1,
           "min": 0,
@@ -546,6 +633,7 @@
           "unit": "MiB"
         },
         {
+          "label": "DF Engine normalized CPU average",
           "max": 100,
           "max_decimal_places": 2,
           "min": 0,
@@ -553,6 +641,7 @@
           "unit": "%"
         },
         {
+          "label": "DF Engine maximum RAM",
           "max": null,
           "max_decimal_places": 1,
           "min": 0,
@@ -560,6 +649,7 @@
           "unit": "MiB"
         },
         {
+          "label": "Log rows written rate",
           "max": null,
           "max_decimal_places": 0,
           "min": 0,
@@ -567,6 +657,7 @@
           "unit": "rows/sec"
         },
         {
+          "label": "Logs produced rate",
           "max": null,
           "max_decimal_places": 0,
           "min": 0,
@@ -574,6 +665,7 @@
           "unit": "rows/sec"
         },
         {
+          "label": "Test duration",
           "max": null,
           "max_decimal_places": 1,
           "min": 0,
@@ -586,6 +678,7 @@
       "id": "clickhouse-otelcol",
       "metrics": [
         {
+          "label": "ClickHouse normalized CPU average",
           "max": 100,
           "max_decimal_places": 2,
           "min": 0,
@@ -593,6 +686,7 @@
           "unit": "%"
         },
         {
+          "label": "ClickHouse maximum RAM",
           "max": null,
           "max_decimal_places": 1,
           "min": 0,
@@ -600,6 +694,7 @@
           "unit": "MiB"
         },
         {
+          "label": "Go Collector normalized CPU average",
           "max": 100,
           "max_decimal_places": 2,
           "min": 0,
@@ -607,6 +702,7 @@
           "unit": "%"
         },
         {
+          "label": "Go Collector maximum RAM",
           "max": null,
           "max_decimal_places": 1,
           "min": 0,
@@ -614,6 +710,7 @@
           "unit": "MiB"
         },
         {
+          "label": "Log rows written rate",
           "max": null,
           "max_decimal_places": 0,
           "min": 0,
@@ -621,6 +718,7 @@
           "unit": "rows/sec"
         },
         {
+          "label": "Logs produced rate",
           "max": null,
           "max_decimal_places": 0,
           "min": 0,
