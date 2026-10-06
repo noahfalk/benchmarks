@@ -250,7 +250,7 @@ function environmentCapacityLabel(environment) {
   const cores = environment.logical_cores ?? environment.physical_cores;
   const memory = environment.memory_gb ?? environment.memory_gib;
   if (cores == null && memory == null) {
-    return environment.os ? `Unknown capacity (${environment.os})` : "Unknown environment";
+    return "Unknown";
   }
   const coreLabel = cores == null ? "Cores unknown" : `${cores} cores`;
   const memoryLabel = memory == null
