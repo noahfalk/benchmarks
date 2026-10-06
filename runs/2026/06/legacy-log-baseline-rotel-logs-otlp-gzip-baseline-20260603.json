@@ -1,0 +1,292 @@
+{
+  "attachments": [],
+  "environment": {
+    "architecture": "x86_64",
+    "cpu_model": "INTEL(R) XEON(R) PLATINUM 8581C CPU @ 2.30GHz",
+    "execution_os": "linux",
+    "logical_cores": 32,
+    "memory_gib": 118,
+    "os": "linux",
+    "physical_cores": 16,
+    "testbed": "comparison-dashboard-linux-x86_64-32c-118g"
+  },
+  "results": [
+    {
+      "dimension_keys": [
+        "binary",
+        "compression",
+        "load_rate",
+        "protocol",
+        "signal"
+      ],
+      "identity_keys": [
+        "variant",
+        "case"
+      ],
+      "measurements": [
+        {
+          "dimensions": [
+            "rotel",
+            "gzip",
+            "1000000",
+            "otlp",
+            "logs"
+          ],
+          "identity": [
+            "rotel-logs-otlp-gzip-baseline",
+            "1000k"
+          ],
+          "values": [
+            99.93,
+            100.4,
+            19.996026,
+            17.49,
+            403865,
+            323109,
+            11008386,
+            5653825,
+            9320.7,
+            10086.9,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "rotel",
+            "gzip",
+            "100000",
+            "otlp",
+            "logs"
+          ],
+          "identity": [
+            "rotel-logs-otlp-gzip-baseline",
+            "100k"
+          ],
+          "values": [
+            24.47,
+            25.77,
+            -1.636338,
+            17.73,
+            99152,
+            100775,
+            2521701,
+            1787589,
+            32.0,
+            32.2,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "rotel",
+            "gzip",
+            "200000",
+            "otlp",
+            "logs"
+          ],
+          "identity": [
+            "rotel-logs-otlp-gzip-baseline",
+            "200k"
+          ],
+          "values": [
+            48.59,
+            49.71,
+            -0.010666,
+            17.77,
+            200726,
+            201762,
+            5045396,
+            3586040,
+            33.5,
+            34.0,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "rotel",
+            "gzip",
+            "300000",
+            "otlp",
+            "logs"
+          ],
+          "identity": [
+            "rotel-logs-otlp-gzip-baseline",
+            "300k"
+          ],
+          "values": [
+            72.94,
+            74.11,
+            -1.688366,
+            17.73,
+            299862,
+            302856,
+            7563821,
+            5370661,
+            36.8,
+            37.1,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "rotel",
+            "gzip",
+            "400000",
+            "otlp",
+            "logs"
+          ],
+          "identity": [
+            "rotel-logs-otlp-gzip-baseline",
+            "400k"
+          ],
+          "values": [
+            97.98,
+            100.04,
+            -1.705762,
+            17.69,
+            398033,
+            404123,
+            10081194,
+            7150973,
+            42.5,
+            46.4,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "rotel",
+            "gzip",
+            "600000",
+            "otlp",
+            "logs"
+          ],
+          "identity": [
+            "rotel-logs-otlp-gzip-baseline",
+            "600k"
+          ],
+          "values": [
+            99.8,
+            100.41,
+            25.095813,
+            17.46,
+            436875,
+            325020,
+            11012086,
+            5676255,
+            8100.9,
+            9103.3,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "rotel",
+            "gzip",
+            "800000",
+            "otlp",
+            "logs"
+          ],
+          "identity": [
+            "rotel-logs-otlp-gzip-baseline",
+            "800k"
+          ],
+          "values": [
+            100.0,
+            100.64,
+            21.533544,
+            17.55,
+            418636,
+            327340,
+            10932013,
+            5747382,
+            8891.0,
+            9595.7,
+            60.0
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "cpu_percentage_normalized_avg",
+          "unit": "%"
+        },
+        {
+          "name": "cpu_percentage_normalized_max",
+          "unit": "%"
+        },
+        {
+          "name": "dropped_logs_percentage",
+          "unit": "%"
+        },
+        {
+          "name": "egress_bytes_per_log",
+          "unit": "bytes/log"
+        },
+        {
+          "name": "logs_produced_rate",
+          "unit": "logs/sec"
+        },
+        {
+          "name": "logs_received_rate",
+          "unit": "logs/sec"
+        },
+        {
+          "name": "network_rx_bytes_rate_avg",
+          "unit": "bytes/sec"
+        },
+        {
+          "name": "network_tx_bytes_rate_avg",
+          "unit": "bytes/sec"
+        },
+        {
+          "name": "ram_mib_avg",
+          "unit": "MiB"
+        },
+        {
+          "name": "ram_mib_max",
+          "unit": "MiB"
+        },
+        {
+          "name": "test_duration",
+          "unit": "seconds"
+        }
+      ],
+      "suite": "log-baseline"
+    }
+  ],
+  "run": {
+    "collection_id": "legacy-log-baseline-snapshot-20260603",
+    "finished_at": "2026-06-03T05:25:47Z",
+    "id": "legacy-log-baseline-rotel-logs-otlp-gzip-baseline-20260603",
+    "metadata": {
+      "comparison-dashboard-migration": {
+        "benchmarked_source_commit": "not-recorded-by-legacy-comparison-dashboard",
+        "case_ids": [
+          "100k",
+          "200k",
+          "300k",
+          "400k",
+          "600k",
+          "800k",
+          "1000k"
+        ],
+        "legacy_snapshot": {
+          "branch": "benchmarks",
+          "commit": "b4059094496309222c78119d720cbaece684e0ce",
+          "path": "docs/comparison_data/suite/rotel_logs_otlp_gzip_baseline",
+          "repository": "https://github.com/open-telemetry/otel-arrow"
+        }
+      }
+    },
+    "started_at": "2026-06-03T05:11:08Z"
+  },
+  "schema_version": 1,
+  "source": {
+    "branch": "benchmarks",
+    "commit": "b4059094496309222c78119d720cbaece684e0ce",
+    "repository": "https://github.com/open-telemetry/otel-arrow",
+    "timestamp": "2026-06-03T05:11:08Z"
+  }
+}

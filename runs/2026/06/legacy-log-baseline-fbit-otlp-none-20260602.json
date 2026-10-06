@@ -1,0 +1,292 @@
+{
+  "attachments": [],
+  "environment": {
+    "architecture": "x86_64",
+    "cpu_model": "INTEL(R) XEON(R) PLATINUM 8581C CPU @ 2.30GHz",
+    "execution_os": "linux",
+    "logical_cores": 32,
+    "memory_gib": 118,
+    "os": "linux",
+    "physical_cores": 16,
+    "testbed": "comparison-dashboard-linux-x86_64-32c-118g"
+  },
+  "results": [
+    {
+      "dimension_keys": [
+        "binary",
+        "compression",
+        "load_rate",
+        "protocol",
+        "signal"
+      ],
+      "identity_keys": [
+        "variant",
+        "case"
+      ],
+      "measurements": [
+        {
+          "dimensions": [
+            "fbit",
+            "none",
+            "1000000",
+            "otlp",
+            "logs"
+          ],
+          "identity": [
+            "fbit-otlp-none",
+            "1000k"
+          ],
+          "values": [
+            100.31,
+            100.64,
+            1.670559,
+            335.84,
+            240456,
+            232020,
+            84350638,
+            77922867,
+            155.2,
+            177.7,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "fbit",
+            "none",
+            "100000",
+            "otlp",
+            "logs"
+          ],
+          "identity": [
+            "fbit-otlp-none",
+            "100k"
+          ],
+          "values": [
+            42.66,
+            43.48,
+            -1.711864,
+            333.09,
+            99144,
+            101012,
+            36034993,
+            33646548,
+            77.9,
+            85.5,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "fbit",
+            "none",
+            "200000",
+            "otlp",
+            "logs"
+          ],
+          "identity": [
+            "fbit-otlp-none",
+            "200k"
+          ],
+          "values": [
+            86.4,
+            87.41,
+            -2.538461,
+            333.32,
+            198484,
+            201789,
+            72136961,
+            67261458,
+            125.3,
+            136.8,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "fbit",
+            "none",
+            "300000",
+            "otlp",
+            "logs"
+          ],
+          "identity": [
+            "fbit-otlp-none",
+            "300k"
+          ],
+          "values": [
+            100.24,
+            100.5,
+            3.835805,
+            333.76,
+            245004,
+            234404,
+            83832194,
+            78235373,
+            156.5,
+            172.4,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "fbit",
+            "none",
+            "400000",
+            "otlp",
+            "logs"
+          ],
+          "identity": [
+            "fbit-otlp-none",
+            "400k"
+          ],
+          "values": [
+            100.21,
+            100.63,
+            4.110344,
+            333.88,
+            243405,
+            233400,
+            83740413,
+            77930128,
+            157.7,
+            176.3,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "fbit",
+            "none",
+            "600000",
+            "otlp",
+            "logs"
+          ],
+          "identity": [
+            "fbit-otlp-none",
+            "600k"
+          ],
+          "values": [
+            100.22,
+            100.53,
+            5.604699,
+            339.92,
+            244439,
+            229939,
+            83446731,
+            78161314,
+            143.7,
+            166.9,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "fbit",
+            "none",
+            "800000",
+            "otlp",
+            "logs"
+          ],
+          "identity": [
+            "fbit-otlp-none",
+            "800k"
+          ],
+          "values": [
+            100.24,
+            100.57,
+            1.973131,
+            335.01,
+            243145,
+            235106,
+            83924619,
+            78764937,
+            147.1,
+            170.1,
+            60.0
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "cpu_percentage_normalized_avg",
+          "unit": "%"
+        },
+        {
+          "name": "cpu_percentage_normalized_max",
+          "unit": "%"
+        },
+        {
+          "name": "dropped_logs_percentage",
+          "unit": "%"
+        },
+        {
+          "name": "egress_bytes_per_log",
+          "unit": "bytes/log"
+        },
+        {
+          "name": "logs_produced_rate",
+          "unit": "logs/sec"
+        },
+        {
+          "name": "logs_received_rate",
+          "unit": "logs/sec"
+        },
+        {
+          "name": "network_rx_bytes_rate_avg",
+          "unit": "bytes/sec"
+        },
+        {
+          "name": "network_tx_bytes_rate_avg",
+          "unit": "bytes/sec"
+        },
+        {
+          "name": "ram_mib_avg",
+          "unit": "MiB"
+        },
+        {
+          "name": "ram_mib_max",
+          "unit": "MiB"
+        },
+        {
+          "name": "test_duration",
+          "unit": "seconds"
+        }
+      ],
+      "suite": "log-baseline"
+    }
+  ],
+  "run": {
+    "collection_id": "legacy-log-baseline-snapshot-20260603",
+    "finished_at": "2026-06-02T22:17:52Z",
+    "id": "legacy-log-baseline-fbit-otlp-none-20260602",
+    "metadata": {
+      "comparison-dashboard-migration": {
+        "benchmarked_source_commit": "not-recorded-by-legacy-comparison-dashboard",
+        "case_ids": [
+          "100k",
+          "200k",
+          "300k",
+          "400k",
+          "600k",
+          "800k",
+          "1000k"
+        ],
+        "legacy_snapshot": {
+          "branch": "benchmarks",
+          "commit": "eb6dd35342f53ef1ff06f5f4a01d474b5129d529",
+          "path": "docs/comparison_data/suite/fbit_logs_otlp_none_baseline",
+          "repository": "https://github.com/open-telemetry/otel-arrow"
+        }
+      }
+    },
+    "started_at": "2026-06-02T22:05:17Z"
+  },
+  "schema_version": 1,
+  "source": {
+    "branch": "benchmarks",
+    "commit": "eb6dd35342f53ef1ff06f5f4a01d474b5129d529",
+    "repository": "https://github.com/open-telemetry/otel-arrow",
+    "timestamp": "2026-06-02T22:05:17Z"
+  }
+}

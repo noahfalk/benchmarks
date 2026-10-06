@@ -1,0 +1,331 @@
+{
+  "attachments": [],
+  "environment": {
+    "architecture": "amd64",
+    "os": "windows",
+    "testbed": "mock-windows-amd64"
+  },
+  "results": [
+    {
+      "dimension_keys": [
+        "binary",
+        "compression",
+        "load_rate",
+        "operation",
+        "processor",
+        "protocol",
+        "signal"
+      ],
+      "identity_keys": [
+        "variant",
+        "case"
+      ],
+      "measurements": [
+        {
+          "dimensions": [
+            "dfe",
+            "none",
+            "100000",
+            "insert",
+            "attributes",
+            "otap",
+            "logs"
+          ],
+          "identity": [
+            "dfe-otap-attributes",
+            "100k"
+          ],
+          "values": [
+            29.0,
+            98305.2
+          ]
+        },
+        {
+          "dimensions": [
+            "dfe",
+            "none",
+            "200000",
+            "insert",
+            "attributes",
+            "otap",
+            "logs"
+          ],
+          "identity": [
+            "dfe-otap-attributes",
+            "200k"
+          ],
+          "values": [
+            39.0,
+            196610.4
+          ]
+        },
+        {
+          "dimensions": [
+            "dfe",
+            "none",
+            "100000",
+            "insert",
+            "transform",
+            "otap",
+            "logs"
+          ],
+          "identity": [
+            "dfe-otap-transform",
+            "100k"
+          ],
+          "values": [
+            30.5,
+            98006.4
+          ]
+        },
+        {
+          "dimensions": [
+            "dfe",
+            "none",
+            "200000",
+            "insert",
+            "transform",
+            "otap",
+            "logs"
+          ],
+          "identity": [
+            "dfe-otap-transform",
+            "200k"
+          ],
+          "values": [
+            40.5,
+            196012.8
+          ]
+        },
+        {
+          "dimensions": [
+            "dfe",
+            "none",
+            "100000",
+            "insert",
+            "attributes",
+            "otlp",
+            "logs"
+          ],
+          "identity": [
+            "dfe-otlp-attributes",
+            "100k"
+          ],
+          "values": [
+            31.0,
+            97608.0
+          ]
+        },
+        {
+          "dimensions": [
+            "dfe",
+            "none",
+            "200000",
+            "insert",
+            "attributes",
+            "otlp",
+            "logs"
+          ],
+          "identity": [
+            "dfe-otlp-attributes",
+            "200k"
+          ],
+          "values": [
+            41.0,
+            195216.0
+          ]
+        },
+        {
+          "dimensions": [
+            "dfe",
+            "none",
+            "100000",
+            "insert",
+            "transform",
+            "otlp",
+            "logs"
+          ],
+          "identity": [
+            "dfe-otlp-transform",
+            "100k"
+          ],
+          "values": [
+            32.5,
+            97309.2
+          ]
+        },
+        {
+          "dimensions": [
+            "dfe",
+            "none",
+            "200000",
+            "insert",
+            "transform",
+            "otlp",
+            "logs"
+          ],
+          "identity": [
+            "dfe-otlp-transform",
+            "200k"
+          ],
+          "values": [
+            42.5,
+            194618.4
+          ]
+        },
+        {
+          "dimensions": [
+            "otc",
+            "none",
+            "100000",
+            "insert",
+            "attributes",
+            "otlp",
+            "logs"
+          ],
+          "identity": [
+            "otc-otlp-attributes",
+            "100k"
+          ],
+          "values": [
+            37.0,
+            95616.0
+          ]
+        },
+        {
+          "dimensions": [
+            "otc",
+            "none",
+            "200000",
+            "insert",
+            "attributes",
+            "otlp",
+            "logs"
+          ],
+          "identity": [
+            "otc-otlp-attributes",
+            "200k"
+          ],
+          "values": [
+            47.0,
+            191232.0
+          ]
+        },
+        {
+          "dimensions": [
+            "otc",
+            "none",
+            "100000",
+            "insert",
+            "transform",
+            "otlp",
+            "logs"
+          ],
+          "identity": [
+            "otc-otlp-transform",
+            "100k"
+          ],
+          "values": [
+            39.0,
+            95118.0
+          ]
+        },
+        {
+          "dimensions": [
+            "otc",
+            "none",
+            "200000",
+            "insert",
+            "transform",
+            "otlp",
+            "logs"
+          ],
+          "identity": [
+            "otc-otlp-transform",
+            "200k"
+          ],
+          "values": [
+            49.0,
+            190236.0
+          ]
+        },
+        {
+          "dimensions": [
+            "fbit",
+            "none",
+            "100000",
+            "insert",
+            "modify",
+            "otlp",
+            "logs"
+          ],
+          "identity": [
+            "fbit-otlp-modify",
+            "100k"
+          ],
+          "values": [
+            33.0,
+            96811.2
+          ]
+        },
+        {
+          "dimensions": [
+            "fbit",
+            "none",
+            "200000",
+            "insert",
+            "modify",
+            "otlp",
+            "logs"
+          ],
+          "identity": [
+            "fbit-otlp-modify",
+            "200k"
+          ],
+          "values": [
+            43.0,
+            193622.4
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "cpu_percentage_normalized_avg",
+          "unit": "%"
+        },
+        {
+          "name": "logs_received_rate",
+          "unit": "logs/sec"
+        }
+      ],
+      "suite": "log-attribute-insert"
+    }
+  ],
+  "run": {
+    "collection_id": "migration-preview-0001",
+    "finished_at": "2026-10-01T12:15:00Z",
+    "id": "migration-preview-0001-windows-attribute-only",
+    "metadata": {
+      "migration-correction": {
+        "reason": "replace synthetic Log Baseline preview with complete legacy results",
+        "retained_suites": [
+          "log-attribute-insert"
+        ]
+      },
+      "supersedes_run_ids": [
+        "migration-preview-0001-windows"
+      ],
+      "synthetic": {
+        "generator": "mock-run"
+      }
+    },
+    "started_at": "2026-10-01T12:00:00Z"
+  },
+  "schema_version": 1,
+  "source": {
+    "branch": "main",
+    "commit": "e92a96ff5d63f71a9eddf10f166500d5c4f120ba",
+    "repository": "https://github.com/open-telemetry/otel-arrow",
+    "timestamp": "2026-10-01T12:00:00Z"
+  }
+}

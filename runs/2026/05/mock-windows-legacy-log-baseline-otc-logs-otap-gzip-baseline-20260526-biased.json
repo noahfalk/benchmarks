@@ -1,0 +1,302 @@
+{
+  "attachments": [],
+  "environment": {
+    "architecture": "x86_64",
+    "cpu_model": "INTEL(R) XEON(R) PLATINUM 8581C CPU @ 2.30GHz",
+    "execution_os": "windows",
+    "logical_cores": 32,
+    "memory_gib": 118,
+    "os": "windows",
+    "physical_cores": 16,
+    "testbed": "comparison-dashboard-windows-x86_64-32c-118g"
+  },
+  "results": [
+    {
+      "dimension_keys": [
+        "binary",
+        "compression",
+        "load_rate",
+        "protocol",
+        "signal"
+      ],
+      "identity_keys": [
+        "variant",
+        "case"
+      ],
+      "measurements": [
+        {
+          "dimensions": [
+            "otc",
+            "gzip",
+            "1000000",
+            "otap",
+            "logs"
+          ],
+          "identity": [
+            "otc-logs-otap-gzip-baseline",
+            "1000k"
+          ],
+          "values": [
+            105.0315,
+            105.315,
+            0.303537,
+            6.2055,
+            161557,
+            159952,
+            1374717.75,
+            993216.0,
+            608.895,
+            639.24,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "otc",
+            "gzip",
+            "100000",
+            "otap",
+            "logs"
+          ],
+          "identity": [
+            "otc-logs-otap-gzip-baseline",
+            "100k"
+          ],
+          "values": [
+            61.803,
+            63.756,
+            1.666666,
+            6.552,
+            100722,
+            99379,
+            865936.05,
+            651871.5,
+            141.645,
+            146.37,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "otc",
+            "gzip",
+            "200000",
+            "otap",
+            "logs"
+          ],
+          "identity": [
+            "otc-logs-otap-gzip-baseline",
+            "200k"
+          ],
+          "values": [
+            105.378,
+            105.7875,
+            0.773769,
+            6.2895,
+            175376,
+            172544,
+            1479095.1,
+            1086165.15,
+            192.15,
+            209.265,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "otc",
+            "gzip",
+            "300000",
+            "otap",
+            "logs"
+          ],
+          "identity": [
+            "otc-logs-otap-gzip-baseline",
+            "300k"
+          ],
+          "values": [
+            105.126,
+            105.504,
+            -0.00975,
+            6.195,
+            172628,
+            172351,
+            1454280.45,
+            1069343.1,
+            231.84,
+            265.86,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "otc",
+            "gzip",
+            "400000",
+            "otap",
+            "logs"
+          ],
+          "identity": [
+            "otc-logs-otap-gzip-baseline",
+            "400k"
+          ],
+          "values": [
+            105.063,
+            105.357,
+            2.54777,
+            6.2265,
+            170652,
+            168877,
+            1432221.0,
+            1052707.95,
+            274.155,
+            330.96,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "otc",
+            "gzip",
+            "600000",
+            "otap",
+            "logs"
+          ],
+          "identity": [
+            "otc-logs-otap-gzip-baseline",
+            "600k"
+          ],
+          "values": [
+            105.1365,
+            105.399,
+            -0.092165,
+            6.237,
+            163452,
+            163604,
+            1387124.55,
+            1021384.35,
+            444.255,
+            681.24,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "otc",
+            "gzip",
+            "800000",
+            "otap",
+            "logs"
+          ],
+          "identity": [
+            "otc-logs-otap-gzip-baseline",
+            "800k"
+          ],
+          "values": [
+            105.2205,
+            105.4935,
+            1.973148,
+            6.195,
+            165257,
+            161450,
+            1414819.35,
+            1000537.65,
+            572.985,
+            710.64,
+            60.0
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "cpu_percentage_normalized_avg",
+          "unit": "%"
+        },
+        {
+          "name": "cpu_percentage_normalized_max",
+          "unit": "%"
+        },
+        {
+          "name": "dropped_logs_percentage",
+          "unit": "%"
+        },
+        {
+          "name": "egress_bytes_per_log",
+          "unit": "bytes/log"
+        },
+        {
+          "name": "logs_produced_rate",
+          "unit": "logs/sec"
+        },
+        {
+          "name": "logs_received_rate",
+          "unit": "logs/sec"
+        },
+        {
+          "name": "network_rx_bytes_rate_avg",
+          "unit": "bytes/sec"
+        },
+        {
+          "name": "network_tx_bytes_rate_avg",
+          "unit": "bytes/sec"
+        },
+        {
+          "name": "ram_mib_avg",
+          "unit": "MiB"
+        },
+        {
+          "name": "ram_mib_max",
+          "unit": "MiB"
+        },
+        {
+          "name": "test_duration",
+          "unit": "seconds"
+        }
+      ],
+      "suite": "log-baseline"
+    }
+  ],
+  "run": {
+    "collection_id": "legacy-log-baseline-snapshot-20260603",
+    "finished_at": "2026-05-26T23:36:24Z",
+    "id": "mock-windows-legacy-log-baseline-otc-logs-otap-gzip-baseline-20260526-biased",
+    "metadata": {
+      "comparison-dashboard-migration": {
+        "benchmarked_source_commit": "not-recorded-by-legacy-comparison-dashboard",
+        "case_ids": [
+          "100k",
+          "200k",
+          "300k",
+          "400k",
+          "600k",
+          "800k",
+          "1000k"
+        ],
+        "legacy_snapshot": {
+          "branch": "benchmarks",
+          "commit": "59f77600a5c9ae74f30dbef2dc49da64d489478d",
+          "path": "docs/comparison_data/suite/otc_logs_otap_gzip_baseline",
+          "repository": "https://github.com/open-telemetry/otel-arrow"
+        }
+      },
+      "synthetic": {
+        "fixed_load_resource_multiplier": 1.05,
+        "fixed_resource_throughput_multiplier": 0.95,
+        "generator": "mock-os-history",
+        "history_days": 30,
+        "source_os": "linux",
+        "source_run_id": "legacy-log-baseline-otc-logs-otap-gzip-baseline-20260526",
+        "target_os": "windows",
+        "values": "biased-from-source-run"
+      }
+    },
+    "started_at": "2026-05-26T23:34:38Z"
+  },
+  "schema_version": 1,
+  "source": {
+    "branch": "benchmarks",
+    "commit": "59f77600a5c9ae74f30dbef2dc49da64d489478d",
+    "repository": "https://github.com/open-telemetry/otel-arrow",
+    "timestamp": "2026-05-26T23:34:38Z"
+  }
+}

@@ -1,0 +1,292 @@
+{
+  "attachments": [],
+  "environment": {
+    "architecture": "x86_64",
+    "cpu_model": "INTEL(R) XEON(R) PLATINUM 8581C CPU @ 2.30GHz",
+    "execution_os": "linux",
+    "logical_cores": 32,
+    "memory_gib": 118,
+    "os": "linux",
+    "physical_cores": 16,
+    "testbed": "comparison-dashboard-linux-x86_64-32c-118g"
+  },
+  "results": [
+    {
+      "dimension_keys": [
+        "binary",
+        "compression",
+        "load_rate",
+        "protocol",
+        "signal"
+      ],
+      "identity_keys": [
+        "variant",
+        "case"
+      ],
+      "measurements": [
+        {
+          "dimensions": [
+            "otc",
+            "gzip",
+            "1000000",
+            "otlp",
+            "logs"
+          ],
+          "identity": [
+            "otc-logs-otlp-gzip-baseline",
+            "1000k"
+          ],
+          "values": [
+            100.1,
+            100.52,
+            -1.696259,
+            18.65,
+            277755,
+            278159,
+            7325483,
+            5190071,
+            5631.9,
+            6557.2,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "otc",
+            "gzip",
+            "100000",
+            "otlp",
+            "logs"
+          ],
+          "identity": [
+            "otc-logs-otlp-gzip-baseline",
+            "100k"
+          ],
+          "values": [
+            35.0,
+            36.07,
+            -1.694915,
+            18.87,
+            99377,
+            100890,
+            2544170,
+            1903959,
+            59.3,
+            60.6,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "otc",
+            "gzip",
+            "200000",
+            "otlp",
+            "logs"
+          ],
+          "identity": [
+            "otc-logs-otlp-gzip-baseline",
+            "200k"
+          ],
+          "values": [
+            66.64,
+            68.11,
+            -1.694915,
+            18.84,
+            199495,
+            201846,
+            5085231,
+            3803711,
+            64.7,
+            66.2,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "otc",
+            "gzip",
+            "300000",
+            "otlp",
+            "logs"
+          ],
+          "identity": [
+            "otc-logs-otlp-gzip-baseline",
+            "300k"
+          ],
+          "values": [
+            96.46,
+            99.05,
+            -1.683615,
+            18.72,
+            300026,
+            302495,
+            7611715,
+            5663732,
+            72.8,
+            82.5,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "otc",
+            "gzip",
+            "400000",
+            "otlp",
+            "logs"
+          ],
+          "identity": [
+            "otc-logs-otlp-gzip-baseline",
+            "400k"
+          ],
+          "values": [
+            99.92,
+            100.41,
+            2.505574,
+            18.52,
+            287060,
+            279391,
+            7254549,
+            5176462,
+            2207.8,
+            2546.9,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "otc",
+            "gzip",
+            "600000",
+            "otlp",
+            "logs"
+          ],
+          "identity": [
+            "otc-logs-otlp-gzip-baseline",
+            "600k"
+          ],
+          "values": [
+            99.97,
+            100.5,
+            2.144057,
+            18.8,
+            291484,
+            285724,
+            7371009,
+            5373551,
+            3638.7,
+            3958.6,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "otc",
+            "gzip",
+            "800000",
+            "otlp",
+            "logs"
+          ],
+          "identity": [
+            "otc-logs-otlp-gzip-baseline",
+            "800k"
+          ],
+          "values": [
+            99.92,
+            100.63,
+            -0.452249,
+            18.62,
+            285267,
+            286557,
+            7387814,
+            5335889,
+            4739.6,
+            5266.0,
+            60.0
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "cpu_percentage_normalized_avg",
+          "unit": "%"
+        },
+        {
+          "name": "cpu_percentage_normalized_max",
+          "unit": "%"
+        },
+        {
+          "name": "dropped_logs_percentage",
+          "unit": "%"
+        },
+        {
+          "name": "egress_bytes_per_log",
+          "unit": "bytes/log"
+        },
+        {
+          "name": "logs_produced_rate",
+          "unit": "logs/sec"
+        },
+        {
+          "name": "logs_received_rate",
+          "unit": "logs/sec"
+        },
+        {
+          "name": "network_rx_bytes_rate_avg",
+          "unit": "bytes/sec"
+        },
+        {
+          "name": "network_tx_bytes_rate_avg",
+          "unit": "bytes/sec"
+        },
+        {
+          "name": "ram_mib_avg",
+          "unit": "MiB"
+        },
+        {
+          "name": "ram_mib_max",
+          "unit": "MiB"
+        },
+        {
+          "name": "test_duration",
+          "unit": "seconds"
+        }
+      ],
+      "suite": "log-baseline"
+    }
+  ],
+  "run": {
+    "collection_id": "legacy-log-baseline-snapshot-20260603",
+    "finished_at": "2026-05-27T00:15:02Z",
+    "id": "legacy-log-baseline-otc-logs-otlp-gzip-baseline-20260527",
+    "metadata": {
+      "comparison-dashboard-migration": {
+        "benchmarked_source_commit": "not-recorded-by-legacy-comparison-dashboard",
+        "case_ids": [
+          "100k",
+          "200k",
+          "300k",
+          "400k",
+          "600k",
+          "800k",
+          "1000k"
+        ],
+        "legacy_snapshot": {
+          "branch": "benchmarks",
+          "commit": "59f77600a5c9ae74f30dbef2dc49da64d489478d",
+          "path": "docs/comparison_data/suite/otc_logs_otlp_gzip_baseline",
+          "repository": "https://github.com/open-telemetry/otel-arrow"
+        }
+      }
+    },
+    "started_at": "2026-05-27T00:02:44Z"
+  },
+  "schema_version": 1,
+  "source": {
+    "branch": "benchmarks",
+    "commit": "59f77600a5c9ae74f30dbef2dc49da64d489478d",
+    "repository": "https://github.com/open-telemetry/otel-arrow",
+    "timestamp": "2026-05-27T00:02:44Z"
+  }
+}

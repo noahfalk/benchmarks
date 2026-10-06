@@ -1,0 +1,292 @@
+{
+  "attachments": [],
+  "environment": {
+    "architecture": "x86_64",
+    "cpu_model": "INTEL(R) XEON(R) PLATINUM 8581C CPU @ 2.30GHz",
+    "execution_os": "linux",
+    "logical_cores": 32,
+    "memory_gib": 118,
+    "os": "linux",
+    "physical_cores": 16,
+    "testbed": "comparison-dashboard-linux-x86_64-32c-118g"
+  },
+  "results": [
+    {
+      "dimension_keys": [
+        "binary",
+        "compression",
+        "load_rate",
+        "protocol",
+        "signal"
+      ],
+      "identity_keys": [
+        "variant",
+        "case"
+      ],
+      "measurements": [
+        {
+          "dimensions": [
+            "dfe",
+            "zstd",
+            "1000000",
+            "otlphttp",
+            "logs"
+          ],
+          "identity": [
+            "dfe-logs-otlphttp-zstd-baseline",
+            "1000k"
+          ],
+          "values": [
+            39.48,
+            40.07,
+            -1.722413,
+            17.42,
+            999179,
+            1002294,
+            358093328,
+            17467368,
+            59.7,
+            64.4,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "dfe",
+            "zstd",
+            "100000",
+            "otlphttp",
+            "logs"
+          ],
+          "identity": [
+            "dfe-logs-otlphttp-zstd-baseline",
+            "100k"
+          ],
+          "values": [
+            3.98,
+            4.09,
+            -1.694915,
+            17.75,
+            99153,
+            100834,
+            35851620,
+            1790284,
+            52.8,
+            53.3,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "dfe",
+            "zstd",
+            "200000",
+            "otlphttp",
+            "logs"
+          ],
+          "identity": [
+            "dfe-logs-otlphttp-zstd-baseline",
+            "200k"
+          ],
+          "values": [
+            8.1,
+            8.29,
+            -1.694915,
+            17.53,
+            200555,
+            201543,
+            71636112,
+            3534312,
+            49.3,
+            49.7,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "dfe",
+            "zstd",
+            "300000",
+            "otlphttp",
+            "logs"
+          ],
+          "identity": [
+            "dfe-logs-otlphttp-zstd-baseline",
+            "300k"
+          ],
+          "values": [
+            11.69,
+            11.91,
+            -1.694915,
+            17.44,
+            299286,
+            302804,
+            107260971,
+            5283471,
+            52.3,
+            53.8,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "dfe",
+            "zstd",
+            "400000",
+            "otlphttp",
+            "logs"
+          ],
+          "identity": [
+            "dfe-logs-otlphttp-zstd-baseline",
+            "400k"
+          ],
+          "values": [
+            16.28,
+            16.7,
+            -1.724137,
+            17.56,
+            394815,
+            400245,
+            143228816,
+            7031879,
+            58.2,
+            59.4,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "dfe",
+            "zstd",
+            "600000",
+            "otlphttp",
+            "logs"
+          ],
+          "identity": [
+            "dfe-logs-otlphttp-zstd-baseline",
+            "600k"
+          ],
+          "values": [
+            23.87,
+            24.36,
+            -1.69774,
+            17.5,
+            597148,
+            601121,
+            214734767,
+            10524979,
+            58.6,
+            59.9,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "dfe",
+            "zstd",
+            "800000",
+            "otlphttp",
+            "logs"
+          ],
+          "identity": [
+            "dfe-logs-otlphttp-zstd-baseline",
+            "800k"
+          ],
+          "values": [
+            31.57,
+            32.45,
+            -1.285407,
+            17.55,
+            795857,
+            799119,
+            286439458,
+            14026733,
+            51.4,
+            53.4,
+            60.0
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "cpu_percentage_normalized_avg",
+          "unit": "%"
+        },
+        {
+          "name": "cpu_percentage_normalized_max",
+          "unit": "%"
+        },
+        {
+          "name": "dropped_logs_percentage",
+          "unit": "%"
+        },
+        {
+          "name": "egress_bytes_per_log",
+          "unit": "bytes/log"
+        },
+        {
+          "name": "logs_produced_rate",
+          "unit": "logs/sec"
+        },
+        {
+          "name": "logs_received_rate",
+          "unit": "logs/sec"
+        },
+        {
+          "name": "network_rx_bytes_rate_avg",
+          "unit": "bytes/sec"
+        },
+        {
+          "name": "network_tx_bytes_rate_avg",
+          "unit": "bytes/sec"
+        },
+        {
+          "name": "ram_mib_avg",
+          "unit": "MiB"
+        },
+        {
+          "name": "ram_mib_max",
+          "unit": "MiB"
+        },
+        {
+          "name": "test_duration",
+          "unit": "seconds"
+        }
+      ],
+      "suite": "log-baseline"
+    }
+  ],
+  "run": {
+    "collection_id": "legacy-log-baseline-snapshot-20260603",
+    "finished_at": "2026-05-20T01:01:00Z",
+    "id": "legacy-log-baseline-dfe-logs-otlphttp-zstd-baseline-20260520",
+    "metadata": {
+      "comparison-dashboard-migration": {
+        "benchmarked_source_commit": "not-recorded-by-legacy-comparison-dashboard",
+        "case_ids": [
+          "100k",
+          "200k",
+          "300k",
+          "400k",
+          "600k",
+          "800k",
+          "1000k"
+        ],
+        "legacy_snapshot": {
+          "branch": "benchmarks",
+          "commit": "8c8515d4bb5df28dca9260ec5626e1226d26ee1f",
+          "path": "docs/comparison_data/suite/dfe_logs_otlphttp_zstd_baseline",
+          "repository": "https://github.com/open-telemetry/otel-arrow"
+        }
+      }
+    },
+    "started_at": "2026-05-20T00:45:34Z"
+  },
+  "schema_version": 1,
+  "source": {
+    "branch": "benchmarks",
+    "commit": "8c8515d4bb5df28dca9260ec5626e1226d26ee1f",
+    "repository": "https://github.com/open-telemetry/otel-arrow",
+    "timestamp": "2026-05-20T00:45:34Z"
+  }
+}
