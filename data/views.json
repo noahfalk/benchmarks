@@ -590,86 +590,30 @@
           "label": "Variant",
           "values": [
             {
-              "dimensions": {},
               "id": "otlp-attr-otlp",
               "label": "OTLP to OTLP",
               "runner_data": {
-                "campaigns": [
-                  "continuous"
-                ],
-                "path": "tools/pipeline_perf_test/test_suites/integration/continuous/100klrps-docker.yaml",
-                "source_identities": [
-                  {
-                    "format": "github-action-benchmark",
-                    "key": {
-                      "suite": "CI 100kLRPS",
-                      "test": "OTLP-ATTR-OTLP"
-                    }
-                  }
-                ],
                 "test": "OTLP-ATTR-OTLP"
               }
             },
             {
-              "dimensions": {},
               "id": "otlp-attr-otap",
               "label": "OTLP to OTAP",
               "runner_data": {
-                "campaigns": [
-                  "continuous"
-                ],
-                "path": "tools/pipeline_perf_test/test_suites/integration/continuous/100klrps-docker.yaml",
-                "source_identities": [
-                  {
-                    "format": "github-action-benchmark",
-                    "key": {
-                      "suite": "CI 100kLRPS",
-                      "test": "OTLP-ATTR-OTAP"
-                    }
-                  }
-                ],
                 "test": "OTLP-ATTR-OTAP"
               }
             },
             {
-              "dimensions": {},
               "id": "otap-attr-otap",
               "label": "OTAP to OTAP",
               "runner_data": {
-                "campaigns": [
-                  "continuous"
-                ],
-                "path": "tools/pipeline_perf_test/test_suites/integration/continuous/100klrps-docker.yaml",
-                "source_identities": [
-                  {
-                    "format": "github-action-benchmark",
-                    "key": {
-                      "suite": "CI 100kLRPS",
-                      "test": "OTAP-ATTR-OTAP"
-                    }
-                  }
-                ],
                 "test": "OTAP-ATTR-OTAP"
               }
             },
             {
-              "dimensions": {},
               "id": "otap-attr-otlp",
               "label": "OTAP to OTLP",
               "runner_data": {
-                "campaigns": [
-                  "continuous"
-                ],
-                "path": "tools/pipeline_perf_test/test_suites/integration/continuous/100klrps-docker.yaml",
-                "source_identities": [
-                  {
-                    "format": "github-action-benchmark",
-                    "key": {
-                      "suite": "CI 100kLRPS",
-                      "test": "OTAP-ATTR-OTLP"
-                    }
-                  }
-                ],
                 "test": "OTAP-ATTR-OTLP"
               }
             }
@@ -677,6 +621,9 @@
         }
       ],
       "runner": "orchestrator",
+      "runner_data": {
+        "path": "tools/pipeline_perf_test/test_suites/integration/continuous/100klrps-docker.yaml"
+      },
       "schema_version": 2
     },
     {
@@ -690,44 +637,16 @@
           "label": "Variant",
           "values": [
             {
-              "dimensions": {},
               "id": "otlp-attr-otlp",
               "label": "OTLP-ATTR-OTLP",
               "runner_data": {
-                "campaigns": [
-                  "nightly"
-                ],
-                "path": "tools/pipeline_perf_test/test_suites/integration/nightly/backpressure-docker.yaml",
-                "source_identities": [
-                  {
-                    "format": "github-action-benchmark",
-                    "key": {
-                      "suite": "Nightly - Backpressure",
-                      "test": "OTLP-ATTR-OTLP"
-                    }
-                  }
-                ],
                 "test": "OTLP-ATTR-OTLP"
               }
             },
             {
-              "dimensions": {},
               "id": "otap-attr-otlp",
               "label": "OTAP-ATTR-OTLP",
               "runner_data": {
-                "campaigns": [
-                  "nightly"
-                ],
-                "path": "tools/pipeline_perf_test/test_suites/integration/nightly/backpressure-docker.yaml",
-                "source_identities": [
-                  {
-                    "format": "github-action-benchmark",
-                    "key": {
-                      "suite": "Nightly - Backpressure",
-                      "test": "OTAP-ATTR-OTLP"
-                    }
-                  }
-                ],
                 "test": "OTAP-ATTR-OTLP"
               }
             }
@@ -735,6 +654,9 @@
         }
       ],
       "runner": "orchestrator",
+      "runner_data": {
+        "path": "tools/pipeline_perf_test/test_suites/integration/nightly/backpressure-docker.yaml"
+      },
       "schema_version": 2
     },
     {
@@ -751,19 +673,6 @@
               "id": "otap",
               "label": "OTAP",
               "runner_data": {
-                "campaigns": [
-                  "continuous"
-                ],
-                "path": "tools/pipeline_perf_test/test_suites/integration/continuous/100klrps-docker.yaml",
-                "source_identities": [
-                  {
-                    "format": "github-action-benchmark",
-                    "key": {
-                      "suite": "CI 100kLRPS",
-                      "test": "OTAP-BATCH-OTAP"
-                    }
-                  }
-                ],
                 "test": "OTAP-BATCH-OTAP"
               }
             },
@@ -771,19 +680,6 @@
               "id": "otlp",
               "label": "OTLP",
               "runner_data": {
-                "campaigns": [
-                  "continuous"
-                ],
-                "path": "tools/pipeline_perf_test/test_suites/integration/continuous/100klrps-docker.yaml",
-                "source_identities": [
-                  {
-                    "format": "github-action-benchmark",
-                    "key": {
-                      "suite": "CI 100kLRPS",
-                      "test": "OTLP-BATCH-OTLP"
-                    }
-                  }
-                ],
                 "test": "OTLP-BATCH-OTLP"
               }
             }
@@ -791,6 +687,9 @@
         }
       ],
       "runner": "orchestrator",
+      "runner_data": {
+        "path": "tools/pipeline_perf_test/test_suites/integration/continuous/100klrps-docker.yaml"
+      },
       "schema_version": 2
     },
     {
@@ -807,22 +706,6 @@
               "id": "otap",
               "label": "OTAP",
               "runner_data": {
-                "campaigns": [
-                  "nightly"
-                ],
-                "metric_aliases": {
-                  "dropped_signals_percentage": "dropped_metrics_percentage"
-                },
-                "path": "tools/pipeline_perf_test/test_suites/integration/nightly/batch-processor-docker.yaml",
-                "source_identities": [
-                  {
-                    "format": "github-action-benchmark",
-                    "key": {
-                      "suite": "Nightly - Batch Processor",
-                      "test": "Metrics-OTAP-BATCH-OTAP"
-                    }
-                  }
-                ],
                 "test": "Metrics-OTAP-BATCH-OTAP"
               }
             },
@@ -830,22 +713,6 @@
               "id": "otlp",
               "label": "OTLP",
               "runner_data": {
-                "campaigns": [
-                  "nightly"
-                ],
-                "metric_aliases": {
-                  "dropped_signals_percentage": "dropped_metrics_percentage"
-                },
-                "path": "tools/pipeline_perf_test/test_suites/integration/nightly/batch-processor-docker.yaml",
-                "source_identities": [
-                  {
-                    "format": "github-action-benchmark",
-                    "key": {
-                      "suite": "Nightly - Batch Processor",
-                      "test": "Metrics-OTLP-BATCH-OTLP"
-                    }
-                  }
-                ],
                 "test": "Metrics-OTLP-BATCH-OTLP"
               }
             }
@@ -853,6 +720,9 @@
         }
       ],
       "runner": "orchestrator",
+      "runner_data": {
+        "path": "tools/pipeline_perf_test/test_suites/integration/nightly/batch-processor-docker.yaml"
+      },
       "schema_version": 2
     },
     {
@@ -869,19 +739,6 @@
               "id": "otap",
               "label": "OTAP",
               "runner_data": {
-                "campaigns": [
-                  "nightly"
-                ],
-                "path": "tools/pipeline_perf_test/test_suites/integration/nightly/batch-processor-docker.yaml",
-                "source_identities": [
-                  {
-                    "format": "github-action-benchmark",
-                    "key": {
-                      "suite": "Nightly - Batch Processor",
-                      "test": "Logs-OTAP-BATCH-OTAP"
-                    }
-                  }
-                ],
                 "test": "Logs-OTAP-BATCH-OTAP"
               }
             },
@@ -889,19 +746,6 @@
               "id": "otlp",
               "label": "OTLP",
               "runner_data": {
-                "campaigns": [
-                  "nightly"
-                ],
-                "path": "tools/pipeline_perf_test/test_suites/integration/nightly/batch-processor-docker.yaml",
-                "source_identities": [
-                  {
-                    "format": "github-action-benchmark",
-                    "key": {
-                      "suite": "Nightly - Batch Processor",
-                      "test": "Logs-OTLP-BATCH-OTLP"
-                    }
-                  }
-                ],
                 "test": "Logs-OTLP-BATCH-OTLP"
               }
             }
@@ -909,6 +753,9 @@
         }
       ],
       "runner": "orchestrator",
+      "runner_data": {
+        "path": "tools/pipeline_perf_test/test_suites/integration/nightly/batch-processor-docker.yaml"
+      },
       "schema_version": 2
     },
     {
@@ -925,22 +772,6 @@
               "id": "otap",
               "label": "OTAP",
               "runner_data": {
-                "campaigns": [
-                  "nightly"
-                ],
-                "metric_aliases": {
-                  "dropped_signals_percentage": "dropped_spans_percentage"
-                },
-                "path": "tools/pipeline_perf_test/test_suites/integration/nightly/batch-processor-docker.yaml",
-                "source_identities": [
-                  {
-                    "format": "github-action-benchmark",
-                    "key": {
-                      "suite": "Nightly - Batch Processor",
-                      "test": "Traces-OTAP-BATCH-OTAP"
-                    }
-                  }
-                ],
                 "test": "Traces-OTAP-BATCH-OTAP"
               }
             },
@@ -948,22 +779,6 @@
               "id": "otlp",
               "label": "OTLP",
               "runner_data": {
-                "campaigns": [
-                  "nightly"
-                ],
-                "metric_aliases": {
-                  "dropped_signals_percentage": "dropped_spans_percentage"
-                },
-                "path": "tools/pipeline_perf_test/test_suites/integration/nightly/batch-processor-docker.yaml",
-                "source_identities": [
-                  {
-                    "format": "github-action-benchmark",
-                    "key": {
-                      "suite": "Nightly - Batch Processor",
-                      "test": "Traces-OTLP-BATCH-OTLP"
-                    }
-                  }
-                ],
                 "test": "Traces-OTLP-BATCH-OTLP"
               }
             }
@@ -971,6 +786,9 @@
         }
       ],
       "runner": "orchestrator",
+      "runner_data": {
+        "path": "tools/pipeline_perf_test/test_suites/integration/nightly/batch-processor-docker.yaml"
+      },
       "schema_version": 2
     },
     {
@@ -984,80 +802,26 @@
           "label": "Variant",
           "values": [
             {
-              "dimensions": {},
               "id": "otap-in-batched-100k",
               "label": "OTAP-IN-BATCHED-100K",
               "runner_data": {
-                "campaigns": [
-                  "nightly"
-                ],
-                "local_note": "Requires a df_engine image built with the clickhouse-exporter feature and a ClickHouse image.",
-                "metric_aliases": {
-                  "df-engine_cpu_percentage_normalized_avg": "engine_cpu_percentage_normalized_avg",
-                  "df-engine_ram_mib_max": "engine_ram_mib_max"
-                },
                 "path": "tools/pipeline_perf_test/test_suites/integration/clickhouse/otap-clickhouse-logs.yaml",
-                "source_identities": [
-                  {
-                    "format": "github-action-benchmark",
-                    "key": {
-                      "suite": "ClickHouse OTAP Logs",
-                      "test": "OTAP-IN-BATCHED-100K"
-                    }
-                  }
-                ],
                 "test": "OTAP-IN-BATCHED-100K"
               }
             },
             {
-              "dimensions": {},
               "id": "otlp-in-batched-100k",
               "label": "OTLP-IN-BATCHED-100K",
               "runner_data": {
-                "campaigns": [
-                  "nightly"
-                ],
-                "local_note": "Requires a df_engine image built with the clickhouse-exporter feature and a ClickHouse image.",
-                "metric_aliases": {
-                  "df-engine_cpu_percentage_normalized_avg": "engine_cpu_percentage_normalized_avg",
-                  "df-engine_ram_mib_max": "engine_ram_mib_max"
-                },
                 "path": "tools/pipeline_perf_test/test_suites/integration/clickhouse/otap-clickhouse-logs.yaml",
-                "source_identities": [
-                  {
-                    "format": "github-action-benchmark",
-                    "key": {
-                      "suite": "ClickHouse OTAP Logs",
-                      "test": "OTLP-IN-BATCHED-100K"
-                    }
-                  }
-                ],
                 "test": "OTLP-IN-BATCHED-100K"
               }
             },
             {
-              "dimensions": {},
               "id": "otelcol-otlp-transformed-100k",
               "label": "OTELCOL-OTLP-TRANSFORMED-100K",
               "runner_data": {
-                "campaigns": [
-                  "nightly"
-                ],
-                "local_note": "Requires a df_engine image built with the clickhouse-exporter feature and a ClickHouse image.",
-                "metric_aliases": {
-                  "go-collector_cpu_percentage_normalized_avg": "engine_cpu_percentage_normalized_avg",
-                  "go-collector_ram_mib_max": "engine_ram_mib_max"
-                },
                 "path": "tools/pipeline_perf_test/test_suites/integration/clickhouse/otelcol-clickhouse-logs.yaml",
-                "source_identities": [
-                  {
-                    "format": "github-action-benchmark",
-                    "key": {
-                      "suite": "OTel Collector ClickHouse Logs",
-                      "test": "OTELCOL-OTLP-TRANSFORMED-100K"
-                    }
-                  }
-                ],
                 "test": "OTELCOL-OTLP-TRANSFORMED-100K"
               }
             }
@@ -1078,149 +842,58 @@
           "label": "Variant",
           "values": [
             {
-              "dimensions": {},
               "id": "otlp-filter-otlp",
               "label": "OTLP-FILTER-OTLP",
               "runner_data": {
-                "campaigns": [
-                  "nightly"
-                ],
                 "path": "tools/pipeline_perf_test/test_suites/integration/nightly/filter-docker.yaml",
-                "source_identities": [
-                  {
-                    "format": "github-action-benchmark",
-                    "key": {
-                      "suite": "Nightly - Filter",
-                      "test": "OTLP-FILTER-OTLP"
-                    }
-                  }
-                ],
                 "test": "OTLP-FILTER-OTLP"
               }
             },
             {
-              "dimensions": {},
               "id": "otlp-filter-otap",
               "label": "OTLP-FILTER-OTAP",
               "runner_data": {
-                "campaigns": [
-                  "nightly"
-                ],
                 "path": "tools/pipeline_perf_test/test_suites/integration/nightly/filter-docker.yaml",
-                "source_identities": [
-                  {
-                    "format": "github-action-benchmark",
-                    "key": {
-                      "suite": "Nightly - Filter",
-                      "test": "OTLP-FILTER-OTAP"
-                    }
-                  }
-                ],
                 "test": "OTLP-FILTER-OTAP"
               }
             },
             {
-              "dimensions": {},
               "id": "otap-filter-otap",
               "label": "OTAP-FILTER-OTAP",
               "runner_data": {
-                "campaigns": [
-                  "nightly"
-                ],
                 "path": "tools/pipeline_perf_test/test_suites/integration/nightly/filter-docker.yaml",
-                "source_identities": [
-                  {
-                    "format": "github-action-benchmark",
-                    "key": {
-                      "suite": "Nightly - Filter",
-                      "test": "OTAP-FILTER-OTAP"
-                    }
-                  }
-                ],
                 "test": "OTAP-FILTER-OTAP"
               }
             },
             {
-              "dimensions": {},
               "id": "otap-filter-otlp",
               "label": "OTAP-FILTER-OTLP",
               "runner_data": {
-                "campaigns": [
-                  "nightly"
-                ],
                 "path": "tools/pipeline_perf_test/test_suites/integration/nightly/filter-docker.yaml",
-                "source_identities": [
-                  {
-                    "format": "github-action-benchmark",
-                    "key": {
-                      "suite": "Nightly - Filter",
-                      "test": "OTAP-FILTER-OTLP"
-                    }
-                  }
-                ],
                 "test": "OTAP-FILTER-OTLP"
               }
             },
             {
-              "dimensions": {},
               "id": "otlp-filter-otlp-go-collector",
               "label": "OTLP-FILTER-OTLP (Go Collector)",
               "runner_data": {
-                "campaigns": [
-                  "nightly"
-                ],
                 "path": "tools/pipeline_perf_test/test_suites/integration/nightly/otelcol-docker.yaml",
-                "source_identities": [
-                  {
-                    "format": "github-action-benchmark",
-                    "key": {
-                      "suite": "Nightly - OTel Collector",
-                      "test": "OTLP-FILTER-OTLP (Go Collector)"
-                    }
-                  }
-                ],
                 "test": "OTLP-FILTER-OTLP (Go Collector)"
               }
             },
             {
-              "dimensions": {},
               "id": "otlp-filter-otap-go-collector",
               "label": "OTLP-FILTER-OTAP (Go Collector)",
               "runner_data": {
-                "campaigns": [
-                  "nightly"
-                ],
                 "path": "tools/pipeline_perf_test/test_suites/integration/nightly/otelcol-docker.yaml",
-                "source_identities": [
-                  {
-                    "format": "github-action-benchmark",
-                    "key": {
-                      "suite": "Nightly - OTel Collector",
-                      "test": "OTLP-FILTER-OTAP (Go Collector)"
-                    }
-                  }
-                ],
                 "test": "OTLP-FILTER-OTAP (Go Collector)"
               }
             },
             {
-              "dimensions": {},
               "id": "otap-filter-otap-go-collector",
               "label": "OTAP-FILTER-OTAP (Go Collector)",
               "runner_data": {
-                "campaigns": [
-                  "nightly"
-                ],
                 "path": "tools/pipeline_perf_test/test_suites/integration/nightly/otelcol-docker.yaml",
-                "source_identities": [
-                  {
-                    "format": "github-action-benchmark",
-                    "key": {
-                      "suite": "Nightly - OTel Collector",
-                      "test": "OTAP-FILTER-OTAP (Go Collector)"
-                    }
-                  }
-                ],
                 "test": "OTAP-FILTER-OTAP (Go Collector)"
               }
             }
@@ -1247,20 +920,8 @@
               "id": "idle-state-16cores-docker",
               "label": "Idle State 16Cores Docker",
               "runner_data": {
-                "campaigns": [
-                  "nightly"
-                ],
                 "min_logical_cores": 16,
                 "path": "tools/pipeline_perf_test/test_suites/integration/continuous/idle-state-16cores-docker.yaml",
-                "source_identities": [
-                  {
-                    "format": "github-action-benchmark",
-                    "key": {
-                      "suite": "Continuous - Idle State Performance - 16 Cores",
-                      "test": "Idle State Baseline - 16 Cores"
-                    }
-                  }
-                ],
                 "test": "Idle State Baseline - 16 Cores"
               }
             },
@@ -1271,20 +932,8 @@
               "id": "idle-state-2cores-docker",
               "label": "Idle State 2Cores Docker",
               "runner_data": {
-                "campaigns": [
-                  "nightly"
-                ],
                 "min_logical_cores": 2,
                 "path": "tools/pipeline_perf_test/test_suites/integration/continuous/idle-state-2cores-docker.yaml",
-                "source_identities": [
-                  {
-                    "format": "github-action-benchmark",
-                    "key": {
-                      "suite": "Continuous - Idle State Performance - 2 Cores",
-                      "test": "Idle State Baseline - 2 Cores"
-                    }
-                  }
-                ],
                 "test": "Idle State Baseline - 2 Cores"
               }
             },
@@ -1295,22 +944,8 @@
               "id": "idle-state-32cores-docker",
               "label": "Idle State 32Cores Docker",
               "runner_data": {
-                "campaigns": [
-                  "nightly"
-                ],
-                "local_note": "CPU set 0-31 does not fit the 20-logical-core Docker Desktop VM.",
-                "local_supported": false,
                 "min_logical_cores": 32,
                 "path": "tools/pipeline_perf_test/test_suites/integration/continuous/idle-state-32cores-docker.yaml",
-                "source_identities": [
-                  {
-                    "format": "github-action-benchmark",
-                    "key": {
-                      "suite": "Continuous - Idle State Performance - 32 Cores",
-                      "test": "Idle State Baseline - 32 Cores"
-                    }
-                  }
-                ],
                 "test": "Idle State Baseline - 32 Cores"
               }
             },
@@ -1321,20 +956,8 @@
               "id": "idle-state-4cores-docker",
               "label": "Idle State 4Cores Docker",
               "runner_data": {
-                "campaigns": [
-                  "nightly"
-                ],
                 "min_logical_cores": 4,
                 "path": "tools/pipeline_perf_test/test_suites/integration/continuous/idle-state-4cores-docker.yaml",
-                "source_identities": [
-                  {
-                    "format": "github-action-benchmark",
-                    "key": {
-                      "suite": "Continuous - Idle State Performance - 4 Cores",
-                      "test": "Idle State Baseline - 4 Cores"
-                    }
-                  }
-                ],
                 "test": "Idle State Baseline - 4 Cores"
               }
             },
@@ -1345,20 +968,8 @@
               "id": "idle-state-8cores-docker",
               "label": "Idle State 8Cores Docker",
               "runner_data": {
-                "campaigns": [
-                  "nightly"
-                ],
                 "min_logical_cores": 8,
                 "path": "tools/pipeline_perf_test/test_suites/integration/continuous/idle-state-8cores-docker.yaml",
-                "source_identities": [
-                  {
-                    "format": "github-action-benchmark",
-                    "key": {
-                      "suite": "Continuous - Idle State Performance - 8 Cores",
-                      "test": "Idle State Baseline - 8 Cores"
-                    }
-                  }
-                ],
                 "test": "Idle State Baseline - 8 Cores"
               }
             },
@@ -1369,20 +980,8 @@
               "id": "idle-state-docker",
               "label": "Idle State Docker",
               "runner_data": {
-                "campaigns": [
-                  "nightly"
-                ],
                 "min_logical_cores": 1,
                 "path": "tools/pipeline_perf_test/test_suites/integration/continuous/idle-state-docker.yaml",
-                "source_identities": [
-                  {
-                    "format": "github-action-benchmark",
-                    "key": {
-                      "suite": "Continuous - Idle State Performance - Single Core",
-                      "test": "Idle State Baseline - Single Core"
-                    }
-                  }
-                ],
                 "test": "Idle State Baseline - Single Core"
               }
             }
@@ -1521,9 +1120,6 @@
           "label": "Action Count",
           "values": [
             {
-              "dimensions": {
-                "action_count": "1"
-              },
               "id": "1",
               "label": "1",
               "runner_data": {
@@ -1531,9 +1127,6 @@
               }
             },
             {
-              "dimensions": {
-                "action_count": "2"
-              },
               "id": "2",
               "label": "2",
               "runner_data": {
@@ -1541,9 +1134,6 @@
               }
             },
             {
-              "dimensions": {
-                "action_count": "3"
-              },
               "id": "3",
               "label": "3",
               "runner_data": {
@@ -1551,9 +1141,6 @@
               }
             },
             {
-              "dimensions": {
-                "action_count": "4"
-              },
               "id": "4",
               "label": "4",
               "runner_data": {
@@ -1639,9 +1226,6 @@
           "label": "Batch Size",
           "values": [
             {
-              "dimensions": {
-                "batch_size": "256"
-              },
               "id": "256",
               "label": "256",
               "runner_data": {
@@ -1649,9 +1233,6 @@
               }
             },
             {
-              "dimensions": {
-                "batch_size": "512"
-              },
               "id": "512",
               "label": "512",
               "runner_data": {
@@ -1659,9 +1240,6 @@
               }
             },
             {
-              "dimensions": {
-                "batch_size": "1024"
-              },
               "id": "1024",
               "label": "1024",
               "runner_data": {
@@ -1669,9 +1247,6 @@
               }
             },
             {
-              "dimensions": {
-                "batch_size": "2048"
-              },
               "id": "2048",
               "label": "2048",
               "runner_data": {
@@ -1679,9 +1254,6 @@
               }
             },
             {
-              "dimensions": {
-                "batch_size": "4096"
-              },
               "id": "4096",
               "label": "4096",
               "runner_data": {
@@ -1809,9 +1381,6 @@
           "label": "Load Rate",
           "values": [
             {
-              "dimensions": {
-                "load_rate": "100000"
-              },
               "id": "100k",
               "label": "100k",
               "runner_data": {
@@ -1819,9 +1388,6 @@
               }
             },
             {
-              "dimensions": {
-                "load_rate": "200000"
-              },
               "id": "200k",
               "label": "200k",
               "runner_data": {
@@ -1829,9 +1395,6 @@
               }
             },
             {
-              "dimensions": {
-                "load_rate": "300000"
-              },
               "id": "300k",
               "label": "300k",
               "runner_data": {
@@ -1839,9 +1402,6 @@
               }
             },
             {
-              "dimensions": {
-                "load_rate": "400000"
-              },
               "id": "400k",
               "label": "400k",
               "runner_data": {
@@ -1849,9 +1409,6 @@
               }
             },
             {
-              "dimensions": {
-                "load_rate": "600000"
-              },
               "id": "600k",
               "label": "600k",
               "runner_data": {
@@ -1859,9 +1416,6 @@
               }
             },
             {
-              "dimensions": {
-                "load_rate": "800000"
-              },
               "id": "800k",
               "label": "800k",
               "runner_data": {
@@ -1869,9 +1423,6 @@
               }
             },
             {
-              "dimensions": {
-                "load_rate": "1000000"
-              },
               "id": "1000k",
               "label": "1M",
               "runner_data": {
@@ -2013,9 +1564,6 @@
           "label": "Action Count",
           "values": [
             {
-              "dimensions": {
-                "action_count": "1"
-              },
               "id": "1",
               "label": "1",
               "runner_data": {
@@ -2023,9 +1571,6 @@
               }
             },
             {
-              "dimensions": {
-                "action_count": "2"
-              },
               "id": "2",
               "label": "2",
               "runner_data": {
@@ -2033,9 +1578,6 @@
               }
             },
             {
-              "dimensions": {
-                "action_count": "3"
-              },
               "id": "3",
               "label": "3",
               "runner_data": {
@@ -2043,9 +1585,6 @@
               }
             },
             {
-              "dimensions": {
-                "action_count": "4"
-              },
               "id": "4",
               "label": "4",
               "runner_data": {
@@ -2131,9 +1670,6 @@
           "label": "Batch Size",
           "values": [
             {
-              "dimensions": {
-                "batch_size": "256"
-              },
               "id": "256",
               "label": "256",
               "runner_data": {
@@ -2141,9 +1677,6 @@
               }
             },
             {
-              "dimensions": {
-                "batch_size": "512"
-              },
               "id": "512",
               "label": "512",
               "runner_data": {
@@ -2151,9 +1684,6 @@
               }
             },
             {
-              "dimensions": {
-                "batch_size": "1024"
-              },
               "id": "1024",
               "label": "1024",
               "runner_data": {
@@ -2161,9 +1691,6 @@
               }
             },
             {
-              "dimensions": {
-                "batch_size": "2048"
-              },
               "id": "2048",
               "label": "2048",
               "runner_data": {
@@ -2171,9 +1698,6 @@
               }
             },
             {
-              "dimensions": {
-                "batch_size": "4096"
-              },
               "id": "4096",
               "label": "4096",
               "runner_data": {
@@ -2301,9 +1825,6 @@
           "label": "Load Rate",
           "values": [
             {
-              "dimensions": {
-                "load_rate": "100000"
-              },
               "id": "100k",
               "label": "100k",
               "runner_data": {
@@ -2311,9 +1832,6 @@
               }
             },
             {
-              "dimensions": {
-                "load_rate": "200000"
-              },
               "id": "200k",
               "label": "200k",
               "runner_data": {
@@ -2321,9 +1839,6 @@
               }
             },
             {
-              "dimensions": {
-                "load_rate": "300000"
-              },
               "id": "300k",
               "label": "300k",
               "runner_data": {
@@ -2331,9 +1846,6 @@
               }
             },
             {
-              "dimensions": {
-                "load_rate": "400000"
-              },
               "id": "400k",
               "label": "400k",
               "runner_data": {
@@ -2341,9 +1853,6 @@
               }
             },
             {
-              "dimensions": {
-                "load_rate": "600000"
-              },
               "id": "600k",
               "label": "600k",
               "runner_data": {
@@ -2351,9 +1860,6 @@
               }
             },
             {
-              "dimensions": {
-                "load_rate": "800000"
-              },
               "id": "800k",
               "label": "800k",
               "runner_data": {
@@ -2361,9 +1867,6 @@
               }
             },
             {
-              "dimensions": {
-                "load_rate": "1000000"
-              },
               "id": "1000k",
               "label": "1M",
               "runner_data": {
@@ -3091,44 +2594,18 @@
           "label": "Variant",
           "values": [
             {
-              "dimensions": {},
               "id": "passthrough-otap",
               "label": "Passthrough Otap",
               "runner_data": {
-                "campaigns": [
-                  "nightly"
-                ],
                 "path": "tools/pipeline_perf_test/test_suites/integration/continuous/passthrough-otap.yaml",
-                "source_identities": [
-                  {
-                    "format": "github-action-benchmark",
-                    "key": {
-                      "suite": "Continuous - Passthrough OTAP",
-                      "test": "OTAP-OTAP"
-                    }
-                  }
-                ],
                 "test": "OTAP-OTAP"
               }
             },
             {
-              "dimensions": {},
               "id": "passthrough",
               "label": "Passthrough",
               "runner_data": {
-                "campaigns": [
-                  "nightly"
-                ],
                 "path": "tools/pipeline_perf_test/test_suites/integration/continuous/passthrough.yaml",
-                "source_identities": [
-                  {
-                    "format": "github-action-benchmark",
-                    "key": {
-                      "suite": "Continuous - Passthrough",
-                      "test": "OTLP-OTLP"
-                    }
-                  }
-                ],
                 "test": "OTLP-OTLP"
               }
             }
@@ -3154,18 +2631,7 @@
                 "protocol": "otlp"
               },
               "id": "saturation-24cores",
-              "label": "Saturation 24Cores (Legacy)",
-              "runner_data": {
-                "source_identities": [
-                  {
-                    "format": "github-action-benchmark",
-                    "key": {
-                      "suite": "Continuous - Saturation - 24 Core(s)",
-                      "test": "OTLP-ATTR-OTLP"
-                    }
-                  }
-                ]
-              }
+              "label": "Saturation 24Cores (Legacy)"
             },
             {
               "dimensions": {
@@ -3175,21 +2641,7 @@
               "id": "saturation-16cores",
               "label": "Saturation 16Cores",
               "runner_data": {
-                "campaigns": [
-                  "nightly"
-                ],
-                "local_note": "NUMA-specific CPU sets start at CPU 32 and cannot run unchanged in the 20-logical-core Docker Desktop VM.",
-                "local_supported": false,
                 "path": "tools/pipeline_perf_test/test_suites/integration/continuous/saturation-16cores.yaml",
-                "source_identities": [
-                  {
-                    "format": "github-action-benchmark",
-                    "key": {
-                      "suite": "Continuous - Saturation - 16 Core(s)",
-                      "test": "OTLP-ATTR-OTLP"
-                    }
-                  }
-                ],
                 "test": "OTLP-ATTR-OTLP"
               }
             },
@@ -3201,21 +2653,7 @@
               "id": "saturation-1core",
               "label": "Saturation 1Core",
               "runner_data": {
-                "campaigns": [
-                  "nightly"
-                ],
-                "local_note": "NUMA-specific CPU sets start at CPU 32 and cannot run unchanged in the 20-logical-core Docker Desktop VM.",
-                "local_supported": false,
                 "path": "tools/pipeline_perf_test/test_suites/integration/continuous/saturation-1core.yaml",
-                "source_identities": [
-                  {
-                    "format": "github-action-benchmark",
-                    "key": {
-                      "suite": "Continuous - Saturation - 1 Core(s)",
-                      "test": "OTLP-ATTR-OTLP"
-                    }
-                  }
-                ],
                 "test": "OTLP-ATTR-OTLP"
               }
             },
@@ -3227,21 +2665,7 @@
               "id": "saturation-2cores",
               "label": "Saturation 2Cores",
               "runner_data": {
-                "campaigns": [
-                  "nightly"
-                ],
-                "local_note": "NUMA-specific CPU sets start at CPU 32 and cannot run unchanged in the 20-logical-core Docker Desktop VM.",
-                "local_supported": false,
                 "path": "tools/pipeline_perf_test/test_suites/integration/continuous/saturation-2cores.yaml",
-                "source_identities": [
-                  {
-                    "format": "github-action-benchmark",
-                    "key": {
-                      "suite": "Continuous - Saturation - 2 Core(s)",
-                      "test": "OTLP-ATTR-OTLP"
-                    }
-                  }
-                ],
                 "test": "OTLP-ATTR-OTLP"
               }
             },
@@ -3253,21 +2677,7 @@
               "id": "saturation-4cores",
               "label": "Saturation 4Cores",
               "runner_data": {
-                "campaigns": [
-                  "nightly"
-                ],
-                "local_note": "NUMA-specific CPU sets start at CPU 32 and cannot run unchanged in the 20-logical-core Docker Desktop VM.",
-                "local_supported": false,
                 "path": "tools/pipeline_perf_test/test_suites/integration/continuous/saturation-4cores.yaml",
-                "source_identities": [
-                  {
-                    "format": "github-action-benchmark",
-                    "key": {
-                      "suite": "Continuous - Saturation - 4 Core(s)",
-                      "test": "OTLP-ATTR-OTLP"
-                    }
-                  }
-                ],
                 "test": "OTLP-ATTR-OTLP"
               }
             },
@@ -3279,63 +2689,23 @@
               "id": "saturation-8cores",
               "label": "Saturation 8Cores",
               "runner_data": {
-                "campaigns": [
-                  "nightly"
-                ],
-                "local_note": "NUMA-specific CPU sets start at CPU 32 and cannot run unchanged in the 20-logical-core Docker Desktop VM.",
-                "local_supported": false,
                 "path": "tools/pipeline_perf_test/test_suites/integration/continuous/saturation-8cores.yaml",
-                "source_identities": [
-                  {
-                    "format": "github-action-benchmark",
-                    "key": {
-                      "suite": "Continuous - Saturation - 8 Core(s)",
-                      "test": "OTLP-ATTR-OTLP"
-                    }
-                  }
-                ],
                 "test": "OTLP-ATTR-OTLP"
               }
             },
             {
-              "dimensions": {},
               "id": "saturation-max-throughput-otap",
               "label": "Saturation Max Throughput Otap",
               "runner_data": {
-                "campaigns": [
-                  "nightly"
-                ],
                 "path": "tools/pipeline_perf_test/test_suites/integration/continuous/saturation-max-throughput-otap.yaml",
-                "source_identities": [
-                  {
-                    "format": "github-action-benchmark",
-                    "key": {
-                      "suite": "Continuous - Saturation - Max Throughput OTAP",
-                      "test": "OTAP-ATTR-OTAP"
-                    }
-                  }
-                ],
                 "test": "OTAP-ATTR-OTAP"
               }
             },
             {
-              "dimensions": {},
               "id": "saturation-max-throughput",
               "label": "Saturation Max Throughput",
               "runner_data": {
-                "campaigns": [
-                  "nightly"
-                ],
                 "path": "tools/pipeline_perf_test/test_suites/integration/continuous/saturation-max-throughput.yaml",
-                "source_identities": [
-                  {
-                    "format": "github-action-benchmark",
-                    "key": {
-                      "suite": "Continuous - Saturation - Max Throughput",
-                      "test": "OTLP-ATTR-OTLP"
-                    }
-                  }
-                ],
                 "test": "OTLP-ATTR-OTLP"
               }
             },
@@ -3347,21 +2717,7 @@
               "id": "saturation-otap-1core",
               "label": "Saturation Otap 1Core",
               "runner_data": {
-                "campaigns": [
-                  "nightly"
-                ],
-                "local_note": "NUMA-specific CPU sets start at CPU 32 and cannot run unchanged in the 20-logical-core Docker Desktop VM.",
-                "local_supported": false,
                 "path": "tools/pipeline_perf_test/test_suites/integration/continuous/saturation-otap-1core.yaml",
-                "source_identities": [
-                  {
-                    "format": "github-action-benchmark",
-                    "key": {
-                      "suite": "Continuous - Saturation OTAP - 1 Core(s)",
-                      "test": "OTAP-ATTR-OTAP"
-                    }
-                  }
-                ],
                 "test": "OTAP-ATTR-OTAP"
               }
             },
@@ -3373,21 +2729,7 @@
               "id": "saturation-otap-2cores",
               "label": "Saturation Otap 2Cores",
               "runner_data": {
-                "campaigns": [
-                  "nightly"
-                ],
-                "local_note": "NUMA-specific CPU sets start at CPU 32 and cannot run unchanged in the 20-logical-core Docker Desktop VM.",
-                "local_supported": false,
                 "path": "tools/pipeline_perf_test/test_suites/integration/continuous/saturation-otap-2cores.yaml",
-                "source_identities": [
-                  {
-                    "format": "github-action-benchmark",
-                    "key": {
-                      "suite": "Continuous - Saturation OTAP - 2 Core(s)",
-                      "test": "OTAP-ATTR-OTAP"
-                    }
-                  }
-                ],
                 "test": "OTAP-ATTR-OTAP"
               }
             },
@@ -3399,21 +2741,7 @@
               "id": "saturation-otap-4cores",
               "label": "Saturation Otap 4Cores",
               "runner_data": {
-                "campaigns": [
-                  "nightly"
-                ],
-                "local_note": "NUMA-specific CPU sets start at CPU 32 and cannot run unchanged in the 20-logical-core Docker Desktop VM.",
-                "local_supported": false,
                 "path": "tools/pipeline_perf_test/test_suites/integration/continuous/saturation-otap-4cores.yaml",
-                "source_identities": [
-                  {
-                    "format": "github-action-benchmark",
-                    "key": {
-                      "suite": "Continuous - Saturation OTAP - 4 Core(s)",
-                      "test": "OTAP-ATTR-OTAP"
-                    }
-                  }
-                ],
                 "test": "OTAP-ATTR-OTAP"
               }
             },
@@ -3425,21 +2753,7 @@
               "id": "saturation-otap-8cores",
               "label": "Saturation Otap 8Cores",
               "runner_data": {
-                "campaigns": [
-                  "nightly"
-                ],
-                "local_note": "NUMA-specific CPU sets start at CPU 32 and cannot run unchanged in the 20-logical-core Docker Desktop VM.",
-                "local_supported": false,
                 "path": "tools/pipeline_perf_test/test_suites/integration/continuous/saturation-otap-8cores.yaml",
-                "source_identities": [
-                  {
-                    "format": "github-action-benchmark",
-                    "key": {
-                      "suite": "Continuous - Saturation OTAP - 8 Core(s)",
-                      "test": "OTAP-ATTR-OTAP"
-                    }
-                  }
-                ],
                 "test": "OTAP-ATTR-OTAP"
               }
             }
@@ -3460,13 +2774,9 @@
           "label": "Variant",
           "values": [
             {
-              "dimensions": {},
               "id": "100klrps-batch-sizes-docker",
               "label": "100Klrps Batch Sizes Docker",
               "runner_data": {
-                "campaigns": [
-                  "nightly"
-                ],
                 "path": "tools/pipeline_perf_test/test_suites/integration/nightly/100klrps-batch-sizes-docker.yaml"
               }
             }
@@ -3477,104 +2787,44 @@
           "label": "Case",
           "values": [
             {
-              "dimensions": {},
               "id": "OTLP-ATTR-OTLP-BATCH10",
               "label": "OTLP-ATTR-OTLP-BATCH10",
               "runner_data": {
-                "source_identities": [
-                  {
-                    "format": "github-action-benchmark",
-                    "key": {
-                      "suite": "Nightly - 100kLRPS Batch Size Variations",
-                      "test": "OTLP-ATTR-OTLP-BATCH10"
-                    }
-                  }
-                ],
                 "test": "OTLP-ATTR-OTLP-BATCH10"
               }
             },
             {
-              "dimensions": {},
               "id": "OTLP-ATTR-OTLP-BATCH100",
               "label": "OTLP-ATTR-OTLP-BATCH100",
               "runner_data": {
-                "source_identities": [
-                  {
-                    "format": "github-action-benchmark",
-                    "key": {
-                      "suite": "Nightly - 100kLRPS Batch Size Variations",
-                      "test": "OTLP-ATTR-OTLP-BATCH100"
-                    }
-                  }
-                ],
                 "test": "OTLP-ATTR-OTLP-BATCH100"
               }
             },
             {
-              "dimensions": {},
               "id": "OTLP-ATTR-OTLP-BATCH512",
               "label": "OTLP-ATTR-OTLP-BATCH512",
               "runner_data": {
-                "source_identities": [
-                  {
-                    "format": "github-action-benchmark",
-                    "key": {
-                      "suite": "Nightly - 100kLRPS Batch Size Variations",
-                      "test": "OTLP-ATTR-OTLP-BATCH512"
-                    }
-                  }
-                ],
                 "test": "OTLP-ATTR-OTLP-BATCH512"
               }
             },
             {
-              "dimensions": {},
               "id": "OTLP-ATTR-OTLP-BATCH1024",
               "label": "OTLP-ATTR-OTLP-BATCH1024",
               "runner_data": {
-                "source_identities": [
-                  {
-                    "format": "github-action-benchmark",
-                    "key": {
-                      "suite": "Nightly - 100kLRPS Batch Size Variations",
-                      "test": "OTLP-ATTR-OTLP-BATCH1024"
-                    }
-                  }
-                ],
                 "test": "OTLP-ATTR-OTLP-BATCH1024"
               }
             },
             {
-              "dimensions": {},
               "id": "OTLP-ATTR-OTLP-BATCH4096",
               "label": "OTLP-ATTR-OTLP-BATCH4096",
               "runner_data": {
-                "source_identities": [
-                  {
-                    "format": "github-action-benchmark",
-                    "key": {
-                      "suite": "Nightly - 100kLRPS Batch Size Variations",
-                      "test": "OTLP-ATTR-OTLP-BATCH4096"
-                    }
-                  }
-                ],
                 "test": "OTLP-ATTR-OTLP-BATCH4096"
               }
             },
             {
-              "dimensions": {},
               "id": "OTLP-ATTR-OTLP-BATCH8192",
               "label": "OTLP-ATTR-OTLP-BATCH8192",
               "runner_data": {
-                "source_identities": [
-                  {
-                    "format": "github-action-benchmark",
-                    "key": {
-                      "suite": "Nightly - 100kLRPS Batch Size Variations",
-                      "test": "OTLP-ATTR-OTLP-BATCH8192"
-                    }
-                  }
-                ],
                 "test": "OTLP-ATTR-OTLP-BATCH8192"
               }
             }
@@ -3595,44 +2845,16 @@
           "label": "Variant",
           "values": [
             {
-              "dimensions": {},
               "id": "syslog-tcp-otlp-go-collector",
               "label": "SYSLOG-TCP-OTLP (Go Collector)",
               "runner_data": {
-                "campaigns": [
-                  "nightly"
-                ],
-                "path": "tools/pipeline_perf_test/test_suites/integration/nightly/syslog-tcp-otelcol-docker.yaml",
-                "source_identities": [
-                  {
-                    "format": "github-action-benchmark",
-                    "key": {
-                      "suite": "Nightly - Syslog TCP (OTel Collector)",
-                      "test": "SYSLOG-TCP-OTLP (Go Collector)"
-                    }
-                  }
-                ],
                 "test": "SYSLOG-TCP-OTLP (Go Collector)"
               }
             },
             {
-              "dimensions": {},
               "id": "syslog-tcp-otap-go-collector",
               "label": "SYSLOG-TCP-OTAP (Go Collector)",
               "runner_data": {
-                "campaigns": [
-                  "nightly"
-                ],
-                "path": "tools/pipeline_perf_test/test_suites/integration/nightly/syslog-tcp-otelcol-docker.yaml",
-                "source_identities": [
-                  {
-                    "format": "github-action-benchmark",
-                    "key": {
-                      "suite": "Nightly - Syslog TCP (OTel Collector)",
-                      "test": "SYSLOG-TCP-OTAP (Go Collector)"
-                    }
-                  }
-                ],
                 "test": "SYSLOG-TCP-OTAP (Go Collector)"
               }
             }
@@ -3640,6 +2862,9 @@
         }
       ],
       "runner": "orchestrator",
+      "runner_data": {
+        "path": "tools/pipeline_perf_test/test_suites/integration/nightly/syslog-tcp-otelcol-docker.yaml"
+      },
       "schema_version": 2
     },
     {
@@ -3653,86 +2878,30 @@
           "label": "Variant",
           "values": [
             {
-              "dimensions": {},
               "id": "syslog-tcp-3164-attr-otap",
               "label": "SYSLOG-TCP-3164-ATTR-OTAP",
               "runner_data": {
-                "campaigns": [
-                  "nightly"
-                ],
-                "path": "tools/pipeline_perf_test/test_suites/integration/nightly/syslog-tcp-docker.yaml",
-                "source_identities": [
-                  {
-                    "format": "github-action-benchmark",
-                    "key": {
-                      "suite": "Nightly - Syslog TCP",
-                      "test": "SYSLOG-TCP-3164-ATTR-OTAP"
-                    }
-                  }
-                ],
                 "test": "SYSLOG-TCP-3164-ATTR-OTAP"
               }
             },
             {
-              "dimensions": {},
               "id": "syslog-tcp-3164-attr-otlp",
               "label": "SYSLOG-TCP-3164-ATTR-OTLP",
               "runner_data": {
-                "campaigns": [
-                  "nightly"
-                ],
-                "path": "tools/pipeline_perf_test/test_suites/integration/nightly/syslog-tcp-docker.yaml",
-                "source_identities": [
-                  {
-                    "format": "github-action-benchmark",
-                    "key": {
-                      "suite": "Nightly - Syslog TCP",
-                      "test": "SYSLOG-TCP-3164-ATTR-OTLP"
-                    }
-                  }
-                ],
                 "test": "SYSLOG-TCP-3164-ATTR-OTLP"
               }
             },
             {
-              "dimensions": {},
               "id": "syslog-tcp-3164-cef-attr-otlp",
               "label": "SYSLOG-TCP-3164-CEF-ATTR-OTLP",
               "runner_data": {
-                "campaigns": [
-                  "nightly"
-                ],
-                "path": "tools/pipeline_perf_test/test_suites/integration/nightly/syslog-tcp-docker.yaml",
-                "source_identities": [
-                  {
-                    "format": "github-action-benchmark",
-                    "key": {
-                      "suite": "Nightly - Syslog TCP",
-                      "test": "SYSLOG-TCP-3164-CEF-ATTR-OTLP"
-                    }
-                  }
-                ],
                 "test": "SYSLOG-TCP-3164-CEF-ATTR-OTLP"
               }
             },
             {
-              "dimensions": {},
               "id": "syslog-tcp-3164-cef-attr-otap",
               "label": "SYSLOG-TCP-3164-CEF-ATTR-OTAP",
               "runner_data": {
-                "campaigns": [
-                  "nightly"
-                ],
-                "path": "tools/pipeline_perf_test/test_suites/integration/nightly/syslog-tcp-docker.yaml",
-                "source_identities": [
-                  {
-                    "format": "github-action-benchmark",
-                    "key": {
-                      "suite": "Nightly - Syslog TCP",
-                      "test": "SYSLOG-TCP-3164-CEF-ATTR-OTAP"
-                    }
-                  }
-                ],
                 "test": "SYSLOG-TCP-3164-CEF-ATTR-OTAP"
               }
             }
@@ -3740,6 +2909,9 @@
         }
       ],
       "runner": "orchestrator",
+      "runner_data": {
+        "path": "tools/pipeline_perf_test/test_suites/integration/nightly/syslog-tcp-docker.yaml"
+      },
       "schema_version": 2
     },
     {
@@ -3753,86 +2925,30 @@
           "label": "Variant",
           "values": [
             {
-              "dimensions": {},
               "id": "syslog-3164-attr-otap",
               "label": "SYSLOG-3164-ATTR-OTAP",
               "runner_data": {
-                "campaigns": [
-                  "nightly"
-                ],
-                "path": "tools/pipeline_perf_test/test_suites/integration/nightly/syslog-docker.yaml",
-                "source_identities": [
-                  {
-                    "format": "github-action-benchmark",
-                    "key": {
-                      "suite": "Nightly - Syslog",
-                      "test": "SYSLOG-3164-ATTR-OTAP"
-                    }
-                  }
-                ],
                 "test": "SYSLOG-3164-ATTR-OTAP"
               }
             },
             {
-              "dimensions": {},
               "id": "syslog-3164-attr-otlp",
               "label": "SYSLOG-3164-ATTR-OTLP",
               "runner_data": {
-                "campaigns": [
-                  "nightly"
-                ],
-                "path": "tools/pipeline_perf_test/test_suites/integration/nightly/syslog-docker.yaml",
-                "source_identities": [
-                  {
-                    "format": "github-action-benchmark",
-                    "key": {
-                      "suite": "Nightly - Syslog",
-                      "test": "SYSLOG-3164-ATTR-OTLP"
-                    }
-                  }
-                ],
                 "test": "SYSLOG-3164-ATTR-OTLP"
               }
             },
             {
-              "dimensions": {},
               "id": "syslog-3164-cef-attr-otlp",
               "label": "SYSLOG-3164-CEF-ATTR-OTLP",
               "runner_data": {
-                "campaigns": [
-                  "nightly"
-                ],
-                "path": "tools/pipeline_perf_test/test_suites/integration/nightly/syslog-docker.yaml",
-                "source_identities": [
-                  {
-                    "format": "github-action-benchmark",
-                    "key": {
-                      "suite": "Nightly - Syslog",
-                      "test": "SYSLOG-3164-CEF-ATTR-OTLP"
-                    }
-                  }
-                ],
                 "test": "SYSLOG-3164-CEF-ATTR-OTLP"
               }
             },
             {
-              "dimensions": {},
               "id": "syslog-3164-cef-attr-otap",
               "label": "SYSLOG-3164-CEF-ATTR-OTAP",
               "runner_data": {
-                "campaigns": [
-                  "nightly"
-                ],
-                "path": "tools/pipeline_perf_test/test_suites/integration/nightly/syslog-docker.yaml",
-                "source_identities": [
-                  {
-                    "format": "github-action-benchmark",
-                    "key": {
-                      "suite": "Nightly - Syslog",
-                      "test": "SYSLOG-3164-CEF-ATTR-OTAP"
-                    }
-                  }
-                ],
                 "test": "SYSLOG-3164-CEF-ATTR-OTAP"
               }
             }
@@ -3840,6 +2956,9 @@
         }
       ],
       "runner": "orchestrator",
+      "runner_data": {
+        "path": "tools/pipeline_perf_test/test_suites/integration/nightly/syslog-docker.yaml"
+      },
       "schema_version": 2
     },
     {
