@@ -2732,19 +2732,6 @@
           "label": "Variant",
           "values": [
             {
-              "id": "100klrps-batch-sizes-docker",
-              "label": "100Klrps Batch Sizes Docker",
-              "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/integration/nightly/100klrps-batch-sizes-docker.yaml"
-              }
-            }
-          ]
-        },
-        {
-          "id": "case",
-          "label": "Case",
-          "values": [
-            {
               "id": "OTLP-ATTR-OTLP-BATCH10",
               "label": "OTLP-ATTR-OTLP-BATCH10",
               "runner_data": {
@@ -2790,6 +2777,9 @@
         }
       ],
       "runner": "orchestrator",
+      "runner_data": {
+        "path": "tools/pipeline_perf_test/test_suites/integration/nightly/100klrps-batch-sizes-docker.yaml"
+      },
       "schema_version": 2
     },
     {
