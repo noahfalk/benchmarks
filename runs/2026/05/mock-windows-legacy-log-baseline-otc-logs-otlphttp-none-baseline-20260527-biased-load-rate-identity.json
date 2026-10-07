@@ -1,0 +1,306 @@
+{
+  "attachments": [],
+  "environment": {
+    "architecture": "x86_64",
+    "cpu_model": "INTEL(R) XEON(R) PLATINUM 8581C CPU @ 2.30GHz",
+    "execution_os": "windows",
+    "logical_cores": 32,
+    "memory_gib": 118,
+    "os": "windows",
+    "physical_cores": 16,
+    "testbed": "comparison-dashboard-windows-x86_64-32c-118g"
+  },
+  "results": [
+    {
+      "dimension_keys": [
+        "binary",
+        "compression",
+        "protocol",
+        "signal"
+      ],
+      "identity_keys": [
+        "variant",
+        "load_rate"
+      ],
+      "measurements": [
+        {
+          "dimensions": [
+            "otc",
+            "none",
+            "otlphttp",
+            "logs"
+          ],
+          "identity": [
+            "otc-logs-otlphttp-none-baseline",
+            "1000k"
+          ],
+          "values": [
+            105.1575,
+            105.5355,
+            -0.918318,
+            20.58,
+            278282,
+            279882,
+            105592146.45,
+            5760886.95,
+            5671.155,
+            5833.275,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "otc",
+            "none",
+            "otlphttp",
+            "logs"
+          ],
+          "identity": [
+            "otc-logs-otlphttp-none-baseline",
+            "100k"
+          ],
+          "values": [
+            34.965,
+            36.141,
+            -1.694915,
+            20.0865,
+            99172,
+            101024,
+            37622228.7,
+            2029582.8,
+            55.335,
+            56.385,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "otc",
+            "none",
+            "otlphttp",
+            "logs"
+          ],
+          "identity": [
+            "otc-logs-otlphttp-none-baseline",
+            "200k"
+          ],
+          "values": [
+            66.6225,
+            68.0295,
+            -1.68644,
+            20.0445,
+            197467,
+            201815,
+            75176563.35,
+            4046347.2,
+            74.97,
+            78.54,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "otc",
+            "none",
+            "otlphttp",
+            "logs"
+          ],
+          "identity": [
+            "otc-logs-otlphttp-none-baseline",
+            "300k"
+          ],
+          "values": [
+            100.0545,
+            101.493,
+            0,
+            20.349,
+            299029,
+            297500,
+            112721729.4,
+            6055989.45,
+            89.565,
+            105.945,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "otc",
+            "none",
+            "otlphttp",
+            "logs"
+          ],
+          "identity": [
+            "otc-logs-otlphttp-none-baseline",
+            "400k"
+          ],
+          "values": [
+            105.084,
+            105.609,
+            0.98045,
+            20.5485,
+            282955,
+            279703,
+            106186170.3,
+            5749982.7,
+            2218.02,
+            2242.59,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "otc",
+            "none",
+            "otlphttp",
+            "logs"
+          ],
+          "identity": [
+            "otc-logs-otlphttp-none-baseline",
+            "600k"
+          ],
+          "values": [
+            105.189,
+            105.4515,
+            0.989859,
+            20.895,
+            280999,
+            277740,
+            104900548.2,
+            5803963.2,
+            3444.945,
+            3483.9,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "otc",
+            "none",
+            "otlphttp",
+            "logs"
+          ],
+          "identity": [
+            "otc-logs-otlphttp-none-baseline",
+            "800k"
+          ],
+          "values": [
+            105.189,
+            105.567,
+            -0.148227,
+            20.5905,
+            283382,
+            283295,
+            105858383.4,
+            5833653.0,
+            4565.085,
+            4646.985,
+            60.0
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "cpu_percentage_normalized_avg",
+          "unit": "%"
+        },
+        {
+          "name": "cpu_percentage_normalized_max",
+          "unit": "%"
+        },
+        {
+          "name": "dropped_logs_percentage",
+          "unit": "%"
+        },
+        {
+          "name": "egress_bytes_per_log",
+          "unit": "bytes/log"
+        },
+        {
+          "name": "logs_produced_rate",
+          "unit": "logs/sec"
+        },
+        {
+          "name": "logs_received_rate",
+          "unit": "logs/sec"
+        },
+        {
+          "name": "network_rx_bytes_rate_avg",
+          "unit": "bytes/sec"
+        },
+        {
+          "name": "network_tx_bytes_rate_avg",
+          "unit": "bytes/sec"
+        },
+        {
+          "name": "ram_mib_avg",
+          "unit": "MiB"
+        },
+        {
+          "name": "ram_mib_max",
+          "unit": "MiB"
+        },
+        {
+          "name": "test_duration",
+          "unit": "seconds"
+        }
+      ],
+      "suite": "log-baseline"
+    }
+  ],
+  "run": {
+    "collection_id": "legacy-log-baseline-snapshot-20260603",
+    "finished_at": "2026-05-27T00:40:38Z",
+    "id": "mock-windows-legacy-log-baseline-otc-logs-otlphttp-none-baseline-20260527-biased-load-rate-identity",
+    "metadata": {
+      "comparison-dashboard-migration": {
+        "benchmarked_source_commit": "not-recorded-by-legacy-comparison-dashboard",
+        "case_ids": [
+          "100k",
+          "200k",
+          "300k",
+          "400k",
+          "600k",
+          "800k",
+          "1000k"
+        ],
+        "legacy_snapshot": {
+          "branch": "benchmarks",
+          "commit": "59f77600a5c9ae74f30dbef2dc49da64d489478d",
+          "path": "docs/comparison_data/suite/otc_logs_otlphttp_none_baseline",
+          "repository": "https://github.com/open-telemetry/otel-arrow"
+        }
+      },
+      "identity-schema-migration": {
+        "renamed_parameter": "case",
+        "replacement": "load_rate",
+        "suites": [
+          "log-baseline",
+          "metric-baseline",
+          "trace-baseline"
+        ]
+      },
+      "supersedes_run_ids": [
+        "mock-windows-legacy-log-baseline-otc-logs-otlphttp-none-baseline-20260527-biased"
+      ],
+      "synthetic": {
+        "fixed_load_resource_multiplier": 1.05,
+        "fixed_resource_throughput_multiplier": 0.95,
+        "generator": "mock-os-history",
+        "history_days": 30,
+        "source_os": "linux",
+        "source_run_id": "legacy-log-baseline-otc-logs-otlphttp-none-baseline-20260527",
+        "target_os": "windows",
+        "values": "biased-from-source-run"
+      }
+    },
+    "started_at": "2026-05-27T00:28:17Z"
+  },
+  "schema_version": 1,
+  "source": {
+    "branch": "benchmarks",
+    "commit": "59f77600a5c9ae74f30dbef2dc49da64d489478d",
+    "repository": "https://github.com/open-telemetry/otel-arrow",
+    "timestamp": "2026-05-27T00:28:17Z"
+  }
+}

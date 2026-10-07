@@ -1,0 +1,306 @@
+{
+  "attachments": [],
+  "environment": {
+    "architecture": "x86_64",
+    "cpu_model": "INTEL(R) XEON(R) PLATINUM 8581C CPU @ 2.30GHz",
+    "execution_os": "windows",
+    "logical_cores": 32,
+    "memory_gib": 118,
+    "os": "windows",
+    "physical_cores": 16,
+    "testbed": "comparison-dashboard-windows-x86_64-32c-118g"
+  },
+  "results": [
+    {
+      "dimension_keys": [
+        "binary",
+        "compression",
+        "protocol",
+        "signal"
+      ],
+      "identity_keys": [
+        "variant",
+        "load_rate"
+      ],
+      "measurements": [
+        {
+          "dimensions": [
+            "dfe",
+            "gzip",
+            "otlphttp",
+            "logs"
+          ],
+          "identity": [
+            "dfe-logs-otlphttp-gzip-baseline",
+            "1000k"
+          ],
+          "values": [
+            105.273,
+            106.0605,
+            -2.468507,
+            27.8985,
+            769381,
+            773621,
+            294520491.3,
+            21587219.85,
+            2809.065,
+            2887.92,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "dfe",
+            "gzip",
+            "otlphttp",
+            "logs"
+          ],
+          "identity": [
+            "dfe-logs-otlphttp-gzip-baseline",
+            "100k"
+          ],
+          "values": [
+            14.2065,
+            14.4795,
+            0,
+            27.2685,
+            100815,
+            100815,
+            37567558.35,
+            2749743.15,
+            51.555,
+            52.815,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "dfe",
+            "gzip",
+            "otlphttp",
+            "logs"
+          ],
+          "identity": [
+            "dfe-logs-otlphttp-gzip-baseline",
+            "200k"
+          ],
+          "values": [
+            28.4865,
+            28.875,
+            0.008475,
+            27.216,
+            200099,
+            200082,
+            75191498.55,
+            5447248.8,
+            58.485,
+            59.325,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "dfe",
+            "gzip",
+            "otlphttp",
+            "logs"
+          ],
+          "identity": [
+            "dfe-logs-otlphttp-gzip-baseline",
+            "300k"
+          ],
+          "values": [
+            40.2885,
+            41.6115,
+            0,
+            27.2265,
+            298287,
+            298796,
+            112836994.2,
+            8138055.45,
+            54.915,
+            55.965,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "dfe",
+            "gzip",
+            "otlphttp",
+            "logs"
+          ],
+          "identity": [
+            "dfe-logs-otlphttp-gzip-baseline",
+            "400k"
+          ],
+          "values": [
+            56.427,
+            56.8575,
+            -0.41841,
+            27.069,
+            400784,
+            401100,
+            150483110.4,
+            10858540.35,
+            58.065,
+            59.955,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "dfe",
+            "gzip",
+            "otlphttp",
+            "logs"
+          ],
+          "identity": [
+            "dfe-logs-otlphttp-gzip-baseline",
+            "600k"
+          ],
+          "values": [
+            83.223,
+            84.819,
+            -1.694915,
+            27.069,
+            597382,
+            602310,
+            225677905.95,
+            16305420.6,
+            63.0,
+            64.68,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "dfe",
+            "gzip",
+            "otlphttp",
+            "logs"
+          ],
+          "identity": [
+            "dfe-logs-otlphttp-gzip-baseline",
+            "800k"
+          ],
+          "values": [
+            104.4015,
+            105.462,
+            4.560101,
+            27.1845,
+            800088,
+            764928,
+            299482416.45,
+            20799768.15,
+            435.75,
+            1756.86,
+            60.0
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "cpu_percentage_normalized_avg",
+          "unit": "%"
+        },
+        {
+          "name": "cpu_percentage_normalized_max",
+          "unit": "%"
+        },
+        {
+          "name": "dropped_logs_percentage",
+          "unit": "%"
+        },
+        {
+          "name": "egress_bytes_per_log",
+          "unit": "bytes/log"
+        },
+        {
+          "name": "logs_produced_rate",
+          "unit": "logs/sec"
+        },
+        {
+          "name": "logs_received_rate",
+          "unit": "logs/sec"
+        },
+        {
+          "name": "network_rx_bytes_rate_avg",
+          "unit": "bytes/sec"
+        },
+        {
+          "name": "network_tx_bytes_rate_avg",
+          "unit": "bytes/sec"
+        },
+        {
+          "name": "ram_mib_avg",
+          "unit": "MiB"
+        },
+        {
+          "name": "ram_mib_max",
+          "unit": "MiB"
+        },
+        {
+          "name": "test_duration",
+          "unit": "seconds"
+        }
+      ],
+      "suite": "log-baseline"
+    }
+  ],
+  "run": {
+    "collection_id": "legacy-log-baseline-snapshot-20260603",
+    "finished_at": "2026-05-20T00:45:11Z",
+    "id": "mock-windows-legacy-log-baseline-dfe-logs-otlphttp-gzip-baseline-20260520-biased-load-rate-identity",
+    "metadata": {
+      "comparison-dashboard-migration": {
+        "benchmarked_source_commit": "not-recorded-by-legacy-comparison-dashboard",
+        "case_ids": [
+          "100k",
+          "200k",
+          "300k",
+          "400k",
+          "600k",
+          "800k",
+          "1000k"
+        ],
+        "legacy_snapshot": {
+          "branch": "benchmarks",
+          "commit": "8c8515d4bb5df28dca9260ec5626e1226d26ee1f",
+          "path": "docs/comparison_data/suite/dfe_logs_otlphttp_gzip_baseline",
+          "repository": "https://github.com/open-telemetry/otel-arrow"
+        }
+      },
+      "identity-schema-migration": {
+        "renamed_parameter": "case",
+        "replacement": "load_rate",
+        "suites": [
+          "log-baseline",
+          "metric-baseline",
+          "trace-baseline"
+        ]
+      },
+      "supersedes_run_ids": [
+        "mock-windows-legacy-log-baseline-dfe-logs-otlphttp-gzip-baseline-20260520-biased"
+      ],
+      "synthetic": {
+        "fixed_load_resource_multiplier": 1.05,
+        "fixed_resource_throughput_multiplier": 0.95,
+        "generator": "mock-os-history",
+        "history_days": 30,
+        "source_os": "linux",
+        "source_run_id": "legacy-log-baseline-dfe-logs-otlphttp-gzip-baseline-20260520",
+        "target_os": "windows",
+        "values": "biased-from-source-run"
+      }
+    },
+    "started_at": "2026-05-20T00:29:34Z"
+  },
+  "schema_version": 1,
+  "source": {
+    "branch": "benchmarks",
+    "commit": "8c8515d4bb5df28dca9260ec5626e1226d26ee1f",
+    "repository": "https://github.com/open-telemetry/otel-arrow",
+    "timestamp": "2026-05-20T00:29:34Z"
+  }
+}

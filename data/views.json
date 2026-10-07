@@ -27,7 +27,7 @@
       "schema_version": 1,
       "sources": [
         {
-          "case_parameter": "case",
+          "case_parameter": "load_rate",
           "include_values": {
             "variant": [
               "dfe-otap-none",
@@ -86,7 +86,7 @@
       "schema_version": 1,
       "sources": [
         {
-          "case_parameter": "case",
+          "case_parameter": "load_rate",
           "include_values": {
             "variant": [
               "dfe-otap-none",
@@ -2178,13 +2178,10 @@
           ]
         },
         {
-          "id": "case",
-          "label": "Case",
+          "id": "load_rate",
+          "label": "Load Rate",
           "values": [
             {
-              "dimensions": {
-                "load_rate": "100000"
-              },
               "id": "100k",
               "label": "100k",
               "runner_data": {
@@ -2192,9 +2189,6 @@
               }
             },
             {
-              "dimensions": {
-                "load_rate": "200000"
-              },
               "id": "200k",
               "label": "200k",
               "runner_data": {
@@ -2202,9 +2196,6 @@
               }
             },
             {
-              "dimensions": {
-                "load_rate": "300000"
-              },
               "id": "300k",
               "label": "300k",
               "runner_data": {
@@ -2212,9 +2203,6 @@
               }
             },
             {
-              "dimensions": {
-                "load_rate": "400000"
-              },
               "id": "400k",
               "label": "400k",
               "runner_data": {
@@ -2222,9 +2210,6 @@
               }
             },
             {
-              "dimensions": {
-                "load_rate": "600000"
-              },
               "id": "600k",
               "label": "600k",
               "runner_data": {
@@ -2232,9 +2217,6 @@
               }
             },
             {
-              "dimensions": {
-                "load_rate": "800000"
-              },
               "id": "800k",
               "label": "800k",
               "runner_data": {
@@ -2242,9 +2224,6 @@
               }
             },
             {
-              "dimensions": {
-                "load_rate": "1000000"
-              },
               "id": "1000k",
               "label": "1M",
               "runner_data": {
@@ -2504,13 +2483,10 @@
           ]
         },
         {
-          "id": "case",
-          "label": "Case",
+          "id": "load_rate",
+          "label": "Load Rate",
           "values": [
             {
-              "dimensions": {
-                "load_rate": "100000"
-              },
               "id": "100k",
               "label": "100k",
               "runner_data": {
@@ -2518,9 +2494,6 @@
               }
             },
             {
-              "dimensions": {
-                "load_rate": "200000"
-              },
               "id": "200k",
               "label": "200k",
               "runner_data": {
@@ -2528,9 +2501,6 @@
               }
             },
             {
-              "dimensions": {
-                "load_rate": "300000"
-              },
               "id": "300k",
               "label": "300k",
               "runner_data": {
@@ -2538,9 +2508,6 @@
               }
             },
             {
-              "dimensions": {
-                "load_rate": "400000"
-              },
               "id": "400k",
               "label": "400k",
               "runner_data": {
@@ -2548,9 +2515,6 @@
               }
             },
             {
-              "dimensions": {
-                "load_rate": "600000"
-              },
               "id": "600k",
               "label": "600k",
               "runner_data": {
@@ -2558,9 +2522,6 @@
               }
             },
             {
-              "dimensions": {
-                "load_rate": "800000"
-              },
               "id": "800k",
               "label": "800k",
               "runner_data": {
@@ -2568,9 +2529,6 @@
               }
             },
             {
-              "dimensions": {
-                "load_rate": "1000000"
-              },
               "id": "1000k",
               "label": "1M",
               "runner_data": {
@@ -3195,13 +3153,10 @@
           ]
         },
         {
-          "id": "case",
-          "label": "Case",
+          "id": "load_rate",
+          "label": "Load Rate",
           "values": [
             {
-              "dimensions": {
-                "load_rate": "100000"
-              },
               "id": "100k",
               "label": "100k",
               "runner_data": {
@@ -3209,9 +3164,6 @@
               }
             },
             {
-              "dimensions": {
-                "load_rate": "200000"
-              },
               "id": "200k",
               "label": "200k",
               "runner_data": {
@@ -3219,9 +3171,6 @@
               }
             },
             {
-              "dimensions": {
-                "load_rate": "300000"
-              },
               "id": "300k",
               "label": "300k",
               "runner_data": {
@@ -3229,9 +3178,6 @@
               }
             },
             {
-              "dimensions": {
-                "load_rate": "400000"
-              },
               "id": "400k",
               "label": "400k",
               "runner_data": {
@@ -3239,9 +3185,6 @@
               }
             },
             {
-              "dimensions": {
-                "load_rate": "600000"
-              },
               "id": "600k",
               "label": "600k",
               "runner_data": {
@@ -3249,9 +3192,6 @@
               }
             },
             {
-              "dimensions": {
-                "load_rate": "800000"
-              },
               "id": "800k",
               "label": "800k",
               "runner_data": {
@@ -3259,9 +3199,6 @@
               }
             },
             {
-              "dimensions": {
-                "load_rate": "1000000"
-              },
               "id": "1000k",
               "label": "1M",
               "runner_data": {

@@ -1,0 +1,306 @@
+{
+  "attachments": [],
+  "environment": {
+    "architecture": "x86_64",
+    "cpu_model": "INTEL(R) XEON(R) PLATINUM 8581C CPU @ 2.30GHz",
+    "execution_os": "windows",
+    "logical_cores": 32,
+    "memory_gib": 118,
+    "os": "windows",
+    "physical_cores": 16,
+    "testbed": "comparison-dashboard-windows-x86_64-32c-118g"
+  },
+  "results": [
+    {
+      "dimension_keys": [
+        "binary",
+        "compression",
+        "protocol",
+        "signal"
+      ],
+      "identity_keys": [
+        "variant",
+        "load_rate"
+      ],
+      "measurements": [
+        {
+          "dimensions": [
+            "fbit",
+            "gzip",
+            "otlphttp",
+            "logs"
+          ],
+          "identity": [
+            "fbit-logs-otlphttp-gzip-baseline",
+            "1000k"
+          ],
+          "values": [
+            105.1365,
+            105.693,
+            97.919525,
+            36.393,
+            775315,
+            15990,
+            167145573.0,
+            582037.05,
+            8011.29,
+            14785.47,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "fbit",
+            "gzip",
+            "otlphttp",
+            "logs"
+          ],
+          "identity": [
+            "fbit-logs-otlphttp-gzip-baseline",
+            "100k"
+          ],
+          "values": [
+            57.8865,
+            58.758,
+            -1.694915,
+            18.438,
+            99232,
+            101085,
+            37601037.6,
+            1864691.85,
+            78.645,
+            86.31,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "fbit",
+            "gzip",
+            "otlphttp",
+            "logs"
+          ],
+          "identity": [
+            "fbit-logs-otlphttp-gzip-baseline",
+            "200k"
+          ],
+          "values": [
+            79.1805,
+            105.357,
+            90.847457,
+            -57.855,
+            197371,
+            18155,
+            -29801927.4,
+            -1050501.9,
+            292.215,
+            318.99,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "fbit",
+            "gzip",
+            "otlphttp",
+            "logs"
+          ],
+          "identity": [
+            "fbit-logs-otlphttp-gzip-baseline",
+            "300k"
+          ],
+          "values": [
+            53.382,
+            105.4725,
+            94.887008,
+            -30.8805,
+            299262,
+            15249,
+            -25493356.35,
+            -470963.85,
+            1149.015,
+            1298.22,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "fbit",
+            "gzip",
+            "otlphttp",
+            "logs"
+          ],
+          "identity": [
+            "fbit-logs-otlphttp-gzip-baseline",
+            "400k"
+          ],
+          "values": [
+            105.0945,
+            105.6195,
+            87.590194,
+            22.848,
+            399536,
+            49412,
+            150593206.05,
+            1129197.3,
+            7253.82,
+            13450.815,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "fbit",
+            "gzip",
+            "otlphttp",
+            "logs"
+          ],
+          "identity": [
+            "fbit-logs-otlphttp-gzip-baseline",
+            "600k"
+          ],
+          "values": [
+            88.536,
+            105.441,
+            98.34748,
+            42.9555,
+            527447,
+            8686,
+            129475282.65,
+            373185.75,
+            8453.76,
+            21639.45,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "fbit",
+            "gzip",
+            "otlphttp",
+            "logs"
+          ],
+          "identity": [
+            "fbit-logs-otlphttp-gzip-baseline",
+            "800k"
+          ],
+          "values": [
+            105.1575,
+            105.5775,
+            97.321228,
+            36.2565,
+            617915,
+            16354,
+            169186798.2,
+            592958.1,
+            7964.355,
+            14796.39,
+            60.0
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "cpu_percentage_normalized_avg",
+          "unit": "%"
+        },
+        {
+          "name": "cpu_percentage_normalized_max",
+          "unit": "%"
+        },
+        {
+          "name": "dropped_logs_percentage",
+          "unit": "%"
+        },
+        {
+          "name": "egress_bytes_per_log",
+          "unit": "bytes/log"
+        },
+        {
+          "name": "logs_produced_rate",
+          "unit": "logs/sec"
+        },
+        {
+          "name": "logs_received_rate",
+          "unit": "logs/sec"
+        },
+        {
+          "name": "network_rx_bytes_rate_avg",
+          "unit": "bytes/sec"
+        },
+        {
+          "name": "network_tx_bytes_rate_avg",
+          "unit": "bytes/sec"
+        },
+        {
+          "name": "ram_mib_avg",
+          "unit": "MiB"
+        },
+        {
+          "name": "ram_mib_max",
+          "unit": "MiB"
+        },
+        {
+          "name": "test_duration",
+          "unit": "seconds"
+        }
+      ],
+      "suite": "log-baseline"
+    }
+  ],
+  "run": {
+    "collection_id": "legacy-log-baseline-snapshot-20260603",
+    "finished_at": "2026-06-02T23:46:49Z",
+    "id": "mock-windows-legacy-log-baseline-fbit-logs-otlphttp-gzip-baseline-20260602-biased-load-rate-identity",
+    "metadata": {
+      "comparison-dashboard-migration": {
+        "benchmarked_source_commit": "not-recorded-by-legacy-comparison-dashboard",
+        "case_ids": [
+          "100k",
+          "200k",
+          "300k",
+          "400k",
+          "600k",
+          "800k",
+          "1000k"
+        ],
+        "legacy_snapshot": {
+          "branch": "benchmarks",
+          "commit": "eb6dd35342f53ef1ff06f5f4a01d474b5129d529",
+          "path": "docs/comparison_data/suite/fbit_logs_otlphttp_gzip_baseline",
+          "repository": "https://github.com/open-telemetry/otel-arrow"
+        }
+      },
+      "identity-schema-migration": {
+        "renamed_parameter": "case",
+        "replacement": "load_rate",
+        "suites": [
+          "log-baseline",
+          "metric-baseline",
+          "trace-baseline"
+        ]
+      },
+      "supersedes_run_ids": [
+        "mock-windows-legacy-log-baseline-fbit-logs-otlphttp-gzip-baseline-20260602-biased"
+      ],
+      "synthetic": {
+        "fixed_load_resource_multiplier": 1.05,
+        "fixed_resource_throughput_multiplier": 0.95,
+        "generator": "mock-os-history",
+        "history_days": 30,
+        "source_os": "linux",
+        "source_run_id": "legacy-log-baseline-fbit-logs-otlphttp-gzip-baseline-20260602",
+        "target_os": "windows",
+        "values": "biased-from-source-run"
+      }
+    },
+    "started_at": "2026-06-02T23:31:05Z"
+  },
+  "schema_version": 1,
+  "source": {
+    "branch": "benchmarks",
+    "commit": "eb6dd35342f53ef1ff06f5f4a01d474b5129d529",
+    "repository": "https://github.com/open-telemetry/otel-arrow",
+    "timestamp": "2026-06-02T23:31:05Z"
+  }
+}

@@ -1,0 +1,296 @@
+{
+  "attachments": [],
+  "environment": {
+    "architecture": "x86_64",
+    "cpu_model": "INTEL(R) XEON(R) PLATINUM 8581C CPU @ 2.30GHz",
+    "execution_os": "linux",
+    "logical_cores": 32,
+    "memory_gib": 118,
+    "os": "linux",
+    "physical_cores": 16,
+    "testbed": "comparison-dashboard-linux-x86_64-32c-118g"
+  },
+  "results": [
+    {
+      "dimension_keys": [
+        "binary",
+        "compression",
+        "protocol",
+        "signal"
+      ],
+      "identity_keys": [
+        "variant",
+        "load_rate"
+      ],
+      "measurements": [
+        {
+          "dimensions": [
+            "otc",
+            "none",
+            "otlp",
+            "logs"
+          ],
+          "identity": [
+            "otc-otlp-none",
+            "1000k"
+          ],
+          "values": [
+            100.0,
+            100.63,
+            1.225563,
+            359.08,
+            681775,
+            665350,
+            245189565,
+            238919292,
+            7015.2,
+            7790.6,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "otc",
+            "none",
+            "otlp",
+            "logs"
+          ],
+          "identity": [
+            "otc-otlp-none",
+            "100k"
+          ],
+          "values": [
+            13.32,
+            17.91,
+            -1.694915,
+            360.8,
+            99168,
+            100849,
+            36011639,
+            36387210,
+            55.5,
+            57.3,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "otc",
+            "none",
+            "otlp",
+            "logs"
+          ],
+          "identity": [
+            "otc-otlp-none",
+            "200k"
+          ],
+          "values": [
+            26.91,
+            27.72,
+            0.840336,
+            366.13,
+            199169,
+            198496,
+            71930330,
+            72676330,
+            54.4,
+            56.3,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "otc",
+            "none",
+            "otlp",
+            "logs"
+          ],
+          "identity": [
+            "otc-otlp-none",
+            "300k"
+          ],
+          "values": [
+            39.27,
+            40.5,
+            0,
+            365.9,
+            300107,
+            297567,
+            107844847,
+            108881454,
+            59.6,
+            67.2,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "otc",
+            "none",
+            "otlp",
+            "logs"
+          ],
+          "identity": [
+            "otc-otlp-none",
+            "400k"
+          ],
+          "values": [
+            52.52,
+            62.94,
+            0.42194,
+            365.73,
+            399318,
+            397633,
+            144145114,
+            145427625,
+            70.0,
+            81.0,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "otc",
+            "none",
+            "otlp",
+            "logs"
+          ],
+          "identity": [
+            "otc-otlp-none",
+            "600k"
+          ],
+          "values": [
+            73.06,
+            74.32,
+            -0.846153,
+            361.74,
+            596194,
+            602279,
+            216118480,
+            217869371,
+            82.7,
+            87.7,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "otc",
+            "none",
+            "otlp",
+            "logs"
+          ],
+          "identity": [
+            "otc-otlp-none",
+            "800k"
+          ],
+          "values": [
+            96.02,
+            100.64,
+            4.236821,
+            362.26,
+            764854,
+            727425,
+            273456873,
+            263520295,
+            1211.4,
+            5885.0,
+            60.0
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "cpu_percentage_normalized_avg",
+          "unit": "%"
+        },
+        {
+          "name": "cpu_percentage_normalized_max",
+          "unit": "%"
+        },
+        {
+          "name": "dropped_logs_percentage",
+          "unit": "%"
+        },
+        {
+          "name": "egress_bytes_per_log",
+          "unit": "bytes/log"
+        },
+        {
+          "name": "logs_produced_rate",
+          "unit": "logs/sec"
+        },
+        {
+          "name": "logs_received_rate",
+          "unit": "logs/sec"
+        },
+        {
+          "name": "network_rx_bytes_rate_avg",
+          "unit": "bytes/sec"
+        },
+        {
+          "name": "network_tx_bytes_rate_avg",
+          "unit": "bytes/sec"
+        },
+        {
+          "name": "ram_mib_avg",
+          "unit": "MiB"
+        },
+        {
+          "name": "ram_mib_max",
+          "unit": "MiB"
+        },
+        {
+          "name": "test_duration",
+          "unit": "seconds"
+        }
+      ],
+      "suite": "log-baseline"
+    }
+  ],
+  "run": {
+    "collection_id": "legacy-log-baseline-snapshot-20260603",
+    "finished_at": "2026-05-27T00:02:24Z",
+    "id": "legacy-log-baseline-otc-otlp-none-20260526-load-rate-identity",
+    "metadata": {
+      "comparison-dashboard-migration": {
+        "benchmarked_source_commit": "not-recorded-by-legacy-comparison-dashboard",
+        "case_ids": [
+          "100k",
+          "200k",
+          "300k",
+          "400k",
+          "600k",
+          "800k",
+          "1000k"
+        ],
+        "legacy_snapshot": {
+          "branch": "benchmarks",
+          "commit": "59f77600a5c9ae74f30dbef2dc49da64d489478d",
+          "path": "docs/comparison_data/suite/otc_logs_otlp_none_baseline",
+          "repository": "https://github.com/open-telemetry/otel-arrow"
+        }
+      },
+      "identity-schema-migration": {
+        "renamed_parameter": "case",
+        "replacement": "load_rate",
+        "suites": [
+          "log-baseline",
+          "metric-baseline",
+          "trace-baseline"
+        ]
+      },
+      "supersedes_run_ids": [
+        "legacy-log-baseline-otc-otlp-none-20260526"
+      ]
+    },
+    "started_at": "2026-05-26T23:50:29Z"
+  },
+  "schema_version": 1,
+  "source": {
+    "branch": "benchmarks",
+    "commit": "59f77600a5c9ae74f30dbef2dc49da64d489478d",
+    "repository": "https://github.com/open-telemetry/otel-arrow",
+    "timestamp": "2026-05-26T23:50:29Z"
+  }
+}

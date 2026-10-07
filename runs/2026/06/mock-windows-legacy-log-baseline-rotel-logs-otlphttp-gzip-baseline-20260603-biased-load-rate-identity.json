@@ -1,0 +1,306 @@
+{
+  "attachments": [],
+  "environment": {
+    "architecture": "x86_64",
+    "cpu_model": "INTEL(R) XEON(R) PLATINUM 8581C CPU @ 2.30GHz",
+    "execution_os": "windows",
+    "logical_cores": 32,
+    "memory_gib": 118,
+    "os": "windows",
+    "physical_cores": 16,
+    "testbed": "comparison-dashboard-windows-x86_64-32c-118g"
+  },
+  "results": [
+    {
+      "dimension_keys": [
+        "binary",
+        "compression",
+        "protocol",
+        "signal"
+      ],
+      "identity_keys": [
+        "variant",
+        "load_rate"
+      ],
+      "measurements": [
+        {
+          "dimensions": [
+            "rotel",
+            "gzip",
+            "otlphttp",
+            "logs"
+          ],
+          "identity": [
+            "rotel-logs-otlphttp-gzip-baseline",
+            "1000k"
+          ],
+          "values": [
+            105.147,
+            105.504,
+            18.173984,
+            19.656,
+            405770,
+            332576,
+            154659122.1,
+            6537734.7,
+            11930.52,
+            12735.24,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "rotel",
+            "gzip",
+            "otlphttp",
+            "logs"
+          ],
+          "identity": [
+            "rotel-logs-otlphttp-gzip-baseline",
+            "100k"
+          ],
+          "values": [
+            23.4255,
+            25.6305,
+            0.0576,
+            18.795,
+            100826,
+            100768,
+            37590705.6,
+            1894694.55,
+            35.28,
+            35.595,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "rotel",
+            "gzip",
+            "otlphttp",
+            "logs"
+          ],
+          "identity": [
+            "rotel-logs-otlphttp-gzip-baseline",
+            "200k"
+          ],
+          "values": [
+            44.478,
+            45.717,
+            -1.705762,
+            18.711,
+            197298,
+            202019,
+            75077577.75,
+            3782064.3,
+            36.855,
+            37.8,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "rotel",
+            "gzip",
+            "otlphttp",
+            "logs"
+          ],
+          "identity": [
+            "rotel-logs-otlphttp-gzip-baseline",
+            "300k"
+          ],
+          "values": [
+            75.6945,
+            76.4715,
+            0.012088,
+            18.7005,
+            303803,
+            302734,
+            112648971.75,
+            5663078.4,
+            42.21,
+            43.68,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "rotel",
+            "gzip",
+            "otlphttp",
+            "logs"
+          ],
+          "identity": [
+            "rotel-logs-otlphttp-gzip-baseline",
+            "400k"
+          ],
+          "values": [
+            101.451,
+            102.081,
+            0.835495,
+            18.837,
+            399053,
+            399794,
+            150469176.9,
+            7534070.25,
+            60.69,
+            61.845,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "rotel",
+            "gzip",
+            "otlphttp",
+            "logs"
+          ],
+          "identity": [
+            "rotel-logs-otlphttp-gzip-baseline",
+            "600k"
+          ],
+          "values": [
+            105.0315,
+            105.7875,
+            24.223573,
+            19.383,
+            442903,
+            334468,
+            164436235.95,
+            6484561.65,
+            9740.43,
+            10899.945,
+            60.0
+          ]
+        },
+        {
+          "dimensions": [
+            "rotel",
+            "gzip",
+            "otlphttp",
+            "logs"
+          ],
+          "identity": [
+            "rotel-logs-otlphttp-gzip-baseline",
+            "800k"
+          ],
+          "values": [
+            104.9055,
+            105.4305,
+            20.11486,
+            19.404,
+            414126,
+            330825,
+            160411932.45,
+            6420552.6,
+            11054.505,
+            11779.635,
+            60.0
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "name": "cpu_percentage_normalized_avg",
+          "unit": "%"
+        },
+        {
+          "name": "cpu_percentage_normalized_max",
+          "unit": "%"
+        },
+        {
+          "name": "dropped_logs_percentage",
+          "unit": "%"
+        },
+        {
+          "name": "egress_bytes_per_log",
+          "unit": "bytes/log"
+        },
+        {
+          "name": "logs_produced_rate",
+          "unit": "logs/sec"
+        },
+        {
+          "name": "logs_received_rate",
+          "unit": "logs/sec"
+        },
+        {
+          "name": "network_rx_bytes_rate_avg",
+          "unit": "bytes/sec"
+        },
+        {
+          "name": "network_tx_bytes_rate_avg",
+          "unit": "bytes/sec"
+        },
+        {
+          "name": "ram_mib_avg",
+          "unit": "MiB"
+        },
+        {
+          "name": "ram_mib_max",
+          "unit": "MiB"
+        },
+        {
+          "name": "test_duration",
+          "unit": "seconds"
+        }
+      ],
+      "suite": "log-baseline"
+    }
+  ],
+  "run": {
+    "collection_id": "legacy-log-baseline-snapshot-20260603",
+    "finished_at": "2026-06-03T16:25:50Z",
+    "id": "mock-windows-legacy-log-baseline-rotel-logs-otlphttp-gzip-baseline-20260603-biased-load-rate-identity",
+    "metadata": {
+      "comparison-dashboard-migration": {
+        "benchmarked_source_commit": "not-recorded-by-legacy-comparison-dashboard",
+        "case_ids": [
+          "100k",
+          "200k",
+          "300k",
+          "400k",
+          "600k",
+          "800k",
+          "1000k"
+        ],
+        "legacy_snapshot": {
+          "branch": "benchmarks",
+          "commit": "b4059094496309222c78119d720cbaece684e0ce",
+          "path": "docs/comparison_data/suite/rotel_logs_otlphttp_gzip_baseline",
+          "repository": "https://github.com/open-telemetry/otel-arrow"
+        }
+      },
+      "identity-schema-migration": {
+        "renamed_parameter": "case",
+        "replacement": "load_rate",
+        "suites": [
+          "log-baseline",
+          "metric-baseline",
+          "trace-baseline"
+        ]
+      },
+      "supersedes_run_ids": [
+        "mock-windows-legacy-log-baseline-rotel-logs-otlphttp-gzip-baseline-20260603-biased"
+      ],
+      "synthetic": {
+        "fixed_load_resource_multiplier": 1.05,
+        "fixed_resource_throughput_multiplier": 0.95,
+        "generator": "mock-os-history",
+        "history_days": 30,
+        "source_os": "linux",
+        "source_run_id": "legacy-log-baseline-rotel-logs-otlphttp-gzip-baseline-20260603",
+        "target_os": "windows",
+        "values": "biased-from-source-run"
+      }
+    },
+    "started_at": "2026-06-03T16:11:04Z"
+  },
+  "schema_version": 1,
+  "source": {
+    "branch": "benchmarks",
+    "commit": "b4059094496309222c78119d720cbaece684e0ce",
+    "repository": "https://github.com/open-telemetry/otel-arrow",
+    "timestamp": "2026-06-03T16:11:04Z"
+  }
+}
