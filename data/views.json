@@ -1,14 +1,14 @@
 {
   "benchmark_runner": {
+    "images": {
+      "df_engine": "df_engine:latest",
+      "fluent_bit": "fluent/fluent-bit:5.0",
+      "kafka": "apache/kafka:latest",
+      "otelcol": "otel/opentelemetry-collector-contrib:latest",
+      "rotel": "streamfold/rotel:latest"
+    },
     "observation_interval": 20,
-    "schema_version": 1,
-    "template_variables": {
-      "df_engine_image": "df_engine:latest",
-      "fluent_bit_image": "fluent/fluent-bit:5.0",
-      "kafka_image": "apache/kafka:latest",
-      "otelcol_image": "otel/opentelemetry-collector-contrib:latest",
-      "rotel_image": "streamfold/rotel:latest"
-    }
+    "schema_version": 1
   },
   "comparisons": [
     {
@@ -990,13 +990,11 @@
               "id": "dfe-otap-attributes",
               "label": "DFE OTAP Attributes",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/dfe-single-core-multi-transform.yaml",
-                "suite_name": "DFE OTAP Attr Insert Multi Transform (Logs)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otap.yaml.j2",
-                  "compression_method": "none",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/dfe-single-core-multi-transform.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otap.yaml.j2",
                   "data_source": "synthetic",
-                  "engine_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/engine/otap-attr-insert.yaml.j2",
+                  "engine_config": "../benchmark_dashboard/config/templates/engine/otap-attr-insert.yaml.j2",
                   "insert_actions": [
                     {
                       "key": "processing.engine",
@@ -1015,12 +1013,8 @@
                       "value": "benchmark"
                     }
                   ],
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otap.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otap.yaml.j2",
                   "num_log_attributes": 12,
-                  "protocol": "otap",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_logs.yaml",
-                  "signal": "logs",
                   "wait_for_result": true
                 }
               }
@@ -1036,13 +1030,11 @@
               "id": "dfe-otap-transform",
               "label": "DFE OTAP Transform",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/dfe-single-core-multi-transform.yaml",
-                "suite_name": "DFE OTAP Transform Insert Multi Transform (Logs)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otap.yaml.j2",
-                  "compression_method": "none",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/dfe-single-core-multi-transform.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otap.yaml.j2",
                   "data_source": "synthetic",
-                  "engine_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/engine/otap-transform-insert.yaml.j2",
+                  "engine_config": "../benchmark_dashboard/config/templates/engine/otap-transform-insert.yaml.j2",
                   "insert_actions": [
                     {
                       "key": "processing.engine",
@@ -1061,12 +1053,8 @@
                       "value": "benchmark"
                     }
                   ],
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otap.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otap.yaml.j2",
                   "num_log_attributes": 12,
-                  "protocol": "otap",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_logs.yaml",
-                  "signal": "logs",
                   "wait_for_result": true
                 }
               }
@@ -1082,13 +1070,11 @@
               "id": "dfe-otlp-attributes",
               "label": "DFE OTLP Attributes",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/dfe-single-core-multi-transform.yaml",
-                "suite_name": "DFE OTLP Attr Insert Multi Transform (Logs)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otlp.yaml.j2",
-                  "compression_method": "none",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/dfe-single-core-multi-transform.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otlp.yaml.j2",
                   "data_source": "synthetic",
-                  "engine_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/engine/otlp-attr-insert.yaml.j2",
+                  "engine_config": "../benchmark_dashboard/config/templates/engine/otlp-attr-insert.yaml.j2",
                   "insert_actions": [
                     {
                       "key": "processing.engine",
@@ -1107,12 +1093,8 @@
                       "value": "benchmark"
                     }
                   ],
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otlp.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otlp.yaml.j2",
                   "num_log_attributes": 12,
-                  "protocol": "otlp",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_logs.yaml",
-                  "signal": "logs",
                   "wait_for_result": true
                 }
               }
@@ -1128,13 +1110,11 @@
               "id": "dfe-otlp-transform",
               "label": "DFE OTLP Transform",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/dfe-single-core-multi-transform.yaml",
-                "suite_name": "DFE OTLP Transform Insert Multi Transform (Logs)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otlp.yaml.j2",
-                  "compression_method": "none",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/dfe-single-core-multi-transform.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otlp.yaml.j2",
                   "data_source": "synthetic",
-                  "engine_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/engine/otlp-transform-insert.yaml.j2",
+                  "engine_config": "../benchmark_dashboard/config/templates/engine/otlp-transform-insert.yaml.j2",
                   "insert_actions": [
                     {
                       "key": "processing.engine",
@@ -1153,12 +1133,8 @@
                       "value": "benchmark"
                     }
                   ],
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otlp.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otlp.yaml.j2",
                   "num_log_attributes": 12,
-                  "protocol": "otlp",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_logs.yaml",
-                  "signal": "logs",
                   "wait_for_result": true
                 }
               }
@@ -1174,12 +1150,10 @@
               "id": "fbit-otlp-modify",
               "label": "Fluent Bit OTLP Modify",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/fbit-single-core-multi-transform.yaml",
-                "suite_name": "FB OTLP Attr Insert Multi Transform (Logs)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otlp.yaml.j2",
-                  "collector_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/fluent_bit/otlp-attr-insert.yaml.j2",
-                  "compression_method": "none",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/fbit-single-core-multi-transform.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otlp.yaml.j2",
+                  "collector_config": "../benchmark_dashboard/config/templates/fluent_bit/otlp-attr-insert.yaml.j2",
                   "data_source": "synthetic",
                   "insert_actions": [
                     {
@@ -1199,12 +1173,8 @@
                       "value": "benchmark"
                     }
                   ],
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otlp.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "num_log_attributes": 12,
-                  "protocol": "otlp",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_logs.yaml",
-                  "signal": "logs"
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otlp.yaml.j2",
+                  "num_log_attributes": 12
                 }
               }
             },
@@ -1219,12 +1189,10 @@
               "id": "otc-otap-attributes",
               "label": "OTel Collector OTAP Attributes",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/otc-single-core-multi-transform.yaml",
-                "suite_name": "OTC OTAP Attr Insert Multi Transform (Logs)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otap.yaml.j2",
-                  "collector_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/otelcol/otap-attr-insert.yaml.j2",
-                  "compression_method": "none",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/otc-single-core-multi-transform.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otap.yaml.j2",
+                  "collector_config": "../benchmark_dashboard/config/templates/otelcol/otap-attr-insert.yaml.j2",
                   "data_source": "synthetic",
                   "insert_actions": [
                     {
@@ -1244,13 +1212,8 @@
                       "value": "benchmark"
                     }
                   ],
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otap.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "num_log_attributes": 12,
-                  "otelcol_gomaxprocs": 1,
-                  "protocol": "otap",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_logs.yaml",
-                  "signal": "logs"
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otap.yaml.j2",
+                  "num_log_attributes": 12
                 }
               }
             },
@@ -1265,12 +1228,10 @@
               "id": "otc-otlp-attributes",
               "label": "OTel Collector OTLP Attributes",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/otc-single-core-multi-transform.yaml",
-                "suite_name": "OTC OTLP Attr Insert Multi Transform (Logs)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otlp.yaml.j2",
-                  "collector_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/otelcol/otlp-attr-insert.yaml.j2",
-                  "compression_method": "none",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/otc-single-core-multi-transform.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otlp.yaml.j2",
+                  "collector_config": "../benchmark_dashboard/config/templates/otelcol/otlp-attr-insert.yaml.j2",
                   "data_source": "synthetic",
                   "insert_actions": [
                     {
@@ -1290,13 +1251,8 @@
                       "value": "benchmark"
                     }
                   ],
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otlp.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "num_log_attributes": 12,
-                  "otelcol_gomaxprocs": 1,
-                  "protocol": "otlp",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_logs.yaml",
-                  "signal": "logs"
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otlp.yaml.j2",
+                  "num_log_attributes": 12
                 }
               }
             },
@@ -1311,12 +1267,10 @@
               "id": "otc-otlp-transform",
               "label": "OTel Collector OTLP Transform",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/otc-single-core-multi-transform.yaml",
-                "suite_name": "OTC OTLP Transform Insert Multi Transform (Logs)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otlp.yaml.j2",
-                  "collector_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/otelcol/otlp-transform-insert.yaml.j2",
-                  "compression_method": "none",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/otc-single-core-multi-transform.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otlp.yaml.j2",
+                  "collector_config": "../benchmark_dashboard/config/templates/otelcol/otlp-transform-insert.yaml.j2",
                   "data_source": "synthetic",
                   "insert_actions": [
                     {
@@ -1336,13 +1290,8 @@
                       "value": "benchmark"
                     }
                   ],
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otlp.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "num_log_attributes": 12,
-                  "otelcol_gomaxprocs": 1,
-                  "protocol": "otlp",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_logs.yaml",
-                  "signal": "logs"
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otlp.yaml.j2",
+                  "num_log_attributes": 12
                 }
               }
             }
@@ -1401,22 +1350,17 @@
               "id": "dfe-otap-attributes",
               "label": "DFE OTAP Attributes",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/dfe-single-core-multi-batch-size.yaml",
-                "suite_name": "DFE OTAP Attr Insert Multi Batch (Logs)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otap.yaml.j2",
-                  "compression_method": "none",
-                  "engine_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/engine/otap-attr-insert.yaml.j2",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/dfe-single-core-multi-batch-size.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otap.yaml.j2",
+                  "engine_config": "../benchmark_dashboard/config/templates/engine/otap-attr-insert.yaml.j2",
                   "insert_actions": [
                     {
                       "key": "processing.engine",
                       "value": "benchmark"
                     }
                   ],
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otap.yaml.j2",
-                  "protocol": "otap",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_logs.yaml",
-                  "signal": "logs",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otap.yaml.j2",
                   "wait_for_result": true
                 }
               }
@@ -1432,22 +1376,17 @@
               "id": "dfe-otlp-attributes",
               "label": "DFE OTLP Attributes",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/dfe-single-core-multi-batch-size.yaml",
-                "suite_name": "DFE OTLP Attr Insert Multi Batch (Logs)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otlp.yaml.j2",
-                  "compression_method": "none",
-                  "engine_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/engine/otlp-attr-insert.yaml.j2",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/dfe-single-core-multi-batch-size.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otlp.yaml.j2",
+                  "engine_config": "../benchmark_dashboard/config/templates/engine/otlp-attr-insert.yaml.j2",
                   "insert_actions": [
                     {
                       "key": "processing.engine",
                       "value": "benchmark"
                     }
                   ],
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otlp.yaml.j2",
-                  "protocol": "otlp",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_logs.yaml",
-                  "signal": "logs",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otlp.yaml.j2",
                   "wait_for_result": true
                 }
               }
@@ -1463,22 +1402,17 @@
               "id": "fbit-otlp-modify",
               "label": "Fluent Bit OTLP Modify",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/fbit-single-core-multi-batch-size.yaml",
-                "suite_name": "FB OTLP Attr Insert Multi Batch (Logs)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otlp.yaml.j2",
-                  "collector_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/fluent_bit/otlp-attr-insert.yaml.j2",
-                  "compression_method": "none",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/fbit-single-core-multi-batch-size.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otlp.yaml.j2",
+                  "collector_config": "../benchmark_dashboard/config/templates/fluent_bit/otlp-attr-insert.yaml.j2",
                   "insert_actions": [
                     {
                       "key": "processing.engine",
                       "value": "benchmark"
                     }
                   ],
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otlp.yaml.j2",
-                  "protocol": "otlp",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_logs.yaml",
-                  "signal": "logs"
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otlp.yaml.j2"
                 }
               }
             },
@@ -1493,23 +1427,17 @@
               "id": "otc-otlp-attributes",
               "label": "OTel Collector OTLP Attributes",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/otc-single-core-multi-batch-size.yaml",
-                "suite_name": "OTC OTLP Attr Insert Multi Batch (Logs)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otlp.yaml.j2",
-                  "collector_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/otelcol/otlp-attr-insert.yaml.j2",
-                  "compression_method": "none",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/otc-single-core-multi-batch-size.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otlp.yaml.j2",
+                  "collector_config": "../benchmark_dashboard/config/templates/otelcol/otlp-attr-insert.yaml.j2",
                   "insert_actions": [
                     {
                       "key": "processing.engine",
                       "value": "benchmark"
                     }
                   ],
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otlp.yaml.j2",
-                  "otelcol_gomaxprocs": 1,
-                  "protocol": "otlp",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_logs.yaml",
-                  "signal": "logs"
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otlp.yaml.j2"
                 }
               }
             }
@@ -1574,23 +1502,17 @@
               "id": "dfe-otap-attributes",
               "label": "DFE OTAP Attributes",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/dfe-single-core-multi-rate.yaml",
-                "suite_name": "DFE OTAP Attr Insert (Logs)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otap.yaml.j2",
-                  "compression_method": "none",
-                  "engine_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/engine/otap-attr-insert.yaml.j2",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/dfe-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otap.yaml.j2",
+                  "engine_config": "../benchmark_dashboard/config/templates/engine/otap-attr-insert.yaml.j2",
                   "insert_actions": [
                     {
                       "key": "processing.engine",
                       "value": "benchmark"
                     }
                   ],
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otap.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "protocol": "otap",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_logs.yaml",
-                  "signal": "logs",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otap.yaml.j2",
                   "wait_for_result": true
                 }
               }
@@ -1606,23 +1528,17 @@
               "id": "dfe-otap-transform",
               "label": "DFE OTAP Transform",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/dfe-single-core-multi-rate.yaml",
-                "suite_name": "DFE OTAP Transform Insert (Logs)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otap.yaml.j2",
-                  "compression_method": "none",
-                  "engine_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/engine/otap-transform-insert.yaml.j2",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/dfe-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otap.yaml.j2",
+                  "engine_config": "../benchmark_dashboard/config/templates/engine/otap-transform-insert.yaml.j2",
                   "insert_actions": [
                     {
                       "key": "processing.engine",
                       "value": "benchmark"
                     }
                   ],
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otap.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "protocol": "otap",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_logs.yaml",
-                  "signal": "logs",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otap.yaml.j2",
                   "wait_for_result": true
                 }
               }
@@ -1638,23 +1554,17 @@
               "id": "dfe-otlp-attributes",
               "label": "DFE OTLP Attributes",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/dfe-single-core-multi-rate.yaml",
-                "suite_name": "DFE OTLP Attr Insert (Logs)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otlp.yaml.j2",
-                  "compression_method": "none",
-                  "engine_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/engine/otlp-attr-insert.yaml.j2",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/dfe-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otlp.yaml.j2",
+                  "engine_config": "../benchmark_dashboard/config/templates/engine/otlp-attr-insert.yaml.j2",
                   "insert_actions": [
                     {
                       "key": "processing.engine",
                       "value": "benchmark"
                     }
                   ],
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otlp.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "protocol": "otlp",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_logs.yaml",
-                  "signal": "logs",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otlp.yaml.j2",
                   "wait_for_result": true
                 }
               }
@@ -1670,23 +1580,17 @@
               "id": "dfe-otlp-transform",
               "label": "DFE OTLP Transform",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/dfe-single-core-multi-rate.yaml",
-                "suite_name": "DFE OTLP Transform Insert (Logs)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otlp.yaml.j2",
-                  "compression_method": "none",
-                  "engine_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/engine/otlp-transform-insert.yaml.j2",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/dfe-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otlp.yaml.j2",
+                  "engine_config": "../benchmark_dashboard/config/templates/engine/otlp-transform-insert.yaml.j2",
                   "insert_actions": [
                     {
                       "key": "processing.engine",
                       "value": "benchmark"
                     }
                   ],
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otlp.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "protocol": "otlp",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_logs.yaml",
-                  "signal": "logs",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otlp.yaml.j2",
                   "wait_for_result": true
                 }
               }
@@ -1702,23 +1606,17 @@
               "id": "fbit-otlp-modify",
               "label": "Fluent Bit OTLP Modify",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/fbit-single-core-multi-rate.yaml",
-                "suite_name": "FB OTLP Attr Insert (Logs)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otlp.yaml.j2",
-                  "collector_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/fluent_bit/otlp-attr-insert.yaml.j2",
-                  "compression_method": "none",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/fbit-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otlp.yaml.j2",
+                  "collector_config": "../benchmark_dashboard/config/templates/fluent_bit/otlp-attr-insert.yaml.j2",
                   "insert_actions": [
                     {
                       "key": "processing.engine",
                       "value": "benchmark"
                     }
                   ],
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otlp.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "protocol": "otlp",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_logs.yaml",
-                  "signal": "logs"
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otlp.yaml.j2"
                 }
               }
             },
@@ -1733,24 +1631,17 @@
               "id": "otc-otlp-attributes",
               "label": "OTel Collector OTLP Attributes",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/otc-single-core-multi-rate.yaml",
-                "suite_name": "OTC OTLP Attr Insert (Logs)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otlp.yaml.j2",
-                  "collector_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/otelcol/otlp-attr-insert.yaml.j2",
-                  "compression_method": "none",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/otc-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otlp.yaml.j2",
+                  "collector_config": "../benchmark_dashboard/config/templates/otelcol/otlp-attr-insert.yaml.j2",
                   "insert_actions": [
                     {
                       "key": "processing.engine",
                       "value": "benchmark"
                     }
                   ],
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otlp.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "otelcol_gomaxprocs": 1,
-                  "protocol": "otlp",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_logs.yaml",
-                  "signal": "logs"
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otlp.yaml.j2"
                 }
               }
             },
@@ -1765,24 +1656,17 @@
               "id": "otc-otlp-transform",
               "label": "OTel Collector OTLP Transform",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/otc-single-core-multi-rate.yaml",
-                "suite_name": "OTC OTLP Transform Insert (Logs)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otlp.yaml.j2",
-                  "collector_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/otelcol/otlp-transform-insert.yaml.j2",
-                  "compression_method": "none",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/otc-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otlp.yaml.j2",
+                  "collector_config": "../benchmark_dashboard/config/templates/otelcol/otlp-transform-insert.yaml.j2",
                   "insert_actions": [
                     {
                       "key": "processing.engine",
                       "value": "benchmark"
                     }
                   ],
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otlp.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "otelcol_gomaxprocs": 1,
-                  "protocol": "otlp",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_logs.yaml",
-                  "signal": "logs"
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otlp.yaml.j2"
                 }
               }
             }
@@ -1860,17 +1744,13 @@
               "id": "dfe-otap-attributes",
               "label": "DFE OTAP Attributes",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/dfe-single-core-multi-transform.yaml",
-                "suite_name": "DFE OTAP Attr Rename Multi Transform (Logs)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otap.yaml.j2",
-                  "compression_method": "none",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/dfe-single-core-multi-transform.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otap.yaml.j2",
                   "data_source": "synthetic",
-                  "engine_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/engine/otap-attr-rename.yaml.j2",
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otap.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
+                  "engine_config": "../benchmark_dashboard/config/templates/engine/otap-attr-rename.yaml.j2",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otap.yaml.j2",
                   "num_log_attributes": 12,
-                  "protocol": "otap",
                   "rename_pairs": [
                     {
                       "destination": "exception.kind",
@@ -1889,8 +1769,6 @@
                       "source": "user.id"
                     }
                   ],
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_logs.yaml",
-                  "signal": "logs",
                   "wait_for_result": true
                 }
               }
@@ -1906,17 +1784,13 @@
               "id": "dfe-otap-transform",
               "label": "DFE OTAP Transform",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/dfe-single-core-multi-transform.yaml",
-                "suite_name": "DFE OTAP Transform Rename Multi Transform (Logs)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otap.yaml.j2",
-                  "compression_method": "none",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/dfe-single-core-multi-transform.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otap.yaml.j2",
                   "data_source": "synthetic",
-                  "engine_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/engine/otap-transform-rename.yaml.j2",
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otap.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
+                  "engine_config": "../benchmark_dashboard/config/templates/engine/otap-transform-rename.yaml.j2",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otap.yaml.j2",
                   "num_log_attributes": 12,
-                  "protocol": "otap",
                   "rename_pairs": [
                     {
                       "destination": "exception.kind",
@@ -1935,8 +1809,6 @@
                       "source": "user.id"
                     }
                   ],
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_logs.yaml",
-                  "signal": "logs",
                   "wait_for_result": true
                 }
               }
@@ -1952,17 +1824,13 @@
               "id": "dfe-otlp-attributes",
               "label": "DFE OTLP Attributes",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/dfe-single-core-multi-transform.yaml",
-                "suite_name": "DFE OTLP Attr Rename Multi Transform (Logs)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otlp.yaml.j2",
-                  "compression_method": "none",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/dfe-single-core-multi-transform.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otlp.yaml.j2",
                   "data_source": "synthetic",
-                  "engine_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/engine/otlp-attr-rename.yaml.j2",
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otlp.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
+                  "engine_config": "../benchmark_dashboard/config/templates/engine/otlp-attr-rename.yaml.j2",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otlp.yaml.j2",
                   "num_log_attributes": 12,
-                  "protocol": "otlp",
                   "rename_pairs": [
                     {
                       "destination": "exception.kind",
@@ -1981,8 +1849,6 @@
                       "source": "user.id"
                     }
                   ],
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_logs.yaml",
-                  "signal": "logs",
                   "wait_for_result": true
                 }
               }
@@ -1998,17 +1864,13 @@
               "id": "dfe-otlp-transform",
               "label": "DFE OTLP Transform",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/dfe-single-core-multi-transform.yaml",
-                "suite_name": "DFE OTLP Transform Rename Multi Transform (Logs)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otlp.yaml.j2",
-                  "compression_method": "none",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/dfe-single-core-multi-transform.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otlp.yaml.j2",
                   "data_source": "synthetic",
-                  "engine_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/engine/otlp-transform-rename.yaml.j2",
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otlp.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
+                  "engine_config": "../benchmark_dashboard/config/templates/engine/otlp-transform-rename.yaml.j2",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otlp.yaml.j2",
                   "num_log_attributes": 12,
-                  "protocol": "otlp",
                   "rename_pairs": [
                     {
                       "destination": "exception.kind",
@@ -2027,8 +1889,6 @@
                       "source": "user.id"
                     }
                   ],
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_logs.yaml",
-                  "signal": "logs",
                   "wait_for_result": true
                 }
               }
@@ -2044,17 +1904,13 @@
               "id": "fbit-otlp-modify",
               "label": "Fluent Bit OTLP Modify",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/fbit-single-core-multi-transform.yaml",
-                "suite_name": "FB OTLP Attr Rename Multi Transform (Logs)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otlp.yaml.j2",
-                  "collector_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/fluent_bit/otlp-attr-rename.yaml.j2",
-                  "compression_method": "none",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/fbit-single-core-multi-transform.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otlp.yaml.j2",
+                  "collector_config": "../benchmark_dashboard/config/templates/fluent_bit/otlp-attr-rename.yaml.j2",
                   "data_source": "synthetic",
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otlp.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otlp.yaml.j2",
                   "num_log_attributes": 12,
-                  "protocol": "otlp",
                   "rename_pairs": [
                     {
                       "destination": "exception.kind",
@@ -2072,9 +1928,7 @@
                       "destination": "end_user.id",
                       "source": "user.id"
                     }
-                  ],
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_logs.yaml",
-                  "signal": "logs"
+                  ]
                 }
               }
             },
@@ -2089,18 +1943,13 @@
               "id": "otc-otap-attributes",
               "label": "OTel Collector OTAP Attributes",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/otc-single-core-multi-transform.yaml",
-                "suite_name": "OTC OTAP Attr Rename Multi Transform (Logs)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otap.yaml.j2",
-                  "collector_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/otelcol/otap-attr-rename.yaml.j2",
-                  "compression_method": "none",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/otc-single-core-multi-transform.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otap.yaml.j2",
+                  "collector_config": "../benchmark_dashboard/config/templates/otelcol/otap-attr-rename.yaml.j2",
                   "data_source": "synthetic",
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otap.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otap.yaml.j2",
                   "num_log_attributes": 12,
-                  "otelcol_gomaxprocs": 1,
-                  "protocol": "otap",
                   "rename_pairs": [
                     {
                       "destination": "exception.kind",
@@ -2118,9 +1967,7 @@
                       "destination": "end_user.id",
                       "source": "user.id"
                     }
-                  ],
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_logs.yaml",
-                  "signal": "logs"
+                  ]
                 }
               }
             },
@@ -2135,18 +1982,13 @@
               "id": "otc-otlp-attributes",
               "label": "OTel Collector OTLP Attributes",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/otc-single-core-multi-transform.yaml",
-                "suite_name": "OTC OTLP Attr Rename Multi Transform (Logs)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otlp.yaml.j2",
-                  "collector_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/otelcol/otlp-attr-rename.yaml.j2",
-                  "compression_method": "none",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/otc-single-core-multi-transform.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otlp.yaml.j2",
+                  "collector_config": "../benchmark_dashboard/config/templates/otelcol/otlp-attr-rename.yaml.j2",
                   "data_source": "synthetic",
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otlp.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otlp.yaml.j2",
                   "num_log_attributes": 12,
-                  "otelcol_gomaxprocs": 1,
-                  "protocol": "otlp",
                   "rename_pairs": [
                     {
                       "destination": "exception.kind",
@@ -2164,9 +2006,7 @@
                       "destination": "end_user.id",
                       "source": "user.id"
                     }
-                  ],
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_logs.yaml",
-                  "signal": "logs"
+                  ]
                 }
               }
             },
@@ -2181,18 +2021,13 @@
               "id": "otc-otlp-transform",
               "label": "OTel Collector OTLP Transform",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/otc-single-core-multi-transform.yaml",
-                "suite_name": "OTC OTLP Transform Rename Multi Transform (Logs)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otlp.yaml.j2",
-                  "collector_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/otelcol/otlp-transform-rename.yaml.j2",
-                  "compression_method": "none",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/otc-single-core-multi-transform.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otlp.yaml.j2",
+                  "collector_config": "../benchmark_dashboard/config/templates/otelcol/otlp-transform-rename.yaml.j2",
                   "data_source": "synthetic",
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otlp.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otlp.yaml.j2",
                   "num_log_attributes": 12,
-                  "otelcol_gomaxprocs": 1,
-                  "protocol": "otlp",
                   "rename_pairs": [
                     {
                       "destination": "exception.kind",
@@ -2210,9 +2045,7 @@
                       "destination": "end_user.id",
                       "source": "user.id"
                     }
-                  ],
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_logs.yaml",
-                  "signal": "logs"
+                  ]
                 }
               }
             }
@@ -2271,22 +2104,17 @@
               "id": "dfe-otap-attributes",
               "label": "DFE OTAP Attributes",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/dfe-single-core-multi-batch-size.yaml",
-                "suite_name": "DFE OTAP Attr Rename Multi Batch (Logs)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otap.yaml.j2",
-                  "compression_method": "none",
-                  "engine_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/engine/otap-attr-rename.yaml.j2",
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otap.yaml.j2",
-                  "protocol": "otap",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/dfe-single-core-multi-batch-size.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otap.yaml.j2",
+                  "engine_config": "../benchmark_dashboard/config/templates/engine/otap-attr-rename.yaml.j2",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otap.yaml.j2",
                   "rename_pairs": [
                     {
                       "destination": "exception.kind",
                       "source": "exception.type"
                     }
                   ],
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_logs.yaml",
-                  "signal": "logs",
                   "wait_for_result": true
                 }
               }
@@ -2302,22 +2130,17 @@
               "id": "dfe-otlp-attributes",
               "label": "DFE OTLP Attributes",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/dfe-single-core-multi-batch-size.yaml",
-                "suite_name": "DFE OTLP Attr Rename Multi Batch (Logs)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otlp.yaml.j2",
-                  "compression_method": "none",
-                  "engine_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/engine/otlp-attr-rename.yaml.j2",
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otlp.yaml.j2",
-                  "protocol": "otlp",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/dfe-single-core-multi-batch-size.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otlp.yaml.j2",
+                  "engine_config": "../benchmark_dashboard/config/templates/engine/otlp-attr-rename.yaml.j2",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otlp.yaml.j2",
                   "rename_pairs": [
                     {
                       "destination": "exception.kind",
                       "source": "exception.type"
                     }
                   ],
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_logs.yaml",
-                  "signal": "logs",
                   "wait_for_result": true
                 }
               }
@@ -2333,22 +2156,17 @@
               "id": "fbit-otlp-modify",
               "label": "Fluent Bit OTLP Modify",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/fbit-single-core-multi-batch-size.yaml",
-                "suite_name": "FB OTLP Attr Rename Multi Batch (Logs)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otlp.yaml.j2",
-                  "collector_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/fluent_bit/otlp-attr-rename.yaml.j2",
-                  "compression_method": "none",
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otlp.yaml.j2",
-                  "protocol": "otlp",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/fbit-single-core-multi-batch-size.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otlp.yaml.j2",
+                  "collector_config": "../benchmark_dashboard/config/templates/fluent_bit/otlp-attr-rename.yaml.j2",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otlp.yaml.j2",
                   "rename_pairs": [
                     {
                       "destination": "exception.kind",
                       "source": "exception.type"
                     }
-                  ],
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_logs.yaml",
-                  "signal": "logs"
+                  ]
                 }
               }
             },
@@ -2363,23 +2181,17 @@
               "id": "otc-otlp-attributes",
               "label": "OTel Collector OTLP Attributes",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/otc-single-core-multi-batch-size.yaml",
-                "suite_name": "OTC OTLP Attr Rename Multi Batch (Logs)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otlp.yaml.j2",
-                  "collector_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/otelcol/otlp-attr-rename.yaml.j2",
-                  "compression_method": "none",
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otlp.yaml.j2",
-                  "otelcol_gomaxprocs": 1,
-                  "protocol": "otlp",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/otc-single-core-multi-batch-size.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otlp.yaml.j2",
+                  "collector_config": "../benchmark_dashboard/config/templates/otelcol/otlp-attr-rename.yaml.j2",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otlp.yaml.j2",
                   "rename_pairs": [
                     {
                       "destination": "exception.kind",
                       "source": "exception.type"
                     }
-                  ],
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_logs.yaml",
-                  "signal": "logs"
+                  ]
                 }
               }
             }
@@ -2444,23 +2256,17 @@
               "id": "dfe-otap-attributes",
               "label": "DFE OTAP Attributes",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/dfe-single-core-multi-rate.yaml",
-                "suite_name": "DFE OTAP Attr Rename (Logs)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otap.yaml.j2",
-                  "compression_method": "none",
-                  "engine_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/engine/otap-attr-rename.yaml.j2",
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otap.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "protocol": "otap",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/dfe-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otap.yaml.j2",
+                  "engine_config": "../benchmark_dashboard/config/templates/engine/otap-attr-rename.yaml.j2",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otap.yaml.j2",
                   "rename_pairs": [
                     {
                       "destination": "exception.kind",
                       "source": "exception.type"
                     }
                   ],
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_logs.yaml",
-                  "signal": "logs",
                   "wait_for_result": true
                 }
               }
@@ -2476,23 +2282,17 @@
               "id": "dfe-otap-transform",
               "label": "DFE OTAP Transform",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/dfe-single-core-multi-rate.yaml",
-                "suite_name": "DFE OTAP Transform Rename (Logs)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otap.yaml.j2",
-                  "compression_method": "none",
-                  "engine_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/engine/otap-transform-rename.yaml.j2",
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otap.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "protocol": "otap",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/dfe-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otap.yaml.j2",
+                  "engine_config": "../benchmark_dashboard/config/templates/engine/otap-transform-rename.yaml.j2",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otap.yaml.j2",
                   "rename_pairs": [
                     {
                       "destination": "exception.kind",
                       "source": "exception.type"
                     }
                   ],
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_logs.yaml",
-                  "signal": "logs",
                   "wait_for_result": true
                 }
               }
@@ -2508,23 +2308,17 @@
               "id": "dfe-otlp-attributes",
               "label": "DFE OTLP Attributes",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/dfe-single-core-multi-rate.yaml",
-                "suite_name": "DFE OTLP Attr Rename (Logs)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otlp.yaml.j2",
-                  "compression_method": "none",
-                  "engine_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/engine/otlp-attr-rename.yaml.j2",
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otlp.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "protocol": "otlp",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/dfe-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otlp.yaml.j2",
+                  "engine_config": "../benchmark_dashboard/config/templates/engine/otlp-attr-rename.yaml.j2",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otlp.yaml.j2",
                   "rename_pairs": [
                     {
                       "destination": "exception.kind",
                       "source": "exception.type"
                     }
                   ],
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_logs.yaml",
-                  "signal": "logs",
                   "wait_for_result": true
                 }
               }
@@ -2540,23 +2334,17 @@
               "id": "dfe-otlp-transform",
               "label": "DFE OTLP Transform",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/dfe-single-core-multi-rate.yaml",
-                "suite_name": "DFE OTLP Transform Rename (Logs)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otlp.yaml.j2",
-                  "compression_method": "none",
-                  "engine_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/engine/otlp-transform-rename.yaml.j2",
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otlp.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "protocol": "otlp",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/dfe-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otlp.yaml.j2",
+                  "engine_config": "../benchmark_dashboard/config/templates/engine/otlp-transform-rename.yaml.j2",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otlp.yaml.j2",
                   "rename_pairs": [
                     {
                       "destination": "exception.kind",
                       "source": "exception.type"
                     }
                   ],
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_logs.yaml",
-                  "signal": "logs",
                   "wait_for_result": true
                 }
               }
@@ -2572,23 +2360,17 @@
               "id": "fbit-otlp-modify",
               "label": "Fluent Bit OTLP Modify",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/fbit-single-core-multi-rate.yaml",
-                "suite_name": "FB OTLP Attr Rename (Logs)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otlp.yaml.j2",
-                  "collector_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/fluent_bit/otlp-attr-rename.yaml.j2",
-                  "compression_method": "none",
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otlp.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "protocol": "otlp",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/fbit-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otlp.yaml.j2",
+                  "collector_config": "../benchmark_dashboard/config/templates/fluent_bit/otlp-attr-rename.yaml.j2",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otlp.yaml.j2",
                   "rename_pairs": [
                     {
                       "destination": "exception.kind",
                       "source": "exception.type"
                     }
-                  ],
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_logs.yaml",
-                  "signal": "logs"
+                  ]
                 }
               }
             },
@@ -2603,24 +2385,17 @@
               "id": "otc-otlp-attributes",
               "label": "OTel Collector OTLP Attributes",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/otc-single-core-multi-rate.yaml",
-                "suite_name": "OTC OTLP Attr Rename (Logs)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otlp.yaml.j2",
-                  "collector_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/otelcol/otlp-attr-rename.yaml.j2",
-                  "compression_method": "none",
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otlp.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "otelcol_gomaxprocs": 1,
-                  "protocol": "otlp",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/otc-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otlp.yaml.j2",
+                  "collector_config": "../benchmark_dashboard/config/templates/otelcol/otlp-attr-rename.yaml.j2",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otlp.yaml.j2",
                   "rename_pairs": [
                     {
                       "destination": "exception.kind",
                       "source": "exception.type"
                     }
-                  ],
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_logs.yaml",
-                  "signal": "logs"
+                  ]
                 }
               }
             },
@@ -2635,24 +2410,17 @@
               "id": "otc-otlp-transform",
               "label": "OTel Collector OTLP Transform",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/otc-single-core-multi-rate.yaml",
-                "suite_name": "OTC OTLP Transform Rename (Logs)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otlp.yaml.j2",
-                  "collector_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/otelcol/otlp-transform-rename.yaml.j2",
-                  "compression_method": "none",
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otlp.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "otelcol_gomaxprocs": 1,
-                  "protocol": "otlp",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/otc-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otlp.yaml.j2",
+                  "collector_config": "../benchmark_dashboard/config/templates/otelcol/otlp-transform-rename.yaml.j2",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otlp.yaml.j2",
                   "rename_pairs": [
                     {
                       "destination": "exception.kind",
                       "source": "exception.type"
                     }
-                  ],
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_logs.yaml",
-                  "signal": "logs"
+                  ]
                 }
               }
             }
@@ -2729,17 +2497,11 @@
               "id": "dfe-logs-otap-gzip-baseline",
               "label": "DFE OTAP Baseline w/ Gzip (Logs)",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/dfe-single-core-multi-rate.yaml",
-                "suite_name": "DFE OTAP Baseline w/ Gzip (Logs)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otap.yaml.j2",
-                  "compression_method": "gzip",
-                  "engine_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/engine/otap-otap.yaml.j2",
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otap.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "protocol": "otap",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_logs.yaml",
-                  "signal": "logs",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/dfe-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otap.yaml.j2",
+                  "engine_config": "../benchmark_dashboard/config/templates/engine/otap-otap.yaml.j2",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otap.yaml.j2",
                   "wait_for_result": true
                 }
               }
@@ -2754,17 +2516,11 @@
               "id": "dfe-otap-none",
               "label": "DFE OTAP Baseline (Logs)",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/dfe-single-core-multi-rate.yaml",
-                "suite_name": "DFE OTAP Baseline (Logs)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otap.yaml.j2",
-                  "compression_method": "none",
-                  "engine_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/engine/otap-otap.yaml.j2",
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otap.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "protocol": "otap",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_logs.yaml",
-                  "signal": "logs",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/dfe-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otap.yaml.j2",
+                  "engine_config": "../benchmark_dashboard/config/templates/engine/otap-otap.yaml.j2",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otap.yaml.j2",
                   "wait_for_result": true
                 }
               }
@@ -2779,17 +2535,11 @@
               "id": "dfe-logs-otap-zstd-baseline",
               "label": "DFE OTAP Baseline w/ Zstd (Logs)",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/dfe-single-core-multi-rate.yaml",
-                "suite_name": "DFE OTAP Baseline w/ Zstd (Logs)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otap.yaml.j2",
-                  "compression_method": "zstd",
-                  "engine_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/engine/otap-otap.yaml.j2",
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otap.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "protocol": "otap",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_logs.yaml",
-                  "signal": "logs",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/dfe-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otap.yaml.j2",
+                  "engine_config": "../benchmark_dashboard/config/templates/engine/otap-otap.yaml.j2",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otap.yaml.j2",
                   "wait_for_result": true
                 }
               }
@@ -2804,17 +2554,11 @@
               "id": "dfe-otlp-gzip",
               "label": "DFE OTLP Baseline w/ Gzip (Logs)",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/dfe-single-core-multi-rate.yaml",
-                "suite_name": "DFE OTLP Baseline w/ Gzip (Logs)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otlp.yaml.j2",
-                  "compression_method": "gzip",
-                  "engine_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/engine/otlp-otlp.yaml.j2",
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otlp.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "protocol": "otlp",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_logs.yaml",
-                  "signal": "logs",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/dfe-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otlp.yaml.j2",
+                  "engine_config": "../benchmark_dashboard/config/templates/engine/otlp-otlp.yaml.j2",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otlp.yaml.j2",
                   "wait_for_result": true
                 }
               }
@@ -2829,17 +2573,11 @@
               "id": "dfe-otlp-none",
               "label": "DFE OTLP Baseline (Logs)",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/dfe-single-core-multi-rate.yaml",
-                "suite_name": "DFE OTLP Baseline (Logs)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otlp.yaml.j2",
-                  "compression_method": "none",
-                  "engine_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/engine/otlp-otlp.yaml.j2",
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otlp.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "protocol": "otlp",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_logs.yaml",
-                  "signal": "logs",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/dfe-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otlp.yaml.j2",
+                  "engine_config": "../benchmark_dashboard/config/templates/engine/otlp-otlp.yaml.j2",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otlp.yaml.j2",
                   "wait_for_result": true
                 }
               }
@@ -2854,17 +2592,11 @@
               "id": "dfe-logs-otlp-zstd-baseline",
               "label": "DFE OTLP Baseline w/ Zstd (Logs)",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/dfe-single-core-multi-rate.yaml",
-                "suite_name": "DFE OTLP Baseline w/ Zstd (Logs)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otlp.yaml.j2",
-                  "compression_method": "zstd",
-                  "engine_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/engine/otlp-otlp.yaml.j2",
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otlp.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "protocol": "otlp",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_logs.yaml",
-                  "signal": "logs",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/dfe-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otlp.yaml.j2",
+                  "engine_config": "../benchmark_dashboard/config/templates/engine/otlp-otlp.yaml.j2",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otlp.yaml.j2",
                   "wait_for_result": true
                 }
               }
@@ -2879,18 +2611,12 @@
               "id": "dfe-logs-otlphttp-gzip-baseline",
               "label": "DFE OTLP/HTTP Baseline w/ Gzip (Logs)",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/dfe-single-core-multi-rate.yaml",
-                "suite_name": "DFE OTLP/HTTP Baseline w/ Gzip (Logs)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otlp-http.yaml.j2",
-                  "compression_method": "gzip",
-                  "engine_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/engine/otlphttp-otlphttp.yaml.j2",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/dfe-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otlp-http.yaml.j2",
+                  "engine_config": "../benchmark_dashboard/config/templates/engine/otlphttp-otlphttp.yaml.j2",
                   "exporter_port": 4318,
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otlp-http.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "protocol": "otlphttp",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_logs.yaml",
-                  "signal": "logs",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otlp-http.yaml.j2",
                   "wait_for_result": true
                 }
               }
@@ -2905,18 +2631,12 @@
               "id": "dfe-logs-otlphttp-none-baseline",
               "label": "DFE OTLP/HTTP Baseline (Logs)",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/dfe-single-core-multi-rate.yaml",
-                "suite_name": "DFE OTLP/HTTP Baseline (Logs)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otlp-http.yaml.j2",
-                  "compression_method": "none",
-                  "engine_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/engine/otlphttp-otlphttp.yaml.j2",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/dfe-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otlp-http.yaml.j2",
+                  "engine_config": "../benchmark_dashboard/config/templates/engine/otlphttp-otlphttp.yaml.j2",
                   "exporter_port": 4318,
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otlp-http.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "protocol": "otlphttp",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_logs.yaml",
-                  "signal": "logs",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otlp-http.yaml.j2",
                   "wait_for_result": true
                 }
               }
@@ -2931,18 +2651,12 @@
               "id": "dfe-logs-otlphttp-zstd-baseline",
               "label": "DFE OTLP/HTTP Baseline w/ Zstd (Logs)",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/dfe-single-core-multi-rate.yaml",
-                "suite_name": "DFE OTLP/HTTP Baseline w/ Zstd (Logs)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otlp-http.yaml.j2",
-                  "compression_method": "zstd",
-                  "engine_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/engine/otlphttp-otlphttp.yaml.j2",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/dfe-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otlp-http.yaml.j2",
+                  "engine_config": "../benchmark_dashboard/config/templates/engine/otlphttp-otlphttp.yaml.j2",
                   "exporter_port": 4318,
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otlp-http.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "protocol": "otlphttp",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_logs.yaml",
-                  "signal": "logs",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otlp-http.yaml.j2",
                   "wait_for_result": true
                 }
               }
@@ -2957,17 +2671,11 @@
               "id": "fbit-otlp-none",
               "label": "FB OTLP Baseline (Logs, None)",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/fbit-single-core-multi-rate.yaml",
-                "suite_name": "FB OTLP Baseline (Logs, None)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otlp.yaml.j2",
-                  "collector_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/fluent_bit/otlp-otlp.yaml.j2",
-                  "compression_method": "none",
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otlp.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "protocol": "otlp",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_logs.yaml",
-                  "signal": "logs"
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/fbit-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otlp.yaml.j2",
+                  "collector_config": "../benchmark_dashboard/config/templates/fluent_bit/otlp-otlp.yaml.j2",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otlp.yaml.j2"
                 }
               }
             },
@@ -2981,17 +2689,11 @@
               "id": "fbit-logs-otlphttp-gzip-baseline",
               "label": "FB OTLP/HTTP Baseline (Logs, Gzip)",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/fbit-single-core-multi-rate.yaml",
-                "suite_name": "FB OTLP/HTTP Baseline (Logs, Gzip)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otlp-http.yaml.j2",
-                  "collector_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/fluent_bit/otlphttp-otlphttp.yaml.j2",
-                  "compression_method": "gzip",
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otlp-http.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "protocol": "otlphttp",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_logs.yaml",
-                  "signal": "logs"
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/fbit-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otlp-http.yaml.j2",
+                  "collector_config": "../benchmark_dashboard/config/templates/fluent_bit/otlphttp-otlphttp.yaml.j2",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otlp-http.yaml.j2"
                 }
               }
             },
@@ -3005,17 +2707,11 @@
               "id": "fbit-logs-otlphttp-none-baseline",
               "label": "FB OTLP/HTTP Baseline (Logs, None)",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/fbit-single-core-multi-rate.yaml",
-                "suite_name": "FB OTLP/HTTP Baseline (Logs, None)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otlp-http.yaml.j2",
-                  "collector_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/fluent_bit/otlphttp-otlphttp.yaml.j2",
-                  "compression_method": "none",
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otlp-http.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "protocol": "otlphttp",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_logs.yaml",
-                  "signal": "logs"
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/fbit-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otlp-http.yaml.j2",
+                  "collector_config": "../benchmark_dashboard/config/templates/fluent_bit/otlphttp-otlphttp.yaml.j2",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otlp-http.yaml.j2"
                 }
               }
             },
@@ -3029,17 +2725,11 @@
               "id": "fbit-logs-otlphttp-zstd-baseline",
               "label": "FB OTLP/HTTP Baseline (Logs, Zstd)",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/fbit-single-core-multi-rate.yaml",
-                "suite_name": "FB OTLP/HTTP Baseline (Logs, Zstd)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otlp-http.yaml.j2",
-                  "collector_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/fluent_bit/otlphttp-otlphttp.yaml.j2",
-                  "compression_method": "zstd",
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otlp-http.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "protocol": "otlphttp",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_logs.yaml",
-                  "signal": "logs"
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/fbit-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otlp-http.yaml.j2",
+                  "collector_config": "../benchmark_dashboard/config/templates/fluent_bit/otlphttp-otlphttp.yaml.j2",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otlp-http.yaml.j2"
                 }
               }
             },
@@ -3053,18 +2743,11 @@
               "id": "otc-logs-otap-gzip-baseline",
               "label": "OTC OTAP Baseline w/ Gzip (Logs)",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/otc-single-core-multi-rate.yaml",
-                "suite_name": "OTC OTAP Baseline w/ Gzip (Logs)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otap.yaml.j2",
-                  "collector_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/otelcol/otap-otap.yaml.j2",
-                  "compression_method": "gzip",
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otap.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "otelcol_gomaxprocs": 1,
-                  "protocol": "otap",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_logs.yaml",
-                  "signal": "logs"
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/otc-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otap.yaml.j2",
+                  "collector_config": "../benchmark_dashboard/config/templates/otelcol/otap-otap.yaml.j2",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otap.yaml.j2"
                 }
               }
             },
@@ -3078,18 +2761,11 @@
               "id": "otc-logs-otap-none-baseline",
               "label": "OTC OTAP Baseline (Logs)",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/otc-single-core-multi-rate.yaml",
-                "suite_name": "OTC OTAP Baseline (Logs)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otap.yaml.j2",
-                  "collector_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/otelcol/otap-otap.yaml.j2",
-                  "compression_method": "none",
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otap.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "otelcol_gomaxprocs": 1,
-                  "protocol": "otap",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_logs.yaml",
-                  "signal": "logs"
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/otc-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otap.yaml.j2",
+                  "collector_config": "../benchmark_dashboard/config/templates/otelcol/otap-otap.yaml.j2",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otap.yaml.j2"
                 }
               }
             },
@@ -3103,18 +2779,11 @@
               "id": "otc-logs-otap-zstd-baseline",
               "label": "OTC OTAP Baseline w/ Zstd (Logs)",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/otc-single-core-multi-rate.yaml",
-                "suite_name": "OTC OTAP Baseline w/ Zstd (Logs)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otap.yaml.j2",
-                  "collector_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/otelcol/otap-otap.yaml.j2",
-                  "compression_method": "zstd",
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otap.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "otelcol_gomaxprocs": 1,
-                  "protocol": "otap",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_logs.yaml",
-                  "signal": "logs"
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/otc-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otap.yaml.j2",
+                  "collector_config": "../benchmark_dashboard/config/templates/otelcol/otap-otap.yaml.j2",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otap.yaml.j2"
                 }
               }
             },
@@ -3128,18 +2797,11 @@
               "id": "otc-logs-otlp-gzip-baseline",
               "label": "OTC OTLP Baseline w/ Gzip (Logs)",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/otc-single-core-multi-rate.yaml",
-                "suite_name": "OTC OTLP Baseline w/ Gzip (Logs)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otlp.yaml.j2",
-                  "collector_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/otelcol/otlp-otlp.yaml.j2",
-                  "compression_method": "gzip",
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otlp.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "otelcol_gomaxprocs": 1,
-                  "protocol": "otlp",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_logs.yaml",
-                  "signal": "logs"
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/otc-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otlp.yaml.j2",
+                  "collector_config": "../benchmark_dashboard/config/templates/otelcol/otlp-otlp.yaml.j2",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otlp.yaml.j2"
                 }
               }
             },
@@ -3153,18 +2815,11 @@
               "id": "otc-otlp-none",
               "label": "OTC OTLP Baseline (Logs)",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/otc-single-core-multi-rate.yaml",
-                "suite_name": "OTC OTLP Baseline (Logs)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otlp.yaml.j2",
-                  "collector_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/otelcol/otlp-otlp.yaml.j2",
-                  "compression_method": "none",
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otlp.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "otelcol_gomaxprocs": 1,
-                  "protocol": "otlp",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_logs.yaml",
-                  "signal": "logs"
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/otc-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otlp.yaml.j2",
+                  "collector_config": "../benchmark_dashboard/config/templates/otelcol/otlp-otlp.yaml.j2",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otlp.yaml.j2"
                 }
               }
             },
@@ -3178,18 +2833,11 @@
               "id": "otc-logs-otlp-zstd-baseline",
               "label": "OTC OTLP Baseline w/ Zstd (Logs)",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/otc-single-core-multi-rate.yaml",
-                "suite_name": "OTC OTLP Baseline w/ Zstd (Logs)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otlp.yaml.j2",
-                  "collector_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/otelcol/otlp-otlp.yaml.j2",
-                  "compression_method": "zstd",
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otlp.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "otelcol_gomaxprocs": 1,
-                  "protocol": "otlp",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_logs.yaml",
-                  "signal": "logs"
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/otc-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otlp.yaml.j2",
+                  "collector_config": "../benchmark_dashboard/config/templates/otelcol/otlp-otlp.yaml.j2",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otlp.yaml.j2"
                 }
               }
             },
@@ -3203,19 +2851,12 @@
               "id": "otc-logs-otlphttp-none-baseline",
               "label": "OTC OTLP/HTTP Baseline (Logs)",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/otc-single-core-multi-rate.yaml",
-                "suite_name": "OTC OTLP/HTTP Baseline (Logs)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otlp-http.yaml.j2",
-                  "collector_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/otelcol/otlphttp-otlphttp.yaml.j2",
-                  "compression_method": "none",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/otc-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otlp-http.yaml.j2",
+                  "collector_config": "../benchmark_dashboard/config/templates/otelcol/otlphttp-otlphttp.yaml.j2",
                   "exporter_port": 4318,
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otlp-http.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "otelcol_gomaxprocs": 1,
-                  "protocol": "otlphttp",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_logs.yaml",
-                  "signal": "logs"
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otlp-http.yaml.j2"
                 }
               }
             },
@@ -3229,16 +2870,10 @@
               "id": "rotel-logs-otlp-gzip-baseline",
               "label": "Rotel OTLP Baseline w/ Gzip (Logs)",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/rotel-single-core-multi-rate.yaml",
-                "suite_name": "Rotel OTLP Baseline w/ Gzip (Logs)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otlp.yaml.j2",
-                  "compression_method": "gzip",
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otlp.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "protocol": "otlp",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_logs.yaml",
-                  "signal": "logs"
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/rotel-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otlp.yaml.j2",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otlp.yaml.j2"
                 }
               }
             },
@@ -3252,16 +2887,10 @@
               "id": "rotel-logs-otlphttp-gzip-baseline",
               "label": "Rotel OTLP/HTTP Baseline w/ Gzip (Logs)",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/rotel-single-core-multi-rate.yaml",
-                "suite_name": "Rotel OTLP/HTTP Baseline w/ Gzip (Logs)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otlp-http.yaml.j2",
-                  "compression_method": "gzip",
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otlp-http.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "protocol": "otlphttp",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_logs.yaml",
-                  "signal": "logs"
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/rotel-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otlp-http.yaml.j2",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otlp-http.yaml.j2"
                 }
               }
             }
@@ -3338,17 +2967,11 @@
               "id": "dfe-metrics-otap-gzip-baseline",
               "label": "DFE OTAP Baseline w/ Gzip (Metrics)",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/dfe-single-core-multi-rate.yaml",
-                "suite_name": "DFE OTAP Baseline w/ Gzip (Metrics)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otap.yaml.j2",
-                  "compression_method": "gzip",
-                  "engine_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/engine/otap-otap.yaml.j2",
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otap.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "protocol": "otap",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_metrics.yaml",
-                  "signal": "metrics",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/dfe-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otap.yaml.j2",
+                  "engine_config": "../benchmark_dashboard/config/templates/engine/otap-otap.yaml.j2",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otap.yaml.j2",
                   "wait_for_result": true
                 }
               }
@@ -3363,17 +2986,11 @@
               "id": "dfe-metrics-otap-none-baseline",
               "label": "DFE OTAP Baseline (Metrics)",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/dfe-single-core-multi-rate.yaml",
-                "suite_name": "DFE OTAP Baseline (Metrics)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otap.yaml.j2",
-                  "compression_method": "none",
-                  "engine_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/engine/otap-otap.yaml.j2",
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otap.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "protocol": "otap",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_metrics.yaml",
-                  "signal": "metrics",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/dfe-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otap.yaml.j2",
+                  "engine_config": "../benchmark_dashboard/config/templates/engine/otap-otap.yaml.j2",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otap.yaml.j2",
                   "wait_for_result": true
                 }
               }
@@ -3388,17 +3005,11 @@
               "id": "dfe-metrics-otap-zstd-baseline",
               "label": "DFE OTAP Baseline w/ Zstd (Metrics)",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/dfe-single-core-multi-rate.yaml",
-                "suite_name": "DFE OTAP Baseline w/ Zstd (Metrics)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otap.yaml.j2",
-                  "compression_method": "zstd",
-                  "engine_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/engine/otap-otap.yaml.j2",
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otap.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "protocol": "otap",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_metrics.yaml",
-                  "signal": "metrics",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/dfe-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otap.yaml.j2",
+                  "engine_config": "../benchmark_dashboard/config/templates/engine/otap-otap.yaml.j2",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otap.yaml.j2",
                   "wait_for_result": true
                 }
               }
@@ -3413,17 +3024,11 @@
               "id": "dfe-metrics-otlp-gzip-baseline",
               "label": "DFE OTLP Baseline w/ Gzip (Metrics)",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/dfe-single-core-multi-rate.yaml",
-                "suite_name": "DFE OTLP Baseline w/ Gzip (Metrics)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otlp.yaml.j2",
-                  "compression_method": "gzip",
-                  "engine_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/engine/otlp-otlp.yaml.j2",
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otlp.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "protocol": "otlp",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_metrics.yaml",
-                  "signal": "metrics",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/dfe-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otlp.yaml.j2",
+                  "engine_config": "../benchmark_dashboard/config/templates/engine/otlp-otlp.yaml.j2",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otlp.yaml.j2",
                   "wait_for_result": true
                 }
               }
@@ -3438,17 +3043,11 @@
               "id": "dfe-metrics-otlp-none-baseline",
               "label": "DFE OTLP Baseline (Metrics)",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/dfe-single-core-multi-rate.yaml",
-                "suite_name": "DFE OTLP Baseline (Metrics)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otlp.yaml.j2",
-                  "compression_method": "none",
-                  "engine_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/engine/otlp-otlp.yaml.j2",
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otlp.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "protocol": "otlp",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_metrics.yaml",
-                  "signal": "metrics",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/dfe-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otlp.yaml.j2",
+                  "engine_config": "../benchmark_dashboard/config/templates/engine/otlp-otlp.yaml.j2",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otlp.yaml.j2",
                   "wait_for_result": true
                 }
               }
@@ -3463,17 +3062,11 @@
               "id": "dfe-metrics-otlp-zstd-baseline",
               "label": "DFE OTLP Baseline w/ Zstd (Metrics)",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/dfe-single-core-multi-rate.yaml",
-                "suite_name": "DFE OTLP Baseline w/ Zstd (Metrics)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otlp.yaml.j2",
-                  "compression_method": "zstd",
-                  "engine_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/engine/otlp-otlp.yaml.j2",
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otlp.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "protocol": "otlp",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_metrics.yaml",
-                  "signal": "metrics",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/dfe-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otlp.yaml.j2",
+                  "engine_config": "../benchmark_dashboard/config/templates/engine/otlp-otlp.yaml.j2",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otlp.yaml.j2",
                   "wait_for_result": true
                 }
               }
@@ -3488,18 +3081,12 @@
               "id": "dfe-metrics-otlphttp-gzip-baseline",
               "label": "DFE OTLP/HTTP Baseline w/ Gzip (Metrics)",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/dfe-single-core-multi-rate.yaml",
-                "suite_name": "DFE OTLP/HTTP Baseline w/ Gzip (Metrics)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otlp-http.yaml.j2",
-                  "compression_method": "gzip",
-                  "engine_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/engine/otlphttp-otlphttp.yaml.j2",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/dfe-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otlp-http.yaml.j2",
+                  "engine_config": "../benchmark_dashboard/config/templates/engine/otlphttp-otlphttp.yaml.j2",
                   "exporter_port": 4318,
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otlp-http.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "protocol": "otlphttp",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_metrics.yaml",
-                  "signal": "metrics",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otlp-http.yaml.j2",
                   "wait_for_result": true
                 }
               }
@@ -3514,18 +3101,12 @@
               "id": "dfe-metrics-otlphttp-none-baseline",
               "label": "DFE OTLP/HTTP Baseline (Metrics)",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/dfe-single-core-multi-rate.yaml",
-                "suite_name": "DFE OTLP/HTTP Baseline (Metrics)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otlp-http.yaml.j2",
-                  "compression_method": "none",
-                  "engine_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/engine/otlphttp-otlphttp.yaml.j2",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/dfe-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otlp-http.yaml.j2",
+                  "engine_config": "../benchmark_dashboard/config/templates/engine/otlphttp-otlphttp.yaml.j2",
                   "exporter_port": 4318,
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otlp-http.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "protocol": "otlphttp",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_metrics.yaml",
-                  "signal": "metrics",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otlp-http.yaml.j2",
                   "wait_for_result": true
                 }
               }
@@ -3540,18 +3121,12 @@
               "id": "dfe-metrics-otlphttp-zstd-baseline",
               "label": "DFE OTLP/HTTP Baseline w/ Zstd (Metrics)",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/dfe-single-core-multi-rate.yaml",
-                "suite_name": "DFE OTLP/HTTP Baseline w/ Zstd (Metrics)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otlp-http.yaml.j2",
-                  "compression_method": "zstd",
-                  "engine_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/engine/otlphttp-otlphttp.yaml.j2",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/dfe-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otlp-http.yaml.j2",
+                  "engine_config": "../benchmark_dashboard/config/templates/engine/otlphttp-otlphttp.yaml.j2",
                   "exporter_port": 4318,
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otlp-http.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "protocol": "otlphttp",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_metrics.yaml",
-                  "signal": "metrics",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otlp-http.yaml.j2",
                   "wait_for_result": true
                 }
               }
@@ -3566,18 +3141,11 @@
               "id": "otc-metrics-otap-gzip-baseline",
               "label": "OTC OTAP Baseline w/ Gzip (Metrics)",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/otc-single-core-multi-rate.yaml",
-                "suite_name": "OTC OTAP Baseline w/ Gzip (Metrics)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otap.yaml.j2",
-                  "collector_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/otelcol/otap-otap.yaml.j2",
-                  "compression_method": "gzip",
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otap.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "otelcol_gomaxprocs": 1,
-                  "protocol": "otap",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_metrics.yaml",
-                  "signal": "metrics"
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/otc-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otap.yaml.j2",
+                  "collector_config": "../benchmark_dashboard/config/templates/otelcol/otap-otap.yaml.j2",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otap.yaml.j2"
                 }
               }
             },
@@ -3591,18 +3159,11 @@
               "id": "otc-metrics-otap-none-baseline",
               "label": "OTC OTAP Baseline (Metrics)",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/otc-single-core-multi-rate.yaml",
-                "suite_name": "OTC OTAP Baseline (Metrics)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otap.yaml.j2",
-                  "collector_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/otelcol/otap-otap.yaml.j2",
-                  "compression_method": "none",
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otap.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "otelcol_gomaxprocs": 1,
-                  "protocol": "otap",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_metrics.yaml",
-                  "signal": "metrics"
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/otc-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otap.yaml.j2",
+                  "collector_config": "../benchmark_dashboard/config/templates/otelcol/otap-otap.yaml.j2",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otap.yaml.j2"
                 }
               }
             },
@@ -3616,18 +3177,11 @@
               "id": "otc-metrics-otap-zstd-baseline",
               "label": "OTC OTAP Baseline w/ Zstd (Metrics)",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/otc-single-core-multi-rate.yaml",
-                "suite_name": "OTC OTAP Baseline w/ Zstd (Metrics)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otap.yaml.j2",
-                  "collector_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/otelcol/otap-otap.yaml.j2",
-                  "compression_method": "zstd",
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otap.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "otelcol_gomaxprocs": 1,
-                  "protocol": "otap",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_metrics.yaml",
-                  "signal": "metrics"
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/otc-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otap.yaml.j2",
+                  "collector_config": "../benchmark_dashboard/config/templates/otelcol/otap-otap.yaml.j2",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otap.yaml.j2"
                 }
               }
             },
@@ -3641,18 +3195,11 @@
               "id": "otc-metrics-otlp-gzip-baseline",
               "label": "OTC OTLP Baseline w/ Gzip (Metrics)",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/otc-single-core-multi-rate.yaml",
-                "suite_name": "OTC OTLP Baseline w/ Gzip (Metrics)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otlp.yaml.j2",
-                  "collector_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/otelcol/otlp-otlp.yaml.j2",
-                  "compression_method": "gzip",
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otlp.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "otelcol_gomaxprocs": 1,
-                  "protocol": "otlp",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_metrics.yaml",
-                  "signal": "metrics"
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/otc-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otlp.yaml.j2",
+                  "collector_config": "../benchmark_dashboard/config/templates/otelcol/otlp-otlp.yaml.j2",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otlp.yaml.j2"
                 }
               }
             },
@@ -3666,18 +3213,11 @@
               "id": "otc-metrics-otlp-none-baseline",
               "label": "OTC OTLP Baseline (Metrics)",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/otc-single-core-multi-rate.yaml",
-                "suite_name": "OTC OTLP Baseline (Metrics)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otlp.yaml.j2",
-                  "collector_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/otelcol/otlp-otlp.yaml.j2",
-                  "compression_method": "none",
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otlp.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "otelcol_gomaxprocs": 1,
-                  "protocol": "otlp",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_metrics.yaml",
-                  "signal": "metrics"
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/otc-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otlp.yaml.j2",
+                  "collector_config": "../benchmark_dashboard/config/templates/otelcol/otlp-otlp.yaml.j2",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otlp.yaml.j2"
                 }
               }
             },
@@ -3691,18 +3231,11 @@
               "id": "otc-metrics-otlp-zstd-baseline",
               "label": "OTC OTLP Baseline w/ Zstd (Metrics)",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/otc-single-core-multi-rate.yaml",
-                "suite_name": "OTC OTLP Baseline w/ Zstd (Metrics)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otlp.yaml.j2",
-                  "collector_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/otelcol/otlp-otlp.yaml.j2",
-                  "compression_method": "zstd",
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otlp.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "otelcol_gomaxprocs": 1,
-                  "protocol": "otlp",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_metrics.yaml",
-                  "signal": "metrics"
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/otc-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otlp.yaml.j2",
+                  "collector_config": "../benchmark_dashboard/config/templates/otelcol/otlp-otlp.yaml.j2",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otlp.yaml.j2"
                 }
               }
             },
@@ -3716,19 +3249,12 @@
               "id": "otc-metrics-otlphttp-none-baseline",
               "label": "OTC OTLP/HTTP Baseline (Metrics)",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/otc-single-core-multi-rate.yaml",
-                "suite_name": "OTC OTLP/HTTP Baseline (Metrics)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otlp-http.yaml.j2",
-                  "collector_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/otelcol/otlphttp-otlphttp.yaml.j2",
-                  "compression_method": "none",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/otc-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otlp-http.yaml.j2",
+                  "collector_config": "../benchmark_dashboard/config/templates/otelcol/otlphttp-otlphttp.yaml.j2",
                   "exporter_port": 4318,
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otlp-http.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "otelcol_gomaxprocs": 1,
-                  "protocol": "otlphttp",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_metrics.yaml",
-                  "signal": "metrics"
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otlp-http.yaml.j2"
                 }
               }
             },
@@ -3742,16 +3268,10 @@
               "id": "rotel-metrics-otlp-gzip-baseline",
               "label": "Rotel OTLP Baseline w/ Gzip (Metrics)",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/rotel-single-core-multi-rate.yaml",
-                "suite_name": "Rotel OTLP Baseline w/ Gzip (Metrics)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otlp.yaml.j2",
-                  "compression_method": "gzip",
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otlp.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "protocol": "otlp",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_metrics.yaml",
-                  "signal": "metrics"
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/rotel-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otlp.yaml.j2",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otlp.yaml.j2"
                 }
               }
             },
@@ -3765,16 +3285,10 @@
               "id": "rotel-metrics-otlphttp-gzip-baseline",
               "label": "Rotel OTLP/HTTP Baseline w/ Gzip (Metrics)",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/rotel-single-core-multi-rate.yaml",
-                "suite_name": "Rotel OTLP/HTTP Baseline w/ Gzip (Metrics)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otlp-http.yaml.j2",
-                  "compression_method": "gzip",
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otlp-http.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "protocol": "otlphttp",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_metrics.yaml",
-                  "signal": "metrics"
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/rotel-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otlp-http.yaml.j2",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otlp-http.yaml.j2"
                 }
               }
             }
@@ -4209,17 +3723,11 @@
               "id": "dfe-traces-otap-gzip-baseline",
               "label": "DFE OTAP Baseline w/ Gzip (Traces)",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/dfe-single-core-multi-rate.yaml",
-                "suite_name": "DFE OTAP Baseline w/ Gzip (Traces)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otap.yaml.j2",
-                  "compression_method": "gzip",
-                  "engine_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/engine/otap-otap.yaml.j2",
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otap.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "protocol": "otap",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_traces.yaml",
-                  "signal": "traces",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/dfe-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otap.yaml.j2",
+                  "engine_config": "../benchmark_dashboard/config/templates/engine/otap-otap.yaml.j2",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otap.yaml.j2",
                   "wait_for_result": true
                 }
               }
@@ -4234,17 +3742,11 @@
               "id": "dfe-traces-otap-none-baseline",
               "label": "DFE OTAP Baseline (Traces)",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/dfe-single-core-multi-rate.yaml",
-                "suite_name": "DFE OTAP Baseline (Traces)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otap.yaml.j2",
-                  "compression_method": "none",
-                  "engine_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/engine/otap-otap.yaml.j2",
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otap.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "protocol": "otap",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_traces.yaml",
-                  "signal": "traces",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/dfe-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otap.yaml.j2",
+                  "engine_config": "../benchmark_dashboard/config/templates/engine/otap-otap.yaml.j2",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otap.yaml.j2",
                   "wait_for_result": true
                 }
               }
@@ -4259,17 +3761,11 @@
               "id": "dfe-traces-otap-zstd-baseline",
               "label": "DFE OTAP Baseline w/ Zstd (Traces)",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/dfe-single-core-multi-rate.yaml",
-                "suite_name": "DFE OTAP Baseline w/ Zstd (Traces)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otap.yaml.j2",
-                  "compression_method": "zstd",
-                  "engine_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/engine/otap-otap.yaml.j2",
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otap.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "protocol": "otap",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_traces.yaml",
-                  "signal": "traces",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/dfe-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otap.yaml.j2",
+                  "engine_config": "../benchmark_dashboard/config/templates/engine/otap-otap.yaml.j2",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otap.yaml.j2",
                   "wait_for_result": true
                 }
               }
@@ -4284,17 +3780,11 @@
               "id": "dfe-traces-otlp-gzip-baseline",
               "label": "DFE OTLP Baseline w/ Gzip (Traces)",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/dfe-single-core-multi-rate.yaml",
-                "suite_name": "DFE OTLP Baseline w/ Gzip (Traces)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otlp.yaml.j2",
-                  "compression_method": "gzip",
-                  "engine_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/engine/otlp-otlp.yaml.j2",
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otlp.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "protocol": "otlp",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_traces.yaml",
-                  "signal": "traces",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/dfe-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otlp.yaml.j2",
+                  "engine_config": "../benchmark_dashboard/config/templates/engine/otlp-otlp.yaml.j2",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otlp.yaml.j2",
                   "wait_for_result": true
                 }
               }
@@ -4309,17 +3799,11 @@
               "id": "dfe-traces-otlp-none-baseline",
               "label": "DFE OTLP Baseline (Traces)",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/dfe-single-core-multi-rate.yaml",
-                "suite_name": "DFE OTLP Baseline (Traces)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otlp.yaml.j2",
-                  "compression_method": "none",
-                  "engine_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/engine/otlp-otlp.yaml.j2",
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otlp.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "protocol": "otlp",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_traces.yaml",
-                  "signal": "traces",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/dfe-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otlp.yaml.j2",
+                  "engine_config": "../benchmark_dashboard/config/templates/engine/otlp-otlp.yaml.j2",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otlp.yaml.j2",
                   "wait_for_result": true
                 }
               }
@@ -4334,17 +3818,11 @@
               "id": "dfe-traces-otlp-zstd-baseline",
               "label": "DFE OTLP Baseline w/ Zstd (Traces)",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/dfe-single-core-multi-rate.yaml",
-                "suite_name": "DFE OTLP Baseline w/ Zstd (Traces)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otlp.yaml.j2",
-                  "compression_method": "zstd",
-                  "engine_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/engine/otlp-otlp.yaml.j2",
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otlp.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "protocol": "otlp",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_traces.yaml",
-                  "signal": "traces",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/dfe-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otlp.yaml.j2",
+                  "engine_config": "../benchmark_dashboard/config/templates/engine/otlp-otlp.yaml.j2",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otlp.yaml.j2",
                   "wait_for_result": true
                 }
               }
@@ -4359,18 +3837,12 @@
               "id": "dfe-traces-otlphttp-gzip-baseline",
               "label": "DFE OTLP/HTTP Baseline w/ Gzip (Traces)",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/dfe-single-core-multi-rate.yaml",
-                "suite_name": "DFE OTLP/HTTP Baseline w/ Gzip (Traces)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otlp-http.yaml.j2",
-                  "compression_method": "gzip",
-                  "engine_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/engine/otlphttp-otlphttp.yaml.j2",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/dfe-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otlp-http.yaml.j2",
+                  "engine_config": "../benchmark_dashboard/config/templates/engine/otlphttp-otlphttp.yaml.j2",
                   "exporter_port": 4318,
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otlp-http.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "protocol": "otlphttp",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_traces.yaml",
-                  "signal": "traces",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otlp-http.yaml.j2",
                   "wait_for_result": true
                 }
               }
@@ -4385,18 +3857,12 @@
               "id": "dfe-traces-otlphttp-none-baseline",
               "label": "DFE OTLP/HTTP Baseline (Traces)",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/dfe-single-core-multi-rate.yaml",
-                "suite_name": "DFE OTLP/HTTP Baseline (Traces)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otlp-http.yaml.j2",
-                  "compression_method": "none",
-                  "engine_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/engine/otlphttp-otlphttp.yaml.j2",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/dfe-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otlp-http.yaml.j2",
+                  "engine_config": "../benchmark_dashboard/config/templates/engine/otlphttp-otlphttp.yaml.j2",
                   "exporter_port": 4318,
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otlp-http.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "protocol": "otlphttp",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_traces.yaml",
-                  "signal": "traces",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otlp-http.yaml.j2",
                   "wait_for_result": true
                 }
               }
@@ -4411,18 +3877,12 @@
               "id": "dfe-traces-otlphttp-zstd-baseline",
               "label": "DFE OTLP/HTTP Baseline w/ Zstd (Traces)",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/dfe-single-core-multi-rate.yaml",
-                "suite_name": "DFE OTLP/HTTP Baseline w/ Zstd (Traces)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otlp-http.yaml.j2",
-                  "compression_method": "zstd",
-                  "engine_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/engine/otlphttp-otlphttp.yaml.j2",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/dfe-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otlp-http.yaml.j2",
+                  "engine_config": "../benchmark_dashboard/config/templates/engine/otlphttp-otlphttp.yaml.j2",
                   "exporter_port": 4318,
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otlp-http.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "protocol": "otlphttp",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_traces.yaml",
-                  "signal": "traces",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otlp-http.yaml.j2",
                   "wait_for_result": true
                 }
               }
@@ -4437,18 +3897,11 @@
               "id": "otc-traces-otap-gzip-baseline",
               "label": "OTC OTAP Baseline w/ Gzip (Traces)",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/otc-single-core-multi-rate.yaml",
-                "suite_name": "OTC OTAP Baseline w/ Gzip (Traces)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otap.yaml.j2",
-                  "collector_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/otelcol/otap-otap.yaml.j2",
-                  "compression_method": "gzip",
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otap.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "otelcol_gomaxprocs": 1,
-                  "protocol": "otap",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_traces.yaml",
-                  "signal": "traces"
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/otc-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otap.yaml.j2",
+                  "collector_config": "../benchmark_dashboard/config/templates/otelcol/otap-otap.yaml.j2",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otap.yaml.j2"
                 }
               }
             },
@@ -4462,18 +3915,11 @@
               "id": "otc-traces-otap-none-baseline",
               "label": "OTC OTAP Baseline (Traces)",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/otc-single-core-multi-rate.yaml",
-                "suite_name": "OTC OTAP Baseline (Traces)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otap.yaml.j2",
-                  "collector_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/otelcol/otap-otap.yaml.j2",
-                  "compression_method": "none",
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otap.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "otelcol_gomaxprocs": 1,
-                  "protocol": "otap",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_traces.yaml",
-                  "signal": "traces"
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/otc-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otap.yaml.j2",
+                  "collector_config": "../benchmark_dashboard/config/templates/otelcol/otap-otap.yaml.j2",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otap.yaml.j2"
                 }
               }
             },
@@ -4487,18 +3933,11 @@
               "id": "otc-traces-otap-zstd-baseline",
               "label": "OTC OTAP Baseline w/ Zstd (Traces)",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/otc-single-core-multi-rate.yaml",
-                "suite_name": "OTC OTAP Baseline w/ Zstd (Traces)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otap.yaml.j2",
-                  "collector_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/otelcol/otap-otap.yaml.j2",
-                  "compression_method": "zstd",
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otap.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "otelcol_gomaxprocs": 1,
-                  "protocol": "otap",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_traces.yaml",
-                  "signal": "traces"
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/otc-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otap.yaml.j2",
+                  "collector_config": "../benchmark_dashboard/config/templates/otelcol/otap-otap.yaml.j2",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otap.yaml.j2"
                 }
               }
             },
@@ -4512,18 +3951,11 @@
               "id": "otc-traces-otlp-gzip-baseline",
               "label": "OTC OTLP Baseline w/ Gzip (Traces)",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/otc-single-core-multi-rate.yaml",
-                "suite_name": "OTC OTLP Baseline w/ Gzip (Traces)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otlp.yaml.j2",
-                  "collector_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/otelcol/otlp-otlp.yaml.j2",
-                  "compression_method": "gzip",
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otlp.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "otelcol_gomaxprocs": 1,
-                  "protocol": "otlp",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_traces.yaml",
-                  "signal": "traces"
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/otc-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otlp.yaml.j2",
+                  "collector_config": "../benchmark_dashboard/config/templates/otelcol/otlp-otlp.yaml.j2",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otlp.yaml.j2"
                 }
               }
             },
@@ -4537,18 +3969,11 @@
               "id": "otc-traces-otlp-none-baseline",
               "label": "OTC OTLP Baseline (Traces)",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/otc-single-core-multi-rate.yaml",
-                "suite_name": "OTC OTLP Baseline (Traces)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otlp.yaml.j2",
-                  "collector_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/otelcol/otlp-otlp.yaml.j2",
-                  "compression_method": "none",
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otlp.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "otelcol_gomaxprocs": 1,
-                  "protocol": "otlp",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_traces.yaml",
-                  "signal": "traces"
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/otc-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otlp.yaml.j2",
+                  "collector_config": "../benchmark_dashboard/config/templates/otelcol/otlp-otlp.yaml.j2",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otlp.yaml.j2"
                 }
               }
             },
@@ -4562,18 +3987,11 @@
               "id": "otc-traces-otlp-zstd-baseline",
               "label": "OTC OTLP Baseline w/ Zstd (Traces)",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/otc-single-core-multi-rate.yaml",
-                "suite_name": "OTC OTLP Baseline w/ Zstd (Traces)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otlp.yaml.j2",
-                  "collector_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/otelcol/otlp-otlp.yaml.j2",
-                  "compression_method": "zstd",
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otlp.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "otelcol_gomaxprocs": 1,
-                  "protocol": "otlp",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_traces.yaml",
-                  "signal": "traces"
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/otc-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otlp.yaml.j2",
+                  "collector_config": "../benchmark_dashboard/config/templates/otelcol/otlp-otlp.yaml.j2",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otlp.yaml.j2"
                 }
               }
             },
@@ -4587,19 +4005,12 @@
               "id": "otc-traces-otlphttp-none-baseline",
               "label": "OTC OTLP/HTTP Baseline (Traces)",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/otc-single-core-multi-rate.yaml",
-                "suite_name": "OTC OTLP/HTTP Baseline (Traces)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otlp-http.yaml.j2",
-                  "collector_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/otelcol/otlphttp-otlphttp.yaml.j2",
-                  "compression_method": "none",
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/otc-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otlp-http.yaml.j2",
+                  "collector_config": "../benchmark_dashboard/config/templates/otelcol/otlphttp-otlphttp.yaml.j2",
                   "exporter_port": 4318,
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otlp-http.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "otelcol_gomaxprocs": 1,
-                  "protocol": "otlphttp",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_traces.yaml",
-                  "signal": "traces"
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otlp-http.yaml.j2"
                 }
               }
             },
@@ -4613,16 +4024,10 @@
               "id": "rotel-traces-otlp-gzip-baseline",
               "label": "Rotel OTLP Baseline w/ Gzip (Traces)",
               "runner_data": {
-                "path": "tools/pipeline_perf_test/test_suites/comparison_dashboard/templates/orchestrator/rotel-single-core-multi-rate.yaml",
-                "suite_name": "Rotel OTLP Baseline w/ Gzip (Traces)",
-                "template_variables": {
-                  "backend_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/backend/otlp.yaml.j2",
-                  "compression_method": "gzip",
-                  "loadgen_config": "../pipeline_perf_test/test_suites/comparison_dashboard/templates/loadgen/otlp.yaml.j2",
-                  "loadgen_max_batch_size": 1000,
-                  "protocol": "otlp",
-                  "report": "../pipeline_perf_test/test_suites/comparison_dashboard/reports/report_traces.yaml",
-                  "signal": "traces"
+                "path": "tools/benchmark_dashboard/config/templates/orchestrator/rotel-single-core-multi-rate.yaml",
+                "template_bindings": {
+                  "backend_config": "../benchmark_dashboard/config/templates/backend/otlp.yaml.j2",
+                  "loadgen_config": "../benchmark_dashboard/config/templates/loadgen/otlp.yaml.j2"
                 }
               }
             }
