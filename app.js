@@ -306,7 +306,7 @@ function suiteParameterLabels(suite) {
     parameter.id,
     new Map(parameter.values.map((value) => [
       value.id,
-      value.label || value.id,
+      value.label || titleCase(value.id),
     ])),
   ]));
 }
@@ -805,6 +805,7 @@ let activeCharts = [];
 function titleCase(value) {
   return value
     .replaceAll("_", " ")
+    .replaceAll("-", " ")
     .replaceAll(".", " ")
     .replace(/\b\w/g, (letter) => letter.toUpperCase());
 }
@@ -1038,7 +1039,7 @@ function buildMetricChart(
     }
     const color = colors[index % colors.length];
     datasets.push({
-      label: item.value.label || item.value.id,
+      label: item.value.label || titleCase(item.value.id),
       data,
       backgroundColor: color,
       borderColor: color,
@@ -1206,7 +1207,7 @@ function renderComparisonPage(catalog, snapshot, views, suites, comparisons) {
         <div class="meta">${escapeHtml(suite.description)}</div>
         <div class="variant-list">
           ${values.map(
-            (value) => `<span>${escapeHtml(value.label || value.id)}</span>`,
+            (value) => `<span>${escapeHtml(value.label || titleCase(value.id))}</span>`,
           ).join("")}
         </div>
       </div>

@@ -104,27 +104,12 @@
     }
   ],
   "labels": {
-    "allocated_cores": "Allocated cores",
-    "architecture": "Architecture",
-    "binary": "Binary",
-    "branch": "Branch",
-    "cloud_shape": "Cloud shape",
-    "compression": "Compression",
     "cpu_model": "CPU model",
-    "engine_cores": "Engine cores",
-    "environment_basis": "Environment basis",
     "execution_os": "Execution OS",
-    "logical_cores": "Logical cores",
     "memory_gb": "Memory GB",
-    "operation": "Operation",
     "os": "OS",
     "os_distribution": "OS distribution",
-    "os_version": "OS version",
-    "physical_cores": "Physical cores",
-    "processor": "Processor",
-    "repository": "Repository",
-    "signal": "Signal",
-    "testbed": "Testbed"
+    "os_version": "OS version"
   },
   "metric_profiles": [
     {
@@ -580,7 +565,6 @@
       "parameters": [
         {
           "id": "variant",
-          "label": "Variant",
           "values": [
             {
               "id": "otlp-attr-otlp",
@@ -627,7 +611,6 @@
       "parameters": [
         {
           "id": "variant",
-          "label": "Variant",
           "values": [
             {
               "id": "otlp-attr-otlp",
@@ -660,7 +643,6 @@
       "parameters": [
         {
           "id": "protocol",
-          "label": "Protocol",
           "values": [
             {
               "id": "otap",
@@ -693,7 +675,6 @@
       "parameters": [
         {
           "id": "protocol",
-          "label": "Protocol",
           "values": [
             {
               "id": "otap",
@@ -726,7 +707,6 @@
       "parameters": [
         {
           "id": "protocol",
-          "label": "Protocol",
           "values": [
             {
               "id": "otap",
@@ -759,7 +739,6 @@
       "parameters": [
         {
           "id": "protocol",
-          "label": "Protocol",
           "values": [
             {
               "id": "otap",
@@ -792,7 +771,6 @@
       "parameters": [
         {
           "id": "variant",
-          "label": "Variant",
           "values": [
             {
               "id": "otap-in-batched-100k",
@@ -832,7 +810,6 @@
       "parameters": [
         {
           "id": "variant",
-          "label": "Variant",
           "values": [
             {
               "id": "otlp-filter-otlp",
@@ -904,7 +881,6 @@
       "parameters": [
         {
           "id": "variant",
-          "label": "Variant",
           "values": [
             {
               "dimensions": {
@@ -971,7 +947,6 @@
                 "allocated_cores": "1"
               },
               "id": "idle-state-docker",
-              "label": "Idle State Docker",
               "runner_data": {
                 "min_logical_cores": 1,
                 "path": "tools/pipeline_perf_test/test_suites/integration/continuous/idle-state-docker.yaml",
@@ -992,7 +967,6 @@
       "parameters": [
         {
           "id": "implementation",
-          "label": "Implementation",
           "values": [
             {
               "dimensions": {
@@ -1110,32 +1084,27 @@
         },
         {
           "id": "action_count",
-          "label": "Action Count",
           "values": [
             {
               "id": "1",
-              "label": "1",
               "runner_data": {
                 "test": "transform-1"
               }
             },
             {
               "id": "2",
-              "label": "2",
               "runner_data": {
                 "test": "transform-2"
               }
             },
             {
               "id": "3",
-              "label": "3",
               "runner_data": {
                 "test": "transform-3"
               }
             },
             {
               "id": "4",
-              "label": "4",
               "runner_data": {
                 "test": "transform-4"
               }
@@ -1154,7 +1123,6 @@
       "parameters": [
         {
           "id": "implementation",
-          "label": "Implementation",
           "values": [
             {
               "dimensions": {
@@ -1216,39 +1184,33 @@
         },
         {
           "id": "batch_size",
-          "label": "Batch Size",
           "values": [
             {
               "id": "256",
-              "label": "256",
               "runner_data": {
                 "test": "batch-256"
               }
             },
             {
               "id": "512",
-              "label": "512",
               "runner_data": {
                 "test": "batch-512"
               }
             },
             {
               "id": "1024",
-              "label": "1024",
               "runner_data": {
                 "test": "batch-1024"
               }
             },
             {
               "id": "2048",
-              "label": "2048",
               "runner_data": {
                 "test": "batch-2048"
               }
             },
             {
               "id": "4096",
-              "label": "4096",
               "runner_data": {
                 "test": "batch-4096"
               }
@@ -1267,7 +1229,6 @@
       "parameters": [
         {
           "id": "implementation",
-          "label": "Implementation",
           "values": [
             {
               "dimensions": {
@@ -1371,46 +1332,39 @@
         },
         {
           "id": "load_rate",
-          "label": "Load Rate",
           "values": [
             {
               "id": "100k",
-              "label": "100k",
               "runner_data": {
                 "test": "100k"
               }
             },
             {
               "id": "200k",
-              "label": "200k",
               "runner_data": {
                 "test": "200k"
               }
             },
             {
               "id": "300k",
-              "label": "300k",
               "runner_data": {
                 "test": "300k"
               }
             },
             {
               "id": "400k",
-              "label": "400k",
               "runner_data": {
                 "test": "400k"
               }
             },
             {
               "id": "600k",
-              "label": "600k",
               "runner_data": {
                 "test": "600k"
               }
             },
             {
               "id": "800k",
-              "label": "800k",
               "runner_data": {
                 "test": "800k"
               }
@@ -1436,7 +1390,6 @@
       "parameters": [
         {
           "id": "implementation",
-          "label": "Implementation",
           "values": [
             {
               "dimensions": {
@@ -1554,32 +1507,27 @@
         },
         {
           "id": "action_count",
-          "label": "Action Count",
           "values": [
             {
               "id": "1",
-              "label": "1",
               "runner_data": {
                 "test": "transform-1"
               }
             },
             {
               "id": "2",
-              "label": "2",
               "runner_data": {
                 "test": "transform-2"
               }
             },
             {
               "id": "3",
-              "label": "3",
               "runner_data": {
                 "test": "transform-3"
               }
             },
             {
               "id": "4",
-              "label": "4",
               "runner_data": {
                 "test": "transform-4"
               }
@@ -1598,7 +1546,6 @@
       "parameters": [
         {
           "id": "implementation",
-          "label": "Implementation",
           "values": [
             {
               "dimensions": {
@@ -1660,39 +1607,33 @@
         },
         {
           "id": "batch_size",
-          "label": "Batch Size",
           "values": [
             {
               "id": "256",
-              "label": "256",
               "runner_data": {
                 "test": "batch-256"
               }
             },
             {
               "id": "512",
-              "label": "512",
               "runner_data": {
                 "test": "batch-512"
               }
             },
             {
               "id": "1024",
-              "label": "1024",
               "runner_data": {
                 "test": "batch-1024"
               }
             },
             {
               "id": "2048",
-              "label": "2048",
               "runner_data": {
                 "test": "batch-2048"
               }
             },
             {
               "id": "4096",
-              "label": "4096",
               "runner_data": {
                 "test": "batch-4096"
               }
@@ -1711,7 +1652,6 @@
       "parameters": [
         {
           "id": "implementation",
-          "label": "Implementation",
           "values": [
             {
               "dimensions": {
@@ -1815,46 +1755,39 @@
         },
         {
           "id": "load_rate",
-          "label": "Load Rate",
           "values": [
             {
               "id": "100k",
-              "label": "100k",
               "runner_data": {
                 "test": "100k"
               }
             },
             {
               "id": "200k",
-              "label": "200k",
               "runner_data": {
                 "test": "200k"
               }
             },
             {
               "id": "300k",
-              "label": "300k",
               "runner_data": {
                 "test": "300k"
               }
             },
             {
               "id": "400k",
-              "label": "400k",
               "runner_data": {
                 "test": "400k"
               }
             },
             {
               "id": "600k",
-              "label": "600k",
               "runner_data": {
                 "test": "600k"
               }
             },
             {
               "id": "800k",
-              "label": "800k",
               "runner_data": {
                 "test": "800k"
               }
@@ -1880,7 +1813,6 @@
       "parameters": [
         {
           "id": "variant",
-          "label": "Variant",
           "values": [
             {
               "dimensions": {
@@ -2172,46 +2104,39 @@
         },
         {
           "id": "load_rate",
-          "label": "Load Rate",
           "values": [
             {
               "id": "100k",
-              "label": "100k",
               "runner_data": {
                 "test": "100k"
               }
             },
             {
               "id": "200k",
-              "label": "200k",
               "runner_data": {
                 "test": "200k"
               }
             },
             {
               "id": "300k",
-              "label": "300k",
               "runner_data": {
                 "test": "300k"
               }
             },
             {
               "id": "400k",
-              "label": "400k",
               "runner_data": {
                 "test": "400k"
               }
             },
             {
               "id": "600k",
-              "label": "600k",
               "runner_data": {
                 "test": "600k"
               }
             },
             {
               "id": "800k",
-              "label": "800k",
               "runner_data": {
                 "test": "800k"
               }
@@ -2237,7 +2162,6 @@
       "parameters": [
         {
           "id": "variant",
-          "label": "Variant",
           "values": [
             {
               "dimensions": {
@@ -2477,46 +2401,39 @@
         },
         {
           "id": "load_rate",
-          "label": "Load Rate",
           "values": [
             {
               "id": "100k",
-              "label": "100k",
               "runner_data": {
                 "test": "100k"
               }
             },
             {
               "id": "200k",
-              "label": "200k",
               "runner_data": {
                 "test": "200k"
               }
             },
             {
               "id": "300k",
-              "label": "300k",
               "runner_data": {
                 "test": "300k"
               }
             },
             {
               "id": "400k",
-              "label": "400k",
               "runner_data": {
                 "test": "400k"
               }
             },
             {
               "id": "600k",
-              "label": "600k",
               "runner_data": {
                 "test": "600k"
               }
             },
             {
               "id": "800k",
-              "label": "800k",
               "runner_data": {
                 "test": "800k"
               }
@@ -2542,11 +2459,9 @@
       "parameters": [
         {
           "id": "variant",
-          "label": "Variant",
           "values": [
             {
               "id": "passthrough-otap",
-              "label": "Passthrough Otap",
               "runner_data": {
                 "path": "tools/pipeline_perf_test/test_suites/integration/continuous/passthrough-otap.yaml",
                 "test": "OTAP-OTAP"
@@ -2554,7 +2469,6 @@
             },
             {
               "id": "passthrough",
-              "label": "Passthrough",
               "runner_data": {
                 "path": "tools/pipeline_perf_test/test_suites/integration/continuous/passthrough.yaml",
                 "test": "OTLP-OTLP"
@@ -2574,7 +2488,6 @@
       "parameters": [
         {
           "id": "variant",
-          "label": "Variant",
           "values": [
             {
               "dimensions": {
@@ -2646,7 +2559,6 @@
             },
             {
               "id": "saturation-max-throughput-otap",
-              "label": "Saturation Max Throughput Otap",
               "runner_data": {
                 "path": "tools/pipeline_perf_test/test_suites/integration/continuous/saturation-max-throughput-otap.yaml",
                 "test": "OTAP-ATTR-OTAP"
@@ -2654,7 +2566,6 @@
             },
             {
               "id": "saturation-max-throughput",
-              "label": "Saturation Max Throughput",
               "runner_data": {
                 "path": "tools/pipeline_perf_test/test_suites/integration/continuous/saturation-max-throughput.yaml",
                 "test": "OTLP-ATTR-OTLP"
@@ -2722,7 +2633,6 @@
       "parameters": [
         {
           "id": "variant",
-          "label": "Variant",
           "values": [
             {
               "id": "OTLP-ATTR-OTLP-BATCH10",
@@ -2783,7 +2693,6 @@
       "parameters": [
         {
           "id": "variant",
-          "label": "Variant",
           "values": [
             {
               "id": "syslog-tcp-otlp-go-collector",
@@ -2816,7 +2725,6 @@
       "parameters": [
         {
           "id": "variant",
-          "label": "Variant",
           "values": [
             {
               "id": "syslog-tcp-3164-attr-otap",
@@ -2863,7 +2771,6 @@
       "parameters": [
         {
           "id": "variant",
-          "label": "Variant",
           "values": [
             {
               "id": "syslog-3164-attr-otap",
@@ -2910,7 +2817,6 @@
       "parameters": [
         {
           "id": "variant",
-          "label": "Variant",
           "values": [
             {
               "dimensions": {
@@ -3137,46 +3043,39 @@
         },
         {
           "id": "load_rate",
-          "label": "Load Rate",
           "values": [
             {
               "id": "100k",
-              "label": "100k",
               "runner_data": {
                 "test": "100k"
               }
             },
             {
               "id": "200k",
-              "label": "200k",
               "runner_data": {
                 "test": "200k"
               }
             },
             {
               "id": "300k",
-              "label": "300k",
               "runner_data": {
                 "test": "300k"
               }
             },
             {
               "id": "400k",
-              "label": "400k",
               "runner_data": {
                 "test": "400k"
               }
             },
             {
               "id": "600k",
-              "label": "600k",
               "runner_data": {
                 "test": "600k"
               }
             },
             {
               "id": "800k",
-              "label": "800k",
               "runner_data": {
                 "test": "800k"
               }
