@@ -16,13 +16,13 @@
   },
   "results": [
     {
-      "dimension_keys": [],
+      "attribute_keys": [],
       "identity_keys": [
         "variant"
       ],
       "measurements": [
         {
-          "dimensions": [],
+          "attributes": [],
           "identity": [
             "otap-attr-otlp"
           ],
@@ -41,7 +41,7 @@
           ]
         },
         {
-          "dimensions": [],
+          "attributes": [],
           "identity": [
             "otlp-attr-otlp"
           ],
@@ -109,13 +109,13 @@
       "suite": "backpressure"
     },
     {
-      "dimension_keys": [],
+      "attribute_keys": [],
       "identity_keys": [
         "protocol"
       ],
       "measurements": [
         {
-          "dimensions": [],
+          "attributes": [],
           "identity": [
             "otap"
           ],
@@ -134,7 +134,7 @@
           ]
         },
         {
-          "dimensions": [],
+          "attributes": [],
           "identity": [
             "otlp"
           ],
@@ -202,13 +202,13 @@
       "suite": "batch-processor-nightly-logs"
     },
     {
-      "dimension_keys": [],
+      "attribute_keys": [],
       "identity_keys": [
         "protocol"
       ],
       "measurements": [
         {
-          "dimensions": [],
+          "attributes": [],
           "identity": [
             "otap"
           ],
@@ -226,7 +226,7 @@
           ]
         },
         {
-          "dimensions": [],
+          "attributes": [],
           "identity": [
             "otlp"
           ],
@@ -289,13 +289,13 @@
       "suite": "batch-processor-metrics"
     },
     {
-      "dimension_keys": [],
+      "attribute_keys": [],
       "identity_keys": [
         "protocol"
       ],
       "measurements": [
         {
-          "dimensions": [],
+          "attributes": [],
           "identity": [
             "otap"
           ],
@@ -313,7 +313,7 @@
           ]
         },
         {
-          "dimensions": [],
+          "attributes": [],
           "identity": [
             "otlp"
           ],
@@ -376,13 +376,13 @@
       "suite": "batch-processor-traces"
     },
     {
-      "dimension_keys": [],
+      "attribute_keys": [],
       "identity_keys": [
         "variant"
       ],
       "measurements": [
         {
-          "dimensions": [],
+          "attributes": [],
           "identity": [
             "passthrough"
           ],
@@ -401,7 +401,7 @@
           ]
         },
         {
-          "dimensions": [],
+          "attributes": [],
           "identity": [
             "passthrough-otap"
           ],
@@ -469,7 +469,7 @@
       "suite": "passthrough"
     },
     {
-      "dimension_keys": [
+      "attribute_keys": [
         "engine_cores",
         "protocol"
       ],
@@ -478,7 +478,7 @@
       ],
       "measurements": [
         {
-          "dimensions": [
+          "attributes": [
             "16",
             "otlp"
           ],
@@ -500,7 +500,7 @@
           ]
         },
         {
-          "dimensions": [
+          "attributes": [
             "1",
             "otlp"
           ],
@@ -522,7 +522,7 @@
           ]
         },
         {
-          "dimensions": [
+          "attributes": [
             "2",
             "otlp"
           ],
@@ -544,7 +544,7 @@
           ]
         },
         {
-          "dimensions": [
+          "attributes": [
             "4",
             "otlp"
           ],
@@ -566,7 +566,7 @@
           ]
         },
         {
-          "dimensions": [
+          "attributes": [
             "8",
             "otlp"
           ],
@@ -588,7 +588,7 @@
           ]
         },
         {
-          "dimensions": [
+          "attributes": [
             null,
             null
           ],
@@ -610,7 +610,7 @@
           ]
         },
         {
-          "dimensions": [
+          "attributes": [
             null,
             null
           ],
@@ -632,7 +632,7 @@
           ]
         },
         {
-          "dimensions": [
+          "attributes": [
             "1",
             "otap"
           ],
@@ -654,7 +654,7 @@
           ]
         },
         {
-          "dimensions": [
+          "attributes": [
             "2",
             "otap"
           ],
@@ -676,7 +676,7 @@
           ]
         },
         {
-          "dimensions": [
+          "attributes": [
             "4",
             "otap"
           ],
@@ -698,7 +698,7 @@
           ]
         },
         {
-          "dimensions": [
+          "attributes": [
             "8",
             "otap"
           ],
@@ -769,14 +769,14 @@
       "suite": "saturation"
     },
     {
-      "dimension_keys": [],
+      "attribute_keys": [],
       "identity_keys": [
         "variant",
         "case"
       ],
       "measurements": [
         {
-          "dimensions": [],
+          "attributes": [],
           "identity": [
             "100klrps-batch-sizes-docker",
             "OTLP-ATTR-OTLP-BATCH10"
@@ -796,7 +796,7 @@
           ]
         },
         {
-          "dimensions": [],
+          "attributes": [],
           "identity": [
             "100klrps-batch-sizes-docker",
             "OTLP-ATTR-OTLP-BATCH100"
@@ -816,7 +816,7 @@
           ]
         },
         {
-          "dimensions": [],
+          "attributes": [],
           "identity": [
             "100klrps-batch-sizes-docker",
             "OTLP-ATTR-OTLP-BATCH1024"
@@ -836,7 +836,7 @@
           ]
         },
         {
-          "dimensions": [],
+          "attributes": [],
           "identity": [
             "100klrps-batch-sizes-docker",
             "OTLP-ATTR-OTLP-BATCH4096"
@@ -856,7 +856,7 @@
           ]
         },
         {
-          "dimensions": [],
+          "attributes": [],
           "identity": [
             "100klrps-batch-sizes-docker",
             "OTLP-ATTR-OTLP-BATCH512"
@@ -876,7 +876,7 @@
           ]
         },
         {
-          "dimensions": [],
+          "attributes": [],
           "identity": [
             "100klrps-batch-sizes-docker",
             "OTLP-ATTR-OTLP-BATCH8192"
@@ -945,13 +945,13 @@
       "suite": "standard-load-batch-size"
     },
     {
-      "dimension_keys": [],
+      "attribute_keys": [],
       "identity_keys": [
         "variant"
       ],
       "measurements": [
         {
-          "dimensions": [],
+          "attributes": [],
           "identity": [
             "syslog-3164-attr-otap"
           ],
@@ -970,7 +970,7 @@
           ]
         },
         {
-          "dimensions": [],
+          "attributes": [],
           "identity": [
             "syslog-3164-attr-otlp"
           ],
@@ -989,7 +989,7 @@
           ]
         },
         {
-          "dimensions": [],
+          "attributes": [],
           "identity": [
             "syslog-3164-cef-attr-otap"
           ],
@@ -1008,7 +1008,7 @@
           ]
         },
         {
-          "dimensions": [],
+          "attributes": [],
           "identity": [
             "syslog-3164-cef-attr-otlp"
           ],
@@ -1076,13 +1076,13 @@
       "suite": "syslog"
     },
     {
-      "dimension_keys": [],
+      "attribute_keys": [],
       "identity_keys": [
         "variant"
       ],
       "measurements": [
         {
-          "dimensions": [],
+          "attributes": [],
           "identity": [
             "syslog-tcp-3164-attr-otap"
           ],
@@ -1101,7 +1101,7 @@
           ]
         },
         {
-          "dimensions": [],
+          "attributes": [],
           "identity": [
             "syslog-tcp-3164-attr-otlp"
           ],
@@ -1120,7 +1120,7 @@
           ]
         },
         {
-          "dimensions": [],
+          "attributes": [],
           "identity": [
             "syslog-tcp-3164-cef-attr-otap"
           ],
@@ -1139,7 +1139,7 @@
           ]
         },
         {
-          "dimensions": [],
+          "attributes": [],
           "identity": [
             "syslog-tcp-3164-cef-attr-otlp"
           ],
@@ -1207,13 +1207,13 @@
       "suite": "syslog-tcp"
     },
     {
-      "dimension_keys": [],
+      "attribute_keys": [],
       "identity_keys": [
         "variant"
       ],
       "measurements": [
         {
-          "dimensions": [],
+          "attributes": [],
           "identity": [
             "syslog-tcp-otap-go-collector"
           ],
@@ -1232,7 +1232,7 @@
           ]
         },
         {
-          "dimensions": [],
+          "attributes": [],
           "identity": [
             "syslog-tcp-otlp-go-collector"
           ],
