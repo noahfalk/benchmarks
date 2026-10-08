@@ -247,7 +247,7 @@ function hardwareKey(environment) {
   return environmentKey(hardwareIdentity(environment));
 }
 
-function osDimension(environment) {
+function osAttribute(environment) {
   const value = environment.os;
   if (value === null || value === undefined) return null;
   const normalized = String(value).toLowerCase();
@@ -278,7 +278,7 @@ function historyFacets(series) {
   const facets = {};
   for (const [namespace, values] of [
     ["identity", series.identity],
-    ["dimension", series.dimensions],
+    ["attribute", series.attributes],
     ["environment", series.environment],
     ["source", { repository: series.repository, branch: series.branch }],
   ]) {
@@ -313,7 +313,7 @@ function suiteParameterLabels(suite) {
 
 function historySeriesColor(series) {
   const key = JSON.stringify([
-    series.identity, series.dimensions, series.environment,
+    series.identity, series.attributes, series.environment,
   ]);
   let hash = 0;
   for (let index = 0; index < key.length; index += 1) {
@@ -328,14 +328,14 @@ function historySeriesColor(series) {
 
 function suiteAxes(records, suite) {
   const axes = [];
-  const categories = collectDimensionCategories(records.map((item) => ({
-    dimensions: historyFacets(item),
+  const categories = collectAttributeCategories(records.map((item) => ({
+    attributes: historyFacets(item),
   })));
   const identityKeys = [...new Set(records.flatMap((item) => item.identity_keys))]
     .map((key) => `identity.${key}`);
-  const dimensionKeys = [...categories.keys()]
-    .filter((key) => key.startsWith("dimension."));
-  for (const key of [...identityKeys, ...dimensionKeys]) {
+  const attributeKeys = [...categories.keys()]
+    .filter((key) => key.startsWith("attribute."));
+  for (const key of [...identityKeys, ...attributeKeys]) {
     if ((categories.get(key) || []).length > 1) {
       const parameter = key.startsWith("identity.")
         ? suite.parameters.find((item) => item.id === key.slice(9))
@@ -352,8 +352,8 @@ function suiteAxes(records, suite) {
 function defaultSuiteAxis(axes) {
   for (const id of [
     "identity.load_rate", "identity.batch_size", "identity.action_count",
-    "identity.case", "identity.protocol", "dimension.load_rate", "dimension.batch_size",
-    "dimension.engine_cores", "dimension.allocated_cores",
+    "identity.case", "identity.protocol", "attribute.load_rate", "attribute.batch_size",
+    "attribute.engine_cores", "attribute.allocated_cores",
   ]) {
     if (axes.some((axis) => axis.id === id)) return id;
   }
@@ -366,7 +366,7 @@ function explorerChart(records, axis, parameterLabels) {
   const labels = new Map();
   const axisValue = (record) => {
     const [namespace, key] = axis.split(".");
-    return String((namespace === "identity" ? record.identity : record.dimensions)[key]
+    return String((namespace === "identity" ? record.identity : record.attributes)[key]
       ?? FILTER_MISSING);
   };
   const identityKeys = new Set(records.flatMap((item) => Object.keys(item.identity)));
@@ -376,38 +376,38 @@ function explorerChart(records, axis, parameterLabels) {
       || records.every((item) => (item.identity[key] ?? FILTER_MISSING)
         === (records[0].identity[key] ?? FILTER_MISSING)))
     && new Set(records.map(axisValue)).size === records.length;
-  const dependentDimensions = new Set();
+  const dependentAttributes = new Set();
   if (!history) {
-    const keys = new Set(records.flatMap((item) => Object.keys(item.dimensions)));
+    const keys = new Set(records.flatMap((item) => Object.keys(item.attributes)));
     for (const key of keys) {
       const byAxis = new Map();
       for (const record of records) {
         const x = axisValue(record);
         if (!byAxis.has(x)) byAxis.set(x, new Set());
-        byAxis.get(x).add(record.dimensions[key] ?? FILTER_MISSING);
+        byAxis.get(x).add(record.attributes[key] ?? FILTER_MISSING);
       }
       if ([...byAxis.values()].every((values) => values.size === 1)) {
-        dependentDimensions.add(key);
+        dependentAttributes.add(key);
       }
     }
   }
   for (const record of records) {
     const identity = { ...record.identity };
-    const dimensions = { ...record.dimensions };
+    const attributes = { ...record.attributes };
     let x = history
       ? new Date(record.ordering_timestamp).toISOString()
       : record.run_id;
     if (!history) {
       const [namespace, key] = axis.split(".");
-      const fields = namespace === "identity" ? identity : dimensions;
+      const fields = namespace === "identity" ? identity : attributes;
       x = axisValue(record);
       if (!identityBars) delete fields[key];
-      for (const dimension of dependentDimensions) delete dimensions[dimension];
+      for (const attribute of dependentAttributes) delete attributes[attribute];
     }
     labels.set(x, record);
     const series = {
       identity, identity_keys: record.identity_keys,
-      dimensions,
+      attributes,
       environment: history
         ? record.environment
         : hardwareIdentity(record.environment),
@@ -496,16 +496,18 @@ async function loadResultDetails(record, suite, catalog, root, target, isCurrent
       const identity = Object.fromEntries(table.identity_keys.map(
         (key, index) => [key, item.identity[index]],
       ));
-      const dimensions = Object.fromEntries(table.dimension_keys.map(
-        (key, index) => [key, item.dimensions[index]],
+      const attributeKeys = table.attribute_keys || table.dimension_keys;
+      const attributeValues = item.attributes || item.dimensions;
+      const attributes = Object.fromEntries(attributeKeys.map(
+        (key, index) => [key, attributeValues[index]],
       ).filter(([_key, value]) => value !== null));
-      const runOs = osDimension(bundle.environment);
+      const runOs = osAttribute(bundle.environment);
       if (runOs !== null) {
-        delete dimensions.os;
+        delete attributes.os;
         identity.os = runOs;
       }
       return environmentKey(identity) === environmentKey(record.identity)
-        && environmentKey(dimensions) === environmentKey(record.dimensions);
+        && environmentKey(attributes) === environmentKey(record.attributes);
     });
     if (!measurement) throw new Error("Selected measurement is absent from its run");
     const rows = table.metrics.map((metric, index) => {
@@ -565,8 +567,8 @@ function renderSuiteExplorer(target, suite, data, catalog, root, overview = fals
   environments.sort(([left], [right]) => left.localeCompare(right));
   const axes = suiteAxes(records, suite);
   axes.push({ id: "history", label: "Commit history" });
-  const categories = collectDimensionCategories(records.map((item) => ({
-    dimensions: historyFacets(item),
+  const categories = collectAttributeCategories(records.map((item) => ({
+    attributes: historyFacets(item),
   })));
   for (const [key, values] of categories) {
     if (key.startsWith("environment.") || values.length < 2) categories.delete(key);
@@ -685,7 +687,7 @@ function renderSuiteExplorer(target, suite, data, catalog, root, overview = fals
     const [metric, unit] = JSON.parse(metricSelect.value);
     const matches = (item) => item.metric === metric && item.unit === unit
       && hardwareKey(item.environment) === environmentSelect.value
-      && observationMatchesFilters({ dimensions: historyFacets(item) }, filterState);
+      && observationMatchesFilters({ attributes: historyFacets(item) }, filterState);
     const visible = history
       ? data.series.filter(matches).flatMap((item) =>
         item.points.map((point) => ({
@@ -772,9 +774,9 @@ function renderSuiteExplorer(target, suite, data, catalog, root, overview = fals
   for (const control of [metricSelect, axisSelect, environmentSelect]) {
     control.addEventListener("change", renderSafely);
   }
-  for (const checkbox of target.querySelectorAll("input[data-dimension]")) {
+  for (const checkbox of target.querySelectorAll("input[data-attribute]")) {
     checkbox.addEventListener("change", () => {
-      const values = filterState.get(checkbox.dataset.dimension);
+      const values = filterState.get(checkbox.dataset.attribute);
       if (checkbox.checked) values.add(checkbox.value);
       else values.delete(checkbox.value);
       renderSafely();
@@ -782,7 +784,7 @@ function renderSuiteExplorer(target, suite, data, catalog, root, overview = fals
   }
   target.querySelector(".filter-reset").addEventListener("click", () => {
     for (const [key, values] of categories) filterState.set(key, new Set(values));
-    for (const checkbox of target.querySelectorAll("input[data-dimension]")) {
+    for (const checkbox of target.querySelectorAll("input[data-attribute]")) {
       checkbox.checked = true;
     }
     renderSafely();
@@ -798,7 +800,7 @@ function environmentLabel(environment) {
   ].filter(Boolean).join(" / ");
 }
 
-const FILTER_MISSING = "__benchmark_dimension_not_set__";
+const FILTER_MISSING = "__benchmark_attribute_not_set__";
 
 let activeCharts = [];
 
@@ -840,10 +842,10 @@ function comparisonObservations(comparison, _selected, observations) {
   );
 }
 
-function collectDimensionCategories(observations) {
+function collectAttributeCategories(observations) {
   const keys = new Set();
   for (const observation of observations) {
-    for (const key of Object.keys(observation.dimensions)) {
+    for (const key of Object.keys(observation.attributes)) {
       keys.add(key);
     }
   }
@@ -851,7 +853,7 @@ function collectDimensionCategories(observations) {
   for (const key of [...keys].sort()) {
     const values = new Set();
     for (const observation of observations) {
-      values.add(observation.dimensions[key] ?? FILTER_MISSING);
+      values.add(observation.attributes[key] ?? FILTER_MISSING);
     }
     categories.set(
       key,
@@ -877,7 +879,7 @@ function displayFilterValue(value) {
 
 function observationMatchesFilters(observation, filterState) {
   for (const [key, selectedValues] of filterState) {
-    const value = observation.dimensions[key] ?? FILTER_MISSING;
+    const value = observation.attributes[key] ?? FILTER_MISSING;
     if (!selectedValues.has(value)) {
       return false;
     }
@@ -893,7 +895,7 @@ function renderFilterGroups(categories, filterState, prefix = "filter") {
         <label class="filter-option" for="${escapeHtml(id)}">
           <input id="${escapeHtml(id)}"
                  type="checkbox"
-                 data-dimension="${escapeHtml(key)}"
+                 data-attribute="${escapeHtml(key)}"
                  value="${escapeHtml(value)}"
                  ${filterState.get(key).has(value) ? "checked" : ""}>
           <span>${escapeHtml(displayFilterValue(value))}</span>
@@ -1180,7 +1182,7 @@ function renderComparisonPage(catalog, snapshot, views, suites, comparisons) {
     selected,
     snapshot.observations,
   );
-  const categories = collectDimensionCategories(observations);
+  const categories = collectAttributeCategories(observations);
   const filterState = initialFilterState(categories);
   document.title = `${comparison.name} - OTel Arrow Benchmarks`;
   document.getElementById("page-title").textContent = comparison.name;
@@ -1246,10 +1248,10 @@ function renderComparisonPage(catalog, snapshot, views, suites, comparisons) {
       `(${snapshot.observations.length} latest available observations).`;
   };
   for (const checkbox of document.querySelectorAll(
-    "#filters input[data-dimension]",
+    "#filters input[data-attribute]",
   )) {
     checkbox.addEventListener("change", () => {
-      const values = filterState.get(checkbox.dataset.dimension);
+      const values = filterState.get(checkbox.dataset.attribute);
       if (checkbox.checked) {
         values.add(checkbox.value);
       } else {
@@ -1263,7 +1265,7 @@ function renderComparisonPage(catalog, snapshot, views, suites, comparisons) {
       filterState.set(key, new Set(values));
     }
     for (const checkbox of document.querySelectorAll(
-      "#filters input[data-dimension]",
+      "#filters input[data-attribute]",
     )) {
       checkbox.checked = true;
     }

@@ -555,7 +555,7 @@
       "text": "The Dataflow Engine and these benchmarks are a work in progress. Do you have feedback?"
     }
   },
-  "schema_version": 2,
+  "schema_version": 3,
   "suites": [
     {
       "description": "Measures resource efficiency while a single-core DFE applies an attribute rename to a fixed offered load of 100K logs/sec across OTLP and OTAP input/output combinations. The load generator and sink each run on a separate core.",
@@ -601,7 +601,7 @@
       "runner_data": {
         "path": "tools/pipeline_perf_test/test_suites/integration/continuous/100klrps-docker.yaml"
       },
-      "schema_version": 2
+      "schema_version": 3
     },
     {
       "description": "Measures the resource-efficiency impact of receiver acknowledgment-based flow control at a fixed offered load of 100K logs/sec. A single-core DFE applies an attribute rename with wait-for-result enabled, then exports to a separate one-core backend DFE ending in an in-memory performance sink. The backend receiver acknowledges accepted data quickly without waiting for the sink, so it is not deliberately throttled.",
@@ -633,7 +633,7 @@
       "runner_data": {
         "path": "tools/pipeline_perf_test/test_suites/integration/nightly/backpressure-docker.yaml"
       },
-      "schema_version": 2
+      "schema_version": 3
     },
     {
       "description": "Continuous 100k logs/sec batch processor workload using pre-generated traffic and a 20-second observation window.",
@@ -665,7 +665,7 @@
       "runner_data": {
         "path": "tools/pipeline_perf_test/test_suites/integration/continuous/100klrps-docker.yaml"
       },
-      "schema_version": 2
+      "schema_version": 3
     },
     {
       "description": "Nightly metric batch processor workload across OTAP and OTLP.",
@@ -697,7 +697,7 @@
       "runner_data": {
         "path": "tools/pipeline_perf_test/test_suites/integration/nightly/batch-processor-docker.yaml"
       },
-      "schema_version": 2
+      "schema_version": 3
     },
     {
       "description": "Nightly 100k logs/sec batch processor workload using freshly generated traffic and a 60-second observation window.",
@@ -729,7 +729,7 @@
       "runner_data": {
         "path": "tools/pipeline_perf_test/test_suites/integration/nightly/batch-processor-docker.yaml"
       },
-      "schema_version": 2
+      "schema_version": 3
     },
     {
       "description": "Nightly trace batch processor workload across OTAP and OTLP.",
@@ -761,7 +761,7 @@
       "runner_data": {
         "path": "tools/pipeline_perf_test/test_suites/integration/nightly/batch-processor-docker.yaml"
       },
-      "schema_version": 2
+      "schema_version": 3
     },
     {
       "description": "DFE and OpenTelemetry Collector ClickHouse throughput and resource workloads.",
@@ -800,7 +800,7 @@
         }
       ],
       "runner": "orchestrator",
-      "schema_version": 2
+      "schema_version": 3
     },
     {
       "description": "DFE and OpenTelemetry Collector filter processor workloads.",
@@ -871,7 +871,7 @@
         }
       ],
       "runner": "orchestrator",
-      "schema_version": 2
+      "schema_version": 3
     },
     {
       "description": "Idle-state resource usage across allocated core counts.",
@@ -883,7 +883,7 @@
           "id": "variant",
           "values": [
             {
-              "dimensions": {
+              "attributes": {
                 "allocated_cores": "16"
               },
               "id": "idle-state-16cores-docker",
@@ -895,7 +895,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "allocated_cores": "2"
               },
               "id": "idle-state-2cores-docker",
@@ -907,7 +907,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "allocated_cores": "32"
               },
               "id": "idle-state-32cores-docker",
@@ -919,7 +919,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "allocated_cores": "4"
               },
               "id": "idle-state-4cores-docker",
@@ -931,7 +931,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "allocated_cores": "8"
               },
               "id": "idle-state-8cores-docker",
@@ -943,7 +943,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "allocated_cores": "1"
               },
               "id": "idle-state-docker",
@@ -957,7 +957,7 @@
         }
       ],
       "runner": "orchestrator",
-      "schema_version": 2
+      "schema_version": 3
     },
     {
       "description": "Compare log attribute insert implementations while varying number of attribute insert actions at 200k logs/sec.",
@@ -969,7 +969,7 @@
           "id": "implementation",
           "values": [
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "dfe",
                 "compression": "none",
                 "processor": "attributes",
@@ -983,7 +983,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "dfe",
                 "compression": "none",
                 "processor": "transform",
@@ -997,7 +997,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "dfe",
                 "compression": "none",
                 "processor": "attributes",
@@ -1011,7 +1011,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "dfe",
                 "compression": "none",
                 "processor": "transform",
@@ -1025,7 +1025,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "fbit",
                 "compression": "none",
                 "processor": "modify",
@@ -1039,7 +1039,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "otc",
                 "compression": "none",
                 "processor": "attributes",
@@ -1053,7 +1053,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "otc",
                 "compression": "none",
                 "processor": "attributes",
@@ -1067,7 +1067,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "otc",
                 "compression": "none",
                 "processor": "transform",
@@ -1113,7 +1113,7 @@
         }
       ],
       "runner": "comparison-dashboard",
-      "schema_version": 2
+      "schema_version": 3
     },
     {
       "description": "Compare log attribute insert implementations while varying load-generator batch size at 400k logs/sec.",
@@ -1125,7 +1125,7 @@
           "id": "implementation",
           "values": [
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "dfe",
                 "compression": "none",
                 "processor": "attributes",
@@ -1139,7 +1139,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "dfe",
                 "compression": "none",
                 "processor": "attributes",
@@ -1153,7 +1153,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "fbit",
                 "compression": "none",
                 "processor": "modify",
@@ -1167,7 +1167,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "otc",
                 "compression": "none",
                 "processor": "attributes",
@@ -1219,7 +1219,7 @@
         }
       ],
       "runner": "comparison-dashboard",
-      "schema_version": 2
+      "schema_version": 3
     },
     {
       "description": "Compare log attribute insert implementations while varying offered log rate.",
@@ -1231,7 +1231,7 @@
           "id": "implementation",
           "values": [
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "dfe",
                 "compression": "none",
                 "processor": "attributes",
@@ -1245,7 +1245,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "dfe",
                 "compression": "none",
                 "processor": "transform",
@@ -1259,7 +1259,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "dfe",
                 "compression": "none",
                 "processor": "attributes",
@@ -1273,7 +1273,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "dfe",
                 "compression": "none",
                 "processor": "transform",
@@ -1287,7 +1287,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "fbit",
                 "compression": "none",
                 "processor": "modify",
@@ -1301,7 +1301,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "otc",
                 "compression": "none",
                 "processor": "attributes",
@@ -1315,7 +1315,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "otc",
                 "compression": "none",
                 "processor": "transform",
@@ -1380,7 +1380,7 @@
         }
       ],
       "runner": "comparison-dashboard",
-      "schema_version": 2
+      "schema_version": 3
     },
     {
       "description": "Compare log attribute rename implementations while varying number of attribute rename actions at 200k logs/sec.",
@@ -1392,7 +1392,7 @@
           "id": "implementation",
           "values": [
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "dfe",
                 "compression": "none",
                 "processor": "attributes",
@@ -1406,7 +1406,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "dfe",
                 "compression": "none",
                 "processor": "transform",
@@ -1420,7 +1420,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "dfe",
                 "compression": "none",
                 "processor": "attributes",
@@ -1434,7 +1434,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "dfe",
                 "compression": "none",
                 "processor": "transform",
@@ -1448,7 +1448,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "fbit",
                 "compression": "none",
                 "processor": "modify",
@@ -1462,7 +1462,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "otc",
                 "compression": "none",
                 "processor": "attributes",
@@ -1476,7 +1476,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "otc",
                 "compression": "none",
                 "processor": "attributes",
@@ -1490,7 +1490,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "otc",
                 "compression": "none",
                 "processor": "transform",
@@ -1536,7 +1536,7 @@
         }
       ],
       "runner": "comparison-dashboard",
-      "schema_version": 2
+      "schema_version": 3
     },
     {
       "description": "Compare log attribute rename implementations while varying load-generator batch size at 400k logs/sec.",
@@ -1548,7 +1548,7 @@
           "id": "implementation",
           "values": [
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "dfe",
                 "compression": "none",
                 "processor": "attributes",
@@ -1562,7 +1562,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "dfe",
                 "compression": "none",
                 "processor": "attributes",
@@ -1576,7 +1576,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "fbit",
                 "compression": "none",
                 "processor": "modify",
@@ -1590,7 +1590,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "otc",
                 "compression": "none",
                 "processor": "attributes",
@@ -1642,7 +1642,7 @@
         }
       ],
       "runner": "comparison-dashboard",
-      "schema_version": 2
+      "schema_version": 3
     },
     {
       "description": "Compare log attribute rename implementations while varying offered log rate.",
@@ -1654,7 +1654,7 @@
           "id": "implementation",
           "values": [
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "dfe",
                 "compression": "none",
                 "processor": "attributes",
@@ -1668,7 +1668,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "dfe",
                 "compression": "none",
                 "processor": "transform",
@@ -1682,7 +1682,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "dfe",
                 "compression": "none",
                 "processor": "attributes",
@@ -1696,7 +1696,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "dfe",
                 "compression": "none",
                 "processor": "transform",
@@ -1710,7 +1710,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "fbit",
                 "compression": "none",
                 "processor": "modify",
@@ -1724,7 +1724,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "otc",
                 "compression": "none",
                 "processor": "attributes",
@@ -1738,7 +1738,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "otc",
                 "compression": "none",
                 "processor": "transform",
@@ -1803,7 +1803,7 @@
         }
       ],
       "runner": "comparison-dashboard",
-      "schema_version": 2
+      "schema_version": 3
     },
     {
       "description": "Baseline log pipelines across engines, protocols, and compression.",
@@ -1815,7 +1815,7 @@
           "id": "variant",
           "values": [
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "dfe",
                 "compression": "gzip",
                 "protocol": "otap",
@@ -1828,7 +1828,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "dfe",
                 "compression": "none",
                 "protocol": "otap",
@@ -1841,7 +1841,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "dfe",
                 "compression": "zstd",
                 "protocol": "otap",
@@ -1854,7 +1854,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "dfe",
                 "compression": "gzip",
                 "protocol": "otlp",
@@ -1867,7 +1867,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "dfe",
                 "compression": "none",
                 "protocol": "otlp",
@@ -1880,7 +1880,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "dfe",
                 "compression": "zstd",
                 "protocol": "otlp",
@@ -1893,7 +1893,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "dfe",
                 "compression": "gzip",
                 "protocol": "otlphttp",
@@ -1906,7 +1906,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "dfe",
                 "compression": "none",
                 "protocol": "otlphttp",
@@ -1919,7 +1919,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "dfe",
                 "compression": "zstd",
                 "protocol": "otlphttp",
@@ -1932,7 +1932,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "fbit",
                 "compression": "none",
                 "protocol": "otlp",
@@ -1945,7 +1945,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "fbit",
                 "compression": "gzip",
                 "protocol": "otlphttp",
@@ -1958,7 +1958,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "fbit",
                 "compression": "none",
                 "protocol": "otlphttp",
@@ -1971,7 +1971,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "fbit",
                 "compression": "zstd",
                 "protocol": "otlphttp",
@@ -1984,7 +1984,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "otc",
                 "compression": "gzip",
                 "protocol": "otap",
@@ -1997,7 +1997,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "otc",
                 "compression": "none",
                 "protocol": "otap",
@@ -2010,7 +2010,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "otc",
                 "compression": "zstd",
                 "protocol": "otap",
@@ -2023,7 +2023,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "otc",
                 "compression": "gzip",
                 "protocol": "otlp",
@@ -2036,7 +2036,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "otc",
                 "compression": "none",
                 "protocol": "otlp",
@@ -2049,7 +2049,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "otc",
                 "compression": "zstd",
                 "protocol": "otlp",
@@ -2062,7 +2062,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "otc",
                 "compression": "none",
                 "protocol": "otlphttp",
@@ -2075,7 +2075,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "rotel",
                 "compression": "gzip",
                 "protocol": "otlp",
@@ -2088,7 +2088,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "rotel",
                 "compression": "gzip",
                 "protocol": "otlphttp",
@@ -2152,7 +2152,7 @@
         }
       ],
       "runner": "comparison-dashboard",
-      "schema_version": 2
+      "schema_version": 3
     },
     {
       "description": "Baseline metric pipelines across engines, protocols, and compression.",
@@ -2164,7 +2164,7 @@
           "id": "variant",
           "values": [
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "dfe",
                 "compression": "gzip",
                 "protocol": "otap",
@@ -2177,7 +2177,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "dfe",
                 "compression": "none",
                 "protocol": "otap",
@@ -2190,7 +2190,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "dfe",
                 "compression": "zstd",
                 "protocol": "otap",
@@ -2203,7 +2203,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "dfe",
                 "compression": "gzip",
                 "protocol": "otlp",
@@ -2216,7 +2216,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "dfe",
                 "compression": "none",
                 "protocol": "otlp",
@@ -2229,7 +2229,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "dfe",
                 "compression": "zstd",
                 "protocol": "otlp",
@@ -2242,7 +2242,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "dfe",
                 "compression": "gzip",
                 "protocol": "otlphttp",
@@ -2255,7 +2255,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "dfe",
                 "compression": "none",
                 "protocol": "otlphttp",
@@ -2268,7 +2268,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "dfe",
                 "compression": "zstd",
                 "protocol": "otlphttp",
@@ -2281,7 +2281,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "otc",
                 "compression": "gzip",
                 "protocol": "otap",
@@ -2294,7 +2294,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "otc",
                 "compression": "none",
                 "protocol": "otap",
@@ -2307,7 +2307,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "otc",
                 "compression": "zstd",
                 "protocol": "otap",
@@ -2320,7 +2320,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "otc",
                 "compression": "gzip",
                 "protocol": "otlp",
@@ -2333,7 +2333,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "otc",
                 "compression": "none",
                 "protocol": "otlp",
@@ -2346,7 +2346,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "otc",
                 "compression": "zstd",
                 "protocol": "otlp",
@@ -2359,7 +2359,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "otc",
                 "compression": "none",
                 "protocol": "otlphttp",
@@ -2372,7 +2372,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "rotel",
                 "compression": "gzip",
                 "protocol": "otlp",
@@ -2385,7 +2385,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "rotel",
                 "compression": "gzip",
                 "protocol": "otlphttp",
@@ -2449,7 +2449,7 @@
         }
       ],
       "runner": "comparison-dashboard",
-      "schema_version": 2
+      "schema_version": 3
     },
     {
       "description": "Unbounded OTLP and OTAP passthrough throughput workloads.",
@@ -2478,7 +2478,7 @@
         }
       ],
       "runner": "orchestrator",
-      "schema_version": 2
+      "schema_version": 3
     },
     {
       "description": "Maximum-throughput and multi-core scaling workloads; scaling efficiency is derived from these results.",
@@ -2490,7 +2490,7 @@
           "id": "variant",
           "values": [
             {
-              "dimensions": {
+              "attributes": {
                 "engine_cores": "24",
                 "protocol": "otlp"
               },
@@ -2498,7 +2498,7 @@
               "label": "Saturation 24Cores (Legacy)"
             },
             {
-              "dimensions": {
+              "attributes": {
                 "engine_cores": "16",
                 "protocol": "otlp"
               },
@@ -2510,7 +2510,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "engine_cores": "1",
                 "protocol": "otlp"
               },
@@ -2522,7 +2522,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "engine_cores": "2",
                 "protocol": "otlp"
               },
@@ -2534,7 +2534,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "engine_cores": "4",
                 "protocol": "otlp"
               },
@@ -2546,7 +2546,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "engine_cores": "8",
                 "protocol": "otlp"
               },
@@ -2572,7 +2572,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "engine_cores": "1",
                 "protocol": "otap"
               },
@@ -2584,7 +2584,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "engine_cores": "2",
                 "protocol": "otap"
               },
@@ -2596,7 +2596,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "engine_cores": "4",
                 "protocol": "otap"
               },
@@ -2608,7 +2608,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "engine_cores": "8",
                 "protocol": "otap"
               },
@@ -2623,7 +2623,7 @@
         }
       ],
       "runner": "orchestrator",
-      "schema_version": 2
+      "schema_version": 3
     },
     {
       "description": "Standard-load input batch-size sweep.",
@@ -2683,7 +2683,7 @@
       "runner_data": {
         "path": "tools/pipeline_perf_test/test_suites/integration/nightly/100klrps-batch-sizes-docker.yaml"
       },
-      "schema_version": 2
+      "schema_version": 3
     },
     {
       "description": "OpenTelemetry Collector syslog ingestion over TCP.",
@@ -2715,7 +2715,7 @@
       "runner_data": {
         "path": "tools/pipeline_perf_test/test_suites/integration/nightly/syslog-tcp-otelcol-docker.yaml"
       },
-      "schema_version": 2
+      "schema_version": 3
     },
     {
       "description": "DFE syslog ingestion over TCP.",
@@ -2761,7 +2761,7 @@
       "runner_data": {
         "path": "tools/pipeline_perf_test/test_suites/integration/nightly/syslog-tcp-docker.yaml"
       },
-      "schema_version": 2
+      "schema_version": 3
     },
     {
       "description": "Syslog ingestion and processing workloads.",
@@ -2807,7 +2807,7 @@
       "runner_data": {
         "path": "tools/pipeline_perf_test/test_suites/integration/nightly/syslog-docker.yaml"
       },
-      "schema_version": 2
+      "schema_version": 3
     },
     {
       "description": "Baseline trace pipelines across engines, protocols, and compression.",
@@ -2819,7 +2819,7 @@
           "id": "variant",
           "values": [
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "dfe",
                 "compression": "gzip",
                 "protocol": "otap",
@@ -2832,7 +2832,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "dfe",
                 "compression": "none",
                 "protocol": "otap",
@@ -2845,7 +2845,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "dfe",
                 "compression": "zstd",
                 "protocol": "otap",
@@ -2858,7 +2858,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "dfe",
                 "compression": "gzip",
                 "protocol": "otlp",
@@ -2871,7 +2871,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "dfe",
                 "compression": "none",
                 "protocol": "otlp",
@@ -2884,7 +2884,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "dfe",
                 "compression": "zstd",
                 "protocol": "otlp",
@@ -2897,7 +2897,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "dfe",
                 "compression": "gzip",
                 "protocol": "otlphttp",
@@ -2910,7 +2910,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "dfe",
                 "compression": "none",
                 "protocol": "otlphttp",
@@ -2923,7 +2923,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "dfe",
                 "compression": "zstd",
                 "protocol": "otlphttp",
@@ -2936,7 +2936,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "otc",
                 "compression": "gzip",
                 "protocol": "otap",
@@ -2949,7 +2949,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "otc",
                 "compression": "none",
                 "protocol": "otap",
@@ -2962,7 +2962,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "otc",
                 "compression": "zstd",
                 "protocol": "otap",
@@ -2975,7 +2975,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "otc",
                 "compression": "gzip",
                 "protocol": "otlp",
@@ -2988,7 +2988,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "otc",
                 "compression": "none",
                 "protocol": "otlp",
@@ -3001,7 +3001,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "otc",
                 "compression": "zstd",
                 "protocol": "otlp",
@@ -3014,7 +3014,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "otc",
                 "compression": "none",
                 "protocol": "otlphttp",
@@ -3027,7 +3027,7 @@
               }
             },
             {
-              "dimensions": {
+              "attributes": {
                 "binary": "rotel",
                 "compression": "gzip",
                 "protocol": "otlp",
@@ -3091,7 +3091,7 @@
         }
       ],
       "runner": "comparison-dashboard",
-      "schema_version": 2
+      "schema_version": 3
     }
   ]
 }
