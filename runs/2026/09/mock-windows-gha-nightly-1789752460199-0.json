@@ -15,6 +15,7 @@
   "results": [
     {
       "attribute_keys": [],
+      "benchmark": "backpressure",
       "identity_keys": [
         "variant"
       ],
@@ -103,11 +104,11 @@
           "name": "test_duration",
           "unit": "seconds"
         }
-      ],
-      "suite": "backpressure"
+      ]
     },
     {
       "attribute_keys": [],
+      "benchmark": "clickhouse",
       "identity_keys": [
         "variant"
       ],
@@ -201,11 +202,11 @@
           "name": "go-collector_ram_mib_max",
           "unit": "MiB"
         }
-      ],
-      "suite": "clickhouse"
+      ]
     },
     {
       "attribute_keys": [],
+      "benchmark": "filter",
       "identity_keys": [
         "variant"
       ],
@@ -389,11 +390,11 @@
           "name": "test_duration",
           "unit": "seconds"
         }
-      ],
-      "suite": "filter"
+      ]
     },
     {
       "attribute_keys": [],
+      "benchmark": "passthrough",
       "identity_keys": [
         "variant"
       ],
@@ -482,14 +483,14 @@
           "name": "test_duration",
           "unit": "seconds"
         }
-      ],
-      "suite": "passthrough"
+      ]
     },
     {
       "attribute_keys": [
         "engine_cores",
         "protocol"
       ],
+      "benchmark": "saturation",
       "identity_keys": [
         "variant"
       ],
@@ -782,11 +783,11 @@
           "name": "test_duration",
           "unit": "seconds"
         }
-      ],
-      "suite": "saturation"
+      ]
     },
     {
       "attribute_keys": [],
+      "benchmark": "standard-load-batch-size",
       "identity_keys": [
         "variant",
         "case"
@@ -958,11 +959,11 @@
           "name": "test_duration",
           "unit": "seconds"
         }
-      ],
-      "suite": "standard-load-batch-size"
+      ]
     },
     {
       "attribute_keys": [],
+      "benchmark": "syslog",
       "identity_keys": [
         "variant"
       ],
@@ -1089,11 +1090,11 @@
           "name": "test_duration",
           "unit": "seconds"
         }
-      ],
-      "suite": "syslog"
+      ]
     },
     {
       "attribute_keys": [],
+      "benchmark": "syslog-tcp",
       "identity_keys": [
         "variant"
       ],
@@ -1220,11 +1221,11 @@
           "name": "test_duration",
           "unit": "seconds"
         }
-      ],
-      "suite": "syslog-tcp"
+      ]
     },
     {
       "attribute_keys": [],
+      "benchmark": "syslog-tcp-otelcol",
       "identity_keys": [
         "variant"
       ],
@@ -1313,8 +1314,7 @@
           "name": "test_duration",
           "unit": "seconds"
         }
-      ],
-      "suite": "syslog-tcp-otelcol"
+      ]
     }
   ],
   "run": {
@@ -1328,112 +1328,112 @@
         },
         "entries": [
           {
+            "benchmark": "syslog",
             "data_js": {
               "commit": "3feb7d8320a6d18b9f1d9cddf745c6a0f29c2867",
               "path": "docs/benchmarks/nightly/syslog/data.js"
             },
             "entry_timestamp": "2026-09-18T17:27:40.199000Z",
-            "execution_occurrence": 0,
-            "suite": "syslog"
+            "execution_occurrence": 0
           },
           {
+            "benchmark": "syslog-tcp",
             "data_js": {
               "commit": "3feb7d8320a6d18b9f1d9cddf745c6a0f29c2867",
               "path": "docs/benchmarks/nightly/syslog-tcp/data.js"
             },
             "entry_timestamp": "2026-09-18T17:28:06.595000Z",
-            "execution_occurrence": 0,
-            "suite": "syslog-tcp"
+            "execution_occurrence": 0
           },
           {
+            "benchmark": "standard-load-batch-size",
             "data_js": {
               "commit": "3feb7d8320a6d18b9f1d9cddf745c6a0f29c2867",
               "path": "docs/benchmarks/nightly/standardload-batch-size/data.js"
             },
             "entry_timestamp": "2026-09-18T17:28:11.079000Z",
-            "execution_occurrence": 0,
-            "suite": "standard-load-batch-size"
+            "execution_occurrence": 0
           },
           {
+            "benchmark": "backpressure",
             "data_js": {
               "commit": "3feb7d8320a6d18b9f1d9cddf745c6a0f29c2867",
               "path": "docs/benchmarks/nightly/backpressure/data.js"
             },
             "entry_timestamp": "2026-09-18T17:28:15.238000Z",
-            "execution_occurrence": 0,
-            "suite": "backpressure"
+            "execution_occurrence": 0
           },
           {
+            "benchmark": "filter",
             "data_js": {
               "commit": "3feb7d8320a6d18b9f1d9cddf745c6a0f29c2867",
               "path": "docs/benchmarks/nightly/filter/data.js"
             },
             "entry_timestamp": "2026-09-18T17:28:19.710000Z",
-            "execution_occurrence": 0,
-            "suite": "filter"
+            "execution_occurrence": 0
           },
           {
+            "benchmark": "batch-processor",
             "data_js": {
               "commit": "3feb7d8320a6d18b9f1d9cddf745c6a0f29c2867",
               "path": "docs/benchmarks/nightly/batch-processor/data.js"
             },
             "entry_timestamp": "2026-09-18T17:28:24.116000Z",
-            "execution_occurrence": 0,
-            "suite": "batch-processor"
+            "execution_occurrence": 0
           },
           {
+            "benchmark": "filter",
             "data_js": {
               "commit": "3feb7d8320a6d18b9f1d9cddf745c6a0f29c2867",
               "path": "docs/benchmarks/nightly/filter/data.js"
             },
             "entry_timestamp": "2026-09-18T17:28:28.284000Z",
-            "execution_occurrence": 0,
-            "suite": "filter"
+            "execution_occurrence": 0
           },
           {
+            "benchmark": "syslog-tcp-otelcol",
             "data_js": {
               "commit": "3feb7d8320a6d18b9f1d9cddf745c6a0f29c2867",
               "path": "docs/benchmarks/nightly/syslog-tcp-otelcol/data.js"
             },
             "entry_timestamp": "2026-09-18T17:28:32.551000Z",
-            "execution_occurrence": 0,
-            "suite": "syslog-tcp-otelcol"
+            "execution_occurrence": 0
           },
           {
+            "benchmark": "saturation",
             "data_js": {
               "commit": "3feb7d8320a6d18b9f1d9cddf745c6a0f29c2867",
               "path": "docs/benchmarks/nightly/saturation/data.js"
             },
             "entry_timestamp": "2026-09-18T17:28:37.121000Z",
-            "execution_occurrence": 0,
-            "suite": "saturation"
+            "execution_occurrence": 0
           },
           {
+            "benchmark": "passthrough",
             "data_js": {
               "commit": "3feb7d8320a6d18b9f1d9cddf745c6a0f29c2867",
               "path": "docs/benchmarks/continuous-passthrough/data.js"
             },
             "entry_timestamp": "2026-09-18T17:28:45.671000Z",
-            "execution_occurrence": 0,
-            "suite": "passthrough"
+            "execution_occurrence": 0
           },
           {
+            "benchmark": "clickhouse",
             "data_js": {
               "commit": "3feb7d8320a6d18b9f1d9cddf745c6a0f29c2867",
               "path": "docs/benchmarks/nightly/clickhouse-throughput/data.js"
             },
             "entry_timestamp": "2026-09-18T17:28:49.922000Z",
-            "execution_occurrence": 0,
-            "suite": "clickhouse"
+            "execution_occurrence": 0
           },
           {
+            "benchmark": "clickhouse",
             "data_js": {
               "commit": "3feb7d8320a6d18b9f1d9cddf745c6a0f29c2867",
               "path": "docs/benchmarks/nightly/clickhouse-resources/data.js"
             },
             "entry_timestamp": "2026-09-18T17:28:54.149000Z",
-            "execution_occurrence": 0,
-            "suite": "clickhouse"
+            "execution_occurrence": 0
           }
         ],
         "environment_provenance": [
@@ -1451,7 +1451,7 @@
             }
           }
         ],
-        "missing_suites": [
+        "missing_benchmarks": [
           "idle-state"
         ]
       },

@@ -20,6 +20,7 @@
         "engine_cores",
         "protocol"
       ],
+      "benchmark": "saturation",
       "identity_keys": [
         "variant"
       ],
@@ -202,8 +203,7 @@
           "name": "test_duration",
           "unit": "seconds"
         }
-      ],
-      "suite": "saturation"
+      ]
     }
   ],
   "run": {
@@ -217,13 +217,13 @@
         },
         "entries": [
           {
+            "benchmark": "saturation",
             "data_js": {
               "commit": "3feb7d8320a6d18b9f1d9cddf745c6a0f29c2867",
               "path": "docs/benchmarks/continuous-saturation/data.js"
             },
             "entry_timestamp": "2026-01-16T19:43:32.314000Z",
-            "execution_occurrence": 0,
-            "suite": "saturation"
+            "execution_occurrence": 0
           }
         ],
         "environment_provenance": [
@@ -241,7 +241,7 @@
             }
           }
         ],
-        "missing_suites": [
+        "missing_benchmarks": [
           "idle-state"
         ]
       }

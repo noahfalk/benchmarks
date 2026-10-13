@@ -1,573 +1,5 @@
 {
-  "benchmark_runner": {
-    "images": {
-      "df_engine": "df_engine:latest",
-      "fluent_bit": "fluent/fluent-bit:5.0",
-      "kafka": "apache/kafka:latest",
-      "otelcol": "otel/opentelemetry-collector-contrib:latest",
-      "rotel": "streamfold/rotel:latest"
-    },
-    "observation_interval": 20,
-    "schema_version": 1
-  },
-  "comparisons": [
-    {
-      "cases": [
-        {
-          "id": "100k",
-          "label": "100k"
-        },
-        {
-          "id": "200k",
-          "label": "200k"
-        }
-      ],
-      "description": "Compare attribute-insert implementations with matching no-processing baselines.",
-      "id": "log-attribute-insert-multi-rate",
-      "metrics": [
-        {
-          "id": "cpu_percentage_normalized_avg",
-          "label": "CPU Average"
-        },
-        {
-          "id": "logs_received_rate",
-          "label": "Logs Received Rate"
-        }
-      ],
-      "name": "Log Attribute Insert - Multi Rate",
-      "schema_version": 1,
-      "sources": [
-        {
-          "case_parameter": "load_rate",
-          "include_values": {
-            "variant": [
-              "dfe-otap-none",
-              "dfe-otlp-none",
-              "otc-otlp-none",
-              "fbit-otlp-none"
-            ]
-          },
-          "role": "baseline",
-          "series_parameter": "variant",
-          "suite": "log-baseline"
-        },
-        {
-          "case_parameter": "load_rate",
-          "include_values": {
-            "implementation": [
-              "dfe-otap-attributes",
-              "dfe-otap-transform",
-              "dfe-otlp-attributes",
-              "dfe-otlp-transform",
-              "otc-otlp-attributes",
-              "otc-otlp-transform",
-              "fbit-otlp-modify"
-            ]
-          },
-          "role": "candidate",
-          "series_parameter": "implementation",
-          "suite": "log-attribute-insert-rate"
-        }
-      ]
-    },
-    {
-      "cases": [
-        {
-          "id": "100k",
-          "label": "100k"
-        },
-        {
-          "id": "200k",
-          "label": "200k"
-        }
-      ],
-      "description": "Compare baseline log pipeline variants across engines, protocols, and compression.",
-      "id": "log-baselines",
-      "metrics": [
-        {
-          "id": "cpu_percentage_normalized_avg",
-          "label": "CPU Average"
-        },
-        {
-          "id": "logs_received_rate",
-          "label": "Logs Received Rate"
-        }
-      ],
-      "name": "Log Baselines",
-      "schema_version": 1,
-      "sources": [
-        {
-          "case_parameter": "load_rate",
-          "include_values": {
-            "variant": [
-              "dfe-otap-none",
-              "dfe-otlp-none",
-              "dfe-otlp-gzip",
-              "otc-otlp-none",
-              "fbit-otlp-none"
-            ]
-          },
-          "role": "baseline",
-          "series_parameter": "variant",
-          "suite": "log-baseline"
-        }
-      ]
-    }
-  ],
-  "labels": {
-    "cpu_model": "CPU model",
-    "execution_os": "Execution OS",
-    "memory_gb": "Memory GB",
-    "os": "OS",
-    "os_distribution": "OS distribution",
-    "os_version": "OS version"
-  },
-  "metric_profiles": [
-    {
-      "id": "logs",
-      "metrics": [
-        {
-          "label": "Normalized CPU average",
-          "max": 100,
-          "max_decimal_places": 2,
-          "min": 0,
-          "name": "cpu_percentage_normalized_avg",
-          "unit": "%"
-        },
-        {
-          "label": "Normalized CPU maximum",
-          "max": 100,
-          "max_decimal_places": 2,
-          "min": 0,
-          "name": "cpu_percentage_normalized_max",
-          "unit": "%"
-        },
-        {
-          "label": "Dropped logs percentage",
-          "max": 100,
-          "max_decimal_places": 6,
-          "min": 0,
-          "name": "dropped_logs_percentage",
-          "unit": "%"
-        },
-        {
-          "label": "Egress bytes per log",
-          "max": null,
-          "max_decimal_places": 2,
-          "min": 0,
-          "name": "egress_bytes_per_log",
-          "unit": "bytes/log"
-        },
-        {
-          "label": "Logs produced rate",
-          "max": null,
-          "max_decimal_places": 0,
-          "min": 0,
-          "name": "logs_produced_rate",
-          "unit": "logs/sec"
-        },
-        {
-          "label": "Logs received rate",
-          "max": null,
-          "max_decimal_places": 0,
-          "min": 0,
-          "name": "logs_received_rate",
-          "unit": "logs/sec"
-        },
-        {
-          "label": "Network RX bytes rate average",
-          "max": null,
-          "max_decimal_places": 0,
-          "min": 0,
-          "name": "network_rx_bytes_rate_avg",
-          "unit": "bytes/sec"
-        },
-        {
-          "label": "Network TX bytes rate average",
-          "max": null,
-          "max_decimal_places": 0,
-          "min": 0,
-          "name": "network_tx_bytes_rate_avg",
-          "unit": "bytes/sec"
-        },
-        {
-          "label": "RAM average",
-          "max": null,
-          "max_decimal_places": 1,
-          "min": 0,
-          "name": "ram_mib_avg",
-          "unit": "MiB"
-        },
-        {
-          "label": "RAM maximum",
-          "max": null,
-          "max_decimal_places": 1,
-          "min": 0,
-          "name": "ram_mib_max",
-          "unit": "MiB"
-        },
-        {
-          "label": "Test duration",
-          "max": null,
-          "max_decimal_places": 1,
-          "min": 0,
-          "name": "test_duration",
-          "unit": "seconds"
-        }
-      ]
-    },
-    {
-      "id": "comparison-metrics",
-      "metrics": [
-        {
-          "label": "Normalized CPU average",
-          "max": 100,
-          "max_decimal_places": 2,
-          "min": 0,
-          "name": "cpu_percentage_normalized_avg",
-          "unit": "%"
-        },
-        {
-          "label": "Normalized CPU maximum",
-          "max": 100,
-          "max_decimal_places": 2,
-          "min": 0,
-          "name": "cpu_percentage_normalized_max",
-          "unit": "%"
-        },
-        {
-          "label": "Dropped metrics percentage",
-          "max": 100,
-          "max_decimal_places": 6,
-          "min": 0,
-          "name": "dropped_metrics_percentage",
-          "unit": "%"
-        },
-        {
-          "label": "Metrics produced rate",
-          "max": null,
-          "max_decimal_places": 0,
-          "min": 0,
-          "name": "metrics_produced_rate",
-          "unit": "metrics/sec"
-        },
-        {
-          "label": "Metrics received rate",
-          "max": null,
-          "max_decimal_places": 0,
-          "min": 0,
-          "name": "metrics_received_rate",
-          "unit": "metrics/sec"
-        },
-        {
-          "label": "Network RX bytes rate average",
-          "max": null,
-          "max_decimal_places": 0,
-          "min": 0,
-          "name": "network_rx_bytes_rate_avg",
-          "unit": "bytes/sec"
-        },
-        {
-          "label": "Network TX bytes rate average",
-          "max": null,
-          "max_decimal_places": 0,
-          "min": 0,
-          "name": "network_tx_bytes_rate_avg",
-          "unit": "bytes/sec"
-        },
-        {
-          "label": "RAM average",
-          "max": null,
-          "max_decimal_places": 1,
-          "min": 0,
-          "name": "ram_mib_avg",
-          "unit": "MiB"
-        },
-        {
-          "label": "RAM maximum",
-          "max": null,
-          "max_decimal_places": 1,
-          "min": 0,
-          "name": "ram_mib_max",
-          "unit": "MiB"
-        },
-        {
-          "label": "Test duration",
-          "max": null,
-          "max_decimal_places": 1,
-          "min": 0,
-          "name": "test_duration",
-          "unit": "seconds"
-        }
-      ]
-    },
-    {
-      "id": "comparison-traces",
-      "metrics": [
-        {
-          "label": "Normalized CPU average",
-          "max": 100,
-          "max_decimal_places": 2,
-          "min": 0,
-          "name": "cpu_percentage_normalized_avg",
-          "unit": "%"
-        },
-        {
-          "label": "Normalized CPU maximum",
-          "max": 100,
-          "max_decimal_places": 2,
-          "min": 0,
-          "name": "cpu_percentage_normalized_max",
-          "unit": "%"
-        },
-        {
-          "label": "Dropped spans percentage",
-          "max": 100,
-          "max_decimal_places": 6,
-          "min": 0,
-          "name": "dropped_spans_percentage",
-          "unit": "%"
-        },
-        {
-          "label": "Network RX bytes rate average",
-          "max": null,
-          "max_decimal_places": 0,
-          "min": 0,
-          "name": "network_rx_bytes_rate_avg",
-          "unit": "bytes/sec"
-        },
-        {
-          "label": "Network TX bytes rate average",
-          "max": null,
-          "max_decimal_places": 0,
-          "min": 0,
-          "name": "network_tx_bytes_rate_avg",
-          "unit": "bytes/sec"
-        },
-        {
-          "label": "RAM average",
-          "max": null,
-          "max_decimal_places": 1,
-          "min": 0,
-          "name": "ram_mib_avg",
-          "unit": "MiB"
-        },
-        {
-          "label": "RAM maximum",
-          "max": null,
-          "max_decimal_places": 1,
-          "min": 0,
-          "name": "ram_mib_max",
-          "unit": "MiB"
-        },
-        {
-          "label": "Spans produced rate",
-          "max": null,
-          "max_decimal_places": 0,
-          "min": 0,
-          "name": "spans_produced_rate",
-          "unit": "spans/sec"
-        },
-        {
-          "label": "Spans received rate",
-          "max": null,
-          "max_decimal_places": 0,
-          "min": 0,
-          "name": "spans_received_rate",
-          "unit": "spans/sec"
-        },
-        {
-          "label": "Test duration",
-          "max": null,
-          "max_decimal_places": 1,
-          "min": 0,
-          "name": "test_duration",
-          "unit": "seconds"
-        }
-      ]
-    },
-    {
-      "id": "idle",
-      "metrics": [
-        {
-          "label": "Idle CPU average",
-          "max": 100,
-          "max_decimal_places": 2,
-          "min": 0,
-          "name": "idle_cpu_percentage_avg",
-          "unit": "%"
-        },
-        {
-          "label": "Idle CPU maximum",
-          "max": 100,
-          "max_decimal_places": 2,
-          "min": 0,
-          "name": "idle_cpu_percentage_max",
-          "unit": "%"
-        },
-        {
-          "label": "Idle RAM average",
-          "max": null,
-          "max_decimal_places": 1,
-          "min": 0,
-          "name": "idle_ram_mib_avg",
-          "unit": "MiB"
-        },
-        {
-          "label": "Idle RAM maximum",
-          "max": null,
-          "max_decimal_places": 1,
-          "min": 0,
-          "name": "idle_ram_mib_max",
-          "unit": "MiB"
-        },
-        {
-          "label": "Idle RSS average",
-          "max": null,
-          "max_decimal_places": 1,
-          "min": 0,
-          "name": "idle_rss_mib_avg",
-          "unit": "MiB"
-        },
-        {
-          "label": "Idle RSS maximum",
-          "max": null,
-          "max_decimal_places": 1,
-          "min": 0,
-          "name": "idle_rss_mib_max",
-          "unit": "MiB"
-        },
-        {
-          "label": "Idle test duration",
-          "max": null,
-          "max_decimal_places": 1,
-          "min": 0,
-          "name": "idle_test_duration",
-          "unit": "seconds"
-        }
-      ]
-    },
-    {
-      "id": "clickhouse",
-      "metrics": [
-        {
-          "label": "ClickHouse normalized CPU average",
-          "max": 100,
-          "max_decimal_places": 2,
-          "min": 0,
-          "name": "clickhouse_cpu_percentage_normalized_avg",
-          "unit": "%"
-        },
-        {
-          "label": "ClickHouse maximum RAM",
-          "max": null,
-          "max_decimal_places": 1,
-          "min": 0,
-          "name": "clickhouse_ram_mib_max",
-          "unit": "MiB"
-        },
-        {
-          "label": "Telemetry engine normalized CPU average",
-          "max": 100,
-          "max_decimal_places": 2,
-          "min": 0,
-          "name": "engine_cpu_percentage_normalized_avg",
-          "unit": "%"
-        },
-        {
-          "label": "Telemetry engine maximum RAM",
-          "max": null,
-          "max_decimal_places": 1,
-          "min": 0,
-          "name": "engine_ram_mib_max",
-          "unit": "MiB"
-        },
-        {
-          "label": "Log rows written rate",
-          "max": null,
-          "max_decimal_places": 0,
-          "min": 0,
-          "name": "log_rows_written_rate",
-          "unit": "rows/sec"
-        },
-        {
-          "label": "Logs produced rate",
-          "max": null,
-          "max_decimal_places": 0,
-          "min": 0,
-          "name": "logs_produced_rate",
-          "unit": "rows/sec"
-        },
-        {
-          "label": "Test duration",
-          "max": null,
-          "max_decimal_places": 1,
-          "min": 0,
-          "name": "test_duration",
-          "unit": "seconds"
-        }
-      ]
-    }
-  ],
-  "overview": {
-    "browser_title": "Telemetry Engine Benchmarks",
-    "glossary": [
-      {
-        "definition": "Dataflow Engine - the OTAP-native Rust pipeline being benchmarked in this repo.",
-        "term": "DFE"
-      },
-      {
-        "definition": "OpenTelemetry Collector (contrib distribution) - the reference Go implementation.",
-        "term": "OTC"
-      },
-      {
-        "definition": "Fluent Bit - An observability pipeline engine in the fluentd family.",
-        "term": "FBIT"
-      },
-      {
-        "definition": "rotel-dev/rotel - Rust-based telemetry collector.",
-        "term": "Rotel"
-      },
-      {
-        "definition": "OpenTelemetry Arrow Protocol - columnar gRPC transport using Apache Arrow record batches.",
-        "term": "OTAP"
-      },
-      {
-        "definition": "OpenTelemetry Protocol - the standard row-oriented gRPC/HTTP protobuf protocol.",
-        "term": "OTLP"
-      },
-      {
-        "definition": "OpenTelemetry Protocol over pure HTTP.",
-        "term": "OTLP HTTP"
-      },
-      {
-        "definition": "Kafka-based transport using OTLP protobuf message encoding (producer -> broker -> consumer pipeline).",
-        "term": "Kafka OTLP"
-      },
-      {
-        "definition": "Kafka-based transport using OTAP Arrow protobuf message encoding (producer -> broker -> consumer pipeline).",
-        "term": "Kafka OTAP"
-      },
-      {
-        "definition": "Benchmark that measures only a variant's Kafka receiver. A fixed DFE Kafka exporter produces to the broker; the benchmarked receiver consumes and forwards to a DFE backend.",
-        "term": "Kafka Receiver Isolation"
-      },
-      {
-        "definition": "Benchmark that measures only a variant's Kafka exporter. A DFE loadgen feeds the benchmarked exporter, which produces to the broker; a fixed DFE Kafka receiver consumes on the backend.",
-        "term": "Kafka Exporter Isolation"
-      }
-    ],
-    "page_subtitle": "Compare telemetry engines across a variety of use-cases and protocols.",
-    "page_title": "Telemetry Engine Benchmark Dashboard",
-    "schema_version": 1,
-    "top_banner": {
-      "link_text": "Tell us here!",
-      "link_url": "https://github.com/open-telemetry/otel-arrow/issues",
-      "text": "The Dataflow Engine and these benchmarks are a work in progress. Do you have feedback?"
-    }
-  },
-  "schema_version": 3,
-  "suites": [
+  "benchmarks": [
     {
       "description": "Measures resource efficiency while a single-core DFE applies an attribute rename to a fixed offered load of 100K logs/sec across OTLP and OTAP input/output combinations. The load generator and sink each run on a separate core.",
       "id": "attribute-processor-protocol-routing",
@@ -608,7 +40,7 @@
           ]
         }
       ],
-      "runner": "benchmark",
+      "runner": "orchestrator",
       "runner_data": {
         "path": "tools/pipeline_perf_test/test_suites/integration/continuous/100klrps-docker.yaml"
       },
@@ -640,7 +72,7 @@
           ]
         }
       ],
-      "runner": "benchmark",
+      "runner": "orchestrator",
       "runner_data": {
         "path": "tools/pipeline_perf_test/test_suites/integration/nightly/backpressure-docker.yaml"
       },
@@ -672,7 +104,7 @@
           ]
         }
       ],
-      "runner": "benchmark",
+      "runner": "orchestrator",
       "runner_data": {
         "path": "tools/pipeline_perf_test/test_suites/integration/continuous/100klrps-docker.yaml"
       },
@@ -704,7 +136,7 @@
           ]
         }
       ],
-      "runner": "benchmark",
+      "runner": "orchestrator",
       "runner_data": {
         "path": "tools/pipeline_perf_test/test_suites/integration/nightly/batch-processor-docker.yaml"
       },
@@ -736,7 +168,7 @@
           ]
         }
       ],
-      "runner": "benchmark",
+      "runner": "orchestrator",
       "runner_data": {
         "path": "tools/pipeline_perf_test/test_suites/integration/nightly/batch-processor-docker.yaml"
       },
@@ -768,7 +200,7 @@
           ]
         }
       ],
-      "runner": "benchmark",
+      "runner": "orchestrator",
       "runner_data": {
         "path": "tools/pipeline_perf_test/test_suites/integration/nightly/batch-processor-docker.yaml"
       },
@@ -810,7 +242,7 @@
           ]
         }
       ],
-      "runner": "benchmark",
+      "runner": "orchestrator",
       "schema_version": 3
     },
     {
@@ -881,7 +313,7 @@
           ]
         }
       ],
-      "runner": "benchmark",
+      "runner": "orchestrator",
       "schema_version": 3
     },
     {
@@ -967,7 +399,7 @@
           ]
         }
       ],
-      "runner": "benchmark",
+      "runner": "orchestrator",
       "schema_version": 3
     },
     {
@@ -977,7 +409,7 @@
       "name": "Log Attribute Insert - Action Count",
       "parameters": [
         {
-          "id": "implementation",
+          "id": "variant",
           "values": [
             {
               "attributes": {
@@ -1327,7 +759,7 @@
           ]
         }
       ],
-      "runner": "benchmark",
+      "runner": "orchestrator",
       "schema_version": 3
     },
     {
@@ -1337,7 +769,7 @@
       "name": "Log Attribute Insert - Batch Size",
       "parameters": [
         {
-          "id": "implementation",
+          "id": "variant",
           "values": [
             {
               "attributes": {
@@ -1479,17 +911,28 @@
           ]
         }
       ],
-      "runner": "benchmark",
+      "runner": "orchestrator",
       "schema_version": 3
     },
     {
+      "baseline": {
+        "benchmark": "log-baseline",
+        "select": {
+          "variant": [
+            "dfe-otap-none",
+            "dfe-otlp-none",
+            "otc-otlp-none",
+            "fbit-otlp-none"
+          ]
+        }
+      },
       "description": "Compare log attribute insert implementations while varying offered log rate.",
       "id": "log-attribute-insert-rate",
       "metric_profile": "logs",
       "name": "Log Attribute Insert - Load Rate",
       "parameters": [
         {
-          "id": "implementation",
+          "id": "variant",
           "values": [
             {
               "attributes": {
@@ -1721,7 +1164,7 @@
           ]
         }
       ],
-      "runner": "benchmark",
+      "runner": "orchestrator",
       "schema_version": 3
     },
     {
@@ -1731,7 +1174,7 @@
       "name": "Log Attribute Rename - Action Count",
       "parameters": [
         {
-          "id": "implementation",
+          "id": "variant",
           "values": [
             {
               "attributes": {
@@ -2081,7 +1524,7 @@
           ]
         }
       ],
-      "runner": "benchmark",
+      "runner": "orchestrator",
       "schema_version": 3
     },
     {
@@ -2091,7 +1534,7 @@
       "name": "Log Attribute Rename - Batch Size",
       "parameters": [
         {
-          "id": "implementation",
+          "id": "variant",
           "values": [
             {
               "attributes": {
@@ -2233,17 +1676,28 @@
           ]
         }
       ],
-      "runner": "benchmark",
+      "runner": "orchestrator",
       "schema_version": 3
     },
     {
+      "baseline": {
+        "benchmark": "log-baseline",
+        "select": {
+          "variant": [
+            "dfe-otap-none",
+            "dfe-otlp-none",
+            "otc-otlp-none",
+            "fbit-otlp-none"
+          ]
+        }
+      },
       "description": "Compare log attribute rename implementations while varying offered log rate.",
       "id": "log-attribute-rename-rate",
       "metric_profile": "logs",
       "name": "Log Attribute Rename - Load Rate",
       "parameters": [
         {
-          "id": "implementation",
+          "id": "variant",
           "values": [
             {
               "attributes": {
@@ -2475,7 +1929,7 @@
           ]
         }
       ],
-      "runner": "benchmark",
+      "runner": "orchestrator",
       "schema_version": 3
     },
     {
@@ -2945,7 +2399,7 @@
           ]
         }
       ],
-      "runner": "benchmark",
+      "runner": "orchestrator",
       "schema_version": 3
     },
     {
@@ -3343,7 +2797,7 @@
           ]
         }
       ],
-      "runner": "benchmark",
+      "runner": "orchestrator",
       "schema_version": 3
     },
     {
@@ -3372,7 +2826,7 @@
           ]
         }
       ],
-      "runner": "benchmark",
+      "runner": "orchestrator",
       "schema_version": 3
     },
     {
@@ -3517,7 +2971,7 @@
           ]
         }
       ],
-      "runner": "benchmark",
+      "runner": "orchestrator",
       "schema_version": 3
     },
     {
@@ -3574,7 +3028,7 @@
           ]
         }
       ],
-      "runner": "benchmark",
+      "runner": "orchestrator",
       "runner_data": {
         "path": "tools/pipeline_perf_test/test_suites/integration/nightly/100klrps-batch-sizes-docker.yaml"
       },
@@ -3606,7 +3060,7 @@
           ]
         }
       ],
-      "runner": "benchmark",
+      "runner": "orchestrator",
       "runner_data": {
         "path": "tools/pipeline_perf_test/test_suites/integration/nightly/syslog-tcp-otelcol-docker.yaml"
       },
@@ -3652,7 +3106,7 @@
           ]
         }
       ],
-      "runner": "benchmark",
+      "runner": "orchestrator",
       "runner_data": {
         "path": "tools/pipeline_perf_test/test_suites/integration/nightly/syslog-tcp-docker.yaml"
       },
@@ -3698,7 +3152,7 @@
           ]
         }
       ],
-      "runner": "benchmark",
+      "runner": "orchestrator",
       "runner_data": {
         "path": "tools/pipeline_perf_test/test_suites/integration/nightly/syslog-docker.yaml"
       },
@@ -4082,8 +3536,453 @@
           ]
         }
       ],
-      "runner": "benchmark",
+      "runner": "orchestrator",
       "schema_version": 3
     }
-  ]
+  ],
+  "metric_profiles": [
+    {
+      "id": "logs",
+      "metrics": [
+        {
+          "label": "Normalized CPU average",
+          "max": 100,
+          "max_decimal_places": 2,
+          "min": 0,
+          "name": "cpu_percentage_normalized_avg",
+          "unit": "%"
+        },
+        {
+          "label": "Normalized CPU maximum",
+          "max": 100,
+          "max_decimal_places": 2,
+          "min": 0,
+          "name": "cpu_percentage_normalized_max",
+          "unit": "%"
+        },
+        {
+          "label": "Dropped logs percentage",
+          "max": 100,
+          "max_decimal_places": 6,
+          "min": 0,
+          "name": "dropped_logs_percentage",
+          "unit": "%"
+        },
+        {
+          "label": "Egress bytes per log",
+          "max": null,
+          "max_decimal_places": 2,
+          "min": 0,
+          "name": "egress_bytes_per_log",
+          "unit": "bytes/log"
+        },
+        {
+          "label": "Logs produced rate",
+          "max": null,
+          "max_decimal_places": 0,
+          "min": 0,
+          "name": "logs_produced_rate",
+          "unit": "logs/sec"
+        },
+        {
+          "label": "Logs received rate",
+          "max": null,
+          "max_decimal_places": 0,
+          "min": 0,
+          "name": "logs_received_rate",
+          "unit": "logs/sec"
+        },
+        {
+          "label": "Network RX bytes rate average",
+          "max": null,
+          "max_decimal_places": 0,
+          "min": 0,
+          "name": "network_rx_bytes_rate_avg",
+          "unit": "bytes/sec"
+        },
+        {
+          "label": "Network TX bytes rate average",
+          "max": null,
+          "max_decimal_places": 0,
+          "min": 0,
+          "name": "network_tx_bytes_rate_avg",
+          "unit": "bytes/sec"
+        },
+        {
+          "label": "RAM average",
+          "max": null,
+          "max_decimal_places": 1,
+          "min": 0,
+          "name": "ram_mib_avg",
+          "unit": "MiB"
+        },
+        {
+          "label": "RAM maximum",
+          "max": null,
+          "max_decimal_places": 1,
+          "min": 0,
+          "name": "ram_mib_max",
+          "unit": "MiB"
+        },
+        {
+          "label": "Test duration",
+          "max": null,
+          "max_decimal_places": 1,
+          "min": 0,
+          "name": "test_duration",
+          "unit": "seconds"
+        }
+      ]
+    },
+    {
+      "id": "comparison-metrics",
+      "metrics": [
+        {
+          "label": "Normalized CPU average",
+          "max": 100,
+          "max_decimal_places": 2,
+          "min": 0,
+          "name": "cpu_percentage_normalized_avg",
+          "unit": "%"
+        },
+        {
+          "label": "Normalized CPU maximum",
+          "max": 100,
+          "max_decimal_places": 2,
+          "min": 0,
+          "name": "cpu_percentage_normalized_max",
+          "unit": "%"
+        },
+        {
+          "label": "Dropped metrics percentage",
+          "max": 100,
+          "max_decimal_places": 6,
+          "min": 0,
+          "name": "dropped_metrics_percentage",
+          "unit": "%"
+        },
+        {
+          "label": "Metrics produced rate",
+          "max": null,
+          "max_decimal_places": 0,
+          "min": 0,
+          "name": "metrics_produced_rate",
+          "unit": "metrics/sec"
+        },
+        {
+          "label": "Metrics received rate",
+          "max": null,
+          "max_decimal_places": 0,
+          "min": 0,
+          "name": "metrics_received_rate",
+          "unit": "metrics/sec"
+        },
+        {
+          "label": "Network RX bytes rate average",
+          "max": null,
+          "max_decimal_places": 0,
+          "min": 0,
+          "name": "network_rx_bytes_rate_avg",
+          "unit": "bytes/sec"
+        },
+        {
+          "label": "Network TX bytes rate average",
+          "max": null,
+          "max_decimal_places": 0,
+          "min": 0,
+          "name": "network_tx_bytes_rate_avg",
+          "unit": "bytes/sec"
+        },
+        {
+          "label": "RAM average",
+          "max": null,
+          "max_decimal_places": 1,
+          "min": 0,
+          "name": "ram_mib_avg",
+          "unit": "MiB"
+        },
+        {
+          "label": "RAM maximum",
+          "max": null,
+          "max_decimal_places": 1,
+          "min": 0,
+          "name": "ram_mib_max",
+          "unit": "MiB"
+        },
+        {
+          "label": "Test duration",
+          "max": null,
+          "max_decimal_places": 1,
+          "min": 0,
+          "name": "test_duration",
+          "unit": "seconds"
+        }
+      ]
+    },
+    {
+      "id": "comparison-traces",
+      "metrics": [
+        {
+          "label": "Normalized CPU average",
+          "max": 100,
+          "max_decimal_places": 2,
+          "min": 0,
+          "name": "cpu_percentage_normalized_avg",
+          "unit": "%"
+        },
+        {
+          "label": "Normalized CPU maximum",
+          "max": 100,
+          "max_decimal_places": 2,
+          "min": 0,
+          "name": "cpu_percentage_normalized_max",
+          "unit": "%"
+        },
+        {
+          "label": "Dropped spans percentage",
+          "max": 100,
+          "max_decimal_places": 6,
+          "min": 0,
+          "name": "dropped_spans_percentage",
+          "unit": "%"
+        },
+        {
+          "label": "Network RX bytes rate average",
+          "max": null,
+          "max_decimal_places": 0,
+          "min": 0,
+          "name": "network_rx_bytes_rate_avg",
+          "unit": "bytes/sec"
+        },
+        {
+          "label": "Network TX bytes rate average",
+          "max": null,
+          "max_decimal_places": 0,
+          "min": 0,
+          "name": "network_tx_bytes_rate_avg",
+          "unit": "bytes/sec"
+        },
+        {
+          "label": "RAM average",
+          "max": null,
+          "max_decimal_places": 1,
+          "min": 0,
+          "name": "ram_mib_avg",
+          "unit": "MiB"
+        },
+        {
+          "label": "RAM maximum",
+          "max": null,
+          "max_decimal_places": 1,
+          "min": 0,
+          "name": "ram_mib_max",
+          "unit": "MiB"
+        },
+        {
+          "label": "Spans produced rate",
+          "max": null,
+          "max_decimal_places": 0,
+          "min": 0,
+          "name": "spans_produced_rate",
+          "unit": "spans/sec"
+        },
+        {
+          "label": "Spans received rate",
+          "max": null,
+          "max_decimal_places": 0,
+          "min": 0,
+          "name": "spans_received_rate",
+          "unit": "spans/sec"
+        },
+        {
+          "label": "Test duration",
+          "max": null,
+          "max_decimal_places": 1,
+          "min": 0,
+          "name": "test_duration",
+          "unit": "seconds"
+        }
+      ]
+    },
+    {
+      "id": "idle",
+      "metrics": [
+        {
+          "label": "Idle CPU average",
+          "max": 100,
+          "max_decimal_places": 2,
+          "min": 0,
+          "name": "idle_cpu_percentage_avg",
+          "unit": "%"
+        },
+        {
+          "label": "Idle CPU maximum",
+          "max": 100,
+          "max_decimal_places": 2,
+          "min": 0,
+          "name": "idle_cpu_percentage_max",
+          "unit": "%"
+        },
+        {
+          "label": "Idle RAM average",
+          "max": null,
+          "max_decimal_places": 1,
+          "min": 0,
+          "name": "idle_ram_mib_avg",
+          "unit": "MiB"
+        },
+        {
+          "label": "Idle RAM maximum",
+          "max": null,
+          "max_decimal_places": 1,
+          "min": 0,
+          "name": "idle_ram_mib_max",
+          "unit": "MiB"
+        },
+        {
+          "label": "Idle RSS average",
+          "max": null,
+          "max_decimal_places": 1,
+          "min": 0,
+          "name": "idle_rss_mib_avg",
+          "unit": "MiB"
+        },
+        {
+          "label": "Idle RSS maximum",
+          "max": null,
+          "max_decimal_places": 1,
+          "min": 0,
+          "name": "idle_rss_mib_max",
+          "unit": "MiB"
+        },
+        {
+          "label": "Idle test duration",
+          "max": null,
+          "max_decimal_places": 1,
+          "min": 0,
+          "name": "idle_test_duration",
+          "unit": "seconds"
+        }
+      ]
+    },
+    {
+      "id": "clickhouse",
+      "metrics": [
+        {
+          "label": "ClickHouse normalized CPU average",
+          "max": 100,
+          "max_decimal_places": 2,
+          "min": 0,
+          "name": "clickhouse_cpu_percentage_normalized_avg",
+          "unit": "%"
+        },
+        {
+          "label": "ClickHouse maximum RAM",
+          "max": null,
+          "max_decimal_places": 1,
+          "min": 0,
+          "name": "clickhouse_ram_mib_max",
+          "unit": "MiB"
+        },
+        {
+          "label": "Telemetry engine normalized CPU average",
+          "max": 100,
+          "max_decimal_places": 2,
+          "min": 0,
+          "name": "engine_cpu_percentage_normalized_avg",
+          "unit": "%"
+        },
+        {
+          "label": "Telemetry engine maximum RAM",
+          "max": null,
+          "max_decimal_places": 1,
+          "min": 0,
+          "name": "engine_ram_mib_max",
+          "unit": "MiB"
+        },
+        {
+          "label": "Log rows written rate",
+          "max": null,
+          "max_decimal_places": 0,
+          "min": 0,
+          "name": "log_rows_written_rate",
+          "unit": "rows/sec"
+        },
+        {
+          "label": "Logs produced rate",
+          "max": null,
+          "max_decimal_places": 0,
+          "min": 0,
+          "name": "logs_produced_rate",
+          "unit": "rows/sec"
+        },
+        {
+          "label": "Test duration",
+          "max": null,
+          "max_decimal_places": 1,
+          "min": 0,
+          "name": "test_duration",
+          "unit": "seconds"
+        }
+      ]
+    }
+  ],
+  "overview": {
+    "browser_title": "Telemetry Engine Benchmarks",
+    "glossary": [
+      {
+        "definition": "Dataflow Engine - the OTAP-native Rust pipeline being benchmarked in this repo.",
+        "term": "DFE"
+      },
+      {
+        "definition": "OpenTelemetry Collector (contrib distribution) - the reference Go implementation.",
+        "term": "OTC"
+      },
+      {
+        "definition": "Fluent Bit - An observability pipeline engine in the fluentd family.",
+        "term": "FBIT"
+      },
+      {
+        "definition": "rotel-dev/rotel - Rust-based telemetry collector.",
+        "term": "Rotel"
+      },
+      {
+        "definition": "OpenTelemetry Arrow Protocol - columnar gRPC transport using Apache Arrow record batches.",
+        "term": "OTAP"
+      },
+      {
+        "definition": "OpenTelemetry Protocol - the standard row-oriented gRPC/HTTP protobuf protocol.",
+        "term": "OTLP"
+      },
+      {
+        "definition": "OpenTelemetry Protocol over pure HTTP.",
+        "term": "OTLP HTTP"
+      },
+      {
+        "definition": "Kafka-based transport using OTLP protobuf message encoding (producer -> broker -> consumer pipeline).",
+        "term": "Kafka OTLP"
+      },
+      {
+        "definition": "Kafka-based transport using OTAP Arrow protobuf message encoding (producer -> broker -> consumer pipeline).",
+        "term": "Kafka OTAP"
+      },
+      {
+        "definition": "Benchmark that measures only a variant's Kafka receiver. A fixed DFE Kafka exporter produces to the broker; the benchmarked receiver consumes and forwards to a DFE backend.",
+        "term": "Kafka Receiver Isolation"
+      },
+      {
+        "definition": "Benchmark that measures only a variant's Kafka exporter. A DFE loadgen feeds the benchmarked exporter, which produces to the broker; a fixed DFE Kafka receiver consumes on the backend.",
+        "term": "Kafka Exporter Isolation"
+      }
+    ],
+    "page_subtitle": "Compare telemetry engines across a variety of use-cases and protocols.",
+    "page_title": "Telemetry Engine Benchmark Dashboard",
+    "schema_version": 1,
+    "top_banner": {
+      "link_text": "Tell us here!",
+      "link_url": "https://github.com/open-telemetry/otel-arrow/issues",
+      "text": "The Dataflow Engine and these benchmarks are a work in progress. Do you have feedback?"
+    }
+  },
+  "schema_version": 3
 }

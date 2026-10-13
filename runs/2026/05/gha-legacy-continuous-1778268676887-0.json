@@ -19,6 +19,7 @@
       "attribute_keys": [
         "allocated_cores"
       ],
+      "benchmark": "idle-state",
       "identity_keys": [
         "variant"
       ],
@@ -155,8 +156,7 @@
           "name": "idle_test_duration",
           "unit": "seconds"
         }
-      ],
-      "suite": "idle-state"
+      ]
     }
   ],
   "run": {
@@ -170,13 +170,13 @@
         },
         "entries": [
           {
+            "benchmark": "idle-state",
             "data_js": {
               "commit": "3feb7d8320a6d18b9f1d9cddf745c6a0f29c2867",
               "path": "docs/benchmarks/continuous-idle-state/data.js"
             },
             "entry_timestamp": "2026-05-08T19:31:16.887000Z",
-            "execution_occurrence": 0,
-            "suite": "idle-state"
+            "execution_occurrence": 0
           }
         ],
         "environment_provenance": [
@@ -194,7 +194,7 @@
             }
           }
         ],
-        "missing_suites": [
+        "missing_benchmarks": [
           "saturation"
         ]
       }

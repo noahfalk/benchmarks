@@ -17,6 +17,7 @@
   "results": [
     {
       "attribute_keys": [],
+      "benchmark": "attribute-processor-protocol-routing",
       "identity_keys": [
         "variant"
       ],
@@ -143,11 +144,11 @@
           "name": "test_duration",
           "unit": "seconds"
         }
-      ],
-      "suite": "attribute-processor-protocol-routing"
+      ]
     },
     {
       "attribute_keys": [],
+      "benchmark": "batch-processor-continuous-logs",
       "identity_keys": [
         "protocol"
       ],
@@ -236,14 +237,22 @@
           "name": "test_duration",
           "unit": "seconds"
         }
-      ],
-      "suite": "batch-processor-continuous-logs"
+      ]
     }
   ],
   "run": {
     "collection_id": "gha-continuous-1790808974398",
     "id": "gha-continuous-1790808974398-0-parameter-schema-v2",
     "metadata": {
+      "benchmark-schema-migration": {
+        "changes": [
+          "split-batch-processor-benchmarks",
+          "split-log-attribute-benchmarks",
+          "normalize-batch-dropped-signal-metrics",
+          "normalize-clickhouse-engine-metrics"
+        ],
+        "version": 2
+      },
       "github-action-benchmark-migration": {
         "cluster": {
           "first_entry_timestamp": "2026-09-30T22:56:14.398000Z",
@@ -251,22 +260,22 @@
         },
         "entries": [
           {
+            "benchmark": "attribute-processor-protocol-routing",
             "data_js": {
               "commit": "129c4ca22e6ac826d3c1be48805c8f9c115dccd3",
               "path": "docs/benchmarks/continuous/data.js"
             },
             "entry_timestamp": "2026-09-30T22:56:14.398000Z",
-            "execution_occurrence": 0,
-            "suite": "attribute-processor-protocol-routing"
+            "execution_occurrence": 0
           },
           {
+            "benchmark": "batch-processor",
             "data_js": {
               "commit": "129c4ca22e6ac826d3c1be48805c8f9c115dccd3",
               "path": "docs/benchmarks/continuous/data.js"
             },
             "entry_timestamp": "2026-09-30T22:56:14.398000Z",
-            "execution_occurrence": 0,
-            "suite": "batch-processor"
+            "execution_occurrence": 0
           }
         ],
         "environment_provenance": [
@@ -284,16 +293,7 @@
             }
           }
         ],
-        "missing_suites": []
-      },
-      "suite-schema-migration": {
-        "changes": [
-          "split-batch-processor-suites",
-          "split-log-attribute-suites",
-          "normalize-batch-dropped-signal-metrics",
-          "normalize-clickhouse-engine-metrics"
-        ],
-        "version": 2
+        "missing_benchmarks": []
       },
       "supersedes_run_ids": [
         "gha-continuous-1790808974398-0"

@@ -16,6 +16,7 @@
         "protocol",
         "signal"
       ],
+      "benchmark": "log-attribute-insert",
       "identity_keys": [
         "variant",
         "case"
@@ -297,8 +298,7 @@
           "name": "logs_received_rate",
           "unit": "logs/sec"
         }
-      ],
-      "suite": "log-attribute-insert"
+      ]
     }
   ],
   "run": {
@@ -308,7 +308,7 @@
     "metadata": {
       "migration-correction": {
         "reason": "replace synthetic Log Baseline preview with complete legacy results",
-        "retained_suites": [
+        "retained_benchmarks": [
           "log-attribute-insert"
         ]
       },

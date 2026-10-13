@@ -18,6 +18,7 @@
         "protocol",
         "signal"
       ],
+      "benchmark": "log-baseline",
       "identity_keys": [
         "variant",
         "load_rate"
@@ -244,8 +245,7 @@
           "name": "test_duration",
           "unit": "seconds"
         }
-      ],
-      "suite": "log-baseline"
+      ]
     }
   ],
   "run": {
@@ -272,13 +272,13 @@
         }
       },
       "identity-schema-migration": {
-        "renamed_parameter": "case",
-        "replacement": "load_rate",
-        "suites": [
+        "benchmarks": [
           "log-baseline",
           "metric-baseline",
           "trace-baseline"
-        ]
+        ],
+        "renamed_parameter": "case",
+        "replacement": "load_rate"
       },
       "supersedes_run_ids": [
         "mock-windows-legacy-log-baseline-otc-logs-otap-zstd-baseline-20260526-biased"

@@ -247,27 +247,18 @@ main {
   padding: 14px 0 56px;
 }
 
-.intro, .comparison-intro {
-  margin-bottom: 24px;
-}
-
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
   gap: 18px;
 }
 
-.card, .source-card {
+.card {
   padding: 20px;
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 12px;
   box-shadow: 0 8px 24px rgb(15 23 42 / 6%);
-}
-
-.comparison-card {
-  display: flex;
-  flex-direction: column;
 }
 
 .card-heading {
@@ -282,22 +273,22 @@ main {
   margin-bottom: 0;
 }
 
-.suite-link {
+.benchmark-link {
   color: var(--accent);
   text-decoration: none;
 }
 
-.suite-link:hover {
+.benchmark-link:hover {
   text-decoration: underline;
 }
 
-.suite-previews {
+.benchmark-previews {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   gap: 24px;
 }
 
-.suite-preview {
+.benchmark-preview {
   padding-bottom: 14px;
 }
 
@@ -377,13 +368,13 @@ main {
   margin: 20px 0;
 }
 
-.suite-preview .explorer-filters .filter-group {
+.benchmark-preview .explorer-filters .filter-group {
   padding-bottom: 0;
   margin-bottom: 0;
   border-bottom: 0;
 }
 
-.suite-preview .explorer-chart {
+.benchmark-preview .explorer-chart {
   margin: 12px 0 0;
 }
 
@@ -414,48 +405,6 @@ main {
   font-size: 12px;
 }
 
-.source-list {
-  display: grid;
-  gap: 8px;
-  padding: 0;
-  margin: 0 0 18px;
-  list-style: none;
-}
-
-.source-list li {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid var(--line);
-}
-
-.source-summary {
-  color: var(--muted);
-  text-align: right;
-}
-
-.role {
-  display: inline-block;
-  padding: 2px 7px;
-  margin-left: 5px;
-  color: var(--baseline);
-  background: var(--accent-soft);
-  border-radius: 999px;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-.comparison-facts {
-  display: flex;
-  gap: 14px;
-  margin: auto 0 18px;
-  color: var(--muted);
-  font-size: 13px;
-}
-
 .button-link {
   display: inline-block;
   padding: 10px 14px;
@@ -471,67 +420,9 @@ main {
   border-color: var(--accent);
 }
 
-.source-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 14px;
-  margin-top: 20px;
-}
-
-.source-card {
-  box-shadow: none;
-}
-
 .meta {
   color: var(--muted);
   font-size: 12px;
-}
-
-.variant-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 12px;
-}
-
-.variant-list span {
-  padding: 4px 7px;
-  color: var(--muted);
-  background: var(--background);
-  border: 1px solid var(--line);
-  border-radius: 6px;
-  font-size: 11px;
-}
-
-.comparison-workspace {
-  display: grid;
-  grid-template-columns: 230px minmax(0, 1fr);
-  align-items: start;
-  gap: 20px;
-}
-
-.filter-panel {
-  position: sticky;
-  top: 20px;
-  max-height: calc(100vh - 40px);
-  overflow-y: auto;
-  padding: 16px;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgb(15 23 42 / 6%);
-}
-
-.filter-heading {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 16px;
-}
-
-.filter-heading h2 {
-  font-size: 18px;
 }
 
 .filter-reset {
@@ -589,42 +480,12 @@ main {
   overflow-wrap: anywhere;
 }
 
-.filter-summary {
-  color: var(--muted);
-  font-size: 12px;
-  line-height: 1.4;
-}
-
-.chart-grid {
-  display: grid;
-  gap: 20px;
-}
-
-.chart-card {
-  min-width: 0;
-}
-
-.chart-heading {
-  display: flex;
-  align-items: start;
-  justify-content: space-between;
-  gap: 16px;
-  margin-bottom: 12px;
-}
-
 .chart-wrapper {
   position: relative;
   height: 390px;
 }
 
-.empty-state {
-  padding: 64px 24px;
-  color: var(--muted);
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  text-align: center;
-}
+
 
 .provenance {
   margin-top: 22px;
@@ -686,31 +547,6 @@ footer {
 
   .grid {
     grid-template-columns: 1fr;
-  }
-
-  .source-list li {
-    align-items: start;
-    flex-direction: column;
-  }
-
-  .source-summary {
-    text-align: left;
-  }
-
-  .comparison-workspace {
-    grid-template-columns: 1fr;
-  }
-
-  .filter-panel {
-    position: static;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 0 16px;
-    max-height: none;
-  }
-
-  .filter-heading, .filter-summary {
-    grid-column: 1 / -1;
   }
 
   .chart-wrapper {

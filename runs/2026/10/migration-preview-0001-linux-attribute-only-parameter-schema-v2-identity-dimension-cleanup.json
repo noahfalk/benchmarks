@@ -15,8 +15,9 @@
         "protocol",
         "signal"
       ],
+      "benchmark": "log-attribute-insert-rate",
       "identity_keys": [
-        "implementation",
+        "variant",
         "load_rate"
       ],
       "measurements": [
@@ -282,8 +283,7 @@
           "name": "logs_received_rate",
           "unit": "logs/sec"
         }
-      ],
-      "suite": "log-attribute-insert-rate"
+      ]
     }
   ],
   "run": {
@@ -291,6 +291,15 @@
     "finished_at": "2026-10-01T12:15:00Z",
     "id": "migration-preview-0001-linux-attribute-only-parameter-schema-v2-identity-dimension-cleanup",
     "metadata": {
+      "benchmark-schema-migration": {
+        "changes": [
+          "split-batch-processor-benchmarks",
+          "split-log-attribute-benchmarks",
+          "normalize-batch-dropped-signal-metrics",
+          "normalize-clickhouse-engine-metrics"
+        ],
+        "version": 2
+      },
       "identity-dimension-cleanup": {
         "removed_dimensions": [
           "log-attribute-insert-rate.load_rate"
@@ -298,18 +307,9 @@
       },
       "migration-correction": {
         "reason": "replace synthetic Log Baseline preview with complete legacy results",
-        "retained_suites": [
+        "retained_benchmarks": [
           "log-attribute-insert"
         ]
-      },
-      "suite-schema-migration": {
-        "changes": [
-          "split-batch-processor-suites",
-          "split-log-attribute-suites",
-          "normalize-batch-dropped-signal-metrics",
-          "normalize-clickhouse-engine-metrics"
-        ],
-        "version": 2
       },
       "supersedes_run_ids": [
         "migration-preview-0001-linux",

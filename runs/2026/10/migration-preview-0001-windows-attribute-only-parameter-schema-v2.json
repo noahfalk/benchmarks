@@ -16,8 +16,9 @@
         "protocol",
         "signal"
       ],
+      "benchmark": "log-attribute-insert-rate",
       "identity_keys": [
-        "implementation",
+        "variant",
         "load_rate"
       ],
       "measurements": [
@@ -297,8 +298,7 @@
           "name": "logs_received_rate",
           "unit": "logs/sec"
         }
-      ],
-      "suite": "log-attribute-insert-rate"
+      ]
     }
   ],
   "run": {
@@ -306,20 +306,20 @@
     "finished_at": "2026-10-01T12:15:00Z",
     "id": "migration-preview-0001-windows-attribute-only-parameter-schema-v2",
     "metadata": {
-      "migration-correction": {
-        "reason": "replace synthetic Log Baseline preview with complete legacy results",
-        "retained_suites": [
-          "log-attribute-insert"
-        ]
-      },
-      "suite-schema-migration": {
+      "benchmark-schema-migration": {
         "changes": [
-          "split-batch-processor-suites",
-          "split-log-attribute-suites",
+          "split-batch-processor-benchmarks",
+          "split-log-attribute-benchmarks",
           "normalize-batch-dropped-signal-metrics",
           "normalize-clickhouse-engine-metrics"
         ],
         "version": 2
+      },
+      "migration-correction": {
+        "reason": "replace synthetic Log Baseline preview with complete legacy results",
+        "retained_benchmarks": [
+          "log-attribute-insert"
+        ]
       },
       "supersedes_run_ids": [
         "migration-preview-0001-windows",

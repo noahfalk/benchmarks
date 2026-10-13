@@ -15,6 +15,7 @@
   "results": [
     {
       "attribute_keys": [],
+      "benchmark": "attribute-processor-protocol-routing",
       "identity_keys": [
         "variant"
       ],
@@ -141,11 +142,11 @@
           "name": "test_duration",
           "unit": "seconds"
         }
-      ],
-      "suite": "attribute-processor-protocol-routing"
+      ]
     },
     {
       "attribute_keys": [],
+      "benchmark": "batch-processor",
       "identity_keys": [
         "variant"
       ],
@@ -234,8 +235,7 @@
           "name": "test_duration",
           "unit": "seconds"
         }
-      ],
-      "suite": "batch-processor"
+      ]
     }
   ],
   "run": {
@@ -249,22 +249,22 @@
         },
         "entries": [
           {
+            "benchmark": "attribute-processor-protocol-routing",
             "data_js": {
               "commit": "3feb7d8320a6d18b9f1d9cddf745c6a0f29c2867",
               "path": "docs/benchmarks/continuous/data.js"
             },
             "entry_timestamp": "2026-09-24T23:56:18.148000Z",
-            "execution_occurrence": 0,
-            "suite": "attribute-processor-protocol-routing"
+            "execution_occurrence": 0
           },
           {
+            "benchmark": "batch-processor",
             "data_js": {
               "commit": "3feb7d8320a6d18b9f1d9cddf745c6a0f29c2867",
               "path": "docs/benchmarks/continuous/data.js"
             },
             "entry_timestamp": "2026-09-24T23:56:18.148000Z",
-            "execution_occurrence": 0,
-            "suite": "batch-processor"
+            "execution_occurrence": 0
           }
         ],
         "environment_provenance": [
@@ -282,7 +282,7 @@
             }
           }
         ],
-        "missing_suites": []
+        "missing_benchmarks": []
       },
       "synthetic": {
         "fixed_load_resource_multiplier": 1.05,

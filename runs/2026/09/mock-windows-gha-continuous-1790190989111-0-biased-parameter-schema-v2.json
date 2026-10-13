@@ -15,6 +15,7 @@
   "results": [
     {
       "attribute_keys": [],
+      "benchmark": "attribute-processor-protocol-routing",
       "identity_keys": [
         "variant"
       ],
@@ -141,11 +142,11 @@
           "name": "test_duration",
           "unit": "seconds"
         }
-      ],
-      "suite": "attribute-processor-protocol-routing"
+      ]
     },
     {
       "attribute_keys": [],
+      "benchmark": "batch-processor-continuous-logs",
       "identity_keys": [
         "protocol"
       ],
@@ -234,14 +235,22 @@
           "name": "test_duration",
           "unit": "seconds"
         }
-      ],
-      "suite": "batch-processor-continuous-logs"
+      ]
     }
   ],
   "run": {
     "collection_id": "gha-continuous-1790190989111",
     "id": "mock-windows-gha-continuous-1790190989111-0-biased-parameter-schema-v2",
     "metadata": {
+      "benchmark-schema-migration": {
+        "changes": [
+          "split-batch-processor-benchmarks",
+          "split-log-attribute-benchmarks",
+          "normalize-batch-dropped-signal-metrics",
+          "normalize-clickhouse-engine-metrics"
+        ],
+        "version": 2
+      },
       "github-action-benchmark-migration": {
         "cluster": {
           "first_entry_timestamp": "2026-09-23T19:16:29.111000Z",
@@ -249,22 +258,22 @@
         },
         "entries": [
           {
+            "benchmark": "attribute-processor-protocol-routing",
             "data_js": {
               "commit": "3feb7d8320a6d18b9f1d9cddf745c6a0f29c2867",
               "path": "docs/benchmarks/continuous/data.js"
             },
             "entry_timestamp": "2026-09-23T19:16:29.111000Z",
-            "execution_occurrence": 0,
-            "suite": "attribute-processor-protocol-routing"
+            "execution_occurrence": 0
           },
           {
+            "benchmark": "batch-processor",
             "data_js": {
               "commit": "3feb7d8320a6d18b9f1d9cddf745c6a0f29c2867",
               "path": "docs/benchmarks/continuous/data.js"
             },
             "entry_timestamp": "2026-09-23T19:16:29.111000Z",
-            "execution_occurrence": 0,
-            "suite": "batch-processor"
+            "execution_occurrence": 0
           }
         ],
         "environment_provenance": [
@@ -282,16 +291,7 @@
             }
           }
         ],
-        "missing_suites": []
-      },
-      "suite-schema-migration": {
-        "changes": [
-          "split-batch-processor-suites",
-          "split-log-attribute-suites",
-          "normalize-batch-dropped-signal-metrics",
-          "normalize-clickhouse-engine-metrics"
-        ],
-        "version": 2
+        "missing_benchmarks": []
       },
       "supersedes_run_ids": [
         "mock-windows-gha-continuous-1790190989111-0-biased"

@@ -16,6 +16,7 @@
         "protocol",
         "signal"
       ],
+      "benchmark": "log-attribute-insert",
       "identity_keys": [
         "variant",
         "case"
@@ -297,8 +298,7 @@
           "name": "logs_received_rate",
           "unit": "logs/sec"
         }
-      ],
-      "suite": "log-attribute-insert"
+      ]
     },
     {
       "attribute_keys": [
@@ -309,6 +309,7 @@
         "protocol",
         "signal"
       ],
+      "benchmark": "log-baseline",
       "identity_keys": [
         "variant",
         "case"
@@ -504,8 +505,7 @@
           "name": "logs_received_rate",
           "unit": "logs/sec"
         }
-      ],
-      "suite": "log-baseline"
+      ]
     }
   ],
   "run": {
