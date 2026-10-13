@@ -82,6 +82,7 @@ const SCHEMA_FIELD_LABELS = new Map([
   ["os_version", "OS version"],
 ]);
 let metricLabels = new Map();
+let metricProfilesById = new Map();
 let benchmarksById = new Map();
 
 function configureLabels(views) {
@@ -89,6 +90,9 @@ function configureLabels(views) {
     (views.benchmarks || []).map((benchmark) => [benchmark.id, benchmark]),
   );
   metricLabels = new Map();
+  metricProfilesById = new Map(
+    (views.metric_profiles || []).map((profile) => [profile.id, profile]),
+  );
   for (const profile of views.metric_profiles || []) {
     for (const metric of profile.metrics) {
       metricLabels.set(metric.name, metric.label);
@@ -525,7 +529,141 @@ function explorerChart(
   };
 }
 
+let detailCharts = [];
+
+function destroyDetailCharts() {
+  detailCharts.forEach((chart) => chart.destroy());
+  detailCharts = [];
+}
+
+function artifactUrl(root, contentId) {
+  const match = /^xxh3-128:([0-9a-f]{32})$/.exec(contentId || "");
+  if (!match) throw new Error(`Unsupported attachment content ID: ${contentId}`);
+  return `${root}/artifacts/xxh3-128/${match[1].slice(0, 2)}/${match[1]}`;
+}
+
+function selectedAttachments(bundle, measurement) {
+  const descriptors = new Map((bundle.attachments || []).map(
+    (attachment) => [attachment.id, attachment],
+  ));
+  return [
+    ...(bundle.run.attachment_ids || []),
+    ...(measurement.attachment_ids || []),
+  ].map((id) => descriptors.get(id)).filter(Boolean);
+}
+
+function groupTimeSeries(payloads) {
+  const grouped = new Map();
+  for (const rows of payloads) {
+    if (!Array.isArray(rows)) {
+      throw new Error("Time-series attachment must contain a JSON array");
+    }
+    for (const row of rows) {
+      if (
+        !row || typeof row.metric !== "string"
+        || typeof row.t !== "number" || !Number.isFinite(row.t)
+        || typeof row.value !== "number" || !Number.isFinite(row.value)
+      ) {
+        throw new Error("Time-series attachment contains an invalid row");
+      }
+      if (!grouped.has(row.metric)) grouped.set(row.metric, []);
+      grouped.get(row.metric).push({ x: row.t, y: row.value });
+    }
+  }
+  for (const samples of grouped.values()) {
+    samples.sort((left, right) => left.x - right.x);
+  }
+  return grouped;
+}
+
+function renderTimeSeries(target, table, measurement, profile, grouped) {
+  const container = target.querySelector(".detail-timeseries-grid");
+  if (!container) return;
+  const values = new Map(table.metrics.map(
+    (metric, index) => [metric.name, measurement.values[index]],
+  ));
+  const definitions = (profile?.time_series || []).filter(
+    (series) => (
+      series.average_metric
+      && values.get(series.average_metric) !== null
+      && values.get(series.average_metric) !== undefined
+    ) || (
+      series.maximum_metric
+      && values.get(series.maximum_metric) !== null
+      && values.get(series.maximum_metric) !== undefined
+    ),
+  );
+  if (!definitions.length) {
+    container.innerHTML = "<p>No time-series metrics.</p>";
+    return;
+  }
+  container.innerHTML = "";
+  definitions.forEach((series, index) => {
+    const card = document.createElement("article");
+    card.className = "detail-timeseries-card";
+    const title = document.createElement("h4");
+    title.textContent = series.label;
+    const summary = document.createElement("p");
+    summary.className = "meta";
+    const parts = [];
+    if (
+      series.average_metric
+      && values.get(series.average_metric) !== null
+      && values.get(series.average_metric) !== undefined
+    ) {
+      parts.push(`Average ${formatValue(values.get(series.average_metric))}`);
+    }
+    if (
+      series.maximum_metric
+      && values.get(series.maximum_metric) !== null
+      && values.get(series.maximum_metric) !== undefined
+    ) {
+      parts.push(`Maximum ${formatValue(values.get(series.maximum_metric))}`);
+    }
+    summary.textContent = `${parts.join(" | ")} ${series.unit}`;
+    card.append(title, summary);
+    const samples = grouped.get(series.metric);
+    if (!samples?.length) {
+      const empty = document.createElement("p");
+      empty.textContent = "No samples were recorded.";
+      card.append(empty);
+      container.append(card);
+      return;
+    }
+    const canvas = document.createElement("canvas");
+    card.append(canvas);
+    container.append(card);
+    detailCharts.push(new Chart(canvas, {
+      type: "line",
+      data: { datasets: [{
+        data: samples,
+        borderColor: AUTO_CHART_COLORS[index % AUTO_CHART_COLORS.length],
+        borderWidth: 1.5,
+        pointRadius: 0,
+        tension: 0.15,
+      }] },
+      options: {
+        animation: false,
+        parsing: false,
+        maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+          x: {
+            type: "linear",
+            title: { display: true, text: "Elapsed time (seconds)" },
+          },
+          y: {
+            beginAtZero: true,
+            title: { display: true, text: series.unit },
+          },
+        },
+      },
+    }));
+  });
+}
+
 async function loadResultDetails(record, benchmark, catalog, root, target, isCurrent) {
+  destroyDetailCharts();
   target.innerHTML = '<p>Loading selected result...</p>';
   try {
     const run = catalog.runs.find((item) => item.id === record.run_id);
@@ -561,6 +699,21 @@ async function loadResultDetails(record, benchmark, catalog, root, target, isCur
             <td>${escapeHtml(formatValue(value))} ${escapeHtml(metric.unit)}</td></tr>
       `;
     }).join("");
+    const attachments = selectedAttachments(bundle, measurement);
+    const configurations = attachments.filter(
+      (attachment) => attachment.kind === "configuration",
+    );
+    const timeSeries = attachments.filter(
+      (attachment) => attachment.kind === "timeseries",
+    );
+    const files = configurations.length
+      ? configurations.map((attachment) => `
+          <button class="attachment-file" type="button"
+                  data-content-id="${escapeHtml(attachment.content_id)}">
+            ${escapeHtml(attachment.name)}
+          </button>
+        `).join("")
+      : "<p>No configuration files.</p>";
     target.innerHTML = `
       <h2>Selected result</h2>
       <p>${escapeHtml(
@@ -573,7 +726,52 @@ async function loadResultDetails(record, benchmark, catalog, root, target, isCur
         Ordering date: ${escapeHtml(formatDate(record.ordering_timestamp))}
       </p>
       <table class="result-metrics">${rows}</table>
+      <section class="detail-attachments">
+        <h3>Configuration files</h3>
+        <div class="attachment-files">${files}</div>
+        <pre class="attachment-viewer" hidden></pre>
+      </section>
+      <section class="detail-timeseries">
+        <h3>Time series</h3>
+        <div class="detail-timeseries-grid"><p>Loading...</p></div>
+      </section>
     `;
+    const viewer = target.querySelector(".attachment-viewer");
+    target.querySelectorAll(".attachment-file").forEach((button) => {
+      button.addEventListener("click", async () => {
+        viewer.hidden = false;
+        viewer.textContent = "Loading configuration...";
+        try {
+          const response = await fetch(
+            artifactUrl(root, button.dataset.contentId),
+          );
+          if (!response.ok) throw new Error(`HTTP ${response.status}`);
+          viewer.textContent = await response.text();
+        } catch (error) {
+          viewer.textContent =
+            `Unable to load configuration: ${error.message}`;
+        }
+      });
+    });
+    try {
+      const payloads = await Promise.all(timeSeries.map(
+        (attachment) => fetchJson(artifactUrl(root, attachment.content_id)),
+      ));
+      if (!isCurrent()) return;
+      renderTimeSeries(
+        target,
+        table,
+        measurement,
+        metricProfilesById.get(sourceBenchmark.metric_profile),
+        groupTimeSeries(payloads),
+      );
+    } catch (error) {
+      if (isCurrent()) {
+        target.querySelector(".detail-timeseries-grid").innerHTML =
+          `<div class="error">Could not load time series: ` +
+          `${escapeHtml(error.message)}</div>`;
+      }
+    }
   } catch (error) {
     if (isCurrent()) target.innerHTML =
       `<div class="error">Could not load result: ${escapeHtml(error.message)}</div>`;

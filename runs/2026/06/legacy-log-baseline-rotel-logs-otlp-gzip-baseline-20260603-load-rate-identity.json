@@ -1,5 +1,132 @@
 {
-  "attachments": [],
+  "attachments": [
+    {
+      "content_id": "xxh3-128:01e7c3e1f101b06610baf5f750c2a165",
+      "id": "1000k-configuration-1",
+      "kind": "configuration",
+      "name": "backend-config.rendered.yaml"
+    },
+    {
+      "content_id": "xxh3-128:6a3835cb67dc39e849a3b9908114050d",
+      "id": "1000k-configuration-2",
+      "kind": "configuration",
+      "name": "loadgen-config.rendered.yaml"
+    },
+    {
+      "content_id": "xxh3-128:7a79a8baaa28b09b9efcbaca25761cd6",
+      "id": "1000k-timeseries-3",
+      "kind": "timeseries",
+      "name": "timeseries.json"
+    },
+    {
+      "content_id": "xxh3-128:01e7c3e1f101b06610baf5f750c2a165",
+      "id": "100k-configuration-1",
+      "kind": "configuration",
+      "name": "backend-config.rendered.yaml"
+    },
+    {
+      "content_id": "xxh3-128:6cf07103df00e39990aaf67b96d78fa2",
+      "id": "100k-configuration-2",
+      "kind": "configuration",
+      "name": "loadgen-config.rendered.yaml"
+    },
+    {
+      "content_id": "xxh3-128:857dce82d067cdff3f83dc3872407164",
+      "id": "100k-timeseries-3",
+      "kind": "timeseries",
+      "name": "timeseries.json"
+    },
+    {
+      "content_id": "xxh3-128:01e7c3e1f101b06610baf5f750c2a165",
+      "id": "200k-configuration-1",
+      "kind": "configuration",
+      "name": "backend-config.rendered.yaml"
+    },
+    {
+      "content_id": "xxh3-128:df7ce39e8537668c5c8c56b2907d6748",
+      "id": "200k-configuration-2",
+      "kind": "configuration",
+      "name": "loadgen-config.rendered.yaml"
+    },
+    {
+      "content_id": "xxh3-128:5f0bfa23e748023f27aafb59f3f03f8f",
+      "id": "200k-timeseries-3",
+      "kind": "timeseries",
+      "name": "timeseries.json"
+    },
+    {
+      "content_id": "xxh3-128:01e7c3e1f101b06610baf5f750c2a165",
+      "id": "300k-configuration-1",
+      "kind": "configuration",
+      "name": "backend-config.rendered.yaml"
+    },
+    {
+      "content_id": "xxh3-128:93c4ad3417fa5591c7c8739600972ed2",
+      "id": "300k-configuration-2",
+      "kind": "configuration",
+      "name": "loadgen-config.rendered.yaml"
+    },
+    {
+      "content_id": "xxh3-128:3f484f95e3a6b349af55b8931ecea806",
+      "id": "300k-timeseries-3",
+      "kind": "timeseries",
+      "name": "timeseries.json"
+    },
+    {
+      "content_id": "xxh3-128:01e7c3e1f101b06610baf5f750c2a165",
+      "id": "400k-configuration-1",
+      "kind": "configuration",
+      "name": "backend-config.rendered.yaml"
+    },
+    {
+      "content_id": "xxh3-128:dfb00d837930a8d8362d594a86303400",
+      "id": "400k-configuration-2",
+      "kind": "configuration",
+      "name": "loadgen-config.rendered.yaml"
+    },
+    {
+      "content_id": "xxh3-128:69aa28d3e8be5692313cf4549f1ede1d",
+      "id": "400k-timeseries-3",
+      "kind": "timeseries",
+      "name": "timeseries.json"
+    },
+    {
+      "content_id": "xxh3-128:01e7c3e1f101b06610baf5f750c2a165",
+      "id": "600k-configuration-1",
+      "kind": "configuration",
+      "name": "backend-config.rendered.yaml"
+    },
+    {
+      "content_id": "xxh3-128:773d50fc6e4ab835523d8e68a67db7c9",
+      "id": "600k-configuration-2",
+      "kind": "configuration",
+      "name": "loadgen-config.rendered.yaml"
+    },
+    {
+      "content_id": "xxh3-128:a24da3c9a0f9632b7d413104fe8c350f",
+      "id": "600k-timeseries-3",
+      "kind": "timeseries",
+      "name": "timeseries.json"
+    },
+    {
+      "content_id": "xxh3-128:01e7c3e1f101b06610baf5f750c2a165",
+      "id": "800k-configuration-1",
+      "kind": "configuration",
+      "name": "backend-config.rendered.yaml"
+    },
+    {
+      "content_id": "xxh3-128:a3268b314e29329ee3fe846e9d22582d",
+      "id": "800k-configuration-2",
+      "kind": "configuration",
+      "name": "loadgen-config.rendered.yaml"
+    },
+    {
+      "content_id": "xxh3-128:f2164eb960dad0d3d6540c43b45e3f94",
+      "id": "800k-timeseries-3",
+      "kind": "timeseries",
+      "name": "timeseries.json"
+    }
+  ],
   "environment": {
     "architecture": "x86_64",
     "cpu_model": "INTEL(R) XEON(R) PLATINUM 8581C CPU @ 2.30GHz",
@@ -25,6 +152,11 @@
       ],
       "measurements": [
         {
+          "attachment_ids": [
+            "1000k-configuration-1",
+            "1000k-configuration-2",
+            "1000k-timeseries-3"
+          ],
           "attributes": [
             "rotel",
             "gzip",
@@ -50,6 +182,11 @@
           ]
         },
         {
+          "attachment_ids": [
+            "100k-configuration-1",
+            "100k-configuration-2",
+            "100k-timeseries-3"
+          ],
           "attributes": [
             "rotel",
             "gzip",
@@ -75,6 +212,11 @@
           ]
         },
         {
+          "attachment_ids": [
+            "200k-configuration-1",
+            "200k-configuration-2",
+            "200k-timeseries-3"
+          ],
           "attributes": [
             "rotel",
             "gzip",
@@ -100,6 +242,11 @@
           ]
         },
         {
+          "attachment_ids": [
+            "300k-configuration-1",
+            "300k-configuration-2",
+            "300k-timeseries-3"
+          ],
           "attributes": [
             "rotel",
             "gzip",
@@ -125,6 +272,11 @@
           ]
         },
         {
+          "attachment_ids": [
+            "400k-configuration-1",
+            "400k-configuration-2",
+            "400k-timeseries-3"
+          ],
           "attributes": [
             "rotel",
             "gzip",
@@ -150,6 +302,11 @@
           ]
         },
         {
+          "attachment_ids": [
+            "600k-configuration-1",
+            "600k-configuration-2",
+            "600k-timeseries-3"
+          ],
           "attributes": [
             "rotel",
             "gzip",
@@ -175,6 +332,11 @@
           ]
         },
         {
+          "attachment_ids": [
+            "800k-configuration-1",
+            "800k-configuration-2",
+            "800k-timeseries-3"
+          ],
           "attributes": [
             "rotel",
             "gzip",

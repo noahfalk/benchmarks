@@ -4238,6 +4238,46 @@
           "name": "test_duration",
           "unit": "seconds"
         }
+      ],
+      "time_series": [
+        {
+          "average_metric": "cpu_percentage_normalized_avg",
+          "label": "Normalized CPU",
+          "maximum_metric": "cpu_percentage_normalized_max",
+          "metric": "cpu_percentage_normalized",
+          "unit": "%"
+        },
+        {
+          "average_metric": "ram_mib_avg",
+          "label": "RAM",
+          "maximum_metric": "ram_mib_max",
+          "metric": "ram_mib",
+          "unit": "MiB"
+        },
+        {
+          "average_metric": "network_tx_bytes_rate_avg",
+          "label": "Network TX rate",
+          "metric": "network_tx_bytes_rate",
+          "unit": "bytes/sec"
+        },
+        {
+          "average_metric": "network_rx_bytes_rate_avg",
+          "label": "Network RX rate",
+          "metric": "network_rx_bytes_rate",
+          "unit": "bytes/sec"
+        },
+        {
+          "average_metric": "logs_produced_rate",
+          "label": "Offered load rate",
+          "metric": "logs_produced_rate",
+          "unit": "logs/sec"
+        },
+        {
+          "average_metric": "logs_received_rate",
+          "label": "Backend received rate",
+          "metric": "logs_received_rate",
+          "unit": "logs/sec"
+        }
       ]
     },
     {
@@ -4323,6 +4363,46 @@
           "name": "test_duration",
           "unit": "seconds"
         }
+      ],
+      "time_series": [
+        {
+          "average_metric": "cpu_percentage_normalized_avg",
+          "label": "Normalized CPU",
+          "maximum_metric": "cpu_percentage_normalized_max",
+          "metric": "cpu_percentage_normalized",
+          "unit": "%"
+        },
+        {
+          "average_metric": "ram_mib_avg",
+          "label": "RAM",
+          "maximum_metric": "ram_mib_max",
+          "metric": "ram_mib",
+          "unit": "MiB"
+        },
+        {
+          "average_metric": "network_tx_bytes_rate_avg",
+          "label": "Network TX rate",
+          "metric": "network_tx_bytes_rate",
+          "unit": "bytes/sec"
+        },
+        {
+          "average_metric": "network_rx_bytes_rate_avg",
+          "label": "Network RX rate",
+          "metric": "network_rx_bytes_rate",
+          "unit": "bytes/sec"
+        },
+        {
+          "average_metric": "metrics_produced_rate",
+          "label": "Offered load rate",
+          "metric": "metrics_produced_rate",
+          "unit": "metrics/sec"
+        },
+        {
+          "average_metric": "metrics_received_rate",
+          "label": "Backend received rate",
+          "metric": "metrics_received_rate",
+          "unit": "metrics/sec"
+        }
       ]
     },
     {
@@ -4407,6 +4487,46 @@
           "min": 0,
           "name": "test_duration",
           "unit": "seconds"
+        }
+      ],
+      "time_series": [
+        {
+          "average_metric": "cpu_percentage_normalized_avg",
+          "label": "Normalized CPU",
+          "maximum_metric": "cpu_percentage_normalized_max",
+          "metric": "cpu_percentage_normalized",
+          "unit": "%"
+        },
+        {
+          "average_metric": "ram_mib_avg",
+          "label": "RAM",
+          "maximum_metric": "ram_mib_max",
+          "metric": "ram_mib",
+          "unit": "MiB"
+        },
+        {
+          "average_metric": "network_tx_bytes_rate_avg",
+          "label": "Network TX rate",
+          "metric": "network_tx_bytes_rate",
+          "unit": "bytes/sec"
+        },
+        {
+          "average_metric": "network_rx_bytes_rate_avg",
+          "label": "Network RX rate",
+          "metric": "network_rx_bytes_rate",
+          "unit": "bytes/sec"
+        },
+        {
+          "average_metric": "spans_produced_rate",
+          "label": "Offered load rate",
+          "metric": "spans_produced_rate",
+          "unit": "spans/sec"
+        },
+        {
+          "average_metric": "spans_received_rate",
+          "label": "Backend received rate",
+          "metric": "spans_received_rate",
+          "unit": "spans/sec"
         }
       ]
     },
