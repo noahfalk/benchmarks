@@ -461,6 +461,20 @@ main {
   text-transform: uppercase;
 }
 
+.filter-options {
+  display: flex;
+  align-items: start;
+  gap: 18px;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.filter-option-column {
+  display: grid;
+  flex: none;
+  gap: 6px;
+}
+
 .filter-option {
   display: flex;
   align-items: start;

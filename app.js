@@ -889,25 +889,31 @@ function renderFilterGroups(
   parameterLabels = null,
 ) {
   return [...categories].map(([key, values], groupIndex) => {
-    const options = values.map((value, index) => {
-      const id = `${prefix}-${groupIndex}-${index}`;
-      return `
-        <label class="filter-option" for="${escapeHtml(id)}">
-          <input id="${escapeHtml(id)}"
-                 type="checkbox"
-                 data-attribute="${escapeHtml(key)}"
-                 value="${escapeHtml(value)}"
-                 ${filterState.get(key).has(value) ? "checked" : ""}>
-          <span>${escapeHtml(displayFilterValue(key, value, parameterLabels))}</span>
-        </label>
-      `;
-    }).join("");
+    const columns = [];
+    for (let columnStart = 0; columnStart < values.length; columnStart += 4) {
+      const options = values.slice(columnStart, columnStart + 4)
+        .map((value, columnIndex) => {
+          const index = columnStart + columnIndex;
+          const id = `${prefix}-${groupIndex}-${index}`;
+          return `
+            <label class="filter-option" for="${escapeHtml(id)}">
+              <input id="${escapeHtml(id)}"
+                     type="checkbox"
+                     data-attribute="${escapeHtml(key)}"
+                     value="${escapeHtml(value)}"
+                     ${filterState.get(key).has(value) ? "checked" : ""}>
+              <span>${escapeHtml(displayFilterValue(key, value, parameterLabels))}</span>
+            </label>
+          `;
+        }).join("");
+      columns.push(`<div class="filter-option-column">${options}</div>`);
+    }
     return `
       <fieldset class="filter-group">
         <legend title="${escapeHtml(key)}">${escapeHtml(
           filterLabel(key, benchmark),
         )}</legend>
-        ${options}
+        <div class="filter-options">${columns.join("")}</div>
       </fieldset>
     `;
   }).join("");
