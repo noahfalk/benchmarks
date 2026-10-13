@@ -258,8 +258,6 @@ function historyFacets(series) {
   for (const [namespace, values] of [
     ["identity", series.identity],
     ["attribute", series.attributes],
-    ["environment", series.environment],
-    ["source", { repository: series.repository, branch: series.branch }],
   ]) {
     for (const [key, value] of Object.entries(values)) {
       if (value !== null && value !== undefined) facets[`${namespace}.${key}`] = String(value);
@@ -401,7 +399,7 @@ function explorerChart(records, axis, parameterLabels) {
       environment: history
         ? record.environment
         : hardwareIdentity(record.environment),
-      repository: record.repository, branch: record.branch,
+      repository: record.repository,
     };
     const key = JSON.stringify(series);
     if (!groups.has(key)) groups.set(key, { series, records: new Map() });
