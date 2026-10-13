@@ -2,17 +2,17 @@
 
 const AUTO_CHART_COLORS = [
   "#2563eb",
-  "#0f766e",
   "#d97706",
-  "#7c3aed",
-  "#dc2626",
-  "#0891b2",
-  "#65a30d",
-  "#db2777",
-  "#475569",
-  "#9333ea",
-  "#ea580c",
   "#059669",
+  "#dc2626",
+  "#db2777",
+  "#65a30d",
+  "#0891b2",
+  "#7c3aed",
+  "#ea580c",
+  "#0f766e",
+  "#9333ea",
+  "#475569",
 ];
 const COLORBLIND_CHART_COLORS = [
   "#0072b2",
@@ -344,19 +344,9 @@ function benchmarkFieldMetadata(benchmark) {
   return fields;
 }
 
-function historySeriesColor(series) {
-  const key = JSON.stringify([
-    series.benchmark, series.identity, series.attributes, series.environment,
-  ]);
-  let hash = 0;
-  for (let index = 0; index < key.length; index += 1) {
-    hash = ((hash << 5) - hash + key.charCodeAt(index)) | 0;
-  }
-  if (colorblindMode) {
-    const colors = activeChartColors();
-    return colors[Math.abs(hash) % colors.length];
-  }
-  return `hsl(${Math.abs(hash) % 360}, 65%, 48%)`;
+function chartSeriesColor(index) {
+  const colors = activeChartColors();
+  return colors[index % colors.length];
 }
 
 function benchmarkAxes(records, benchmark, fieldMetadata = new Map()) {
@@ -489,7 +479,7 @@ function explorerChart(
   };
   return {
     labels: ordered.map(displayLabel),
-    datasets: [...groups.values()].map(({ series, records }) => {
+    datasets: [...groups.values()].map(({ series, records }, index) => {
       const baseLabel = identityBars
         ? parameterLabels.get(axisIdentityKey)?.get(series.identity[axisIdentityKey])
           || series.identity[axisIdentityKey]
@@ -502,11 +492,12 @@ function explorerChart(
         ) || "Results";
       const baseline = displayedBenchmark?.baseline
         && series.benchmark === displayedBenchmark.baseline.benchmark;
+      const color = chartSeriesColor(index);
       return {
         label: `${baseLabel}${baseline ? " (Baseline)" : ""}`,
         grouped: !identityBars,
-        borderColor: historySeriesColor(series),
-        backgroundColor: historySeriesColor(series),
+        borderColor: color,
+        backgroundColor: color,
         borderWidth: history ? 2 : 1,
         pointRadius: 3,
         pointHitRadius: 6,
