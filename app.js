@@ -341,7 +341,7 @@ function benchmarkFieldMetadata(benchmark) {
 
 function historySeriesColor(series) {
   const key = JSON.stringify([
-    series.identity, series.attributes, series.environment,
+    series.benchmark, series.identity, series.attributes, series.environment,
   ]);
   let hash = 0;
   for (let index = 0; index < key.length; index += 1) {
@@ -391,7 +391,12 @@ function defaultBenchmarkAxis(axes) {
   return axes[0]?.id || "history";
 }
 
-function explorerChart(records, axis, parameterLabels) {
+function explorerChart(
+  records,
+  axis,
+  parameterLabels,
+  displayedBenchmark = null,
+) {
   const history = axis === "history";
   const groups = new Map();
   const labels = new Map();
@@ -437,6 +442,7 @@ function explorerChart(records, axis, parameterLabels) {
     }
     labels.set(x, record);
     const series = {
+      benchmark: record.benchmark,
       identity, identity_keys: record.identity_keys,
       attributes,
       environment: history
@@ -478,40 +484,45 @@ function explorerChart(records, axis, parameterLabels) {
   };
   return {
     labels: ordered.map(displayLabel),
-    datasets: [...groups.values()].map(({ series, records }) => ({
-      label: history
+    datasets: [...groups.values()].map(({ series, records }) => {
+      const baseLabel = history
         ? historySeriesLabel(series, parameterLabels)
         : identitySeriesLabel(
           series,
           axis.startsWith("identity.") ? axis.slice(9) : null,
           parameterLabels,
-        ) || "Results",
-      grouped: !identityBars,
-      borderColor: historySeriesColor(series),
-      backgroundColor: historySeriesColor(series),
-      borderWidth: history ? 2 : 1,
-      pointRadius: 3,
-      pointHitRadius: 6,
-      fill: false,
-      spanGaps: true,
-      data: history
-        ? ordered.flatMap((x, index) => {
-          const matches = records.get(x) || [];
-          return matches.length
-            ? matches.map((record) => ({
-              x: index, y: record.value, record,
-            }))
-            : [{ x: index, y: null, record: null }];
-        })
-        : ordered.map((x, index) => {
-          const record = records.get(x);
-          return {
-            x: index,
-            y: record ? record.value : null,
-            record: record || null,
-          };
-        }),
-    })),
+        ) || "Results";
+      const baseline = displayedBenchmark?.baseline
+        && series.benchmark === displayedBenchmark.baseline.benchmark;
+      return {
+        label: `${baseLabel}${baseline ? " (Baseline)" : ""}`,
+        grouped: !identityBars,
+        borderColor: historySeriesColor(series),
+        backgroundColor: historySeriesColor(series),
+        borderWidth: history ? 2 : 1,
+        pointRadius: 3,
+        pointHitRadius: 6,
+        fill: false,
+        spanGaps: true,
+        data: history
+          ? ordered.flatMap((x, index) => {
+            const matches = records.get(x) || [];
+            return matches.length
+              ? matches.map((record) => ({
+                x: index, y: record.value, record,
+              }))
+              : [{ x: index, y: null, record: null }];
+          })
+          : ordered.map((x, index) => {
+            const record = records.get(x);
+            return {
+              x: index,
+              y: record ? record.value : null,
+              record: record || null,
+            };
+          }),
+      };
+    }),
   };
 }
 
@@ -778,7 +789,12 @@ function renderBenchmarkExplorer(target, benchmark, data, catalog, root, overvie
       return;
     }
     if (typeof Chart === "undefined") throw new Error("Chart.js did not load");
-    const chartData = explorerChart(visible, axis, parameterLabels);
+    const chartData = explorerChart(
+      visible,
+      axis,
+      parameterLabels,
+      benchmark,
+    );
     const options = chartOptions(unit);
     if (history) {
       Object.assign(options.scales.x.ticks, {

@@ -2394,8 +2394,8 @@
                 "protocol": "otap",
                 "signal": "logs"
               },
-              "id": "dfe-logs-otap-gzip-baseline",
-              "label": "DFE OTAP Baseline w/ Gzip (Logs)",
+              "id": "dfe-otap-gzip",
+              "label": "DFE OTAP/Gzip",
               "runner_data": {
                 "path": "tools/benchmark_dashboard/config/templates/orchestrator/dfe-single-core-multi-rate.yaml",
                 "template_bindings": {
@@ -2414,7 +2414,7 @@
                 "signal": "logs"
               },
               "id": "dfe-otap-none",
-              "label": "DFE OTAP Baseline (Logs)",
+              "label": "DFE OTAP/None",
               "runner_data": {
                 "path": "tools/benchmark_dashboard/config/templates/orchestrator/dfe-single-core-multi-rate.yaml",
                 "template_bindings": {
@@ -2432,8 +2432,8 @@
                 "protocol": "otap",
                 "signal": "logs"
               },
-              "id": "dfe-logs-otap-zstd-baseline",
-              "label": "DFE OTAP Baseline w/ Zstd (Logs)",
+              "id": "dfe-otap-zstd",
+              "label": "DFE OTAP/Zstd",
               "runner_data": {
                 "path": "tools/benchmark_dashboard/config/templates/orchestrator/dfe-single-core-multi-rate.yaml",
                 "template_bindings": {
@@ -2452,7 +2452,7 @@
                 "signal": "logs"
               },
               "id": "dfe-otlp-gzip",
-              "label": "DFE OTLP Baseline w/ Gzip (Logs)",
+              "label": "DFE OTLP/Gzip",
               "runner_data": {
                 "path": "tools/benchmark_dashboard/config/templates/orchestrator/dfe-single-core-multi-rate.yaml",
                 "template_bindings": {
@@ -2471,7 +2471,7 @@
                 "signal": "logs"
               },
               "id": "dfe-otlp-none",
-              "label": "DFE OTLP Baseline (Logs)",
+              "label": "DFE OTLP/None",
               "runner_data": {
                 "path": "tools/benchmark_dashboard/config/templates/orchestrator/dfe-single-core-multi-rate.yaml",
                 "template_bindings": {
@@ -2489,8 +2489,8 @@
                 "protocol": "otlp",
                 "signal": "logs"
               },
-              "id": "dfe-logs-otlp-zstd-baseline",
-              "label": "DFE OTLP Baseline w/ Zstd (Logs)",
+              "id": "dfe-otlp-zstd",
+              "label": "DFE OTLP/Zstd",
               "runner_data": {
                 "path": "tools/benchmark_dashboard/config/templates/orchestrator/dfe-single-core-multi-rate.yaml",
                 "template_bindings": {
@@ -2508,8 +2508,8 @@
                 "protocol": "otlphttp",
                 "signal": "logs"
               },
-              "id": "dfe-logs-otlphttp-gzip-baseline",
-              "label": "DFE OTLP/HTTP Baseline w/ Gzip (Logs)",
+              "id": "dfe-otlphttp-gzip",
+              "label": "DFE OTLP-HTTP/Gzip",
               "runner_data": {
                 "path": "tools/benchmark_dashboard/config/templates/orchestrator/dfe-single-core-multi-rate.yaml",
                 "template_bindings": {
@@ -2528,8 +2528,8 @@
                 "protocol": "otlphttp",
                 "signal": "logs"
               },
-              "id": "dfe-logs-otlphttp-none-baseline",
-              "label": "DFE OTLP/HTTP Baseline (Logs)",
+              "id": "dfe-otlphttp-none",
+              "label": "DFE OTLP-HTTP/None",
               "runner_data": {
                 "path": "tools/benchmark_dashboard/config/templates/orchestrator/dfe-single-core-multi-rate.yaml",
                 "template_bindings": {
@@ -2548,8 +2548,8 @@
                 "protocol": "otlphttp",
                 "signal": "logs"
               },
-              "id": "dfe-logs-otlphttp-zstd-baseline",
-              "label": "DFE OTLP/HTTP Baseline w/ Zstd (Logs)",
+              "id": "dfe-otlphttp-zstd",
+              "label": "DFE OTLP-HTTP/Zstd",
               "runner_data": {
                 "path": "tools/benchmark_dashboard/config/templates/orchestrator/dfe-single-core-multi-rate.yaml",
                 "template_bindings": {
@@ -2569,7 +2569,7 @@
                 "signal": "logs"
               },
               "id": "fbit-otlp-none",
-              "label": "FB OTLP Baseline (Logs, None)",
+              "label": "FB OTLP/None",
               "runner_data": {
                 "path": "tools/benchmark_dashboard/config/templates/orchestrator/fbit-single-core-multi-rate.yaml",
                 "template_bindings": {
@@ -2586,8 +2586,8 @@
                 "protocol": "otlphttp",
                 "signal": "logs"
               },
-              "id": "fbit-logs-otlphttp-gzip-baseline",
-              "label": "FB OTLP/HTTP Baseline (Logs, Gzip)",
+              "id": "fbit-otlphttp-gzip",
+              "label": "FB OTLP-HTTP/Gzip",
               "runner_data": {
                 "path": "tools/benchmark_dashboard/config/templates/orchestrator/fbit-single-core-multi-rate.yaml",
                 "template_bindings": {
@@ -2604,8 +2604,8 @@
                 "protocol": "otlphttp",
                 "signal": "logs"
               },
-              "id": "fbit-logs-otlphttp-none-baseline",
-              "label": "FB OTLP/HTTP Baseline (Logs, None)",
+              "id": "fbit-otlphttp-none",
+              "label": "FB OTLP-HTTP/None",
               "runner_data": {
                 "path": "tools/benchmark_dashboard/config/templates/orchestrator/fbit-single-core-multi-rate.yaml",
                 "template_bindings": {
@@ -2622,8 +2622,8 @@
                 "protocol": "otlphttp",
                 "signal": "logs"
               },
-              "id": "fbit-logs-otlphttp-zstd-baseline",
-              "label": "FB OTLP/HTTP Baseline (Logs, Zstd)",
+              "id": "fbit-otlphttp-zstd",
+              "label": "FB OTLP-HTTP/Zstd",
               "runner_data": {
                 "path": "tools/benchmark_dashboard/config/templates/orchestrator/fbit-single-core-multi-rate.yaml",
                 "template_bindings": {
@@ -2640,8 +2640,8 @@
                 "protocol": "otap",
                 "signal": "logs"
               },
-              "id": "otc-logs-otap-gzip-baseline",
-              "label": "OTC OTAP Baseline w/ Gzip (Logs)",
+              "id": "otc-otap-gzip",
+              "label": "OTC OTAP/Gzip",
               "runner_data": {
                 "path": "tools/benchmark_dashboard/config/templates/orchestrator/otc-single-core-multi-rate.yaml",
                 "template_bindings": {
@@ -2658,8 +2658,8 @@
                 "protocol": "otap",
                 "signal": "logs"
               },
-              "id": "otc-logs-otap-none-baseline",
-              "label": "OTC OTAP Baseline (Logs)",
+              "id": "otc-otap-none",
+              "label": "OTC OTAP/None",
               "runner_data": {
                 "path": "tools/benchmark_dashboard/config/templates/orchestrator/otc-single-core-multi-rate.yaml",
                 "template_bindings": {
@@ -2676,8 +2676,8 @@
                 "protocol": "otap",
                 "signal": "logs"
               },
-              "id": "otc-logs-otap-zstd-baseline",
-              "label": "OTC OTAP Baseline w/ Zstd (Logs)",
+              "id": "otc-otap-zstd",
+              "label": "OTC OTAP/Zstd",
               "runner_data": {
                 "path": "tools/benchmark_dashboard/config/templates/orchestrator/otc-single-core-multi-rate.yaml",
                 "template_bindings": {
@@ -2694,8 +2694,8 @@
                 "protocol": "otlp",
                 "signal": "logs"
               },
-              "id": "otc-logs-otlp-gzip-baseline",
-              "label": "OTC OTLP Baseline w/ Gzip (Logs)",
+              "id": "otc-otlp-gzip",
+              "label": "OTC OTLP/Gzip",
               "runner_data": {
                 "path": "tools/benchmark_dashboard/config/templates/orchestrator/otc-single-core-multi-rate.yaml",
                 "template_bindings": {
@@ -2713,7 +2713,7 @@
                 "signal": "logs"
               },
               "id": "otc-otlp-none",
-              "label": "OTC OTLP Baseline (Logs)",
+              "label": "OTC OTLP/None",
               "runner_data": {
                 "path": "tools/benchmark_dashboard/config/templates/orchestrator/otc-single-core-multi-rate.yaml",
                 "template_bindings": {
@@ -2730,8 +2730,8 @@
                 "protocol": "otlp",
                 "signal": "logs"
               },
-              "id": "otc-logs-otlp-zstd-baseline",
-              "label": "OTC OTLP Baseline w/ Zstd (Logs)",
+              "id": "otc-otlp-zstd",
+              "label": "OTC OTLP/Zstd",
               "runner_data": {
                 "path": "tools/benchmark_dashboard/config/templates/orchestrator/otc-single-core-multi-rate.yaml",
                 "template_bindings": {
@@ -2748,8 +2748,8 @@
                 "protocol": "otlphttp",
                 "signal": "logs"
               },
-              "id": "otc-logs-otlphttp-none-baseline",
-              "label": "OTC OTLP/HTTP Baseline (Logs)",
+              "id": "otc-otlphttp-none",
+              "label": "OTC OTLP-HTTP/None",
               "runner_data": {
                 "path": "tools/benchmark_dashboard/config/templates/orchestrator/otc-single-core-multi-rate.yaml",
                 "template_bindings": {
@@ -2767,8 +2767,8 @@
                 "protocol": "otlp",
                 "signal": "logs"
               },
-              "id": "rotel-logs-otlp-gzip-baseline",
-              "label": "Rotel OTLP Baseline w/ Gzip (Logs)",
+              "id": "rotel-otlp-gzip",
+              "label": "Rotel OTLP/Gzip",
               "runner_data": {
                 "path": "tools/benchmark_dashboard/config/templates/orchestrator/rotel-single-core-multi-rate.yaml",
                 "template_bindings": {
@@ -2784,8 +2784,8 @@
                 "protocol": "otlphttp",
                 "signal": "logs"
               },
-              "id": "rotel-logs-otlphttp-gzip-baseline",
-              "label": "Rotel OTLP/HTTP Baseline w/ Gzip (Logs)",
+              "id": "rotel-otlphttp-gzip",
+              "label": "Rotel OTLP-HTTP/Gzip",
               "runner_data": {
                 "path": "tools/benchmark_dashboard/config/templates/orchestrator/rotel-single-core-multi-rate.yaml",
                 "template_bindings": {
