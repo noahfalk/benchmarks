@@ -197,6 +197,25 @@ function benchmarkViewItems(items, benchmark) {
   });
 }
 
+function benchmarkHardwareRecords(records, benchmark) {
+  const primary = records.filter((item) => item.benchmark === benchmark.id);
+  return primary.length ? primary : records;
+}
+
+function benchmarkRecordMatches(
+  item,
+  benchmark,
+  metric,
+  unit,
+  selectedHardware,
+  filterState,
+) {
+  return item.metric === metric && item.unit === unit
+    && (item.benchmark !== benchmark.id
+      || hardwareKey(item.environment) === selectedHardware)
+    && observationMatchesFilters({ attributes: historyFacets(item) }, filterState);
+}
+
 function environmentKey(environment) {
   return JSON.stringify(environment, Object.keys(environment).sort());
 }
@@ -543,7 +562,7 @@ function renderBenchmarkExplorer(target, benchmark, data, catalog, root, overvie
   const metrics = [...new Set(records.map((item) =>
     JSON.stringify([item.metric, item.unit])))].sort();
   const environmentGroups = new Map();
-  for (const record of records) {
+  for (const record of benchmarkHardwareRecords(records, benchmark)) {
     const key = hardwareKey(record.environment);
     if (!environmentGroups.has(key)) {
       environmentGroups.set(key, {
@@ -689,9 +708,14 @@ function renderBenchmarkExplorer(target, benchmark, data, catalog, root, overvie
       if (currentRender !== renderSequence) return;
     }
     const [metric, unit] = JSON.parse(metricSelect.value);
-    const matches = (item) => item.metric === metric && item.unit === unit
-      && hardwareKey(item.environment) === environmentSelect.value
-      && observationMatchesFilters({ attributes: historyFacets(item) }, filterState);
+    const matches = (item) => benchmarkRecordMatches(
+      item,
+      benchmark,
+      metric,
+      unit,
+      environmentSelect.value,
+      filterState,
+    );
     const visible = history
       ? data.series.filter(matches).flatMap((item) =>
         item.points.map((point) => ({
