@@ -44,7 +44,7 @@
       "runner_data": {
         "path": "tools/pipeline_perf_test/test_suites/integration/continuous/100klrps-docker.yaml"
       },
-      "schema_version": 3
+      "schema_version": 4
     },
     {
       "description": "Measures the resource-efficiency impact of receiver acknowledgment-based flow control at a fixed offered load of 100K logs/sec. A single-core DFE applies an attribute rename with wait-for-result enabled, then exports to a separate one-core backend DFE ending in an in-memory performance sink. The backend receiver acknowledges accepted data quickly without waiting for the sink, so it is not deliberately throttled.",
@@ -76,7 +76,7 @@
       "runner_data": {
         "path": "tools/pipeline_perf_test/test_suites/integration/nightly/backpressure-docker.yaml"
       },
-      "schema_version": 3
+      "schema_version": 4
     },
     {
       "description": "Continuous 100k logs/sec batch processor workload using pre-generated traffic and a 20-second observation window.",
@@ -108,7 +108,7 @@
       "runner_data": {
         "path": "tools/pipeline_perf_test/test_suites/integration/continuous/100klrps-docker.yaml"
       },
-      "schema_version": 3
+      "schema_version": 4
     },
     {
       "description": "Nightly metric batch processor workload across OTAP and OTLP.",
@@ -140,7 +140,7 @@
       "runner_data": {
         "path": "tools/pipeline_perf_test/test_suites/integration/nightly/batch-processor-docker.yaml"
       },
-      "schema_version": 3
+      "schema_version": 4
     },
     {
       "description": "Nightly 100k logs/sec batch processor workload using freshly generated traffic and a 60-second observation window.",
@@ -172,7 +172,7 @@
       "runner_data": {
         "path": "tools/pipeline_perf_test/test_suites/integration/nightly/batch-processor-docker.yaml"
       },
-      "schema_version": 3
+      "schema_version": 4
     },
     {
       "description": "Nightly trace batch processor workload across OTAP and OTLP.",
@@ -204,7 +204,7 @@
       "runner_data": {
         "path": "tools/pipeline_perf_test/test_suites/integration/nightly/batch-processor-docker.yaml"
       },
-      "schema_version": 3
+      "schema_version": 4
     },
     {
       "description": "DFE and OpenTelemetry Collector ClickHouse throughput and resource workloads.",
@@ -243,7 +243,7 @@
         }
       ],
       "runner": "orchestrator",
-      "schema_version": 3
+      "schema_version": 4
     },
     {
       "description": "DFE and OpenTelemetry Collector filter processor workloads.",
@@ -314,7 +314,7 @@
         }
       ],
       "runner": "orchestrator",
-      "schema_version": 3
+      "schema_version": 4
     },
     {
       "description": "Idle-state resource usage across allocated core counts.",
@@ -400,9 +400,67 @@
         }
       ],
       "runner": "orchestrator",
-      "schema_version": 3
+      "schema_version": 4
     },
     {
+      "attributes": [
+        {
+          "description": "Binary",
+          "id": "binary",
+          "label": "Binary",
+          "values": [
+            {
+              "description": "Dataflow Engine - the OTAP-native pipeline engine developed as a part of OTel Arrow.",
+              "id": "dfe"
+            },
+            {
+              "description": "Fluent Bit - A lightweight telemetry agent engine under the fluentd project umbrella.",
+              "id": "fbit"
+            },
+            {
+              "description": "OpenTelemetry Collector (contrib distribution).",
+              "id": "otc"
+            }
+          ]
+        },
+        {
+          "description": "Protocol",
+          "id": "protocol",
+          "label": "Protocol",
+          "values": [
+            {
+              "description": "OpenTelemetry Arrow Protocol - columnar gRPC transport using Apache Arrow record batches.",
+              "id": "otap"
+            },
+            {
+              "description": "OpenTelemetry Protocol over gRPC (row-oriented protobuf).",
+              "id": "otlp"
+            }
+          ]
+        },
+        {
+          "description": "Signal",
+          "id": "signal",
+          "label": "Signal",
+          "values": [
+            {
+              "description": "OpenTelemetry Logs signal.",
+              "id": "logs"
+            }
+          ]
+        },
+        {
+          "description": "Compression",
+          "id": "compression",
+          "label": "Compression",
+          "values": [
+            {
+              "description": "No payload compression on the wire.",
+              "id": "none"
+            }
+          ]
+        }
+      ],
       "description": "Compare log attribute insert implementations while varying number of attribute insert actions at 200k logs/sec.",
       "id": "log-attribute-insert-action-count",
       "metric_profile": "logs",
@@ -730,27 +788,32 @@
           ]
         },
         {
+          "description": "Number of insert actions configured on the processor. All tests run at a fixed 200k logs/sec generated load.",
           "id": "action_count",
           "values": [
             {
+              "description": "1 insert action @ 200k logs/sec",
               "id": "1",
               "runner_data": {
                 "test": "transform-1"
               }
             },
             {
+              "description": "2 insert actions @ 200k logs/sec",
               "id": "2",
               "runner_data": {
                 "test": "transform-2"
               }
             },
             {
+              "description": "3 insert actions @ 200k logs/sec",
               "id": "3",
               "runner_data": {
                 "test": "transform-3"
               }
             },
             {
+              "description": "4 insert actions @ 200k logs/sec",
               "id": "4",
               "runner_data": {
                 "test": "transform-4"
@@ -760,9 +823,67 @@
         }
       ],
       "runner": "orchestrator",
-      "schema_version": 3
+      "schema_version": 4
     },
     {
+      "attributes": [
+        {
+          "description": "Binary",
+          "id": "binary",
+          "label": "Binary",
+          "values": [
+            {
+              "description": "Dataflow Engine - the OTAP-native pipeline engine developed as a part of OTel Arrow.",
+              "id": "dfe"
+            },
+            {
+              "description": "Fluent Bit - A lightweight telemetry agent engine under the fluentd project umbrella.",
+              "id": "fbit"
+            },
+            {
+              "description": "OpenTelemetry Collector (contrib distribution).",
+              "id": "otc"
+            }
+          ]
+        },
+        {
+          "description": "Protocol",
+          "id": "protocol",
+          "label": "Protocol",
+          "values": [
+            {
+              "description": "OpenTelemetry Arrow Protocol - columnar gRPC transport using Apache Arrow record batches.",
+              "id": "otap"
+            },
+            {
+              "description": "OpenTelemetry Protocol over gRPC (row-oriented protobuf).",
+              "id": "otlp"
+            }
+          ]
+        },
+        {
+          "description": "Signal",
+          "id": "signal",
+          "label": "Signal",
+          "values": [
+            {
+              "description": "OpenTelemetry Logs signal.",
+              "id": "logs"
+            }
+          ]
+        },
+        {
+          "description": "Compression",
+          "id": "compression",
+          "label": "Compression",
+          "values": [
+            {
+              "description": "No payload compression on the wire.",
+              "id": "none"
+            }
+          ]
+        }
+      ],
       "description": "Compare log attribute insert implementations while varying load-generator batch size at 400k logs/sec.",
       "id": "log-attribute-insert-batch-size",
       "metric_profile": "logs",
@@ -876,33 +997,39 @@
           ]
         },
         {
+          "description": "Batch size emitted by the load generator. All tests run at a fixed 400k logs/sec generated load.",
           "id": "batch_size",
           "values": [
             {
+              "description": "256 logs per batch @ 400k logs/sec",
               "id": "256",
               "runner_data": {
                 "test": "batch-256"
               }
             },
             {
+              "description": "512 logs per batch @ 400k logs/sec",
               "id": "512",
               "runner_data": {
                 "test": "batch-512"
               }
             },
             {
+              "description": "1024 logs per batch @ 400k logs/sec",
               "id": "1024",
               "runner_data": {
                 "test": "batch-1024"
               }
             },
             {
+              "description": "2048 logs per batch @ 400k logs/sec",
               "id": "2048",
               "runner_data": {
                 "test": "batch-2048"
               }
             },
             {
+              "description": "4096 logs per batch @ 400k logs/sec",
               "id": "4096",
               "runner_data": {
                 "test": "batch-4096"
@@ -912,9 +1039,67 @@
         }
       ],
       "runner": "orchestrator",
-      "schema_version": 3
+      "schema_version": 4
     },
     {
+      "attributes": [
+        {
+          "description": "Binary",
+          "id": "binary",
+          "label": "Binary",
+          "values": [
+            {
+              "description": "Dataflow Engine - the OTAP-native pipeline engine developed as a part of OTel Arrow.",
+              "id": "dfe"
+            },
+            {
+              "description": "Fluent Bit - A lightweight telemetry agent engine under the fluentd project umbrella.",
+              "id": "fbit"
+            },
+            {
+              "description": "OpenTelemetry Collector (contrib distribution).",
+              "id": "otc"
+            }
+          ]
+        },
+        {
+          "description": "Protocol",
+          "id": "protocol",
+          "label": "Protocol",
+          "values": [
+            {
+              "description": "OpenTelemetry Arrow Protocol - columnar gRPC transport using Apache Arrow record batches.",
+              "id": "otap"
+            },
+            {
+              "description": "OpenTelemetry Protocol over gRPC (row-oriented protobuf).",
+              "id": "otlp"
+            }
+          ]
+        },
+        {
+          "description": "Signal",
+          "id": "signal",
+          "label": "Signal",
+          "values": [
+            {
+              "description": "OpenTelemetry Logs signal.",
+              "id": "logs"
+            }
+          ]
+        },
+        {
+          "description": "Compression",
+          "id": "compression",
+          "label": "Compression",
+          "values": [
+            {
+              "description": "No payload compression on the wire.",
+              "id": "none"
+            }
+          ]
+        }
+      ],
       "baseline": {
         "benchmark": "log-baseline",
         "select": {
@@ -1116,6 +1301,7 @@
           ]
         },
         {
+          "description": "Rate at which the load generator is configured to produce logs e.g. \"100k\" == \"100,000 logs/sec\".",
           "id": "load_rate",
           "values": [
             {
@@ -1165,9 +1351,67 @@
         }
       ],
       "runner": "orchestrator",
-      "schema_version": 3
+      "schema_version": 4
     },
     {
+      "attributes": [
+        {
+          "description": "Binary",
+          "id": "binary",
+          "label": "Binary",
+          "values": [
+            {
+              "description": "Dataflow Engine - the OTAP-native pipeline engine developed as a part of OTel Arrow.",
+              "id": "dfe"
+            },
+            {
+              "description": "Fluent Bit - A lightweight telemetry agent engine under the fluentd project umbrella.",
+              "id": "fbit"
+            },
+            {
+              "description": "OpenTelemetry Collector (contrib distribution).",
+              "id": "otc"
+            }
+          ]
+        },
+        {
+          "description": "Protocol",
+          "id": "protocol",
+          "label": "Protocol",
+          "values": [
+            {
+              "description": "OpenTelemetry Arrow Protocol - columnar gRPC transport using Apache Arrow record batches.",
+              "id": "otap"
+            },
+            {
+              "description": "OpenTelemetry Protocol over gRPC (row-oriented protobuf).",
+              "id": "otlp"
+            }
+          ]
+        },
+        {
+          "description": "Signal",
+          "id": "signal",
+          "label": "Signal",
+          "values": [
+            {
+              "description": "OpenTelemetry Logs signal.",
+              "id": "logs"
+            }
+          ]
+        },
+        {
+          "description": "Compression",
+          "id": "compression",
+          "label": "Compression",
+          "values": [
+            {
+              "description": "No payload compression on the wire.",
+              "id": "none"
+            }
+          ]
+        }
+      ],
       "description": "Compare log attribute rename implementations while varying number of attribute rename actions at 200k logs/sec.",
       "id": "log-attribute-rename-action-count",
       "metric_profile": "logs",
@@ -1495,27 +1739,32 @@
           ]
         },
         {
+          "description": "Number of rename actions configured on the processor. All tests run at a fixed 200k logs/sec generated load.",
           "id": "action_count",
           "values": [
             {
+              "description": "1 rename action @ 200k logs/sec",
               "id": "1",
               "runner_data": {
                 "test": "transform-1"
               }
             },
             {
+              "description": "2 rename actions @ 200k logs/sec",
               "id": "2",
               "runner_data": {
                 "test": "transform-2"
               }
             },
             {
+              "description": "3 rename actions @ 200k logs/sec",
               "id": "3",
               "runner_data": {
                 "test": "transform-3"
               }
             },
             {
+              "description": "4 rename actions @ 200k logs/sec",
               "id": "4",
               "runner_data": {
                 "test": "transform-4"
@@ -1525,9 +1774,67 @@
         }
       ],
       "runner": "orchestrator",
-      "schema_version": 3
+      "schema_version": 4
     },
     {
+      "attributes": [
+        {
+          "description": "Binary",
+          "id": "binary",
+          "label": "Binary",
+          "values": [
+            {
+              "description": "Dataflow Engine - the OTAP-native pipeline engine developed as a part of OTel Arrow.",
+              "id": "dfe"
+            },
+            {
+              "description": "Fluent Bit - A lightweight telemetry agent engine under the fluentd project umbrella.",
+              "id": "fbit"
+            },
+            {
+              "description": "OpenTelemetry Collector (contrib distribution).",
+              "id": "otc"
+            }
+          ]
+        },
+        {
+          "description": "Protocol",
+          "id": "protocol",
+          "label": "Protocol",
+          "values": [
+            {
+              "description": "OpenTelemetry Arrow Protocol - columnar gRPC transport using Apache Arrow record batches.",
+              "id": "otap"
+            },
+            {
+              "description": "OpenTelemetry Protocol over gRPC (row-oriented protobuf).",
+              "id": "otlp"
+            }
+          ]
+        },
+        {
+          "description": "Signal",
+          "id": "signal",
+          "label": "Signal",
+          "values": [
+            {
+              "description": "OpenTelemetry Logs signal.",
+              "id": "logs"
+            }
+          ]
+        },
+        {
+          "description": "Compression",
+          "id": "compression",
+          "label": "Compression",
+          "values": [
+            {
+              "description": "No payload compression on the wire.",
+              "id": "none"
+            }
+          ]
+        }
+      ],
       "description": "Compare log attribute rename implementations while varying load-generator batch size at 400k logs/sec.",
       "id": "log-attribute-rename-batch-size",
       "metric_profile": "logs",
@@ -1641,33 +1948,39 @@
           ]
         },
         {
+          "description": "Batch size emitted by the load generator. All tests run at a fixed 400k logs/sec generated load.",
           "id": "batch_size",
           "values": [
             {
+              "description": "256 logs per batch @ 400k logs/sec",
               "id": "256",
               "runner_data": {
                 "test": "batch-256"
               }
             },
             {
+              "description": "512 logs per batch @ 400k logs/sec",
               "id": "512",
               "runner_data": {
                 "test": "batch-512"
               }
             },
             {
+              "description": "1024 logs per batch @ 400k logs/sec",
               "id": "1024",
               "runner_data": {
                 "test": "batch-1024"
               }
             },
             {
+              "description": "2048 logs per batch @ 400k logs/sec",
               "id": "2048",
               "runner_data": {
                 "test": "batch-2048"
               }
             },
             {
+              "description": "4096 logs per batch @ 400k logs/sec",
               "id": "4096",
               "runner_data": {
                 "test": "batch-4096"
@@ -1677,9 +1990,67 @@
         }
       ],
       "runner": "orchestrator",
-      "schema_version": 3
+      "schema_version": 4
     },
     {
+      "attributes": [
+        {
+          "description": "Binary",
+          "id": "binary",
+          "label": "Binary",
+          "values": [
+            {
+              "description": "Dataflow Engine - the OTAP-native pipeline engine developed as a part of OTel Arrow.",
+              "id": "dfe"
+            },
+            {
+              "description": "Fluent Bit - A lightweight telemetry agent engine under the fluentd project umbrella.",
+              "id": "fbit"
+            },
+            {
+              "description": "OpenTelemetry Collector (contrib distribution).",
+              "id": "otc"
+            }
+          ]
+        },
+        {
+          "description": "Protocol",
+          "id": "protocol",
+          "label": "Protocol",
+          "values": [
+            {
+              "description": "OpenTelemetry Arrow Protocol - columnar gRPC transport using Apache Arrow record batches.",
+              "id": "otap"
+            },
+            {
+              "description": "OpenTelemetry Protocol over gRPC (row-oriented protobuf).",
+              "id": "otlp"
+            }
+          ]
+        },
+        {
+          "description": "Signal",
+          "id": "signal",
+          "label": "Signal",
+          "values": [
+            {
+              "description": "OpenTelemetry Logs signal.",
+              "id": "logs"
+            }
+          ]
+        },
+        {
+          "description": "Compression",
+          "id": "compression",
+          "label": "Compression",
+          "values": [
+            {
+              "description": "No payload compression on the wire.",
+              "id": "none"
+            }
+          ]
+        }
+      ],
       "baseline": {
         "benchmark": "log-baseline",
         "select": {
@@ -1881,6 +2252,7 @@
           ]
         },
         {
+          "description": "Rate at which the load generator is configured to produce logs e.g. \"100k\" == \"100,000 logs/sec\".",
           "id": "load_rate",
           "values": [
             {
@@ -1930,9 +2302,83 @@
         }
       ],
       "runner": "orchestrator",
-      "schema_version": 3
+      "schema_version": 4
     },
     {
+      "attributes": [
+        {
+          "description": "Binary",
+          "id": "binary",
+          "label": "Binary",
+          "values": [
+            {
+              "description": "Dataflow Engine - the OTAP-native pipeline engine developed as a part of OTel Arrow.",
+              "id": "dfe"
+            },
+            {
+              "description": "Fluent Bit - A lightweight telemetry agent engine under the fluentd project umbrella.",
+              "id": "fbit"
+            },
+            {
+              "description": "OpenTelemetry Collector (contrib distribution).",
+              "id": "otc"
+            },
+            {
+              "description": "rotel-dev/rotel - Rust-based telemetry collector.",
+              "id": "rotel"
+            }
+          ]
+        },
+        {
+          "description": "Protocol",
+          "id": "protocol",
+          "label": "Protocol",
+          "values": [
+            {
+              "description": "OpenTelemetry Arrow Protocol - columnar gRPC transport using Apache Arrow record batches.",
+              "id": "otap"
+            },
+            {
+              "description": "OpenTelemetry Protocol over gRPC (row-oriented protobuf).",
+              "id": "otlp"
+            },
+            {
+              "description": "OpenTelemetry Protocol over HTTP/protobuf.",
+              "id": "otlphttp"
+            }
+          ]
+        },
+        {
+          "description": "Signal",
+          "id": "signal",
+          "label": "Signal",
+          "values": [
+            {
+              "description": "OpenTelemetry Logs signal.",
+              "id": "logs"
+            }
+          ]
+        },
+        {
+          "description": "Compression",
+          "id": "compression",
+          "label": "Compression",
+          "values": [
+            {
+              "description": "gzip payload compression.",
+              "id": "gzip"
+            },
+            {
+              "description": "No payload compression on the wire.",
+              "id": "none"
+            },
+            {
+              "description": "zstd payload compression.",
+              "id": "zstd"
+            }
+          ]
+        }
+      ],
       "description": "Baseline log pipelines across engines, protocols, and compression.",
       "id": "log-baseline",
       "metric_profile": "logs",
@@ -2351,6 +2797,7 @@
           ]
         },
         {
+          "description": "Rate at which the load generator is configured to produce logs e.g. \"100k\" == \"100,000 logs/sec\".",
           "id": "load_rate",
           "values": [
             {
@@ -2400,9 +2847,79 @@
         }
       ],
       "runner": "orchestrator",
-      "schema_version": 3
+      "schema_version": 4
     },
     {
+      "attributes": [
+        {
+          "description": "Binary",
+          "id": "binary",
+          "label": "Binary",
+          "values": [
+            {
+              "description": "Dataflow Engine - the OTAP-native pipeline engine developed as a part of OTel Arrow.",
+              "id": "dfe"
+            },
+            {
+              "description": "OpenTelemetry Collector (contrib distribution).",
+              "id": "otc"
+            },
+            {
+              "description": "rotel-dev/rotel - Rust-based telemetry collector.",
+              "id": "rotel"
+            }
+          ]
+        },
+        {
+          "description": "Protocol",
+          "id": "protocol",
+          "label": "Protocol",
+          "values": [
+            {
+              "description": "OpenTelemetry Arrow Protocol - columnar gRPC transport using Apache Arrow record batches.",
+              "id": "otap"
+            },
+            {
+              "description": "OpenTelemetry Protocol over gRPC (row-oriented protobuf).",
+              "id": "otlp"
+            },
+            {
+              "description": "OpenTelemetry Protocol over HTTP/protobuf.",
+              "id": "otlphttp"
+            }
+          ]
+        },
+        {
+          "description": "Signal",
+          "id": "signal",
+          "label": "Signal",
+          "values": [
+            {
+              "description": "OpenTelemetry Metrics signal.",
+              "id": "metrics"
+            }
+          ]
+        },
+        {
+          "description": "Compression",
+          "id": "compression",
+          "label": "Compression",
+          "values": [
+            {
+              "description": "gzip payload compression.",
+              "id": "gzip"
+            },
+            {
+              "description": "No payload compression on the wire.",
+              "id": "none"
+            },
+            {
+              "description": "zstd payload compression.",
+              "id": "zstd"
+            }
+          ]
+        }
+      ],
       "description": "Baseline metric pipelines across engines, protocols, and compression.",
       "id": "metric-baseline",
       "metric_profile": "comparison-metrics",
@@ -2749,6 +3266,7 @@
           ]
         },
         {
+          "description": "Rate at which the load generator is configured to submit metric datapoints e.g. \"100k\" == \"100,000 datapoints/sec\".",
           "id": "load_rate",
           "values": [
             {
@@ -2798,7 +3316,7 @@
         }
       ],
       "runner": "orchestrator",
-      "schema_version": 3
+      "schema_version": 4
     },
     {
       "description": "Unbounded OTLP and OTAP passthrough throughput workloads.",
@@ -2827,9 +3345,26 @@
         }
       ],
       "runner": "orchestrator",
-      "schema_version": 3
+      "schema_version": 4
     },
     {
+      "attributes": [
+        {
+          "description": "Protocol",
+          "id": "protocol",
+          "label": "Protocol",
+          "values": [
+            {
+              "description": "OpenTelemetry Arrow Protocol - columnar gRPC transport using Apache Arrow record batches.",
+              "id": "otap"
+            },
+            {
+              "description": "OpenTelemetry Protocol over gRPC (row-oriented protobuf).",
+              "id": "otlp"
+            }
+          ]
+        }
+      ],
       "description": "Maximum-throughput and multi-core scaling workloads; scaling efficiency is derived from these results.",
       "id": "saturation",
       "metric_profile": "logs",
@@ -2972,7 +3507,7 @@
         }
       ],
       "runner": "orchestrator",
-      "schema_version": 3
+      "schema_version": 4
     },
     {
       "description": "Standard-load input batch-size sweep.",
@@ -3032,7 +3567,7 @@
       "runner_data": {
         "path": "tools/pipeline_perf_test/test_suites/integration/nightly/100klrps-batch-sizes-docker.yaml"
       },
-      "schema_version": 3
+      "schema_version": 4
     },
     {
       "description": "OpenTelemetry Collector syslog ingestion over TCP.",
@@ -3064,7 +3599,7 @@
       "runner_data": {
         "path": "tools/pipeline_perf_test/test_suites/integration/nightly/syslog-tcp-otelcol-docker.yaml"
       },
-      "schema_version": 3
+      "schema_version": 4
     },
     {
       "description": "DFE syslog ingestion over TCP.",
@@ -3110,7 +3645,7 @@
       "runner_data": {
         "path": "tools/pipeline_perf_test/test_suites/integration/nightly/syslog-tcp-docker.yaml"
       },
-      "schema_version": 3
+      "schema_version": 4
     },
     {
       "description": "Syslog ingestion and processing workloads.",
@@ -3156,9 +3691,79 @@
       "runner_data": {
         "path": "tools/pipeline_perf_test/test_suites/integration/nightly/syslog-docker.yaml"
       },
-      "schema_version": 3
+      "schema_version": 4
     },
     {
+      "attributes": [
+        {
+          "description": "Binary",
+          "id": "binary",
+          "label": "Binary",
+          "values": [
+            {
+              "description": "Dataflow Engine - the OTAP-native pipeline engine developed as a part of OTel Arrow.",
+              "id": "dfe"
+            },
+            {
+              "description": "OpenTelemetry Collector (contrib distribution).",
+              "id": "otc"
+            },
+            {
+              "description": "rotel-dev/rotel - Rust-based telemetry collector.",
+              "id": "rotel"
+            }
+          ]
+        },
+        {
+          "description": "Protocol",
+          "id": "protocol",
+          "label": "Protocol",
+          "values": [
+            {
+              "description": "OpenTelemetry Arrow Protocol - columnar gRPC transport using Apache Arrow record batches.",
+              "id": "otap"
+            },
+            {
+              "description": "OpenTelemetry Protocol over gRPC (row-oriented protobuf).",
+              "id": "otlp"
+            },
+            {
+              "description": "OpenTelemetry Protocol over HTTP/protobuf.",
+              "id": "otlphttp"
+            }
+          ]
+        },
+        {
+          "description": "Signal",
+          "id": "signal",
+          "label": "Signal",
+          "values": [
+            {
+              "description": "OpenTelemetry Traces signal.",
+              "id": "traces"
+            }
+          ]
+        },
+        {
+          "description": "Compression",
+          "id": "compression",
+          "label": "Compression",
+          "values": [
+            {
+              "description": "gzip payload compression.",
+              "id": "gzip"
+            },
+            {
+              "description": "No payload compression on the wire.",
+              "id": "none"
+            },
+            {
+              "description": "zstd payload compression.",
+              "id": "zstd"
+            }
+          ]
+        }
+      ],
       "description": "Baseline trace pipelines across engines, protocols, and compression.",
       "id": "trace-baseline",
       "metric_profile": "comparison-traces",
@@ -3488,6 +4093,7 @@
           ]
         },
         {
+          "description": "Rate at which the load generator is configured to submit spans e.g. \"100k\" == \"100,000 spans/sec\".",
           "id": "load_rate",
           "values": [
             {
@@ -3537,7 +4143,7 @@
         }
       ],
       "runner": "orchestrator",
-      "schema_version": 3
+      "schema_version": 4
     }
   ],
   "metric_profiles": [
@@ -3984,5 +4590,5 @@
       "text": "The Dataflow Engine and these benchmarks are a work in progress. Do you have feedback?"
     }
   },
-  "schema_version": 3
+  "schema_version": 4
 }

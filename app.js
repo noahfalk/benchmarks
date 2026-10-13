@@ -299,6 +299,46 @@ function benchmarkParameterLabels(benchmark) {
   return labels;
 }
 
+function benchmarkFieldMetadata(benchmark) {
+  const fields = new Map();
+  const related = [benchmark];
+  const baseline = benchmark.baseline
+    ? benchmarksById.get(benchmark.baseline.benchmark)
+    : null;
+  if (baseline) related.push(baseline);
+  for (const definition of related) {
+    for (const [namespace, definitions] of [
+      ["identity", definition.parameters || []],
+      ["attribute", definition.attributes || []],
+    ]) {
+      for (const field of definitions) {
+        const key = `${namespace}.${field.id}`;
+        if (!fields.has(key)) {
+          fields.set(key, {
+            label: field.label,
+            description: field.description,
+            values: new Map(),
+          });
+        }
+        const metadata = fields.get(key);
+        if (!metadata.label && field.label) metadata.label = field.label;
+        if (!metadata.description && field.description) {
+          metadata.description = field.description;
+        }
+        for (const value of field.values) {
+          if (!metadata.values.has(value.id)) {
+            metadata.values.set(value.id, {
+              label: value.label,
+              description: value.description,
+            });
+          }
+        }
+      }
+    }
+  }
+  return fields;
+}
+
 function historySeriesColor(series) {
   const key = JSON.stringify([
     series.identity, series.attributes, series.environment,
@@ -314,7 +354,7 @@ function historySeriesColor(series) {
   return `hsl(${Math.abs(hash) % 360}, 65%, 48%)`;
 }
 
-function benchmarkAxes(records, benchmark) {
+function benchmarkAxes(records, benchmark, fieldMetadata = new Map()) {
   const axes = [];
   const categories = collectAttributeCategories(records.map((item) => ({
     attributes: historyFacets(item),
@@ -330,7 +370,10 @@ function benchmarkAxes(records, benchmark) {
         : null;
       axes.push({
         id: key,
-        label: parameter?.label || fieldLabel(key),
+        label: fieldMetadata.get(key)?.label
+          || parameter?.label
+          || fieldLabel(key),
+        description: fieldMetadata.get(key)?.description,
       });
     }
   }
@@ -540,6 +583,7 @@ function renderBenchmarkExplorer(target, benchmark, data, catalog, root, overvie
     return;
   }
   const parameterLabels = benchmarkParameterLabels(benchmark);
+  const fieldMetadata = benchmarkFieldMetadata(benchmark);
   const metrics = [...new Set(records.map((item) =>
     JSON.stringify([item.metric, item.unit])))].sort();
   const environmentGroups = new Map();
@@ -558,7 +602,7 @@ function renderBenchmarkExplorer(target, benchmark, data, catalog, root, overvie
   }
   const environments = [...environmentGroups.entries()];
   environments.sort(([left], [right]) => left.localeCompare(right));
-  const axes = benchmarkAxes(records, benchmark);
+  const axes = benchmarkAxes(records, benchmark, fieldMetadata);
   axes.push({ id: "history", label: "Commit history" });
   const categories = collectAttributeCategories(records.map((item) => ({
     attributes: historyFacets(item),
@@ -589,7 +633,11 @@ function renderBenchmarkExplorer(target, benchmark, data, catalog, root, overvie
       ${heading}
       <div class="explorer-controls">
       <label class="explorer-axis-control">X-axis <select class="explorer-axis">
-        ${axes.map((axis) => `<option value="${escapeHtml(axis.id)}">${escapeHtml(axis.label)}</option>`).join("")}
+        ${axes.map((axis) => `<option value="${escapeHtml(axis.id)}"${
+          axis.description
+            ? ` title="${escapeHtml(axis.description)}"`
+            : ""
+        }>${escapeHtml(axis.label)}</option>`).join("")}
       </select></label>
       <label>Metric <select class="explorer-metric">
         ${metrics.map((key) => {
@@ -612,6 +660,7 @@ function renderBenchmarkExplorer(target, benchmark, data, catalog, root, overvie
         prefix,
         benchmark,
         parameterLabels,
+        fieldMetadata,
       )}
       <button type="button" class="filter-reset">Reset</button>
     </div>
@@ -664,6 +713,7 @@ function renderBenchmarkExplorer(target, benchmark, data, catalog, root, overvie
     if (chart) chart.destroy();
     chart = null;
     const axis = axisSelect.value;
+    axisSelect.title = axes.find((item) => item.id === axis)?.description || "";
     const history = axis === "history";
     if (history && !historyLoaded) {
       target.querySelector(".explorer-chart").hidden = true;
@@ -823,7 +873,9 @@ function metricLabel(name) {
   return metricLabels.get(name) || titleCase(name);
 }
 
-function filterLabel(key, benchmark = null) {
+function filterLabel(key, benchmark = null, fieldMetadata = new Map()) {
+  const metadata = fieldMetadata.get(key);
+  if (metadata?.label) return metadata.label;
   if (key.startsWith("identity.")) {
     const name = key.slice(9);
     const parameter = benchmark?.parameters.find((item) => item.id === name);
@@ -863,8 +915,15 @@ function initialFilterState(categories) {
   );
 }
 
-function displayFilterValue(key, value, parameterLabels = null) {
+function displayFilterValue(
+  key,
+  value,
+  parameterLabels = null,
+  fieldMetadata = new Map(),
+) {
   if (value === FILTER_MISSING) return "Not set";
+  const metadata = fieldMetadata.get(key)?.values.get(value);
+  if (metadata?.label) return metadata.label;
   if (key.startsWith("identity.")) {
     return parameterLabels?.get(key.slice(9))?.get(value) || value;
   }
@@ -887,6 +946,7 @@ function renderFilterGroups(
   prefix = "filter",
   benchmark = null,
   parameterLabels = null,
+  fieldMetadata = new Map(),
 ) {
   return [...categories].map(([key, values], groupIndex) => {
     const columns = [];
@@ -895,14 +955,25 @@ function renderFilterGroups(
         .map((value, columnIndex) => {
           const index = columnStart + columnIndex;
           const id = `${prefix}-${groupIndex}-${index}`;
+          const description = fieldMetadata.get(key)?.values
+            .get(value)?.description;
           return `
-            <label class="filter-option" for="${escapeHtml(id)}">
+            <label class="filter-option" for="${escapeHtml(id)}"${
+              description
+                ? ` title="${escapeHtml(description)}"`
+                : ""
+            }>
               <input id="${escapeHtml(id)}"
                      type="checkbox"
                      data-attribute="${escapeHtml(key)}"
                      value="${escapeHtml(value)}"
                      ${filterState.get(key).has(value) ? "checked" : ""}>
-              <span>${escapeHtml(displayFilterValue(key, value, parameterLabels))}</span>
+              <span>${escapeHtml(displayFilterValue(
+                key,
+                value,
+                parameterLabels,
+                fieldMetadata,
+              ))}</span>
             </label>
           `;
         }).join("");
@@ -910,8 +981,10 @@ function renderFilterGroups(
     }
     return `
       <fieldset class="filter-group">
-        <legend title="${escapeHtml(key)}">${escapeHtml(
-          filterLabel(key, benchmark),
+        <legend title="${escapeHtml(
+          fieldMetadata.get(key)?.description || key,
+        )}">${escapeHtml(
+          filterLabel(key, benchmark, fieldMetadata),
         )}</legend>
         <div class="filter-options">${columns.join("")}</div>
       </fieldset>
