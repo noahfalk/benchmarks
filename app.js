@@ -949,6 +949,7 @@ function renderFilterGroups(
   fieldMetadata = new Map(),
 ) {
   return [...categories].map(([key, values], groupIndex) => {
+    const fieldDescription = fieldMetadata.get(key)?.description;
     const columns = [];
     for (let columnStart = 0; columnStart < values.length; columnStart += 4) {
       const options = values.slice(columnStart, columnStart + 4)
@@ -981,9 +982,11 @@ function renderFilterGroups(
     }
     return `
       <fieldset class="filter-group">
-        <legend title="${escapeHtml(
-          fieldMetadata.get(key)?.description || key,
-        )}">${escapeHtml(
+        <legend${
+          fieldDescription
+            ? ` title="${escapeHtml(fieldDescription)}"`
+            : ""
+        }>${escapeHtml(
           filterLabel(key, benchmark, fieldMetadata),
         )}</legend>
         <div class="filter-options">${columns.join("")}</div>
