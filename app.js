@@ -266,6 +266,11 @@ function historyFacets(series) {
   return facets;
 }
 
+function filterCategoryVisible(key, values) {
+  return !key.startsWith("environment.")
+    && (values.length >= 2 || key === "identity.os");
+}
+
 function identitySeriesLabel(series, excludedKey = null, parameterLabels = null) {
   return series.identity_keys
     .filter((key) => key !== excludedKey && series.identity[key] !== undefined)
@@ -485,7 +490,10 @@ function explorerChart(
   return {
     labels: ordered.map(displayLabel),
     datasets: [...groups.values()].map(({ series, records }) => {
-      const baseLabel = history
+      const baseLabel = identityBars
+        ? parameterLabels.get(axisIdentityKey)?.get(series.identity[axisIdentityKey])
+          || series.identity[axisIdentityKey]
+        : history
         ? historySeriesLabel(series, parameterLabels)
         : identitySeriesLabel(
           series,
@@ -619,7 +627,7 @@ function renderBenchmarkExplorer(target, benchmark, data, catalog, root, overvie
     attributes: historyFacets(item),
   })));
   for (const [key, values] of categories) {
-    if (key.startsWith("environment.") || values.length < 2) categories.delete(key);
+    if (!filterCategoryVisible(key, values)) categories.delete(key);
   }
   const filterState = initialFilterState(categories);
   if (!overview) {
